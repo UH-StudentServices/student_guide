@@ -1,0 +1,13 @@
+name: Student Guide
+type: profile
+description: 'Build a student guide site.'
+version: VERSION
+core: 8.x
+dependencies:
+  - node
+  - block
+  - dblog
+  - page_cache
+  - dynamic_page_cache
+themes:
+  - stark

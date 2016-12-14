@@ -1,0 +1,68 @@
+{
+  "name": "UH-StudentServices/student_guide",
+  "description": "Student Guide installation profile for University of Helsinki.",
+  "type": "drupal-profile",
+  "license": "GPL-3.0",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require-dev": {
+    "drush/drush": "^8.0",
+    "drupal/drupal-extension": "^3.2",
+    "drupal-composer/drupal-scaffold": "^2.0.0",
+    "behat/behat": "^3.0",
+    "drupal/coder": "8.*",
+    "phing/phing": "^2.14",
+    "behat/mink": "~1.7",
+    "behat/mink-goutte-driver": "~1.2",
+    "jcalderonzumba/gastonjs": "~1.0.2",
+    "mikey179/vfsStream": "~1.2",
+    "phpunit/phpunit": "~4.8",
+    "symfony/css-selector": "~2.8",
+    "drupal/devel": "^8.0.0",
+    "squizlabs/php_codesniffer": "2.*",
+    "se/selenium-server-standalone": "^2.53",
+    "composer/composer": "^1.2"
+  },
+  "config": {
+    "bin-dir": "bin/"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packagist.drupal-composer.org"
+    }
+  ],
+  "scripts": {
+    "post-install-cmd": [
+      "@composer drupal-scaffold",
+      "./bin/phing push"
+    ],
+    "post-update-cmd": [
+      "./bin/phing push",
+      "./bin/phing package"
+    ],
+    "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold"
+  },
+  "extra": {
+    "packagist.drupal-composer.org": {
+      "discover-make-files": false
+    },
+    "installer-paths": {
+      "docroot/core": [
+        "type:drupal-core"
+      ],
+      "modules/{$name}": [
+        "type:drupal-module"
+      ]
+    }
+    /*"patches": {}*/
+  },
+  "require": {
+    "drupal/paragraph": "^8.1.0"
+  },
+  "autoload": {
+    "classmap": [
+      "src/UpgradeBuild.php"
+    ]
+  }
+}
