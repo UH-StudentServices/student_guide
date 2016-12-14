@@ -57,7 +57,7 @@
     }
   },
   "require": {
-    "drupal/paragraph": "^8.1.0"
+    "drupal/paragraphs": "^8.1.0"
   },
   "autoload": {
     "classmap": [
