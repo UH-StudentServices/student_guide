@@ -1,5 +1,5 @@
 {
-  "name": "UH-StudentServices/student_guide",
+  "name": "uh-studentservices/student_guide",
   "description": "Student Guide installation profile for University of Helsinki.",
   "type": "drupal-profile",
   "license": "GPL-3.0",
