@@ -55,7 +55,6 @@
         "type:drupal-module"
       ]
     }
-    /*"patches": {}*/
   },
   "require": {
     "drupal/paragraph": "^8.1.0"
