@@ -5,23 +5,6 @@
   "license": "GPL-3.0",
   "minimum-stability": "dev",
   "prefer-stable": true,
-  "require-dev": {
-    "drush/drush": "^8.0",
-    "drupal/drupal-extension": "^3.2",
-    "drupal-composer/drupal-scaffold": "^2.0.0",
-    "behat/behat": "^3.0",
-    "drupal/coder": "8.*",
-    "behat/mink": "~1.7",
-    "behat/mink-goutte-driver": "~1.2",
-    "jcalderonzumba/gastonjs": "~1.0.2",
-    "mikey179/vfsStream": "~1.2",
-    "phpunit/phpunit": "~4.8",
-    "symfony/css-selector": "~2.8",
-    "drupal/devel": "^8.0.0",
-    "squizlabs/php_codesniffer": "2.*",
-    "se/selenium-server-standalone": "^2.53",
-    "composer/composer": "^1.2"
-  },
   "config": {
     "bin-dir": "bin/"
   },
@@ -42,14 +25,19 @@
       "discover-make-files": false
     },
     "installer-paths": {
-      "docroot/core": [
-        "type:drupal-core"
-      ],
-      "modules/{$name}": [
-        "type:drupal-module"
-      ]
+      "web/core": ["type:drupal-core"],
+      "web/libraries/{$name}": ["type:drupal-library"],
+      "web/profiles/{$name}": ["type:drupal-profile"],
+      "web/modules/contrib/{$name}": ["type:drupal-module"],
+      "web/themes/contrib/{$name}": ["type:drupal-theme"],
+      "web/drush/commands/{$name}": ["type:drupal-drush"]
+    },
+    "enable-patching": true,
+    "patches": {
     }
   },
   "require": {
+    "drupal/core": "^8.0",
+    "drupal/paragraphs": "^1.0"
   }
 }
