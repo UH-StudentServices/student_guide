@@ -22,4 +22,5 @@ dependencies:
   - views
   - views_ui
 themes:
-  - stark
+  - seven
+  - uhsg_theme
