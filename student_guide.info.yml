@@ -4,10 +4,22 @@ description: 'Build a student guide site.'
 version: VERSION
 core: 8.x
 dependencies:
-  - node
   - block
+  - config
+  - contextual
+  - datetime
   - dblog
-  - page_cache
   - dynamic_page_cache
+  - field_ui
+  - image
+  - menu_ui
+  - menu_link_content
+  - node
+  - options
+  - page_cache
+  - toolbar
+  - taxonomy
+  - views
+  - views_ui
 themes:
   - stark
