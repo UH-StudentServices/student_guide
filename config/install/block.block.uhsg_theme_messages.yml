@@ -7,7 +7,7 @@ dependencies:
   theme:
     - uhsg_theme
 _core:
-  default_config_hash: uulrtO0Ummd90ilSU8OaDzwKRVYPUIsCjejvmgdzgis
+  default_config_hash: q9xmkSOrdxgsWhxlPs7Jyt5L1ryYJUpI2-pNMFEv604
 id: uhsg_theme_messages
 theme: uhsg_theme
 region: content

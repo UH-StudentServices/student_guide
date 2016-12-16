@@ -1,0 +1,17 @@
+uuid: c4048c25-3624-460f-9af3-38026ca70e9f
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: FKjarTQjk6j0jzE8jjNaOtgUWqS__RYL2Z4Bz3PXKuQ
+name: medium
+label: 'Medium (220×220)'
+effects:
+  bddf0d06-42f9-4c75-a700-a33cafa25ea0:
+    uuid: bddf0d06-42f9-4c75-a700-a33cafa25ea0
+    id: image_scale
+    weight: 0
+    data:
+      width: 220
+      height: 220
+      upscale: false

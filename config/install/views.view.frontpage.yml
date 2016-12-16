@@ -9,7 +9,7 @@ dependencies:
     - node
     - user
 _core:
-  default_config_hash: GOEJQkKK8mX_sKFkET8ky5qMiXFcdSUFGgGlVc0AJU8
+  default_config_hash: 0FFnPDXx7YAHhmqin0HZp__NqKqMxEd8-9EStrVnFKQ
 id: frontpage
 label: Frontpage
 module: node

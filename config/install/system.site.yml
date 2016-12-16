@@ -1,4 +1,4 @@
-uuid: 009a480f-8a41-408f-9e15-37ff11723b7d
+uuid: 8054efdc-eb55-458c-ae62-16ab85de67a3
 name: 'Student Guide'
 mail: admin@example.com
 slogan: ''
@@ -11,4 +11,4 @@ weight_select_max: 100
 langcode: en
 default_langcode: en
 _core:
-  default_config_hash: vy1FJb8gjPGbUFn7D-7TeneSbEr81l3kfQHJx5qV9YM
+  default_config_hash: bPsF3bgDgvVKBxEI13GOfmxWkxJ8xj5CAEZB4T2fUeg

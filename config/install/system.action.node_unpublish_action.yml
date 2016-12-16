@@ -5,7 +5,7 @@ dependencies:
   module:
     - node
 _core:
-  default_config_hash: IORp3wdNpvMRHDrTZT3LwUwR_0QlunLoqf11GAHReTs
+  default_config_hash: eS6ON3z86cBDZB4hydahII34Qln6ax2QFyuHRJSCnwM
 id: node_unpublish_action
 label: 'Unpublish content'
 type: node
