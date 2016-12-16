@@ -4,3 +4,20 @@
  * @file
  * Functions to support theming in the uhsg_theme theme.
  */
+
+/**
+ * Implements hook_preprocess_HOOK() for Region templates.
+ */
+function uhsg_theme_preprocess_region(&$variables) {
+  switch ($variables['region']) {
+    case 'header':
+      $variables['logo_path'] = \Drupal::config('student_guide.config')->get('logo_path');
+      $variables['logo_text'] = \Drupal::config('student_guide.config')->get('logo_text');
+      break;
+    case 'footer':
+      $variables['logo_path'] = \Drupal::config('student_guide.config')->get('logo_path');
+      $variables['copyright_text'] = \Drupal::config('student_guide.config')->get('copyright_text');
+      $variables['contact_info'] = \Drupal::config('student_guide.config')->get('contact_info');
+      break;
+  }
+}

@@ -19,7 +19,7 @@
       <div class="l-footer__column theme-sub">
         <div class="logo-block">
           <div class="logo-block__logo">
-            {{ link('', logopath, { 'class':['logo theme-big']}) }}
+            {{ link('', logo_path, { 'class':['logo theme-big']}) }}
           </div>
           <div class="logo-block__content">
             {{ contact_info|raw }}
@@ -34,7 +34,7 @@
       </div>
     </div>
     <div class="l-footer__copyright">
-      {{ copyright|raw }}
+      {{ copyright_text|raw }}
     </div>
   </div>
 {% endif %}
