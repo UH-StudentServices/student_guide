@@ -28,6 +28,7 @@
   "require": {
     "cweagans/composer-patches": "^1.5.0",
     "composer/installers": "^1.0",
+    "drupal/admin_toolbar": "^1.18",
     "drupal/core": "^8.0",
     "drupal/paragraphs": "^1.0"
   },
