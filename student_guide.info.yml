@@ -4,6 +4,7 @@ description: 'Build a student guide site.'
 version: VERSION
 core: 8.x
 dependencies:
+  - admin_toolbar
   - block
   - config
   - contextual
@@ -17,6 +18,7 @@ dependencies:
   - node
   - options
   - page_cache
+  - pathauto
   - toolbar
   - taxonomy
   - views
