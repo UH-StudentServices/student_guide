@@ -9,7 +9,7 @@ _core:
 id: uhsg_theme_page_title
 theme: uhsg_theme
 region: content
-weight: -30
+weight: -2
 provider: null
 plugin: page_title_block
 settings:
