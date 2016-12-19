@@ -37,6 +37,8 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+  translation:
+    weight: 10
 hidden:
   created: true
   status: true
