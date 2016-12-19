@@ -31,7 +31,8 @@
     "drupal/admin_toolbar": "^1.18",
     "drupal/core": "^8.0",
     "drupal/paragraphs": "^1.0",
-    "drupal/pathauto": "^1.0@beta"
+    "drupal/pathauto": "^1.0@beta",
+    "drupal/samlauth": "^2.0-alpha0"
   },
   "repositories": [
     {
