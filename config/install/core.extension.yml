@@ -3,6 +3,7 @@ module:
   block: 0
   breakpoint: 0
   config: 0
+  config_translation: 0
   contextual: 0
   ctools: 0
   datetime: 0
@@ -14,7 +15,9 @@ module:
   file: 0
   filter: 0
   image: 0
+  language: 0
   link: 0
+  locale: 0
   menu_ui: 0
   node: 0
   options: 0
@@ -30,6 +33,7 @@ module:
   views_ui: 0
   menu_link_content: 1
   pathauto: 1
+  content_translation: 10
   views: 10
   student_guide: 1000
 theme:

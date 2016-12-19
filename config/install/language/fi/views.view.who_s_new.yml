@@ -1,0 +1,18 @@
+label: 'Uudet käyttäjät'
+display:
+  default:
+    display_title: Isäntä
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Käytä
+          reset_button_label: 'Palauta oletusarvoihin'
+          exposed_sorts_label: Lajittele
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      title: 'Uudet käyttäjät'
+  block_1:
+    display_title: 'Uudet käyttäjät'
+    display_options:
+      block_description: 'Uudet käyttäjät'
+      block_category: Käyttäjä
