@@ -13,22 +13,20 @@
  */
 #}
 
-{% if content %}
-  <div class="l-top-bar">
-    <div class="l-top-bar__subregion">
-      <div class="l-top-bar__main">
-        <a href="{{ logo_path }}" class="logo">
-          <h1 class="logo__sitename">{{ logo_text }}</h1>
-        </a>
+<div class="l-top-bar">
+  <div class="l-top-bar__subregion">
+    <div class="l-top-bar__main">
+      <a href="{{ logo_path }}" class="logo">
+        <h1 class="logo__sitename">{{ logo_text }}</h1>
+      </a>
+    </div>
+    <div class="l-top-bar__sub">
+      <div class="l-top-bar__subleft">
+        {{ elements.headerlinks }}
       </div>
-      <div class="l-top-bar__sub">
-        <div class="l-top-bar__subleft">
-          {{ elements.headerlinks }}
-        </div>
-        <div class="l-top-bar__subright">
-          {{ elements.languageswitcher }}
-        </div>
+      <div class="l-top-bar__subright">
+        {{ elements.languageswitcher }}
       </div>
     </div>
   </div>
-{% endif %}
+</div>

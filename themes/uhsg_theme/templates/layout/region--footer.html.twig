@@ -13,28 +13,26 @@
  */
 #}
 
-{% if content %}
-  <div class="l-footer">
-    <div class="l-footer__subregion">
-      <div class="l-footer__column theme-sub">
-        <div class="logo-block">
-          <div class="logo-block__logo">
-            {{ link('', logo_path, { 'class':['logo theme-big']}) }}
-          </div>
-          <div class="logo-block__content">
-            {{ contact_info|raw }}
-          </div>
+<div class="l-footer">
+  <div class="l-footer__subregion">
+    <div class="l-footer__column theme-sub">
+      <div class="logo-block">
+        <div class="logo-block__logo">
+          {{ link('', logo_path, { 'class':['logo theme-big']}) }}
+        </div>
+        <div class="logo-block__content">
+          {{ contact_info|raw }}
         </div>
       </div>
-      <div class="l-footer__column">
-        {{ elements.footerlinks }}
-      </div>
-      <div class="l-footer__column theme-center">
-        {# {{ elements.somelinksblock }} #}
-      </div>
     </div>
-    <div class="l-footer__copyright">
-      {{ copyright_text|raw }}
+    <div class="l-footer__column">
+      {{ elements.footerlinks }}
+    </div>
+    <div class="l-footer__column theme-center">
+      {# {{ elements.somelinksblock }} #}
     </div>
   </div>
-{% endif %}
+  <div class="l-footer__copyright">
+    {{ copyright_text|raw }}
+  </div>
+</div>
