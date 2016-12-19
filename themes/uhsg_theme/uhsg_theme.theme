@@ -26,7 +26,15 @@ function uhsg_theme_preprocess_region(&$variables) {
  * Implements hook_preprocess_HOOK() for language links.
  */
 function uhsg_theme_preprocess_links__language_block(&$variables) {
-  foreach ($variables['links'] as &$link) {
+  foreach ($variables['links'] as $langcode => &$link) {
+    // add classes for theming
     $link['link']['#options']['attributes']['class'][] = 'links__link theme-language';
+
+    // hide active language
+    $active_language = Drupal::languageManager()->getCurrentLanguage()->getId();
+    if ($active_language == $langcode) {
+      unset($variables['links'][$langcode]);
+    }
   }
+
 }
