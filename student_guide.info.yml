@@ -18,6 +18,7 @@ dependencies:
   - node
   - options
   - page_cache
+  - paragraphs
   - pathauto
   - toolbar
   - taxonomy

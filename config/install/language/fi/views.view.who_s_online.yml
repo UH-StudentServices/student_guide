@@ -1,0 +1,21 @@
+display:
+  default:
+    display_title: Isäntä
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Käytä
+          reset_button_label: 'Palauta oletusarvoihin'
+          exposed_sorts_label: Lajittele
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      filters:
+        access:
+          expose:
+            label: 'Viimeksi paikalla'
+            description: 'Sen jäkeen kun käyttäjä viimeksi latasi sivun, hänen katsotaan olevan paikalla vielä näin kauan'
+      title: 'Paikalla olevat käyttäjät'
+  who_s_online_block:
+    display_title: 'Paikalla olevat käyttäjät'
+    display_options:
+      block_description: 'Paikalla olevat käyttäjät'
