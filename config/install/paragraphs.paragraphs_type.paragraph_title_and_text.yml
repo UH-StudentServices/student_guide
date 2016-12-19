@@ -1,0 +1,6 @@
+uuid: 737b67b4-717a-4c57-95be-01bc2391d905
+langcode: en
+status: true
+dependencies: {  }
+id: paragraph_title_and_text
+label: 'Title and text'
