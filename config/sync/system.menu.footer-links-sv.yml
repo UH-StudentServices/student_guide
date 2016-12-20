@@ -1,0 +1,8 @@
+uuid: ae3fbabd-5a0c-4b2f-ae9c-7fe127c39c4b
+langcode: sv
+status: true
+dependencies: {  }
+id: footer-links-sv
+label: 'Footer links SV'
+description: ''
+locked: false

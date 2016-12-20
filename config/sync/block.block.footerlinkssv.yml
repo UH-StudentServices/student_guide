@@ -1,0 +1,32 @@
+uuid: 812b6f48-59a1-4e3d-9359-fed16912304e
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer-links-sv
+  module:
+    - language
+    - system
+  theme:
+    - uhsg_theme
+id: footerlinkssv
+theme: uhsg_theme
+region: footer
+weight: 0
+provider: null
+plugin: 'system_menu_block:footer-links-sv'
+settings:
+  id: 'system_menu_block:footer-links-sv'
+  label: 'Footer links SV'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility:
+  language:
+    id: language
+    langcodes:
+      sv: sv
+    negate: false
+    context_mapping:
+      language: '@language.current_language_context:language_interface'

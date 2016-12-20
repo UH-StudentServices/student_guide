@@ -1,8 +1,0 @@
-uuid: 4bc12a3d-2432-4eb1-9e96-1e5cb281e0f0
-langcode: und
-status: true
-dependencies: {  }
-id: footer-links
-label: 'Footer links'
-description: ''
-locked: false

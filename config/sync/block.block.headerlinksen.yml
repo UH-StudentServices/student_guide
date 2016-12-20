@@ -1,0 +1,32 @@
+uuid: e537cc2b-e13b-4660-b27a-ed7b5e9b1805
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.header-links-en
+  module:
+    - language
+    - system
+  theme:
+    - uhsg_theme
+id: headerlinksen
+theme: uhsg_theme
+region: header
+weight: 0
+provider: null
+plugin: 'system_menu_block:header-links-en'
+settings:
+  id: 'system_menu_block:header-links-en'
+  label: 'Header links EN'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility:
+  language:
+    id: language
+    langcodes:
+      en: en
+    negate: false
+    context_mapping:
+      language: '@language.current_language_context:language_interface'

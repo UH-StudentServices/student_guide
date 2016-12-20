@@ -38,3 +38,34 @@ function uhsg_theme_preprocess_links__language_block(&$variables) {
   }
 
 }
+
+/**
+ * Implements hook_preprocess_HOOK() for menus.
+ * Add classes needed by styleguide.
+ */
+function uhsg_theme_preprocess_menu(&$variables) {
+  $menu_classes = '';
+  $link_classes = '';
+
+  switch ($variables['menu_name']) {
+    case 'header-links-en':
+    case 'header-links-fi':
+    case 'header-links-sv':
+      $link_classes = 'links__link';
+      $menu_classes = 'links';
+      break;
+    case 'footer-links-en':
+    case 'footer-links-fi':
+    case 'footer-links-sv':
+      $link_classes = 'list-of-links__link button--action icon--arrow-right theme-transparent';
+      $menu_classes = 'list-of-links--condensed theme-footer';
+      break;
+  }
+
+  if ($menu_classes && $link_classes) {
+    $variables['attributes']['class'][] = $menu_classes;
+    foreach ($variables['items'] as &$item) {
+      $item['attributes']->addClass($link_classes);
+    }
+  }
+}
