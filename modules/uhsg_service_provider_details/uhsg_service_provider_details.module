@@ -33,7 +33,7 @@ function uhsg_service_provider_details_form_system_site_information_settings_alt
     '#default_value' => $service_provider_details_settings->get('copyright_text'),
   ];
   $form['service_provider']['contact_info'] = [
-    '#type' => 'textfield',
+    '#type' => 'textarea',
     '#title' => t('Contact information'),
     '#default_value' => $service_provider_details_settings->get('contact_info'),
   ];
