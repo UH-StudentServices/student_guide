@@ -1,0 +1,9 @@
+uuid: aa2642bb-68a3-41e1-97ba-afa750c430f3
+langcode: en
+status: true
+dependencies: {  }
+name: 'Degree programme'
+vid: degree_programme
+description: ''
+hierarchy: 0
+weight: 0
