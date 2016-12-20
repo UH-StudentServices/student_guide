@@ -22,3 +22,4 @@ permissions:
   - 'update content translations'
   - 'access contextual links'
   - 'administer nodes'
+  - 'view own unpublished content'
