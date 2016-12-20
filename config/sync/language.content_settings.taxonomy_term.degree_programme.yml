@@ -1,0 +1,16 @@
+uuid: 4ad11397-20ba-4961-b56b-1f48e9965991
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.degree_programme
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: taxonomy_term.degree_programme
+target_entity_type_id: taxonomy_term
+target_bundle: degree_programme
+default_langcode: site_default
+language_alterable: true
