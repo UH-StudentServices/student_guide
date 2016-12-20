@@ -15,7 +15,7 @@ mode: default
 content:
   field_paragraph_links:
     weight: 1
-    label: above
+    label: hidden
     settings:
       trim_length: 80
       url_only: false
@@ -26,7 +26,7 @@ content:
     type: link
   field_paragraph_title:
     weight: 0
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
