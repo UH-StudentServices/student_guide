@@ -6,6 +6,8 @@
  * common contact details.
  */
 
+use Drupal\Core\Form\FormStateInterface;
+
 /**
  * Implements hook_form_FORM_ID_alter() for the site information form.
  */
