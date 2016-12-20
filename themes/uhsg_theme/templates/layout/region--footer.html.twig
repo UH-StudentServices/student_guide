@@ -17,12 +17,16 @@
   <div class="l-footer__subregion">
     <div class="l-footer__column theme-sub">
       <div class="logo-block">
-        <div class="logo-block__logo">
-          {{ link('', logo_path, { 'class':['logo theme-big']}) }}
-        </div>
-        <div class="logo-block__content">
-          {{ contact_info|raw }}
-        </div>
+        {% if logo_path %}
+          <div class="logo-block__logo">
+            {{ link('', logo_path, { 'class':['logo theme-big']}) }}
+          </div>
+        {% endif %}
+        {% if contact_info %}
+          <div class="logo-block__content">
+            {{ contact_info|raw }}
+          </div>
+        {% endif %}
       </div>
     </div>
     <div class="l-footer__column">
@@ -32,7 +36,9 @@
       {# {{ elements.somelinksblock }} #}
     </div>
   </div>
-  <div class="l-footer__copyright">
-    {{ copyright_text|raw }}
-  </div>
+  {% if copyright_text %}
+    <div class="l-footer__copyright">
+      {{ copyright_text|raw }}
+    </div>
+  {% endif %}
 </div>
