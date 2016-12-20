@@ -22,6 +22,7 @@ dependencies:
   - pathauto
   - toolbar
   - taxonomy
+  - uhsg_service_provider_details
   - views
   - views_ui
 themes:

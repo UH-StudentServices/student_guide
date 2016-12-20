@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.article.body
+    - field.field.node.article.field_article_degree_programme
     - field.field.node.article.field_article_paragraph
     - node.type.article
   module:
@@ -21,6 +22,13 @@ content:
     weight: 101
     settings: {  }
     third_party_settings: {  }
+  field_article_degree_programme:
+    weight: 103
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
   field_article_paragraph:
     type: entity_reference_revisions_entity_view
     weight: 102
