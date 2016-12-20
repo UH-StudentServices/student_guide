@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.article.body
+    - field.field.node.article.field_article_degree_programme
     - field.field.node.article.field_article_paragraph
     - node.type.article
   module:
@@ -28,6 +29,14 @@ content:
     weight: 10
     settings: {  }
     third_party_settings: {  }
+  field_article_degree_programme:
+    weight: 33
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
   field_article_paragraph:
     type: entity_reference_paragraphs
     weight: 32
