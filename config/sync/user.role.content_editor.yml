@@ -18,3 +18,5 @@ permissions:
   - 'access administration pages'
   - 'view the administration theme'
   - 'access toolbar'
+  - 'create content translations'
+  - 'update content translations'
