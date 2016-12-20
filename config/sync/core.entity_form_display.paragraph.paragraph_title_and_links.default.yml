@@ -1,0 +1,35 @@
+uuid: 13e36197-63e1-490f-bcf4-82d3f9a885ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.paragraph_title_and_links.field_paragraph_links
+    - field.field.paragraph.paragraph_title_and_links.field_paragraph_title
+    - paragraphs.paragraphs_type.paragraph_title_and_links
+  module:
+    - link
+id: paragraph.paragraph_title_and_links.default
+targetEntityType: paragraph
+bundle: paragraph_title_and_links
+mode: default
+content:
+  field_paragraph_links:
+    weight: 11
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+  field_paragraph_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  translation:
+    weight: 10
+hidden:
+  created: true
+  status: true
+  uid: true

@@ -59,6 +59,9 @@
     },
     "enable-patching": true,
     "patches": {
+      "drupal/paragraphs": {
+        "Fix error messages": "https://www.drupal.org/files/issues/many_error_messages-2775609-29.patch"
+      }
     }
   }
 }

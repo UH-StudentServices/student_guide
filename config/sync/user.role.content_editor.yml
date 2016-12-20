@@ -1,0 +1,25 @@
+uuid: 6f9ec6e4-2b84-440a-8e44-2bd497f42562
+langcode: en
+status: true
+dependencies: {  }
+id: content_editor
+label: 'Content editor'
+weight: 2
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'access content'
+  - 'create article content'
+  - 'delete own article content'
+  - 'edit own article content'
+  - 'translate article node'
+  - 'view all revisions'
+  - 'edit any article content'
+  - 'access administration pages'
+  - 'view the administration theme'
+  - 'access toolbar'
+  - 'create content translations'
+  - 'update content translations'
+  - 'access contextual links'
+  - 'administer nodes'
+  - 'view own unpublished content'
