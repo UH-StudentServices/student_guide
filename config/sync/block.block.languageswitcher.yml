@@ -1,0 +1,20 @@
+uuid: 342410b4-a3ad-4d93-8e27-87c43e5fa0a1
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+  theme:
+    - uhsg_theme
+id: languageswitcher
+theme: uhsg_theme
+region: header
+weight: 0
+provider: null
+plugin: 'language_block:language_interface'
+settings:
+  id: 'language_block:language_interface'
+  label: 'Language switcher'
+  provider: language
+  label_display: '0'
+visibility: {  }
