@@ -24,5 +24,6 @@ content:
   links:
     weight: 100
 hidden:
+  field_article_degree_programme: true
   field_article_paragraph: true
   langcode: true
