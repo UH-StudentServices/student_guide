@@ -20,3 +20,5 @@ permissions:
   - 'access toolbar'
   - 'create content translations'
   - 'update content translations'
+  - 'access contextual links'
+  - 'administer nodes'
