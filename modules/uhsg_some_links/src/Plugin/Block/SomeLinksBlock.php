@@ -19,7 +19,6 @@ class SomeLinksBlock extends BlockBase {
    */
   public function build() {
     return array(
-      '#cache' => array('max-age' => 0),
       'entities' => entity_load_multiple('some_links')
     );
   }
