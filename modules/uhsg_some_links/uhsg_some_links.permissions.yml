@@ -1,0 +1,22 @@
+add some links entities:
+  title: 'Create new Some links entities'
+
+administer some links entities:
+  title: 'Administer Some links entities'
+  description: 'Allow to access the administration form to configure Some links entities.'
+  restrict access: true
+
+delete some links entities:
+  title: 'Delete Some links entities'
+
+edit some links entities:
+  title: 'Edit Some links entities'
+
+access some links overview:
+  title: 'Access the Some links overview page'
+
+view published some links entities:
+  title: 'View published Some links entities'
+
+view unpublished some links entities:
+  title: 'View unpublished Some links entities'
