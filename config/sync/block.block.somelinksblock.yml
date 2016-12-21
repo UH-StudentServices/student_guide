@@ -1,0 +1,20 @@
+uuid: 10e8aed5-e061-433d-96ae-317de7976a90
+langcode: en
+status: true
+dependencies:
+  module:
+    - uhsg_some_links
+  theme:
+    - uhsg_theme
+id: somelinksblock
+theme: uhsg_theme
+region: footer
+weight: 0
+provider: null
+plugin: some_links_block
+settings:
+  id: some_links_block
+  label: 'Some links block'
+  provider: uhsg_some_links
+  label_display: '0'
+visibility: {  }

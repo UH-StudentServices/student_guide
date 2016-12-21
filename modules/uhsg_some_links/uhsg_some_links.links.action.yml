@@ -1,0 +1,5 @@
+entity.some_links.add_form:
+  route_name: entity.some_links.add_form
+  title: 'Add Some links'
+  appears_on:
+    - entity.some_links.collection

@@ -1,0 +1,36 @@
+<?php
+
+/**
+ * @file
+ * Contains uhsg_some_links.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function uhsg_some_links_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the uhsg_some_links module.
+    case 'help.page.uhsg_some_links':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Provides Some links as entities, displayed as icons.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function uhsg_some_links_theme($existing, $type, $theme, $path) {
+  return array(
+    'block__uhsg_some_links' => array(
+      'template' => 'block--uhsg-some-links',
+      'base hook' => 'block',
+    )
+  );
+}

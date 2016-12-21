@@ -23,6 +23,7 @@ dependencies:
   - toolbar
   - taxonomy
   - uhsg_service_provider_details
+  - uhsg_some_links
   - views
   - views_ui
 themes:
