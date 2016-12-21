@@ -8,3 +8,4 @@
   HUB-17: Added language switcher.
   HUB-32: Added Header and footer according to styleguide.
   HUB-33: Added initial theme content type.
+  HUB-3: theme Article content type.

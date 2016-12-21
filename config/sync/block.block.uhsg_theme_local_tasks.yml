@@ -9,7 +9,7 @@ _core:
 id: uhsg_theme_local_tasks
 theme: uhsg_theme
 region: navigation
-weight: -5
+weight: -4
 provider: null
 plugin: local_tasks_block
 settings:
