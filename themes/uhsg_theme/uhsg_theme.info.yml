@@ -9,7 +9,8 @@ libraries:
 base theme: classy
 
 regions:
-  content: Content
   header: Header
-  footer: Footer
   navigation: Navigation
+  content: Content
+  footer: Footer
+

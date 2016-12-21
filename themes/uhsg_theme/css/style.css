@@ -4916,6 +4916,15 @@ a:hover .theme-dark .list-of-links__link:after {
 .container {
   max-width: 75em;
   margin: 0 auto;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+@media (min-width: 75em) {
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .field--name-body p {
@@ -4939,5 +4948,32 @@ a:hover .theme-dark .list-of-links__link:after {
 @media (min-width: 62.5em) {
   .field--name-body p {
     overflow: hidden;
+  }
+}
+
+.paragraph:nth-child(odd) {
+  background: #EBEBEB;
+}
+
+.paragraph--title {
+  margin-bottom: 1em;
+}
+
+@media (min-width: 48em) {
+  .paragraph--content {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .paragraph--left {
+    -webkit-flex-basis: 35%;
+        -ms-flex-preferred-size: 35%;
+            flex-basis: 35%;
+    margin-right: 4em;
+  }
+  .paragraph--right {
+    -webkit-flex-basis: 65%;
+        -ms-flex-preferred-size: 65%;
+            flex-basis: 65%;
   }
 }

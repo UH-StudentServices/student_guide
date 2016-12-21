@@ -8,8 +8,8 @@ _core:
   default_config_hash: 9k_pqE5WO3b_WDtwt9uTqYfN3bbf9mTdLzcZTCiXvaY
 id: uhsg_theme_local_actions
 theme: uhsg_theme
-region: content
-weight: -2
+region: navigation
+weight: -4
 provider: null
 plugin: local_actions_block
 settings:

@@ -24,4 +24,5 @@ content:
   links:
     weight: 100
 hidden:
+  field_theme_articles: true
   langcode: true
