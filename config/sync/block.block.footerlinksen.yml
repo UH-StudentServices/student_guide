@@ -1,0 +1,32 @@
+uuid: da6ab0a6-8657-49fc-95b6-d6fa72fce1be
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer-links-en
+  module:
+    - language
+    - system
+  theme:
+    - uhsg_theme
+id: footerlinksen
+theme: uhsg_theme
+region: footer
+weight: 0
+provider: null
+plugin: 'system_menu_block:footer-links-en'
+settings:
+  id: 'system_menu_block:footer-links-en'
+  label: 'Footer links EN'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility:
+  language:
+    id: language
+    langcodes:
+      en: en
+    negate: false
+    context_mapping:
+      language: '@language.current_language_context:language_interface'

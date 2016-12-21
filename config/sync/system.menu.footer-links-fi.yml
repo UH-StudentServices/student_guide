@@ -1,0 +1,8 @@
+uuid: 742cb780-19a5-4de2-b854-b29832aa33f6
+langcode: fi
+status: true
+dependencies: {  }
+id: footer-links-fi
+label: 'Footer links FI'
+description: ''
+locked: false

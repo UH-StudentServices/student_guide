@@ -1,0 +1,18 @@
+# Schema for the configuration files of the Service Provider module.
+
+uhsg_service_provider_details.settings:
+  type: config_object
+  label: 'Service Provider details'
+  mapping:
+    logo_text:
+      type: text
+      label: 'Logo text'
+    logo_path:
+      type: text
+      label: 'Target link path from logo'
+    copyright_text:
+      type: text
+      label: 'Copyright text'
+    contact_info:
+      type: text
+      label: 'Copyright information'
