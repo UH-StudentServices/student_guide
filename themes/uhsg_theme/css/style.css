@@ -4920,6 +4920,55 @@ a:hover .theme-dark .list-of-links__link:after {
   padding-right: 1em;
 }
 
+.article-list article {
+  border: 1px solid #EBEBEB;
+  margin-bottom: 1em;
+  padding: 1em;
+}
+
+.article-list article .intro-text p {
+  font-size: inherit;
+}
+
+.article-list article ul.inline li {
+  padding: 0;
+}
+
+.article__content {
+  font-size: 12.25px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  font-style: normal;
+  color: #777777;
+  line-height: 1.5em;
+  margin: 1em 0 0;
+}
+
+@media (min-width: 48em) {
+  .article__content {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 48em) {
+  .article-list {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+  }
+  .article-list article {
+    -webkit-flex-basis: 31%;
+        -ms-flex-preferred-size: 31%;
+            flex-basis: 31%;
+  }
+}
+
 .intro-text p {
   color: #777777;
   font-size: 17.5px;

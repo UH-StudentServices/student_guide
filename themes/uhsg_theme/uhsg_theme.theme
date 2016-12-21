@@ -85,5 +85,7 @@ function uhsg_theme_preprocess_field(array &$variables, $hook) {
     case 'body':
       $variables['attributes']['class'][] = 'intro-text';
       break;
+    case 'field_theme_articles':
+      $variables['attributes']['class'][] = 'article-list';
   }
 }

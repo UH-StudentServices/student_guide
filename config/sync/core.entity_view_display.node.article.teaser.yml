@@ -5,6 +5,8 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.article.body
+    - field.field.node.article.field_article_degree_programme
+    - field.field.node.article.field_article_paragraph
     - node.type.article
   module:
     - text
@@ -17,12 +19,14 @@ content:
   body:
     label: hidden
     type: text_summary_or_trimmed
-    weight: 101
+    weight: 0
     settings:
-      trim_length: 600
+      trim_length: 200
     third_party_settings: {  }
   links:
-    weight: 100
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   field_article_degree_programme: true
   field_article_paragraph: true
