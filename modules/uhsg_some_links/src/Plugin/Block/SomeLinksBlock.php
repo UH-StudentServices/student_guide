@@ -2,8 +2,10 @@
 
 namespace Drupal\uhsg_some_links\Plugin\Block;
 
+use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Session\AccountInterface;
 
 /**
  * Provides a 'SomeLinksBlock' block.
@@ -14,6 +16,13 @@ use Drupal\Core\Entity\EntityInterface;
  * )
  */
 class SomeLinksBlock extends BlockBase {
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function blockAccess(AccountInterface $account) {
+    return AccessResult::allowedIfHasPermission($account, 'view published some links entities');
+  }
 
   /**
    * {@inheritdoc}
