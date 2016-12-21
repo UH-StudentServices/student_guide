@@ -19,7 +19,7 @@ class SomeLinksBlock extends BlockBase {
    */
   public function build() {
     return array(
-      'entities' => entity_load_multiple('some_links')
+      'entities' => \Drupal::entityTypeManager()->getStorage('some_links')->loadMultiple(),
     );
   }
 }
