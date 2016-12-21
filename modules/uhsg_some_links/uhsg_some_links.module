@@ -28,8 +28,8 @@ function uhsg_some_links_help($route_name, RouteMatchInterface $route_match) {
  */
 function uhsg_some_links_theme($existing, $type, $theme, $path) {
   return array(
-    'block__some_links' => array(
-      'template' => 'block--some-links',
+    'block__uhsg_some_links' => array(
+      'template' => 'block--uhsg-some-links',
       'base hook' => 'block',
     )
   );

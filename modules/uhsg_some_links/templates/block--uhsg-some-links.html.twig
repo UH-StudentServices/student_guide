@@ -26,9 +26,7 @@
  */
 #}
 
-
 <div class="button-group">
-
   {% for entity in content.entities %}
     {%
       set classes = [
@@ -38,7 +36,4 @@
     %}
     {{ link('', entity.url.value, { 'class': classes}) }}
   {% endfor %}
-
 </div>
-
-
