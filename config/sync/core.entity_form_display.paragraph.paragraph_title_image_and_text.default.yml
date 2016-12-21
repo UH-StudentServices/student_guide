@@ -26,8 +26,8 @@ content:
   field_paragraph_image:
     weight: 2
     settings:
-      progress_indicator: throbber
       preview_image_style: thumbnail
+      progress_indicator: throbber
     third_party_settings: {  }
     type: image_image
   field_paragraph_title:
@@ -39,6 +39,8 @@ content:
     type: string_textfield
   translation:
     weight: 10
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   created: true
   status: true

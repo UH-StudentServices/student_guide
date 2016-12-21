@@ -69,3 +69,21 @@ function uhsg_theme_preprocess_menu(&$variables) {
     }
   }
 }
+
+/**
+ * Implements hook_preprocess_field().
+ * Add classes needed by styleguide.
+ */
+function uhsg_theme_preprocess_field(array &$variables, $hook) {
+  switch ($variables['element']['#field_name']) {
+    case 'field_paragraph_links':
+      $variables['attributes']['class'][] = 'list-of-links';
+      foreach ($variables['items'] as &$item) {
+        $item['content']['#options']['attributes']['class'][] = 'list-of-links__link button--action icon--arrow-right';
+      }
+      break;
+    case 'body':
+      $variables['attributes']['class'][] = 'intro-text';
+      break;
+  }
+}
