@@ -6,6 +6,7 @@ dependencies:
     - field.field.paragraph.paragraph_title_image_and_text.field_paragraph_body
     - field.field.paragraph.paragraph_title_image_and_text.field_paragraph_image
     - field.field.paragraph.paragraph_title_image_and_text.field_paragraph_title
+    - image.style.paragraph_image
     - paragraphs.paragraphs_type.paragraph_title_image_and_text
   module:
     - image
@@ -25,7 +26,7 @@ content:
     weight: 2
     label: hidden
     settings:
-      image_style: ''
+      image_style: paragraph_image
       image_link: ''
     third_party_settings: {  }
     type: image
