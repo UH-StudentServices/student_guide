@@ -37,20 +37,20 @@
  */
 #}
 {%
-	set classes = [
-		'paragraph',
-	]
+  set classes = [
+    'paragraph',
+  ]
 %}
 <div{{ attributes.addClass(classes) }}>
-	<div class="paragraph--content container tube--large">
-		<div class="paragraph--left">
-			<div class="paragraph--title">
-				<h2> {{ content.field_paragraph_title }} </h2>
-			</div>
-			{{ content.field_paragraph_links }}
-		</div>
-		<div class="paragraph--right">
-			{{ content.field_paragraph_body }}
-		</div>		  
+  <div class="paragraph--content container tube--large">
+    <div class="paragraph--left">
+      <div class="paragraph--title">
+        <h2> {{ content.field_paragraph_title }} </h2>
+      </div>
+      {{ content.field_paragraph_links }}
+    </div>
+    <div class="paragraph--right">
+      {{ content.field_paragraph_body }}
+    </div>
   </div>
 </div>
