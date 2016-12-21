@@ -1,10 +1,4 @@
-.field--name-body p {
-  @include font-family-main;
-  @include text-liftup;
+.intro-text p {
   color: $lightgray;
-  overflow: visible;
-
-  @include breakpoint($medium) {
-    overflow: hidden;
-  }
+  @include font-size(20px);
 }

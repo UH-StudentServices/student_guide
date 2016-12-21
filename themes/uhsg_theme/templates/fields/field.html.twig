@@ -46,7 +46,7 @@
     </div>
   {% else %}
     {% for item in items %}
-      {{ item.content }}
+      <div{{ attributes }}>{{ item.content }}</div>
     {% endfor %}
   {% endif %}
 {% else %}
