@@ -4,8 +4,10 @@ namespace Drupal\uhsg_some_links\Plugin\Block;
 
 use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Cache\Cache;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Session\AccountInterface;
+use Drupal\uhsg_some_links\Entity\SomeLinks;
 
 /**
  * Provides a 'SomeLinksBlock' block.
@@ -45,4 +47,19 @@ class SomeLinksBlock extends BlockBase {
     );
     return $entities ?: [];
   }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getCacheTags() {
+    $cache_tags = ['some_links'];
+    foreach ($this->getEntities() as $entity) {
+      /** @var $entity SomeLinks */
+      foreach ($entity->getCacheTags() as $entity_cache_tags) {
+        $cache_tags[] = $entity_cache_tags;
+      }
+    }
+    return Cache::mergeTags(parent::getCacheTags(), $cache_tags);
+  }
+
 }
