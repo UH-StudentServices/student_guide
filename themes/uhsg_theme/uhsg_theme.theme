@@ -75,8 +75,8 @@ function uhsg_theme_preprocess_menu(&$variables) {
  * Add classes needed by styleguide.
  */
 function uhsg_theme_preprocess_field(array &$variables, $hook) {
-  $variables['attributes']['class'][] = 'list-of-links';
   if ($variables['element']['#field_name'] == 'field_paragraph_links') {
+    $variables['attributes']['class'][] = 'list-of-links';
     foreach ($variables['items'] as &$item) {
       $item['content']['#options']['attributes']['class'][] = 'list-of-links__link button--action icon--arrow-right';
     }

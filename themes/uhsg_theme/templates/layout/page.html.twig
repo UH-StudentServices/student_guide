@@ -38,6 +38,12 @@
  * @see html.html.twig
  */
 #}
+{%
+  set container_classes = [
+    node ? '' : 'container',
+    node ? '' : 'tube--large'
+  ]
+%}
 
 {% if page.header %}
   <header>
@@ -53,8 +59,11 @@
 
 {{ page.breadcrumb }}
 
-<main role="main" class="container tube--large">
+<main role="main" {{ attributes.addClass(container_classes) }}>
   <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+  {% if not node %}
+    <h1>{{ page['#title'] }}</h1>
+  {% endif %}
   {{ page.content }}
 </main>
 
