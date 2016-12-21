@@ -1,0 +1,28 @@
+uuid: 09a9917b-0d66-4a53-82c3-16c25a75e940
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_theme_articles
+    - node.type.article
+    - node.type.theme
+id: node.theme.field_theme_articles
+field_name: field_theme_articles
+entity_type: node
+bundle: theme
+label: Articles
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      article: article
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
