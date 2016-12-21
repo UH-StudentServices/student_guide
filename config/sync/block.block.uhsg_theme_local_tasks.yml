@@ -8,7 +8,7 @@ _core:
   default_config_hash: QuCdWrzwJ01Pi0NZtWMs2ivgmkLgzfwj4zXU5pcGnqg
 id: uhsg_theme_local_tasks
 theme: uhsg_theme
-region: navigation
+region: before_content
 weight: -4
 provider: null
 plugin: local_tasks_block

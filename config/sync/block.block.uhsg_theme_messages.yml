@@ -10,7 +10,7 @@ _core:
   default_config_hash: q9xmkSOrdxgsWhxlPs7Jyt5L1ryYJUpI2-pNMFEv604
 id: uhsg_theme_messages
 theme: uhsg_theme
-region: navigation
+region: before_content
 weight: -3
 provider: null
 plugin: system_messages_block
