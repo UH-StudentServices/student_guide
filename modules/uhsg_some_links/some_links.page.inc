@@ -22,9 +22,6 @@ use Drupal\Core\Url;
  *   - attributes: HTML attributes for the containing element.
  */
 function template_preprocess_some_links(array &$variables) {
-  // Fetch SomeLinks Entity Object.
-  $some_links = $variables['elements']['#some_links'];
-
   // Helpful $content variable for templates.
   foreach (Element::children($variables['elements']) as $key) {
     $variables['content'][$key] = $variables['elements'][$key];
