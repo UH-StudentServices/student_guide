@@ -26,14 +26,16 @@
  */
 #}
 
-<div class="button-group">
-  {% for entity in content.entities %}
-    {%
-      set classes = [
-        entity.icon_class.value,
-        'button--icon'
-      ]
-    %}
-    {{ link('', entity.url.value, { 'class': classes}) }}
-  {% endfor %}
-</div>
+{% if content.entities %}
+	<div class="button-group">
+	  {% for entity in content.entities %}
+	    {%
+	      set classes = [
+	        entity.icon_class.value,
+	        'button--icon'
+	      ]
+	    %}
+	    {{ link('', entity.url.value, { 'class': classes}) }}
+	  {% endfor %}
+	</div>
+{% endif %}
