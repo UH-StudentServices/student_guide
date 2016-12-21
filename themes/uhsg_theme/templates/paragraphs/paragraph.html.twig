@@ -36,20 +36,15 @@
  * @ingroup themeable
  */
 #}
-{%
-  set classes = [
-    'paragraph',
-  ]
-%}
-<div{{ attributes.addClass(classes) }}>
-  <div class="paragraph--content container tube--large">
-    <div class="paragraph--left">
-      <div class="paragraph--title">
+<div class="paragraph">
+  <div class="paragraph__content container tube--large">
+    <div class="paragraph__left">
+      <div class="paragraph__title">
         <h2> {{ content.field_paragraph_title }} </h2>
       </div>
       {{ content.field_paragraph_links }}
     </div>
-    <div class="paragraph--right">
+    <div class="paragraph__right">
       {{ content.field_paragraph_body }}
     </div>
   </div>

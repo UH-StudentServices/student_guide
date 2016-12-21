@@ -4,21 +4,21 @@
   }
 }
 
-.paragraph--title {
+.paragraph__title {
   margin-bottom: 1em;
 }
 
 @include breakpoint($small) {
-  .paragraph--content {
+  .paragraph__content {
     display: flex;
   }
 
-  .paragraph--left {
+  .paragraph__left {
     flex-basis: 35%;
     margin-right: 4em;
   }
 
-  .paragraph--right {
+  .paragraph__right {
     flex-basis: 65%;
   }
 }

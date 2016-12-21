@@ -4914,8 +4914,8 @@ a:hover .theme-dark .list-of-links__link:after {
 
 /* STUDENT GUIDE THEMING */
 .container {
-  max-width: 75em;
   margin: 0 auto;
+  max-width: 75em;
   padding-left: 1em;
   padding-right: 1em;
 }
@@ -4948,23 +4948,23 @@ a:hover .theme-dark .list-of-links__link:after {
   background: #EBEBEB;
 }
 
-.paragraph--title {
+.paragraph__title {
   margin-bottom: 1em;
 }
 
 @media (min-width: 48em) {
-  .paragraph--content {
+  .paragraph__content {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
   }
-  .paragraph--left {
+  .paragraph__left {
     -webkit-flex-basis: 35%;
         -ms-flex-preferred-size: 35%;
             flex-basis: 35%;
     margin-right: 4em;
   }
-  .paragraph--right {
+  .paragraph__right {
     -webkit-flex-basis: 65%;
         -ms-flex-preferred-size: 65%;
             flex-basis: 65%;
