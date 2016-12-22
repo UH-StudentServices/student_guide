@@ -1,0 +1,7 @@
+logo_text: 'University of Helsinki'
+logo_path: 'http://student.helsinki.fi/en'
+copyright_text: '<p>© University of Helsinki 2017</p>'
+contact_info: '<h4>Uni­versity of Hel­sinki</h4><p>P.O. Box 3 (Fabianinkatu 33) 00014 University of Helsinki</p><p>Switchboard: <a class="is-tel" href="tel:+3582941911">+358 (0) 2941 911</a></p>'
+langcode: en
+_core:
+  default_config_hash: 06IBcG-4qZpFFPRcINRmFbIPAl0WAud3bq2IYs2mu4c

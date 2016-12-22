@@ -1,0 +1,6 @@
+name: 'Service Provider Details'
+type: module
+description: 'Provides information about service provider, that can be used for presenting common contact details.'
+package: Student Guide
+core: 8.x
+configure: system.site

@@ -1,0 +1,14 @@
+
+# Some links menu items definition
+entity.some_links.collection:
+  title: 'Some links list'
+  route_name: entity.some_links.collection
+  description: 'List Some links entities'
+  parent: system.admin_structure
+  weight: 100
+
+some_links.admin.structure.settings:
+  title: Some links settings
+  description: 'Configure Some links entities'
+  route_name: some_links.settings
+  parent: system.admin_structure

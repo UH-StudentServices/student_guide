@@ -5,7 +5,7 @@ var sass = require('gulp-sass');
 var globbing = require('node-sass-globbing');
 var browserSync = require('browser-sync').create();
 
-var browserSyncProxyTarget = 'local.guide.student.helsinki.fi';
+var browserSyncProxyTarget = 'https://local.guide.student.helsinki.fi';
 
 var sass_config = {
   importer: globbing,

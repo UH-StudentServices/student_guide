@@ -1,0 +1,32 @@
+uuid: 7581f7c2-d843-47b3-8fbc-4a7418a121ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.header-links-sv
+  module:
+    - language
+    - system
+  theme:
+    - uhsg_theme
+id: headerlinkssv
+theme: uhsg_theme
+region: header
+weight: 0
+provider: null
+plugin: 'system_menu_block:header-links-sv'
+settings:
+  id: 'system_menu_block:header-links-sv'
+  label: 'Header links SV'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility:
+  language:
+    id: language
+    langcodes:
+      sv: sv
+    negate: false
+    context_mapping:
+      language: '@language.current_language_context:language_interface'

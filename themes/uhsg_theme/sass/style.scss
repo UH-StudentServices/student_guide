@@ -33,11 +33,11 @@
 //@import "styleguide/components/_date.scss";
 //@import "styleguide/components/_horizontal-tabs.scss";
 //@import "styleguide/components/_jobs-listing.scss";
-//@import "styleguide/components/_list-of-links.scss";
+@import "styleguide/components/_list-of-links.scss";
 //@import "styleguide/components/_messages.scss";
 //@import "styleguide/components/_pager.scss";
 //@import "styleguide/components/_post.scss";
-//@import "styleguide/components/_links.scss";
+@import "styleguide/components/_links.scss";
 //@import "styleguide/components/_some-links.scss";
 //@import "styleguide/components/_tag-list.scss";
 //@import "styleguide/components/_author.scss";
@@ -51,4 +51,8 @@
 //@import "styleguide/components/_panel.scss";
 //@import "styleguide/components/_search-form.scss";
 @import "styleguide/components/_table.scss";
-//@import "styleguide/components/_logo.scss";
+@import "styleguide/components/_logo.scss";
+
+/* STUDENT GUIDE THEMING */
+@import "layout/**/*";
+@import "components/**/*"

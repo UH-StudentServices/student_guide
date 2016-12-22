@@ -1,0 +1,16 @@
+uuid: 1b62ab10-419c-428c-955a-eb8ef231c775
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.theme
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.theme
+target_entity_type_id: node
+target_bundle: theme
+default_langcode: site_default
+language_alterable: true

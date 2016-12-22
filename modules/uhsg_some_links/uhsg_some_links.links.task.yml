@@ -1,0 +1,22 @@
+# Some links routing definition
+some_links.settings_tab:
+  route_name: some_links.settings
+  title: 'Settings'
+  base_route: some_links.settings
+
+entity.some_links.canonical:
+  route_name: entity.some_links.canonical
+  base_route: entity.some_links.canonical
+  title: 'View'
+
+entity.some_links.edit_form:
+  route_name: entity.some_links.edit_form
+  base_route: entity.some_links.canonical
+  title: 'Edit'
+
+entity.some_links.delete_form:
+  route_name:  entity.some_links.delete_form
+  base_route:  entity.some_links.canonical
+  title: Delete
+  weight: 10
+

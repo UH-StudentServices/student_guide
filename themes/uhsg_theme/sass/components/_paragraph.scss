@@ -1,0 +1,24 @@
+.paragraph {
+  &:nth-child(odd) {
+    background: $lightsilver;
+  }
+}
+
+.paragraph__title {
+  margin-bottom: 1em;
+}
+
+@include breakpoint($small) {
+  .paragraph__content {
+    display: flex;
+  }
+
+  .paragraph__left {
+    flex-basis: 35%;
+    margin-right: 4em;
+  }
+
+  .paragraph__right {
+    flex-basis: 65%;
+  }
+}
