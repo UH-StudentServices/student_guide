@@ -1,0 +1,22 @@
+uuid: 881878f5-9032-4afb-9b6f-78bc236a6674
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: theme_path
+label: 'Theme path'
+type: 'canonical_entities:node'
+pattern: '[node:title]'
+selection_criteria:
+  7f6fd543-e285-4b02-80f5-65e043a339dd:
+    id: node_type
+    bundles:
+      theme: theme
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 7f6fd543-e285-4b02-80f5-65e043a339dd
+selection_logic: and
+weight: -5
+relationships: {  }
