@@ -31,7 +31,10 @@
     "drupal/admin_toolbar": "^1.18",
     "drupal/core": "^8.0",
     "drupal/paragraphs": "^1.0",
-    "drupal/pathauto": "^1.0@beta"
+    "drupal/pathauto": "^1.0@beta",
+    "drupal/migrate_plus": "^3.0-beta1",
+    "drupal/migrate_source_csv": "^2.0",
+    "drupal/migrate_tools": "^3.0-beta1"
   },
   "repositories": [
     {

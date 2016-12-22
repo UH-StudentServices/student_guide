@@ -1,0 +1,43 @@
+langcode: en
+status: true
+id: some_links
+label: Social Media links migration
+description: Migrates social media links.
+migration_group: uhsg_initials
+dependencies:
+  enforced:
+    module:
+      - uhsg_some_links
+source:
+  plugin: csv
+  # Note: The following path gets altered to give module´s absolute path. See
+  # uhsg_migrate_migration_plugins_alter() for details.
+  path: /artifacts/some_links.csv
+  header_row_count: 1
+  default_lang: true
+  keys:
+    - id
+  column_names:
+    0:
+      id: Identifier
+    1:
+      link_name: Link name
+    2:
+      icon_class: Icon class
+    3:
+      url: URL
+process:
+  name: link_name
+  url: url
+  icon_class: icon_class
+  user_id:
+    plugin: default_value
+    default_value: 1
+  status:
+    plugin: default_value
+    default_value: 1
+  langcode:
+    plugin: default_value
+    default_value: en
+destination:
+  plugin: entity:some_links
