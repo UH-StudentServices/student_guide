@@ -1,30 +1,31 @@
+uuid: 71d5bd43-cd37-4646-aa61-6fdd2216c78c
 langcode: en
 status: true
-id: some_links
-label: Social Media links migration
-description: Migrates social media links.
-migration_group: uhsg_initials
 dependencies:
   enforced:
     module:
       - uhsg_some_links
+_core:
+  default_config_hash: J4LIKXmHmxApgYUBtQLIvbJ4fl93gj9r2bjkHa2nuIs
+id: some_links
+migration_tags: null
+migration_group: uhsg_initials
+label: 'Social Media links migration'
 source:
   plugin: csv
-  # Note: The following path gets altered to give module´s absolute path. See
-  # uhsg_migrate_migration_plugins_alter() for details.
   path: /artifacts/some_links.csv
   header_row_count: 1
   default_lang: true
   keys:
     - id
   column_names:
-    0:
+    -
       id: Identifier
-    1:
-      link_name: Link name
-    2:
-      icon_class: Icon class
-    3:
+    -
+      link_name: 'Link name'
+    -
+      icon_class: 'Icon class'
+    -
       url: URL
 process:
   name: link_name
@@ -40,4 +41,5 @@ process:
     plugin: default_value
     default_value: en
 destination:
-  plugin: entity:some_links
+  plugin: 'entity:some_links'
+migration_dependencies: null

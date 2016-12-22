@@ -1,3 +1,12 @@
+uuid: f3d8a569-5ae0-4300-9aa2-882f6be62c58
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: JY5OP3SMyO_3ts8loV-mF9RYw2RrOkpOhySeF7DPXq8
 id: uhsg_initials
-label: Student Guide initials
-description: Migrations importing initial content for the service.
+label: 'Student Guide initials'
+description: 'Migrations importing initial content for the service.'
+source_type: null
+module: null
+shared_configuration: null
