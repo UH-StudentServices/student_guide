@@ -1,0 +1,33 @@
+article {
+  &.article--full {
+    .article__intro p {
+      color: $lightgray;
+      @include font-size(20px);
+    }
+  }
+
+  &.article--teaser {
+    @include border;
+    position: relative;
+    margin-bottom: 2em;
+    padding: 1em 1em 2em 1em;
+
+    .article__intro p {
+      font-size: inherit;
+    }
+    .article__content {
+      @include text-informative;
+      margin: 1em 0 0;
+    }
+    .node__links {
+      position: absolute;
+      bottom: 1em;
+    }
+    @include breakpoint($small) {
+      flex: 0 0 31%;
+    }
+  }
+}
+
+
+

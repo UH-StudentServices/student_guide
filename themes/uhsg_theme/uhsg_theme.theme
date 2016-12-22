@@ -36,8 +36,16 @@ function uhsg_theme_preprocess_links__language_block(&$variables) {
       unset($variables['links'][$langcode]);
     }
   }
-
 }
+
+/**
+ * Implements hook_preprocess_HOOK() for node links.
+ */
+function uhsg_theme_preprocess_links__node(&$variables) {
+  // Remove classes
+  $variables['attributes']['class'] = [];
+}
+
 
 /**
  * Implements hook_preprocess_HOOK() for menus.
@@ -83,7 +91,7 @@ function uhsg_theme_preprocess_field(array &$variables, $hook) {
       }
       break;
     case 'body':
-      $variables['attributes']['class'][] = 'intro-text';
+      $variables['attributes']['class'][] = 'article__intro';
       break;
     case 'field_theme_articles':
       $variables['title_attributes']['class'][] = 'tube';
