@@ -1,37 +1,36 @@
 langcode: en
 status: true
+dependencies: {  }
 id: degree_programmes
-label: Degree programmes migration
-description: Migrates initial degree programmes.
+migration_tags: null
 migration_group: uhsg_initials
+label: 'Degree programmes migration'
 source:
   plugin: csv
-  # Note: The following path gets altered to give module´s absolute path. See
-  # uhsg_migrate_migration_plugins_alter() for details.
   path: /artifacts/degree_programmes.csv
   header_row_count: 1
   default_lang: true
   keys:
-    - tunniste
+    - identifier
   column_names:
-    0:
-      tunniste: Identifier
-    1:
-      nimi suomeksi: Name (in finnish)
-    2:
-      nimi ruotsiksi: Name (in swedish)
-    3:
-      nimi englanniksi: Name (in english)
-    4:
-      tyyppi: Type
+    -
+      identifier: Identifier
+    -
+      langcode: 'Language code'
+    -
+      type: Type
+    -
+      name: Name
 process:
-  name: nimi englanniksi
+  name: name
   user_id:
     plugin: default_value
     default_value: 1
   langcode:
-    plugin: default_value
-    default_value: en
+    plugin: skip_on_value
+    value: en
+    method: process
+    not_equals: true
 destination:
-  plugin: entity:taxonomy_term
+  plugin: 'entity:taxonomy_term'
   default_bundle: degree_programme

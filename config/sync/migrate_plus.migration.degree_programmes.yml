@@ -12,26 +12,26 @@ source:
   header_row_count: 1
   default_lang: true
   keys:
-    - tunniste
+    - identifier
   column_names:
     -
-      tunniste: Identifier
+      identifier: Identifier
     -
-      'nimi suomeksi': 'Name (in finnish)'
+      langcode: 'Language code'
     -
-      'nimi ruotsiksi': 'Name (in swedish)'
+      type: Type
     -
-      'nimi englanniksi': 'Name (in english)'
-    -
-      tyyppi: Type
+      name: Name
 process:
-  name: 'nimi englanniksi'
+  name: name
   user_id:
     plugin: default_value
     default_value: 1
   langcode:
-    plugin: default_value
-    default_value: en
+    plugin: skip_on_value
+    value: en
+    method: process
+    not_equals: true
 destination:
   plugin: 'entity:taxonomy_term'
   default_bundle: degree_programme
