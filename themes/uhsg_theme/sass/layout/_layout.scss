@@ -4,3 +4,9 @@
   padding-left: 1em;
   padding-right: 1em;
 }
+
+.grid-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}

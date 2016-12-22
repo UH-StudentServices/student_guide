@@ -71,18 +71,7 @@
  */
 #}
 
-{%
-  set container_classes = [
-    'container',
-    'tube--large',
-    'article__content'
-  ]
-%}
-
-<article class="article--full">
-  <div{{ content_attributes.addClass(container_classes) }}>
-    <h1> {{ label }} </h1>
-    {{ content|without('field_article_paragraph') }}
-  </div>
-  {{ content.field_article_paragraph }}
+<article class="article--teaser">
+  <h4 class="article__title"> {{ label }} </h4>
+  <div class="article__content"> {{ content }} </div>
 </article>

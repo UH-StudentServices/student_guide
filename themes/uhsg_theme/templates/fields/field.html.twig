@@ -37,29 +37,17 @@
  */
 #}
 
-{% if label_hidden %}
-  {% if multiple %}
-    <div{{ attributes }}>
-      {% for item in items %}
-        {{ item.content }}
-      {% endfor %}
-    </div>
-  {% else %}
-    {% for item in items %}
-      <div{{ attributes }}>{{ item.content }}</div>
-    {% endfor %}
-  {% endif %}
-{% else %}
+{% if not label_hidden %}
+  <h3{{ title_attributes }}>{{ label }}</h3>
+{% endif %}
+{% if multiple %}
   <div{{ attributes }}>
-    <div{{ title_attributes }}>{{ label }}</div>
-    {% if multiple %}
-      <div>
-    {% endif %}
     {% for item in items %}
       {{ item.content }}
     {% endfor %}
-    {% if multiple %}
-      </div>
-    {% endif %}
   </div>
+{% else %}
+  {% for item in items %}
+    <div{{ attributes }}>{{ item.content }}</div>
+  {% endfor %}
 {% endif %}
