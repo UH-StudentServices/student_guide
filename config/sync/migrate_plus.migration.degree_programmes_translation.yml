@@ -12,6 +12,7 @@ source:
   header_row_count: 1
   keys:
     - identifier
+    - langcode
   column_names:
     -
       identifier: Identifier
