@@ -1,271 +1,91 @@
-identifier,langcode,type,name
-KH57_001,en,bachelor,Bachelor's Programme in Biology
-KH57_001,fi,bachelor,Biologian kandiohjelma
-KH57_001,sv,bachelor,Kandidatprogrammet i biologi
-KH90_001,en,bachelor,Bachelor's Programme in Food Sciences
-KH90_001,fi,bachelor,Elintarviketieteiden kandiohjelma
-KH90_001,sv,bachelor,Kandidatprogrammet i livsmedel
-KH80_003,en,bachelor,Bachelor's Programme in Veterinary Medicine,svetenskaper
-KH80_003,fi,bachelor,Eläinlääketieteen kandiohjelma
-KH80_003,sv,bachelor,Kandidatprogrammet i veteri
-KH55_001,en,bachelor,Bachelor 's Programme in Pharmacynärmedicin
-KH55_001,fi,bachelor,Farmaseutin koulutusohjelma
-KH55_001,sv,bachelor,Utbildningsprogrammet f
-KH40_001,en,bachelor,Bachelor 's Programme in Philosophyör farmaceutexamen
-KH40_001,fi,bachelor,Filosofian kandiohjelma
-KH40_001,sv,bachelor,Kandidatprogrammet i filosofi
-KH50_002,en,bachelor,Bachelor's Programme in Physical Sciences
-KH50_002,fi,bachelor,Fysikaalisten tieteiden kandiohjelma
-KH50_002,sv,bachelor,Kandidatprogrammet i fysi
-KH50_006,en,bachelor,Bachelor 's Programme in Geoscienceskaliska vetenskaper
-KH50_006,fi,bachelor,Geotieteiden kandiohjelma
-KH50_006,sv,bachelor,Kandidatprogrammet i g
-KH40_006,en,bachelor,Bachelor 's Programme in Historyeovetenskap
-KH40_006,fi,bachelor,Historian kandiohjelma
-KH40_006,sv,bachelor,Kandidatprogrammet i historia
-KH74_001,en,bachelor,Bachelor 's Programme in Education
-KH74_001,fi,bachelor,Kasvatustieteiden kandiohjelma
-KH74_001,sv,bachelor,Kandidatprogrammet
-KH60_001,en,bachelor,Bachelor's Programme in Chemistryi pedagogik
-KH60_001,fi,bachelor,Kemian kandiohjelma
-KH60_001,sv,bachelor,Kandidatprogrammet i
-KH50_003,en,bachelor,Bachelor's Programme in Languages kemi
-KH50_003,fi,bachelor,Kielten kandiohjelma
-KH50_003,sv,bachelor,Kandidatprogrammet i språk
-KH40_003,en,bachelor,Bachelor's Programme in the Languages and Literatures of Finland
-KH40_003,fi,bachelor,Kotimaisten kielten ja kirjallisuuksien kandiohjelma
-KH40_003,sv,bachelor,Kandidatprogrammet i finskugriska oc
-KH40_004,en,bachelor,Bachelor's Programme in Cultural Studiesh nordiska språk och litteraturer
-KH40_004,fi,bachelor,Kulttuurien tutkimuksen kandiohjelma
-KH40_004,sv,bachelor,Kandidatprogrammet i ku
-KH40_005,en,bachelor,Bachelor's Programme in Logopedicslturforskning
-KH40_005,fi,bachelor,Logopedian kandiohjelma
-KH40_005,sv,bachelor,Kandidatprogrammet i log
-KH30_002,en,bachelor,Bachelor's Programme in Geographyopedi
-KH30_002,fi,bachelor,Maantieteen kandiohjelma
-KH30_002,sv,bachelor,Kandidatprogrammet i geografi
-KH50_007,en,bachelor,Bachelor 's Programme in Agricultural Sciences
-KH50_007,fi,bachelor,Maataloustieteiden kandiohjelma
-KH50_007,sv,bachelor,Kandidatprogrammet i lantbruksvetensk
-KH80_001,en,bachelor,Bachelor's Programme in Mathematical Sciencesaper
-KH80_001,fi,bachelor,Matemaattisten tieteiden kandiohjelma
-KH80_001,sv,bachelor,Kandidatprogrammet i matematiska vetenskaper
-KH50_001,en,bachelor,"Kandidatprogrammet för ämneslärare i matematik, fysik och kemi"
-KH50_001,fi,bachelor,"Matematiikan, fysiikan ja kemian opettajan kandiohjelma"
-KH50_001,sv,bachelor,"Bachelor's Programme for T
-KH50_004,en,bachelor,Bachelor's Programme in Forestryeachers of Mathematics, Physics and Chemistry"
-KH50_004,fi,bachelor,Metsätieteiden kandiohjelma
-KH50_004,sv,bachelor,Kandidatprogrammet i skogsvetenska
-KH80_002,en,bachelor,Bachelor's Programme in Molecular Biosciencesper
-KH80_002,fi,bachelor,Molekyylibiotieteiden kandiohjelma
-KH80_002,sv,bachelor,Kandidatprogrammet i molekylär
-KH57_002,en,bachelor,Bachelor's Programme in Lawa biovetenskaper
-KH57_002,fi,bachelor,Oikeusnotaarin koulutusohjelma
-KH57_002,sv,bachelor,Utbildningsprogrammet för rättsnotari
-KH20_001,en,Kandiohjelm,"Bachelor's Programme in Politics, Media and Communication"e
-KH20_001,fi,bachelor,Politiikan ja viestinnän kandiohjelma
-KH20_001,sv,bachelor,"Kandidatprogrammet i po
-KH70_001,en,bachelor,Bachelor's Programme in Psychologylitik, medier och kommunikation"
-KH70_001,fi,bachelor,Psykologian kandiohjelma
-KH70_001,sv,bachelor,Kandidatprogrammet i psykologi
-KH30_001,en,bachelor,Bachelor's Programme in Social Research
-KH30_001,fi,bachelor,Sosiaalitieteiden kandiohjelma
-KH30_001,sv,bachelor,Kandidatprogrammet i sociala veten
-KH70_003,en,bachelor,Bachelor's Programme in Art Studiesskaper
-KH70_003,fi,bachelor,Taiteiden tutkimuksen kandiohjelma
-KH70_003,sv,bachelor,Kandidatprogrammet i konst
-KH40_002,en,bachelor,Bachelor's Programme in Economicsforskning
-KH40_002,fi,bachelor,Taloustieteen kandiohjelma
-KH40_002,sv,bachelor,Kandidatprogrammet i ekonomi
-KH70_004,en,bachelor,Bachelor's Programme in Theology and Religious Studies
-KH70_004,fi,bachelor,Teologian ja uskonnontutkimuksen kandiohjelma
-KH70_004,sv,bachelor,Kandidatprogrammet i teologi och reli
-KH10_001,en,bachelor,Bachelor's Programme in Computer Sciencegionsforskning
-KH10_001,fi,bachelor,Tietojenkäsittelytieteen kandiohjelma
-KH10_001,sv,bachelor,Kandidatprogrammet i datavetenskap
-KH50_005,en,bachelor,Bachelor's Programme in Society and Change
-KH50_005,fi,bachelor,Yhteiskunnallisen muutoksen kandiohjelma
-KH50_005,sv,bachelor,Kandidatprogrammet för förändring
-KH70_002,en,bachelor,Bachelor's Programme in Social Sciences i samhälle
-KH70_002,fi,bachelor,Yhteiskuntatieteiden kandiohjelma
-KH70_002,sv,bachelor,Kandidatprogrammet i samhällsvetenskaper
-KH80_004,en,bachelor,Bachelor's Programme in Environmental and Food Economics
-KH80_004,fi,bachelor,Ympäristö- ja elintarviketalouden kandiohjelma
-KH80_004,sv,bachelor,Kandidatprogrammet i miljö- och
-KH57_003,en,bachelor,Bachelor's Programme in Environmental Sciences livsmedelsekonomi
-KH57_003,fi,bachelor,Ympäristötieteiden kandiohjelma
-KH57_003,sv,bachelor,Kandidatprogrammet i miljövetenskaper
-MH50_004,en,master,Master's Programme in Particle Physics and Astrophysical Sciences
-MH50_004,fi,master,Alkeishiukkasfysiikan ja astrofysikaalisten tieteiden maisteriohjelma
-MH50_004,sv,master,Magisterprogrammet i elementarpartikelfysik oc
-MH40_012,en,master,Master's Programme in Area and Cultural Studiesh astrofysikaliska vetenskaper
-MH40_012,fi,master,Alue- ja kulttuurintutkimuksen maisteriohjelma
-MH40_012,sv,master,Magisterprogrammet i region
-MH50_010,en,master,Master's Programme in Data Sience- och kulturstudier
-MH50_010,fi,master,Datatieteen maisteriohjelma
-MH50_010,sv,master,Magisterprogrammet i data science
-MH40_005,en,master,Master's Programme in Digital Linquistics Diversity in the Digital Age
-MH40_005,fi,master,Digitaalisen lingvistiikan maisteriohjelma
-MH40_005,sv,master,Magisterprogrammet i språklig diversitet och di
-MH57_001,en,master,Master's Programme in Ecology and Evolutionary Biologygitala metoder
-MH57_001,fi,master,Ekologian ja evoluutiobiologian maisteriohjelma
-MH57_001,sv,master,Magisterprogrammet i ekologi och evolutionsbio
-MH90_001,en,master,Degree Programme in Veterinary Medicinelogi
-MH90_001,fi,master,Eläinlääketieteen lisensiaatin koulutusohjelma
-MH90_001,sv,master,Utbildningsprogrammet i veterinärmedicin
-MH80_006,en,master,Master's Programme in Food Economy and Consumption
-MH80_006,fi,master,Elintarvikealan liiketoiminnan ja kulutuksen maisteriohjelma
-MH80_006,sv,master,Magisterprogrammet i livsmedelsekono
-MH80_004,en,master,Master's Programme in Food Sciencesmi och konsumtion
-MH80_004,fi,master,Elintarviketieteiden maisteriohjelma
-MH80_004,sv,master,Magisterprogrammet i livsmedelsvetenskaper
-MH50_002,en,master,Master's Programme in Life Science Informatics
-MH50_002,fi,master,Elämäntieteiden informatiikan maisteriohjelma
-MH50_002,sv,master,Magisterprogrammet i informatik
-MH40_003,en,master,Master's Programme in English Studiesinom livsvetenskaperna
-MH40_003,fi,master,Englannin kielen maisteriohjelma
-MH40_003,sv,master,Magisterprogrammet i engelska språket och litterature
-MH70_006,en,master,Master's Programme in European and Nordic Studiesn
-MH70_006,fi,master,Euroopan ja pohjoismaiden tutkimuksen maisteriohjelma
-MH70_006,sv,master,Magisterprogrammet i Europ
-MH70_001,en,master,Master's Programme in Philosophya- och Nordenstudier
-MH70_001,fi,master,Filosofian maisteriohjelma
-MH70_001,sv,master,Magisterprogrammet i filosofi
-MH57_003,en,master,Master's Programme in Genetics and Molecular Biosciences
-MH57_003,fi,master,Genetiikan ja molekulaaristen biotieteiden maisteriohjelma
-MH57_003,sv,master,Magisterprogrammet i genetik och molekyl
-MH50_011,en,master,Master's Programme in Geology and Geophysicsära biovetenskaper
-MH50_011,fi,master,Geologian ja geofysiikan maisteriohjelma
-MH50_011,sv,master,Magisterprogrammet i geologi och geofysik
-MH70_003,en,master,Master's Programme in Global Politics and Communication
-MH70_003,fi,master,Globaalin politiikan ja kommunikaation maisteriohjelma
-MH70_003,sv,master,Magisterprogrammet i global politi
-MH30_003,en,master,Master's Programme in Dentistryk och kommunikation
-MH30_003,fi,master,Hammaslääketieteen koulutusohjelma
-MH30_003,sv,master,Magisterprogrammet i odon
-MH40_015,en,master,Master's Programme in Historytologi
-MH40_015,fi,master,Historian maisteriohjelma
-MH40_015,sv,master,Magisterprogrammet i histori
-MH80_005,en,master,Master's Programme in Human Nutrition and Food-Related Behaviour
-MH80_005,fi,master,Ihmisen ravitsemuksen ja ruokakäyttäytymisen maisteriohjelma
-MH80_005,sv,master,Magisterprogrammet i human nutrit
-MH50_006,en,master,Master's Programme in Atmospheric Sciencesion och matbeteende
-MH50_006,fi,master,Ilmakehätieteiden maisteriohjelma
-MH50_006,sv,master,Magisterprogrammet i atmosfärsvetenskaper
-MH20_002,en,master,Master's Programme in International Business Law
-MH20_002,fi,master,Kansainvälisen liikejuridiikan maisteriohjelma
-MH20_002,sv,master,Magisterprogrammet i internati
-MH57_002,en,master,Master's Programme in Plant Biologyonell affärsjuridik
-MH57_002,fi,master,Kasvibiologian maisteriohjelma
-MH57_002,sv,master,Magisterprogrammet i växtbiologi
-MH50_013,en,master,Master's Programme in Urban Studies and Planning
-MH50_013,fi,master,Kaupunkitutkimuksen ja suunnittelun maisteriohjelma
-MH50_013,sv,master,Magisterprogrammet i urbana studier och plan
-MH50_007,en,master,Master's Programme in Chemistry and Molecular Scinecesering
-MH50_007,fi,master,Kemian ja molekyylitieteiden maisteriohjelma
-MH50_007,sv,master,Magisterprogrammet i ke
-MH40_002,en,master,Master's Programme in Languagesmi och molekylära vetenskaper
-MH40_002,fi,master,Kielten maisteriohjelma
-MH40_002,sv,master,Magisterprogrammet i språk
-MH40_009,en,master,Master's Programme in Literary Studies
-MH40_009,fi,master,Kirjallisuuden maisteriohjelma
-MH40_009,sv,master,Magisterprogrammet i litteraturvetenskap
-MH40_011,en,master,Master's Programme in Intercultural Encounters
-MH40_011,fi,master,Kulttuurienvälisen vuorovaikutuksen maisteriohjelma
-MH40_011,sv,master,Magisterprogrammet i interkulturell växelver
-MH40_013,en,master,Master's Programme in Culture and Communicationkan
-MH40_013,fi,master,Kulttuurin ja kommunikaation maisteriohjelma
-MH40_013,sv,master,Magisterprogrammet i kultur och k
-MH40_010,en,master,Master's Programme in Cultural Heritageommunikation
-MH40_010,fi,master,Kulttuuriperinnön maisteriohjelma
-MH40_010,sv,master,Magisterprogrammet i kulturarv
-MH40_006,en,master,Master's Programme in Translation and Interpreting
-MH40_006,fi,master,Kääntämisen ja tulkkauksen maisteriohjelma
-MH40_006,sv,master,Magisterprogrammet i övers
-MH30_005,en,master,Master's Programme in Logopedicsättning och tolkning
-MH30_005,fi,master,Logopedian maisteriohjelma
-MH30_005,sv,master,Magisterprogrammet i logoped
-MH30_001,en,master,Master's Programme in Medicinei
-MH30_001,fi,master,Lääketieteen koulutusohjelma
-MH30_001,sv,master,Magisterprogrammet i medicin
-MH50_012,en,master,Master's Programme in Geography
-MH50_012,fi,master,Maantieteen maisteriohjelma
-MH50_012,sv,master,Magisterprogrammet i geografi
-MH80_002,en,master,"Master's Programme in Agricultural, Environmental and Rescource Economics"
-MH80_002,fi,master,"Maatalous-, ympäristö- ja luonnonvaraekonomian maisteriohjelma"
-MH80_002,sv,master,"Magisterprogrammet i lantbruks -,
-MH80_001,en,master,Master's Programme in Agricultural Sciencesmiljö- och naturresursekonomi"
-MH80_001,fi,master,Maataloustieteiden maisteriohjelma
-MH80_001,sv,master,Magisterprogrammet i lantbruksvetenskaper
-MH50_001,en,master,Master's Programme in Mathematics and Statistics
-MH50_001,fi,master,Matematiikan ja tilastotieteen maisteriohjelma
-MH50_001,sv,master,Magisterprogrammet i matematik och statistik
-MH50_008,en,master,"Master's Programme for Teachers of Mathematics, Physics and Chemistry"
-MH50_008,fi,master,"Matematiikan, fysiikan ja kemian opettajan maisteriohjelma"
-MH50_008,sv,master,"Magisterprogrammet i ämneslärare i m
-MH50_005,en,master,Master's Programme in Materials Researchatematik, fysik och kemi"
-MH50_005,fi,master,Materiaalitutkimuksen maisteriohjelma
-MH50_005,sv,master,Magisterprogrammet i materialf
-MH80_003,en,master,Master's Programme in Forest Sciencesorskning
-MH80_003,fi,master,Metsätieteiden maisteriohjelma
-MH80_003,sv,master,Magisterprogrammet i skogsvetenskaper
-MH80_007,en,master,Master's Programme in Microbial Sciences and Biotechnology
-MH80_007,fi,master,Mikrobiologian ja mikrobibiotekniikan maisteriohjelma
-MH80_007,sv,master,Magisterprogrammet i mikrobiol
-MH57_004,en,master,Master's Programme in Neuroscienceogi och mikrobibioteknik
-MH57_004,fi,master,Neurotieteiden maisteriohjelma
-MH57_004,sv,master,Magisterprogrammet i neurovetenskap
-MH70_005,en,master,Master's Programme in Contemporary Societies
-MH70_005,fi,master,Nyky-yhteiskunnan tutkimuksen maisteriohjelma
-MH70_005,sv,master,Magisterprogrammet i moderna samhällen
-MH20_001,en,master,Master's Programme in Law
-MH20_001,fi,master,Oikeustieteen maisterin koulutusohjelma
-MH20_001,sv,master,Magisterprogrammet i rättsvetenskap
-MH40_008,en,master,Master's Programme in Scandinavian Languages and Literature
-MH40_008,fi,master,Pohjoismaisten kielten ja kirjallisuuksien maisteriohjelma
-MH40_008,sv,master,Magisterprogrammet i nordiska språk och
-MH70_002,en,master,"Master's Programme in Politics , Media and Communication"litteraturer
-MH70_002,fi,master,Politiikan ja viestinnän maisteriohjelma
-MH70_002,sv,master,"Magisterprogrammet i polit
-MH55_001,en,master,Master's Programme in Pharmacyik, medier och kommunikation"
-MH55_001,fi,master,Proviisorin koulutusohjelma
-MH55_001,sv,master,Utbildningsprogrammet för p
-MH30_004,en,master,Master's Programme in Psychologyrovisorsexamen
-MH30_004,fi,master,Psykologian maisteriohjelma
-MH30_004,sv,master,Magisterprogrammet i pykologi
-MH70_008,en,master,Master's Programme in Social Research
-MH70_008,fi,master,Sosiaalitieteiden maisteriohjelma
-MH70_008,sv,master,Magisterprogrammet i sociala vetenska
-MH40_014,en,master,Master's Programme in Gender Studiesper
-MH40_014,fi,master,Sukupuolentutkimuksen maisteriohjelma
-MH40_014,sv,master,Magisterprogrammet i genusvetenskap
-MH40_007,en,master,Master's Programme in Finnish and Finno-Ugrian Languages and Cultures
-MH40_007,fi,master,Suomen kielen ja suomalais-ugrilaisten kielten ja kulttuurien maisteriohjelma
-MH40_007,sv,master,Magisterprogrammet i finska och finsk
-MH40_001,en,master,Master's Programme in Art Studiesugriska språk och kulturer
-MH40_001,fi,master,Taiteiden tutkimuksen maisteriohjelma
-MH40_001,sv,master,Magisterprogrammet i konstfor
-MH70_009,en,master,Master's Programme in Economicsskning
-MH70_009,fi,master,Taloustieteen maisteriohjelma
-MH70_009,sv,master,Magisterprogrammet i ekonomi
-MH10_001,en,master,Master's Programme in Theology and Religious Studies
-MH10_001,fi,master,Teologian ja uskonnontutkimuksen maisteriohjelma
-MH10_001,sv,master,Magisterprogrammet i teologi och religionsforskning
-MH50_003,en,master,Master's Programme in Theoretical and Computational Methods
-MH50_003,fi,master,Teoreettisten ja laskennallisten menetelmien maisteriohjelma
-MH50_003,sv,master,Magisterprogrammet i teoretiska och berä
-MH50_009,en,master,Master's Programme in Computer Sciencekningsmetoder
-MH50_009,fi,master,Tietojenkäsittelytieteen maisteriohjelma
-MH50_009,sv,master,Magisterprogrammet i datavetenskap
-MH30_002,en,master,Master's Programme in Translational Medicine
-MH30_002,fi,master,Translationaalisen lääketieteen maisteriohjelma
-MH30_002,sv,master,Magisterprogrammet i translationell
-MH40_004,en,master,Master's Programme in Russian Studies medicin
-MH40_004,fi,master,Venäjän tutkimuksen maisteriohjelma
-MH40_004,sv,master,Magisterprogrammet i ryska studier
-MH70_004,en,master,Master's Programme in Society and Change
-MH70_004,fi,master,Yhteiskunnallisen muutoksen maisteriohjelma
-MH70_004,sv,master,Magisterprogrammet för samhälle i förändring
-MH57_005,en,master,Master's Programme in Environmental Change and Global Sustainability
-MH57_005,fi,master,Ympäristömuutoksen ja globaalin kestävyyden maisteriohjelma
-MH57_005,sv,master,Magisterprogrammet i miljöförändringar och global hållbarhet
+identifier,type,name
+KH57_001,bachelor,"Bachelor's Programme in Biology"
+KH90_001,bachelor,"Bachelor's Programme in Food Sciences"
+KH80_003,bachelor,"Bachelor's Programme in Veterinary Medicine,svetenskaper"
+KH55_001,bachelor,"Bachelor 's Programme in Pharmacynärmedicin"
+KH40_001,bachelor,"Bachelor 's Programme in Philosophyör farmaceutexamen"
+KH50_002,bachelor,"Bachelor's Programme in Physical Sciences"
+KH50_006,bachelor,"Bachelor 's Programme in Geoscienceskaliska vetenskaper"
+KH40_006,bachelor,"Bachelor 's Programme in Historyeovetenskap"
+KH74_001,bachelor,"Bachelor 's Programme in Education"
+KH60_001,bachelor,"Bachelor's Programme in Chemistryi pedagogik"
+KH50_003,bachelor,"Bachelor's Programme in Languages kemi"
+KH40_003,bachelor,"Bachelor's Programme in the Languages and Literatures of Finland"
+KH40_004,bachelor,"Bachelor's Programme in Cultural Studiesh nordiska språk och litteraturer"
+KH40_005,bachelor,"Bachelor's Programme in Logopedicslturforskning"
+KH30_002,bachelor,"Bachelor's Programme in Geographyopedi"
+KH50_007,bachelor,"Bachelor 's Programme in Agricultural Sciences"
+KH80_001,bachelor,"Bachelor's Programme in Mathematical Sciencesaper"
+KH50_001,bachelor,"Bachelor's Programme for Teachers of Mathematics, Physics and Chemistry"
+KH50_004,bachelor,"Bachelor's Programme in Forestryeachers of Mathematics, Physics and Chemistry"
+KH80_002,bachelor,"Bachelor's Programme in Molecular Biosciencesper"
+KH57_002,bachelor,"Bachelor's Programme in Lawa biovetenskaper"
+KH20_001,bachelor,"Bachelor's Programme in Politics, Media and Communicatione"
+KH70_001,bachelor,"Bachelor's Programme in Psychologylitik, medier och kommunikation"
+KH30_001,bachelor,"Bachelor's Programme in Social Research"
+KH70_003,bachelor,"Bachelor's Programme in Art Studiesskaper"
+KH40_002,bachelor,"Bachelor's Programme in Economicsforskning"
+KH70_004,bachelor,"Bachelor's Programme in Theology and Religious Studies"
+KH10_001,bachelor,"Bachelor's Programme in Computer Sciencegionsforskning"
+KH50_005,bachelor,"Bachelor's Programme in Society and Change"
+KH70_002,bachelor,"Bachelor's Programme in Social Sciences i samhälle"
+KH80_004,bachelor,"Bachelor's Programme in Environmental and Food Economics"
+KH57_003,bachelor,"Bachelor's Programme in Environmental Sciences livsmedelsekonomi"
+MH50_004,master,"Master's Programme in Particle Physics and Astrophysical Sciences"
+MH40_012,master,"Master's Programme in Area and Cultural Studiesh astrofysikaliska vetenskaper"
+MH50_010,master,"Master's Programme in Data Sience- och kulturstudier"
+MH40_005,master,"Master's Programme in Digital Linquistics Diversity in the Digital Age"
+MH57_001,master,"Master's Programme in Ecology and Evolutionary Biologygitala metoder"
+MH90_001,master,"Degree Programme in Veterinary Medicinelogi"
+MH80_006,master,"Master's Programme in Food Economy and Consumption"
+MH80_004,master,"Master's Programme in Food Sciencesmi och konsumtion"
+MH50_002,master,"Master's Programme in Life Science Informatics"
+MH40_003,master,"Master's Programme in English Studiesinom livsvetenskaperna"
+MH70_006,master,"Master's Programme in European and Nordic Studiesn"
+MH70_001,master,"Master's Programme in Philosophya- och Nordenstudier"
+MH57_003,master,"Master's Programme in Genetics and Molecular Biosciences"
+MH50_011,master,"Master's Programme in Geology and Geophysicsära biovetenskaper"
+MH70_003,master,"Master's Programme in Global Politics and Communication"
+MH30_003,master,"Master's Programme in Dentistryk och kommunikation"
+MH40_015,master,"Master's Programme in Historytologi"
+MH80_005,master,"Master's Programme in Human Nutrition and Food-Related Behaviour"
+MH50_006,master,"Master's Programme in Atmospheric Sciencesion och matbeteende"
+MH20_002,master,"Master's Programme in International Business Law"
+MH57_002,master,"Master's Programme in Plant Biologyonell affärsjuridik"
+MH50_013,master,"Master's Programme in Urban Studies and Planning"
+MH50_007,master,"Master's Programme in Chemistry and Molecular Scinecesering"
+MH40_002,master,"Master's Programme in Languagesmi och molekylära vetenskaper"
+MH40_009,master,"Master's Programme in Literary Studies"
+MH40_011,master,"Master's Programme in Intercultural Encounters"
+MH40_013,master,"Master's Programme in Culture and Communicationkan"
+MH40_010,master,"Master's Programme in Cultural Heritageommunikation"
+MH40_006,master,"Master's Programme in Translation and Interpreting"
+MH30_005,master,"Master's Programme in Logopedicsättning och tolkning"
+MH30_001,master,"Master's Programme in Medicinei"
+MH50_012,master,"Master's Programme in Geography"
+MH80_002,master,"Master's Programme in Agricultural, Environmental and Rescource Economics"
+MH80_001,master,"Master's Programme in Agricultural Sciencesmiljö- och naturresursekonomi"
+MH50_001,master,"Master's Programme in Mathematics and Statistics"
+MH50_008,master,"Master's Programme for Teachers of Mathematics, Physics and Chemistry"
+MH50_005,master,"Master's Programme in Materials Researchatematik, fysik och kemi"
+MH80_003,master,"Master's Programme in Forest Sciencesorskning"
+MH80_007,master,"Master's Programme in Microbial Sciences and Biotechnology"
+MH57_004,master,"Master's Programme in Neuroscienceogi och mikrobibioteknik"
+MH70_005,master,"Master's Programme in Contemporary Societies"
+MH20_001,master,"Master's Programme in Law"
+MH40_008,master,"Master's Programme in Scandinavian Languages and Literature"
+MH70_002,master,"Master's Programme in Politics , Media and Communicationlitteraturer"
+MH55_001,master,"Master's Programme in Pharmacyik, medier och kommunikation"
+MH30_004,master,"Master's Programme in Psychologyrovisorsexamen"
+MH70_008,master,"Master's Programme in Social Research"
+MH40_014,master,"Master's Programme in Gender Studiesper"
+MH40_007,master,"Master's Programme in Finnish and Finno-Ugrian Languages and Cultures"
+MH40_001,master,"Master's Programme in Art Studiesugriska språk och kulturer"
+MH70_009,master,"Master's Programme in Economicsskning"
+MH10_001,master,"Master's Programme in Theology and Religious Studies"
+MH50_003,master,"Master's Programme in Theoretical and Computational Methods"
+MH50_009,master,"Master's Programme in Computer Sciencekningsmetoder"
+MH30_002,master,"Master's Programme in Translational Medicine"
+MH40_004,master,"Master's Programme in Russian Studies medicin"
+MH70_004,master,"Master's Programme in Society and Change"
+MH57_005,master,"Master's Programme in Environmental Change and Global Sustainability"
