@@ -70,8 +70,14 @@
  *   in different view modes.
  */
 #}
+{%
+  set article_classes = [
+    node.bundle|clean_class,
+    view_mode ? node.bundle|clean_class ~ '--' ~ view_mode|clean_class,
+  ]
+%}
 
-<article class="article--teaser">
+<article {{ attributes.addClass(article_classes) }}>
   <h4 class="article__title"> {{ label }} </h4>
   <div class="article__content"> {{ content }} </div>
 </article>

@@ -1,0 +1,18 @@
+.theme--full {
+  .article__intro p {
+    color: $lightgray;
+    @include font-size(20px);
+  }
+}
+
+.theme--teaser {
+  background: $silver;
+  width: 10em;
+  height: 10em;
+  text-align: center;
+  padding: 1em;
+
+  @include breakpoint($small) {
+    flex: 0 31%;
+  }
+}

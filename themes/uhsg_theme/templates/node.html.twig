@@ -70,6 +70,12 @@
  *   in different view modes.
  */
 #}
+{%
+  set article_classes = [
+    node.bundle|clean_class,
+    view_mode ? node.bundle|clean_class ~ '--' ~ view_mode|clean_class,
+  ]
+%}
 
 {%
   set container_classes = [
@@ -79,7 +85,7 @@
   ]
 %}
 
-<article class="article--full">
+<article {{ attributes.addClass(article_classes) }}>
   <div{{ content_attributes.addClass(container_classes) }}>
     <h1> {{ label }} </h1>
     {{ content|without('field_article_paragraph') }}

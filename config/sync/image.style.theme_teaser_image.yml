@@ -1,0 +1,14 @@
+uuid: b2c866c5-2f66-4796-81c5-7e030ca54a5a
+langcode: en
+status: true
+dependencies: {  }
+name: theme_teaser_image
+label: 'Theme teaser image'
+effects:
+  0e9fdfde-d2e2-4e66-9a5b-e464934d3614:
+    uuid: 0e9fdfde-d2e2-4e66-9a5b-e464934d3614
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 200
+      height: 200
