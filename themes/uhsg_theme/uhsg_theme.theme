@@ -46,7 +46,6 @@ function uhsg_theme_preprocess_links__node(&$variables) {
   $variables['attributes']['class'] = [];
 }
 
-
 /**
  * Implements hook_preprocess_HOOK() for menus.
  * Add classes needed by styleguide.
