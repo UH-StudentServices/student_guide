@@ -77,7 +77,14 @@
   ]
 %}
 
+{%
+  set title_classes = [
+    node.bundle|clean_class ~ '__title',
+  ]
+%}
+
+
 <article {{ attributes.addClass(article_classes) }}>
-  <a href="{{ url }}" rel="bookmark"> <h4 class="article__title"> {{ label }} </h4></a>
+  <a href="{{ url }}" rel="bookmark"> <h4 {{ title_attributes.addClass(title_classes) }}> {{ label }} </h4></a>
   {{ content }}
 </article>

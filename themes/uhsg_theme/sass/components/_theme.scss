@@ -6,15 +6,36 @@
 }
 
 .theme--teaser {
-  background: $silver;
+  background: $black;
+  position: relative;
+  flex: 1 100%;
   display: flex;
   align-items: center;
-  width: 17em;
-  height: 17em;
+  overflow: hidden;
+
   margin-bottom: 2em;
-  padding: 1em;
-  .article__title {
+  padding: 2em;
+  .theme__title {
     @include font-size(35px);
+    position: relative;
+    z-index: 1;
     color: $white;
+  }
+
+  .theme__teaser-image {
+    position: absolute;
+    opacity: 0.5;
+    left: 0;
+    top: 0;
+  }
+
+  @include breakpoint($small) {
+    width: 15em;
+    height: 15em;
+    flex: 0 auto;
+  }
+  @include breakpoint($large) {
+    width: 17em;
+    height: 17em;
   }
 }
