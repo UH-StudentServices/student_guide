@@ -22,7 +22,7 @@ content:
     third_party_settings: {  }
   field_theme_articles:
     weight: 102
-    label: hidden
+    label: above
     settings:
       view_mode: teaser
       link: false

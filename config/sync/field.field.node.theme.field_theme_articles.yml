@@ -10,7 +10,7 @@ id: node.theme.field_theme_articles
 field_name: field_theme_articles
 entity_type: node
 bundle: theme
-label: Articles
+label: Instructions
 description: ''
 required: false
 translatable: true
