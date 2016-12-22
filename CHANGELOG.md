@@ -11,3 +11,4 @@
   HUB-32: Added Social Media Links to footer.
   HUB-3: Theme article content type.
   HUB-3: Theme article teaser.
+  HUB-50: Theme listing in frontpage.

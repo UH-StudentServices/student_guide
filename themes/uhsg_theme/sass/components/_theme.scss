@@ -1,5 +1,5 @@
 .theme--full {
-  .article__intro p {
+  .theme__body p {
     color: $lightgray;
     @include font-size(20px);
   }
@@ -7,12 +7,14 @@
 
 .theme--teaser {
   background: $silver;
-  width: 10em;
-  height: 10em;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  width: 17em;
+  height: 17em;
+  margin-bottom: 2em;
   padding: 1em;
-
-  @include breakpoint($small) {
-    flex: 0 31%;
+  .article__title {
+    @include font-size(35px);
+    color: $white;
   }
 }

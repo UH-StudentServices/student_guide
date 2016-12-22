@@ -78,6 +78,6 @@
 %}
 
 <article {{ attributes.addClass(article_classes) }}>
-  <h4 class="article__title"> {{ label }} </h4>
-  <div class="article__content"> {{ content }} </div>
+  <a href="{{ url }}" rel="bookmark"> <h4 class="article__title"> {{ label }} </h4></a>
+  {{ content }}
 </article>
