@@ -71,7 +71,7 @@
  */
 #}
 {%
-  set article_classes = [
+  set node_classes = [
     node.bundle|clean_class,
     view_mode ? node.bundle|clean_class ~ '--' ~ view_mode|clean_class,
   ]
@@ -84,7 +84,7 @@
 %}
 
 
-<article {{ attributes.addClass(article_classes) }}>
+<article {{ attributes.addClass(node_classes) }}>
   <a href="{{ url }}" rel="bookmark"> <h4 {{ title_attributes.addClass(title_classes) }}> {{ label }} </h4></a>
   {{ content }}
 </article>

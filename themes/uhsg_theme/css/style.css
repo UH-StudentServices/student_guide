@@ -5029,36 +5029,37 @@ a:hover .theme-dark .list-of-links__link:after {
   -webkit-flex: 1 100%;
       -ms-flex: 1 100%;
           flex: 1 100%;
+  overflow: hidden;
+  margin-bottom: 2em;
+}
+
+.theme--teaser .theme__title {
+  position: relative;
+  z-index: 1;
+  color: #FFF;
+}
+
+.theme--teaser .theme__link-wrapper {
+  height: 100%;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  overflow: hidden;
-  margin-bottom: 2em;
   padding: 2em;
-}
-
-.theme--teaser .theme__title {
-  font-size: 30.625px;
-  font-size: 2.1875rem;
-  position: relative;
-  z-index: 1;
-  color: #FFF;
-}
-
-@media (min-width: 48em) {
-  .theme--teaser .theme__title {
-    font-size: 35px;
-  }
 }
 
 .theme--teaser .theme__teaser-image {
   position: absolute;
-  opacity: 0.5;
+  opacity: 0.6;
+  transition: opacity 0.2s ease-in-out;
   left: 0;
   top: 0;
+}
+
+.theme--teaser:hover .theme__teaser-image {
+  opacity: 0.4;
 }
 
 @media (min-width: 48em) {

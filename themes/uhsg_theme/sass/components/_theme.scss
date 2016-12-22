@@ -9,24 +9,34 @@
   background: $black;
   position: relative;
   flex: 1 100%;
-  display: flex;
-  align-items: center;
   overflow: hidden;
-
   margin-bottom: 2em;
-  padding: 2em;
+  
   .theme__title {
-    @include font-size(35px);
     position: relative;
     z-index: 1;
     color: $white;
   }
 
+  .theme__link-wrapper {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 2em;
+  }
+
   .theme__teaser-image {
     position: absolute;
-    opacity: 0.5;
+    opacity: 0.6;
+    transition: opacity 0.5 ease-in-out;
     left: 0;
     top: 0;
+  }
+
+  &:hover {
+    .theme__teaser-image {
+      opacity: 0.4;
+    }
   }
 
   @include breakpoint($small) {
