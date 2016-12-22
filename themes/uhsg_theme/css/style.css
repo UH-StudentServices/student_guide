@@ -4946,6 +4946,9 @@ article.article--full .article__intro p {
 
 article.article--teaser {
   border: 1px solid #EBEBEB;
+  -webkit-flex: 1 100%;
+      -ms-flex: 1 100%;
+          flex: 1 100%;
   position: relative;
   margin-bottom: 2em;
   padding: 1em 1em 2em 1em;
@@ -4978,9 +4981,9 @@ article.article--teaser .node__links {
 
 @media (min-width: 48em) {
   article.article--teaser {
-    -webkit-flex: 0 0 31%;
-        -ms-flex: 0 0 31%;
-            flex: 0 0 31%;
+    -webkit-flex: 0 31%;
+        -ms-flex: 0 31%;
+            flex: 0 31%;
   }
 }
 
