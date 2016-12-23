@@ -1,0 +1,45 @@
+uuid: 71d5bd43-cd37-4646-aa61-6fdd2216c78c
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - uhsg_some_links
+_core:
+  default_config_hash: J4LIKXmHmxApgYUBtQLIvbJ4fl93gj9r2bjkHa2nuIs
+id: some_links
+migration_tags: null
+migration_group: uhsg_initials
+label: 'Social Media links migration'
+source:
+  plugin: csv
+  path: /artifacts/some_links.csv
+  header_row_count: 1
+  default_lang: true
+  keys:
+    - id
+  column_names:
+    -
+      id: Identifier
+    -
+      link_name: 'Link name'
+    -
+      icon_class: 'Icon class'
+    -
+      url: URL
+process:
+  name: link_name
+  url: url
+  icon_class: icon_class
+  user_id:
+    plugin: default_value
+    default_value: 1
+  status:
+    plugin: default_value
+    default_value: 1
+  langcode:
+    plugin: default_value
+    default_value: en
+destination:
+  plugin: 'entity:some_links'
+migration_dependencies: null
