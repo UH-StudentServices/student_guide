@@ -14,3 +14,10 @@ regions:
   content: Content
   footer: Footer
 
+libraries-override:
+  classy/base:
+    css:
+      component:
+        css/components/menu.css: false
+
+

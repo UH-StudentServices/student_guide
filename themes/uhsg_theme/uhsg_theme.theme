@@ -79,6 +79,12 @@ function uhsg_theme_preprocess_menu(&$variables) {
     $variables['attributes']['class'][] = $menu_classes;
     foreach ($variables['items'] as &$item) {
       $item['attributes']->addClass($link_classes);
+
+      // we want a different active-class than what drupal provides.
+      $current_path = \Drupal::request()->getRequestUri();
+      if ($item['url']->toString() == $current_path) {
+        $item['is_active'] = TRUE;
+      }
     }
   }
 }
