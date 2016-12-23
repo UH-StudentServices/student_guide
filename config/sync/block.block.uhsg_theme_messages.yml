@@ -11,12 +11,12 @@ _core:
 id: uhsg_theme_messages
 theme: uhsg_theme
 region: before_content
-weight: -3
+weight: -4
 provider: null
 plugin: system_messages_block
 settings:
   id: system_messages_block
-  label: 'Status messages'
+  label: Tilaviestit
   provider: system
   label_display: '0'
 visibility: {  }
