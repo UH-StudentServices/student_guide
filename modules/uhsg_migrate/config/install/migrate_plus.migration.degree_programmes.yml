@@ -21,9 +21,6 @@ source:
       name: Name
 process:
   name: name
-  user_id:
-    plugin: default_value
-    default_value: 1
   langcode:
     plugin: default_value
     default_value: en

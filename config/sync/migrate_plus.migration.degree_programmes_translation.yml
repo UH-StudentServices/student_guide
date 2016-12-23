@@ -29,9 +29,6 @@ process:
     source: identifier
     migration: degree_programmes
   name: name
-  user_id:
-    plugin: default_value
-    default_value: 1
   langcode: langcode
 destination:
   plugin: 'entity:taxonomy_term'
