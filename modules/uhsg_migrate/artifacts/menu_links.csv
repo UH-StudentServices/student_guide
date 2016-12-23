@@ -1,0 +1,25 @@
+id,menu_name,title,link_uri
+1,header-links-fi,Flamma,https://flamma.helsinki.fi/portal/home/login
+2,header-links-fi,Helsingin Kaupunki,http://www.hel.fi/www/helsinki/fi
+3,header-links-en,Flamma,https://flamma.helsinki.fi/portal/home/login
+4,header-links-en,City of Helsinki,http://www.hel.fi/www/helsinki/en
+5,header-links-sv,Flamma,https://flamma.helsinki.fi/portal/home/login
+6,header-links-sv,Helsingfors stad,http://www.hel.fi/www/helsinki/sv
+7,footer-links-fi,Yhteystiedot,https://www.helsinki.fi/fi/yhteystiedot
+8,footer-links-en,Yhteystiedot,https://www.helsinki.fi/en/contact-information
+9,footer-links-sv,Kontakt,https://www.helsinki.fi/sv/kontaktuppgifter
+10,footer-links-fi,Medialle,https://www.helsinki.fi/fi/ajankohtaista/medialle
+11,footer-links-en,Press och Media,https://www.helsinki.fi/en/news/press-and-media
+12,footer-links-sv,Press och media,https://www.helsinki.fi/sv/aktuellt/press-och-media
+13,footer-links-fi,Kirjasto,http://www.helsinki.fi/kirjasto/en
+14,footer-links-en,Library,http://www.helsinki.fi/kirjasto
+15,footer-links-sv,Bibliotek,http://www.helsinki.fi/kirjasto/sv
+16,footer-links-fi,Flamma,https://flamma.helsinki.fi/portal/home/login
+17,footer-links-en,Flamma,https://flamma.helsinki.fi/portal/home/login
+18,footer-links-sv,Flamma,https://flamma.helsinki.fi/portal/home/login
+19,footer-links-fi,Tietoa sivustosta,https://www.helsinki.fi/fi/yliopisto/tietoa-sivustosta
+20,footer-links-en,About the website,https://www.helsinki.fi/en/university/about-the-website
+21,footer-links-sv,Information om webbplatsen,https://www.helsinki.fi/sv/universitetet/information-om-webbplatsen
+22,footer-links-fi,Anna palautetta,https://www.helsinki.fi/fi/anna-palautetta
+23,footer-links-en,Give Feedback,https://www.helsinki.fi/en/give-feedback
+24,footer-links-sv,Ge respons,https://www.helsinki.fi/sv/ge-respons
