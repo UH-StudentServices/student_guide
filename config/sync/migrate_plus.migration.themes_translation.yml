@@ -5,7 +5,7 @@ dependencies: {  }
 id: themes_translation
 migration_tags: null
 migration_group: uhsg_initials
-label: Themes
+label: 'Themes (translations)'
 source:
   plugin: csv
   default_lang: false
