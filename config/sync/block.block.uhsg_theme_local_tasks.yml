@@ -9,12 +9,12 @@ _core:
 id: uhsg_theme_local_tasks
 theme: uhsg_theme
 region: before_content
-weight: -5
+weight: -4
 provider: null
 plugin: local_tasks_block
 settings:
   id: local_tasks_block
-  label: Välilehdet
+  label: Tabs
   provider: core
   label_display: '0'
   primary: true
