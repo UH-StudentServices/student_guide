@@ -24,16 +24,16 @@
   We call a macro which calls itself to render the full tree.
   @see http://twig.sensiolabs.org/doc/tags/macro.html
 #}
-{{ menus.menu_links(items, attributes, 0, logo_path) }}
+{{ menus.menu_links(items, attributes, 0, home_link) }}
 
-{% macro menu_links(items, attributes, menu_level, logo_path) %}
+{% macro menu_links(items, attributes, menu_level, home_link) %}
   {% import _self as menus %}
   {% if items %}
     <ul{{ attributes }}>
 
-      {% if logo_path %}
-        <li class="is-lvl1 menu-item main-menu__front">
-          {{ link('Home', logo_path) }}
+      {% if home_link %}
+        <li class="{{ home_link.classes }}">
+          {{ link('Home', home_link.link) }}
         </li>  
       {% endif %} 
 

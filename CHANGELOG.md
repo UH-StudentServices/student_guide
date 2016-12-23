@@ -13,3 +13,4 @@
   HUB-3: Theme article teaser.
   HUB-57: Automatic path aliases for nodes.
   HUB-50: Theme listing in frontpage.
+  HUB-32: Main navigation.
