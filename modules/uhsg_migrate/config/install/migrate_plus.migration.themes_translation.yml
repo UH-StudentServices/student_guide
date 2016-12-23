@@ -1,0 +1,39 @@
+langcode: en
+status: true
+dependencies: {  }
+id: themes_translation
+migration_tags: null
+migration_group: uhsg_initials
+label: 'Themes (translations)'
+source:
+  plugin: csv
+  default_lang: false
+  path: /artifacts/themes_translation.csv
+  header_row_count: 1
+  keys:
+    - id
+    - langcode
+  column_names:
+  column_names:
+    -
+      id: Identifier
+    -
+      langcode: Language code
+    -
+      name: Name
+process:
+  nid:
+    plugin: migration
+    source: id
+    migration: themes
+  title: name
+  type:
+    plugin: default_value
+    default_value: theme
+  uid:
+    plugin: default_value
+    default_value: 1
+  langcode: langcode
+destination:
+  plugin: 'entity:node'
+  translations: true

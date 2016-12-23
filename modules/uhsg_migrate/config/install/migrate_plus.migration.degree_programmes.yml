@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies: {  }
+id: degree_programmes
+migration_tags: null
+migration_group: uhsg_initials
+label: 'Degree programmes'
+source:
+  plugin: csv
+  default_lang: true
+  path: /artifacts/degree_programmes.csv
+  header_row_count: 1
+  keys:
+    - identifier
+  column_names:
+    -
+      identifier: Identifier
+    -
+      type: Type
+    -
+      name: Name
+process:
+  name: name
+  langcode:
+    plugin: default_value
+    default_value: en
+destination:
+  plugin: 'entity:taxonomy_term'
+  default_bundle: degree_programme

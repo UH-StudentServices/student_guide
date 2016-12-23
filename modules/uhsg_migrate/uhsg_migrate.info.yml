@@ -1,0 +1,9 @@
+name: Student Guide Migrate
+type: module
+descipriton: Specifies migrations that is done for student guide.
+core: 8.x
+package: Migration
+dependencies:
+  - migrate_source_csv
+  - migrate_plus
+  - migrate_tools

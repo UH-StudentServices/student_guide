@@ -1,0 +1,39 @@
+uuid: 801112bb-030a-4e95-baed-2583c0efe212
+langcode: en
+status: true
+dependencies: {  }
+id: degree_programmes_translation
+migration_tags: null
+migration_group: uhsg_initials
+label: 'Degree programmes (translations)'
+source:
+  plugin: csv
+  default_lang: false
+  path: /artifacts/degree_programmes_translation.csv
+  header_row_count: 1
+  keys:
+    - identifier
+    - langcode
+  column_names:
+    -
+      identifier: Identifier
+    -
+      langcode: 'Language code'
+    -
+      type: Type
+    -
+      name: Name
+process:
+  tid:
+    plugin: migration
+    source: identifier
+    migration: degree_programmes
+  name: name
+  langcode: langcode
+destination:
+  plugin: 'entity:taxonomy_term'
+  default_bundle: degree_programme
+  translations: true
+migration_dependencies:
+  optional:
+    - degree_programmes
