@@ -31,3 +31,4 @@ process:
 destination:
   plugin: 'entity:taxonomy_term'
   default_bundle: degree_programme
+migration_dependencies: null

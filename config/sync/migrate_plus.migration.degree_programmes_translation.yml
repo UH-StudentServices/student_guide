@@ -1,4 +1,5 @@
 uuid: 801112bb-030a-4e95-baed-2583c0efe212
+langcode: en
 status: true
 dependencies: {  }
 id: degree_programmes_translation
