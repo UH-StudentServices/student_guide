@@ -10,7 +10,7 @@ dependencies:
     - uhsg_theme
 id: mainnavigation
 theme: uhsg_theme
-region: before_content
+region: navigation
 weight: -5
 provider: null
 plugin: 'system_menu_block:main'
