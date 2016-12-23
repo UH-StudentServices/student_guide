@@ -1,0 +1,24 @@
+uuid: 38d38652-0b39-4639-8d2f-d159d69a2424
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.degree_programmes
+  module:
+    - views
+  theme:
+    - uhsg_theme
+id: views_block__degree_programmes_block_1
+theme: uhsg_theme
+region: before_content
+weight: -5
+provider: null
+plugin: 'views_block:degree_programmes-block_1'
+settings:
+  id: 'views_block:degree_programmes-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility: {  }
