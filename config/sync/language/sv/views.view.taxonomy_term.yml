@@ -24,7 +24,5 @@ display:
           exception:
             title: Alla
           title: '{{ arguments.tid }}'
-  feed_1:
-    display_title: Innehållsflöde
   page_1:
     display_title: Sida
