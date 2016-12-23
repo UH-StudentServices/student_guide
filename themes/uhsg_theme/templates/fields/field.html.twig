@@ -36,18 +36,23 @@
  * @see template_preprocess_field()
  */
 #}
+{%
+  set classes = [
+    element['#bundle']|clean_class ~ '__' ~ label|clean_class
+  ]
+%}
 
 {% if not label_hidden %}
   <h3{{ title_attributes }}>{{ label }}</h3>
 {% endif %}
 {% if multiple %}
-  <div{{ attributes }}>
+  <div{{ attributes.addClass(classes) }}>
     {% for item in items %}
       {{ item.content }}
     {% endfor %}
   </div>
 {% else %}
   {% for item in items %}
-    <div{{ attributes }}>{{ item.content }}</div>
+    <div{{ attributes.addClass(classes) }}>{{ item.content }}</div>
   {% endfor %}
 {% endif %}

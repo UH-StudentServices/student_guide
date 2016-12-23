@@ -89,11 +89,21 @@ function uhsg_theme_preprocess_field(array &$variables, $hook) {
         $item['content']['#options']['attributes']['class'][] = 'list-of-links__link button--action icon--arrow-right';
       }
       break;
-    case 'body':
-      $variables['attributes']['class'][] = 'article__intro';
-      break;
     case 'field_theme_articles':
       $variables['title_attributes']['class'][] = 'tube';
       $variables['attributes']['class'][] = 'grid-container';
+      break;
   }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for views.
+ */
+function uhsg_theme_preprocess_views_view(&$variables) {
+  switch ($variables['view']->id()) {
+    case 'themes':
+      $variables['attributes']['class'][] = 'grid-container';
+      break;
+  }
+
 }

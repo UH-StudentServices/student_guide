@@ -78,17 +78,13 @@
 %}
 
 {%
-  set container_classes = [
-    'container',
-    'tube--large',
-    'article__content'
+  set title_classes = [
+    node.bundle|clean_class ~ '__title',
   ]
 %}
 
 <article {{ attributes.addClass(node_classes) }}>
-  <div{{ content_attributes.addClass(container_classes) }}>
-    <h1> {{ label }} </h1>
-    {{ content|without('field_article_paragraph') }}
-  </div>
-  {{ content.field_article_paragraph }}
+  <a href="{{ url }}" rel="bookmark" class="theme__link-wrapper"> <h2 {{ title_attributes.addClass(title_classes) }}> {{ label }} </h2>
+  {{ content }}
+  </a>
 </article>

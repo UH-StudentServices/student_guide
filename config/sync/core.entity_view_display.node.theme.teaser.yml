@@ -5,24 +5,28 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.theme.body
+    - field.field.node.theme.field_theme_articles
+    - field.field.node.theme.field_theme_teaser_image
+    - image.style.theme_teaser_image
     - node.type.theme
   module:
-    - text
+    - image
     - user
 id: node.theme.teaser
 targetEntityType: node
 bundle: theme
 mode: teaser
 content:
-  body:
+  field_theme_teaser_image:
+    type: image
+    weight: 0
     label: hidden
-    type: text_summary_or_trimmed
-    weight: 101
     settings:
-      trim_length: 600
+      image_style: theme_teaser_image
+      image_link: ''
     third_party_settings: {  }
-  links:
-    weight: 100
 hidden:
+  body: true
   field_theme_articles: true
   langcode: true
+  links: true

@@ -1,31 +1,28 @@
-article {
-  &.article--full {
-    .article__intro p {
-      color: $lightgray;
-      @include font-size(20px);
-    }
+.article--full {
+  .article__body p {
+    color: $lightgray;
+    @include font-size(20px);
+  }
+}
+
+.article--teaser {
+  @include border;
+  @include text-informative;
+  flex: 1 100%;
+  position: relative;
+  margin-bottom: 2em;
+  padding: 1em 1em 2em 1em;
+
+  .article__body p {
+    font-size: inherit;
+    margin-top: 1em;
   }
 
-  &.article--teaser {
-    @include border;
-    flex: 1 100%;
-    position: relative;
-    margin-bottom: 2em;
-    padding: 1em 1em 2em 1em;
-
-    .article__intro p {
-      font-size: inherit;
-    }
-    .article__content {
-      @include text-informative;
-      margin: 1em 0 0;
-    }
-    .node__links {
-      position: absolute;
-      bottom: 1em;
-    }
-    @include breakpoint($small) {
-      flex: 0 31%;
-    }
+  .node__links {
+    position: absolute;
+    bottom: 1em;
+  }
+  @include breakpoint($small) {
+    flex: 0 31%;
   }
 }
