@@ -51,10 +51,12 @@
   </header>
 {% endif %}
 
+{% if page.navigation %}
+  {{ page.navigation }}
+{% endif %}
+
 {% if page.before_content %}
-  <div class="container">
-    {{ page.before_content }}
-  </div>
+  {{ page.before_content }}
 {% endif %}
 
 {{ page.breadcrumb }}
