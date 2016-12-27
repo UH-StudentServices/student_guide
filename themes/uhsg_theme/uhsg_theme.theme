@@ -131,10 +131,8 @@ function uhsg_theme_preprocess_views_view(&$variables) {
         $term_translated = \Drupal::service('entity.repository')->getTranslationFromContext($term);
         $variables['title'] = $term_translated->getName();
       }
-      elseif ($term) {
-        if ($term->bundle() == 'degree_programme') {
-          $variables['title'] = $term->getName();
-        }
+      elseif ($term && $term->bundle() == 'degree_programme') {
+        $variables['title'] = $term->getName();
       }
       else {
         $variables['title'] = t("Can't figure out the active study programme. Sorry :(");
