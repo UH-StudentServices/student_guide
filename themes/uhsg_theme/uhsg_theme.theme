@@ -151,3 +151,8 @@ function uhsg_theme_preprocess_block(array &$variables) {
       break;
   }
 }
+
+function uhsg_theme_preprocess_views_exposed_form(&$variables) {
+  $variables['form']['name']['#attributes']['placeholder'] = t('Name of degree programme');
+  $variables['form']['actions']['submit']['#suffix'] = '<i class="icon--search"></i>';
+}

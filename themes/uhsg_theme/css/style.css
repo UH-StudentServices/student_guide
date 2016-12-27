@@ -5546,6 +5546,44 @@ a:hover .theme-dark .list-of-links__link:after {
   padding: 0.3em 0;
 }
 
+.degree-programme-switcher .degree-programme-switcher__search {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.degree-programme-switcher .degree-programme-switcher__search input[type="text"] {
+  font-size: 12.25px;
+  font-size: 0.875rem;
+  border: 2px solid #0098d0;
+  padding: 0.5em;
+}
+
+@media (min-width: 48em) {
+  .degree-programme-switcher .degree-programme-switcher__search input[type="text"] {
+    font-size: 14px;
+  }
+}
+
+.degree-programme-switcher .degree-programme-switcher__search input[type="submit"] {
+  padding: 0;
+  margin: 0;
+  width: 35px;
+  font-size: 0;
+  z-index: 10;
+  background: transparent;
+}
+
+.degree-programme-switcher .degree-programme-switcher__search input[type="submit"] + i {
+  width: 35px;
+  right: 35px;
+  line-height: 35px;
+  color: #FFF;
+  background: #0098d0;
+  position: relative;
+  text-align: center;
+}
+
 .paragraph:nth-child(odd) {
   background: #EBEBEB;
 }

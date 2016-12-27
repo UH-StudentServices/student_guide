@@ -1,47 +1,73 @@
 .degree-programme-switcher {
-	@include border;
-	display: flex;
-	position: relative;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	align-items: center;
-	margin: 2em 0;
-	padding: 1em;
-	.degree-programme-switcher__icon {
-		padding-right: 0.5em;
-		flex: 0 0 100%;
-		@include breakpoint($small) {
-			flex: 0 0 auto;
-		}
-	}
-	.degree-programme-switcher__title {
-		display: flex;
-		flex-wrap: wrap;
-		flex: 0 0 80%;
-	}
-	.degree-programme-switcher__toggle {
-		@include font-weight-medium;
-		cursor: pointer;
-		align-self: flex-start;
-		color: $blue;
-		@include breakpoint($small) {
-			padding: 0 2em;
-			align-self: auto;
-		}
-	}
+  @include border;
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2em 0;
+  padding: 1em;
+  .degree-programme-switcher__icon {
+    padding-right: 0.5em;
+    flex: 0 0 100%;
+    @include breakpoint($small) {
+      flex: 0 0 auto;
+    }
+  }
+  .degree-programme-switcher__title {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 0 80%;
+  }
+  .degree-programme-switcher__toggle {
+    @include font-weight-medium;
+    cursor: pointer;
+    align-self: flex-start;
+    color: $blue;
+    @include breakpoint($small) {
+      padding: 0 2em;
+      align-self: auto;
+    }
+  }
 
-	.degree-programme-switcher__container {
-		@include border;
-		padding: 2em;
-		flex: 1 0 100%;
-		position: absolute;
-		top: 100%;
-		left: 0;
-		width: 100%;
-		z-index: 10;
-		background: $white;
-		li {
-			padding: 0.3em 0;
-		}
-	}
+  .degree-programme-switcher__container {
+    @include border;
+    padding: 2em;
+    flex: 1 0 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    background: $white;
+    li {
+      padding: 0.3em 0;
+    }
+  }
+  .degree-programme-switcher__search {
+    display: flex;
+    input[type="text"] {
+      @include font-size(14px);
+      border: 2px solid $blue;
+      padding: 0.5em;
+    }
+    input[type="submit"] {
+      padding: 0;
+      margin: 0;
+      width: 35px;
+      font-size: 0;
+      z-index: 10;
+      background: transparent;
+
+      & + i {
+        width: 35px;
+        right: 35px;
+        line-height: 35px;
+        color: $white;
+        background: $blue;
+        position: relative;
+        text-align: center;
+      }
+    }
+  }
 }
