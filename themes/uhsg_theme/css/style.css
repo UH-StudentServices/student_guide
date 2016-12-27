@@ -5532,7 +5532,7 @@ a:hover .theme-dark .list-of-links__link:after {
 .theme--teaser .theme__teaser-image {
   position: absolute;
   opacity: 0.6;
-  transition: opacity 0.5 ease-in-out;
+  transition: opacity 0.2s ease-in-out;
   left: 0;
   top: 0;
 }

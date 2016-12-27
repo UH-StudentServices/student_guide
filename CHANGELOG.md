@@ -15,3 +15,4 @@
   HUB-50: Theme listing in frontpage.
   HUB-48: Social links, themes and degree programmes has initial migrations.
   HUB-32: Main navigation.
+  HUB-51: Degree programme switcher.
