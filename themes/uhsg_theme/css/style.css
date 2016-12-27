@@ -5468,6 +5468,7 @@ a:hover .theme-dark .list-of-links__link:after {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
@@ -5481,22 +5482,50 @@ a:hover .theme-dark .list-of-links__link:after {
   padding: 1em;
 }
 
+.degree-programme-switcher .degree-programme-switcher__icon {
+  padding-right: 0.5em;
+  -webkit-flex: 0 0 100%;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+}
+
+@media (min-width: 48em) {
+  .degree-programme-switcher .degree-programme-switcher__icon {
+    -webkit-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+  }
+}
+
 .degree-programme-switcher .degree-programme-switcher__title {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-}
-
-.degree-programme-switcher .degree-programme-switcher__title i {
-  padding-right: 0.5em;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-flex: 0 0 80%;
+      -ms-flex: 0 0 80%;
+          flex: 0 0 80%;
 }
 
 .degree-programme-switcher .degree-programme-switcher__toggle {
   font-weight: 600;
   font-style: normal;
   cursor: pointer;
-  padding: 0 2em;
+  -webkit-align-self: flex-start;
+      -ms-flex-item-align: start;
+          align-self: flex-start;
   color: #0098d0;
+}
+
+@media (min-width: 48em) {
+  .degree-programme-switcher .degree-programme-switcher__toggle {
+    padding: 0 2em;
+    -webkit-align-self: auto;
+        -ms-flex-item-align: auto;
+            align-self: auto;
+  }
 }
 
 .degree-programme-switcher .degree-programme-switcher__container {
