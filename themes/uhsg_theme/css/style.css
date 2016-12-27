@@ -5572,6 +5572,9 @@ a:hover .theme-dark .list-of-links__link:after {
   font-size: 0;
   z-index: 10;
   background: transparent;
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
 }
 
 .degree-programme-switcher .degree-programme-switcher__search input[type="submit"] + i {
@@ -5582,6 +5585,9 @@ a:hover .theme-dark .list-of-links__link:after {
   background: #0098d0;
   position: relative;
   text-align: center;
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
 }
 
 .paragraph:nth-child(odd) {

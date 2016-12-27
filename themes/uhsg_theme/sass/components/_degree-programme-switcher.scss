@@ -58,6 +58,7 @@
       font-size: 0;
       z-index: 10;
       background: transparent;
+      flex-shrink: 0;
 
       & + i {
         width: 35px;
@@ -67,6 +68,7 @@
         background: $blue;
         position: relative;
         text-align: center;
+        flex-shrink: 0;
       }
     }
   }
