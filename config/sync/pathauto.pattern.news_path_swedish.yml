@@ -1,0 +1,33 @@
+uuid: bd677039-3198-4284-b77a-e6b7e9a1f833
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: news_path_swedish
+label: 'News path Swedish'
+type: 'canonical_entities:node'
+pattern: 'nyheter/[node:title]'
+selection_criteria:
+  0497fa06-6d64-4da9-8a3e-b86dc790ca82:
+    id: node_type
+    bundles:
+      news: news
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 0497fa06-6d64-4da9-8a3e-b86dc790ca82
+  43fd624f-2d24-4327-a079-577ab8d4b884:
+    id: language
+    langcodes:
+      sv: sv
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: 43fd624f-2d24-4327-a079-577ab8d4b884
+selection_logic: and
+weight: -10
+relationships:
+  'node:langcode:language':
+    label: Language
