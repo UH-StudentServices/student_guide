@@ -1,0 +1,36 @@
+.degree-programme-switcher {
+	@include border;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	margin: 2em 0;
+	padding: 1em;
+	.degree-programme-switcher__title {
+		display: flex;
+		i {
+			padding-right: 0.5em;
+		}
+	}
+	.degree-programme-switcher__toggle {
+		@include font-weight-medium;
+		cursor: pointer;
+		padding: 0 2em;
+		color: $blue;
+	}
+
+	.degree-programme-switcher__container {
+		@include border;
+		padding: 2em;
+		flex: 1 0 100%;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100%;
+		z-index: 10;
+		background: $white;
+		li {
+			padding: 0.3em 0;
+		}
+	}
+}

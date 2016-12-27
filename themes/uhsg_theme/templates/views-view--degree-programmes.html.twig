@@ -34,38 +34,24 @@
 
 {%
   set classes = [
-    'view',
-    'view-' ~ id|clean_class,
-    'view-id-' ~ id,
-    'view-display-id-' ~ display_id,
-    dom_id ? 'js-view-dom-id-' ~ dom_id,
+    'degree-programme-switcher',
   ]
 %}
 <div{{ attributes.addClass(classes) }}>
-  {{ title_prefix }}
-  {% if title %}
+  <h4 class="degree-programme-switcher__title">
+    <i class="icon--master icon-2x"></i>
     {{ title }}
-  {% endif %}
-  {{ title_suffix }}
-
-  <div>
-    <h2>DEGREE PROGRAMME TOGGLER</h2>
-    <span class="toggle">Vaihda</span>
-  </div>
-  <div class="toggle-target visually-hidden">
+  </h4>
+  <span class="degree-programme-switcher__toggle"> {{ 'Change'|trans }}</span>
+  <div class="degree-programme-switcher__container visually-hidden">
     {% if exposed %}
-      <div class="view-filters">
-        {{ exposed }}
-      </div>
+      {{ exposed }}
     {% endif %}
 
     {% if rows %}
         {{ rows }}
-    {% elseif empty %}
-      <div class="view-empty">
-        {{ empty }}
-      </div>
     {% endif %}
+
     {% if pager %}
       {{ pager }}
     {% endif %}

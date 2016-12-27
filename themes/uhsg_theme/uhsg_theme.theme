@@ -1,5 +1,8 @@
 <?php
 
+use Drupal\taxonomy\Entity\Term;
+use Drupal\Core\Language\LanguageInterface;
+
 /**
  * @file
  * Functions to support theming in the uhsg_theme theme.
@@ -120,6 +123,20 @@ function uhsg_theme_preprocess_views_view(&$variables) {
     case 'taxonomy_term':
       $variables['attributes']['class'][] = 'grid-container tube--large';
       break;
+    case 'degree_programmes':
+      $node = \Drupal::routeMatch()->getParameter('node');
+      if ($node && $node->hasField('field_article_degree_programme')) {
+        $term = Term::load($node->get('field_article_degree_programme')->target_id);
+        $term_translated = \Drupal::service('entity.repository')->getTranslationFromContext($term);
+        $variables['title'] = $term_translated->getName();
+      }
+      $term = \Drupal::routeMatch()->getParameter('taxonomy_term');
+      if ($term) {
+        if ($term->bundle() == 'degree_programme') {
+          $variables['title'] = $term->getName();
+        }
+      }
+      break;
   }
 }
 
@@ -130,8 +147,6 @@ function uhsg_theme_preprocess_block(array &$variables) {
   switch ($variables['elements']['#id']) {
     case 'mainnavigation':
       $variables['attributes']['class'][] = 'main-menu';
-      break;
-    case 'views_block__degree_programmes_block_1':
       break;
   }
 }
