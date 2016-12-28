@@ -135,7 +135,7 @@ function uhsg_theme_preprocess_views_view(&$variables) {
         $variables['title'] = $term->getName();
       }
       else {
-        $variables['title'] = t("Can't figure out the active study programme. Sorry :(");
+        $variables['title'] = t('Choose a degree programme');
       }
       break;
   }
