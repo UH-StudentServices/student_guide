@@ -34,7 +34,9 @@
     "drupal/pathauto": "^1.0@beta",
     "drupal/migrate_plus": "^3.0-beta1",
     "drupal/migrate_source_csv": "^2.0",
-    "drupal/migrate_tools": "^3.0-beta1"
+    "drupal/migrate_tools": "^3.0-beta1",
+    "drupal/purge": "^3.0@beta",
+    "drupal/purge_purger_http": "^1.0@beta"
   },
   "repositories": [
     {
