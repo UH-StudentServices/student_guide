@@ -20,5 +20,6 @@ libraries-override:
     css:
       component:
         css/components/menu.css: false
+        css/components/form.css: false
 
 

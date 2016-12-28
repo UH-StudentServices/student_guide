@@ -1,5 +1,8 @@
 <?php
 
+use Drupal\taxonomy\Entity\Term;
+use Drupal\Core\Language\LanguageInterface;
+
 /**
  * @file
  * Functions to support theming in the uhsg_theme theme.
@@ -118,6 +121,24 @@ function uhsg_theme_preprocess_views_view(&$variables) {
     case 'themes':
       $variables['attributes']['class'][] = 'grid-container';
       break;
+    case 'taxonomy_term':
+      $variables['attributes']['class'][] = 'grid-container tube--large';
+      break;
+    case 'degree_programmes':
+      $node = \Drupal::routeMatch()->getParameter('node');
+      $term = \Drupal::routeMatch()->getParameter('taxonomy_term');
+      if ($node && $node->hasField('field_article_degree_programme')) {
+        $term = Term::load($node->get('field_article_degree_programme')->target_id);
+        $term_translated = \Drupal::service('entity.repository')->getTranslationFromContext($term);
+        $variables['title'] = $term_translated->getName();
+      }
+      elseif ($term && $term->bundle() == 'degree_programme') {
+        $variables['title'] = $term->getName();
+      }
+      else {
+        $variables['title'] = $variables['view']->getTitle();
+      }
+      break;
   }
 }
 
@@ -128,6 +149,18 @@ function uhsg_theme_preprocess_block(array &$variables) {
   switch ($variables['elements']['#id']) {
     case 'mainnavigation':
       $variables['attributes']['class'][] = 'main-menu';
+      break;
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for views exposed forms.
+ */
+function uhsg_theme_preprocess_views_exposed_form(&$variables) {
+  switch ($variables['form']['#id']) {
+    case 'views-exposed-form-degree-programmes-block-1':
+      $variables['form']['name']['#attributes']['placeholder'] = t('Name of degree programme');
+      $variables['form']['actions']['submit']['#suffix'] = '<i class="icon--search"></i>';
       break;
   }
 }

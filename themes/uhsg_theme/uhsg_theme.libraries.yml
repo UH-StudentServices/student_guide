@@ -3,3 +3,12 @@ global-styling:
   css:
     theme:
       css/style.css: {}
+
+degree_programme_switcher:
+  version: 1.x
+  js:
+    js/degree_programme_switcher.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
