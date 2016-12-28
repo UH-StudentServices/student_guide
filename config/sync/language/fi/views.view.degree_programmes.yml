@@ -1,0 +1,7 @@
+display:
+  default:
+    display_options:
+      filters:
+        name:
+          expose:
+            label: 'Hae koulutusohjelmaa'
