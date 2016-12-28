@@ -17,3 +17,4 @@
   HUB-32: Main navigation.
   HUB-39: Added initial news content type.
   HUB-51: Degree programme switcher.
+  HUB-60: Set up caching (Varnish).
