@@ -5,3 +5,4 @@ display:
         name:
           expose:
             label: 'Hae koulutusohjelmaa'
+      title: 'Valitse koulutusohjelma'
