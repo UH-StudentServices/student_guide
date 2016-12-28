@@ -4,7 +4,7 @@ dependencies: {  }
 id: menu_links
 migration_tags: null
 migration_group: uhsg_initials
-label: 'Header and footer menu links'
+label: 'Header,footer, and main navigation menu links'
 source:
   plugin: csv
   path: /artifacts/menu_links.csv

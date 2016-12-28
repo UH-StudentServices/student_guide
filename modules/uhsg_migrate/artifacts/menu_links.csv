@@ -23,3 +23,4 @@ id,menu_name,title,link_uri
 22,footer-links-fi,Anna palautetta,https://www.helsinki.fi/fi/anna-palautetta
 23,footer-links-en,Give Feedback,https://www.helsinki.fi/en/give-feedback
 24,footer-links-sv,Ge respons,https://www.helsinki.fi/sv/ge-respons
+25,main,Guide,internal:/
