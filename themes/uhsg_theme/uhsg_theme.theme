@@ -135,9 +135,6 @@ function uhsg_theme_preprocess_views_view(&$variables) {
       elseif ($term && $term->bundle() == 'degree_programme') {
         $variables['title'] = $term->getName();
       }
-      else {
-        $variables['title'] = t('Choose a degree programme');
-      }
       break;
   }
 }
