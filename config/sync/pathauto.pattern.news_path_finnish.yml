@@ -1,0 +1,33 @@
+uuid: 6bcbc7bf-993c-47d8-b3a8-1bca2fbbec4b
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: news_path_finnish
+label: 'News path Finnish'
+type: 'canonical_entities:node'
+pattern: 'uutiset/[node:title]'
+selection_criteria:
+  520b8b95-7917-4fde-8316-0b3f64c54902:
+    id: node_type
+    bundles:
+      news: news
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 520b8b95-7917-4fde-8316-0b3f64c54902
+  06247cfc-8035-4e5d-b358-890bf6eaaa63:
+    id: language
+    langcodes:
+      fi: fi
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: 06247cfc-8035-4e5d-b358-890bf6eaaa63
+selection_logic: and
+weight: -10
+relationships:
+  'node:langcode:language':
+    label: Language
