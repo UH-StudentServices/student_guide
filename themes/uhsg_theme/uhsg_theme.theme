@@ -120,6 +120,7 @@ function uhsg_theme_preprocess_views_view(&$variables) {
   switch ($variables['view']->id()) {
     case 'themes':
       $variables['attributes']['class'][] = 'grid-container';
+      break;
     case 'taxonomy_term':
       $variables['attributes']['class'][] = 'grid-container tube--large';
       break;
