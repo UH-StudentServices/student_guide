@@ -152,7 +152,14 @@ function uhsg_theme_preprocess_block(array &$variables) {
   }
 }
 
+/**
+ * Implements hook_preprocess_HOOK() for views exposed forms.
+ */
 function uhsg_theme_preprocess_views_exposed_form(&$variables) {
-  $variables['form']['name']['#attributes']['placeholder'] = t('Name of degree programme');
-  $variables['form']['actions']['submit']['#suffix'] = '<i class="icon--search"></i>';
+  switch ($variables['form']['#id']) {
+    case 'views-exposed-form-degree-programmes-block-1':
+      $variables['form']['name']['#attributes']['placeholder'] = t('Name of degree programme');
+      $variables['form']['actions']['submit']['#suffix'] = '<i class="icon--search"></i>';
+      break;
+  }
 }

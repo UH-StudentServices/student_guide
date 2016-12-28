@@ -4,10 +4,10 @@ global-styling:
     theme:
       css/style.css: {}
 
-menu_toggle:
+degree_programme_switcher:
   version: 1.x
   js:
-    js/menu_toggle.js: {}
+    js/degree_programme_switcher.js: {}
   dependencies:
     - core/jquery
     - core/jquery.once

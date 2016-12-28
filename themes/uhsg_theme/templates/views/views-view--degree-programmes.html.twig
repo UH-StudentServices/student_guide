@@ -30,7 +30,7 @@
  * @see template_preprocess_views_view()
  */
 #}
-{{ attach_library('uhsg_theme/menu_toggle') }}
+{{ attach_library('uhsg_theme/degree_programme_switcher') }}
 
 {%
   set classes = [
@@ -44,7 +44,7 @@
     <i class="degree-programme-switcher__icon icon--master icon-2x"></i>
     {{ title }}
   </h4>
-  <span class="degree-programme-switcher__toggle"> {{ 'Change'|trans }}</span>
+  <span class="degree-programme-switcher__toggle"> {{ 'Change'|trans }} </span>
   <div class="degree-programme-switcher__container">
     {% if exposed %}
       {{ exposed }}
@@ -58,5 +58,4 @@
       {{ pager }}
     {% endif %}
   </div>
-
 </div>

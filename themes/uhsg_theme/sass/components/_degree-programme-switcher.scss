@@ -29,7 +29,6 @@
       align-self: auto;
     }
   }
-
   .degree-programme-switcher__container {
     @include border;
     padding: 2em;
@@ -59,7 +58,6 @@
       z-index: 10;
       background: transparent;
       flex-shrink: 0;
-
       & + i {
         width: 35px;
         right: 35px;
