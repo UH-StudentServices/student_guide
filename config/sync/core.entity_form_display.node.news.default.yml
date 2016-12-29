@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.news.body
+    - field.field.node.news.field_news_degree_programme
     - node.type.news
   module:
     - path
@@ -26,6 +27,14 @@ content:
     weight: 10
     settings: {  }
     third_party_settings: {  }
+  field_news_degree_programme:
+    weight: 32
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
   langcode:
     type: language_select
     weight: 2
