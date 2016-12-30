@@ -22,6 +22,7 @@ dependencies:
   - pathauto
   - toolbar
   - taxonomy
+  - uhsg_cookie_consent
   - uhsg_service_provider_details
   - uhsg_some_links
   - views

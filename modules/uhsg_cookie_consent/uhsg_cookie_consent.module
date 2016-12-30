@@ -1,0 +1,7 @@
+<?php
+
+function uhsg_cookie_consent_page_attachments(array &$page) {
+  if (\Drupal::currentUser()->isAnonymous()) {
+    $page['#attached']['library'][] = 'ushg_cookie_consent/cookie-consent';
+  }
+}
