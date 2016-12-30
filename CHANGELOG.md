@@ -19,3 +19,4 @@
   HUB-51: Degree programme switcher.
   HUB-40: News can be tagged with 0-n degree programmes.
   HUB-60: Set up caching (Varnish).
+  HUB-30: Added table of contents to articles.
