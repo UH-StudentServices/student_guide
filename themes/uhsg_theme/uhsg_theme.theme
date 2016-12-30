@@ -111,12 +111,8 @@ function uhsg_theme_preprocess_field(array &$variables, $hook) {
       $variables['attributes']['class'][] = 'grid-container';
       break;
     case 'field_article_paragraph':
-      //kint($variables);
-      //$paragraphs = $variables['element']['#object']->referencedEntities();
-      //kint($paragaphs);
       $variables['table_of_contents'] = [];
       foreach ($variables['items'] as $item) {
-        $item['content']['#paragraph']->id();
         $variables['table_of_contents'][] = [
           'id' => $item['content']['#paragraph']->id(),
           'title' => $item['content']['#paragraph']->get('field_paragraph_title')
