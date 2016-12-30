@@ -1,0 +1,36 @@
+uuid: e125c276-838e-4841-ab7a-1eba16aa3660
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - language
+    - taxonomy
+id: degree_programme_path
+label: 'Degree programme path'
+type: 'canonical_entities:taxonomy_term'
+pattern: '[term:name]'
+selection_criteria:
+  205db7d5-45d4-4a99-b6cf-b4deb3880612:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      degree_programme: degree_programme
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 205db7d5-45d4-4a99-b6cf-b4deb3880612
+  a58ff2c1-67c5-4542-a8d6-9a71b52e6b1e:
+    id: language
+    langcodes:
+      en: en
+      fi: fi
+      sv: sv
+    negate: false
+    context_mapping:
+      language: 'taxonomy_term:langcode:language'
+    uuid: a58ff2c1-67c5-4542-a8d6-9a71b52e6b1e
+selection_logic: and
+weight: -10
+relationships:
+  'taxonomy_term:langcode:language':
+    label: Language
