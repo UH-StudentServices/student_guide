@@ -14,42 +14,12 @@
 @import "styleguide/common-elements/**/*";
 @import "styleguide/objects/**/*";
 @import "styleguide/layouts/**/*";
-//@import "styleguide/_states.scss";
-
-/* STYLEGUIDE BOX COMPONENTS */
-//@import "styleguide/components/box/_box-application.scss";
-//@import "styleguide/components/box/_box-card.scss";
-//@import "styleguide/components/box/_box-data.scss";
-//@import "styleguide/components/box/_box-hero.scss";
-//@import "styleguide/components/box/_box-ingress.scss";
-//@import "styleguide/components/box/_box-logo.scss";
-//@import "styleguide/components/box/_box-story.scss";
-//@import "styleguide/components/box/_box-subsection.scss";
-//@import "styleguide/components/box/_box-subtitle.scss";
 
 /* STYLEGUIDE COMPONENTS */
-//@import "styleguide/components/_accordion.scss";
-//@import "styleguide/components/_avatar.scss";
-//@import "styleguide/components/_date.scss";
-//@import "styleguide/components/_horizontal-tabs.scss";
-//@import "styleguide/components/_jobs-listing.scss";
+@import "styleguide/components/_index.scss";
 @import "styleguide/components/_list-of-links.scss";
-//@import "styleguide/components/_messages.scss";
-//@import "styleguide/components/_pager.scss";
-//@import "styleguide/components/_post.scss";
 @import "styleguide/components/_links.scss";
-//@import "styleguide/components/_some-links.scss";
-//@import "styleguide/components/_tag-list.scss";
-//@import "styleguide/components/_author.scss";
-//@import "styleguide/components/_breadcrumbs.scss";
-//@import "styleguide/components/_carousel.scss";
-//@import "styleguide/components/_feed-listing.scss";
-//@import "styleguide/components/_index.scss";
-//@import "styleguide/components/_label-row.scss";
 @import "styleguide/components/_main-menu.scss";
-//@import "styleguide/components/_page-title.scss";
-//@import "styleguide/components/_panel.scss";
-//@import "styleguide/components/_search-form.scss";
 @import "styleguide/components/_table.scss";
 @import "styleguide/components/_logo.scss";
 

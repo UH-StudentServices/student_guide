@@ -110,6 +110,15 @@ function uhsg_theme_preprocess_field(array &$variables, $hook) {
       $variables['title_attributes']['class'][] = 'tube';
       $variables['attributes']['class'][] = 'grid-container';
       break;
+    case 'field_article_paragraph':
+      $variables['table_of_contents'] = [];
+      foreach ($variables['items'] as $item) {
+        $variables['table_of_contents'][] = [
+          'id' => $item['content']['#paragraph']->id(),
+          'title' => $item['content']['#paragraph']->get('field_paragraph_title')
+        ];
+      }
+      break;
   }
 }
 
@@ -163,4 +172,13 @@ function uhsg_theme_preprocess_views_exposed_form(&$variables) {
       $variables['form']['actions']['submit']['#suffix'] = '<i class="icon--search"></i>';
       break;
   }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ * Add id attribute to each paragraph for linking to it from the table of contents.
+ */
+function uhsg_theme_preprocess_paragraph(&$variables) {
+  $variables['attributes']['id'] = 'paragraph-' . $variables['paragraph']->id();
+  $variables['attributes']['class'][] = 'paragraph';
 }
