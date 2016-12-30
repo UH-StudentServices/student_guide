@@ -1,7 +1,17 @@
 <?php
-
+/**
+ * Implements hook_page_attachments().
+ */
 function uhsg_cookie_consent_page_attachments(array &$page) {
-  if (\Drupal::currentUser()->isAnonymous()) {
-    $page['#attached']['library'][] = 'ushg_cookie_consent/cookie-consent';
-  }
+	if (\Drupal::currentUser()->isAnonymous()) {
+    $page['#attached']['library'][] = 'uhsg_cookie_consent/uhsg-cookie-consent';
+    $page['#attached']['drupalSettings']['uhsg_cookie_consent']['options'] = [
+      'domain' => 'helsinki.fi',
+      'message' => t('We use cookies to ensure you get the best experience on our website.'),
+      'learnMore' => t('Read more about cookies.'),
+      'dismiss' => t('OK'),
+      'link' => '/fi/yliopisto/tietoa-sivustosta',
+      'theme' => '',
+    ];
+	}
 }

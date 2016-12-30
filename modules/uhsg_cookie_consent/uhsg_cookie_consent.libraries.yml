@@ -1,7 +1,7 @@
 uhsg-cookie-consent:
   version: 1.x
   js:
-    js/cookie-consent.js: {}
+    js/uhsg_cookie_consent.js: {}
+    js/cookieconsent.min.js: {}
   dependencies:
-   	- core/drupalSettings
-    - cookie-consent-settings.js
+    - core/drupalSettings
