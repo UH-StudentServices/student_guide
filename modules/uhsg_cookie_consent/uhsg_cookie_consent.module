@@ -5,6 +5,7 @@
 function uhsg_cookie_consent_page_attachments(array &$page) {
   if (\Drupal::currentUser()->isAnonymous()) {
     $page['#attached']['library'][] = 'uhsg_cookie_consent/uhsg-cookie-consent';
+    $page['#attached']['library'][] = 'uhsg_cookie_consent/cookieconsent2';
     $page['#attached']['drupalSettings']['uhsg_cookie_consent']['options'] = [
       'domain' => 'helsinki.fi',
       'message' => t('We use cookies to ensure you get the best experience on our website.'),

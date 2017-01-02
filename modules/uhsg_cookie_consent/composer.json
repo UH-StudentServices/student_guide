@@ -1,6 +1,0 @@
-{
-  "name": "uhsg_cookie_consent",
-  "require": {
-    "mrohnstock/cookieconsent2": "^1.0"
-  }
-}
