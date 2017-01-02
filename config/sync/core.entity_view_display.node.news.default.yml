@@ -5,8 +5,10 @@ dependencies:
   config:
     - field.field.node.news.body
     - field.field.node.news.field_news_degree_programme
+    - field.field.node.news.field_news_image
     - node.type.news
   module:
+    - image
     - text
     - user
 id: node.news.default
@@ -27,6 +29,14 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+  field_news_image:
+    weight: 103
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
   links:
     weight: 100
     settings: {  }
