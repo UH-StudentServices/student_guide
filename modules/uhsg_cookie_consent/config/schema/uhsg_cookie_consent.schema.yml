@@ -1,6 +1,6 @@
 # Schema for the configuration files of the cookie consent module.
 
-uhsg_cookie_consent.settings:
+uhsg_cookie_consent.config:
   type: config_object
   label: 'Cookie consent settings'
   mapping:

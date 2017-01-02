@@ -10,7 +10,7 @@ function uhsg_cookie_consent_page_attachments(array &$page) {
       'message' => t('We use cookies to ensure you get the best experience on our website.'),
       'learnMore' => t('Read more about cookies.'),
       'dismiss' => t('OK'),
-      'link' => \Drupal::config('uhsg_cookie_consent.settings')->get('link_path'),
+      'link' => \Drupal::config('uhsg_cookie_consent.config')->get('link_path'),
       'theme' => '',
     ];
 	}
