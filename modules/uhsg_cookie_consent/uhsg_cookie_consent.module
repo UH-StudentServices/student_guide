@@ -3,7 +3,7 @@
  * Implements hook_page_attachments().
  */
 function uhsg_cookie_consent_page_attachments(array &$page) {
-	if (\Drupal::currentUser()->isAnonymous()) {
+  if (\Drupal::currentUser()->isAnonymous()) {
     $page['#attached']['library'][] = 'uhsg_cookie_consent/uhsg-cookie-consent';
     $page['#attached']['drupalSettings']['uhsg_cookie_consent']['options'] = [
       'domain' => 'helsinki.fi',
@@ -13,5 +13,5 @@ function uhsg_cookie_consent_page_attachments(array &$page) {
       'link' => \Drupal::config('uhsg_cookie_consent.config')->get('link_path'),
       'theme' => '',
     ];
-	}
+  }
 }
