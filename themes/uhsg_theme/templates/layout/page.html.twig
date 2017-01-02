@@ -69,6 +69,14 @@
   {{ page.content }}
 </main>
 
+{% if updated %}
+  <div class="l-action-footer container">
+    <div class="last-updated">
+       {{ 'Updated'|trans ~ ': ' ~ updated }}
+    </div>
+  </div>
+{% endif %}
+
 {% if page.footer %}
   <footer role="contentinfo">
     {{ page.footer }}
