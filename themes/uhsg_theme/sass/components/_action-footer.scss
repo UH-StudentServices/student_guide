@@ -1,0 +1,7 @@
+.last-updated {
+  @include font-size(14px);
+  line-height: 60px;
+  @include breakpoint($small) {
+    padding-left: 40px;
+  }
+}
