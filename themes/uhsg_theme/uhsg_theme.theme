@@ -194,6 +194,6 @@ function uhsg_theme_preprocess_page(&$variables) {
     $variables['updated'] = \Drupal::service('date.formatter')->format($node->getChangedTime(), 'short');
   }
   if ($term) {
-    $variables['updated'] = \Drupal::service('date.formatter')->format($node->getChangedTime(), 'short');
+    $variables['updated'] = \Drupal::service('date.formatter')->format($term->getChangedTime(), 'short');
   }
 }
