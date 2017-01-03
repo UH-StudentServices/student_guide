@@ -6763,33 +6763,37 @@ a:hover .theme-dark .list-of-links__link:after {
 
 .feedback-form {
   background: #222;
-  color: #FFF;
   position: absolute;
+  padding: 1em;
   bottom: 1em;
   right: 1em;
 }
 
 .feedback-form .feedback-form__toggle {
+  color: #FFF;
   cursor: pointer;
-  height: 90px;
-  width: 90px;
+  padding: 1em;
   text-align: center;
+}
+
+.feedback-form .feedback-form__toggle .feedback-form__icon {
+  display: block;
 }
 
 .feedback-form .feedback-form__toggle.active {
   position: absolute;
-  right: 0;
-  bottom: 0;
+  padding: 0;
+  right: 1em;
+  bottom: 1em;
 }
 
 .feedback-form .feedback-form__toggle.active .feedback-form__title {
-  font-size: 0;
+  display: none;
 }
 
 .feedback-form form {
   font-size: 11.375px;
   font-size: 0.8125rem;
-  padding: 1em;
   width: 300px;
 }
 
@@ -6800,16 +6804,34 @@ a:hover .theme-dark .list-of-links__link:after {
 }
 
 .feedback-form form textarea {
+  font-size: 11.375px;
+  font-size: 0.8125rem;
+  outline: none;
+  color: #FFF;
   background: #222;
   padding: 0;
   border: 0;
 }
 
+@media (min-width: 48em) {
+  .feedback-form form textarea {
+    font-size: 13px;
+  }
+}
+
 .feedback-form form .button {
+  font-size: 11.375px;
+  font-size: 0.8125rem;
   font-weight: 600;
   font-style: normal;
   background-color: transparent;
   padding: 0;
+}
+
+@media (min-width: 48em) {
+  .feedback-form form .button {
+    font-size: 13px;
+  }
 }
 
 .feedback-form form .button:hover {
