@@ -10,3 +10,9 @@
   flex-flow: row wrap;
   justify-content: space-between;
 }
+
+.grid-item {
+	@include breakpoint($small) {
+    flex: 0 31%;
+  }
+}

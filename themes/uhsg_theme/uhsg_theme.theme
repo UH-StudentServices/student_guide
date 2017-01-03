@@ -131,6 +131,7 @@ function uhsg_theme_preprocess_views_view(&$variables) {
       $variables['attributes']['class'][] = 'grid-container';
       break;
     case 'taxonomy_term':
+    case 'news_per_degree_programme':
       $variables['attributes']['class'][] = 'grid-container tube--large';
       break;
     case 'degree_programmes':
