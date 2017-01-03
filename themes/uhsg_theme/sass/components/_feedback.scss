@@ -9,6 +9,14 @@
     height: 90px;
     width: 90px;
     text-align: center;
+    &.active {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      .feedback-form__title {
+        font-size: 0;
+      }
+    }
   }
 
   form {

@@ -13,8 +13,8 @@
 {{ attach_library('uhsg_theme/feedback_form') }}
 <div class="feedback-form">
 	<div class="feedback-form__toggle"> 
-		<i class="icon--chat icon-2x"></i>
-		{{ 'Feedback'|trans }}
+		<i class="feedback-form__icon icon--chat icon-2x"></i>
+		<span class="feedback-form__title"> {{ 'Feedback'|trans }} </span>
 	</div>
 	<form{{ attributes.addClass('visually-hidden') }}>
 	  {{ children }}
