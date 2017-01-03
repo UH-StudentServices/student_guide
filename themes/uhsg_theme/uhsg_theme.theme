@@ -23,6 +23,7 @@ function uhsg_theme_preprocess_region(&$variables) {
       $variables['contact_info'] = \Drupal::config('uhsg_service_provider_details.settings')->get('contact_info');
       break;
     case 'before_content':
+    case 'after_content':
       $variables['attributes']['class'][] = 'container';
   }
 }
@@ -131,6 +132,7 @@ function uhsg_theme_preprocess_views_view(&$variables) {
       $variables['attributes']['class'][] = 'grid-container';
       break;
     case 'taxonomy_term':
+    case 'news_per_degree_programme':
       $variables['attributes']['class'][] = 'grid-container tube--large';
       break;
     case 'degree_programmes':

@@ -69,6 +69,10 @@
   {{ page.content }}
 </main>
 
+{% if page.after_content %}
+  {{ page.after_content }}
+{% endif %}
+
 {% if updated %}
   <div class="l-action-footer container">
     <div class="last-updated">

@@ -13,6 +13,7 @@ regions:
   navigation: Navigation
   before_content: Before content
   content: Content
+  after_content: After content
   footer: Footer
 
 libraries-override:
