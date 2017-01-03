@@ -7,9 +7,12 @@ dependencies:
     - field.storage.node.field_article_paragraph
     - field.storage.paragraph.field_paragraph_title
     - field.storage.paragraph.field_paragraph_body
+    - field.storage.node.field_article_degree_programme
+    - field.storage.node.field_news_degree_programme
     - search_api.server.student_guide
   module:
     - paragraphs
+    - taxonomy
     - search_api
     - node
 id: content_index
@@ -57,6 +60,26 @@ field_settings:
         - field.storage.paragraph.field_paragraph_body
       module:
         - paragraphs
+  article_degree_programme_tid:
+    label: 'Degree programme » Taxonomy term » Term ID'
+    datasource_id: 'entity:node'
+    property_path: 'field_article_degree_programme:entity:tid'
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_article_degree_programme
+      module:
+        - taxonomy
+  news_degree_programme_tid:
+    label: 'Degree programme » Taxonomy term » Term ID'
+    datasource_id: 'entity:node'
+    property_path: 'field_news_degree_programme:entity:tid'
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_news_degree_programme
+      module:
+        - taxonomy
 datasource_settings:
   'entity:node':
     bundles:
