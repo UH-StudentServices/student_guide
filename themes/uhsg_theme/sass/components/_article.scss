@@ -8,7 +8,6 @@
 .article--teaser {
   @include border;
   @include text-informative;
-  flex: 1 100%;
   position: relative;
   margin-bottom: 2em;
   padding: 1em 1em 2em 1em;
@@ -21,8 +20,5 @@
   .node__links {
     position: absolute;
     bottom: 1em;
-  }
-  @include breakpoint($small) {
-    flex: 0 31%;
   }
 }

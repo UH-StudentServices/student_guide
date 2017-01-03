@@ -75,7 +75,7 @@
     node.bundle|clean_class,
     view_mode ? node.bundle|clean_class ~ '--' ~ view_mode|clean_class,
     'box-story',
-    'grid-item'
+    'grid-item-3'
   ]
 %}
 
@@ -87,10 +87,10 @@
 %}
 
 <article {{ attributes.addClass(node_classes) }}>
-	<a href="{{ url }}" rel="bookmark" class="box-story__link-wrapper">
-	  <h4 {{ title_attributes.addClass(title_classes) }}> {{ label }} </h4>
-	  <div class="box-story__content">
-	  	{{ content }}
-	  </div>
-	</a>
+  <a href="{{ url }}" rel="bookmark" class="box-story__link-wrapper">
+    <h4 {{ title_attributes.addClass(title_classes) }}> {{ label }} </h4>
+    <div class="box-story__content">
+      {{ content }}
+    </div>
+  </a>
 </article>

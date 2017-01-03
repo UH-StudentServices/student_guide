@@ -11,8 +11,9 @@
   justify-content: space-between;
 }
 
-.grid-item {
-	@include breakpoint($small) {
+.grid-item-3 {
+  flex: 1 100%;
+  @include breakpoint($small) {
     flex: 0 31%;
   }
 }

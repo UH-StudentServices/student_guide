@@ -6468,8 +6468,14 @@ a:hover .theme-dark .list-of-links__link:after {
           justify-content: space-between;
 }
 
+.grid-item-3 {
+  -webkit-flex: 1 100%;
+      -ms-flex: 1 100%;
+          flex: 1 100%;
+}
+
 @media (min-width: 48em) {
-  .grid-item {
+  .grid-item-3 {
     -webkit-flex: 0 31%;
         -ms-flex: 0 31%;
             flex: 0 31%;
@@ -6514,9 +6520,6 @@ a:hover .theme-dark .list-of-links__link:after {
   font-style: normal;
   color: #777777;
   line-height: 1.5em;
-  -webkit-flex: 1 100%;
-      -ms-flex: 1 100%;
-          flex: 1 100%;
   position: relative;
   margin-bottom: 2em;
   padding: 1em 1em 2em 1em;
@@ -6536,14 +6539,6 @@ a:hover .theme-dark .list-of-links__link:after {
 .article--teaser .node__links {
   position: absolute;
   bottom: 1em;
-}
-
-@media (min-width: 48em) {
-  .article--teaser {
-    -webkit-flex: 0 31%;
-        -ms-flex: 0 31%;
-            flex: 0 31%;
-  }
 }
 
 .cc_banner-wrapper {
