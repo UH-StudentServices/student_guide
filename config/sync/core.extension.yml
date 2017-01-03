@@ -4,6 +4,9 @@ module:
   breakpoint: 0
   config: 0
   config_translation: 0
+  contact: 0
+  contact_ajax: 0
+  contact_block: 0
   contextual: 0
   ctools: 0
   datetime: 0
@@ -15,6 +18,7 @@ module:
   field_ui: 0
   file: 0
   filter: 0
+  honeypot: 0
   image: 0
   language: 0
   link: 0
