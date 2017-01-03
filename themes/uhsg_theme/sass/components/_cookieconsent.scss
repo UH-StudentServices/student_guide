@@ -1,0 +1,43 @@
+.cc_banner-wrapper {
+  z-index: 9001;
+  position: relative;
+}
+
+.cc_container {
+  //@include flexbox;
+  display: flex;
+  background: $darkgray;
+  bottom: 0;
+  justify-content: space-between;
+  left: 0;
+  overflow: hidden;
+  padding: 0.4em 0.8em;
+  right: 0;
+}
+
+.cc_btn {
+  @include button;
+  //@extend %button;
+  @include font-size(14px);
+  align-self: center;
+  flex-shrink: 0;
+  font-weight: 600;
+  order: 2;
+  margin-left: 1em;
+}
+
+.cc_message {
+  @include font-family-main;
+  @include font-size(14px);
+  align-self: center;
+  color: $white;
+  margin: 0;
+}
+
+.cc_logo {
+  display: none;
+}
+
+.cc_more_info {
+  @include font-weight-bold;
+}

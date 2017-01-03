@@ -5699,6 +5699,24 @@ a:hover .theme-dark .list-of-links__link:after {
           justify-content: space-between;
 }
 
+.last-updated {
+  font-size: 12.25px;
+  font-size: 0.875rem;
+  line-height: 60px;
+}
+
+@media (min-width: 48em) {
+  .last-updated {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 48em) {
+  .last-updated {
+    padding-left: 40px;
+  }
+}
+
 .article--full .article__body p {
   color: #777777;
   font-size: 17.5px;
@@ -5749,6 +5767,99 @@ a:hover .theme-dark .list-of-links__link:after {
         -ms-flex: 0 31%;
             flex: 0 31%;
   }
+}
+
+.cc_banner-wrapper {
+  z-index: 9001;
+  position: relative;
+}
+
+.cc_container {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background: #424242;
+  bottom: 0;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  left: 0;
+  overflow: hidden;
+  padding: 0.4em 0.8em;
+  right: 0;
+}
+
+.cc_btn {
+  transition-duration: 0.1s;
+  transition-property: all;
+  font-size: 13.125px;
+  font-size: 0.9375rem;
+  background-color: #0098d0;
+  border: none;
+  color: #FFF;
+  cursor: pointer;
+  padding: 0.8em 1em;
+  font-size: 12.25px;
+  font-size: 0.875rem;
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+  font-weight: 600;
+  -webkit-order: 2;
+      -ms-flex-order: 2;
+          order: 2;
+  margin-left: 1em;
+}
+
+@media (min-width: 48em) {
+  .cc_btn {
+    font-size: 15px;
+  }
+}
+
+.cc_btn:hover {
+  background-color: #005479;
+  color: #FFF;
+}
+
+.cc_btn:before, .cc_btn:after {
+  transition-duration: 0.1s;
+  transition-property: all;
+}
+
+@media (min-width: 48em) {
+  .cc_btn {
+    font-size: 14px;
+  }
+}
+
+.cc_message {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif, Nimbus Sans L;
+  font-size: 12.25px;
+  font-size: 0.875rem;
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
+  color: #FFF;
+  margin: 0;
+}
+
+@media (min-width: 48em) {
+  .cc_message {
+    font-size: 14px;
+  }
+}
+
+.cc_logo {
+  display: none;
+}
+
+.cc_more_info {
+  font-weight: 700;
+  font-style: normal;
 }
 
 .degree-programme-switcher {

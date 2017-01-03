@@ -1,0 +1,14 @@
+uhsg-cookie-consent:
+  version: 1.x
+  js:
+    js/uhsg_cookie_consent.js: {}
+  dependencies:
+    - core/drupalSettings
+
+cookieconsent2:
+  remote: https://github.com/mrohnstock/cookieconsent2
+  version: 1.0.10
+  license:
+    name: MIT
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.10/cookieconsent.min.js: { type: external, minified: true, attributes: { defer: true } }

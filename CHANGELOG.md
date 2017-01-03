@@ -21,4 +21,6 @@
   HUB-60: Set up caching (Varnish).
   HUB-30: Added table of contents to articles.
   HUB-31: Added breadcrumbs
+  HUB-16: Show Changed time in nodes and terms.
+  HUB-59: Cookie consent.
 

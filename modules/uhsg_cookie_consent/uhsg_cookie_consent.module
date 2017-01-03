@@ -1,0 +1,18 @@
+<?php
+/**
+ * Implements hook_page_attachments().
+ */
+function uhsg_cookie_consent_page_attachments(array &$page) {
+  if (\Drupal::currentUser()->isAnonymous()) {
+    $page['#attached']['library'][] = 'uhsg_cookie_consent/uhsg-cookie-consent';
+    $page['#attached']['library'][] = 'uhsg_cookie_consent/cookieconsent2';
+    $page['#attached']['drupalSettings']['uhsg_cookie_consent']['options'] = [
+      'domain' => \Drupal::config('uhsg_cookie_consent.config')->get('domain'),
+      'message' => \Drupal::config('uhsg_cookie_consent.config')->get('message'),
+      'learnMore' => \Drupal::config('uhsg_cookie_consent.config')->get('learnmore'),
+      'dismiss' => \Drupal::config('uhsg_cookie_consent.config')->get('dismiss'),
+      'link' => \Drupal::config('uhsg_cookie_consent.config')->get('link'),
+      'theme' => \Drupal::config('uhsg_cookie_consent.config')->get('theme'),
+    ];
+  }
+}
