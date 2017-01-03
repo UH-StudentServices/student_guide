@@ -41,6 +41,7 @@ module:
   text: 0
   token: 0
   toolbar: 0
+  uhsg_cookie_consent: 0
   uhsg_migrate: 0
   uhsg_service_provider_details: 0
   uhsg_some_links: 0
