@@ -1,0 +1,8 @@
+@mixin hyphenate() {
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+  word-break: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-word;
+}

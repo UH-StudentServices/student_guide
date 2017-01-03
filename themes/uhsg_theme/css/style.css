@@ -6811,6 +6811,12 @@ a:hover .theme-dark .list-of-links__link:after {
 }
 
 .theme--teaser .theme__title {
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+      hyphens: auto;
+  word-break: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-word;
   position: relative;
   z-index: 1;
   color: #FFF;
