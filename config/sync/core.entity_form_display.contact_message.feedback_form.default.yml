@@ -4,15 +4,18 @@ status: true
 dependencies:
   config:
     - contact.form.feedback_form
+    - field.field.contact_message.feedback_form.field_feedback_respond
 id: contact_message.feedback_form.default
 targetEntityType: contact_message
 bundle: feedback_form
 mode: default
 content:
-  mail:
+  field_feedback_respond:
     weight: 1
-    settings: {  }
+    settings:
+      display_label: true
     third_party_settings: {  }
+    type: boolean_checkbox
   message:
     type: string_textarea
     weight: 0
@@ -23,5 +26,6 @@ content:
 hidden:
   copy: true
   langcode: true
+  mail: true
   name: true
   subject: true
