@@ -6761,6 +6761,43 @@ a:hover .theme-dark .list-of-links__link:after {
           flex-shrink: 0;
 }
 
+.feedback-form {
+  background: #222;
+  color: #FFF;
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+}
+
+.feedback-form .feedback-form__toggle {
+  cursor: pointer;
+  height: 90px;
+  width: 90px;
+  text-align: center;
+}
+
+.feedback-form form {
+  padding: 1em;
+  width: 300px;
+}
+
+.feedback-form form textarea {
+  background: #222;
+  padding: 0;
+  border: 0;
+}
+
+.feedback-form form .button {
+  font-weight: 600;
+  font-style: normal;
+  background-color: transparent;
+  padding: 0;
+}
+
+.feedback-form form .button:hover {
+  background-color: transparent;
+}
+
 .paragraph:nth-child(odd) {
   background: #EBEBEB;
 }

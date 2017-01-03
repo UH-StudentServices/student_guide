@@ -1,0 +1,31 @@
+.feedback-form {
+  background: $black;
+  color: $white;
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+  .feedback-form__toggle {
+    cursor: pointer;
+    height: 90px;
+    width: 90px;
+    text-align: center;
+  }
+
+  form {
+    padding: 1em;
+    width: 300px;
+    textarea {
+      background: $black;
+      padding: 0;
+      border: 0;
+    }
+    .button {
+      @include font-weight-medium;
+      background-color: transparent;
+      padding: 0;
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+}

@@ -12,3 +12,12 @@ degree_programme_switcher:
     - core/jquery
     - core/jquery.once
     - core/drupal
+
+feedback_form:
+  version: 1.x
+  js:
+    js/feedback_form.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal

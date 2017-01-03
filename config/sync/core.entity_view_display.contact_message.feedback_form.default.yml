@@ -1,4 +1,4 @@
-uuid: 22b6fb39-93e1-453f-bcdd-9d2588739f8c
+uuid: ae31a1ce-681d-4d5b-a08b-d4e3f2e90cdb
 langcode: en
 status: true
 dependencies:
@@ -9,19 +9,11 @@ targetEntityType: contact_message
 bundle: feedback_form
 mode: default
 content:
-  mail:
-    weight: 1
+  message:
+    type: basic_string
+    weight: 0
+    label: above
     settings: {  }
     third_party_settings: {  }
-  message:
-    type: string_textarea
-    weight: 0
-    settings:
-      rows: 6
-      placeholder: 'Give feedback about the service...'
-    third_party_settings: {  }
 hidden:
-  copy: true
   langcode: true
-  name: true
-  subject: true

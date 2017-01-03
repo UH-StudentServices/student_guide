@@ -18,6 +18,6 @@ settings:
   id: contact_block
   label: 'Contact block'
   provider: contact_block
-  label_display: visible
+  label_display: '0'
   contact_form: feedback_form
 visibility: {  }
