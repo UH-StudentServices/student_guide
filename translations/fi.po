@@ -14,3 +14,6 @@ msgstr ""
 
 msgid "Updated"
 msgstr "Päivitetty"
+
+msgid "Name of degree programme"
+msgstr "Koulutusohjelman nimi"
