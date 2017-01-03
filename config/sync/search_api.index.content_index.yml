@@ -4,8 +4,12 @@ status: true
 dependencies:
   config:
     - field.storage.node.body
+    - field.storage.node.field_article_paragraph
+    - field.storage.paragraph.field_paragraph_title
+    - field.storage.paragraph.field_paragraph_body
     - search_api.server.student_guide
   module:
+    - paragraphs
     - search_api
     - node
 id: content_index
@@ -31,6 +35,28 @@ field_settings:
     datasource_id: 'entity:node'
     property_path: type
     type: string
+  field_paragraph_title:
+    label: 'Paragraph » Paragraph » Title'
+    datasource_id: 'entity:node'
+    property_path: 'field_article_paragraph:entity:field_paragraph_title'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_article_paragraph
+        - field.storage.paragraph.field_paragraph_title
+      module:
+        - paragraphs
+  field_paragraph_body:
+    label: 'Paragraph » Paragraph » Paragraph body'
+    datasource_id: 'entity:node'
+    property_path: 'field_article_paragraph:entity:field_paragraph_body'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_article_paragraph
+        - field.storage.paragraph.field_paragraph_body
+      module:
+        - paragraphs
 datasource_settings:
   'entity:node':
     bundles:
