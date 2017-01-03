@@ -20,6 +20,7 @@
   }
 
   form {
+    @include font-size(13px);
     padding: 1em;
     width: 300px;
     textarea {
