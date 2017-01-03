@@ -1,1 +1,7 @@
-link_path: 'https://www.helsinki.fi/node/7921'
+link: 'https://www.helsinki.fi/en/node/7921'
+domain: 'helsinki.fi'
+message: 'We use cookies to ensure you get the best experience on our website.'
+learnmore: 'Read more about cookies.'
+dismiss: 'OK'
+theme: ''
+langcode: en

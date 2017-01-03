@@ -4,7 +4,27 @@ uhsg_cookie_consent.config:
   type: config_object
   label: 'Cookie consent settings'
   mapping:
-    link_path:
+    link:
       type: text
-      label: 'Learn more link path'
-
+      label: 'Link'
+      translatable: true
+    domain:
+      type: text
+      label: 'Domain'
+      translatable: true
+    message:
+      type: text
+      label: 'Message'
+      translatable: true
+    learnmore:
+      type: text
+      label: 'Learn more'
+      translatable: true
+    dismiss:
+      type: text
+      label: 'Dismiss'
+      translatable: true
+    theme:
+      type: text
+      label: 'Theme'
+      translatable: true

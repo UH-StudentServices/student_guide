@@ -1,3 +1,9 @@
-link_path: 'https://www.helsinki.fi/en/node/7921'
+link: 'https://www.helsinki.fi/en/node/7921'
+domain: helsinki.fi
+message: 'We use cookies to ensure you get the best experience on our website.'
+learnmore: 'Read more about cookies.'
+dismiss: OK
+theme: ''
+langcode: en
 _core:
-  default_config_hash: 9TkOpLOsHAOivDwzH_Zpc8fvhFbK0rlAXcR_ESEXGlE
+  default_config_hash: 8UceK2yo4gU_b8tbgeKCv07bqUKBtBkhCkHaD_jB9Bs
