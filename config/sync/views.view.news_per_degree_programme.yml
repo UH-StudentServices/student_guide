@@ -250,6 +250,7 @@ display:
     display_options:
       display_extenders: {  }
       block_description: 'News per degree programme'
+      block_hide_empty: true
     cache_metadata:
       max-age: -1
       contexts:
