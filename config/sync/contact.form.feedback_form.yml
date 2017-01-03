@@ -7,7 +7,7 @@ dependencies:
 third_party_settings:
   contact_ajax:
     enabled: true
-    prefix_id: ''
+    prefix_id: feedback-form__content
     render_selector: ''
     confirmation_type: 1
 id: feedback_form
@@ -16,5 +16,5 @@ recipients:
   - lauri.viitala@wunder.io
 reply: ''
 weight: 0
-message: 'Thank you for your feedback!'
+message: 'Thank you!'
 redirect: ''

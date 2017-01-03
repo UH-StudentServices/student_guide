@@ -206,8 +206,14 @@ function uhsg_theme_preprocess_page(&$variables) {
  */
 function uhsg_theme_form_alter(&$form, $form_state, $form_id) {
   if ($form_id == 'contact_message_feedback_form_form') {
+    
     $form['message']['widget'][0]['value']['#title_display'] = 'visually-hidden';
     $form['actions']['preview']['#access'] = FALSE;
     $form['actions']['submit']['#value'] = t('Send feedback');
   }
+}
+
+function uhsg_theme_preprocess_form(&$variables) {
+  $variables['attributes']['class'][] = 'visually-hidden';
+  //kint($variables);
 }

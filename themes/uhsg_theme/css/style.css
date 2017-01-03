@@ -6762,17 +6762,24 @@ a:hover .theme-dark .list-of-links__link:after {
 }
 
 .feedback-form {
+  font-size: 12.25px;
+  font-size: 0.875rem;
   background: #222;
-  position: absolute;
-  padding: 1em;
+  position: fixed;
   bottom: 1em;
   right: 1em;
+}
+
+@media (min-width: 48em) {
+  .feedback-form {
+    font-size: 14px;
+  }
 }
 
 .feedback-form .feedback-form__toggle {
   color: #FFF;
   cursor: pointer;
-  padding: 1em;
+  padding: 0.4em 0.6em 0.1em 0.6em;
   text-align: center;
 }
 
@@ -6791,9 +6798,45 @@ a:hover .theme-dark .list-of-links__link:after {
   display: none;
 }
 
+.feedback-form .feedback-form__toggle .feedback-form__title {
+  display: none;
+}
+
+@media (min-width: 48em) {
+  .feedback-form .feedback-form__toggle {
+    padding: 1em;
+  }
+  .feedback-form .feedback-form__toggle .feedback-form__title {
+    display: block;
+  }
+}
+
+.feedback-form .messages--status {
+  color: #4FB151;
+  padding: 1em;
+  background-image: none;
+  box-shadow: none;
+  text-align: center;
+  border: 0;
+  border-radius: 0;
+}
+
+.feedback-form .messages--status:before {
+  display: inline-block;
+  font-family: "hy-icons";
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "";
+  display: block;
+  font-size: 2em;
+}
+
 .feedback-form form {
   font-size: 11.375px;
   font-size: 0.8125rem;
+  padding: 1em;
   width: 300px;
 }
 
@@ -6807,6 +6850,7 @@ a:hover .theme-dark .list-of-links__link:after {
   font-size: 11.375px;
   font-size: 0.8125rem;
   outline: none;
+  resize: none;
   color: #FFF;
   background: #222;
   padding: 0;
@@ -6817,6 +6861,37 @@ a:hover .theme-dark .list-of-links__link:after {
   .feedback-form form textarea {
     font-size: 13px;
   }
+}
+
+.feedback-form form textarea::-webkit-input-placeholder {
+  color: #FFF;
+}
+
+.feedback-form form textarea::-moz-placeholder {
+  color: #FFF;
+}
+
+.feedback-form form textarea:-ms-input-placeholder {
+  color: #FFF;
+}
+
+.feedback-form form textarea::placeholder {
+  color: #FFF;
+}
+
+.feedback-form form .form-type-checkbox {
+  margin-bottom: 1em;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.feedback-form form input[type="checkbox"] {
+  -webkit-appearance: checkbox;
+  margin-right: 0.5em;
 }
 
 .feedback-form form .button {

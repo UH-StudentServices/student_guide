@@ -20,7 +20,7 @@ content:
     type: string_textarea
     weight: 0
     settings:
-      rows: 6
+      rows: 7
       placeholder: 'Give feedback about the service...'
     third_party_settings: {  }
 hidden:

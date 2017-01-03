@@ -1,13 +1,13 @@
 .feedback-form {
+  @include font-size(14px);
   background: $black;
-  position: absolute;
-  padding: 1em;
+  position: fixed;
   bottom: 1em;
   right: 1em;
-  .feedback-form__toggle {
+  .feedback-form__toggle {  
     color: $white;
     cursor: pointer;
-    padding: 1em;
+    padding: 0.4em 0.6em 0.1em 0.6em;
     text-align: center;
     .feedback-form__icon {
       display: block;
@@ -21,18 +21,56 @@
         display: none;
       }
     }
+    .feedback-form__title {
+      display: none;
+    }
+    @include breakpoint($small) {
+      padding: 1em;
+      .feedback-form__title {
+        display: block;
+      }
+    }
+  }
+
+  .messages--status {
+    color: $green;
+    padding: 1em;
+    background-image: none;
+    box-shadow: none;
+    text-align: center;
+    border: 0;
+    border-radius: 0;
+    &:before {
+      @include icon($icon-done);
+      display: block;
+      font-size: 2em;
+    }
   }
 
   form {
     @include font-size(13px);
+    padding: 1em;
     width: 300px;
     textarea {
       @include font-size(13px);
       outline: none;
+      resize: none;
       color: $white;
       background: $black;
       padding: 0;
       border: 0;
+      &::placeholder {
+        color: $white;
+      }
+    }
+    .form-type-checkbox {
+      margin-bottom: 1em;
+      display: flex;
+      align-items: center;
+    }
+    input[type="checkbox"] {
+      -webkit-appearance: checkbox;
+      margin-right: 0.5em;
     }
     .button {
       @include font-size(13px);
