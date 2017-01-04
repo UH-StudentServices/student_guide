@@ -6764,6 +6764,7 @@ a:hover .theme-dark .list-of-links__link:after {
 .feedback-form {
   font-size: 12.25px;
   font-size: 0.875rem;
+  z-index: 10;
   background: #222;
   position: fixed;
   bottom: 1em;
@@ -6846,9 +6847,12 @@ a:hover .theme-dark .list-of-links__link:after {
   }
 }
 
-.feedback-form form textarea {
+.feedback-form form textarea,
+.feedback-form form input[type="email"] {
   font-size: 11.375px;
   font-size: 0.8125rem;
+  box-shadow: none;
+  max-width: 100%;
   outline: none;
   resize: none;
   color: #FFF;
@@ -6858,25 +6862,34 @@ a:hover .theme-dark .list-of-links__link:after {
 }
 
 @media (min-width: 48em) {
-  .feedback-form form textarea {
+  .feedback-form form textarea,
+  .feedback-form form input[type="email"] {
     font-size: 13px;
   }
 }
 
-.feedback-form form textarea::-webkit-input-placeholder {
+.feedback-form form textarea::-webkit-input-placeholder,
+.feedback-form form input[type="email"]::-webkit-input-placeholder {
   color: #FFF;
 }
 
-.feedback-form form textarea::-moz-placeholder {
+.feedback-form form textarea::-moz-placeholder,
+.feedback-form form input[type="email"]::-moz-placeholder {
   color: #FFF;
 }
 
-.feedback-form form textarea:-ms-input-placeholder {
+.feedback-form form textarea:-ms-input-placeholder,
+.feedback-form form input[type="email"]:-ms-input-placeholder {
   color: #FFF;
 }
 
-.feedback-form form textarea::placeholder {
+.feedback-form form textarea::placeholder,
+.feedback-form form input[type="email"]::placeholder {
   color: #FFF;
+}
+
+.feedback-form form .form-item {
+  margin-bottom: 1em;
 }
 
 .feedback-form form .form-type-checkbox {

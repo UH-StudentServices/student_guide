@@ -1,5 +1,6 @@
 .feedback-form {
   @include font-size(14px);
+  z-index: 10;
   background: $black;
   position: fixed;
   bottom: 1em;
@@ -51,8 +52,11 @@
     @include font-size(13px);
     padding: 1em;
     width: 300px;
-    textarea {
+    textarea,
+    input[type="email"] {
       @include font-size(13px);
+      box-shadow: none;
+      max-width: 100%;
       outline: none;
       resize: none;
       color: $white;
@@ -62,6 +66,9 @@
       &::placeholder {
         color: $white;
       }
+    }
+    .form-item {
+      margin-bottom: 1em;
     }
     .form-type-checkbox {
       margin-bottom: 1em;

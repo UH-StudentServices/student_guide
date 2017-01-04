@@ -16,6 +16,10 @@ content:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
+  mail:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
   message:
     type: string_textarea
     weight: 0
@@ -26,6 +30,5 @@ content:
 hidden:
   copy: true
   langcode: true
-  mail: true
   name: true
   subject: true
