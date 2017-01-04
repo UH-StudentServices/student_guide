@@ -8,3 +8,19 @@ input[type="password"] {
     width: 50%;
   }
 }
+
+input[type="submit"] {
+  &.button--reset {
+    background: transparent;
+    color: $blue;
+    margin-right: 0;
+    padding-right: 2em;
+    & + i {
+      @include font-size(10px);
+      color: $blue;
+      position: relative;
+      right: 2em;
+      z-index: -1;
+    }
+  }
+}

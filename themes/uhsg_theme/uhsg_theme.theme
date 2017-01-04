@@ -176,6 +176,8 @@ function uhsg_theme_preprocess_views_exposed_form(&$variables) {
       break;
     case 'views-exposed-form-search-block-1':
       $variables['form']['search_api_fulltext']['#attributes']['placeholder'] = t('For example topic or university service');
+      $variables['form']['actions']['reset']['#suffix'] = '<i class="icon--remove"></i>';
+      $variables['form']['actions']['reset']['#attributes']['class'][] = 'button--reset';
       break;
   }
 }

@@ -6775,6 +6775,28 @@ input[type="password"] {
   }
 }
 
+input[type="submit"].button--reset {
+  background: transparent;
+  color: #0098d0;
+  margin-right: 0;
+  padding-right: 2em;
+}
+
+input[type="submit"].button--reset + i {
+  font-size: 8.75px;
+  font-size: 0.625rem;
+  color: #0098d0;
+  position: relative;
+  right: 2em;
+  z-index: -1;
+}
+
+@media (min-width: 48em) {
+  input[type="submit"].button--reset + i {
+    font-size: 10px;
+  }
+}
+
 .paragraph:nth-child(odd) {
   background: #EBEBEB;
 }
