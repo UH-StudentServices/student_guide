@@ -14,3 +14,6 @@ msgstr ""
 
 msgid "Updated"
 msgstr "Päivitetty"
+
+msgid "For example topic or university service"
+msgstr "Esim. aihealue tai yliopiston palvelu"
