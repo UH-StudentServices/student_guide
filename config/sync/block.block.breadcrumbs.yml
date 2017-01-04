@@ -9,7 +9,7 @@ dependencies:
 id: breadcrumbs
 theme: uhsg_theme
 region: before_content
-weight: -2
+weight: -3
 provider: null
 plugin: system_breadcrumb_block
 settings:

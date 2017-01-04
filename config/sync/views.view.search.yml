@@ -563,7 +563,7 @@ display:
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
-      use_ajax: false
+      use_ajax: true
       filter_groups:
         operator: AND
         groups:
@@ -576,14 +576,13 @@ display:
       tags:
         - 'config:field.storage.node.field_article_degree_programme'
         - 'config:field.storage.node.field_news_degree_programme'
-  page_1:
-    display_plugin: page
-    id: page_1
-    display_title: Page
-    position: 1
+  block_1:
+    display_plugin: block
+    id: block_1
+    display_title: Block
+    position: 2
     display_options:
       display_extenders: {  }
-      path: search
     cache_metadata:
       max-age: 0
       contexts:
