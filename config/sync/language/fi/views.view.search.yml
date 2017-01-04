@@ -1,0 +1,8 @@
+display:
+  default:
+    display_options:
+      title: Haku
+      exposed_form:
+        options:
+          submit_button: 'Näytä tulokset'
+          reset_button_label: Tyhjennä

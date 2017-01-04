@@ -1,0 +1,8 @@
+display:
+  default:
+    display_options:
+      title: Sök
+      exposed_form:
+        options:
+          submit_button: 'Visa resultaten'
+          reset_button_label: Återställ
