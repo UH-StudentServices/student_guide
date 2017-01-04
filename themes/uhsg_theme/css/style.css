@@ -6788,6 +6788,12 @@ a:hover .theme-dark .list-of-links__link:after {
   }
 }
 
+.view-search .view-header,
+.view-search .view-filters {
+  width: 100%;
+  padding: 1em 0;
+}
+
 .theme--full .theme__body p {
   color: #777777;
   font-size: 17.5px;

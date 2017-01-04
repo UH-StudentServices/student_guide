@@ -553,7 +553,17 @@ display:
           plugin_id: search_api_fulltext
       sorts: {  }
       title: Search
-      header: {  }
+      header:
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          content: '<h3>Results (@total)</h3>'
+          plugin_id: result
       footer: {  }
       empty: {  }
       relationships: {  }

@@ -6,3 +6,6 @@ display:
         options:
           submit_button: 'Näytä tulokset'
           reset_button_label: Tyhjennä
+      header:
+        result:
+          content: '<h3>Tulokset (@total kpl)</h3>'

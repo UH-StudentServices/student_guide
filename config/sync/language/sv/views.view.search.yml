@@ -6,3 +6,6 @@ display:
         options:
           submit_button: 'Visa resultaten'
           reset_button_label: Återställ
+      header:
+        result:
+          content: '<h3>Resultat (@total)</h3>'
