@@ -6764,8 +6764,8 @@ a:hover .theme-dark .list-of-links__link:after {
 .feedback-form {
   font-size: 12.25px;
   font-size: 0.875rem;
+  width: 300px;
   z-index: 10;
-  background: #222;
   position: fixed;
   bottom: 1em;
   right: 1em;
@@ -6779,6 +6779,8 @@ a:hover .theme-dark .list-of-links__link:after {
 
 .feedback-form .feedback-form__toggle {
   color: #FFF;
+  background: #222;
+  float: right;
   cursor: pointer;
   padding: 0.4em 0.6em 0.1em 0.6em;
   text-align: center;
@@ -6812,14 +6814,31 @@ a:hover .theme-dark .list-of-links__link:after {
   }
 }
 
-.feedback-form .messages--status {
-  color: #4FB151;
+.feedback-form .messages {
+  float: right;
   padding: 1em;
+  position: relative;
   background-image: none;
   box-shadow: none;
   text-align: center;
   border: 0;
   border-radius: 0;
+}
+
+.feedback-form .messages--error:before {
+  display: inline-block;
+  font-family: "hy-icons";
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "";
+  display: block;
+  font-size: 2em;
+}
+
+.feedback-form .messages--status {
+  color: #4FB151;
 }
 
 .feedback-form .messages--status:before {
@@ -6838,7 +6857,7 @@ a:hover .theme-dark .list-of-links__link:after {
   font-size: 11.375px;
   font-size: 0.8125rem;
   padding: 1em;
-  width: 300px;
+  background: #222;
 }
 
 @media (min-width: 48em) {
