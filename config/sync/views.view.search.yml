@@ -52,17 +52,13 @@ display:
       style:
         type: default
       row:
-        type: fields
+        type: search_api
         options:
-          default_field_elements: true
-          inline:
-            title: title
-            type: type
-            changed: changed
-            field_news_degree_programme: field_news_degree_programme
-            field_article_degree_programme: field_article_degree_programme
-          separator: ''
-          hide_empty: false
+          view_modes:
+            'entity:node':
+              article: teaser
+              news: teaser
+              theme: teaser
       fields:
         title:
           id: title
@@ -583,6 +579,7 @@ display:
     position: 2
     display_options:
       display_extenders: {  }
+      block_hide_empty: false
     cache_metadata:
       max-age: 0
       contexts:
