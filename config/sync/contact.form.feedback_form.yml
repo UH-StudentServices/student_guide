@@ -13,7 +13,7 @@ third_party_settings:
 id: feedback_form
 label: 'Feedback form'
 recipients:
-  - lauri.viitala@wunder.io
+  - opetusteknologia@helsinki.fi
 reply: ''
 weight: 0
 message: 'Thank you!'
