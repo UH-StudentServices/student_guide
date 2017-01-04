@@ -61,7 +61,7 @@ display:
             changed: changed
             field_news_degree_programme: field_news_degree_programme
             field_article_degree_programme: field_article_degree_programme
-          separator: ' | '
+          separator: ''
           hide_empty: false
       fields:
         title:
