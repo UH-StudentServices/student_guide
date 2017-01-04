@@ -35,7 +35,7 @@ display:
           bypass_access: false
           skip_access: false
       exposed_form:
-        type: basic
+        type: input_required
         options:
           submit_button: 'Show results'
           reset_button: true
@@ -44,6 +44,8 @@ display:
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
+          text_input_required: ''
+          text_input_required_format: plain_text
       pager:
         type: some
         options:
