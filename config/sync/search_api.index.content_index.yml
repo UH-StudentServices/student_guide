@@ -24,7 +24,7 @@ field_settings:
     label: Title
     datasource_id: 'entity:node'
     property_path: title
-    type: string
+    type: text
   body:
     label: Body
     datasource_id: 'entity:node'
@@ -91,7 +91,39 @@ datasource_settings:
 processor_settings:
   add_url: {  }
   aggregated_field: {  }
+  highlight:
+    highlight: always
+    highlight_partial: false
+    excerpt: true
+    excerpt_length: 256
+    exclude_fields: {  }
+    prefix: '<strong>'
+    suffix: '</strong>'
+    weights:
+      postprocess_query: 0
+  ignorecase:
+    fields:
+      - title
+      - body
+      - type
+      - field_paragraph_title
+      - field_paragraph_body
+    weights:
+      preprocess_index: -10
+      preprocess_query: -10
+  node_status: {  }
   rendered_item: {  }
+  tokenizer:
+    fields:
+      - title
+      - body
+      - field_paragraph_body
+    spaces: ''
+    overlap_cjk: 1
+    minimum_word_size: '3'
+    weights:
+      preprocess_index: -6
+      preprocess_query: -6
 tracker_settings:
   default: {  }
 options:
