@@ -1,10 +1,10 @@
-# Finnish translation of Student Guide
+# Swedish translation of Student Guide
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2017-01-02 14:46+0200\n"
-"PO-Revision-Date: 2017-01-02 14:46+0200\n"
+"POT-Creation-Date: 2017-01-04 10:26+0200\n"
+"PO-Revision-Date: 2017-01-04 10:26+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -12,20 +12,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-msgid "Updated"
-msgstr "Päivitetty"
-
 msgid "Name of degree programme"
-msgstr "Koulutusohjelman nimi"
-
-msgid "For example topic or university service"
-msgstr "Esim. aihealue tai yliopiston palvelu"
+msgstr ""
 
 msgid "Feedback"
-msgstr "Palaute"
+msgstr "Feedback"
 
 msgid "Send feedback"
-msgstr "Lähetä Palaute"
+msgstr "Skicka"
 
 msgid "Give feedback about the service..."
-msgstr "Anna palautetta palvelusta..."
+msgstr "Ge feedback om tjänsten..."

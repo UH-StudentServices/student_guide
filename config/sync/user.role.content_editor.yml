@@ -36,3 +36,4 @@ permissions:
   - 'edit any news content'
   - 'edit own news content'
   - 'view news revisions'
+  - 'access site-wide contact form'

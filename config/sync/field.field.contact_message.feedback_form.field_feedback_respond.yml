@@ -1,0 +1,23 @@
+uuid: b148d9cf-a3ea-4fae-8fbb-5ae770c9dc95
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.feedback_form
+    - field.storage.contact_message.field_feedback_respond
+id: contact_message.feedback_form.field_feedback_respond
+field_name: field_feedback_respond
+entity_type: contact_message
+bundle: feedback_form
+label: 'I would like to get a response to my feedback'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

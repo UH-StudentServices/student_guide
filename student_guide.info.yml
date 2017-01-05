@@ -8,11 +8,15 @@ dependencies:
   - block
   - config
   - contextual
+  - contact
+  - contact_ajax
+  - contact_block
   - datetime
   - dblog
   - dynamic_page_cache
   - easy_breadcrumb
   - field_ui
+  - honeypot
   - image
   - menu_ui
   - menu_link_content
