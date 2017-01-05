@@ -146,7 +146,7 @@ function uhsg_theme_preprocess_views_view(&$variables) {
       foreach ($reference_fields as $reference_field) {
         if ($node && $node->hasField($reference_field) && isset($node->get($reference_field)->target_id)) {
 
-          if ($_COOKIE['Drupal_visitor_degree_programme']) {
+          if (isset($_COOKIE['Drupal_visitor_degree_programme'])) {
             foreach ($node->$reference_field as $item) {
               if ($item->target_id == $_COOKIE['Drupal_visitor_degree_programme']) {
                 $term = Term::load($item->target_id);
@@ -155,7 +155,7 @@ function uhsg_theme_preprocess_views_view(&$variables) {
             }
           }
 
-          if (!$term) {
+          if (empty($term)) {
             $term = Term::load($node->get($reference_field)->target_id);
           }
 
@@ -180,7 +180,7 @@ function uhsg_theme_preprocess_views_view(&$variables) {
       // if page doesn't have a degree programme reference, or it isn't a degree programme term,
       // read active degree programme from cookie. If no cookie fallback to "select degree programme".
       else {
-        if ($_COOKIE['Drupal_visitor_degree_programme']) {
+        if (isset($_COOKIE['Drupal_visitor_degree_programme'])) {
           $term = Term::load($_COOKIE['Drupal_visitor_degree_programme']);
           if ($term) {
             $term_translated = \Drupal::service('entity.repository')->getTranslationFromContext($term);
