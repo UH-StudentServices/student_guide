@@ -169,7 +169,7 @@ function uhsg_theme_preprocess_views_view(&$variables) {
       }
 
       // if page is degree programme term, make that degree programme active
-      elseif ($term && $term->bundle() == 'degree_programme') {
+      if ($term && $term->bundle() == 'degree_programme') {
         $tid = $term->id();
         $cookie = array('degree_programme' => $tid);
         user_cookie_save($cookie);
@@ -181,8 +181,10 @@ function uhsg_theme_preprocess_views_view(&$variables) {
       else {
         if ($_COOKIE['Drupal_visitor_degree_programme']) {
           $term = Term::load($_COOKIE['Drupal_visitor_degree_programme']);
-          $term_translated = \Drupal::service('entity.repository')->getTranslationFromContext($term);
-          $variables['title'] = $term_translated->getName();
+          if ($term) {
+            $term_translated = \Drupal::service('entity.repository')->getTranslationFromContext($term);
+            $variables['title'] = $term_translated->getName();
+          }
         }
         else {
           $variables['title'] = $variables['view']->getTitle();
