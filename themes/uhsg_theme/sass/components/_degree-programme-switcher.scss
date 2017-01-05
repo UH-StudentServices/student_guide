@@ -46,9 +46,7 @@
   .degree-programme-switcher__search {
     display: flex;
     input[type="text"] {
-      @include font-size(14px);
-      border: 2px solid $blue;
-      padding: 0.5em;
+      width: 100%;
     }
     input[type="submit"] {
       padding: 0;
