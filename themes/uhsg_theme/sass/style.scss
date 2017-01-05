@@ -26,5 +26,6 @@
 @import "styleguide/components/_logo.scss";
 
 /* STUDENT GUIDE THEMING */
+@import "mixins/**/*";
 @import "layout/**/*";
-@import "components/**/*"
+@import "components/**/*";
