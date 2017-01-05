@@ -18,6 +18,9 @@ msgstr "Päivitetty"
 msgid "Name of degree programme"
 msgstr "Koulutusohjelman nimi"
 
+msgid "For example topic or university service"
+msgstr "Esim. aihealue tai yliopiston palvelu"
+
 msgid "Feedback"
 msgstr "Palaute"
 

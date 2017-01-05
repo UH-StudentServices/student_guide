@@ -129,6 +129,7 @@ function uhsg_theme_preprocess_field(array &$variables, $hook) {
 function uhsg_theme_preprocess_views_view(&$variables) {
   switch ($variables['view']->id()) {
     case 'themes':
+    case 'search':
       $variables['attributes']['class'][] = 'grid-container';
       break;
     case 'taxonomy_term':
@@ -172,6 +173,11 @@ function uhsg_theme_preprocess_views_exposed_form(&$variables) {
     case 'views-exposed-form-degree-programmes-block-1':
       $variables['form']['name']['#attributes']['placeholder'] = t('Name of degree programme');
       $variables['form']['actions']['submit']['#suffix'] = '<i class="icon--search"></i>';
+      break;
+    case 'views-exposed-form-search-block-1':
+      $variables['form']['search_api_fulltext']['#attributes']['placeholder'] = t('For example topic or university service');
+      $variables['form']['actions']['reset']['#suffix'] = '<i class="icon--remove"></i>';
+      $variables['form']['actions']['reset']['#attributes']['class'][] = 'button--reset';
       break;
   }
 }

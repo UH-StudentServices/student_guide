@@ -1,0 +1,6 @@
+uhsg-search:
+  version: 1.x
+  js:
+    js/uhsg-search.js: {}
+  dependencies:
+    - core/jquery

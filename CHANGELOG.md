@@ -24,5 +24,5 @@
   HUB-16: Show Changed time in nodes and terms.
   HUB-59: Cookie consent.
   HUB-43: Display related news when displaying a degree programme.
+  HUB-14: Content search
   HUB-38: Add feedback form.
-  
