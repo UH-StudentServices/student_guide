@@ -9,3 +9,6 @@ display:
       header:
         result:
           content: '<h3>Resultat (@total)</h3>'
+      empty:
+        area_text_custom:
+          content: '<h3>Inget resultat</h3>'
