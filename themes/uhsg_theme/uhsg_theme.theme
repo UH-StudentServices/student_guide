@@ -137,7 +137,7 @@ function uhsg_theme_preprocess_views_view(&$variables) {
       break;
     case 'degree_programmes':
       $node = \Drupal::routeMatch()->getParameter('node');
-      $term = \Drupal::routeMatch()->getParameter('taxonomy_term');
+      $term_from_route = \Drupal::routeMatch()->getParameter('taxonomy_term');
 
       // if page is node first look if degree programme cookie matches any of the referenced degree programmes and use it.
       // if no match is found, set the first degree programme reference as the new active one.
@@ -147,7 +147,7 @@ function uhsg_theme_preprocess_views_view(&$variables) {
         if ($node && $node->hasField($reference_field) && isset($node->get($reference_field)->target_id)) {
 
           if ($_COOKIE['Drupal_visitor_degree_programme']) {
-            foreach ($node->field_article_degree_programme as $item) {
+            foreach ($node->$reference_field as $item) {
               if ($item->target_id == $_COOKIE['Drupal_visitor_degree_programme']) {
                 $term = Term::load($item->target_id);
                 break;
@@ -169,7 +169,8 @@ function uhsg_theme_preprocess_views_view(&$variables) {
       }
 
       // if page is degree programme term, make that degree programme active
-      if ($term && $term->bundle() == 'degree_programme') {
+      if ($term_from_route && $term_from_route->bundle() == 'degree_programme') {
+        $term = $term_from_route;
         $tid = $term->id();
         $cookie = array('degree_programme' => $tid);
         user_cookie_save($cookie);
