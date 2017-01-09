@@ -1,0 +1,23 @@
+uuid: 9f0b4240-c339-4687-b56a-276392040e35
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.feedback_form
+  module:
+    - contact_block
+  theme:
+    - uhsg_theme
+id: contactblock
+theme: uhsg_theme
+region: after_content
+weight: 0
+provider: null
+plugin: contact_block
+settings:
+  id: contact_block
+  label: 'Contact block'
+  provider: contact_block
+  label_display: '0'
+  contact_form: feedback_form
+visibility: {  }

@@ -22,5 +22,6 @@ libraries-override:
       component:
         css/components/menu.css: false
         css/components/form.css: false
+        css/components/inline-form.css: false
 
 

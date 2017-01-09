@@ -1,0 +1,10 @@
+<?php
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function uhsg_search_form_views_exposed_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if (\Drupal::service('path.matcher')->isFrontPage()) {
+    $form['#attached']['library'][] = 'uhsg_search/uhsg-search';
+  }
+}
