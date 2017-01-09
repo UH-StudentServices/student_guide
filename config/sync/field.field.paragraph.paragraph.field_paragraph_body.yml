@@ -1,16 +1,16 @@
-uuid: 25e7d56c-a4f2-45a4-9f2e-ac04f948c921
+uuid: 35cd3963-919c-4c7a-9af9-47beb7feb50e
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_paragraph_body
-    - paragraphs.paragraphs_type.paragraph_title_image_and_text
+    - paragraphs.paragraphs_type.paragraph
   module:
     - text
-id: paragraph.paragraph_title_image_and_text.field_paragraph_body
+id: paragraph.paragraph.field_paragraph_body
 field_name: field_paragraph_body
 entity_type: paragraph
-bundle: paragraph_title_image_and_text
+bundle: paragraph
 label: 'Paragraph body'
 description: ''
 required: false

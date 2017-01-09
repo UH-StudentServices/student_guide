@@ -1,14 +1,14 @@
-uuid: 02dbefa5-e3b5-4d46-abff-25787960e64c
+uuid: 92b54676-f244-4bad-ba6e-bf0aa4ddcca6
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_paragraph_title
-    - paragraphs.paragraphs_type.paragraph_title_and_links
-id: paragraph.paragraph_title_and_links.field_paragraph_title
+    - paragraphs.paragraphs_type.paragraph
+id: paragraph.paragraph.field_paragraph_title
 field_name: field_paragraph_title
 entity_type: paragraph
-bundle: paragraph_title_and_links
+bundle: paragraph
 label: Title
 description: ''
 required: false

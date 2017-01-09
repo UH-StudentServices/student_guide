@@ -1,19 +1,21 @@
-uuid: cbc26338-f8b7-4d4c-9c56-5d450103ade8
+uuid: 5b74eab1-5c57-4aa4-b967-dc3aa651c2e8
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.paragraph_title_image_and_text.field_paragraph_body
-    - field.field.paragraph.paragraph_title_image_and_text.field_paragraph_image
-    - field.field.paragraph.paragraph_title_image_and_text.field_paragraph_title
+    - field.field.paragraph.paragraph.field_paragraph_body
+    - field.field.paragraph.paragraph.field_paragraph_image
+    - field.field.paragraph.paragraph.field_paragraph_links
+    - field.field.paragraph.paragraph.field_paragraph_title
     - image.style.paragraph_image
-    - paragraphs.paragraphs_type.paragraph_title_image_and_text
+    - paragraphs.paragraphs_type.paragraph
   module:
     - image
+    - link
     - text
-id: paragraph.paragraph_title_image_and_text.default
+id: paragraph.paragraph.default
 targetEntityType: paragraph
-bundle: paragraph_title_image_and_text
+bundle: paragraph
 mode: default
 content:
   field_paragraph_body:
@@ -23,13 +25,24 @@ content:
     third_party_settings: {  }
     type: text_default
   field_paragraph_image:
-    weight: 2
+    weight: 3
     label: hidden
     settings:
       image_style: paragraph_image
       image_link: ''
     third_party_settings: {  }
     type: image
+  field_paragraph_links:
+    weight: 2
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
   field_paragraph_title:
     weight: 0
     label: hidden

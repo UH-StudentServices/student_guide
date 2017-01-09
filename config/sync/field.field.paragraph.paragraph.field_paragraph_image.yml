@@ -1,10 +1,10 @@
-uuid: 90725620-f3dd-49b5-a362-4d76789fcc09
+uuid: 3bd510ba-a91f-4719-a0d4-83943348eee3
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_paragraph_image
-    - paragraphs.paragraphs_type.paragraph_title_image_and_text
+    - paragraphs.paragraphs_type.paragraph
   module:
     - content_translation
     - image
@@ -14,10 +14,10 @@ third_party_settings:
       alt: alt
       title: title
       file: '0'
-id: paragraph.paragraph_title_image_and_text.field_paragraph_image
+id: paragraph.paragraph.field_paragraph_image
 field_name: field_paragraph_image
 entity_type: paragraph
-bundle: paragraph_title_image_and_text
+bundle: paragraph
 label: 'Paragraph image'
 description: ''
 required: false
