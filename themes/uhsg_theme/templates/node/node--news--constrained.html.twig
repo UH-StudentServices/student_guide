@@ -89,10 +89,7 @@
   </h4>
   <div class="box-story__topical">
     <span class="box-story__date">{{ created }}</span>
-    {{ kint(content.field_news_degree_programme) }}
-    {% for tag in content.field_news_degree_programme.values %}
-    	<a href="#" class="box-story__tag"><span>Ympäristö & luonnontiede</span></a>
-    {% endfor %}
+    {{ content.field_news_degree_programme }}
   </div>
   <div class="box-story__content">
   	<a href="{{ url }}"> {{ body|striptags }} </a>
