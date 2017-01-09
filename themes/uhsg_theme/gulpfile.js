@@ -4,6 +4,7 @@ var bower = require('gulp-bower');
 var sass = require('gulp-sass');
 var globbing = require('node-sass-globbing');
 var browserSync = require('browser-sync').create();
+var eslint = require('gulp-eslint');
 
 var browserSyncProxyTarget = 'https://local.guide.student.helsinki.fi';
 
@@ -12,7 +13,7 @@ var sass_config = {
   outputStyle: 'expanded',
   includePaths: [
     'node_modules/normalize.css/',
-    'node_modules/breakpoint-sass/stylesheets/',
+    'node_modules/breakpoint-sass/stylesheets/'
   ]
 };
 
@@ -52,4 +53,12 @@ gulp.task('browsersync', ['watch'], function() {
     proxy: browserSyncProxyTarget,
     reloadDelay: 1000
   });
+});
+
+// Linting
+gulp.task('lint', function() {
+  return gulp.src(['*.js', 'js/*.js', '!node_modules/**'])
+    .pipe(eslint())
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError());
 });
