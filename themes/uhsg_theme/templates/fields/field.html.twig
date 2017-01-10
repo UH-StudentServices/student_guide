@@ -49,15 +49,15 @@
   {% if not label_hidden %}
     <h3{{ title_attributes }}>{{ label }}</h3>
   {% endif %}
-  {% if multiple %}
+  {% if nowrapper %}
+    {% for item in items %}
+      {{ item.content }}
+    {% endfor %}
+  {% else %}
     <div{{ attributes.addClass(classes) }}>
       {% for item in items %}
         {{ item.content }}
       {% endfor %}
     </div>
-  {% else %}
-    {% for item in items %}
-      <div{{ attributes.addClass(classes) }}>{{ item.content }}</div>
-    {% endfor %}
   {% endif %}
 {% endblock %}
