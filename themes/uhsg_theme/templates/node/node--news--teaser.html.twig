@@ -70,18 +70,27 @@
  *   in different view modes.
  */
 #}
-
 {%
-  set container_classes = [
-    'container',
-    'tube--large'
+  set node_classes = [
+    node.bundle|clean_class,
+    view_mode ? node.bundle|clean_class ~ '--' ~ view_mode|clean_class,
+    'box-story',
+    'grid-item-3'
   ]
 %}
 
-<article>
-  <div{{ content_attributes.addClass(container_classes) }}>
-    <h1> {{ label }} </h1>
-    {{ content|without('field_article_paragraph') }}
-  </div>
-  {{ content.field_article_paragraph }}
+{%
+  set title_classes = [
+    node.bundle|clean_class ~ '__title',
+    'box-story__title'
+  ]
+%}
+
+<article {{ attributes.addClass(node_classes) }}>
+  <a href="{{ url }}" rel="bookmark" class="box-story__link-wrapper">
+    <h4 {{ title_attributes.addClass(title_classes) }}> {{ label }} </h4>
+    <div class="box-story__content">
+      {{ content }}
+    </div>
+  </a>
 </article>

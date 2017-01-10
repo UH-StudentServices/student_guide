@@ -1,0 +1,34 @@
+uuid: 431c182a-77b6-423a-b585-7a3910e78917
+langcode: en
+status: true
+dependencies: {  }
+id: menu_links
+migration_tags: null
+migration_group: uhsg_initials
+label: 'Header and footer menu links'
+source:
+  plugin: csv
+  path: /artifacts/menu_links.csv
+  header_row_count: 1
+  default_lang: true
+  keys:
+    - id
+  column_names:
+    -
+      id: Identifier
+    -
+      menu_name: 'Menu name'
+    -
+      title: Title
+    -
+      link_uri: URI
+process:
+  title: title
+  link/uri: link_uri
+  menu_name: menu_name
+  langcode:
+    plugin: default_value
+    default_value: en
+destination:
+  plugin: 'entity:menu_link_content'
+migration_dependencies: null

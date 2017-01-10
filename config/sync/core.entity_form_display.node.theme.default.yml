@@ -5,8 +5,11 @@ dependencies:
   config:
     - field.field.node.theme.body
     - field.field.node.theme.field_theme_articles
+    - field.field.node.theme.field_theme_teaser_image
+    - image.style.thumbnail
     - node.type.theme
   module:
+    - image
     - path
     - text
 id: node.theme.default
@@ -35,6 +38,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+  field_theme_teaser_image:
+    weight: 33
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
   langcode:
     type: language_select
     weight: 2

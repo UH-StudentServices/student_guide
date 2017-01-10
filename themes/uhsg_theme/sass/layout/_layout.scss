@@ -4,3 +4,16 @@
   padding-left: 1em;
   padding-right: 1em;
 }
+
+.grid-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.grid-item-3 {
+  flex: 1 100%;
+  @include breakpoint($small) {
+    flex: 0 31%;
+  }
+}

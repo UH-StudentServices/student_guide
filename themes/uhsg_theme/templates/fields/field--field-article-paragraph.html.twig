@@ -1,0 +1,15 @@
+{% extends "field.html.twig" %}
+
+{% block header %}
+  {% if table_of_contents %}
+    <div class="index container">
+      {% for item in table_of_contents %}
+        <div class="index__row">
+          <a href="{{ '#paragraph-' ~ item.id }}" class="index__link button--action-before icon--arrow-down theme-transparent">
+            {{ item.title.value }}
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endblock %}

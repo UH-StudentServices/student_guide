@@ -1,0 +1,30 @@
+uuid: 0841e8f6-524d-4860-961b-512c7b5fef28
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.search
+  module:
+    - system
+    - views
+  theme:
+    - uhsg_theme
+id: views_block__search_block_1
+theme: uhsg_theme
+region: before_content
+weight: 0
+provider: null
+plugin: 'views_block:search-block_1'
+settings:
+  id: 'views_block:search-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

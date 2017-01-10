@@ -10,7 +10,18 @@ base theme: classy
 
 regions:
   header: Header
+  navigation: Navigation
   before_content: Before content
   content: Content
+  after_content: After content
   footer: Footer
+
+libraries-override:
+  classy/base:
+    css:
+      component:
+        css/components/menu.css: false
+        css/components/form.css: false
+        css/components/inline-form.css: false
+
 

@@ -1,0 +1,132 @@
+uuid: 929ba017-f388-42a1-af22-18be65bdc49d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - field.storage.node.field_article_paragraph
+    - field.storage.paragraph.field_paragraph_title
+    - field.storage.paragraph.field_paragraph_body
+    - field.storage.node.field_article_degree_programme
+    - field.storage.node.field_news_degree_programme
+    - search_api.server.student_guide
+  module:
+    - paragraphs
+    - taxonomy
+    - search_api
+    - node
+id: content_index
+name: 'Content index'
+description: ''
+read_only: false
+field_settings:
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+  body:
+    label: Body
+    datasource_id: 'entity:node'
+    property_path: body
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.body
+  type:
+    label: 'Content type'
+    datasource_id: 'entity:node'
+    property_path: type
+    type: string
+  field_paragraph_title:
+    label: 'Paragraph » Paragraph » Title'
+    datasource_id: 'entity:node'
+    property_path: 'field_article_paragraph:entity:field_paragraph_title'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_article_paragraph
+        - field.storage.paragraph.field_paragraph_title
+      module:
+        - paragraphs
+  field_paragraph_body:
+    label: 'Paragraph » Paragraph » Paragraph body'
+    datasource_id: 'entity:node'
+    property_path: 'field_article_paragraph:entity:field_paragraph_body'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_article_paragraph
+        - field.storage.paragraph.field_paragraph_body
+      module:
+        - paragraphs
+  article_degree_programme_tid:
+    label: 'Degree programme » Taxonomy term » Term ID'
+    datasource_id: 'entity:node'
+    property_path: 'field_article_degree_programme:entity:tid'
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_article_degree_programme
+      module:
+        - taxonomy
+  news_degree_programme_tid:
+    label: 'Degree programme » Taxonomy term » Term ID'
+    datasource_id: 'entity:node'
+    property_path: 'field_news_degree_programme:entity:tid'
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_news_degree_programme
+      module:
+        - taxonomy
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: true
+      selected: {  }
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  highlight:
+    highlight: always
+    highlight_partial: false
+    excerpt: true
+    excerpt_length: 256
+    exclude_fields: {  }
+    prefix: '<strong>'
+    suffix: '</strong>'
+    weights:
+      postprocess_query: 0
+  ignorecase:
+    fields:
+      - title
+      - body
+      - type
+      - field_paragraph_title
+      - field_paragraph_body
+    weights:
+      preprocess_index: -10
+      preprocess_query: -10
+  node_status: {  }
+  rendered_item: {  }
+  tokenizer:
+    fields:
+      - title
+      - body
+      - field_paragraph_body
+    spaces: ''
+    overlap_cjk: 1
+    minimum_word_size: '3'
+    weights:
+      preprocess_index: -6
+      preprocess_query: -6
+tracker_settings:
+  default: {  }
+options:
+  index_directly: true
+  cron_limit: 50
+server: student_guide

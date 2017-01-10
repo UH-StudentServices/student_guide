@@ -1,5 +1,8 @@
 <?php
 
+use Drupal\taxonomy\Entity\Term;
+use Drupal\Core\Language\LanguageInterface;
+
 /**
  * @file
  * Functions to support theming in the uhsg_theme theme.
@@ -19,6 +22,9 @@ function uhsg_theme_preprocess_region(&$variables) {
       $variables['copyright_text'] = \Drupal::config('uhsg_service_provider_details.settings')->get('copyright_text');
       $variables['contact_info'] = \Drupal::config('uhsg_service_provider_details.settings')->get('contact_info');
       break;
+    case 'before_content':
+    case 'after_content':
+      $variables['attributes']['class'][] = 'container';
   }
 }
 
@@ -36,7 +42,14 @@ function uhsg_theme_preprocess_links__language_block(&$variables) {
       unset($variables['links'][$langcode]);
     }
   }
+}
 
+/**
+ * Implements hook_preprocess_HOOK() for node links.
+ */
+function uhsg_theme_preprocess_links__node(&$variables) {
+  // Remove classes
+  $variables['attributes']['class'] = [];
 }
 
 /**
@@ -60,12 +73,24 @@ function uhsg_theme_preprocess_menu(&$variables) {
       $link_classes = 'list-of-links__link button--action icon--arrow-right theme-transparent';
       $menu_classes = 'list-of-links--condensed theme-footer';
       break;
+    case 'main':
+      $link_classes = 'is-lvl1 menu-item';
+      $menu_classes = 'menu';
+      $variables['home_link']['link'] = \Drupal::config('uhsg_service_provider_details.settings')->get('logo_path');
+      $variables['home_link']['classes'] = $link_classes . ' main-menu__front';
+      break;
   }
 
   if ($menu_classes && $link_classes) {
     $variables['attributes']['class'][] = $menu_classes;
     foreach ($variables['items'] as &$item) {
       $item['attributes']->addClass($link_classes);
+
+      // we want a different active-class than what drupal provides.
+      $current_path = \Drupal::request()->getRequestUri();
+      if ($item['url']->toString() == $current_path) {
+        $item['is_active'] = TRUE;
+      }
     }
   }
 }
@@ -82,8 +107,134 @@ function uhsg_theme_preprocess_field(array &$variables, $hook) {
         $item['content']['#options']['attributes']['class'][] = 'list-of-links__link button--action icon--arrow-right';
       }
       break;
-    case 'body':
-      $variables['attributes']['class'][] = 'intro-text';
+    case 'field_theme_articles':
+      $variables['title_attributes']['class'][] = 'tube';
+      $variables['attributes']['class'][] = 'grid-container';
       break;
+    case 'field_article_paragraph':
+      $variables['table_of_contents'] = [];
+      foreach ($variables['items'] as $item) {
+        $variables['table_of_contents'][] = [
+          'id' => $item['content']['#paragraph']->id(),
+          'title' => $item['content']['#paragraph']->get('field_paragraph_title')
+        ];
+      }
+      break;
+    case 'field_news_degree_programme':
+      foreach ($variables['items'] as &$item) {
+        $item['content']['#options']['attributes']['class'][] = 'box-story__tag';
+        $variables['nowrapper'] = TRUE;
+      }
+      break;
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for views.
+ */
+function uhsg_theme_preprocess_views_view(&$variables) {
+  switch ($variables['view']->id()) {
+    case 'themes':
+    case 'search':
+      $variables['attributes']['class'][] = 'grid-container';
+      break;
+    case 'taxonomy_term':
+    case 'news_per_degree_programme':
+      $variables['attributes']['class'][] = 'grid-container tube--large';
+      break;
+    case 'news':
+      $variables['attributes']['class'][] = 'tube';
+      break;
+    case 'degree_programmes':
+      $node = \Drupal::routeMatch()->getParameter('node');
+      $term = \Drupal::routeMatch()->getParameter('taxonomy_term');
+      if ($node && $node->hasField('field_article_degree_programme') && isset($node->get('field_article_degree_programme')->target_id)) {
+        $term = Term::load($node->get('field_article_degree_programme')->target_id);
+        $term_translated = \Drupal::service('entity.repository')->getTranslationFromContext($term);
+        $variables['title'] = $term_translated->getName();
+      }
+      elseif ($term && $term->bundle() == 'degree_programme') {
+        $variables['title'] = $term->getName();
+      }
+      else {
+        $variables['title'] = $variables['view']->getTitle();
+      }
+      break;
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for Block document templates.
+ */
+function uhsg_theme_preprocess_block(array &$variables) {
+  switch ($variables['elements']['#id']) {
+    case 'mainnavigation':
+      $variables['attributes']['class'][] = 'main-menu';
+      break;
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for views exposed forms.
+ */
+function uhsg_theme_preprocess_views_exposed_form(&$variables) {
+  switch ($variables['form']['#id']) {
+    case 'views-exposed-form-degree-programmes-block-1':
+      $variables['form']['name']['#attributes']['placeholder'] = t('Name of degree programme');
+      $variables['form']['actions']['submit']['#suffix'] = '<i class="icon--search"></i>';
+      break;
+    case 'views-exposed-form-search-block-1':
+      $variables['form']['search_api_fulltext']['#attributes']['placeholder'] = t('For example topic or university service');
+      $variables['form']['actions']['reset']['#suffix'] = '<i class="icon--remove"></i>';
+      $variables['form']['actions']['reset']['#attributes']['class'][] = 'button--reset';
+      break;
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ * Add id attribute to each paragraph for linking to it from the table of contents.
+ */
+function uhsg_theme_preprocess_paragraph(&$variables) {
+  $variables['attributes']['id'] = 'paragraph-' . $variables['paragraph']->id();
+  $variables['attributes']['class'][] = 'paragraph';
+}
+
+/**
+ * Implements template_preprocess_page().
+ * Add Node or term changed time as variable.
+ */
+function uhsg_theme_preprocess_page(&$variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+  $term = \Drupal::routeMatch()->getParameter('taxonomy_term');
+  if ($node) {
+    $variables['updated'] = \Drupal::service('date.formatter')->format($node->getChangedTime(), 'short');
+  }
+  if ($term) {
+    $variables['updated'] = \Drupal::service('date.formatter')->format($term->getChangedTime(), 'short');
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ * Hide preview and message field label from feedback form.
+ */
+function uhsg_theme_form_alter(&$form, $form_state, $form_id) {
+  if ($form_id == 'contact_message_feedback_form_form') {
+    $form['message']['widget'][0]['value']['#title_display'] = 'visually-hidden';
+    $form['message']['widget'][0]['value']['#placeholder'] = t('Give feedback about the service...');
+    $form['mail']['#required'] = FALSE;
+    $form['actions']['preview']['#access'] = FALSE;
+    $form['actions']['submit']['#value'] = t('Send feedback');
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ * Feedback form hidden by default.
+ */
+function uhsg_theme_preprocess_form(&$variables) {
+  if ($variables['element']['#form_id'] == 'contact_message_feedback_form_form') {
+    $variables['attributes']['class'][] = 'visually-hidden';
   }
 }

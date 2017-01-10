@@ -1,0 +1,52 @@
+.theme--full {
+  .theme__body p {
+    color: $lightgray;
+    @include font-size(20px);
+  }
+}
+
+.theme--teaser {
+  background: $black;
+  position: relative;
+  flex: 1 100%;
+  overflow: hidden;
+  margin-bottom: 2em;
+  
+  .theme__title {
+    @include hyphenate;
+    position: relative;
+    z-index: 1;
+    color: $white;
+  }
+
+  .theme__link-wrapper {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 2em;
+  }
+
+  .theme__teaser-image {
+    position: absolute;
+    opacity: 0.6;
+    transition: opacity 0.2s ease-in-out;
+    left: 0;
+    top: 0;
+  }
+
+  &:hover {
+    .theme__teaser-image {
+      opacity: 0.4;
+    }
+  }
+
+  @include breakpoint($small) {
+    width: 15em;
+    height: 15em;
+    flex: 0 auto;
+  }
+  @include breakpoint($large) {
+    width: 17em;
+    height: 17em;
+  }
+}

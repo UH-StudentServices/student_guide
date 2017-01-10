@@ -1,0 +1,20 @@
+uuid: 699471c3-6d14-4029-a7c3-45a76e0f0261
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact_ajax
+third_party_settings:
+  contact_ajax:
+    enabled: true
+    prefix_id: feedback-form__content
+    render_selector: ''
+    confirmation_type: 1
+id: feedback_form
+label: 'Feedback form'
+recipients:
+  - opetusteknologia@helsinki.fi
+reply: ''
+weight: 0
+message: 'Thank you!'
+redirect: ''

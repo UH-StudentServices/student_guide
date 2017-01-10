@@ -1,0 +1,14 @@
+display:
+  default:
+    display_options:
+      title: Haku
+      exposed_form:
+        options:
+          submit_button: 'Näytä tulokset'
+          reset_button_label: Tyhjennä
+      header:
+        result:
+          content: '<h3>Tulokset (@total kpl)</h3>'
+      empty:
+        area_text_custom:
+          content: '<h3>Ei tuloksia</h3>'

@@ -4,33 +4,55 @@ module:
   breakpoint: 0
   config: 0
   config_translation: 0
+  contact: 0
+  contact_ajax: 0
+  contact_block: 0
   contextual: 0
   ctools: 0
   datetime: 0
   dblog: 0
   dynamic_page_cache: 0
+  easy_breadcrumb: 0
   entity_reference_revisions: 0
   externalauth: 0
   field: 0
   field_ui: 0
   file: 0
   filter: 0
+  google_analytics: 0
+  honeypot: 0
   image: 0
   language: 0
   link: 0
   locale: 0
   menu_ui: 0
+  migrate: 0
+  migrate_plus: 0
+  migrate_source_csv: 0
+  migrate_tools: 0
   node: 0
   options: 0
   page_cache: 0
   paragraphs: 0
   path: 0
+  purge: 0
+  purge_drush: 0
+  purge_processor_cron: 0
+  purge_purger_http: 0
+  purge_queuer_coretags: 0
+  purge_tokens: 0
+  purge_ui: 0
   samlauth: 0
+  search_api: 0
+  search_api_solr: 0
   system: 0
   taxonomy: 0
   text: 0
   token: 0
   toolbar: 0
+  uhsg_cookie_consent: 0
+  uhsg_migrate: 0
+  uhsg_search: 0
   uhsg_service_provider_details: 0
   uhsg_some_links: 0
   user: 0

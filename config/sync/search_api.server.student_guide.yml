@@ -1,0 +1,30 @@
+uuid: e704c28d-0836-4c21-bef6-be6376dfdaa1
+langcode: en
+status: true
+dependencies:
+  module:
+    - search_api_solr
+id: student_guide
+name: 'Student guide'
+description: ''
+backend: search_api_solr
+backend_config:
+  connector: standard
+  connector_config:
+    scheme: http
+    host: localhost
+    port: '8983'
+    path: /solr
+    core: collection1
+    timeout: 5
+    index_timeout: 5
+    optimize_timeout: 10
+    solr_version: ''
+    http_method: AUTO
+  retrieve_data: false
+  highlight_data: false
+  excerpt: false
+  skip_schema_check: false
+  site_hash: true
+  autocorrect_spell: true
+  autocorrect_suggest_words: true

@@ -1,0 +1,20 @@
+uuid: ca2ca928-b9ac-489b-ab24-f2d181efac51
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - uhsg_theme
+id: breadcrumbs
+theme: uhsg_theme
+region: before_content
+weight: -3
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }
