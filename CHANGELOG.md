@@ -28,3 +28,4 @@
   HUB-38: Add feedback form.
   HUB-53: All News view.
   HUB-9: Added permissions to all content for content editor.
+  HUB-44: Added Google Analytics.
