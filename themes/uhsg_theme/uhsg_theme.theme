@@ -123,6 +123,7 @@ function uhsg_theme_preprocess_field(array &$variables, $hook) {
     case 'field_news_degree_programme':
       foreach ($variables['items'] as &$item) {
         $item['content']['#options']['attributes']['class'][] = 'box-story__tag';
+        $variables['nowrapper'] = TRUE;
       }
       break;
   }

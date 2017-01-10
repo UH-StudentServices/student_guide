@@ -78,20 +78,19 @@
   ]
 %}
 {% set created = node.getCreatedTime|format_date('short') %}
-
 {% set body %}
-     {{ content.body }}
-{% endset %}	
+  {{ content.body }}
+{% endset %}  
 
 <article {{ attributes.addClass(node_classes) }}>
   <h4 class="box-story__title">
-  	<a href="{{ url }}"> {{ label }} </a>
+    <a href="{{ url }}"> {{ label }} </a>
   </h4>
   <div class="box-story__topical">
     <span class="box-story__date">{{ created }}</span>
     {{ content.field_news_degree_programme }}
   </div>
   <div class="box-story__content">
-  	<a href="{{ url }}"> {{ body|striptags }} </a>
+    <a href="{{ url }}"> {{ body|striptags }} </a>
   </div>
 </article>
