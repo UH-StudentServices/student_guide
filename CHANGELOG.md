@@ -26,5 +26,4 @@
   HUB-43: Display related news when displaying a degree programme.
   HUB-14: Content search
   HUB-38: Add feedback form.
-  HUB-53: List all news on page.
-  
+  HUB-53: All News view.
