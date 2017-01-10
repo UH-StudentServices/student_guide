@@ -20,3 +20,15 @@ function student_guide_install() {
   // Allow visitor account creation, but with administrative approval.
   \Drupal::configFactory()->getEditable('user.settings')->set('register', USER_REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL)->save(TRUE);
 }
+
+/**
+ * Add path aliases (translations) for "/news".
+ */
+function student_guide_update_8001(&$sandbox) {
+  $system_path = '/news';
+  $path_aliases = ['fi' => '/uutiset', 'sv' => '/nyheter'];
+
+  foreach ($path_aliases as $langcode => $path_alias) {
+    \Drupal::service('path.alias_storage')->save($system_path, $path_alias, $langcode);
+  }
+}
