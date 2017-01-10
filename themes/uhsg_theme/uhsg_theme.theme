@@ -141,6 +141,9 @@ function uhsg_theme_preprocess_views_view(&$variables) {
     case 'news_per_degree_programme':
       $variables['attributes']['class'][] = 'grid-container tube--large';
       break;
+    case 'news':
+      $variables['attributes']['class'][] = 'tube';
+      break;
     case 'degree_programmes':
       $node = \Drupal::routeMatch()->getParameter('node');
       $term = \Drupal::routeMatch()->getParameter('taxonomy_term');
