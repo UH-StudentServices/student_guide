@@ -19,32 +19,35 @@ class news_per_degree_programme extends BlockBase {
    * {@inheritdoc}
    */
   public function build() {
+    $lang = \Drupal::languageManager()->getCurrentLanguage()->getId();
 
-		$query = \Drupal::entityQuery('node')
-	    ->condition('status', 1)
-	    ->condition('langcode', 'en')
-	    ->condition('type', 'news');
-		$group = $query->orConditionGroup()
-    	->condition('field_news_degree_programme', NULL, 'IS NULL');
+    $query = \Drupal::entityQuery('node')
+      ->condition('status', 1)
+      ->condition('langcode', $lang)
+      ->condition('type', 'news');
+    $group = $query->orConditionGroup()
+      ->condition('field_news_degree_programme', NULL, 'IS NULL');
 
     // if on term page, add tid to condition group
-		$term = \Drupal::routeMatch()->getParameter('taxonomy_term');
-		if ($term && $term->bundle() == 'degree_programme') {
-			$group->condition('field_news_degree_programme', $term->id());
-		}
+    // TODO: when we have the active degree programme in a cookie,
+    // we will use that instead here.
+    $term = \Drupal::routeMatch()->getParameter('taxonomy_term');
+    if ($term && $term->bundle() == 'degree_programme') {
+      $group->condition('field_news_degree_programme', $term->id());
+    }
 
-		$nids = $query->condition($group)->execute();
+    $nids = $query->condition($group)->execute();
 
-		$nodes = \Drupal\node\Entity\Node::loadMultiple($nids);
-		$render_controller = \Drupal::entityTypeManager()->getViewBuilder('node');
-		$render_output = $render_controller->viewMultiple($nodes, 'teaser');
+    $nodes = \Drupal\node\Entity\Node::loadMultiple($nids);
+    $render_controller = \Drupal::entityTypeManager()->getViewBuilder('node');
+    $render_output = $render_controller->viewMultiple($nodes, 'teaser');
 
     return array(
-    	'attributes' => [
-    		'class' => [
-    			'' => 'grid-container',
-    		],
-    	],
+      'attributes' => [
+        'class' => [
+          '' => 'grid-container',
+        ],
+      ],
       'content' => $render_output,
     );
   }
