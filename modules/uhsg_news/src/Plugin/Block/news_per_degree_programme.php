@@ -24,27 +24,25 @@ class news_per_degree_programme extends BlockBase {
 	    ->condition('status', 1)
 	    ->condition('langcode', 'en')
 	    ->condition('type', 'news');
-
 		$group = $query->orConditionGroup()
-    	->condition('field_news_degree_programme', NULL, 'IS NULL')
-    	->condition('field_news_degree_programme', 18);
-	
+    	->condition('field_news_degree_programme', NULL, 'IS NULL');
+
+    // if on term page, add tid to condition group
+		$term = \Drupal::routeMatch()->getParameter('taxonomy_term');
+		if ($term && $term->bundle() == 'degree_programme') {
+			$group->condition('field_news_degree_programme', $term->id());
+		}
+
 		$nids = $query->condition($group)->execute();
 
 		$nodes = \Drupal\node\Entity\Node::loadMultiple($nids);
 		$render_controller = \Drupal::entityTypeManager()->getViewBuilder('node');
 		$render_output = $render_controller->viewMultiple($nodes, 'teaser');
-		//kint($render_output);
-
-
-    //$build['news_per_degree_programme']['#markup'] = $render_output;
-
-
 
     return array(
     	'attributes' => [
     		'class' => [
-    			'grid-container'
+    			'' => 'grid-container',
     		],
     	],
       'content' => $render_output,
