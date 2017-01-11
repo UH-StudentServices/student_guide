@@ -36,19 +36,22 @@ class news_per_degree_programme extends BlockBase {
     }
 
     $nids = $query->condition($group)->execute();
-    $nodes = \Drupal\node\Entity\Node::loadMultiple($nids);
-    $render_controller = \Drupal::entityTypeManager()->getViewBuilder('node');
-    $render_output = $render_controller->viewMultiple($nodes, 'teaser');
 
-    return array(
-      '#attributes' => [
-        'class' => ['grid-container'],
-      ],
-      '#cache' => [
-        'tags' => ['node_list'],
-      ],
-      'content' => $render_output,
-    );
+    if ($nids) {
+      $nodes = \Drupal\node\Entity\Node::loadMultiple($nids);
+      $render_controller = \Drupal::entityTypeManager()->getViewBuilder('node');
+      $render_output = $render_controller->viewMultiple($nodes, 'teaser');
+
+      return array(
+        '#attributes' => [
+          'class' => ['grid-container'],
+        ],
+        '#cache' => [
+          'tags' => ['node_list'],
+        ],
+        'content' => $render_output,
+      );
+    }
   }
 
 }
