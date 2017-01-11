@@ -50,6 +50,7 @@ module:
   toolbar: 0
   uhsg_cookie_consent: 0
   uhsg_migrate: 0
+  uhsg_news: 0
   uhsg_search: 0
   uhsg_service_provider_details: 0
   uhsg_some_links: 0
