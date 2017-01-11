@@ -120,6 +120,12 @@ function uhsg_theme_preprocess_field(array &$variables, $hook) {
         ];
       }
       break;
+    case 'field_news_degree_programme':
+      foreach ($variables['items'] as &$item) {
+        $item['content']['#options']['attributes']['class'][] = 'box-story__tag';
+        $variables['nowrapper'] = TRUE;
+      }
+      break;
   }
 }
 
@@ -135,6 +141,9 @@ function uhsg_theme_preprocess_views_view(&$variables) {
     case 'taxonomy_term':
     case 'news_per_degree_programme':
       $variables['attributes']['class'][] = 'grid-container tube--large';
+      break;
+    case 'news':
+      $variables['attributes']['class'][] = 'tube';
       break;
     case 'degree_programmes':
       $node = \Drupal::routeMatch()->getParameter('node');

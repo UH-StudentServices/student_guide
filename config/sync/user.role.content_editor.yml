@@ -37,3 +37,4 @@ permissions:
   - 'edit own news content'
   - 'view news revisions'
   - 'access site-wide contact form'
+  - 'bypass node access'

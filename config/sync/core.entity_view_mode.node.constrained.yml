@@ -1,0 +1,10 @@
+uuid: 79449063-ec4d-4df2-a1f0-a2ae6869a08d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.constrained
+label: Constrained
+targetEntityType: node
+cache: true
