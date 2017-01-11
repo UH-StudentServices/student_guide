@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains uhsg_news.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function uhsg_news_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the uhsg_news module.
+    case 'help.page.uhsg_news':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Provides a news block.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
