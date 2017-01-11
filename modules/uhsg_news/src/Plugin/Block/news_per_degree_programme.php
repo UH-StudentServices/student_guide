@@ -43,9 +43,9 @@ class news_per_degree_programme extends BlockBase {
     $render_output = $render_controller->viewMultiple($nodes, 'teaser');
 
     return array(
-      'attributes' => [
+      '#attributes' => [
         'class' => [
-          '' => 'grid-container',
+          'grid-container',
         ],
       ],
       'content' => $render_output,
