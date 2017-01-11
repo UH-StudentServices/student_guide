@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * Contains uhsg_feedback.module.
+ */
+
+/**
+ * Implements hook_mail_alter().
+ *
+ * Modifies the feedback/contact email contents according to business
+ * requirements.
+ */
+function uhsg_feedback_mail_alter(&$message) {
+  //$message['body'][] = json_encode($message);
+}
