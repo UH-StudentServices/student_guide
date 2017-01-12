@@ -6799,6 +6799,12 @@ ul.pager > li.pager__next a {
           justify-content: space-between;
 }
 
+.grid-container > * {
+  -webkit-flex: 1 100%;
+      -ms-flex: 1 100%;
+          flex: 1 100%;
+}
+
 .grid-item-3 {
   -webkit-flex: 1 100%;
       -ms-flex: 1 100%;
@@ -7341,7 +7347,6 @@ input[type="submit"].button--reset + i {
 
 .view-search .view-header,
 .view-search .view-filters {
-  width: 100%;
   padding: 1em 0;
 }
 

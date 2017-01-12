@@ -52,7 +52,7 @@ class SomeLinksBlock extends BlockBase {
    * {@inheritdoc}
    */
   public function getCacheTags() {
-    $cache_tags = ['some_links'];
+    $cache_tags = ['some_links_list'];
     foreach ($this->getEntities() as $entity) {
       /** @var $entity SomeLinks */
       foreach ($entity->getCacheTags() as $entity_cache_tags) {

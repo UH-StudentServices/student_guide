@@ -1,19 +1,21 @@
-uuid: 8cd90f75-40c5-4e73-8468-12370b54dc37
+uuid: e3093f09-2f80-40f5-9906-674a437902f1
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.paragraph_title_image_and_text.field_paragraph_body
-    - field.field.paragraph.paragraph_title_image_and_text.field_paragraph_image
-    - field.field.paragraph.paragraph_title_image_and_text.field_paragraph_title
+    - field.field.paragraph.paragraph.field_paragraph_body
+    - field.field.paragraph.paragraph.field_paragraph_image
+    - field.field.paragraph.paragraph.field_paragraph_links
+    - field.field.paragraph.paragraph.field_paragraph_title
     - image.style.thumbnail
-    - paragraphs.paragraphs_type.paragraph_title_image_and_text
+    - paragraphs.paragraphs_type.paragraph
   module:
     - image
+    - link
     - text
-id: paragraph.paragraph_title_image_and_text.default
+id: paragraph.paragraph.default
 targetEntityType: paragraph
-bundle: paragraph_title_image_and_text
+bundle: paragraph
 mode: default
 content:
   field_paragraph_body:
@@ -24,12 +26,19 @@ content:
     third_party_settings: {  }
     type: text_textarea
   field_paragraph_image:
-    weight: 2
+    weight: 3
     settings:
-      preview_image_style: thumbnail
       progress_indicator: throbber
+      preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
+  field_paragraph_links:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
   field_paragraph_title:
     weight: 0
     settings:
@@ -39,8 +48,6 @@ content:
     type: string_textfield
   translation:
     weight: 10
-    settings: {  }
-    third_party_settings: {  }
 hidden:
   created: true
   status: true

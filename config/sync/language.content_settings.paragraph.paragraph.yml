@@ -1,16 +1,16 @@
-uuid: ba0b5388-364a-487e-8a85-053d52db3623
+uuid: fe2ad550-3387-41fb-8cf5-7f84f69a56be
 langcode: en
 status: true
 dependencies:
   config:
-    - paragraphs.paragraphs_type.paragraph_title_image_and_text
+    - paragraphs.paragraphs_type.paragraph
   module:
     - content_translation
 third_party_settings:
   content_translation:
     enabled: true
-id: paragraph.paragraph_title_image_and_text
+id: paragraph.paragraph
 target_entity_type_id: paragraph
-target_bundle: paragraph_title_image_and_text
+target_bundle: paragraph
 default_langcode: site_default
 language_alterable: true
