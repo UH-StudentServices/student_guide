@@ -74,6 +74,9 @@
     "patches": {
       "drupal/paragraphs": {
         "Fix error messages": "https://www.drupal.org/files/issues/many_error_messages-2775609-29.patch"
+      },
+      "drupal/samlauth": {
+        "Use certificate files instead storing in config": "https://www.drupal.org/files/issues/samlauth-allow_custom_cert_folder-2816997-7.patch"
       }
     }
   }
