@@ -16,6 +16,11 @@ function uhsg_feedback_mail_alter(&$message) {
   // Restrict alteration to contact mail.
   if ($message['id'] == 'contact_page_mail') {
 
+    // Reply-to: Either the email of the sender, or noreply@helsinki.fi.
+    $noReply = 'noreply@helsinki.fi';
+    $message['reply-to'] = empty($message['reply-to']) ? $noReply : $message['reply-to'];
+    $message['headers']['Reply-to'] = empty($message['reply-to']) ? $noReply : $message['reply-to'];
+
     // Reset to empty body.
     $message['body'] = [];
 
@@ -37,7 +42,7 @@ function uhsg_feedback_mail_alter(&$message) {
     // Current page URL.
     $message['body'][] = \Drupal\Core\Url::fromRoute('<current>', [], ['absolute' => TRUE])->toString();
 
-    // Message debug.
-    $message['body'][] = json_encode($message);
+    // User agent info.
+    $message['body'][] = $_SERVER['HTTP_USER_AGENT'];
   }
 }
