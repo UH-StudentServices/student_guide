@@ -22,3 +22,39 @@ function uhsg_news_help($route_name, RouteMatchInterface $route_match) {
     default:
   }
 }
+
+/**
+ * Implements hook_form_alter().
+ */
+function uhsg_news_form_alter(&$form, $form_state, $form_id) {
+  uhsg_news_add_email_tab($form, $form_id);
+}
+
+/**
+ * Adds an email tab to the news add and edit forms.
+ */
+function uhsg_news_add_email_tab(&$form, $form_id) {
+  if (in_array($form_id, ['node_news_form', 'node_news_edit_form'])) {
+    $email = &$form['field_news_email'];
+    $email['#type'] = 'details';
+    $email['#group'] = 'advanced';
+    $email['#title'] = t('Email');
+    $email['#open'] = FALSE;
+    $email['#description'] = t('Send the news to the given email address. The email can be sent just once. Verify that the news has been translated to all languages prior to sending.');
+    $email['#disabled'] = TRUE;
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_update().
+ */
+function uhsg_news_node_update(Drupal\Core\Entity\EntityInterface $entity) {
+  uhsg_news_send_news_by_email($entity);
+}
+
+/**
+ * Send the news by email if it has not been already sent.
+ */
+function uhsg_news_send_news_by_email(Drupal\Core\Entity\EntityInterface $entity) {
+  // TODO.
+}

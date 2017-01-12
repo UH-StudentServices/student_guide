@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.news.body
     - field.field.node.news.field_news_degree_programme
+    - field.field.node.news.field_news_email
     - field.field.node.news.field_news_image
     - node.type.news
   module:
@@ -19,18 +20,18 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 101
+    weight: 1
     settings: {  }
     third_party_settings: {  }
   field_news_degree_programme:
-    weight: 102
+    weight: 2
     label: hidden
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
   field_news_image:
-    weight: 103
+    weight: 3
     label: above
     settings:
       image_style: ''
@@ -38,8 +39,9 @@ content:
     third_party_settings: {  }
     type: image
   links:
-    weight: 100
+    weight: 0
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_news_email: true
   langcode: true
