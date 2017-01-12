@@ -12,5 +12,32 @@
  * requirements.
  */
 function uhsg_feedback_mail_alter(&$message) {
-  //$message['body'][] = json_encode($message);
+
+  // Restrict alteration to contact mail.
+  if ($message['id'] == 'contact_page_mail') {
+
+    // Reset to empty body.
+    $message['body'] = [];
+
+    // Subject.
+    $message['subject'] = t('Feedback from Student Guide');
+
+    // Date and time.
+    $message['body'][] = date('d.m.Y H:i:s');
+
+    // Message.
+    $contact_message = $message['params']['contact_message'];
+    $message['body'][] = $contact_message->get('message')->value;
+
+    // I would like to get a response to my feedback.
+    if ($contact_message->get('field_feedback_respond')->value) {
+      $message['body'][] = t('I would like to get a response to my feedback') . '.';
+    }
+
+    // Feedback URL.
+    $message['body'][] = \Drupal::request()->getRequestUri();
+
+    // Message debug.
+    $message['body'][] = json_encode($message);
+  }
 }
