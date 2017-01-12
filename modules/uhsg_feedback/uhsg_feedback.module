@@ -34,8 +34,8 @@ function uhsg_feedback_mail_alter(&$message) {
       $message['body'][] = t('I would like to get a response to my feedback') . '.';
     }
 
-    // Feedback URL.
-    $message['body'][] = \Drupal::request()->getRequestUri();
+    // Current page URL.
+    $message['body'][] = \Drupal\Core\Url::fromRoute('<current>', [], ['absolute' => TRUE])->toString();
 
     // Message debug.
     $message['body'][] = json_encode($message);
