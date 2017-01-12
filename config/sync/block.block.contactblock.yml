@@ -11,7 +11,7 @@ dependencies:
 id: contactblock
 theme: uhsg_theme
 region: after_content
-weight: -7
+weight: -6
 provider: null
 plugin: contact_block
 settings:

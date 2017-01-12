@@ -112,12 +112,27 @@ function uhsg_theme_preprocess_field(array &$variables, $hook) {
       $variables['attributes']['class'][] = 'grid-container';
       break;
     case 'field_article_paragraph':
+      // get tid from url
+      $path = \Drupal::request()->getpathInfo();
+      $arg  = explode('/',$path);
+
+
       $variables['table_of_contents'] = [];
-      foreach ($variables['items'] as $item) {
-        $variables['table_of_contents'][] = [
-          'id' => $item['content']['#paragraph']->id(),
-          'title' => $item['content']['#paragraph']->get('field_paragraph_title')
-        ];
+      foreach ($variables['items'] as $key => $item) {
+        $terms = $item['content']['#paragraph']->get('field_paragraph_degree_programme')->getValue();
+        foreach ($terms as $term) {
+          if ($term['target_id'] == $arg[3]) {
+            // add paragraph to table of contents
+            $variables['table_of_contents'][] = [
+              'id' => $item['content']['#paragraph']->id(),
+              'title' => $item['content']['#paragraph']->get('field_paragraph_title')
+            ];
+            break;
+          }
+          else {
+            unset($variables['items'][$key]);
+          }
+        }
       }
       break;
     case 'field_news_degree_programme':

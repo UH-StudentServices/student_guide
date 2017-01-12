@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.paragraph.field_paragraph_body
+    - field.field.paragraph.paragraph.field_paragraph_degree_programme
     - field.field.paragraph.paragraph.field_paragraph_image
     - field.field.paragraph.paragraph.field_paragraph_links
     - field.field.paragraph.paragraph.field_paragraph_title
@@ -25,6 +26,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+  field_paragraph_degree_programme:
+    weight: 11
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
   field_paragraph_image:
     weight: 3
     settings:
