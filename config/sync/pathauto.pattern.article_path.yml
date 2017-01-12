@@ -7,16 +7,16 @@ dependencies:
 id: article_path
 label: 'Article path'
 type: 'canonical_entities:node'
-pattern: '[node:field_article_degree_programme]/[node:title]'
+pattern: 'article/[node:nid]'
 selection_criteria:
-  fedffa9e-91c5-4b70-a4a7-14d457255283:
+  543553fe-d567-42d6-aa65-3915975e1d8e:
     id: node_type
     bundles:
       article: article
     negate: false
     context_mapping:
       node: node
-    uuid: fedffa9e-91c5-4b70-a4a7-14d457255283
+    uuid: 543553fe-d567-42d6-aa65-3915975e1d8e
 selection_logic: and
 weight: -5
 relationships: {  }

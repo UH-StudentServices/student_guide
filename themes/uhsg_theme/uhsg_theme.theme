@@ -114,7 +114,8 @@ function uhsg_theme_preprocess_field(array &$variables, $hook) {
     case 'field_article_paragraph':
       // get tid from url
       $path = \Drupal::request()->getpathInfo();
-      $arg  = explode('/',$path);
+      $args  = explode('/',$path);
+      $arg = end($args);
 
 
       $variables['table_of_contents'] = [];
@@ -132,7 +133,7 @@ function uhsg_theme_preprocess_field(array &$variables, $hook) {
           $valid_term_found = FALSE;
           foreach ($terms as $term) {
             // if paragraph has terms, show it only if term is in path
-            if (isset($arg[3]) && $arg[3] == $term['target_id']) {
+            if (isset($arg) && $arg == $term['target_id']) {
               $variables['table_of_contents'][] = [
                 'id' => $item['content']['#paragraph']->id(),
                 'title' => $item['content']['#paragraph']->get('field_paragraph_title')
