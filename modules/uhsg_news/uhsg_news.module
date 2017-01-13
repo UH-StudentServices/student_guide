@@ -95,8 +95,29 @@ function uhsg_news_send_news_by_email(\Drupal\node\Entity\Node $node) {
   $email = $node->get('field_news_email')->value;
 
   if (!empty($email)) {
-    $node->set('field_news_email_sent', 1);
-    $message = t('Email sent to @email.', ['@email' => $email]);
-    drupal_set_message($message);
+    $mailManager = \Drupal::service('plugin.manager.mail');
+    $params['subject'] = t('News') . ': ' . $node->label();
+    $params['message'] = $node->toUrl('canonical', ['absolute' => TRUE])->toString();
+    $langcode = \Drupal::currentUser()->getPreferredLangcode();
+    $result = $mailManager->mail('uhsg_news', 'email_news', $email, $langcode, $params, NULL, TRUE);
+
+    if ($result['result'] !== TRUE) {
+      drupal_set_message(t('Email sending failed.'), 'error');
+    }
+    else {
+      $node->set('field_news_email_sent', 1);
+      drupal_set_message(t('Email sent to @email.', ['@email' => $email]));
+    }
+  }
+}
+
+/**
+ * Implements hook_mail().
+ */
+function uhsg_news_mail($key, &$message, $params) {
+  if ($key == 'email_news') {
+    $message['from'] = \Drupal::config('system.site')->get('mail');
+    $message['subject'] = $params['subject'];
+    $message['body'][] = $params['message'];
   }
 }
