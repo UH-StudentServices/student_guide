@@ -29,3 +29,18 @@ msgstr "Lähetä Palaute"
 
 msgid "Give feedback about the service..."
 msgstr "Anna palautetta palvelusta..."
+
+msgid "News"
+msgstr "Uutinen"
+
+msgid "This news has been sent to the following email address:"
+msgstr "Tämä uutinen on lähetty seuraavaan sähköpostiosoitteeseen:"
+
+msgid "Send the news to the given email address. The email can be sent just once and only when the news has been translated to all available languages."
+msgstr "Lähetä uutinen annettuun sähköpostiosoitteeseen. Sähköpostin voi lähettää ainoastaan kerran ja vasta kun uutinen on käännetty kaikille kielille."
+
+msgid "Email sent to @email."
+msgstr "Sähköposti lähetetty osoitteeseen @email."
+
+msgid "Email sending failed."
+msgstr "Sähköpostin lähettäminen epäonistui."

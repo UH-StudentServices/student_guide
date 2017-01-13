@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.news.body
     - field.field.node.news.field_news_degree_programme
     - field.field.node.news.field_news_email
+    - field.field.node.news.field_news_email_sent
     - field.field.node.news.field_news_image
     - node.type.news
   module:
@@ -44,4 +45,5 @@ content:
     third_party_settings: {  }
 hidden:
   field_news_email: true
+  field_news_email_sent: true
   langcode: true

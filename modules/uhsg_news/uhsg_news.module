@@ -44,7 +44,7 @@ function uhsg_news_add_email_tab(&$form, $form_state, $form_id) {
     $email['#disabled'] = !uhsg_news_emailing_enabled($node);
 
     if (uhsg_news_email_has_been_sent($node)) {
-      $email['#description'] = t('This news has been sent to the following email address.');
+      $email['#description'] = t('This news has been sent to the following email address:');
     } else {
       $email['#description'] = t('Send the news to the given email address. The email can be sent just once and only when the news has been translated to all available languages.');
     }
