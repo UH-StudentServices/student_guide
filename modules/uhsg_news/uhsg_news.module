@@ -93,13 +93,24 @@ function uhsg_news_node_presave(Drupal\Core\Entity\EntityInterface $entity) {
  */
 function uhsg_news_send_news_by_email(\Drupal\node\Entity\Node $node) {
   $email = $node->get('field_news_email')->value;
+  $nodeEN = $node->getTranslation('en');
+  $nodeFI = $node->getTranslation('fi');
+  $nodeSV = $node->getTranslation('sv');
 
   if (!empty($email)) {
     $mailManager = \Drupal::service('plugin.manager.mail');
     $params['subject'] = t('News') . ': ' . $node->label();
-    $message = $node->label();
+    $message = $nodeEN->label();
     $message .= "\n\n";
-    $message .= Drupal\Core\Mail\MailFormatHelper::htmlToText($node->body->value);
+    $message .= Drupal\Core\Mail\MailFormatHelper::htmlToText($nodeEN->body->value);
+    $message .= "\n----------\n\n";
+    $message .= $nodeFI->label();
+    $message .= "\n\n";
+    $message .= Drupal\Core\Mail\MailFormatHelper::htmlToText($nodeFI->body->value);
+    $message .= "\n----------\n\n";
+    $message .= $nodeSV->label();
+    $message .= "\n\n";
+    $message .= Drupal\Core\Mail\MailFormatHelper::htmlToText($nodeSV->body->value);
     $message .= "\n\n";
     $message .= $node->toUrl('canonical', ['absolute' => TRUE])->toString();
     $params['message'] = $message;
