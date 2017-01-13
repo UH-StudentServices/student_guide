@@ -18,7 +18,6 @@ function uhsg_feedback_mail_alter(&$message) {
 
     // Reply-to: Either the email of the sender, or noreply@helsinki.fi.
     $noReply = 'noreply@helsinki.fi';
-    $message['reply-to'] = empty($message['reply-to']) ? $noReply : $message['reply-to'];
     $message['headers']['Reply-to'] = empty($message['reply-to']) ? $noReply : $message['reply-to'];
 
     // Reset to empty body.
@@ -36,7 +35,7 @@ function uhsg_feedback_mail_alter(&$message) {
 
     // I would like to get a response to my feedback.
     if ($contact_message->get('field_feedback_respond')->value) {
-      $message['body'][] = t('I would like to get a response to my feedback') . '.';
+      $message['body'][] = t('I would like to get a response to my feedback') . ': ' . $message['reply-to'];
     }
 
     // Current page URL.
