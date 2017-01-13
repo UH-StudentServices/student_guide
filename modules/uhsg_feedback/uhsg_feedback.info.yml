@@ -3,3 +3,8 @@ type: module
 description: Alters the feedback email content.
 core: 8.x
 package: Student Guide
+dependencies:
+  - contact
+  - contact_ajax
+  - contact_block
+  - honeypot
