@@ -97,7 +97,12 @@ function uhsg_news_send_news_by_email(\Drupal\node\Entity\Node $node) {
   if (!empty($email)) {
     $mailManager = \Drupal::service('plugin.manager.mail');
     $params['subject'] = t('News') . ': ' . $node->label();
-    $params['message'] = $node->toUrl('canonical', ['absolute' => TRUE])->toString();
+    $message = $node->label();
+    $message .= "\n\n";
+    $message .= Drupal\Core\Mail\MailFormatHelper::htmlToText($node->body->value);
+    $message .= "\n\n";
+    $message .= $node->toUrl('canonical', ['absolute' => TRUE])->toString();
+    $params['message'] = $message;
     $langcode = \Drupal::currentUser()->getPreferredLangcode();
     $result = $mailManager->mail('uhsg_news', 'email_news', $email, $langcode, $params, NULL, TRUE);
 
