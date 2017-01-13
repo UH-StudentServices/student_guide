@@ -27,34 +27,76 @@ function uhsg_news_help($route_name, RouteMatchInterface $route_match) {
  * Implements hook_form_alter().
  */
 function uhsg_news_form_alter(&$form, $form_state, $form_id) {
-  uhsg_news_add_email_tab($form, $form_id);
+  uhsg_news_add_email_tab($form, $form_state, $form_id);
 }
 
 /**
  * Adds an email tab to the news add and edit forms.
  */
-function uhsg_news_add_email_tab(&$form, $form_id) {
+function uhsg_news_add_email_tab(&$form, $form_state, $form_id) {
   if (in_array($form_id, ['node_news_form', 'node_news_edit_form'])) {
+    $node = $form_state->getFormObject()->getEntity();
     $email = &$form['field_news_email'];
     $email['#type'] = 'details';
     $email['#group'] = 'advanced';
-    $email['#title'] = t('Email');
+    $email['#title'] = t($email['widget']['#title']);
     $email['#open'] = FALSE;
-    $email['#description'] = t('Send the news to the given email address. The email can be sent just once. Verify that the news has been translated to all languages prior to sending.');
-    $email['#disabled'] = TRUE;
+    $email['#disabled'] = !uhsg_news_emailing_enabled($node);
+
+    if (uhsg_news_email_has_been_sent($node)) {
+      $email['#description'] = t('This news has been sent to the following email address.');
+    } else {
+      $email['#description'] = t('Send the news to the given email address. The email can be sent just once and only when the news has been translated to all available languages.');
+    }
   }
 }
 
 /**
- * Implements hook_ENTITY_TYPE_update().
+ * @param \Drupal\node\Entity\Node $node
+ * @return bool Is emailing enabled?
  */
-function uhsg_news_node_update(Drupal\Core\Entity\EntityInterface $entity) {
-  uhsg_news_send_news_by_email($entity);
+function uhsg_news_emailing_enabled(\Drupal\node\Entity\Node $node) {
+  return uhsg_news_has_been_translated_to_all_languages($node) && !uhsg_news_email_has_been_sent($node);
+}
+
+/**
+ * @param \Drupal\node\Entity\Node $node
+ * @return bool Has the node been translated to all available languages?
+ */
+function uhsg_news_has_been_translated_to_all_languages(\Drupal\node\Entity\Node $node) {
+  $all_languages = array_keys(\Drupal::service('language_manager')->getLanguages());
+  $node_languages = array_keys($node->getTranslationLanguages());
+
+  return $all_languages == $node_languages;
+}
+
+/**
+ * @param \Drupal\node\Entity\Node $node
+ * @return bool Has the news email been sent?
+ */
+function uhsg_news_email_has_been_sent(\Drupal\node\Entity\Node $node) {
+  return (bool) $node->get('field_news_email_sent')->value;
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_presave().
+ */
+function uhsg_news_node_presave(Drupal\Core\Entity\EntityInterface $entity) {
+  if (uhsg_news_emailing_enabled($entity)) {
+    uhsg_news_send_news_by_email($entity);
+  }
 }
 
 /**
  * Send the news by email if it has not been already sent.
+ * @param $node \Drupal\node\Entity\Node
  */
-function uhsg_news_send_news_by_email(Drupal\Core\Entity\EntityInterface $entity) {
-  // TODO.
+function uhsg_news_send_news_by_email(\Drupal\node\Entity\Node $node) {
+  $email = $node->get('field_news_email')->value;
+
+  if (!empty($email)) {
+    $node->set('field_news_email_sent', 1);
+    $message = t('Email sent to @email.', ['@email' => $email]);
+    drupal_set_message($message);
+  }
 }
