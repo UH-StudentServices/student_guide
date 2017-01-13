@@ -88,7 +88,7 @@ function uhsg_news_node_presave(Drupal\Core\Entity\EntityInterface $entity) {
 }
 
 /**
- * Send the news by email if it has not been already sent.
+ * Send the news by email if the email has been given.
  * @param $node \Drupal\node\Entity\Node
  */
 function uhsg_news_send_news_by_email(\Drupal\node\Entity\Node $node) {
