@@ -30,9 +30,7 @@ function uhsg_article_help($route_name, RouteMatchInterface $route_match) {
 function uhsg_article_preprocess_field(array &$variables, $hook) {
   if ($variables['element']['#field_name'] == 'field_article_paragraph') {
     // get tid from url
-    $path = \Drupal::request()->getpathInfo();
-    $args  = explode('/',$path);
-    $arg = end($args);
+    $param = \Drupal::service('current_route_match')->getParameters()->get('tid');
 
     $variables['table_of_contents'] = [];
     foreach ($variables['items'] as $key => $item) {
@@ -49,7 +47,7 @@ function uhsg_article_preprocess_field(array &$variables, $hook) {
         $valid_term_found = FALSE;
         foreach ($terms as $term) {
           // if paragraph has terms, show it only if term is in path
-          if (isset($arg) && $arg == $term['target_id']) {
+          if ($param == $term['target_id']) {
             $variables['table_of_contents'][] = [
               'id' => $item['content']['#paragraph']->id(),
               'title' => $item['content']['#paragraph']->get('field_paragraph_title')
