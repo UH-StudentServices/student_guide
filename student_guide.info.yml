@@ -22,6 +22,7 @@ dependencies:
   - page_cache
   - paragraphs
   - pathauto
+  - samlauth
   - toolbar
   - taxonomy
   - uhsg_cookie_consent
