@@ -1,4 +1,4 @@
-uhsg_article.filter_paragraphs_controller:
+uhsg_article.filter_paragraphs:
   path: '/article/{node}/{tid}'
   defaults:
     _controller: '\Drupal\node\Controller\NodeViewController::view'
