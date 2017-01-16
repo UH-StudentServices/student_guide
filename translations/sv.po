@@ -36,7 +36,7 @@ msgstr "Nyhet"
 msgid "This news has been sent to the following email address:"
 msgstr ""
 
-msgid "Send the news to the given email address. The email can be sent just once and only when the news has been translated to all available languages."
+msgid "Send the news to the given email address. The email can be sent just once."
 msgstr ""
 
 msgid "Email sent to @email."

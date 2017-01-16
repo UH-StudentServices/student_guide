@@ -41,33 +41,14 @@ function uhsg_news_add_email_tab(&$form, $form_state, $form_id) {
     $email['#group'] = 'advanced';
     $email['#title'] = t($email['widget']['#title']);
     $email['#open'] = FALSE;
-    $email['#disabled'] = !uhsg_news_emailing_enabled($node);
+    $email['#disabled'] = $form_id == 'node_news_form' || uhsg_news_email_has_been_sent($node);
 
     if (uhsg_news_email_has_been_sent($node)) {
       $email['#description'] = t('This news has been sent to the following email address:');
     } else {
-      $email['#description'] = t('Send the news to the given email address. The email can be sent just once and only when the news has been translated to all available languages.');
+      $email['#description'] = t('Send the news to the given email address. The email can be sent just once.');
     }
   }
-}
-
-/**
- * @param \Drupal\node\Entity\Node $node
- * @return bool Is emailing enabled?
- */
-function uhsg_news_emailing_enabled(\Drupal\node\Entity\Node $node) {
-  return uhsg_news_has_been_translated_to_all_languages($node) && !uhsg_news_email_has_been_sent($node);
-}
-
-/**
- * @param \Drupal\node\Entity\Node $node
- * @return bool Has the node been translated to all available languages?
- */
-function uhsg_news_has_been_translated_to_all_languages(\Drupal\node\Entity\Node $node) {
-  $all_languages = array_keys(\Drupal::service('language_manager')->getLanguages());
-  $node_languages = array_keys($node->getTranslationLanguages());
-
-  return $all_languages == $node_languages;
 }
 
 /**
@@ -82,7 +63,7 @@ function uhsg_news_email_has_been_sent(\Drupal\node\Entity\Node $node) {
  * Implements hook_ENTITY_TYPE_presave().
  */
 function uhsg_news_node_presave(Drupal\Core\Entity\EntityInterface $entity) {
-  if ($entity->bundle() == 'news' && uhsg_news_emailing_enabled($entity)) {
+  if ($entity->bundle() == 'news' && !uhsg_news_email_has_been_sent($entity)) {
     uhsg_news_send_news_by_email($entity);
   }
 }
@@ -96,9 +77,9 @@ function uhsg_news_send_news_by_email(\Drupal\node\Entity\Node $node) {
   $email = $node->get('field_news_email')->value;
 
   if (!empty($email)) {
-    $message = uhsg_news_get_title_and_body_formatted($node->getTranslation('en'));
-    $message .= uhsg_news_get_title_and_body_formatted($node->getTranslation('fi'));
-    $message .= uhsg_news_get_title_and_body_formatted($node->getTranslation('sv'));
+    $message = uhsg_news_get_title_and_body_formatted($node, 'en');
+    $message .= uhsg_news_get_title_and_body_formatted($node, 'fi');
+    $message .= uhsg_news_get_title_and_body_formatted($node, 'sv');
 
     $message .= $node->toUrl('canonical', ['absolute' => TRUE])->toString();
 
@@ -120,10 +101,18 @@ function uhsg_news_send_news_by_email(\Drupal\node\Entity\Node $node) {
 
 /**
  * @param \Drupal\node\Entity\Node $node
+ * @param string $langcode
  * @return string Title and body formatted.
  */
-function uhsg_news_get_title_and_body_formatted(\Drupal\node\Entity\Node $node) {
-  return $node->label() . "\n\n" . Drupal\Core\Mail\MailFormatHelper::htmlToText($node->body->value) . "\n----------\n\n";
+function uhsg_news_get_title_and_body_formatted(\Drupal\node\Entity\Node $node, $langcode) {
+  $formatted_text = '';
+
+  if ($node->hasTranslation($langcode)) {
+    $translation = $node->getTranslation($langcode);
+    $formatted_text = $translation->label() . "\n\n" . Drupal\Core\Mail\MailFormatHelper::htmlToText($translation->body->value) . "\n----------\n\n";
+  }
+
+  return $formatted_text;
 }
 
 /**
