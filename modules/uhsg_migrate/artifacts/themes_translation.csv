@@ -1,27 +1,27 @@
 id,langcode,name
 1,fi,Uudelle opiskelijalle
-1,sv,Uudelle opiskelijalle
+1,sv,För nya studerande
 2,fi,Lukuvuosi ja ilmoittautuminen
-2,sv,Lukuvuosi ja ilmoittautuminen
+2,sv,Läsår och anmälan
 3,fi,Opintojen suunnittelu ja edistyminen
-3,sv,Opintojen suunnittelu ja edistyminen
+3,sv,Planering av och framsteg i studierna
 4,fi,Opiskelijapalvelut ja opiskelijan oikeudet
-4,sv,Opiskelijapalvelut ja opiskelijan oikeudet
+4,sv,Services fär studerande och rätter
 5,fi,Osallistu ja vaikuta
-5,sv,Osallistu ja vaikuta
+5,sv,Delta och påverka
 6,fi,Opiskelijaedut
-6,sv,Opiskelijaedut
+6,sv,Studentförmåner
 7,fi,Opintojen rahoitus
-7,sv,Opintojen rahoitus
+7,sv,Finansiering av studierna
 8,fi,Terveys- ja hyvinvointi
-8,sv,Terveys- ja hyvinvointi
+8,sv,Hälsa och välmående
 9,fi,Liikkuvuus
-9,sv,Liikkuvuus
+9,sv,Mobilitet
 10,fi,Työelämään
-10,sv,Työelämään
+10,sv,Ut i arbetslivet
 11,fi,Tutkimusryhmät ja jatko-opintomahdollisuudet
 11,sv,Tutkimusryhmät ja jatko-opintomahdollisuudet
 12,fi,Osaamisen osoittaminen ja arviointi
 12,sv,Osaamisen osoittaminen ja arviointi
 13,fi,Tutkielmat ja valmistuminen
-13,sv,Tutkielmat ja valmistuminen
+13,sv,Avhandlingar och examen
