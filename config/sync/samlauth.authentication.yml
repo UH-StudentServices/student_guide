@@ -1,7 +1,7 @@
 drupal_saml_login: 0
 sp_entity_id: ''
 sp_name_id_format: ''
-sp_cert_type: 'folder'
+sp_cert_type: folder
 sp_cert_folder: ''
 sp_x509_certificate: ''
 sp_private_key: ''
