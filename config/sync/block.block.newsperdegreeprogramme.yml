@@ -3,14 +3,13 @@ langcode: en
 status: true
 dependencies:
   module:
-    - system
     - uhsg_news
   theme:
     - uhsg_theme
 id: newsperdegreeprogramme
 theme: uhsg_theme
 region: after_content
-weight: -7
+weight: -8
 provider: null
 plugin: news_per_degree_programme
 settings:
@@ -18,9 +17,4 @@ settings:
   label: 'Current topics'
   provider: uhsg_news
   label_display: visible
-visibility:
-  request_path:
-    id: request_path
-    pages: "<front>\r\n/taxonomy/term/*"
-    negate: false
-    context_mapping: {  }
+visibility: {  }
