@@ -1,0 +1,67 @@
+<?php
+
+/**
+ * @file
+ * Contains uhsg_article.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function uhsg_article_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the uhsg_article module.
+    case 'help.page.uhsg_article':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Provides article paragraphs.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_preprocess_field().
+ * Add table of contents and show paragraphs if term is in url
+ */
+function uhsg_article_preprocess_field(array &$variables, $hook) {
+  if ($variables['element']['#field_name'] == 'field_article_paragraph') {
+    // get tid from url
+    $path = \Drupal::request()->getpathInfo();
+    $args  = explode('/',$path);
+    $arg = end($args);
+
+    $variables['table_of_contents'] = [];
+    foreach ($variables['items'] as $key => $item) {
+      $terms = $item['content']['#paragraph']->get('field_paragraph_degree_programme')->getValue();
+
+      // always show paragraphs with no terms
+      if (!$terms) {
+        $variables['table_of_contents'][] = [
+          'id' => $item['content']['#paragraph']->id(),
+          'title' => $item['content']['#paragraph']->get('field_paragraph_title')
+        ];
+      }
+      else {
+        $valid_term_found = FALSE;
+        foreach ($terms as $term) {
+          // if paragraph has terms, show it only if term is in path
+          if (isset($arg) && $arg == $term['target_id']) {
+            $variables['table_of_contents'][] = [
+              'id' => $item['content']['#paragraph']->id(),
+              'title' => $item['content']['#paragraph']->get('field_paragraph_title')
+            ];
+            $valid_term_found = TRUE;
+            break;
+          }
+        }
+        if (!$valid_term_found) {
+          unset($variables['items'][$key]);
+        }
+      }
+    }
+  }
+}
