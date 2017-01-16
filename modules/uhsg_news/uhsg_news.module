@@ -82,13 +82,14 @@ function uhsg_news_email_has_been_sent(\Drupal\node\Entity\Node $node) {
  * Implements hook_ENTITY_TYPE_presave().
  */
 function uhsg_news_node_presave(Drupal\Core\Entity\EntityInterface $entity) {
-  if (uhsg_news_emailing_enabled($entity)) {
+  if ($entity->bundle() == 'news' && uhsg_news_emailing_enabled($entity)) {
     uhsg_news_send_news_by_email($entity);
   }
 }
 
 /**
  * Send the news by email if the email has been given.
+ *
  * @param $node \Drupal\node\Entity\Node
  */
 function uhsg_news_send_news_by_email(\Drupal\node\Entity\Node $node) {
@@ -119,10 +120,10 @@ function uhsg_news_send_news_by_email(\Drupal\node\Entity\Node $node) {
 
 /**
  * @param \Drupal\node\Entity\Node $node
- * @return string
+ * @return string Title and body formatted.
  */
 function uhsg_news_get_title_and_body_formatted(\Drupal\node\Entity\Node $node) {
-  return $node->label(). "\n\n" . Drupal\Core\Mail\MailFormatHelper::htmlToText($node->body->value) . "\n----------\n\n";
+  return $node->label() . "\n\n" . Drupal\Core\Mail\MailFormatHelper::htmlToText($node->body->value) . "\n----------\n\n";
 }
 
 /**
