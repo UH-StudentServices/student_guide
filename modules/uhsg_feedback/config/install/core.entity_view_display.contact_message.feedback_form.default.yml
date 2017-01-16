@@ -1,12 +1,9 @@
-uuid: 8a4dc008-3aa0-4314-9010-e2ec6f1ed8bf
 langcode: en
 status: true
 dependencies:
   config:
     - contact.form.feedback_form
     - field.field.contact_message.feedback_form.field_feedback_respond
-_core:
-  default_config_hash: vShF6q1vpz7wJaqF-khDG6eXEHQo7afc_c1sa67jvh8
 id: contact_message.feedback_form.default
 targetEntityType: contact_message
 bundle: feedback_form
