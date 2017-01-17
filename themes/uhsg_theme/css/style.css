@@ -7336,7 +7336,6 @@ input[type="submit"].button--reset + i {
 }
 
 .view-search .view-filters {
-  padding: 1em 0;
   -webkit-flex: 1 100%;
       -ms-flex: 1 100%;
           flex: 1 100%;
@@ -7355,7 +7354,6 @@ input[type="submit"].button--reset + i {
 }
 
 .view-search .view-header {
-  padding: 1em 0;
   -webkit-flex: 1 100%;
       -ms-flex: 1 100%;
           flex: 1 100%;

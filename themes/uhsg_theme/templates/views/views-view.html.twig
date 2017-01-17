@@ -47,14 +47,20 @@
   {{ title_suffix }}
 
   {% if exposed %}
-    <div class="view-filters">
+    <div class="view-filters tube">
       {{ exposed }}
     </div>
   {% endif %}
 
   {% if header %}
-    <div class="view-header">
-      {{ header }}
+    <div class="view-header tube">
+      {{ header|without('result') }}
+    </div>
+  {% endif %}
+
+  {% if header.result %}
+    <div class="view-result tube">
+        {{ header.result }}
     </div>
   {% endif %}
 
