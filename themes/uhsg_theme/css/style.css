@@ -7280,19 +7280,13 @@ input[type="password"] {
   border: 2px solid #0098d0;
   padding: 0.5em;
   width: 100%;
+  max-width: 45em;
 }
 
 @media (min-width: 48em) {
   input[type="text"],
   input[type="password"] {
     font-size: 14px;
-  }
-}
-
-@media (min-width: 48em) {
-  input[type="text"],
-  input[type="password"] {
-    width: 50%;
   }
 }
 
@@ -7345,14 +7339,38 @@ input[type="submit"].button--reset + i {
   }
 }
 
-.view-search .view-header,
 .view-search .view-filters {
   padding: 1em 0;
+  -webkit-flex: 1 100%;
+      -ms-flex: 1 100%;
+          flex: 1 100%;
 }
 
-.view-search .view-header .form-actions,
+@media (min-width: 48em) {
+  .view-search .view-filters {
+    -webkit-flex: 0 62%;
+        -ms-flex: 0 62%;
+            flex: 0 62%;
+  }
+}
+
 .view-search .view-filters .form-actions {
   margin-top: 2em;
+}
+
+.view-search .view-header {
+  padding: 1em 0;
+  -webkit-flex: 1 100%;
+      -ms-flex: 1 100%;
+          flex: 1 100%;
+}
+
+@media (min-width: 48em) {
+  .view-search .view-header {
+    -webkit-flex: 0 31%;
+        -ms-flex: 0 31%;
+            flex: 0 31%;
+  }
 }
 
 .theme--full .theme__body p {
