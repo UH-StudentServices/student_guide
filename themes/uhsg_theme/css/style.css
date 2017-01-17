@@ -7050,10 +7050,6 @@ ul.pager > li.pager__next a {
   background: #FFF;
 }
 
-.degree-programme-switcher .degree-programme-switcher__container li {
-  padding: 0.3em 0;
-}
-
 .degree-programme-switcher .degree-programme-switcher__search {
   display: -webkit-flex;
   display: -ms-flexbox;

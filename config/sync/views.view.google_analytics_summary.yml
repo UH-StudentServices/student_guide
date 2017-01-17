@@ -1365,7 +1365,7 @@ display:
         link_display: false
         link_url: false
       title: 'Top pages over the last 30 days'
-      css_class: google-analytics-reports-summary-block
+      css_class: top-searches
       sorts:
         pageviews:
           id: pageviews
@@ -1383,11 +1383,11 @@ display:
         type: html_list
         options:
           grouping: {  }
-          row_class: ''
+          row_class: 'list-of-links__link button--action-before icon--search theme-transparent'
           default_row_class: true
-          type: ol
-          wrapper_class: item-list
-          class: ''
+          type: ul
+          wrapper_class: ''
+          class: list-of-links
       row:
         type: fields
         options:
