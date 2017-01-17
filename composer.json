@@ -43,7 +43,8 @@
     "drupal/contact_block": "^1.3",
     "drupal/honeypot": "^1.23",
     "drupal/google_analytics": "^2.1",
-    "drupal-composer/drupal-scaffold": "^2.2"
+    "drupal-composer/drupal-scaffold": "^2.2",
+    "drupal/samlauth": "2.0-alpha0"
   },
   "repositories": [
     {
@@ -73,6 +74,9 @@
     "patches": {
       "drupal/paragraphs": {
         "Fix error messages": "https://www.drupal.org/files/issues/many_error_messages-2775609-29.patch"
+      },
+      "drupal/samlauth": {
+        "Use certificate files instead storing in config": "https://www.drupal.org/files/issues/samlauth-allow_custom_cert_folder-2816997-7.patch"
       }
     }
   }
