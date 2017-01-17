@@ -44,7 +44,8 @@
     "drupal/honeypot": "^1.23",
     "drupal/google_analytics": "^2.1",
     "drupal-composer/drupal-scaffold": "^2.2",
-    "drupal/samlauth": "2.0-alpha0"
+    "drupal/samlauth": "2.0-alpha0",
+    "drupal/google_analytics_reports": "3.0-beta1"
   },
   "repositories": [
     {
