@@ -26,6 +26,8 @@ display:
           label: Tekijä
         status:
           label: Tila
+        changed:
+          label: Päivitetty
         operations:
           label: Toimenpiteet
       filters:

@@ -30,3 +30,4 @@
   HUB-9: Added permissions to all content for content editor.
   HUB-44: Added Google Analytics.
   HUB-62: One paragraph type with all fields.
+  HUB-54: Send news by email.
