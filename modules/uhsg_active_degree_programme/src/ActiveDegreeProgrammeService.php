@@ -10,7 +10,7 @@ namespace Drupal\uhsg_active_degree_programme;
 class ActiveDegreeProgrammeService {
   
   /**
-   * Return the value of the example variable.
+   * Return name of active degree programme.
    */
   public function getActiveDegreeProgramme() {
     $node = \Drupal::routeMatch()->getParameter('node');
@@ -19,7 +19,6 @@ class ActiveDegreeProgrammeService {
     // if page is node first look if degree programme cookie matches any of the referenced degree programmes and use it.
     // if no match is found, set the first degree programme reference as the new active one.
     $reference_fields = array('field_article_degree_programme', 'field_news_degree_programme');
-
     foreach ($reference_fields as $reference_field) {
       if ($node && $node->hasField($reference_field) && isset($node->get($reference_field)->target_id)) {
 
