@@ -15,8 +15,14 @@ class ActiveDegreeProgrammeService {
   public function getName() {
     $node = \Drupal::routeMatch()->getParameter('node');
     $term = \Drupal::routeMatch()->getParameter('taxonomy_term');
+    $param = \Drupal::service('current_route_match')->getParameters()->get('tid');
 
-    // if page is node and has a valid term, use it
+    // if term id is in route parameters, use it
+    if ($param) {
+      return getFromParam($param);
+    }
+
+    // if page is node and has a degree programme reference, use it
     if ($node && $this->getFromNode($node)) {
       return $this->getFromNode($node);
     }
@@ -26,13 +32,17 @@ class ActiveDegreeProgrammeService {
       return $this->getFromTerm($term);
     }
 
-    // if page doesn't have a degree programme reference, or it isn't a degree programme term,
-    // read active degree programme from cookie. If no cookie fallback to "select degree programme".
+    // if term is set in cookie, lets use that.
     if (isset($_COOKIE['Drupal_visitor_degree_programme'])) {
       return $this->getFromCookie($_COOKIE['Drupal_visitor_degree_programme']);
     }
 
     return NULL;
+  }
+
+  private function getFromParam($node) {
+    $term = \Drupal\taxonomy\Entity\Term::load($param);
+    return $term->getName();
   }
 
   private function getFromNode($node) {
