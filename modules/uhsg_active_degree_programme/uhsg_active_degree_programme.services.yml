@@ -1,0 +1,3 @@
+services:
+  uhsg_active_degree_programme.active_degree_programme:
+    class: Drupal\uhsg_active_degree_programme\ActiveDegreeProgrammeService

@@ -1,0 +1,5 @@
+name: Active degree programme
+type: module
+description: Keeps track of the active degree programme and provides the degree programme switcher.
+core: 8.x
+package: Student Guide
