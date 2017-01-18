@@ -31,3 +31,4 @@
   HUB-44: Added Google Analytics.
   HUB-62: One paragraph type with all fields.
   HUB-54: Send news by email.
+  HUB-36: display top content from google analytics.
