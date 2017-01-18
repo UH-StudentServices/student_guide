@@ -1,4 +1,4 @@
-uuid: 699471c3-6d14-4029-a7c3-45a76e0f0261
+uuid: f002bf88-bed6-41cd-bc65-69734cee0fe5
 langcode: en
 status: true
 dependencies:
@@ -10,6 +10,8 @@ third_party_settings:
     prefix_id: feedback-form__content
     render_selector: ''
     confirmation_type: 1
+_core:
+  default_config_hash: mnaUQYve6_HQjc4m72R-JtHEn8fCBJd32_v7RpXTBzU
 id: feedback_form
 label: 'Feedback form'
 recipients:

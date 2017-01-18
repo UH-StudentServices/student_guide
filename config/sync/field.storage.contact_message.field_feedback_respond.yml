@@ -1,9 +1,11 @@
-uuid: f039f1d7-39a2-42de-9d23-b339e604984e
+uuid: b8b71cae-93c6-4a15-9e92-84c27a097c58
 langcode: en
 status: true
 dependencies:
   module:
     - contact
+_core:
+  default_config_hash: mW_fyBexnqFmFz6seMsAaxnBib2c6hB2AiM7JBlRPws
 id: contact_message.field_feedback_respond
 field_name: field_feedback_respond
 entity_type: contact_message

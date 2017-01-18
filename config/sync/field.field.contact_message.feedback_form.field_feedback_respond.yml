@@ -1,10 +1,12 @@
-uuid: b148d9cf-a3ea-4fae-8fbb-5ae770c9dc95
+uuid: 1f39577c-e749-4985-a881-f2bae86a0337
 langcode: en
 status: true
 dependencies:
   config:
     - contact.form.feedback_form
     - field.storage.contact_message.field_feedback_respond
+_core:
+  default_config_hash: utDMxoi02enovtfXqh7eE2y2mnw3BEE2mq1NnZVJ10o
 id: contact_message.feedback_form.field_feedback_respond
 field_name: field_feedback_respond
 entity_type: contact_message

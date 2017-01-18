@@ -6,12 +6,13 @@ dependencies:
     - contact.form.feedback_form
   module:
     - contact_block
+    - system
   theme:
     - uhsg_theme
 id: contactblock
 theme: uhsg_theme
 region: after_content
-weight: 0
+weight: -7
 provider: null
 plugin: contact_block
 settings:
@@ -20,4 +21,9 @@ settings:
   provider: contact_block
   label_display: '0'
   contact_form: feedback_form
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: '/user/*'
+    negate: true
+    context_mapping: {  }

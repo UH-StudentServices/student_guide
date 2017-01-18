@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.feedback_form
+    - field.field.contact_message.feedback_form.field_feedback_respond
+id: contact_message.feedback_form.default
+targetEntityType: contact_message
+bundle: feedback_form
+mode: default
+content:
+  field_feedback_respond:
+    weight: 1
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+  mail:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+  message:
+    type: string_textarea
+    weight: 0
+    settings:
+      rows: 7
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  copy: true
+  langcode: true
+  name: true
+  subject: true

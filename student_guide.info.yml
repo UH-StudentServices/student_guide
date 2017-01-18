@@ -8,9 +8,6 @@ dependencies:
   - block
   - config
   - contextual
-  - contact
-  - contact_ajax
-  - contact_block
   - datetime
   - dblog
   - dynamic_page_cache
@@ -25,9 +22,12 @@ dependencies:
   - page_cache
   - paragraphs
   - pathauto
+  - samlauth
   - toolbar
   - taxonomy
   - uhsg_cookie_consent
+  - uhsg_feedback
+  - uhsg_news
   - uhsg_service_provider_details
   - uhsg_some_links
   - views
