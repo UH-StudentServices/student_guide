@@ -7361,10 +7361,14 @@ input[type="submit"].button--reset + i {
 
 @media (min-width: 48em) {
   .view-search .view-header {
-    -webkit-flex: 0 31%;
-        -ms-flex: 0 31%;
-            flex: 0 31%;
+    -webkit-flex: 0 35%;
+        -ms-flex: 0 35%;
+            flex: 0 35%;
   }
+}
+
+.view-search .view-header .top-searches li:last-child {
+  display: none;
 }
 
 .theme--full .theme__body p {

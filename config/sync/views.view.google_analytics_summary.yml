@@ -1300,7 +1300,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -1337,17 +1337,17 @@ display:
           element_wrapper_class: ''
           element_default_classes: true
           empty: ''
-          hide_empty: true
-          empty_zero: true
+          hide_empty: false
+          empty_zero: false
           hide_alter_empty: true
           set_precision: false
           precision: 0
           decimal: .
-          separator: ' '
+          separator: ','
           format_plural: false
           format_plural_string: "1\x03@count"
-          prefix: ' - '
-          suffix: ' views'
+          prefix: ''
+          suffix: ''
           plugin_id: numeric
       defaults:
         fields: false
@@ -1398,20 +1398,9 @@ display:
       pager:
         type: some
         options:
-          items_per_page: 4
+          items_per_page: 5
           offset: 0
-      empty:
-        area_text_custom:
-          id: area_text_custom
-          table: views
-          field: area_text_custom
-          relationship: none
-          group_type: group
-          admin_label: 'Site doesn''t have any statistics.'
-          empty: true
-          tokenize: false
-          content: 'Site doesn''t have any statistics.'
-          plugin_id: text_custom
+      empty: {  }
       header: {  }
       display_description: ''
       use_more: false
