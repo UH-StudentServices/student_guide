@@ -145,7 +145,7 @@ function uhsg_theme_preprocess_views_view(&$variables) {
       $variables['attributes']['class'][] = 'tube';
       break;
     case 'degree_programmes':
-      $variables['title'] = \Drupal::service('uhsg_active_degree_programme.active_degree_programme')->getActiveDegreeProgramme();
+      $variables['title'] = \Drupal::service('uhsg_active_degree_programme.active_degree_programme')->getName();
   }
 }
 
