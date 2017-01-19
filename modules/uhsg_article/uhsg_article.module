@@ -91,6 +91,8 @@ function uhsg_article_filter_paragraphs_having_degree_programme(array &$variable
 
 /**
  * Collect table of contents.
+ *
+ * @param array $variables
  */
 function uhsg_article_collect_table_of_contents(array &$variables) {
   $variables['table_of_contents'] = [];
