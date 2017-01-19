@@ -41,7 +41,7 @@ function uhsg_article_preprocess_field(array &$variables, $hook) {
       uhsg_article_filter_paragraphs_by_degree_programme($variables, $degree_programme);
     }
     else {
-      uhsg_article_filter_paragraphs_having_degree_programme($variables);
+      uhsg_article_filter_paragraphs_with_degree_programme($variables);
     }
 
     uhsg_article_collect_table_of_contents($variables);
@@ -80,7 +80,7 @@ function uhsg_article_filter_paragraphs_by_degree_programme(array &$variables, T
  *
  * @param array $variables
  */
-function uhsg_article_filter_paragraphs_having_degree_programme(array &$variables) {
+function uhsg_article_filter_paragraphs_with_degree_programme(array &$variables) {
   foreach ($variables['items'] as $key => $item) {
     $terms = $item['content']['#paragraph']->get('field_paragraph_degree_programme')->getValue();
     if ($terms) {
