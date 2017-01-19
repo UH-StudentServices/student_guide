@@ -4,4 +4,4 @@ uhsg_article.filter_paragraphs:
     _controller: '\Drupal\node\Controller\NodeViewController::view'
     _title: 'Node Page'
   requirements:
-    _permission: 'access content'
+    _entity_access: 'node.view'
