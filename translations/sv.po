@@ -12,7 +12,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
+msgid "Updated"
+msgstr ""
+
 msgid "Name of degree programme"
+msgstr ""
+
+msgid "For example topic or university service"
 msgstr ""
 
 msgid "Feedback"
@@ -23,3 +29,18 @@ msgstr "Skicka"
 
 msgid "Give feedback about the service..."
 msgstr "Ge feedback om tjänsten..."
+
+msgid "News"
+msgstr "Nyhet"
+
+msgid "This news has been sent to the following email address:"
+msgstr ""
+
+msgid "Send the news to the given email address. The email can be sent just once."
+msgstr ""
+
+msgid "Email sent to @email."
+msgstr ""
+
+msgid "Email sending failed."
+msgstr ""
