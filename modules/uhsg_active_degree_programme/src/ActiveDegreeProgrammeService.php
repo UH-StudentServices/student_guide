@@ -40,7 +40,7 @@ class ActiveDegreeProgrammeService {
     }
 
     // as a fallback term is set in cookie, lets use that if nothing else works.
-    // This happens on the front and theme nodes, also on news and article nodes
+    // This happens on the front page and theme nodes, also on news and article nodes
     // when tid is not in route parameters.
     if (isset($_COOKIE['Drupal_visitor_degree_programme'])) {
       $term = \Drupal\taxonomy\Entity\Term::load($_COOKIE['Drupal_visitor_degree_programme']);
