@@ -8,7 +8,16 @@
 namespace Drupal\uhsg_active_degree_programme;
  
 class ActiveDegreeProgrammeService {
-  
+
+  /**
+   * Set active degree programme.
+   */
+  public function set($term) {
+    $tid = $term->id();
+    $cookie = array('degree_programme' => $tid);
+    user_cookie_save($cookie);
+  }
+
   /**
    * Return name of active degree programme.
    */
@@ -65,9 +74,8 @@ class ActiveDegreeProgrammeService {
           $term = \Drupal\taxonomy\Entity\Term::load($node->get($reference_field)->target_id);
         }
 
-        $tid = $term->id();
-        $cookie = array('degree_programme' => $tid);
-        user_cookie_save($cookie);
+        // set term as active
+        $this->set($term);
 
         $term_translated = \Drupal::service('entity.repository')->getTranslationFromContext($term);
         return $term_translated->getName();
@@ -77,9 +85,7 @@ class ActiveDegreeProgrammeService {
   }
 
   private function getFromTerm($term) {
-    $tid = $term->id();
-    $cookie = array('degree_programme' => $tid);
-    user_cookie_save($cookie);
+    $this->set($term);
     return $term->getName();
   }
 
