@@ -5,3 +5,5 @@ uhsg_article.filter_paragraphs:
     _title: 'Node Page'
   requirements:
     _entity_access: 'node.view'
+    node: \d+
+    tid: \d+
