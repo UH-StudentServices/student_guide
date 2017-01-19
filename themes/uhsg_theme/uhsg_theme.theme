@@ -111,15 +111,6 @@ function uhsg_theme_preprocess_field(array &$variables, $hook) {
       $variables['title_attributes']['class'][] = 'tube';
       $variables['attributes']['class'][] = 'grid-container';
       break;
-    case 'field_article_paragraph':
-      $variables['table_of_contents'] = [];
-      foreach ($variables['items'] as $item) {
-        $variables['table_of_contents'][] = [
-          'id' => $item['content']['#paragraph']->id(),
-          'title' => $item['content']['#paragraph']->get('field_paragraph_title')
-        ];
-      }
-      break;
     case 'field_news_degree_programme':
       foreach ($variables['items'] as &$item) {
         $item['content']['#options']['attributes']['class'][] = 'box-story__tag';
