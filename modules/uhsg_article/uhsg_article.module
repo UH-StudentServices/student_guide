@@ -6,6 +6,8 @@
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\taxonomy\TermInterface;
+use Drupal\taxonomy\Entity\Term;
 
 /**
  * Implements hook_help().
@@ -29,35 +31,73 @@ function uhsg_article_help($route_name, RouteMatchInterface $route_match) {
  */
 function uhsg_article_preprocess_field(array &$variables, $hook) {
   if ($variables['element']['#field_name'] == 'field_article_paragraph') {
-    $variables['table_of_contents'] = [];
-    foreach ($variables['items'] as $key => $item) {
-      $terms = $item['content']['#paragraph']->get('field_paragraph_degree_programme')->getValue();
 
-      // always show paragraphs with no terms
-      if (!$terms) {
-        $variables['table_of_contents'][] = [
-          'id' => $item['content']['#paragraph']->id(),
-          'title' => $item['content']['#paragraph']->get('field_paragraph_title')
-        ];
+    // If we have selected degree programme, filter by that or else filter out
+    // all paragraphs that has any degree programme chosen.
+    // TODO: Should we use parameter placeholder for taxonomy term entity instead tid?
+    $param = \Drupal::service('current_route_match')->getParameters()->get('tid');
+    if ($param) {
+      $degree_programme = Term::load($param);
+      uhsg_article_filter_paragraphs_by_degree_programme($variables, $degree_programme);
+    }
+    else {
+      uhsg_article_filter_paragraphs_having_degree_programme($variables);
+    }
+
+    uhsg_article_collect_table_of_contents($variables);
+  }
+}
+
+/**
+ * Filter paragraphs by mismatched degree programmes.
+ *
+ * @param array $variables
+ * @param TermInterface $degree_programme
+ */
+function uhsg_article_filter_paragraphs_by_degree_programme(array &$variables, TermInterface $degree_programme) {
+  foreach ($variables['items'] as $key => $item) {
+    // For each paragraph, if terms are given. Filter paragraph if it doesn't
+    // match given degree programme.
+    $terms = $item['content']['#paragraph']->get('field_paragraph_degree_programme')->getValue();
+    if ($terms) {
+      $valid_term_found = FALSE;
+      foreach ($terms as $term) {
+        // if paragraph has terms, show it only if term is in path
+        if ($degree_programme->id() == $term['target_id']) {
+          $valid_term_found = TRUE;
+          break;
+        }
       }
-      else {
-        $valid_term_found = FALSE;
-        foreach ($terms as $term) {
-          // if paragraph has terms, show it only if term is in path
-          $param = \Drupal::service('current_route_match')->getParameters()->get('tid');
-          if ($param == $term['target_id']) {
-            $variables['table_of_contents'][] = [
-              'id' => $item['content']['#paragraph']->id(),
-              'title' => $item['content']['#paragraph']->get('field_paragraph_title')
-            ];
-            $valid_term_found = TRUE;
-            break;
-          }
-        }
-        if (!$valid_term_found) {
-          unset($variables['items'][$key]);
-        }
+      if (!$valid_term_found) {
+        unset($variables['items'][$key]);
       }
     }
+  }
+}
+
+/**
+ * Filter paragraphs if they have degree programme defined.
+ *
+ * @param array $variables
+ */
+function uhsg_article_filter_paragraphs_having_degree_programme(array &$variables) {
+  foreach ($variables['items'] as $key => $item) {
+    $terms = $item['content']['#paragraph']->get('field_paragraph_degree_programme')->getValue();
+    if ($terms) {
+      unset($variables['items'][$key]);
+    }
+  }
+}
+
+/**
+ * Collect table of contents.
+ */
+function uhsg_article_collect_table_of_contents(array &$variables) {
+  $variables['table_of_contents'] = [];
+  foreach ($variables['items'] as $key => $item) {
+    $variables['table_of_contents'][] = [
+      'id' => $item['content']['#paragraph']->id(),
+      'title' => $item['content']['#paragraph']->get('field_paragraph_title')
+    ];
   }
 }
