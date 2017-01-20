@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "360033398a43066d04cacab6e0f84e82",
-    "content-hash": "e63a3a89d3815f66f903574e7714ca0a",
+    "hash": "9328bc598c47f5ff14fe061c003caaa5",
+    "content-hash": "5b95143391ab798fe90c02c4cd9cc58a",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1262,17 +1262,11 @@
         },
         {
             "name": "drupal/google_analytics",
-            "version": "2.1.0",
+            "version": "dev-2.x",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/google_analytics",
-                "reference": "8.x-2.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/google_analytics-8.x-2.1.zip",
-                "reference": null,
-                "shasum": "9b5c76802ca28d5072bb9bb552bbfeb660b0734a"
+                "reference": "8a3bd1b63764e88ebe1b96fb362a8aec54d912e9"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -1287,8 +1281,8 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.1",
-                    "datestamp": "1470845408"
+                    "version": "8.x-2.1+7-dev",
+                    "datestamp": "1475613839"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -1310,7 +1304,8 @@
             "support": {
                 "source": "http://git.drupal.org/project/google_analytics.git",
                 "issues": "https://www.drupal.org/project/issues/google_analytics"
-            }
+            },
+            "time": "2016-09-03 15:20:18"
         },
         {
             "name": "drupal/google_analytics_reports",
@@ -1699,17 +1694,17 @@
         },
         {
             "name": "drupal/pathauto",
-            "version": "1.0.0-beta1",
+            "version": "1.0.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/pathauto",
-                "reference": "8.x-1.0-beta1"
+                "reference": "8.x-1.0-beta2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/pathauto-8.x-1.0-beta1.zip",
+                "url": "https://ftp.drupal.org/files/projects/pathauto-8.x-1.0-beta2.zip",
                 "reference": null,
-                "shasum": "0c8756d73d5b1f95419921926e8e55bc0c69e41b"
+                "shasum": "08962a207e4273eaaf9d2edf79111db9fbcb8c8e"
             },
             "require": {
                 "drupal/core": "*",
@@ -1722,8 +1717,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-beta1",
-                    "datestamp": "1474313339"
+                    "version": "8.x-1.0-beta2",
+                    "datestamp": "1484781483"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -4097,16 +4092,16 @@
         },
         {
             "name": "zendframework/zend-diactoros",
-            "version": "1.3.8",
+            "version": "1.3.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-diactoros.git",
-                "reference": "d9c1fd7c4b024179d49faf367da544b4eef7cfe8"
+                "reference": "d5d74ca5548753e0e427fcffca89b134943bac89"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-diactoros/zipball/d9c1fd7c4b024179d49faf367da544b4eef7cfe8",
-                "reference": "d9c1fd7c4b024179d49faf367da544b4eef7cfe8",
+                "url": "https://api.github.com/repos/zendframework/zend-diactoros/zipball/d5d74ca5548753e0e427fcffca89b134943bac89",
+                "reference": "d5d74ca5548753e0e427fcffca89b134943bac89",
                 "shasum": ""
             },
             "require": {
@@ -4143,7 +4138,7 @@
                 "psr",
                 "psr-7"
             ],
-            "time": "2017-01-05 21:44:28"
+            "time": "2017-01-17 16:18:33"
         },
         {
             "name": "zendframework/zend-escaper",
@@ -4252,31 +4247,31 @@
         },
         {
             "name": "zendframework/zend-stdlib",
-            "version": "3.0.1",
+            "version": "3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-stdlib.git",
-                "reference": "8bafa58574204bdff03c275d1d618aaa601588ae"
+                "reference": "debedcfc373a293f9250cc9aa03cf121428c8e78"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-stdlib/zipball/8bafa58574204bdff03c275d1d618aaa601588ae",
-                "reference": "8bafa58574204bdff03c275d1d618aaa601588ae",
+                "url": "https://api.github.com/repos/zendframework/zend-stdlib/zipball/debedcfc373a293f9250cc9aa03cf121428c8e78",
+                "reference": "debedcfc373a293f9250cc9aa03cf121428c8e78",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.5 || ^7.0"
+                "php": "^5.6 || ^7.0"
             },
             "require-dev": {
                 "athletic/athletic": "~0.1",
-                "fabpot/php-cs-fixer": "1.7.*",
-                "phpunit/phpunit": "~4.0"
+                "phpunit/phpunit": "~4.0",
+                "squizlabs/php_codesniffer": "^2.6.2"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0-dev",
-                    "dev-develop": "3.1-dev"
+                    "dev-master": "3.1-dev",
+                    "dev-develop": "3.2-dev"
                 }
             },
             "autoload": {
@@ -4293,7 +4288,7 @@
                 "stdlib",
                 "zf2"
             ],
-            "time": "2016-04-12 21:19:36"
+            "time": "2016-09-13 14:38:50"
         }
     ],
     "packages-dev": [
@@ -4767,16 +4762,16 @@
         },
         {
             "name": "consolidation/annotated-command",
-            "version": "2.2.2",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/consolidation/annotated-command.git",
-                "reference": "1f1d92807f72901e049e9df048b412c3bc3652c9"
+                "reference": "ee8e05fb0d9bdb09beb91aab781956669a5705b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/consolidation/annotated-command/zipball/1f1d92807f72901e049e9df048b412c3bc3652c9",
-                "reference": "1f1d92807f72901e049e9df048b412c3bc3652c9",
+                "url": "https://api.github.com/repos/consolidation/annotated-command/zipball/ee8e05fb0d9bdb09beb91aab781956669a5705b2",
+                "reference": "ee8e05fb0d9bdb09beb91aab781956669a5705b2",
                 "shasum": ""
             },
             "require": {
@@ -4815,7 +4810,7 @@
                 }
             ],
             "description": "Initialize Symfony Console commands from annotated command class methods.",
-            "time": "2016-12-16 01:23:33"
+            "time": "2017-01-19 20:32:55"
         },
         {
             "name": "consolidation/output-formatters",
@@ -4992,17 +4987,17 @@
         },
         {
             "name": "drupal/devel",
-            "version": "1.0.0-beta1",
+            "version": "1.0.0-rc1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/devel",
-                "reference": "8.x-1.0-beta1"
+                "reference": "8.x-1.0-rc1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/devel-8.x-1.0-beta1.zip",
+                "url": "https://ftp.drupal.org/files/projects/devel-8.x-1.0-rc1.zip",
                 "reference": null,
-                "shasum": "439d9cab6af0ddb5efbd31e16fbb5da1f510fe6f"
+                "shasum": "04a01f50d508eca70e065b7eba38cd6c83a436c0"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -5016,8 +5011,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-beta1",
-                    "datestamp": "1480796583"
+                    "version": "8.x-1.0-rc1",
+                    "datestamp": "1484837884"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -5032,20 +5027,24 @@
                     "role": "Maintainer"
                 },
                 {
-                    "name": "catch",
-                    "homepage": "https://www.drupal.org/user/35733"
+                    "name": "Hans Salvisberg",
+                    "homepage": "https://www.drupal.org/u/salvis",
+                    "email": "drupal@salvisberg.com",
+                    "role": "Maintainer"
                 },
                 {
-                    "name": "effulgentsia",
-                    "homepage": "https://www.drupal.org/user/78040"
+                    "name": "Luca Lusso",
+                    "homepage": "https://www.drupal.org/u/lussoluca",
+                    "role": "Maintainer"
                 },
                 {
-                    "name": "juampynr",
-                    "homepage": "https://www.drupal.org/user/682736"
+                    "name": "Marco (willzyx)",
+                    "homepage": "https://www.drupal.org/u/willzyx",
+                    "role": "Maintainer"
                 },
                 {
-                    "name": "lussoluca",
-                    "homepage": "https://www.drupal.org/user/138068"
+                    "name": "See contributors",
+                    "homepage": "https://www.drupal.org/node/3236/committers"
                 },
                 {
                     "name": "moshe weitzman",
@@ -7328,7 +7327,8 @@
         "drupal/purge_purger_http": 10,
         "drupal/search_api": 10,
         "drupal/search_api_solr": 10,
-        "drupal/contact_ajax": 10
+        "drupal/contact_ajax": 10,
+        "drupal/google_analytics": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

@@ -26,6 +26,7 @@ dependencies:
   - samlauth
   - toolbar
   - taxonomy
+  - uhsg_article
   - uhsg_cookie_consent
   - uhsg_feedback
   - uhsg_news

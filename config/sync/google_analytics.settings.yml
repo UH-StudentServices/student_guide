@@ -23,13 +23,16 @@ track:
 privacy:
   anonymizeip: true
 custom:
-  dimension: {  }
+  dimension:
+    1:
+      value: '[node:langcode]'
+      index: 1
   metric: {  }
 codesnippet:
   create: {  }
   before: ''
   after: ''
-translation_set: false
+translation_set: true
 cache: false
 debug: false
 _core:
