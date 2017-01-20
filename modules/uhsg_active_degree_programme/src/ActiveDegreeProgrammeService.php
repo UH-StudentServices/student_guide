@@ -12,7 +12,7 @@ class ActiveDegreeProgrammeService {
   /**
    * Set active degree programme.
    */
-  public function set($term) {
+  private function set($term) {
     $tid = $term->id();
     $cookie = array('degree_programme' => $tid);
     user_cookie_save($cookie);
@@ -22,13 +22,33 @@ class ActiveDegreeProgrammeService {
    * Return name of active degree programme.
    */
   public function getName() {
+    $term = $this->getTerm();
+    if ($term) {
+      return \Drupal::service('entity.repository')->getTranslationFromContext($term)->getName();
+    }
+  }
+
+  /**
+   * Return id of active degree programme.
+   */
+  public function getId() {
+    $term = $this->getTerm();
+    if ($term) {
+      return $term->id();
+    }
+  }
+
+  /**
+   * Return term of active degree programme.
+   */
+  private function getTerm() {
 
     // if term id is in route parameters, it is active.
     $param = \Drupal::service('current_route_match')->getParameters()->get('tid');
     if ($param) {
       $term = \Drupal\taxonomy\Entity\Term::load($param);
       $this->set($term);
-      return \Drupal::service('entity.repository')->getTranslationFromContext($term)->getName();
+      return $term;
     }
 
     // If page is degree programme term, get name from there.
@@ -36,7 +56,7 @@ class ActiveDegreeProgrammeService {
     $term = \Drupal::routeMatch()->getParameter('taxonomy_term');
     if ($term && $term->bundle() == 'degree_programme') {
       $this->set($term);
-      return $term->getName();
+      return $term;
     }
 
     // as a fallback term is set in cookie, lets use that if nothing else works.
@@ -44,10 +64,9 @@ class ActiveDegreeProgrammeService {
     // when tid is not in route parameters.
     if (isset($_COOKIE['Drupal_visitor_degree_programme'])) {
       $term = \Drupal\taxonomy\Entity\Term::load($_COOKIE['Drupal_visitor_degree_programme']);
-      return \Drupal::service('entity.repository')->getTranslationFromContext($term)->getName();
+      return $term;
     }
 
     return NULL;
   }
- 
 }

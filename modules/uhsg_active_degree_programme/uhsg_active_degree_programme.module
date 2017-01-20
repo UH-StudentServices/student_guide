@@ -1,6 +1,7 @@
 <?php
 
 use \Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
 
 /**
 * Implements hook_form_alter().
@@ -16,4 +17,19 @@ function uhsg_active_degree_programme_form_alter(&$form, FormStateInterface $for
 function _uhsg_active_degree_programme_user_login_set_degree_programme($form, FormStateInterface $form_state) {
   // TODO: get correct term id from user study rights
   $form_state->setRedirect('entity.taxonomy_term.canonical', array('taxonomy_term' => 16));
+}
+
+/**
+ * Implement hook_link_alter.
+ * Add active degree programme to node links.
+ */
+function uhsg_active_degree_programme_link_alter(&$variables) {
+  if (!$variables['url']->isExternal()) {
+    $node_type = (isset($variables['options']['entity_type']) && $variables['options']['entity_type'] == 'node') ? $variables['options']['entity']->getType() : NULL;
+    if ($variables['url']->getRouteName() == 'entity.node.canonical' && $node_type == 'article') {
+      $params = $variables['url']->getRouteParameters();
+      $tid = \Drupal::service('uhsg_active_degree_programme.active_degree_programme')->getId();
+      $variables['url'] = Url::fromRoute('uhsg_article.filter_paragraphs', array('node' => $params['node'], 'tid' => $tid));
+    }
+  }
 }
