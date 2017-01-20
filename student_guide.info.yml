@@ -26,6 +26,7 @@ dependencies:
   - toolbar
   - taxonomy
   - uhsg_active_degree_programme
+  - uhsg_article
   - uhsg_cookie_consent
   - uhsg_feedback
   - uhsg_news

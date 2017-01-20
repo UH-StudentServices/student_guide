@@ -1,0 +1,9 @@
+uhsg_article.filter_paragraphs:
+  path: '/article/{node}/{tid}'
+  defaults:
+    _controller: '\Drupal\node\Controller\NodeViewController::view'
+    _title: 'Node Page'
+  requirements:
+    _entity_access: 'node.view'
+    node: \d+
+    tid: \d+

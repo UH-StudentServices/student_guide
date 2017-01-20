@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.paragraph.field_paragraph_body
+    - field.field.paragraph.paragraph.field_paragraph_degree_programme
     - field.field.paragraph.paragraph.field_paragraph_image
     - field.field.paragraph.paragraph.field_paragraph_links
     - field.field.paragraph.paragraph.field_paragraph_title
@@ -52,4 +53,5 @@ content:
     type: string
 hidden:
   created: true
+  field_paragraph_degree_programme: true
   uid: true
