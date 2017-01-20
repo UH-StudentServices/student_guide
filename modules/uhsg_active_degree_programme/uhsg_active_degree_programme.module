@@ -15,8 +15,10 @@ function uhsg_active_degree_programme_form_alter(&$form, FormStateInterface $for
 * Submit handler for login form. Get degree programme reference from user and redirect to it.
 */
 function _uhsg_active_degree_programme_user_login_set_degree_programme($form, FormStateInterface $form_state) {
-  // TODO: get correct term id from user study rights
-  $form_state->setRedirect('entity.taxonomy_term.canonical', array('taxonomy_term' => 16));
+  // TODO: what if user has multiple degree programmes?
+  $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+  $tid = $user->get('field_study_rights')->target_id;
+  $form_state->setRedirect('entity.taxonomy_term.canonical', array('taxonomy_term' => $tid));
 }
 
 /**
