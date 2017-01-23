@@ -7319,7 +7319,7 @@ input[type="submit"].button--reset + i {
 }
 
 .paragraph:nth-child(odd) {
-  background: #EBEBEB;
+  background: #FAFAFA;
 }
 
 .paragraph__title {
