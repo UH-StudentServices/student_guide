@@ -2,4 +2,5 @@ name: Active degree programme
 type: module
 description: Keeps track of the active degree programme.
 core: 8.x
+version: VERSION
 package: Student Guide
