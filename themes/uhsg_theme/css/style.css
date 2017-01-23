@@ -7319,7 +7319,7 @@ input[type="submit"].button--reset + i {
 }
 
 .paragraph:nth-child(odd) {
-  background: #EBEBEB;
+  background: #FAFAFA;
 }
 
 .paragraph__title {
@@ -7402,14 +7402,14 @@ input[type="submit"].button--reset + i {
 
 .theme--teaser .theme__teaser-image {
   position: absolute;
-  opacity: 0.6;
+  opacity: 0.4;
   transition: opacity 0.2s ease-in-out;
   left: 0;
   top: 0;
 }
 
 .theme--teaser:hover .theme__teaser-image {
-  opacity: 0.4;
+  opacity: 0.25;
 }
 
 @media (min-width: 48em) {
