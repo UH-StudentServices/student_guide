@@ -43,6 +43,14 @@ class ActiveDegreeProgrammeService {
    */
   private function getTerm() {
 
+    // if term is in get parameters, it is active.
+    $query_param = \Drupal::Request()->get('degree_programme');
+    if ($query_param) {
+      $term = \Drupal\taxonomy\Entity\Term::load($query_param);
+      $this->set($term);
+      return $term;
+    }
+
     // if term id is in route parameters, it is active.
     $param = \Drupal::service('current_route_match')->getParameters()->get('tid');
     if ($param) {
