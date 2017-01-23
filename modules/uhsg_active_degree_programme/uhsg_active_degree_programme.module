@@ -13,7 +13,8 @@ function uhsg_active_degree_programme_form_alter(&$form, FormStateInterface $for
 }
 
 /**
- * Submit handler for login form. Get degree programme reference from user and redirect to it.
+ * Submit handler for login form. Get degree programme reference from user and
+ * redirect to it.
  */
 function _uhsg_active_degree_programme_user_login_set_degree_programme($form, FormStateInterface $form_state) {
   // TODO: what if user has multiple degree programmes?
