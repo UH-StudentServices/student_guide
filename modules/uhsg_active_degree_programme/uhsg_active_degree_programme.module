@@ -23,7 +23,7 @@ function _uhsg_active_degree_programme_user_login_set_degree_programme($form, Fo
 }
 
 /**
- * Implement hook_link_alter.
+ * Implements hook_link_alter().
  * Add active degree programme to node links.
  */
 function uhsg_active_degree_programme_link_alter(&$variables) {
