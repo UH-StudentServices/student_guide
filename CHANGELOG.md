@@ -2,4 +2,4 @@
 
 ## 1.x-dev
 
-* Smaller text in theme teaser (HUB-70)
+* Changed text size in theme teaser (HUB-70)
