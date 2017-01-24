@@ -7592,14 +7592,36 @@ input[type="submit"].button--reset + i {
   }
 }
 
-.view-search .view-header,
 .view-search .view-filters {
-  padding: 1em 0;
+  -webkit-flex: 1 100%;
+      -ms-flex: 1 100%;
+          flex: 1 100%;
 }
 
-.view-search .view-header .form-actions,
+@media (min-width: 48em) {
+  .view-search .view-filters {
+    -webkit-flex: 0 62%;
+        -ms-flex: 0 62%;
+            flex: 0 62%;
+  }
+}
+
 .view-search .view-filters .form-actions {
   margin-top: 2em;
+}
+
+.view-search .view-header {
+  -webkit-flex: 1 100%;
+      -ms-flex: 1 100%;
+          flex: 1 100%;
+}
+
+@media (min-width: 48em) {
+  .view-search .view-header {
+    -webkit-flex: 0 35%;
+        -ms-flex: 0 35%;
+            flex: 0 35%;
+  }
 }
 
 .theme--teaser {
