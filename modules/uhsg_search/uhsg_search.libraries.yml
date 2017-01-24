@@ -4,3 +4,5 @@ uhsg-search:
     js/uhsg-search.js: {}
   dependencies:
     - core/jquery
+    - core/jquery.once
+    - core/jquery.cookie
