@@ -205,3 +205,12 @@ function uhsg_theme_preprocess_page(&$variables) {
     $variables['updated'] = \Drupal::service('date.formatter')->format($term->getChangedTime(), 'short');
   }
 }
+
+/**
+ * Implements template_preprocess_file_link().
+ *
+ * Override file link classes with styleguide classes.
+ */
+function uhsg_theme_preprocess_file_link(&$variables) {
+  $variables['attributes']['class'] = ['list-of-links__link button--action icon--arrow-right theme-transparent'];
+}
