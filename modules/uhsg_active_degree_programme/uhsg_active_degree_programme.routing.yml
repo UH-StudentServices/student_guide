@@ -1,0 +1,7 @@
+uhsg_active_degree_programme.set_active:
+  path: /degree-programme/set/{tid}
+  defaults:
+    _controller: '\Drupal\uhsg_active_degree_programme\Controller\ActiveDegreeProgrammeController::setActiveDegreeProgramme'
+  requirements:
+    _permission: 'change active degree programme'
+    tid: \d+
