@@ -46,8 +46,8 @@
           'click .search-item': 'enableSearch',
         },
         enableSearch: function() {
-          $('#edit-search-api-fulltext').val(this.model.get('title'));
-          $('#edit-submit-search').click();
+          $('#views-exposed-form-search-block-1 input[name="search_api_fulltext"]').val(this.model.get('title'));
+          $('#views-exposed-form-search-block-1 .form-submit').click();
         },
         destroy: function() {
           this.model.destroy();
@@ -60,14 +60,14 @@
         initialize: function () {
           app.MySearches.on('add', this.addAll, this);
           app.MySearches.fetch(); // Loads list from local storage
-          $('#edit-submit-search').on('click', this.handleOnSubmit);
+          $('#views-exposed-form-search-block-1 .form-submit').on('click', this.handleOnSubmit);
         },
         events: {
           'click .clear': 'clear'
         },
         handleOnSubmit: function(e){
           app.MySearches.create({
-            title: $('#edit-search-api-fulltext').val(),
+            title: $('#views-exposed-form-search-block-1 input[name="search_api_fulltext"]').val(),
           });
         },
         addOne: function(item){
@@ -86,7 +86,6 @@
 
       // Initialize
       app.appView = new app.AppView();
-
     }
   };
 }(jQuery));
