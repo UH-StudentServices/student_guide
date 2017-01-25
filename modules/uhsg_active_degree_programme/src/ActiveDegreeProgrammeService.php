@@ -45,18 +45,26 @@ class ActiveDegreeProgrammeService {
    */
   public function getTerm() {
 
-    // Primarily active degree programme can be overridden by parameters
+    // First check from parameters
     $query_param = \Drupal::Request()->get('degree_programme');
     if ($query_param) {
       $term = Term::load($query_param);
       return $term;
     }
 
-    // Secondarily active degree is stored in cookie
+    // Secondly check from X-Headers
+    if (!empty($_SERVER['HTTP_X_DEGREE_PROGRAMME'])) {
+      $term = Term::load($_SERVER['HTTP_X_DEGREE_PROGRAMME']);
+      return $term;
+    }
+
+    // Thirdly check from cookies
     if (isset($_COOKIE['Drupal_visitor_degree_programme'])) {
       $term = Term::load($_COOKIE['Drupal_visitor_degree_programme']);
       return $term;
     }
+
+    // TODO: Fourthly check from logged in user study rights
 
     return NULL;
   }
