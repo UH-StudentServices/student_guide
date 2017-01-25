@@ -39,10 +39,17 @@
           this.$el.html(this.template(this.model.toJSON()));
           return this; // enable chained calls
         },
-        initialize: function(){
+        initialize: function() {
           this.model.on('change', this.render, this);
         },
-        destroy: function(){
+        events: {
+          'click .search-item': 'enableSearch',
+        },
+        enableSearch: function() {
+          $('#edit-search-api-fulltext').val(this.model.get('title'));
+          $('#edit-submit-search').click();
+        },
+        destroy: function() {
           this.model.destroy();
         }
       });
@@ -52,7 +59,6 @@
         el: '#my-searches',
         initialize: function () {
           app.MySearches.on('add', this.addAll, this);
-          app.MySearches.on('reset', this.addAll, this);
           app.MySearches.fetch(); // Loads list from local storage
           $('#edit-submit-search').on('click', this.handleOnSubmit);
         },
