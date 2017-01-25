@@ -34,23 +34,16 @@
       app.SearchItem = Backbone.View.extend({
         tagName: 'li',
         className: 'list-of-links__link button--action-before icon--search theme-transparent',
-        template: _.template($('#item-template').html()),
         render: function(){
-          this.$el.html(this.template(this.model.toJSON()));
+          this.$el.html(this.model.get('title'));
           return this; // enable chained calls
         },
-        initialize: function() {
-          this.model.on('change', this.render, this);
-        },
         events: {
-          'click .search-item': 'enableSearch',
+          'click': 'enableSearch',
         },
         enableSearch: function() {
           $('#views-exposed-form-search-block-1 input[name="search_api_fulltext"]').val(this.model.get('title'));
           $('#views-exposed-form-search-block-1 .form-submit').click();
-        },
-        destroy: function() {
-          this.model.destroy();
         }
       });
 
