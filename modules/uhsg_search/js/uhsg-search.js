@@ -13,11 +13,13 @@
       });
 
       var app = {};
+      var searchInput = $('#views-exposed-form-search-block-1 input[name="search_api_fulltext"]');
+      var searchSubmit = $('#views-exposed-form-search-block-1 .form-submit');
 
       // Model
       app.MySearchList = Backbone.Model.extend({
         defaults: {
-          title: '',
+          id: '',
         }
       });
 
@@ -30,37 +32,37 @@
       // instance of the Collection
       app.MySearches= new app.MySearches();
 
-      // renders individual search item (li)
+      // view that renders individual search item (li)
       app.SearchItem = Backbone.View.extend({
         tagName: 'li',
         className: 'list-of-links__link button--action-before icon--search theme-transparent',
         render: function(){
-          this.$el.html(this.model.get('title'));
+          this.$el.html(this.model.get('id'));
           return this; // enable chained calls
         },
         events: {
           'click': 'enableSearch',
         },
         enableSearch: function() {
-          $('#views-exposed-form-search-block-1 input[name="search_api_fulltext"]').val(this.model.get('title'));
-          $('#views-exposed-form-search-block-1 .form-submit').click();
+          searchInput.val(this.model.get('id'));
+          searchSubmit.click();
         }
       });
 
-      // renders the full list of search items calling SearchItem for each one.
+      // view that renders the full list of search items calling SearchItem for each one.
       app.AppView = Backbone.View.extend({
         el: '#my-searches',
         initialize: function () {
           app.MySearches.on('add', this.addAll, this);
           app.MySearches.fetch(); // Loads list from local storage
-          $('#views-exposed-form-search-block-1 .form-submit').on('click', this.handleOnSubmit);
+          searchSubmit.on('click', this.handleOnSubmit);
         },
         events: {
           'click .clear': 'clear'
         },
         handleOnSubmit: function(e){
           app.MySearches.create({
-            title: $('#views-exposed-form-search-block-1 input[name="search_api_fulltext"]').val(),
+            id: searchInput.val(),
           });
         },
         addOne: function(item){
