@@ -7,40 +7,79 @@
       // placed as a block (https://www.drupal.org/node/2820347). Until core is
       // fixed, using location.reload() to reload the current page to reset the
       // form.
-    	$('#views-exposed-form-search-block-1 input.button--reset').click(function (e) {
-    	  e.preventDefault();
-    	  location.reload();
+      $('#views-exposed-form-search-block-1 input.button--reset').click(function (e) {
+        e.preventDefault();
+        location.reload();
       });
 
-      //retrieve searches from cookie and display them
-      if ($.cookie('my_searches')) {
-        var my_searches = JSON.parse($.cookie('my_searches'));
-        my_searches.reverse();
-        var content = my_searches.map(function(value) {
-          return '<li class="list-of-links__link button--action-before icon--search theme-transparent">' + value + '</li>';
-        });
-        var title = '<h3>' + Drupal.t('My Searches') + '</h3>';
-        $('.my-searches').empty();
-        $('.my-searches').append(title + '<ul class="list-of-links">' + content + '</ul>');
-      }
+      var app = {};
 
-      // store searches in cookie
-      $('#edit-submit-search', '#views-exposed-form-search-block-1').on('click', function() {
-        if ($.cookie('my_searches')) {
-          var my_searches = JSON.parse($.cookie('my_searches'));
+      // Model
+      app.MySearchList = Backbone.Model.extend({
+        defaults: {
+          title: '',
         }
-        else {
-          var my_searches = [];
-        }  
-        console.log(my_searches);
-        my_searches.push($('#edit-search-api-fulltext').val());
-        if (my_searches.length > 4) {
-          my_searches.shift();
-        }
-        console.log(my_searches);
-
-        $.cookie('my_searches', JSON.stringify(my_searches), { expires: 999 });
       });
+
+      // Collection
+      app.MySearches = Backbone.Collection.extend({
+        model: app.MySearchList,
+        localStorage: new Store("my-searches")
+      });
+
+      // instance of the Collection
+      app.MySearches= new app.MySearches();
+
+      // renders individual search item (li)
+      app.SearchItem = Backbone.View.extend({
+        tagName: 'li',
+        className: 'list-of-links__link button--action-before icon--search theme-transparent',
+        template: _.template($('#item-template').html()),
+        render: function(){
+          this.$el.html(this.template(this.model.toJSON()));
+          return this; // enable chained calls
+        },
+        initialize: function(){
+          this.model.on('change', this.render, this);
+        },
+        destroy: function(){
+          this.model.destroy();
+        }
+      });
+
+      // renders the full list of search items calling SearchItem for each one.
+      app.AppView = Backbone.View.extend({
+        el: '#my-searches',
+        initialize: function () {
+          app.MySearches.on('add', this.addAll, this);
+          app.MySearches.on('reset', this.addAll, this);
+          app.MySearches.fetch(); // Loads list from local storage
+          $('#edit-submit-search').on('click', this.handleOnSubmit);
+        },
+        events: {
+          'click .clear': 'clear'
+        },
+        handleOnSubmit: function(e){
+          app.MySearches.create({
+            title: $('#edit-search-api-fulltext').val(),
+          });
+        },
+        addOne: function(item){
+          var view = new app.SearchItem({model: item});
+          $('#my-searches-list').append(view.render().el);
+        },
+        addAll: function(){
+          this.$('#my-searches-list').html(''); // clean list
+          app.MySearches.each(this.addOne, this);
+        },
+        clear: function(){
+          _.invoke(app.MySearches.toArray(), 'destroy');
+          this.$('#my-searches-list').html('');
+        },
+      });
+
+      // Initialize
+      app.appView = new app.AppView();
 
     }
   };

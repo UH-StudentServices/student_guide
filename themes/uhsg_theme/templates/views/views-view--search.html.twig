@@ -55,8 +55,18 @@
 
   {% if header %}
     <div class="view-header tube">
-      <div class="my-searches">
+
+      {{ attach_library('uhsg_search/backbone-localstorage') }}
+      <div id="my-searches">
+          <h3>My searches</h3>
+          <ul id="my-searches-list"></ul>
+        <button class="clear">remove</button>
       </div>
+
+      <script type="text/template" id="item-template">
+        <div class="view"><%- title %></div>
+      </script>
+
     </div>
   {% endif %}
 
