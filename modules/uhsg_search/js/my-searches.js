@@ -5,10 +5,10 @@
 
       var searchInput = $('#views-exposed-form-search-block-1 input[name="search_api_fulltext"]');
       var my_searches = $.cookie('my_searches') ? JSON.parse($.cookie('my_searches')) : [];
+      var empty = $('.view-empty', '.view-search');
 
       // store submitted value in cookie
-      if (searchInput.val()) {
-
+      if (searchInput.val() && !empty.length) {
         // no duplicates
         var dupe = my_searches.find(function(item) {
           return item == searchInput.val() ? true : false;
