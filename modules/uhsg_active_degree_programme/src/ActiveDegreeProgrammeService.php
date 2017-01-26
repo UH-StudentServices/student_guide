@@ -7,8 +7,11 @@
  
 namespace Drupal\uhsg_active_degree_programme;
 
+use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Entity\EntityRepositoryInterface;
+use Drupal\Core\Session\AccountInterface;
 use Drupal\taxonomy\Entity\Term;
+use Drupal\taxonomy\TermAccessControlHandler;
 use Symfony\Component\HttpFoundation\RequestStack;
 
 class ActiveDegreeProgrammeService {
@@ -28,13 +31,22 @@ class ActiveDegreeProgrammeService {
   protected $entityRepository;
 
   /**
+   * Stores the current user.
+   *
+   * @var \Drupal\Core\Session\AccountInterface
+   */
+  protected $user;
+
+  /**
    * ActiveDegreeProgrammeService constructor.
    * @param RequestStack $requestStack
    * @param EntityRepositoryInterface $entityRepository
+   * @param AccountInterface $user
    */
-  public function __construct(RequestStack $requestStack, EntityRepositoryInterface $entityRepository) {
+  public function __construct(RequestStack $requestStack, EntityRepositoryInterface $entityRepository, AccountInterface $user) {
     $this->requestStack = $requestStack;
     $this->entityRepository = $entityRepository;
+    $this->user = $user;
   }
 
   /**
@@ -79,25 +91,41 @@ class ActiveDegreeProgrammeService {
     $query_param = $this->requestStack->getCurrentRequest()->get('degree_programme');
     if ($query_param) {
       $term = Term::load($query_param);
-      return $term;
+      if ($this->access($term)) {
+        return $term;
+      }
     }
 
     // Secondly check from X-Headers
     $degree_programme_from_headers = $this->requestStack->getCurrentRequest()->headers->get('HTTP_X_DEGREE_PROGRAMME');
     if ($degree_programme_from_headers) {
       $term = Term::load($this->requestStack->getCurrentRequest()->headers->get('HTTP_X_DEGREE_PROGRAMME'));
-      return $term;
+      if ($this->access($term)) {
+        return $term;
+      }
     }
 
     // Thirdly check from cookies
     $degree_programme_from_cookies = $this->requestStack->getCurrentRequest()->cookies->get('Drupal_visitor_degree_programme');
     if ($degree_programme_from_cookies) {
       $term = Term::load($degree_programme_from_cookies);
-      return $term;
+      if ($this->access($term)) {
+        return $term;
+      }
     }
 
     // TODO: Fourthly check from logged in user study rights
 
     return NULL;
+  }
+
+  /**
+   * Checks whether user has access to view given term.
+   * @param Term $term
+   * @return bool
+   */
+  protected function access(Term $term) {
+    $handler = new TermAccessControlHandler($term->getEntityType());
+    return $handler->access($term, 'view', $this->user);
   }
 }
