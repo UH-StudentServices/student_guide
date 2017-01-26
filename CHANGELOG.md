@@ -9,3 +9,4 @@
 * Improved the UX of wysiwyg tables using dark borders and padding (HUB-81)
 * Added my latest searches (HUB-37)
 * Added support for embedded videos (HUB-76)
+* Module updates (HUB-79)
