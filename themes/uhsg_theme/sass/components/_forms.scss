@@ -7,9 +7,11 @@ input[type="password"] {
   max-width: 45em;
 }
 
-input[type="submit"] {
+input[type="submit"],
+button {
   &.button--reset {
     background: transparent;
+    border: none;
     color: $blue;
     margin-right: 0;
     padding-right: 2em;

@@ -12,7 +12,7 @@ field_name: field_paragraph_body
 entity_type: paragraph
 bundle: paragraph
 label: 'Paragraph body'
-description: ''
+description: 'The paragraph title is h3, so please use only heading sizes smaller than that.'
 required: false
 translatable: true
 default_value: {  }

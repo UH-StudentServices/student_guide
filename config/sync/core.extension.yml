@@ -2,6 +2,7 @@ module:
   admin_toolbar: 0
   block: 0
   breakpoint: 0
+  ckeditor: 0
   config: 0
   config_translation: 0
   contact: 0
@@ -13,6 +14,7 @@ module:
   dblog: 0
   dynamic_page_cache: 0
   easy_breadcrumb: 0
+  editor: 0
   entity_reference_revisions: 0
   externalauth: 0
   field: 0
@@ -61,6 +63,7 @@ module:
   uhsg_service_provider_details: 0
   uhsg_some_links: 0
   user: 0
+  video_embed_field: 0
   views_ui: 0
   menu_link_content: 1
   pathauto: 1
