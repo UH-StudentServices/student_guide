@@ -4,32 +4,35 @@
     attach: function(context, settings) {
 
       var searchInput = $('#views-exposed-form-search-block-1 input[name="search_api_fulltext"]');
-      var my_searches = $.cookie('my_searches') ? JSON.parse($.cookie('my_searches')) : [];
+      var searchSubmit = $('#views-exposed-form-search-block-1 .form-submit:not(".button--reset")');
+      var mySearches = $.cookie('my_searches') ? JSON.parse($.cookie('my_searches')) : [];
       var empty = $('.view-empty', '.view-search').length;
+      var maxLatestSearches = 4;
 
-      // store submitted value in cookie
+      // Store submitted value in a cookie.
       if (searchInput.val() && !empty) {
-        // no duplicates
-        var dupe = my_searches.find(function(item) {
-          return item == searchInput.val() ? true : false;
+
+        // Avoid duplicates.
+        var dupe = mySearches.find(function(item) {
+          return item == searchInput.val();
         });
 
         if (!dupe) {
-          my_searches.unshift(searchInput.val());
-          // store only 4 latest searches
-          if (my_searches.length > 4) {
-            my_searches.pop();
+          mySearches.unshift(searchInput.val());
+
+          if (mySearches.length > maxLatestSearches) {
+            mySearches.pop();
           }
 
-          // store my searches in cookie
-          $.cookie('my_searches', JSON.stringify(my_searches), { expires: 999 });
+          // Store my searches in a cookie.
+          $.cookie('my_searches', JSON.stringify(mySearches), { expires: 999 });
         }
       }
 
-      // display searches in a list
-      if (my_searches.length) {
+      // Display searches in a list.
+      if (mySearches.length) {
         var content = '';
-        my_searches.map(function(value) {
+        mySearches.map(function(value) {
           content += '<li class="list-of-links__link button--action-before icon--search theme-transparent">' + value + '</li>';
         });
 
@@ -38,13 +41,13 @@
         $('#my-searches').append(title + '<ul class="list-of-links">' + content + '</ul>');
         $('#my-searches').append('<button class="button--reset">' + Drupal.t('Remove') + '</button><i class="icon--remove"></i>');
 
-        // enable search when clicking one of my searches items
+        // Enable search when clicking one of my searches items.
         $('#my-searches li').on('click', function() {
           searchInput.val($(this).text());
           searchSubmit.click();
         });
 
-        // Remove my searches and delete cookie
+        // Empty my searches and delete the cookie.
         $('.button--reset', '#my-searches').on('click', function() {
           $.removeCookie('my_searches');
           $('#my-searches').empty();
