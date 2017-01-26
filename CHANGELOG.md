@@ -7,3 +7,4 @@
 * Added Wysiwyg for body and paragraph body (HUB-69)
 * Added support for paragraphs per translation file attachments (HUB-66).
 * Improved the UX of wysiwyg tables using dark borders and padding (HUB-81)
+* Added my latest searches (HUB-37)
