@@ -1,4 +1,9 @@
 services:
+  cache_context.active_degree_programme:
+    class: Drupal\uhsg_active_degree_programme\Cache\Context\ActiveDegreeProgrammeCacheContext
+    arguments: ['@uhsg_active_degree_programme.active_degree_programme']
+    tags:
+      - { name: cache.context }
   uhsg_active_degree_programme.active_degree_programme:
     class: Drupal\uhsg_active_degree_programme\ActiveDegreeProgrammeService
     arguments: ['@request_stack', '@entity.repository', '@current_user']

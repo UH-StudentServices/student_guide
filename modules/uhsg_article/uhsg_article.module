@@ -47,9 +47,8 @@ function uhsg_article_preprocess_field(array &$variables, $hook) {
     uhsg_article_collect_table_of_contents($variables);
 
     // Because of these alterations, our result may vay depending on active
-    // degree programme (that works through cookies and headers)
-    $variables['#cache']['contexts'][] = 'headers:X-Degree-Programme';
-    $variables['#cache']['contexts'][] = 'cookies:Drupal_visitor_degree_programme';
+    // degree programme.
+    $variables['#cache']['contexts'][] = 'active_degree_programme';
   }
 }
 
