@@ -7533,12 +7533,8 @@ input[type="password"] {
   }
 }
 
-<<<<<<< HEAD
-input[type="submit"].button--reset {
-=======
 input[type="submit"].button--reset,
 button.button--reset {
->>>>>>> develop
   background: transparent;
   border: none;
   color: #0098d0;
@@ -7612,7 +7608,6 @@ button.button--reset + i {
   -webkit-flex: 1 100%;
       -ms-flex: 1 100%;
           flex: 1 100%;
-<<<<<<< HEAD
 }
 
 @media (min-width: 48em) {
@@ -7625,22 +7620,6 @@ button.button--reset + i {
 
 .view-search .view-header .top-searches li:last-child {
   display: none;
-}
-
-.theme--full .theme__body p {
-  color: #777777;
-  font-size: 17.5px;
-  font-size: 1.25rem;
-=======
->>>>>>> develop
-}
-
-@media (min-width: 48em) {
-  .view-search .view-header {
-    -webkit-flex: 0 35%;
-        -ms-flex: 0 35%;
-            flex: 0 35%;
-  }
 }
 
 .theme--teaser {
