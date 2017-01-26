@@ -7,9 +7,35 @@
  
 namespace Drupal\uhsg_active_degree_programme;
 
+use Drupal\Core\Entity\EntityRepositoryInterface;
 use Drupal\taxonomy\Entity\Term;
- 
+use Symfony\Component\HttpFoundation\RequestStack;
+
 class ActiveDegreeProgrammeService {
+
+  /**
+   * The request stack.
+   *
+   * @var \Symfony\Component\HttpFoundation\RequestStack
+   */
+  protected $requestStack;
+
+  /**
+   * The entity repository.
+   *
+   * @var \Drupal\Core\Entity\EntityRepositoryInterface
+   */
+  protected $entityRepository;
+
+  /**
+   * ActiveDegreeProgrammeService constructor.
+   * @param RequestStack $requestStack
+   * @param EntityRepositoryInterface $entityRepository
+   */
+  public function __construct(RequestStack $requestStack, EntityRepositoryInterface $entityRepository) {
+    $this->requestStack = $requestStack;
+    $this->entityRepository = $entityRepository;
+  }
 
   /**
    * Set active degree programme.
@@ -26,7 +52,7 @@ class ActiveDegreeProgrammeService {
   public function getName() {
     $term = $this->getTerm();
     if ($term) {
-      return \Drupal::service('entity.repository')->getTranslationFromContext($term)->getName();
+      return $this->entityRepository->getTranslationFromContext($term)->getName();
     }
   }
 
@@ -46,7 +72,7 @@ class ActiveDegreeProgrammeService {
   public function getTerm() {
 
     // First check from parameters
-    $query_param = \Drupal::Request()->get('degree_programme');
+    $query_param = $this->requestStack->getCurrentRequest()->get('degree_programme');
     if ($query_param) {
       $term = Term::load($query_param);
       return $term;
