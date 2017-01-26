@@ -4,3 +4,5 @@ description: Keeps track of the active degree programme.
 core: 8.x
 version: VERSION
 package: Student Guide
+dependencies:
+  - views
