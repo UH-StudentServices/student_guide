@@ -9,38 +9,33 @@
       //retrieve searches from cookie and display them in list
       if ($.cookie('my_searches')) {
         var my_searches = JSON.parse($.cookie('my_searches'));
-        my_searches.reverse();
 
         var content = '';
         my_searches.map(function(value) {
           content += '<li class="list-of-links__link button--action-before icon--search theme-transparent">' + value + '</li>';
         });
-        console.log(content);
+
         var title = '<h3>' + Drupal.t('My Searches') + '</h3>';
         $('#my-searches').empty();
         $('#my-searches').append(title + '<ul class="list-of-links">' + content + '</ul>');
         $('#my-searches').append('<button class="button--reset">' + Drupal.t('Remove') + '</button><i class="icon--remove"></i>');
       }
+      else {
+        my_searches = [];
+      }
 
       // store submitted search keywords in cookie
       searchSubmit.on('click', function() {
-        if ($.cookie('my_searches')) {
-          var my_searches = JSON.parse($.cookie('my_searches'));
-        }
-        else {
-          var my_searches = [];
-        }
-
         // no duplicates
         var dupe = my_searches.find(function(item) {
           return item == searchInput.val() ? true : false;
         });
 
         if (!dupe) {
-          my_searches.push(searchInput.val());
+          my_searches.unshift(searchInput.val());
           // store only 4 latest searches
           if (my_searches.length > 4) {
-            my_searches.shift();
+            my_searches.pop();
           }
         }
         // store my searches in cookie

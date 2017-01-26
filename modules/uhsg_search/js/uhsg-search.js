@@ -7,11 +7,10 @@
       // placed as a block (https://www.drupal.org/node/2820347). Until core is
       // fixed, using location.reload() to reload the current page to reset the
       // form.
-      $('#views-exposed-form-search-block-1 input.button--reset').click(function (e) {
-        e.preventDefault();
-        location.reload();
-      });
-
+    	$('#views-exposed-form-search-block-1 input.button--reset').click(function (e) {
+    	  e.preventDefault();
+    	  location.reload();
+      })
     }
   };
 }(jQuery));
