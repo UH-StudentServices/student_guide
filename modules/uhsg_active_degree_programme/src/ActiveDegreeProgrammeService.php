@@ -83,14 +83,16 @@ class ActiveDegreeProgrammeService {
     }
 
     // Secondly check from X-Headers
-    if (!empty($_SERVER['HTTP_X_DEGREE_PROGRAMME'])) {
-      $term = Term::load($_SERVER['HTTP_X_DEGREE_PROGRAMME']);
+    $degree_programme_from_headers = $this->requestStack->getCurrentRequest()->headers->get('HTTP_X_DEGREE_PROGRAMME');
+    if ($degree_programme_from_headers) {
+      $term = Term::load($this->requestStack->getCurrentRequest()->headers->get('HTTP_X_DEGREE_PROGRAMME'));
       return $term;
     }
 
     // Thirdly check from cookies
-    if (isset($_COOKIE['Drupal_visitor_degree_programme'])) {
-      $term = Term::load($_COOKIE['Drupal_visitor_degree_programme']);
+    $degree_programme_from_cookies = $this->requestStack->getCurrentRequest()->cookies->get('Drupal_visitor_degree_programme');
+    if ($degree_programme_from_cookies) {
+      $term = Term::load($degree_programme_from_cookies);
       return $term;
     }
 
