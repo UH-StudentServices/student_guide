@@ -4,13 +4,11 @@ uhsg-search:
     js/uhsg-search.js: {}
   dependencies:
     - core/jquery
-    - core/underscore
-    - core/backbone
 
-backbone-localstorage:
-  remote: https://github.com/jeromegn/Backbone.localStorage
-  version: 1.0
-  license:
-    name: MIT
+my-searches:
+  version: 1.x
   js:
-    https://cdnjs.cloudflare.com/ajax/libs/backbone-localstorage.js/1.0/backbone.localStorage-min.js: { type: external, minified: true, attributes: { defer: true } }
+    js/my-searches.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.cookie

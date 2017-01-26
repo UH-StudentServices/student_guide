@@ -44,3 +44,6 @@ msgstr "Sähköposti lähetetty osoitteeseen @email."
 
 msgid "Email sending failed."
 msgstr "Sähköpostin lähettäminen epäonistui."
+
+msgid "My Searches"
+msgstr "Omat Haut"

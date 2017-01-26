@@ -44,3 +44,6 @@ msgstr ""
 
 msgid "Email sending failed."
 msgstr ""
+
+msgid "My Searches"
+msgstr "Mina sökningar"
