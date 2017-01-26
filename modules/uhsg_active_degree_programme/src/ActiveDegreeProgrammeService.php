@@ -14,7 +14,7 @@ class ActiveDegreeProgrammeService {
   /**
    * Set active degree programme.
    */
-  public function set($term) {
+  public function set(Term $term) {
     $tid = $term->id();
     $cookie = array('degree_programme' => $tid);
     user_cookie_save($cookie);
