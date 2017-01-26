@@ -40,14 +40,6 @@
   ]
 %}
 
-{% if lang == 'en' %}
-  {% set top_content = header.view %}
-{% elseif lang == 'fi' %}
-      {% set top_content = header.view_1 %}
-{% elseif lang == 'sv' %}
-    {% set top_content = header.view_2 %}
-{% endif %}
-
 <div{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   {% if title %}
@@ -63,8 +55,8 @@
 
   {% if header %}
     <div class="view-header tube">
-      <h4> {{ 'Top content'|trans }} </h4>
-      {{ top_content }}
+      <h3> {{ 'Top content'|trans }} </h3>
+      {{ header|without('result') }}
 
       {{ attach_library('uhsg_search/my-searches') }}
       <div id="my-searches">

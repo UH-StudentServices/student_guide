@@ -577,29 +577,7 @@ display:
           group_type: group
           admin_label: ''
           empty: true
-          view_to_insert: 'google_analytics_summary:top_searches_block_en'
-          inherit_arguments: false
-          plugin_id: view
-        view_1:
-          id: view_1
-          table: views
-          field: view
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: false
-          view_to_insert: 'google_analytics_summary:top_searches_block_fi'
-          inherit_arguments: false
-          plugin_id: view
-        view_2:
-          id: view_2
-          table: views
-          field: view
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: false
-          view_to_insert: 'google_analytics_summary:top_searches_block_sv'
+          view_to_insert: 'google_analytics_summary:top_searches_block'
           inherit_arguments: false
           plugin_id: view
         result:
