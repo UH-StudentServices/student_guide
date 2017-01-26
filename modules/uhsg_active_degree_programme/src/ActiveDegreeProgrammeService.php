@@ -7,7 +7,6 @@
  
 namespace Drupal\uhsg_active_degree_programme;
 
-use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Entity\EntityRepositoryInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\taxonomy\Entity\Term;
