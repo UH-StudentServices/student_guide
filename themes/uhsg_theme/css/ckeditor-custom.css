@@ -1,0 +1,5 @@
+/* Improve the UX of wysiwyg tables using dark borders and padding. */
+.cke_show_border td, .cke_show_border th {
+  border: black 1px dotted !important;
+  padding: 0.5em;
+}
