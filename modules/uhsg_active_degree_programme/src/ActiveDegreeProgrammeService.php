@@ -39,6 +39,7 @@ class ActiveDegreeProgrammeService {
 
   /**
    * Set active degree programme.
+   * @param Term $term
    */
   public function set(Term $term) {
     $tid = $term->id();
@@ -48,6 +49,7 @@ class ActiveDegreeProgrammeService {
 
   /**
    * Return name of active degree programme.
+   * @return null|string
    */
   public function getName() {
     $term = $this->getTerm();
@@ -58,6 +60,7 @@ class ActiveDegreeProgrammeService {
 
   /**
    * Return id of active degree programme.
+   * @return int|mixed|null|string
    */
   public function getId() {
     $term = $this->getTerm();
@@ -68,6 +71,7 @@ class ActiveDegreeProgrammeService {
 
   /**
    * Return term of active degree programme.
+   * @return \Drupal\Core\Entity\EntityInterface|null|static
    */
   public function getTerm() {
 
