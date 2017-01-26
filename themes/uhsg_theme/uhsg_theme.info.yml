@@ -26,4 +26,4 @@ libraries-override:
         css/components/inline-form.css: false
 
 ckeditor_stylesheets:
-  - css/ckeditor-iframe.css
+  - css/ckeditor-custom.css
