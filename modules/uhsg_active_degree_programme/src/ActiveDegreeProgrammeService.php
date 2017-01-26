@@ -52,7 +52,7 @@ class ActiveDegreeProgrammeService {
   public function getName() {
     $term = $this->getTerm();
     if ($term) {
-      return $this->entityRepository->getTranslationFromContext($term)->getName();
+      return $this->entityRepository->getTranslationFromContext($term)->label();
     }
   }
 
