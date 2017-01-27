@@ -96,9 +96,9 @@ class ActiveDegreeProgrammeService {
     }
 
     // Secondly check from X-Headers
-    $degree_programme_from_headers = $this->requestStack->getCurrentRequest()->headers->get('HTTP_X_DEGREE_PROGRAMME');
+    $degree_programme_from_headers = $this->requestStack->getCurrentRequest()->headers->get('x-degree-programme');
     if ($degree_programme_from_headers) {
-      $term = Term::load($this->requestStack->getCurrentRequest()->headers->get('HTTP_X_DEGREE_PROGRAMME'));
+      $term = Term::load($this->requestStack->getCurrentRequest()->headers->get('x-degree-programme'));
       if ($this->access($term)) {
         return $term;
       }
