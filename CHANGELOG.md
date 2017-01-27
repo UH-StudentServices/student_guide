@@ -10,4 +10,4 @@
 * Added my latest searches (HUB-37)
 * Added support for embedded videos (HUB-76)
 * Module updates (HUB-79)
-* Degree programme switcher scrollable with all items (HUB-77)
+* Major improvements for degree programmer context switching (HUB-77, HUB-73)
