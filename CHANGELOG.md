@@ -11,3 +11,4 @@
 * Added support for embedded videos (HUB-76)
 * Module updates (HUB-79)
 * Degree programme switcher scrollable with all items (HUB-77)
+* Fix header in mobile (HUB-84)
