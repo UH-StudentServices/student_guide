@@ -29,9 +29,9 @@ class NewsPerDegreeProgramme extends BlockBase {
       ->condition('field_news_degree_programme', NULL, 'IS NULL');
 
     // if on term page, add tid to condition group
-    $term = \Drupal::service('uhsg_active_degree_programme.active_degree_programme')->getTerm();
-    if ($term) {
-      $group->condition('field_news_degree_programme', $term->id());
+    $tid = \Drupal::service('uhsg_active_degree_programme.active_degree_programme')->getId();
+    if ($tid) {
+      $group->condition('field_news_degree_programme', $tid);
     }
 
     $nids = $query->condition($group)->execute();
