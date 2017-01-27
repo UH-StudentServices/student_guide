@@ -1,0 +1,15 @@
+
+<?php
+
+/**
+ * Implements hook_views_pre_render().
+ * Top content view has sitename in each result because of GA, remove that.
+ */
+function uhsg_top_content_views_pre_render(\Drupal\views\ViewExecutable $view) {
+  if ($view->id() == 'google_analytics_summary' && $view->current_display == 'top_searches_block') {
+    $sitename = \Drupal::config('system.site')->get('name');
+    foreach ($view->result as &$result) {
+      $result->pageTitle = str_replace(' | ' . $sitename, '', $result->pageTitle);
+    }
+  }
+}

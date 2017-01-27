@@ -1,5 +1,5 @@
 <?php
-namespace Drupal\uhsg_search\Plugin\views\argument_default;
+namespace Drupal\uhsg_top_content\Plugin\views\argument_default;
 use Drupal\views\Plugin\views\argument_default\ArgumentDefaultPluginBase;
 use Drupal\Core\Language\LanguageInterface;
 
