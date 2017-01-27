@@ -105,7 +105,7 @@ class ActiveDegreeProgrammeService {
     }
 
     // Thirdly check from cookies
-    $degree_programme_from_cookies = $this->requestStack->getCurrentRequest()->cookies->get('Drupal_visitor_degree_programme');
+    $degree_programme_from_cookies = $this->requestStack->getCurrentRequest()->cookies->get('Drupal.visitor.degree_programme');
     if ($degree_programme_from_cookies) {
       $term = Term::load($degree_programme_from_cookies);
       if ($this->access($term)) {
