@@ -7297,8 +7297,6 @@ ul.pager > li.pager__next a {
   background: #FFF;
 }
 
-<<<<<<< HEAD
-=======
 .degree-programme-switcher .degree-programme-switcher__container ul {
   max-height: 20em;
   max-height: 50vh;
@@ -7315,7 +7313,6 @@ ul.pager > li.pager__next a {
   }
 }
 
->>>>>>> develop
 .degree-programme-switcher .degree-programme-switcher__search {
   display: -webkit-flex;
   display: -ms-flexbox;
