@@ -13,7 +13,7 @@ use Drupal\Core\Cache\Cache;
  *  admin_label = @Translation("News per degree programme"),
  * )
  */
-class news_per_degree_programme extends BlockBase {
+class NewsPerDegreeProgramme extends BlockBase {
 
   /**
    * {@inheritdoc}
