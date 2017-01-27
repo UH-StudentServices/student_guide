@@ -102,7 +102,7 @@ class ActiveDegreeProgrammeService {
     if ($query_param) {
       $term = Term::load($query_param);
       if ($this->access($term)) {
-        \Drupal::logger('uhsg_acive_degree_programme')->debug('Resolved by parameter ' . $term->label());
+        \Drupal::logger('uhsg_acive_degree_programme')->debug('Resolved by parameter ' . $term->id());
         $this->resolvedTerm = $term;
         return $this->resolvedTerm;
       }
@@ -113,7 +113,7 @@ class ActiveDegreeProgrammeService {
     if ($degree_programme_from_headers) {
       $term = Term::load($this->requestStack->getCurrentRequest()->headers->get('x-degree-programme'));
       if ($this->access($term)) {
-        \Drupal::logger('uhsg_acive_degree_programme')->debug('Resolved by header ' . $term->label());
+        \Drupal::logger('uhsg_acive_degree_programme')->debug('Resolved by header ' . $term->id());
         $this->resolvedTerm = $term;
         return $this->resolvedTerm;
       }
@@ -124,7 +124,7 @@ class ActiveDegreeProgrammeService {
     if ($degree_programme_from_cookies) {
       $term = Term::load($degree_programme_from_cookies);
       if ($this->access($term)) {
-        \Drupal::logger('uhsg_acive_degree_programme')->debug('Resolved by cookie ' . $term->label());
+        \Drupal::logger('uhsg_acive_degree_programme')->debug('Resolved by cookie ' . $term->id());
         $this->resolvedTerm = $term;
         return $this->resolvedTerm;
       }
