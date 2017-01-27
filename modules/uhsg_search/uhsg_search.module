@@ -8,16 +8,3 @@ function uhsg_search_form_views_exposed_form_alter(&$form, \Drupal\Core\Form\For
     $form['#attached']['library'][] = 'uhsg_search/uhsg-search';
   }
 }
-
-/**
- * Implements hook_views_pre_render().
- * Top content view has sitename in each result, remove that.
- */
-function uhsg_search_views_pre_render(\Drupal\views\ViewExecutable $view) {
-  if ($view->id() == 'google_analytics_summary' && $view->current_display == 'top_searches_block') {
-    $sitename = \Drupal::config('system.site')->get('name');
-    foreach ($view->result as &$result) {
-      $result->pageTitle = str_replace(' | ' . $sitename, '', $result->pageTitle);
-    }
-  }
-}
