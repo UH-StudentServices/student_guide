@@ -31,7 +31,7 @@
   }
   .degree-programme-switcher__container {
     @include border;
-    padding: 2em;
+    padding: 1em;
     flex: 1 0 100%;
     position: absolute;
     top: 100%;
@@ -39,6 +39,17 @@
     width: 100%;
     z-index: 10;
     background: $white;
+    ul {
+      max-height: 20em;
+      max-height: 50vh;
+      overflow: scroll;
+      li {
+        padding: 0.3em 0;
+      }
+    }
+    @include breakpoint($small) {
+      padding: 2em;
+    }
   }
   .degree-programme-switcher__search {
     display: flex;

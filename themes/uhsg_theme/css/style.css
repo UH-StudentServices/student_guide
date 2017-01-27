@@ -7285,7 +7285,7 @@ ul.pager > li.pager__next a {
 
 .degree-programme-switcher .degree-programme-switcher__container {
   border: 1px solid #EBEBEB;
-  padding: 2em;
+  padding: 1em;
   -webkit-flex: 1 0 100%;
       -ms-flex: 1 0 100%;
           flex: 1 0 100%;
@@ -7297,6 +7297,25 @@ ul.pager > li.pager__next a {
   background: #FFF;
 }
 
+<<<<<<< HEAD
+=======
+.degree-programme-switcher .degree-programme-switcher__container ul {
+  max-height: 20em;
+  max-height: 50vh;
+  overflow: scroll;
+}
+
+.degree-programme-switcher .degree-programme-switcher__container ul li {
+  padding: 0.3em 0;
+}
+
+@media (min-width: 48em) {
+  .degree-programme-switcher .degree-programme-switcher__container {
+    padding: 2em;
+  }
+}
+
+>>>>>>> develop
 .degree-programme-switcher .degree-programme-switcher__search {
   display: -webkit-flex;
   display: -ms-flexbox;

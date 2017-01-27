@@ -10,4 +10,5 @@
 * Added my latest searches (HUB-37)
 * Added support for embedded videos (HUB-76)
 * Module updates (HUB-79)
+* Degree programme switcher scrollable with all items (HUB-77)
 * Added top content from google analytics (HUB-36)
