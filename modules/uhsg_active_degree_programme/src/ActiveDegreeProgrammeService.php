@@ -37,6 +37,13 @@ class ActiveDegreeProgrammeService {
   protected $user;
 
   /**
+   * Stores the resolved term.
+   *
+   * @var \Drupal\taxonomy\Entity\Term|null
+   */
+  protected $resolvedTerm;
+
+  /**
    * ActiveDegreeProgrammeService constructor.
    * @param RequestStack $requestStack
    * @param EntityRepositoryInterface $entityRepository
@@ -46,6 +53,7 @@ class ActiveDegreeProgrammeService {
     $this->requestStack = $requestStack;
     $this->entityRepository = $entityRepository;
     $this->user = $user;
+    $this->resolvedTerm = NULL;
   }
 
   /**
@@ -85,13 +93,18 @@ class ActiveDegreeProgrammeService {
    * @return \Drupal\taxonomy\Entity\Term|null
    */
   public function getTerm() {
+    if (!is_null($this->resolvedTerm)) {
+      return $this->resolvedTerm;
+    }
 
     // First check from parameters
     $query_param = $this->requestStack->getCurrentRequest()->get('degree_programme');
     if ($query_param) {
       $term = Term::load($query_param);
       if ($this->access($term)) {
-        return $term;
+        \Drupal::logger('uhsg_acive_degree_programme')->debug('Resolved by parameter ' . $term->label());
+        $this->resolvedTerm = $term;
+        return $this->resolvedTerm;
       }
     }
 
@@ -100,7 +113,9 @@ class ActiveDegreeProgrammeService {
     if ($degree_programme_from_headers) {
       $term = Term::load($this->requestStack->getCurrentRequest()->headers->get('x-degree-programme'));
       if ($this->access($term)) {
-        return $term;
+        \Drupal::logger('uhsg_acive_degree_programme')->debug('Resolved by header ' . $term->label());
+        $this->resolvedTerm = $term;
+        return $this->resolvedTerm;
       }
     }
 
@@ -109,13 +124,15 @@ class ActiveDegreeProgrammeService {
     if ($degree_programme_from_cookies) {
       $term = Term::load($degree_programme_from_cookies);
       if ($this->access($term)) {
-        return $term;
+        \Drupal::logger('uhsg_acive_degree_programme')->debug('Resolved by cookie ' . $term->label());
+        $this->resolvedTerm = $term;
+        return $this->resolvedTerm;
       }
     }
 
     // TODO: Fourthly check from logged in user study rights
 
-    return NULL;
+    return $this->resolvedTerm;
   }
 
   /**
