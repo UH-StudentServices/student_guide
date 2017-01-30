@@ -3,7 +3,7 @@ type: theme
 description: University of Helsinki Student Guide theme
 package: Other
 core: 8.x
-version: 1.0-alpha0
+version: 1.0-alpha1
 libraries:
   - uhsg_theme/global-styling
 
@@ -25,4 +25,5 @@ libraries-override:
         css/components/form.css: false
         css/components/inline-form.css: false
 
-
+ckeditor_stylesheets:
+  - css/ckeditor-custom.css

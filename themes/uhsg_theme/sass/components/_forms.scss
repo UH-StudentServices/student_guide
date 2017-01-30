@@ -4,14 +4,14 @@ input[type="password"] {
   border: 2px solid $blue;
   padding: 0.5em;
   width: 100%;
-  @include breakpoint($small) {
-    width: 50%;
-  }
+  max-width: 45em;
 }
 
-input[type="submit"] {
+input[type="submit"],
+button {
   &.button--reset {
     background: transparent;
+    border: none;
     color: $blue;
     margin-right: 0;
     padding-right: 2em;

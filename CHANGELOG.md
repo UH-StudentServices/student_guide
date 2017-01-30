@@ -1,5 +1,23 @@
 #Changelog
 
+## 1.0-alpha1
+Release date 30.01.2017
+
+* Added Wysiwyg for body and paragraph body (HUB-69)
+* Added support for paragraphs per translation file attachments (HUB-66)
+* Added my latest searches (HUB-37)
+* Added support for embedded videos (HUB-76)
+* Added top content from google analytics (HUB-36)
+* Changed text size in theme teaser (HUB-70)
+* Changed paragraph heading size and background color (HUB-71)
+* Changed site name to "Guide" on all languages (HUB-83)
+* Fixed header in mobile (HUB-84)
+* Improved the UX of wysiwyg tables using dark borders and padding (HUB-81)
+* Improved edit mode to have paragraphs closed by default (HUB-85)
+* Improved degree programmer context switching (HUB-77, HUB-73)
+* Updated modules (HUB-79)
+
+
 ## 1.0-alpha0
 Release date 23.01.2017
 

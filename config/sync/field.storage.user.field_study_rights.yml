@@ -1,0 +1,20 @@
+uuid: b1c6fb42-0a2f-4785-bb07-8cf73ad989a6
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+    - user
+id: user.field_study_rights
+field_name: field_study_rights
+entity_type: user
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

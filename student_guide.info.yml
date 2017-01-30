@@ -1,11 +1,12 @@
 name: Student Guide
 type: profile
 description: 'Build a student guide site.'
-version: 1.0-alpha0
+version: 1.0-alpha1
 core: 8.x
 dependencies:
   - admin_toolbar
   - block
+  - ckeditor
   - config
   - contextual
   - datetime
@@ -13,6 +14,7 @@ dependencies:
   - dynamic_page_cache
   - easy_breadcrumb
   - field_ui
+  - google_analytics_reports
   - honeypot
   - image
   - menu_ui
@@ -25,12 +27,14 @@ dependencies:
   - samlauth
   - toolbar
   - taxonomy
+  - uhsg_active_degree_programme
   - uhsg_article
   - uhsg_cookie_consent
   - uhsg_feedback
   - uhsg_news
   - uhsg_service_provider_details
   - uhsg_some_links
+  - uhsg_top_content
   - views
   - views_ui
 themes:

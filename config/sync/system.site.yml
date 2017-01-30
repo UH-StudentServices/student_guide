@@ -1,11 +1,11 @@
 uuid: 8054efdc-eb55-458c-ae62-16ab85de67a3
-name: 'Student Guide'
+name: 'Guide'
 mail: admin@example.com
 slogan: ''
 page:
   403: ''
   404: ''
-  front: /themes
+  front: /search
 admin_compact_mode: false
 weight_select_max: 100
 langcode: en
