@@ -13,3 +13,4 @@ permissions:
   - 'view published some links entities'
   - 'access site-wide contact form'
   - 'access google analytics reports'
+  - 'change active degree programme'

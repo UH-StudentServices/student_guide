@@ -3,8 +3,8 @@
   Drupal.behaviors.uhsg_search_my_searches = {
     attach: function(context, settings) {
 
-      var searchInput = $('#views-exposed-form-search-block-1 input[name="search_api_fulltext"]');
-      var searchSubmit = $('#views-exposed-form-search-block-1 .form-submit:not(".button--reset")');
+      var searchInput = $('.view-search .views-exposed-form input[name="search_api_fulltext"]');
+      var searchSubmit = $('.view-search .views-exposed-form .form-submit:not(".button--reset")');
       var mySearches = $.cookie('my_searches') ? JSON.parse($.cookie('my_searches')) : [];
       var empty = $('.view-empty', '.view-search').length;
       var maxLatestSearches = 4;

@@ -35,7 +35,7 @@ function uhsg_article_preprocess_field(array &$variables, $hook) {
     // If we have selected degree programme, filter by that or else filter out
     // all paragraphs that has any degree programme chosen.
     // TODO: Should we use parameter placeholder for taxonomy term entity instead tid?
-    $param = \Drupal::service('current_route_match')->getParameters()->get('tid');
+    $param = \Drupal::service('uhsg_active_degree_programme.active_degree_programme')->getId();
     if ($param) {
       $degree_programme = Term::load($param);
       uhsg_article_filter_paragraphs_by_degree_programme($variables, $degree_programme);
@@ -45,6 +45,10 @@ function uhsg_article_preprocess_field(array &$variables, $hook) {
     }
 
     uhsg_article_collect_table_of_contents($variables);
+
+    // Because of these alterations, our result may vay depending on active
+    // degree programme.
+    $variables['#cache']['contexts'][] = 'active_degree_programme';
   }
 }
 
