@@ -56,11 +56,11 @@ display:
         type: html_list
         options:
           grouping: {  }
-          row_class: ''
+          row_class: 'list-of-links__link button--action theme-transparent'
           default_row_class: false
           type: ul
           wrapper_class: ''
-          class: ''
+          class: list-of-links
       row:
         type: fields
         options:
