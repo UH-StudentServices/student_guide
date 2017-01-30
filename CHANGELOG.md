@@ -17,3 +17,4 @@
   client secret. follow instructions at:
   /admin/config/services/google-analytics-reports-api
   (Remember to "Import and update fields")
+* Paragraphs in edit mode default as closed (HUB-85)

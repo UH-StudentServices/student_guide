@@ -43,8 +43,8 @@ content:
     settings:
       title: Paragraph
       title_plural: Paragraphs
-      edit_mode: open
-      add_mode: dropdown
+      edit_mode: preview
+      add_mode: button
       form_display_mode: default
     third_party_settings: {  }
   langcode:
@@ -78,6 +78,8 @@ content:
     third_party_settings: {  }
   translation:
     weight: 10
+    settings: {  }
+    third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
     weight: 5
