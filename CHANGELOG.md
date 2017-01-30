@@ -11,4 +11,5 @@
 * Added support for embedded videos (HUB-76)
 * Module updates (HUB-79)
 * Degree programme switcher scrollable with all items (HUB-77)
+* The site name is "Guide" on all languages (HUB-83)
 * Fix header in mobile (HUB-84)
