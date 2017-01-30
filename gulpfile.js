@@ -37,7 +37,7 @@ gulp.task('bower', function() {
 });
 
 // Updates styleguide with bower and moves relevant assets to correct path
-gulp.task('styleguide-update',['bower'], function(){
+gulp.task('styleguide-update',['bower'], function() {
   gulp.src('./bower_components/Styleguide/fonts/**/*')
     .pipe(gulp.dest('./fonts'));
 
