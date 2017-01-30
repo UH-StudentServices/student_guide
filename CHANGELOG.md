@@ -16,3 +16,4 @@
 * Added top content from google analytics (HUB-36): You need a client ID and
   client secret. follow instructions at:
   /admin/config/services/google-analytics-reports-api
+  (Remember to "Import and update fields")
