@@ -13,3 +13,4 @@
 * Degree programme switcher scrollable with all items (HUB-77)
 * The site name is "Guide" on all languages (HUB-83)
 * Fix header in mobile (HUB-84)
+* Added top content from google analytics (HUB-36)

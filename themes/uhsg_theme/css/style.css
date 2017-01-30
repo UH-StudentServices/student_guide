@@ -7645,6 +7645,10 @@ button.button--reset + i {
   }
 }
 
+.view-search .view-header .top-searches li:last-child {
+  display: none;
+}
+
 .theme--teaser {
   background: #222;
   position: relative;
