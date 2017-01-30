@@ -218,6 +218,7 @@ function uhsg_theme_preprocess_file_link(&$variables) {
  */
 function uhsg_theme_preprocess_node(&$variables) {
   if ($variables['view_mode'] == 'teaser') {
+    $variables['type'] = $variables['node']->type->entity->label();
     switch ($variables['node']->getType()) {
       case 'theme':
       case 'article':
