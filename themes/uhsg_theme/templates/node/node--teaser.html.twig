@@ -79,13 +79,6 @@
   ]
 %}
 
-{%
-  set title_classes = [
-    node.bundle|clean_class ~ '__title',
-    'box-story__title'
-  ]
-%}
-
 {% set created = node.getCreatedTime|format_date('short') %}
 {% set body %}
   {{ content.body }}
@@ -99,10 +92,10 @@
     {% endif %}
     {% if node.bundle == 'news' %}
       <div class="box-story__topical">
-        <span class="box-story__date">{{ created }}</span>
+        <span class="box-story__date"> {{ created }} </span>
       </div>
     {% endif %}
-    <h4 {{ title_attributes.addClass(title_classes) }}> {{ label }} </h4>
-    <div class="box-story__content">{{ body|striptags }}</div>
+    <h4 class="box-story__title"> {{ label }} </h4>
+    <div class="box-story__content"> {{ body|striptags }} </div>
   </a>
 </article>

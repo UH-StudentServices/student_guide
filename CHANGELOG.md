@@ -13,3 +13,5 @@
 * Degree programme switcher scrollable with all items (HUB-77)
 * The site name is "Guide" on all languages (HUB-83)
 * Fix header in mobile (HUB-84)
+* Themes visually like articles in search results (HUB-87)
+* Whole node teaser as link (HUB-88)
