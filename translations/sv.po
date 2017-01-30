@@ -47,3 +47,6 @@ msgstr ""
 
 msgid "My Searches"
 msgstr "Mina sökningar"
+
+msgid "Top content"
+msgstr "Populär innehåll"

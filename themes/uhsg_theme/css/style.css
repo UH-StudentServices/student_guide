@@ -7566,6 +7566,18 @@ button.button--reset + i {
   margin-bottom: 1em;
 }
 
+.paragraph__video > .video-embed-field-responsive-video,
+.paragraph__paragraph-image > img {
+  margin-bottom: 1em;
+}
+
+@media (min-width: 48em) {
+  .paragraph__video > .video-embed-field-responsive-video,
+  .paragraph__paragraph-image > img {
+    margin-bottom: 2em;
+  }
+}
+
 @media (min-width: 48em) {
   .paragraph__content {
     display: -webkit-flex;
@@ -7615,6 +7627,10 @@ button.button--reset + i {
         -ms-flex: 0 35%;
             flex: 0 35%;
   }
+}
+
+.view-search .view-header .top-searches li:last-child {
+  display: none;
 }
 
 .theme--box {

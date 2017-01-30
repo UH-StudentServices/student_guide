@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_article_degree_programme
     - field.storage.node.field_news_degree_programme
     - search_api.index.content_index
+    - views.view.google_analytics_summary
   module:
     - search_api
 id: search
@@ -568,6 +569,17 @@ display:
           plugin_id: search_api
       title: Search
       header:
+        view:
+          id: view
+          table: views
+          field: view
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          view_to_insert: 'google_analytics_summary:top_searches_block'
+          inherit_arguments: false
+          plugin_id: view
         result:
           id: result
           table: views
