@@ -46,14 +46,6 @@ function uhsg_theme_preprocess_links__language_block(&$variables) {
 }
 
 /**
- * Implements hook_preprocess_HOOK() for node links.
- */
-function uhsg_theme_preprocess_links__node(&$variables) {
-  // Remove classes
-  $variables['attributes']['class'] = [];
-}
-
-/**
  * Implements hook_preprocess_HOOK() for menus.
  * Add classes needed by styleguide.
  */
@@ -219,3 +211,19 @@ function uhsg_theme_preprocess_page(&$variables) {
 function uhsg_theme_preprocess_file_link(&$variables) {
   $variables['attributes']['class'] = ['list-of-links__link button--action icon--arrow-right theme-transparent'];
 }
+
+/**
+ * Implements template_preprocess_node().
+ * Add styleguide classes.
+ */
+function uhsg_theme_preprocess_node(&$variables) {
+  if ($variables['view_mode'] == 'teaser') {
+    switch ($variables['node']->getType()) {
+      case 'theme':
+      case 'article':
+        $variables['attributes']['class'][] = 'theme-plain';
+        break;
+    }
+  }
+}
+

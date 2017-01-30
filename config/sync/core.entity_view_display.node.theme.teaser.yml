@@ -7,26 +7,24 @@ dependencies:
     - field.field.node.theme.body
     - field.field.node.theme.field_theme_articles
     - field.field.node.theme.field_theme_teaser_image
-    - image.style.theme_teaser_image
     - node.type.theme
   module:
-    - image
+    - text
     - user
 id: node.theme.teaser
 targetEntityType: node
 bundle: theme
 mode: teaser
 content:
-  field_theme_teaser_image:
-    type: image
+  body:
+    type: text_trimmed
     weight: 0
     label: hidden
     settings:
-      image_style: theme_teaser_image
-      image_link: ''
+      trim_length: 300
     third_party_settings: {  }
 hidden:
-  body: true
   field_theme_articles: true
+  field_theme_teaser_image: true
   langcode: true
   links: true

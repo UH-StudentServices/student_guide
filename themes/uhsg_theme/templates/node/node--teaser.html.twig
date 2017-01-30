@@ -86,11 +86,21 @@
   ]
 %}
 
+{% set created = node.getCreatedTime|format_date('short') %}
+{% set body %}
+  {{ content.body }}
+{% endset %}  
+
 <article {{ attributes.addClass(node_classes) }}>
   <a href="{{ url }}" rel="bookmark" class="box-story__link-wrapper">
-    <h4 {{ title_attributes.addClass(title_classes) }}> {{ label }} </h4>
-    <div class="box-story__content">
-      {{ content }}
+    <div class="box-story__label"> {{ node.bundle }} </div>
+    {% if content.field_news_image %}
+      <div class="box-story__image"> {{ content.field_news_image }} </div>
+    {% endif %}
+    <div class="box-story__topical">
+      <span class="box-story__date">{{ created }}</span>
     </div>
+    <h4 {{ title_attributes.addClass(title_classes) }}> {{ label }} </h4>
+    <div class="box-story__content">{{ body|striptags }}</div>
   </a>
 </article>

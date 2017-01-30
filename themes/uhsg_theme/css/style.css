@@ -7068,6 +7068,7 @@ ul.pager > li.pager__next a {
   -webkit-flex: 1 100%;
       -ms-flex: 1 100%;
           flex: 1 100%;
+  margin-bottom: 2em;
 }
 
 @media (min-width: 48em) {
@@ -7094,35 +7095,6 @@ ul.pager > li.pager__next a {
   .last-updated {
     padding-left: 40px;
   }
-}
-
-.article--teaser {
-  border: 1px solid #EBEBEB;
-  font-size: 12.25px;
-  font-size: 0.875rem;
-  font-weight: 400;
-  font-style: normal;
-  color: #777777;
-  line-height: 1.5em;
-  position: relative;
-  margin-bottom: 2em;
-  padding: 1em 1em 2em 1em;
-}
-
-@media (min-width: 48em) {
-  .article--teaser {
-    font-size: 14px;
-  }
-}
-
-.article--teaser .article__body p {
-  font-size: inherit;
-  margin-top: 1em;
-}
-
-.article--teaser .node__links {
-  position: absolute;
-  bottom: 1em;
 }
 
 html {
