@@ -1,0 +1,32 @@
+uuid: b97b2342-39e2-4d38-b5d3-f9d38defc009
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.box
+    - field.field.node.theme.body
+    - field.field.node.theme.field_theme_articles
+    - field.field.node.theme.field_theme_teaser_image
+    - image.style.theme_teaser_image
+    - node.type.theme
+  module:
+    - image
+    - user
+id: node.theme.box
+targetEntityType: node
+bundle: theme
+mode: box
+content:
+  field_theme_teaser_image:
+    type: image
+    weight: 0
+    label: hidden
+    settings:
+      image_style: theme_teaser_image
+      image_link: ''
+    third_party_settings: {  }
+hidden:
+  body: true
+  field_theme_articles: true
+  langcode: true
+  links: true
