@@ -8,6 +8,14 @@
   margin-bottom: 1em;
 }
 
+.paragraph__video > .video-embed-field-responsive-video,
+.paragraph__paragraph-image > img {
+  margin-bottom: 1em;
+  @include breakpoint($small) {
+    margin-bottom: 2em;
+  }
+}
+
 @include breakpoint($small) {
   .paragraph__content {
     display: flex;
