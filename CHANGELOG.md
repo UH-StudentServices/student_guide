@@ -11,3 +11,11 @@
 * Added support for embedded videos (HUB-76)
 * Module updates (HUB-79)
 * Major improvements for degree programmer context switching (HUB-77, HUB-73)
+* Degree programme switcher scrollable with all items (HUB-77)
+* The site name is "Guide" on all languages (HUB-83)
+* Fix header in mobile (HUB-84)
+* Added top content from google analytics (HUB-36): You need a client ID and
+  client secret. follow instructions at:
+  /admin/config/services/google-analytics-reports-api
+  (Remember to "Import and update fields")
+* Paragraphs in edit mode default as closed (HUB-85)

@@ -1,6 +1,7 @@
 <?php
 
 use Drupal\Core\Language\LanguageInterface;
+use Drupal\Component\Render\FormattableMarkup;
 
 /**
  * @file
@@ -34,7 +35,7 @@ function uhsg_theme_preprocess_links__language_block(&$variables) {
   foreach ($variables['links'] as $langcode => &$link) {
     // add classes for theming
     $link['link']['#options']['attributes']['class'][] = 'links__link theme-language';
-
+    $link['link']['#title'] = new FormattableMarkup('<abbr title="@title">@langcode</abbr>', array('@title' => $link['link']['#title'], '@langcode' => $langcode ));
     // hide active language
     $active_language = Drupal::languageManager()->getCurrentLanguage()->getId();
     if ($active_language == $langcode) {
@@ -128,8 +129,11 @@ function uhsg_theme_preprocess_field(array &$variables, $hook) {
  */
 function uhsg_theme_preprocess_views_view(&$variables) {
   switch ($variables['view']->id()) {
-    case 'themes':
     case 'search':
+      $variables['attributes']['class'][] = 'grid-container';
+      $variables['lang'] = Drupal::languageManager()->getCurrentLanguage()->getId();
+      break;
+    case 'themes':
       $variables['attributes']['class'][] = 'grid-container';
       break;
     case 'taxonomy_term':
