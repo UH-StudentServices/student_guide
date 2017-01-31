@@ -8,8 +8,6 @@
 use Drupal\taxonomy\TermInterface;
 use Drupal\taxonomy\Entity\Term;
 
-
-
 /**
  * Implements hook_preprocess_field().
  * Show articles only if they are translated to the active language, and if
@@ -28,27 +26,40 @@ function uhsg_themes_preprocess_field(array &$variables, $hook) {
       uhsg_themes_filter_articles_with_degree_programme($variables);
     }
 
-    // Because of these alterations, our result may vay depending on active
+    // Because of these alterations, our result may vary depending on active
     // degree programme.
     $variables['#cache']['contexts'][] = 'active_degree_programme';
   }
 }
 
 /**
- * Filter articles by mismatched degree programmes.
+ * Hide articles that don't have a translation in the active language.
+ * TODO: find a more drupal way to do this?
+ * @param array $variables
+ */
+function uhsg_themes_filter_articles_by_active_language(array &$variables) {
+  $active_lang = Drupal::languageManager()->getCurrentLanguage()->getId();
+  foreach ($variables['items'] as $key => $item) {
+    $article_lang = $item['content']['#node']->language()->getId();
+    if ($article_lang != $active_lang) {
+      unset($variables['items'][$key]);
+    }
+  }
+}
+
+/**
+ * Filter articles by active degree programme.
  *
  * @param array $variables
  * @param TermInterface $degree_programme
  */
 function uhsg_themes_filter_articles_by_degree_programme(array &$variables, TermInterface $degree_programme) {
   foreach ($variables['items'] as $key => $item) {
-    // For each article, if terms are given. Filter article if it doesn't
-    // match given degree programme.
+    // if article has terms, show it only if one of them is the active degree programme
     $terms = $item['content']['#node']->get('field_article_degree_programme')->getValue();
     if ($terms) {
       $valid_term_found = FALSE;
       foreach ($terms as $term) {
-        // if article has terms, show it only if term is in path
         if ($degree_programme->id() == $term['target_id']) {
           $valid_term_found = TRUE;
           break;
@@ -70,21 +81,6 @@ function uhsg_themes_filter_articles_with_degree_programme(array &$variables) {
   foreach ($variables['items'] as $key => $item) {
     $terms = $item['content']['#node']->get('field_article_degree_programme')->getValue();
     if ($terms) {
-      unset($variables['items'][$key]);
-    }
-  }
-}
-
-/**
- * Hide articles that don't have a translation in the active language.
- * TODO: find a more drupal way to do this?
- * @param array $variables
- */
-function uhsg_themes_filter_articles_by_active_language(array &$variables) {
-  $active_lang = Drupal::languageManager()->getCurrentLanguage()->getId();
-  foreach ($variables['items'] as $key => $item) {
-    $article_lang = $item['content']['#node']->language()->getId();
-    if ($article_lang != $active_lang) {
       unset($variables['items'][$key]);
     }
   }
