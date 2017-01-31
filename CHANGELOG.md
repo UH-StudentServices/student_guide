@@ -20,6 +20,8 @@ Release date 30.01.2017
 * Improved edit mode to have paragraphs closed by default (HUB-85)
 * Improved degree programmer context switching (HUB-77, HUB-73)
 * Updated modules (HUB-79)
+* Themes visually like articles in search results (HUB-87)
+* Whole node teaser as link (HUB-88)
 
 
 ## 1.0-alpha0

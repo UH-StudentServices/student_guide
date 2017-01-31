@@ -1,30 +1,32 @@
-uuid: 62e4eba8-f7e7-4b9a-8574-5a2468e0c046
+uuid: b97b2342-39e2-4d38-b5d3-f9d38defc009
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.box
     - field.field.node.theme.body
     - field.field.node.theme.field_theme_articles
     - field.field.node.theme.field_theme_teaser_image
+    - image.style.theme_teaser_image
     - node.type.theme
   module:
-    - text
+    - image
     - user
-id: node.theme.teaser
+id: node.theme.box
 targetEntityType: node
 bundle: theme
-mode: teaser
+mode: box
 content:
-  body:
-    type: text_trimmed
+  field_theme_teaser_image:
+    type: image
     weight: 0
     label: hidden
     settings:
-      trim_length: 300
+      image_style: theme_teaser_image
+      image_link: ''
     third_party_settings: {  }
 hidden:
+  body: true
   field_theme_articles: true
-  field_theme_teaser_image: true
   langcode: true
   links: true
