@@ -1,0 +1,39 @@
+uuid: 50153cc3-1d1d-437c-877a-05da4e1a07fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_study_rights
+  module:
+    - path
+    - user
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  account:
+    weight: -10
+  contact:
+    weight: 5
+  field_study_rights:
+    weight: 31
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  google_analytics:
+    weight: 3
+  language:
+    weight: 0
+  path:
+    type: path
+    weight: 30
+    settings: {  }
+    third_party_settings: {  }
+  timezone:
+    weight: 6
+hidden:
+  langcode: true

@@ -1,0 +1,10 @@
+uuid: b7e83646-117c-4d0f-b3e8-c563cfadcad2
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.box
+label: Box
+targetEntityType: node
+cache: true

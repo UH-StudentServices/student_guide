@@ -1,0 +1,41 @@
+<?php
+
+/**
+ * @file
+ * Contains uhsg_active_degree_programme.module.
+ */
+
+use Drupal\views\ViewExecutable;
+
+/**
+ * Implements hook_views_post_execute().
+ */
+function uhsg_active_degree_programme_views_post_execute(ViewExecutable $view) {
+  if ($view->id() == 'search') {
+
+    $active_degree_programme_tid = \Drupal::service('uhsg_active_degree_programme.active_degree_programme')->getId();
+    $degree_programme_fields = ['article_degree_programme_tid', 'news_degree_programme_tid'];
+    $items_filtered_out = 0;
+
+    /**
+     * @var \Drupal\views\ResultRow $result
+     */
+    foreach ($view->result as $key => $result) {
+      /**
+       * @var \Drupal\search_api\Item\Item $result->_item
+       */
+      foreach ($degree_programme_fields as $degree_programme_field) {
+        if (!empty($result->_item->getFields()[$degree_programme_field]->getValues())) {
+          if (!in_array($active_degree_programme_tid, $result->_item->getFields()[$degree_programme_field]->getValues())) {
+            // Filter result row item, if content has no active degree programme
+            // selected.
+            unset($view->result[$key]);
+            $items_filtered_out++;
+          }
+        }
+      }
+    }
+    $view->total_rows = $view->total_rows - $items_filtered_out;
+
+  }
+}

@@ -1,0 +1,41 @@
+uuid: 669f4203-b1e8-45b9-95f7-583b0e15a928
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.paragraph.field_paragraph_body
+    - field.field.paragraph.paragraph.field_paragraph_degree_programme
+    - field.field.paragraph.paragraph.field_paragraph_file
+    - field.field.paragraph.paragraph.field_paragraph_image
+    - field.field.paragraph.paragraph.field_paragraph_links
+    - field.field.paragraph.paragraph.field_paragraph_title
+    - field.field.paragraph.paragraph.field_paragraph_video
+    - paragraphs.paragraphs_type.paragraph
+id: paragraph.paragraph.preview
+targetEntityType: paragraph
+bundle: paragraph
+mode: preview
+content:
+  field_paragraph_degree_programme:
+    type: entity_reference_label
+    weight: 1
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+  field_paragraph_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+hidden:
+  created: true
+  field_paragraph_body: true
+  field_paragraph_file: true
+  field_paragraph_image: true
+  field_paragraph_links: true
+  field_paragraph_video: true
+  uid: true

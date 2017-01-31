@@ -3,6 +3,7 @@
 namespace Drupal\uhsg_news\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Cache\Cache;
 
 /**
  * Provides a 'news_per_degree_programme' block.
@@ -12,7 +13,7 @@ use Drupal\Core\Block\BlockBase;
  *  admin_label = @Translation("News per degree programme"),
  * )
  */
-class news_per_degree_programme extends BlockBase {
+class NewsPerDegreeProgramme extends BlockBase {
 
   /**
    * {@inheritdoc}
@@ -28,11 +29,9 @@ class news_per_degree_programme extends BlockBase {
       ->condition('field_news_degree_programme', NULL, 'IS NULL');
 
     // if on term page, add tid to condition group
-    // TODO: when we have the active degree programme in a cookie,
-    // we will use that instead here.
-    $term = \Drupal::routeMatch()->getParameter('taxonomy_term');
-    if ($term && $term->bundle() == 'degree_programme') {
-      $group->condition('field_news_degree_programme', $term->id());
+    $tid = \Drupal::service('uhsg_active_degree_programme.active_degree_programme')->getId();
+    if ($tid) {
+      $group->condition('field_news_degree_programme', $tid);
     }
 
     $nids = $query->condition($group)->execute();
@@ -48,10 +47,19 @@ class news_per_degree_programme extends BlockBase {
         ],
         '#cache' => [
           'tags' => ['node_list'],
+          'contexts' => ['active_degree_programme'],
         ],
         'content' => $render_output,
       );
     }
+  }
+
+  /**
+   * @inheritdoc
+   */
+  public function getCacheContexts() {
+    $cache_contexts = ['active_degree_programme'];
+    return Cache::mergeContexts(parent::getCacheContexts(), $cache_contexts);
   }
 
 }

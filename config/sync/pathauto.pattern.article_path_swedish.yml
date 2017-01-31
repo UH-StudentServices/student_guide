@@ -1,0 +1,33 @@
+uuid: 6dffe893-8c21-4c34-820f-121992492a73
+langcode: fi
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: article_path_swedish
+label: 'Article path Swedish'
+type: 'canonical_entities:node'
+pattern: 'artikel/[node:title]'
+selection_criteria:
+  b6324fe8-6fc3-4985-ad7e-fef0a2aa975a:
+    id: node_type
+    bundles:
+      article: article
+    negate: false
+    context_mapping:
+      node: node
+    uuid: b6324fe8-6fc3-4985-ad7e-fef0a2aa975a
+  951067ea-6aa5-4a96-b854-b75fb11ebbc6:
+    id: language
+    langcodes:
+      sv: sv
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: 951067ea-6aa5-4a96-b854-b75fb11ebbc6
+selection_logic: and
+weight: -10
+relationships:
+  'node:langcode:language':
+    label: Kieli

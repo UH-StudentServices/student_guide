@@ -16,6 +16,7 @@
 
 .grid-item-3 {
   flex: 1 100%;
+  margin-bottom: 2em;
   @include breakpoint($small) {
     flex: 0 31%;
   }

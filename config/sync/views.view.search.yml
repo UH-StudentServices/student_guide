@@ -6,8 +6,10 @@ dependencies:
     - field.storage.node.field_article_degree_programme
     - field.storage.node.field_news_degree_programme
     - search_api.index.content_index
+    - views.view.google_analytics_summary
   module:
     - search_api
+    - user
 id: search
 label: Search
 module: views
@@ -24,8 +26,9 @@ display:
     position: 0
     display_options:
       access:
-        type: none
-        options: {  }
+        type: perm
+        options:
+          perm: 'access content'
       cache:
         type: tag
         options: {  }
@@ -49,7 +52,7 @@ display:
       pager:
         type: some
         options:
-          items_per_page: 50
+          items_per_page: 0
           offset: 0
       style:
         type: default
@@ -568,6 +571,17 @@ display:
           plugin_id: search_api
       title: Search
       header:
+        view:
+          id: view
+          table: views
+          field: view
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          view_to_insert: 'google_analytics_summary:top_searches_block'
+          inherit_arguments: false
+          plugin_id: view
         result:
           id: result
           table: views
@@ -604,22 +618,24 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - user.permissions
       tags:
         - 'config:field.storage.node.field_article_degree_programme'
         - 'config:field.storage.node.field_news_degree_programme'
-  block_1:
-    display_plugin: block
-    id: block_1
-    display_title: Block
+  page_1:
+    display_plugin: page
+    id: page_1
+    display_title: Page
     position: 2
     display_options:
       display_extenders: {  }
-      block_hide_empty: false
+      path: search
     cache_metadata:
       max-age: 0
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - user.permissions
       tags:
         - 'config:field.storage.node.field_article_degree_programme'
         - 'config:field.storage.node.field_news_degree_programme'
