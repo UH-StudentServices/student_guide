@@ -7108,6 +7108,16 @@ html {
   }
 }
 
+.table-drag {
+  margin: 1em 0;
+}
+
+.table-drag .tabledrag-handle .handle {
+  height: auto;
+  width: auto;
+  background-position: 0;
+}
+
 .cc_banner-wrapper {
   z-index: 9001;
   position: relative;

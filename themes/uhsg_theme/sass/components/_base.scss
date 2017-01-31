@@ -6,3 +6,15 @@ html {
     font-size: $base-font-size;
   }
 }
+
+.table-drag {
+	margin: 1em 0;
+	tr.draggable {
+
+	}
+	.tabledrag-handle .handle {
+		height: auto;
+		width: auto;
+		background-position: 0;
+	}
+}
