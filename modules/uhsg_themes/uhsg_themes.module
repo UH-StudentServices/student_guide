@@ -12,17 +12,20 @@ use Drupal\taxonomy\Entity\Term;
 
 /**
  * Implements hook_preprocess_field().
- * Show articles only if they have the active degree programme or no degree programme.
+ * Show articles only if they are translated to the active language, and if
+ * they have the active degree programme or no degree programme.
  */
 function uhsg_themes_preprocess_field(array &$variables, $hook) {
   if ($variables['element']['#field_name'] == 'field_theme_articles') {
+    uhsg_themes_filter_articles_by_active_language($variables);
+
     $param = \Drupal::service('uhsg_active_degree_programme.active_degree_programme')->getId();
     if ($param) {
       $degree_programme = Term::load($param);
-      //uhsg_themes_filter_articles_by_degree_programme($variables, $degree_programme);
+      uhsg_themes_filter_articles_by_degree_programme($variables, $degree_programme);
     }
     else {
-      //uhsg_themes_filter_articles_with_degree_programme($variables);
+      uhsg_themes_filter_articles_with_degree_programme($variables);
     }
 
     // Because of these alterations, our result may vay depending on active
@@ -41,7 +44,6 @@ function uhsg_themes_filter_articles_by_degree_programme(array &$variables, Term
   foreach ($variables['items'] as $key => $item) {
     // For each article, if terms are given. Filter article if it doesn't
     // match given degree programme.
-    //kint($item);
     $terms = $item['content']['#node']->get('field_article_degree_programme')->getValue();
     if ($terms) {
       $valid_term_found = FALSE;
@@ -68,6 +70,21 @@ function uhsg_themes_filter_articles_with_degree_programme(array &$variables) {
   foreach ($variables['items'] as $key => $item) {
     $terms = $item['content']['#node']->get('field_article_degree_programme')->getValue();
     if ($terms) {
+      unset($variables['items'][$key]);
+    }
+  }
+}
+
+/**
+ * Hide articles that don't have a translation in the active language.
+ * TODO: find a more drupal way to do this?
+ * @param array $variables
+ */
+function uhsg_themes_filter_articles_by_active_language(array &$variables) {
+  $active_lang = Drupal::languageManager()->getCurrentLanguage()->getId();
+  foreach ($variables['items'] as $key => $item) {
+    $article_lang = $item['content']['#node']->language()->getId();
+    if ($article_lang != $active_lang) {
       unset($variables['items'][$key]);
     }
   }
