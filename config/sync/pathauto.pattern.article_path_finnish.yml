@@ -1,0 +1,33 @@
+uuid: 00a1e256-50c9-437b-a1a3-831bf411fbab
+langcode: fi
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: article_path_finnish
+label: 'Article path Finnish'
+type: 'canonical_entities:node'
+pattern: 'artikkeli/[node:title]'
+selection_criteria:
+  70a19e49-0ccc-4249-9aec-c35f438a3b84:
+    id: node_type
+    bundles:
+      article: article
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 70a19e49-0ccc-4249-9aec-c35f438a3b84
+  08ab92e4-ca15-4108-b5a2-715732d424c2:
+    id: language
+    langcodes:
+      fi: fi
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: 08ab92e4-ca15-4108-b5a2-715732d424c2
+selection_logic: and
+weight: -10
+relationships:
+  'node:langcode:language':
+    label: Kieli

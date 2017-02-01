@@ -1,0 +1,87 @@
+<?php
+
+/**
+ * @file
+ * Contains uhsg_themes.module.
+ */
+
+use Drupal\taxonomy\TermInterface;
+use Drupal\taxonomy\Entity\Term;
+
+/**
+ * Implements hook_preprocess_field().
+ * Show articles only if they are translated to the active language, and if
+ * they have the active degree programme or no degree programme.
+ */
+function uhsg_themes_preprocess_field(array &$variables, $hook) {
+  if ($variables['element']['#field_name'] == 'field_theme_articles') {
+    uhsg_themes_filter_articles_by_active_language($variables);
+
+    $active_degree_programme_id = \Drupal::service('uhsg_active_degree_programme.active_degree_programme')->getId();
+    if ($active_degree_programme_id) {
+      $degree_programme = Term::load($active_degree_programme_id);
+      uhsg_themes_filter_articles_by_degree_programme($variables, $degree_programme);
+    }
+    else {
+      uhsg_themes_filter_articles_with_degree_programme($variables);
+    }
+
+    // Because of these alterations, our result may vary depending on active
+    // degree programme.
+    $variables['#cache']['contexts'][] = 'active_degree_programme';
+  }
+}
+
+/**
+ * Hide articles that don't have a translation in the active language.
+ * TODO: find a more drupal way to do this?
+ * @param array $variables
+ */
+function uhsg_themes_filter_articles_by_active_language(array &$variables) {
+  $active_lang = Drupal::languageManager()->getCurrentLanguage()->getId();
+  foreach ($variables['items'] as $key => $item) {
+    $article_lang = $item['content']['#node']->language()->getId();
+    if ($article_lang != $active_lang) {
+      unset($variables['items'][$key]);
+    }
+  }
+}
+
+/**
+ * Filter articles by active degree programme.
+ *
+ * @param array $variables
+ * @param TermInterface $degree_programme
+ */
+function uhsg_themes_filter_articles_by_degree_programme(array &$variables, TermInterface $degree_programme) {
+  foreach ($variables['items'] as $key => $item) {
+    // if article has terms, show it only if one of them is the active degree programme
+    $terms = $item['content']['#node']->get('field_article_degree_programme')->getValue();
+    if ($terms) {
+      $valid_term_found = FALSE;
+      foreach ($terms as $term) {
+        if ($degree_programme->id() == $term['target_id']) {
+          $valid_term_found = TRUE;
+          break;
+        }
+      }
+      if (!$valid_term_found) {
+        unset($variables['items'][$key]);
+      }
+    }
+  }
+}
+
+/**
+ * Filter articles if they have any degree programme defined.
+ *
+ * @param array $variables
+ */
+function uhsg_themes_filter_articles_with_degree_programme(array &$variables) {
+  foreach ($variables['items'] as $key => $item) {
+    $terms = $item['content']['#node']->get('field_article_degree_programme')->getValue();
+    if ($terms) {
+      unset($variables['items'][$key]);
+    }
+  }
+}

@@ -33,7 +33,7 @@ content:
     type: entity_reference_label
   field_news_image:
     weight: 3
-    label: above
+    label: hidden
     settings:
       image_style: ''
       image_link: ''

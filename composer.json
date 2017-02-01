@@ -80,6 +80,9 @@
       },
       "drupal/samlauth": {
         "Use certificate files instead storing in config": "https://www.drupal.org/files/issues/samlauth-allow_custom_cert_folder-2816997-7.patch"
+      },
+      "drupal/google_analytics_reports": {
+        "Use state system for storage of access token": "https://www.drupal.org/files/issues/2795115-6.patch"
       }
     }
   }

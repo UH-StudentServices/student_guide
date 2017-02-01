@@ -3,6 +3,8 @@
 
 ## 1.x-dev
 
+* Configuration for top content from google analytics (HUB-93)
+
 
 ## 1.0-alpha1
 Release date 30.01.2017
@@ -22,6 +24,7 @@ Release date 30.01.2017
 * Updated modules (HUB-79)
 * Themes visually like articles in search results (HUB-87)
 * Whole node teaser as link (HUB-88)
+* Filter articles by degree programme when viewing theme nodes (HUB-86)
 
 
 ## 1.0-alpha0
