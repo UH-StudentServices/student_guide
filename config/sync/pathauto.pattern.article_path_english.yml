@@ -1,0 +1,33 @@
+uuid: 17ec8258-718f-4b52-95f8-4ce058ebf39f
+langcode: fi
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: article_path_english
+label: 'Article path English'
+type: 'canonical_entities:node'
+pattern: 'article/[node:title]'
+selection_criteria:
+  d27ef56c-6658-41bd-b33b-fb04dbe284aa:
+    id: node_type
+    bundles:
+      article: article
+    negate: false
+    context_mapping:
+      node: node
+    uuid: d27ef56c-6658-41bd-b33b-fb04dbe284aa
+  606cd7de-5f9a-4d8a-a4a7-a9e8ea5c7680:
+    id: language
+    langcodes:
+      en: en
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: 606cd7de-5f9a-4d8a-a4a7-a9e8ea5c7680
+selection_logic: and
+weight: -10
+relationships:
+  'node:langcode:language':
+    label: Kieli
