@@ -17,9 +17,9 @@ function uhsg_themes_preprocess_field(array &$variables, $hook) {
   if ($variables['element']['#field_name'] == 'field_theme_articles') {
     uhsg_themes_filter_articles_by_active_language($variables);
 
-    $param = \Drupal::service('uhsg_active_degree_programme.active_degree_programme')->getId();
-    if ($param) {
-      $degree_programme = Term::load($param);
+    $active_degree_programme_id = \Drupal::service('uhsg_active_degree_programme.active_degree_programme')->getId();
+    if ($active_degree_programme_id) {
+      $degree_programme = Term::load($active_degree_programme_id);
       uhsg_themes_filter_articles_by_degree_programme($variables, $degree_programme);
     }
     else {
