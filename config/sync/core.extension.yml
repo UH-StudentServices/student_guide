@@ -35,6 +35,7 @@ module:
   migrate_source_csv: 0
   migrate_tools: 0
   node: 0
+  noreqnewpass: 0
   options: 0
   page_cache: 0
   paragraphs: 0
