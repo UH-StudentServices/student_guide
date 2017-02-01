@@ -24,3 +24,9 @@ id,menu_name,title,link_uri
 23,footer-links-en,Give Feedback,https://www.helsinki.fi/en/give-feedback
 24,footer-links-sv,Ge respons,https://www.helsinki.fi/sv/ge-respons
 25,main,Guide,internal:/
+26,header-links-fi,Kirjaudu sisään,internal:/saml/login
+27,header-links-fi,Kirjaudu ulos,internal:/saml/logout
+28,header-links-en,Login,internal:/saml/login
+29,header-links-en,Logout,internal:/saml/logout
+30,header-links-sv,Logga in,internal:/saml/login
+31,header-links-sv,Logga ut,internal:/saml/logout
