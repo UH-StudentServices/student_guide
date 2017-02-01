@@ -34,6 +34,7 @@ dependencies:
   - uhsg_news
   - uhsg_service_provider_details
   - uhsg_some_links
+  - uhsg_themes
   - uhsg_top_content
   - views
   - views_ui
