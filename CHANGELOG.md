@@ -3,6 +3,8 @@
 
 ## 1.x-dev
 
+* Configuration for top content from google analytics (HUB-93)
+
 
 ## 1.0-alpha1
 Release date 30.01.2017
