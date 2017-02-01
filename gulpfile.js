@@ -57,7 +57,7 @@ gulp.task('browsersync', ['watch'], function() {
 
 // Linting
 gulp.task('lint', function() {
-  return gulp.src(['*.js', 'js/*.js', '!node_modules/**'])
+  return gulp.src(['themes/**/*.js', 'modules/**/*.js', '!**/node_modules/**', '!**/bower_components/**'])
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(eslint.failAfterError());
