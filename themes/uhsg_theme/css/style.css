@@ -7042,40 +7042,88 @@ ul.pager > li.pager__next a {
 .container {
   margin: 0 auto;
   max-width: 75em;
-  padding-left: 1em;
-  padding-right: 1em;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
-.grid-container {
+@media (min-width: 48em) {
+  .grid-container {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    margin: 0 -15px;
+  }
+  .grid-container > * {
+    width: 100%;
+    padding: 0 15px;
+  }
+}
+
+.grid-item {
+  padding-bottom: 30px;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-flow: row wrap;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 
-.grid-container > * {
-  -webkit-flex: 1 100%;
-      -ms-flex: 1 100%;
-          flex: 1 100%;
+@media (min-width: 48em) {
+  .grid-item {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.grid-item-2 {
+  max-width: 37.5em;
+}
+
+@media (min-width: 48em) {
+  .grid-item-2 {
+    width: 50%;
+  }
 }
 
 .grid-item-3 {
-  -webkit-flex: 1 100%;
-      -ms-flex: 1 100%;
-          flex: 1 100%;
-  margin-bottom: 2em;
+  max-width: 25em;
 }
 
 @media (min-width: 48em) {
   .grid-item-3 {
-    -webkit-flex: 0 31%;
-        -ms-flex: 0 31%;
-            flex: 0 31%;
+    width: 33.33333%;
+  }
+}
+
+.grid-item-4 {
+  max-width: 18.75em;
+}
+
+@media (min-width: 48em) {
+  .grid-item-4 {
+    width: 25%;
+  }
+}
+
+@media (min-width: 48em) {
+  .grid-item-square {
+    width: 24em;
+    height: 24em;
+  }
+}
+
+@media (min-width: 62.5em) {
+  .grid-item-square {
+    width: 20.83333em;
+    height: 20.83333em;
+  }
+}
+
+@media (min-width: 75em) {
+  .grid-item-square {
+    width: 18.75em;
+    height: 18.75em;
   }
 }
 
@@ -7634,13 +7682,10 @@ button.button--reset + i {
 }
 
 .theme--box {
+  width: 100%;
   background: #222;
   position: relative;
-  -webkit-flex: 1 100%;
-      -ms-flex: 1 100%;
-          flex: 1 100%;
   overflow: hidden;
-  margin-bottom: 2em;
 }
 
 .theme--box .theme__title {
@@ -7676,21 +7721,4 @@ button.button--reset + i {
 
 .theme--box:hover .theme__teaser-image {
   opacity: 0.25;
-}
-
-@media (min-width: 48em) {
-  .theme--box {
-    width: 15em;
-    height: 15em;
-    -webkit-flex: 0 auto;
-        -ms-flex: 0 auto;
-            flex: 0 auto;
-  }
-}
-
-@media (min-width: 75em) {
-  .theme--box {
-    width: 17em;
-    height: 17em;
-  }
 }

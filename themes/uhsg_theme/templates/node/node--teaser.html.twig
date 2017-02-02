@@ -75,8 +75,7 @@
     node.bundle|clean_class,
     view_mode ? node.bundle|clean_class ~ '--' ~ view_mode|clean_class,
     (content.field_news_image|render is empty) ? 'theme-plain',
-    'box-story',
-    'grid-item-3'
+    'box-story'
   ]
 %}
 
@@ -85,18 +84,20 @@
   {{ content.body }}
 {% endset %}  
 
-<article {{ attributes.addClass(node_classes) }}>
-  <a href="{{ url }}" rel="bookmark" class="box-story__link-wrapper">
-    <div class="box-story__label"> {{ type }} </div>
-    {% if content.field_news_image|render %}
-      <div class="box-story__image"> {{ content.field_news_image }} </div>
-    {% endif %}
-    {% if node.bundle == 'news' %}
-      <div class="box-story__topical">
-        <span class="box-story__date"> {{ created }} </span>
-      </div>
-    {% endif %}
-    <h4 class="box-story__title"> {{ label }} </h4>
-    <div class="box-story__content"> {{ body|striptags }} </div>
-  </a>
-</article>
+<div class="grid-item grid-item-3">
+  <article {{ attributes.addClass(node_classes) }}>
+    <a href="{{ url }}" rel="bookmark" class="box-story__link-wrapper">
+      <div class="box-story__label"> {{ type }} </div>
+      {% if content.field_news_image|render %}
+        <div class="box-story__image"> {{ content.field_news_image }} </div>
+      {% endif %}
+      {% if node.bundle == 'news' %}
+        <div class="box-story__topical">
+          <span class="box-story__date"> {{ created }} </span>
+        </div>
+      {% endif %}
+      <h4 class="box-story__title"> {{ label }} </h4>
+      <div class="box-story__content"> {{ body|striptags }} </div>
+    </a>
+  </article>
+</div>

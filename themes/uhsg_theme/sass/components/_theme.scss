@@ -1,9 +1,8 @@
 .theme--box {
+  width: 100%;
   background: $black;
   position: relative;
-  flex: 1 100%;
   overflow: hidden;
-  margin-bottom: 2em;
   
   .theme__title {
     @include hyphenate;
@@ -31,15 +30,5 @@
     .theme__teaser-image {
       opacity: 0.25;
     }
-  }
-
-  @include breakpoint($small) {
-    width: 15em;
-    height: 15em;
-    flex: 0 auto;
-  }
-  @include breakpoint($large) {
-    width: 17em;
-    height: 17em;
   }
 }
