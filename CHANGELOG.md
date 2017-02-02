@@ -7,8 +7,9 @@
 * Added ability to login through university´s SSO service (HUB-34)
 * Removed ability to register new Drupal account (HUB-34)
 * Removed ability to use "request new password" core feature (HUB-34)
-* Removed ability to edit own account (HUB-34) 
-
+* Removed ability to edit own account (HUB-34)
+* Removed top content from google analytics (HUB-93)
+* If link has no title, use link target node title (HUB-95)
 
 ## 1.0-alpha1
 Release date 30.01.2017
