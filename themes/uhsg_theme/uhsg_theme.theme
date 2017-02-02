@@ -121,11 +121,8 @@ function uhsg_theme_preprocess_field(array &$variables, $hook) {
  */
 function uhsg_theme_preprocess_views_view(&$variables) {
   switch ($variables['view']->id()) {
-    case 'search':
-      $variables['attributes']['class'][] = 'grid-container';
-      $variables['lang'] = Drupal::languageManager()->getCurrentLanguage()->getId();
-      break;
     case 'themes':
+    case 'search':
       $variables['attributes']['class'][] = 'grid-container';
       break;
     case 'news':

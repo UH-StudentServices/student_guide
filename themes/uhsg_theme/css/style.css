@@ -7677,10 +7677,6 @@ button.button--reset + i {
   }
 }
 
-.view-search .view-header .top-searches li:last-child {
-  display: none;
-}
-
 .theme--box {
   width: 100%;
   background: #222;

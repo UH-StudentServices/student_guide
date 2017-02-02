@@ -55,18 +55,11 @@
 
   {% if header %}
     <div class="view-header tube">
-      {% if header.view %}
-        <h3> {{ 'Top content'|trans }} </h3>
-        {{ header.view }}
-      {% endif %}
-
       {{ attach_library('uhsg_search/my-searches') }}
       <div id="my-searches">
       </div>
     </div>
   {% endif %}
-
-  {{ header|without('result', 'view') }}
 
   {% if header.result %}
     <div class="view-result tube">
