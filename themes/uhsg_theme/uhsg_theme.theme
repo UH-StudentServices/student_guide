@@ -2,7 +2,6 @@
 
 use Drupal\Core\Language\LanguageInterface;
 use Drupal\Component\Render\FormattableMarkup;
-use Drupal\node\Entity\Node;
 
 /**
  * @file
@@ -98,17 +97,6 @@ function uhsg_theme_preprocess_field(array &$variables, $hook) {
       $variables['attributes']['class'][] = 'list-of-links';
       foreach ($variables['items'] as &$item) {
         $item['content']['#options']['attributes']['class'][] = 'list-of-links__link button--action icon--arrow-right';
-        // if no link title is set, use link target node title
-        if ($item['content']['#title'] == $item['content']['#url']->toString()) {
-          // check if internal link
-          if ($item['content']['#url']->getRouteName() == 'entity.node.canonical') {
-            $params = $item['content']['#url']->getRouteParameters();
-            $node = Node::load($params['node']);
-            $translation = \Drupal::entityManager()->getTranslationFromContext($node);
-            $item['content']['#title'] = $translation->getTitle();
-            $variables['#cache']['tags'][] = 'node:' . $params['node'];
-          }
-        }
       }
       break;
     case 'field_theme_articles':

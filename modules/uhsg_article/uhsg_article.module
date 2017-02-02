@@ -8,6 +8,7 @@
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\taxonomy\TermInterface;
 use Drupal\taxonomy\Entity\Term;
+use Drupal\node\Entity\Node;
 
 /**
  * Implements hook_help().
@@ -49,6 +50,24 @@ function uhsg_article_preprocess_field(array &$variables, $hook) {
     // Because of these alterations, our result may vay depending on active
     // degree programme.
     $variables['#cache']['contexts'][] = 'active_degree_programme';
+  }
+
+  // if no link title is set, use link target node title
+  if ($variables['element']['#field_name'] == 'field_paragraph_links') {
+    foreach ($variables['items'] as &$item) {
+      // if title matches url, no title is set
+      if ($item['content']['#title'] == $item['content']['#url']->toString()) {
+        // check for node links
+        if ($item['content']['#url']->getRouteName() == 'entity.node.canonical') {
+          $params = $item['content']['#url']->getRouteParameters();
+          $node = Node::load($params['node']);
+          $translation = \Drupal::entityManager()->getTranslationFromContext($node);
+          $item['content']['#title'] = $translation->getTitle();
+          // add target node to cache tags in case the node title changes
+          $variables['#cache']['tags'][] = 'node:' . $params['node'];
+        }
+      }
+    }
   }
 }
 
