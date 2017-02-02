@@ -14,7 +14,6 @@ dependencies:
   - dynamic_page_cache
   - easy_breadcrumb
   - field_ui
-  - google_analytics_reports
   - honeypot
   - image
   - menu_ui
@@ -35,7 +34,6 @@ dependencies:
   - uhsg_service_provider_details
   - uhsg_some_links
   - uhsg_themes
-  - uhsg_top_content
   - views
   - views_ui
 themes:

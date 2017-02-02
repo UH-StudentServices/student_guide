@@ -13,9 +13,5 @@
     @include breakpoint($small) {
       flex: 0 35%;
     }
-    // this empty result can't be removed in the view or in pre_render?
-    .top-searches li:last-child {
-      display: none;
-    }
   }
 }
