@@ -3,6 +3,7 @@
 namespace Drupal\uhsg_active_degree_programme\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\Core\Url;
 use Drupal\taxonomy\Entity\Term;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
@@ -15,6 +16,9 @@ class ActiveDegreeProgrammeController extends ControllerBase {
     if ($term) {
       \Drupal::service('uhsg_active_degree_programme.active_degree_programme')->set($term);
     }
-    return new RedirectResponse(\Drupal::request()->server->get('HTTP_REFERER'));
+    $url = Url::fromUri(\Drupal::request()->server->get('HTTP_REFERER'));
+    $url->setOptions(['query' => ['degree_programme' => $tid]]);
+    $status = 302;
+    return new RedirectResponse($url->toString(), $status);
   }
 }
