@@ -4,6 +4,10 @@
 ## 1.x-dev
 
 * Configuration for top content from google analytics (HUB-93)
+* Added ability to login through university´s SSO service (HUB-34)
+* Removed ability to register new Drupal account (HUB-34)
+* Removed ability to use "request new password" core feature (HUB-34)
+* Removed ability to edit own account (HUB-34) 
 
 
 ## 1.0-alpha1

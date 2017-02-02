@@ -14,6 +14,7 @@ module:
   dblog: 0
   dynamic_page_cache: 0
   easy_breadcrumb: 0
+  edit_own_user_account_permission: 0
   editor: 0
   entity_reference_revisions: 0
   externalauth: 0
@@ -35,6 +36,7 @@ module:
   migrate_source_csv: 0
   migrate_tools: 0
   node: 0
+  noreqnewpass: 0
   options: 0
   page_cache: 0
   paragraphs: 0
