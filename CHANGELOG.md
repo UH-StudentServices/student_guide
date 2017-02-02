@@ -10,6 +10,7 @@
 * Removed ability to edit own account (HUB-34)
 * If link has no title, use link target node title (HUB-95)
 
+
 ## 1.0-alpha1
 Release date 30.01.2017
 
