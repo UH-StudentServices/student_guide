@@ -128,8 +128,6 @@ function uhsg_theme_preprocess_views_view(&$variables) {
     case 'news':
       $variables['attributes']['class'][] = 'tube';
       break;
-    case 'degree_programmes':
-      $variables['#cache']['contexts'][] = 'active_degree_programme';
   }
 }
 
@@ -143,6 +141,7 @@ function uhsg_theme_preprocess_block(array &$variables) {
       break;
     case 'views_block__degree_programmes_block_1':
       $variables['label'] = \Drupal::service('uhsg_active_degree_programme.active_degree_programme')->getName();
+      $variables['#cache']['contexts'][] = 'active_degree_programme';
       break;
   }
 }
