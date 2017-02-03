@@ -29,6 +29,7 @@ dependencies:
   - uhsg_active_degree_programme
   - uhsg_article
   - uhsg_cookie_consent
+  - uhsg_edit
   - uhsg_feedback
   - uhsg_news
   - uhsg_service_provider_details
