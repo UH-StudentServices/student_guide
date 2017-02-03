@@ -11,6 +11,7 @@
 * Removed top content from google analytics (HUB-93)
 * If link has no title, use link target node title (HUB-95)
 * Collapse degree programme switcher when clicking header (HUB-100)
+* Added theming to news full view (HUB-102)
 
 
 ## 1.0-alpha1
