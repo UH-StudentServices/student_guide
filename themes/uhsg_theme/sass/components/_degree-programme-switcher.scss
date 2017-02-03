@@ -1,12 +1,15 @@
 .degree-programme-switcher {
-  @include border;
-  display: flex;
   position: relative;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  margin: 2em 0;
-  padding: 1em;
+  .degree-programme-switcher__header {
+    @include border;
+    display: flex;
+    cursor: pointer;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2em 0;
+    padding: 1em;
+  }
   .degree-programme-switcher__icon {
     padding-right: 0.5em;
     flex: 0 0 100%;
@@ -21,7 +24,6 @@
   }
   .degree-programme-switcher__toggle {
     @include font-weight-medium;
-    cursor: pointer;
     align-self: flex-start;
     color: $blue;
     @include breakpoint($small) {
@@ -31,6 +33,7 @@
   }
   .degree-programme-switcher__container {
     @include border;
+    display: none;
     padding: 1em;
     flex: 1 0 100%;
     position: absolute;
@@ -49,6 +52,9 @@
     }
     @include breakpoint($small) {
       padding: 2em;
+    }
+    &.collapsed {
+      display: block;
     }
   }
   .degree-programme-switcher__search {

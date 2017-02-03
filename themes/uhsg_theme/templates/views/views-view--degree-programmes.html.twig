@@ -40,11 +40,13 @@
 %}
 
 <div{{ attributes.addClass(classes) }}>
-  <h4 class="degree-programme-switcher__title">
-    <i class="degree-programme-switcher__icon icon--master icon-2x"></i>
-    {{ title }}
-  </h4>
-  <span class="degree-programme-switcher__toggle"> {{ 'Change'|trans }} </span>
+  <div class="degree-programme-switcher__header">
+    <h4 class="degree-programme-switcher__title">
+      <i class="degree-programme-switcher__icon icon--master icon-2x"></i>
+      {{ title }}
+    </h4>
+    <span class="degree-programme-switcher__toggle"> {{ 'Change'|trans }} </span>
+  </div>
   <div class="degree-programme-switcher__container">
     {% if exposed %}
       {{ exposed }}

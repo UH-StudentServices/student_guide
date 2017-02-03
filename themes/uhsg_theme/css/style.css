@@ -7250,11 +7250,15 @@ html {
 }
 
 .degree-programme-switcher {
+  position: relative;
+}
+
+.degree-programme-switcher .degree-programme-switcher__header {
   border: 1px solid #EBEBEB;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  position: relative;
+  cursor: pointer;
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
@@ -7298,7 +7302,6 @@ html {
 .degree-programme-switcher .degree-programme-switcher__toggle {
   font-weight: 600;
   font-style: normal;
-  cursor: pointer;
   -webkit-align-self: flex-start;
       -ms-flex-item-align: start;
           align-self: flex-start;
@@ -7316,6 +7319,7 @@ html {
 
 .degree-programme-switcher .degree-programme-switcher__container {
   border: 1px solid #EBEBEB;
+  display: none;
   padding: 1em;
   -webkit-flex: 1 0 100%;
       -ms-flex: 1 0 100%;
@@ -7342,6 +7346,10 @@ html {
   .degree-programme-switcher .degree-programme-switcher__container {
     padding: 2em;
   }
+}
+
+.degree-programme-switcher .degree-programme-switcher__container.collapsed {
+  display: block;
 }
 
 .degree-programme-switcher .degree-programme-switcher__search {

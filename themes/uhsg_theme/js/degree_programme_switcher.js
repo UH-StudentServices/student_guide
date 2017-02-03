@@ -1,17 +1,18 @@
 (function ($) {
   'use strict';
-
   Drupal.behaviors.degreeProgrammeSwitcher = {
     attach: function(context, settings) {
-      $('.block-views-blockdegree-programmes-block-1').once().find('.degree-programme-switcher__container').addClass('visually-hidden');
-      $('.degree-programme-switcher__toggle', '.degree-programme-switcher').once().on('click', function() {
-        var toggleText = $(this).hasClass('collapsed') ? Drupal.t('Change') : Drupal.t('Close');
-        $(this).toggleClass('collapsed')
-          .text(toggleText)
-          .next('.degree-programme-switcher__container')
-          .toggleClass('visually-hidden');
+      var header = $('.degree-programme-switcher__header'),
+          container = $('.degree-programme-switcher__container'),
+          toggle = $('.degree-programme-switcher__toggle'),
+          toggleClass = 'collapsed',
+          toggleTextOpen = Drupal.t('Change'),
+          toggleTextClosed = Drupal.t('Close');
+
+      header.once().on('click', function() {
+        container.toggleClass(toggleClass);
+        toggle.text(container.hasClass(toggleClass) ? toggleTextOpen : toggleTextClosed);
       });
     }
   };
-
 }(jQuery));
