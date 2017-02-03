@@ -8,8 +8,8 @@
           toggle = $('.degree-programme-switcher__toggle', degreeProgrammeSwitcher),
           searchInput = $('input[name="name"]', degreeProgrammeSwitcher),
           toggleClass = 'collapsed',
-          toggleTextOpen = Drupal.t('Change'),
-          toggleTextClosed = Drupal.t('Close');
+          toggleTextClosed = Drupal.t('Change'),
+          toggleTextOpen = Drupal.t('Close');
 
       // toggle collapsed when clicking header
       header.once().on('click', function() {
@@ -23,6 +23,7 @@
         var clickedOutside = $(e.target).parents(degreeProgrammeSwitcher).length == 0;
         if (container.hasClass(toggleClass) && clickedOutside) {
           container.removeClass(toggleClass);
+          toggle.text(container.hasClass(toggleClass) ? toggleTextOpen : toggleTextClosed);
         }
       })
 
