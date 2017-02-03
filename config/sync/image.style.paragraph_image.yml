@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 name: paragraph_image
-label: 'Paragraph image'
+label: 'Image right column'
 effects:
   28f8b4b5-43dc-4400-b97b-c3b01aba96d6:
     uuid: 28f8b4b5-43dc-4400-b97b-c3b01aba96d6

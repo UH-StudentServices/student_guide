@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.news.field_news_email
     - field.field.node.news.field_news_email_sent
     - field.field.node.news.field_news_image
+    - image.style.image_full_width
     - node.type.news
   module:
     - image
@@ -35,7 +36,7 @@ content:
     weight: 0
     label: hidden
     settings:
-      image_style: ''
+      image_style: image_full_width
       image_link: ''
     third_party_settings: {  }
     type: image

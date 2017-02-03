@@ -75,7 +75,6 @@
     node.bundle|clean_class,
     view_mode ? node.bundle|clean_class ~ '--' ~ view_mode|clean_class,
     'container',
-    'col-container',
     'tube',
   ]
 %}
@@ -83,14 +82,17 @@
 {% set created = node.getCreatedTime|format_date('short') %}
 
 <article {{ attributes.addClass(node_classes) }}>
-  <div class="col-left">
-    <h1> {{ label }} </h1>   
-    <div class="tag-list">
-      <div class="tag-list__item"> {{ created }} </div>
-      {{ content.field_news_degree_programme }}
+  {{ content.field_news_image }}
+  <div class="col-container tube--large">
+    <div class="col-left">
+      <h1> {{ label }} </h1>
+      <div class="tag-list">
+        <div class="tag-list__item"> {{ created }} </div>
+        {{ content.field_news_degree_programme }}
+      </div>
     </div>
-  </div>
-  <div class="col-right">
-    {{ content|without('field_news_degree_programme') }}
+    <div class="col-right">
+      {{ content|without('field_news_degree_programme', 'field_news_image') }}
+    </div>
   </div>
 </article>
