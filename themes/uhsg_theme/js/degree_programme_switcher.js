@@ -11,11 +11,21 @@
           toggleTextOpen = Drupal.t('Change'),
           toggleTextClosed = Drupal.t('Close');
 
+      // toggle collapsed when clicking header
       header.once().on('click', function() {
         container.toggleClass(toggleClass);
         toggle.text(container.hasClass(toggleClass) ? toggleTextOpen : toggleTextClosed);
         searchInput.focus();
       });
+
+      // close when clicking outside
+      $(document).once().on('click', function(e) {
+        var clickedOutside = $(e.target).parents(degreeProgrammeSwitcher).length == 0;
+        if (container.hasClass(toggleClass) && clickedOutside) {
+          container.removeClass(toggleClass);
+        }
+      })
+
     }
   };
 }(jQuery));
