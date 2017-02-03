@@ -10,6 +10,7 @@
 * Removed ability to edit own account (HUB-34)
 * Removed top content from google analytics (HUB-93)
 * If link has no title, use link target node title (HUB-95)
+* Collapse degree programme switcher when clicking header (HUB-100)
 
 
 ## 1.0-alpha1
