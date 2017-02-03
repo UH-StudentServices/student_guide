@@ -7038,6 +7038,65 @@ ul.pager > li.pager__next a {
   overflow-x: auto;
 }
 
+/*
+ section: 6.9
+ title: Tag list
+ template: 6_9_1-tag-list
+ description:
+*/
+.tag-list {
+  display: block;
+}
+
+.tag-list__item {
+  font-size: 10.5px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-style: normal;
+  color: #979797;
+  text-transform: uppercase;
+  display: inline-block;
+  position: relative;
+  margin-right: 0.5em;
+  padding-right: 1.5em;
+}
+
+@media (min-width: 48em) {
+  .tag-list__item {
+    font-size: 12px;
+  }
+}
+
+.tag-list__item:last-child:after {
+  display: none;
+}
+
+.tag-list__item:after {
+  content: " ";
+  right: 0;
+}
+
+.tag-list__item:after, .tag-list__item:before {
+  border: 1px solid #EBEBEB;
+  border-color: #d2d2d2;
+  border-radius: 50%;
+  height: 6px;
+  margin-top: -3px;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  width: 6px;
+  z-index: 10;
+}
+
+.tag-list__item a {
+  color: inherit;
+}
+
+.tag-list__item a:hover {
+  color: #005479;
+}
+
 /* STUDENT GUIDE THEMING */
 .container {
   margin: 0 auto;
@@ -7124,6 +7183,25 @@ ul.pager > li.pager__next a {
   .grid-item-square {
     width: 18.75em;
     height: 18.75em;
+  }
+}
+
+@media (min-width: 48em) {
+  .col-container {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .col-left {
+    -webkit-flex-basis: 35%;
+        -ms-flex-preferred-size: 35%;
+            flex-basis: 35%;
+    margin-right: 4em;
+  }
+  .col-right {
+    -webkit-flex-basis: 65%;
+        -ms-flex-preferred-size: 65%;
+            flex-basis: 65%;
   }
 }
 
@@ -7631,25 +7709,6 @@ button.button--reset + i {
   .paragraph__video > .video-embed-field-responsive-video,
   .paragraph__paragraph-image > img {
     margin-bottom: 2em;
-  }
-}
-
-@media (min-width: 48em) {
-  .paragraph__content {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  .paragraph__left {
-    -webkit-flex-basis: 35%;
-        -ms-flex-preferred-size: 35%;
-            flex-basis: 35%;
-    margin-right: 4em;
-  }
-  .paragraph__right {
-    -webkit-flex-basis: 65%;
-        -ms-flex-preferred-size: 65%;
-            flex-basis: 65%;
   }
 }
 
