@@ -107,17 +107,6 @@ function uhsg_theme_preprocess_field(array &$variables, $hook) {
     case 'field_paragraph_body':
       $variables['attributes']['class'][] = 'textarea';
       break;
-    case 'field_news_degree_programme':
-      foreach ($variables['items'] as &$item) {
-        $variables['nowrapper'] = TRUE;
-        if ($variables['element']['#view_mode'] == 'full' ) {
-          $item['content']['#options']['attributes']['class'][] = 'tag-list__item';
-        }
-        if ($variables['element']['#view_mode'] == 'teaser' ) {
-          $item['content']['#options']['attributes']['class'][] = 'box-story__tag';
-        }
-      }
-      break;
   }
 }
 

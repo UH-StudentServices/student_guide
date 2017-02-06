@@ -36,22 +36,10 @@
  * @see template_preprocess_field()
  */
 #}
-{%
-  set classes = [
-    element['#bundle']|clean_class ~ '__' ~ label|clean_class
-  ]
-%}
-
-{% block header %}
-{% endblock %}
-
 {% block content %}
-  {% if not label_hidden %}
-    <h3{{ title_attributes }}>{{ label }}</h3>
-  {% endif %}
-  <div{{ attributes.addClass(classes) }}>
-    {% for item in items %}
+  {% for item in items %}
+    <div{{ attributes.addClass('tag-list__item') }}>
       {{ item.content }}
-    {% endfor %}
-  </div>
+    </div>
+  {% endfor %}
 {% endblock %}
