@@ -4,6 +4,7 @@
 ## 1.x-dev
 
 * Removed breadcrumb (HUB-103)
+* Remove degree programme from article full view (HUB-101)
 
 
 ## 1.0-beta0
