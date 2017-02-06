@@ -52,3 +52,15 @@ $grid-gutter: $vert-spacing-unit / 2;
   }
 }
 
+@include breakpoint($small) {
+  .col-container {
+    display: flex;
+  }
+  .col-left {
+    flex-basis: 35%;
+    margin-right: 4em;
+  }
+  .col-right {
+    flex-basis: 65%;
+  }
+}

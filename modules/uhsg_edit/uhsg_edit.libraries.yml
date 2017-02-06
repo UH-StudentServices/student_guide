@@ -1,0 +1,5 @@
+node-form-addons:
+  version: 1.x
+  css:
+    theme:
+      css/node-form-addons.css: {}

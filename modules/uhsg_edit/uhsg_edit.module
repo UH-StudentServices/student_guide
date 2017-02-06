@@ -1,0 +1,14 @@
+<?php
+
+/**
+ * @file
+ * Contains uhsg_edit.module.
+ */
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter():
+ * Add css to node edit form.
+ */
+function uhsg_edit_form_node_form_alter(&$form, &$form_state, $form_id) {
+  $form['#attached']['library'][] = 'uhsg_edit/node-form-addons';
+}
