@@ -13,6 +13,7 @@
 * Collapse degree programme switcher when clicking header (HUB-100)
 * Added theming to news full view (HUB-102)
 * Add theming to visually separate node edit actions from paragraphs (HUB-97)
+* Removed breadcrumb (HUB-103)
 
 
 ## 1.0-alpha1
