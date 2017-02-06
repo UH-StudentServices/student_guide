@@ -7,6 +7,7 @@
 * Remove degree programme from article full view (HUB-101)
 * Logo link to www.helsinki.fi (HUB-108)
 * Remove links from news degree programme field (HUB-108)
+* Fixed error when having an unknown degree programme in cookies
 
 
 ## 1.0-beta0
