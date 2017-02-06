@@ -1,0 +1,31 @@
+uuid: 496bba0a-bccd-4025-a826-7a25a252d5b1
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:content_block:bd46f689-baec-407b-ab68-0456b5f23b9e'
+  module:
+    - block_content
+    - system
+  theme:
+    - uhsg_theme
+id: frontpageblock
+theme: uhsg_theme
+region: before_content
+weight: -4
+provider: null
+plugin: 'block_content:bd46f689-baec-407b-ab68-0456b5f23b9e'
+settings:
+  id: 'block_content:bd46f689-baec-407b-ab68-0456b5f23b9e'
+  label: 'Frontpage block'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

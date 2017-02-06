@@ -1,0 +1,8 @@
+uuid: f4de152f-5504-40ac-bf5b-6f287f4ab3c0
+langcode: en
+status: true
+dependencies: {  }
+id: content_block
+label: 'Content block'
+revision: 0
+description: ''
