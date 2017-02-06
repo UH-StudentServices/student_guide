@@ -1,0 +1,11 @@
+.layout-node-form .layout-region-node-footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  padding-left: 1em;
+  padding-right: 1em;
+  z-index: 100;
+  width: 100%;
+  background-color: #ececec;
+  border-top: 1px solid #bfbfbf;
+}

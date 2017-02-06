@@ -109,8 +109,13 @@ function uhsg_theme_preprocess_field(array &$variables, $hook) {
       break;
     case 'field_news_degree_programme':
       foreach ($variables['items'] as &$item) {
-        $item['content']['#options']['attributes']['class'][] = 'box-story__tag';
         $variables['nowrapper'] = TRUE;
+        if ($variables['element']['#view_mode'] == 'full' ) {
+          $item['content']['#options']['attributes']['class'][] = 'tag-list__item';
+        }
+        if ($variables['element']['#view_mode'] == 'teaser' ) {
+          $item['content']['#options']['attributes']['class'][] = 'box-story__tag';
+        }
       }
       break;
   }
