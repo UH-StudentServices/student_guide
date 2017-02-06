@@ -67,6 +67,13 @@ class ActiveDegreeProgrammeService {
   }
 
   /**
+   * Resets active degree programme.
+   */
+  public function reset() {
+    user_cookie_delete('degree_programme');
+  }
+
+  /**
    * Return name of active degree programme.
    * @return null|string
    */
@@ -101,10 +108,14 @@ class ActiveDegreeProgrammeService {
     $query_param = $this->requestStack->getCurrentRequest()->get('degree_programme');
     if ($query_param) {
       $term = Term::load($query_param);
-      if ($this->access($term)) {
+      if (!is_null($term) && $this->access($term)) {
         \Drupal::logger('uhsg_active_degree_programme')->debug('Resolved by parameter ' . $term->id());
         $this->resolvedTerm = $term;
         return $this->resolvedTerm;
+      }
+      else {
+        // If we can't load the term, then reset active degree programme.
+        $this->reset();
       }
     }
 
@@ -112,10 +123,14 @@ class ActiveDegreeProgrammeService {
     $degree_programme_from_headers = $this->requestStack->getCurrentRequest()->headers->get('x-degree-programme');
     if ($degree_programme_from_headers) {
       $term = Term::load($this->requestStack->getCurrentRequest()->headers->get('x-degree-programme'));
-      if ($this->access($term)) {
+      if (!is_null($term) && $this->access($term)) {
         \Drupal::logger('uhsg_active_degree_programme')->debug('Resolved by header ' . $term->id());
         $this->resolvedTerm = $term;
         return $this->resolvedTerm;
+      }
+      else {
+        // If we can't load the term, then reset active degree programme.
+        $this->reset();
       }
     }
 
@@ -123,10 +138,14 @@ class ActiveDegreeProgrammeService {
     $degree_programme_from_cookies = $this->requestStack->getCurrentRequest()->cookies->get('Drupal_visitor_degree_programme');
     if ($degree_programme_from_cookies) {
       $term = Term::load($degree_programme_from_cookies);
-      if ($this->access($term)) {
+      if (!is_null($term) && $this->access($term)) {
         \Drupal::logger('uhsg_active_degree_programme')->debug('Resolved by cookie ' . $term->id());
         $this->resolvedTerm = $term;
         return $this->resolvedTerm;
+      }
+      else {
+        // If we can't load the term, then reset active degree programme.
+        $this->reset();
       }
     }
 
