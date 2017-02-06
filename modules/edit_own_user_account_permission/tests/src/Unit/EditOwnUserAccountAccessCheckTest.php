@@ -19,7 +19,7 @@ class EditOwnUserAccountAccessCheckTest extends PHPUnit_Framework_TestCase {
   private $currentAccount;
 
   /** @var EditOwnUserAccountAccessCheck */
-  private $editOwnUserAccountAccessCheckTest;
+  private $editOwnUserAccountAccessCheck;
 
   /** @var AccountInterface */
   private $targetAccount;
@@ -30,7 +30,7 @@ class EditOwnUserAccountAccessCheckTest extends PHPUnit_Framework_TestCase {
     $this->currentAccount = $this->prophesize(AccountInterface::class);
     $this->targetAccount = $this->prophesize(AccountInterface::class);
 
-    $this->editOwnUserAccountAccessCheckTest = new EditOwnUserAccountAccessCheck();
+    $this->editOwnUserAccountAccessCheck = new EditOwnUserAccountAccessCheck();
   }
 
   /**
@@ -40,7 +40,7 @@ class EditOwnUserAccountAccessCheckTest extends PHPUnit_Framework_TestCase {
     $this->currentAccountEqualsTargetAccount();
     $this->currentAccount->hasPermission(self::EDIT_OWN_USER_ACCOUNT)->willReturn(TRUE);
 
-    $accessResult = $this->editOwnUserAccountAccessCheckTest->access(
+    $accessResult = $this->editOwnUserAccountAccessCheck->access(
       $this->targetAccount->reveal(), $this->currentAccount->reveal()
     );
 
@@ -55,7 +55,7 @@ class EditOwnUserAccountAccessCheckTest extends PHPUnit_Framework_TestCase {
     $this->currentAccount->hasPermission(self::EDIT_OWN_USER_ACCOUNT)->willReturn(FALSE);
     $this->currentAccount->hasPermission(self::ADMINISTER_USERS)->willReturn(TRUE);
 
-    $accessResult = $this->editOwnUserAccountAccessCheckTest->access(
+    $accessResult = $this->editOwnUserAccountAccessCheck->access(
       $this->targetAccount->reveal(), $this->currentAccount->reveal()
     );
 
@@ -70,7 +70,7 @@ class EditOwnUserAccountAccessCheckTest extends PHPUnit_Framework_TestCase {
     $this->currentAccount->hasPermission(self::EDIT_OWN_USER_ACCOUNT)->willReturn(FALSE);
     $this->currentAccount->hasPermission(self::ADMINISTER_USERS)->willReturn(FALSE);
 
-    $accessResult = $this->editOwnUserAccountAccessCheckTest->access(
+    $accessResult = $this->editOwnUserAccountAccessCheck->access(
       $this->targetAccount->reveal(), $this->currentAccount->reveal()
     );
 
@@ -85,7 +85,7 @@ class EditOwnUserAccountAccessCheckTest extends PHPUnit_Framework_TestCase {
     $this->currentAccount->hasPermission(self::EDIT_OWN_USER_ACCOUNT)->willReturn(TRUE);
     $this->currentAccount->hasPermission(self::ADMINISTER_USERS)->willReturn(FALSE);
 
-    $accessResult = $this->editOwnUserAccountAccessCheckTest->access(
+    $accessResult = $this->editOwnUserAccountAccessCheck->access(
       $this->targetAccount->reveal(), $this->currentAccount->reveal()
     );
 
