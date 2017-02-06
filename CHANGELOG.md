@@ -6,7 +6,7 @@
 * Removed breadcrumb (HUB-103)
 * Remove degree programme from article full view (HUB-101)
 * Logo link to www.helsinki.fi (HUB-108)
-
+* Remove links from news degree programme field (HUB-108)
 
 ## 1.0-beta0
 Release date: 06.02.2017
@@ -19,12 +19,6 @@ Release date: 06.02.2017
 * Removed ability to register new Drupal account (HUB-34)
 * Removed ability to use "request new password" core feature (HUB-34)
 * Removed ability to edit own account (HUB-34)
-* Removed top content from google analytics (HUB-93)
-* If link has no title, use link target node title (HUB-95)
-* Collapse degree programme switcher when clicking header (HUB-100)
-* Added theming to news full view (HUB-102)
-* Add theming to visually separate node edit actions from paragraphs (HUB-97)
-* Remove links from news degree programme field (HUB-108)
 
 
 ## 1.0-alpha1
