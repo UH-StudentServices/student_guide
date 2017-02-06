@@ -1,0 +1,28 @@
+uuid: 751b2521-249c-4454-9c3d-eeaee14e5d77
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - uhsg_news
+  theme:
+    - uhsg_theme
+id: newsperdegreeprogramme_2
+theme: uhsg_theme
+region: after_content
+weight: -7
+provider: null
+plugin: news_per_degree_programme
+settings:
+  id: news_per_degree_programme
+  label: 'More news'
+  provider: uhsg_news
+  label_display: '0'
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      news: news
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

@@ -69,7 +69,7 @@ function uhsg_article_process_paragraph_link_titles(array &$variables) {
       $url = $item['content']['#url'];
 
       // If the link is internal and title matches url, no title is set.
-      if (!$url->isExternal() && $item['content']['#title'] == $url->toString()) {
+      if ($url->isRouted() && $item['content']['#title'] == $url->toString()) {
 
         // Check for node links.
         if ($url->getRouteName() == 'entity.node.canonical') {
