@@ -323,7 +323,10 @@ function student_guide_create_front_page_text_block() {
   $text_fi = 'Opas antaa sinulle kaiken opinnoissa tarvitsemasi tiedon. Voit hakea tietoa joko vapaan haun tai valmiiksi koostettujen teemojen avulla.';
   $text_sv = 'Add swedish translation';
   $text_en = 'Add english translation';
-  $uuid = '9030f560-74c7-46c2-b40e-bcb27c88a6a6';
+
+  // get block uuid from config, see https://www.drupal.org/node/2756331
+  $plugin = \Drupal::config('block.block.frontpagetextblock')->get('plugin');
+  $uuid = substr($plugin, strpos($plugin, ':') + 1);
 
   $block = BlockContent::create([
     'info' => 'Front page text block',
