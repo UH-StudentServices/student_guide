@@ -3,6 +3,8 @@
 
 ## 1.x-dev
 
+* Removed breadcrumb (HUB-103)
+
 
 ## 1.0-beta0
 Release date: 06.02.2017
