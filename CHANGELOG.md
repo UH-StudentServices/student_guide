@@ -8,6 +8,7 @@
 * Logo link to www.helsinki.fi (HUB-108)
 * Remove links from news degree programme field (HUB-108)
 
+
 ## 1.0-beta0
 Release date: 06.02.2017
 
