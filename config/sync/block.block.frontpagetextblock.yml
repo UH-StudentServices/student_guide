@@ -1,23 +1,23 @@
-uuid: 496bba0a-bccd-4025-a826-7a25a252d5b1
+uuid: 62b9be1c-f765-44d4-ade8-f4d366e5cc3f
 langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:content_block:bd46f689-baec-407b-ab68-0456b5f23b9e'
+    - 'block_content:content_block:9030f560-74c7-46c2-b40e-bcb27c88a6a6'
   module:
     - block_content
     - system
   theme:
     - uhsg_theme
-id: frontpageblock
+id: frontpagetextblock
 theme: uhsg_theme
 region: before_content
-weight: -4
+weight: 0
 provider: null
-plugin: 'block_content:bd46f689-baec-407b-ab68-0456b5f23b9e'
+plugin: 'block_content:9030f560-74c7-46c2-b40e-bcb27c88a6a6'
 settings:
-  id: 'block_content:bd46f689-baec-407b-ab68-0456b5f23b9e'
-  label: 'Frontpage block'
+  id: 'block_content:9030f560-74c7-46c2-b40e-bcb27c88a6a6'
+  label: 'Front page text block'
   provider: block_content
   label_display: '0'
   status: true

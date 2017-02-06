@@ -9,6 +9,7 @@ use Drupal\Core\Config\ConfigImporter;
 use Drupal\Core\Config\ConfigImporterException;
 use Drupal\Core\Site\Settings;
 use Drupal\student_guide\Storage\SourceStorage;
+use Drupal\block_content\Entity\BlockContent;
 
 /**
  * Need to do a manual include since this install profile never actually gets
@@ -313,4 +314,26 @@ function _student_guide_get_original_install_profile() {
     $original_profile = key($profiles);
   }
   return $original_profile;
+}
+
+/**
+ * Create content block for front page text.
+ */
+function student_guide_create_front_page_text_block() {
+  $text_fi = 'Opas antaa sinulle kaiken opinnoissa tarvitsemasi tiedon. Voit hakea tietoa joko vapaan haun tai valmiiksi koostettujen teemojen avulla.';
+  $text_sv = 'Add swedish translation';
+  $text_en = 'Add english translation';
+  $uuid = '9030f560-74c7-46c2-b40e-bcb27c88a6a6';
+
+  $block = BlockContent::create([
+    'info' => 'Front page text block',
+    'type' => 'content_block',
+    'langcode' => 'fi',
+    'uuid' => $uuid
+  ]);
+
+  $block->set('body', $text_fi);
+  $block->addTranslation('sv', ['body' => $text_sv]);
+  $block->addTranslation('en', ['body' => $text_en]);
+  $block->save();
 }

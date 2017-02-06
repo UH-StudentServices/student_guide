@@ -6,6 +6,8 @@
  * profile.
  */
 
+use Drupal\block_content\Entity\BlockContent;
+
 /**
  * Implements hook_install().
  *
@@ -31,4 +33,19 @@ function student_guide_update_8001(&$sandbox) {
   foreach ($path_aliases as $langcode => $path_alias) {
     \Drupal::service('path.alias_storage')->save($system_path, $path_alias, $langcode);
   }
+}
+
+/**
+ * Create content block for front page text.
+ */
+function student_guide_update_8004(&$sandbox) {
+	$block = BlockContent::create([
+	  'info' => 'Front page text block',
+	  'type' => 'content_block',
+	  'langcode' => 'fi',
+	  'uuid' => '9030f560-74c7-46c2-b40e-bcb27c88a6a6'
+	]);
+
+	$block->set('body', 'Opas antaa sinulle kaiken opinnoissa tarvitsemasi tiedon. Voit hakea tietoa joko vapaan haun tai valmiiksi koostettujen teemojen avulla.');
+	$block->save();
 }
