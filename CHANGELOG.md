@@ -1,18 +1,17 @@
 #Changelog
 
 
-## 1.x-dev
+## 1.0-beta0
+Release date: 06.02.2017
 
-* Configuration for top content from google analytics (HUB-93)
+* Added collapsing degree programme switcher when clicking header (HUB-100)
+* Added styling to news full view (HUB-102)
 * Added ability to login through university´s SSO service (HUB-34)
+* Improved link titles to use target node title when possible (HUB-95)
+* Improved styling for separating node edit actions from paragraphs (HUB-97)
 * Removed ability to register new Drupal account (HUB-34)
 * Removed ability to use "request new password" core feature (HUB-34)
 * Removed ability to edit own account (HUB-34)
-* Removed top content from google analytics (HUB-93)
-* If link has no title, use link target node title (HUB-95)
-* Collapse degree programme switcher when clicking header (HUB-100)
-* Added theming to news full view (HUB-102)
-* Add theming to visually separate node edit actions from paragraphs (HUB-97)
 
 
 ## 1.0-alpha1
