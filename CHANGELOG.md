@@ -14,6 +14,7 @@
 * Added theming to news full view (HUB-102)
 * Add theming to visually separate node edit actions from paragraphs (HUB-97)
 * Removed breadcrumb (HUB-103)
+* Remove degree programme from article full view (HUB-101)
 
 
 ## 1.0-alpha1
