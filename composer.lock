@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "33741d6157005557e757c3f8688e3f22",
-    "content-hash": "ccad8fa2f3eb858f3b226c89ad839ae2",
+    "hash": "74765860214b1d903bca4a79408628ea",
+    "content-hash": "9305f4e68238f9c59828f805054c794a",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1106,57 +1106,6 @@
             }
         },
         {
-            "name": "drupal/easy_breadcrumb",
-            "version": "1.5.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupal.org/project/easy_breadcrumb",
-                "reference": "8.x-1.5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/easy_breadcrumb-8.x-1.5.zip",
-                "reference": null,
-                "shasum": "b7f12392ea4d8325f6da080a79308cc424f614a1"
-            },
-            "require": {
-                "drupal/core": "~8.0"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
-                "drupal": {
-                    "version": "8.x-1.5",
-                    "datestamp": "1475705039"
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Greg Boggs",
-                    "homepage": "https://www.drupal.org/user/153069"
-                },
-                {
-                    "name": "rakesh.gectcr",
-                    "homepage": "https://www.drupal.org/user/1177822"
-                },
-                {
-                    "name": "sonemonu",
-                    "homepage": "https://www.drupal.org/user/1667988"
-                }
-            ],
-            "description": "Adds configuration to the system breadcrumbs.",
-            "homepage": "https://www.drupal.org/project/easy_breadcrumb",
-            "support": {
-                "source": "http://cgit.drupalcode.org/easy_breadcrumb"
-            }
-        },
-        {
             "name": "drupal/entity_reference_revisions",
             "version": "1.2.0",
             "source": {
@@ -2191,16 +2140,16 @@
         },
         {
             "name": "egulias/email-validator",
-            "version": "1.2.13",
+            "version": "1.2.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/egulias/EmailValidator.git",
-                "reference": "b8bb147f46cc9790326ce2440a13be06cc5a63bb"
+                "reference": "5642614492f0ca2064c01d60cc33284cc2f731a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/b8bb147f46cc9790326ce2440a13be06cc5a63bb",
-                "reference": "b8bb147f46cc9790326ce2440a13be06cc5a63bb",
+                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/5642614492f0ca2064c01d60cc33284cc2f731a9",
+                "reference": "5642614492f0ca2064c01d60cc33284cc2f731a9",
                 "shasum": ""
             },
             "require": {
@@ -2239,7 +2188,7 @@
                 "validation",
                 "validator"
             ],
-            "time": "2016-07-03 21:52:18"
+            "time": "2017-02-03 22:48:59"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -4757,16 +4706,16 @@
         },
         {
             "name": "consolidation/annotated-command",
-            "version": "2.3.3",
+            "version": "2.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/consolidation/annotated-command.git",
-                "reference": "c23ebfa81cb8c06dcea63afde98f444e818bceb2"
+                "reference": "80afffd362bd1cf83bef60db690a8c50d8390803"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/consolidation/annotated-command/zipball/c23ebfa81cb8c06dcea63afde98f444e818bceb2",
-                "reference": "c23ebfa81cb8c06dcea63afde98f444e818bceb2",
+                "url": "https://api.github.com/repos/consolidation/annotated-command/zipball/80afffd362bd1cf83bef60db690a8c50d8390803",
+                "reference": "80afffd362bd1cf83bef60db690a8c50d8390803",
                 "shasum": ""
             },
             "require": {
@@ -4805,7 +4754,7 @@
                 }
             ],
             "description": "Initialize Symfony Console commands from annotated command class methods.",
-            "time": "2017-01-30 22:46:53"
+            "time": "2017-02-04 06:13:54"
         },
         {
             "name": "consolidation/output-formatters",
@@ -5592,16 +5541,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v3.0.2",
+            "version": "v3.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "adf44419c0fc014a0f191db6f89d3e55d4211744"
+                "reference": "5b8182cc0abb4b0ff290ba9df6c0e1323286013a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/adf44419c0fc014a0f191db6f89d3e55d4211744",
-                "reference": "adf44419c0fc014a0f191db6f89d3e55d4211744",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/5b8182cc0abb4b0ff290ba9df6c0e1323286013a",
+                "reference": "5b8182cc0abb4b0ff290ba9df6c0e1323286013a",
                 "shasum": ""
             },
             "require": {
@@ -5639,7 +5588,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2016-12-06 11:30:35"
+            "time": "2017-02-03 21:57:31"
         },
         {
             "name": "pear/console_table",
@@ -6146,16 +6095,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.8.34",
+            "version": "4.8.35",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "7eb45205d27edd94bd2b3614085ea158bd1e2bca"
+                "reference": "791b1a67c25af50e230f841ee7a9c6eba507dc87"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/7eb45205d27edd94bd2b3614085ea158bd1e2bca",
-                "reference": "7eb45205d27edd94bd2b3614085ea158bd1e2bca",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/791b1a67c25af50e230f841ee7a9c6eba507dc87",
+                "reference": "791b1a67c25af50e230f841ee7a9c6eba507dc87",
                 "shasum": ""
             },
             "require": {
@@ -6214,7 +6163,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2017-01-26 16:15:36"
+            "time": "2017-02-06 05:18:07"
         },
         {
             "name": "phpunit/phpunit-mock-objects",

@@ -12,7 +12,6 @@ dependencies:
   - datetime
   - dblog
   - dynamic_page_cache
-  - easy_breadcrumb
   - field_ui
   - honeypot
   - image
