@@ -4,6 +4,7 @@ namespace Drupal\uhsg_news\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Cache\Cache;
+use Drupal\Core\Link;
 
 /**
  * Provides a 'news_per_degree_programme' block.
@@ -36,6 +37,23 @@ class NewsPerDegreeProgramme extends BlockBase {
       $group->condition('field_news_degree_programme', $tid);
     }
 
+    // get link to news view
+    $view = \Drupal\views\Views::getView('news');
+    $view->setDisplay('page_1');
+    $url = $view->getUrl();
+    $url->setOptions(array(
+      'attributes' => array(
+        'class' => array(
+          'box-subtitle__link',
+          'button--action',
+          'icon--arrow-right',
+          'theme-transparent',
+          'is-center-mobile'
+        ),
+      ),
+    ));
+    $link = Link::fromTextAndUrl(t('More current topics'), $url)->toString();
+
     $nids = $query->condition($group)->execute();
 
     if ($nids) {
@@ -45,13 +63,14 @@ class NewsPerDegreeProgramme extends BlockBase {
 
       return array(
         '#attributes' => [
-          'class' => ['grid-container'],
+          'class' => ['clearfix'],
         ],
         '#cache' => [
           'tags' => ['node_list'],
           'contexts' => ['active_degree_programme'],
         ],
         'content' => $render_output,
+        '#suffix' => $link
       );
     }
   }

@@ -32,13 +32,16 @@
     'block-' ~ plugin_id|clean_class,
   ]
 %}
-{{ title_prefix }}
-{% if label %}
-  <h2{{ title_attributes }}>{{ label }}</h2>
-{% endif %}
-{{ title_suffix }}
 <div{{ attributes.addClass(classes) }}>
-  {% block content %}
-    {{ content }}
-  {% endblock %}
+  {{ title_prefix }}
+  {% if label %}
+    <h2{{ title_attributes }}>{{ label }}</h2>
+  {% endif %}
+  {{ title_suffix }}
+  <div class="grid-container">
+    {% block content %}
+      {{ content|without('#suffix') }}
+    {% endblock %}
+  </div>
+  {{ content['#suffix'] }}
 </div>
