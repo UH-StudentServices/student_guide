@@ -63,7 +63,7 @@ class NewsPerDegreeProgramme extends BlockBase {
       $render_controller = \Drupal::entityTypeManager()->getViewBuilder('node');
       $render_output = $render_controller->viewMultiple($nodes, 'teaser');
 
-      return array(
+      return [
         '#attributes' => [
           'class' => ['clearfix', 'tube'],
         ],
@@ -73,7 +73,7 @@ class NewsPerDegreeProgramme extends BlockBase {
         ],
         'content' => $render_output,
         '#suffix' => $link
-      );
+      ];
     }
   }
 
