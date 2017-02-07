@@ -54,7 +54,7 @@ class NewsPerDegreeProgramme extends BlockBase {
         ],
       ],
     ]);
-    $link = Link::fromTextAndUrl(t('More current topics'), $url)->toString();
+    $link = Link::fromTextAndUrl($this->t('More current topics'), $url)->toString();
 
     $nids = $query->condition($group)->execute();
 
