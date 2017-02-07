@@ -336,7 +336,7 @@ function student_guide_create_front_page_text_block() {
   ]);
 
   $block->set('field_content_block_text', $text_fi);
-  $block->addTranslation('sv', ['field_content_block_textfield_content_block_text' => $text_sv]);
+  $block->addTranslation('sv', ['field_content_block_text' => $text_sv]);
   $block->addTranslation('en', ['field_content_block_text' => $text_en]);
   $block->save();
 }
