@@ -335,7 +335,7 @@ function student_guide_create_front_page_text_block() {
     'uuid' => $uuid
   ]);
 
-  $block->set('body', $text_fi);
+  $block->set('field_content_block_text', $text_fi);
   $block->addTranslation('sv', ['body' => $text_sv]);
   $block->addTranslation('en', ['body' => $text_en]);
   $block->save();

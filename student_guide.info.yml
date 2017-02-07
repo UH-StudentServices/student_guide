@@ -18,6 +18,7 @@ dependencies:
   - field_ui
   - honeypot
   - image
+  - language
   - menu_ui
   - menu_link_content
   - node
