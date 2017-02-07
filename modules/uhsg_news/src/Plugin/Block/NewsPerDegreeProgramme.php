@@ -41,17 +41,17 @@ class NewsPerDegreeProgramme extends BlockBase {
     $view = \Drupal\views\Views::getView('news');
     $view->setDisplay('page_1');
     $url = $view->getUrl();
-    $url->setOptions(array(
-      'attributes' => array(
-        'class' => array(
+    $url->setOptions([
+      'attributes' => [
+        'class' => [
           'box-subtitle__link',
           'button--action',
           'icon--arrow-right',
           'theme-transparent',
           'is-center-mobile'
-        ),
-      ),
-    ));
+        ],
+      ],
+    ]);
     $link = Link::fromTextAndUrl(t('More current topics'), $url)->toString();
 
     $nids = $query->condition($group)->execute();
@@ -63,7 +63,7 @@ class NewsPerDegreeProgramme extends BlockBase {
 
       return array(
         '#attributes' => [
-          'class' => ['clearfix'],
+          'class' => ['clearfix', 'tube'],
         ],
         '#cache' => [
           'tags' => ['node_list'],
