@@ -65,6 +65,7 @@ class SamlController extends OriginalSamlController {
     $url = $this->saml->getPostLoginDestination()->toString(TRUE);
     $response = new TrustedRedirectResponse($url->getGeneratedUrl());
     $response->addCacheableDependency($url);
+    $this->saml->removePostLoginLogoutDestination();
     return $response;
   }
 
@@ -77,6 +78,7 @@ class SamlController extends OriginalSamlController {
     $url = $this->saml->getPostLoginDestination()->toString(TRUE);
     $response = new TrustedRedirectResponse($url->getGeneratedUrl());
     $response->addCacheableDependency($url);
+    $this->saml->removePostLoginLogoutDestination();
     return $response;
   }
 
