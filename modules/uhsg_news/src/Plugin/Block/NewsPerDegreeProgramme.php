@@ -25,7 +25,8 @@ class NewsPerDegreeProgramme extends BlockBase {
       ->condition('status', 1)
       ->condition('langcode', $lang)
       ->condition('type', 'news')
-      ->sort('created', 'DESC');
+      ->sort('created', 'DESC')
+      ->range(0, 3);
     $group = $query->orConditionGroup()
       ->condition('field_news_degree_programme', NULL, 'IS NULL');
 
