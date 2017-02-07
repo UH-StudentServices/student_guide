@@ -8,6 +8,7 @@
 * Logo link to www.helsinki.fi (HUB-108)
 * Remove links from news degree programme field (HUB-108)
 * Fixed error when having an unknown degree programme in cookies
+* Added front page text (HUB-98)
 
 
 ## 1.0-beta0
