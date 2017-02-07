@@ -24,7 +24,8 @@ class NewsPerDegreeProgramme extends BlockBase {
     $query = \Drupal::entityQuery('node')
       ->condition('status', 1)
       ->condition('langcode', $lang)
-      ->condition('type', 'news');
+      ->condition('type', 'news')
+      ->sort('created', 'DESC');
     $group = $query->orConditionGroup()
       ->condition('field_news_degree_programme', NULL, 'IS NULL');
 
