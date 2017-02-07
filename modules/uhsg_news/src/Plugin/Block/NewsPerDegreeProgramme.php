@@ -5,6 +5,8 @@ namespace Drupal\uhsg_news\Plugin\Block;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Cache\Cache;
 use Drupal\Core\Link;
+use Drupal\node\Entity\Node;
+use Drupal\views\Views;
 
 /**
  * Provides a 'news_per_degree_programme' block.
@@ -38,7 +40,7 @@ class NewsPerDegreeProgramme extends BlockBase {
     }
 
     // get link to news view
-    $view = \Drupal\views\Views::getView('news');
+    $view = Views::getView('news');
     $view->setDisplay('page_1');
     $url = $view->getUrl();
     $url->setOptions([
@@ -57,7 +59,7 @@ class NewsPerDegreeProgramme extends BlockBase {
     $nids = $query->condition($group)->execute();
 
     if ($nids) {
-      $nodes = \Drupal\node\Entity\Node::loadMultiple($nids);
+      $nodes = Node::loadMultiple($nids);
       $render_controller = \Drupal::entityTypeManager()->getViewBuilder('node');
       $render_output = $render_controller->viewMultiple($nodes, 'teaser');
 
