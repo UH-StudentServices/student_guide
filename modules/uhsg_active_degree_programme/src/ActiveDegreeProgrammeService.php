@@ -63,14 +63,14 @@ class ActiveDegreeProgrammeService {
   public function set(Term $term) {
     $tid = $term->id();
     $cookie = ['degree_programme' => $tid];
-    user_cookie_save($cookie);
+    $this->saveCookie($cookie);
   }
 
   /**
    * Resets active degree programme.
    */
   public function reset() {
-    user_cookie_delete('degree_programme');
+    $this->deleteCookie();
   }
 
   /**
@@ -109,7 +109,7 @@ class ActiveDegreeProgrammeService {
     if ($query_param) {
       $term = Term::load($query_param);
       if (!is_null($term) && $this->access($term)) {
-        \Drupal::logger('uhsg_active_degree_programme')->debug('Resolved by parameter ' . $term->id());
+        $this->debug('Resolved by parameter ' . $term->id());
         $this->resolvedTerm = $term;
         return $this->resolvedTerm;
       }
@@ -124,7 +124,7 @@ class ActiveDegreeProgrammeService {
     if ($degree_programme_from_headers) {
       $term = Term::load($this->requestStack->getCurrentRequest()->headers->get('x-degree-programme'));
       if (!is_null($term) && $this->access($term)) {
-        \Drupal::logger('uhsg_active_degree_programme')->debug('Resolved by header ' . $term->id());
+        $this->debug('Resolved by header ' . $term->id());
         $this->resolvedTerm = $term;
         return $this->resolvedTerm;
       }
@@ -139,7 +139,7 @@ class ActiveDegreeProgrammeService {
     if ($degree_programme_from_cookies) {
       $term = Term::load($degree_programme_from_cookies);
       if (!is_null($term) && $this->access($term)) {
-        \Drupal::logger('uhsg_active_degree_programme')->debug('Resolved by cookie ' . $term->id());
+        $this->debug('Resolved by cookie ' . $term->id());
         $this->resolvedTerm = $term;
         return $this->resolvedTerm;
       }
@@ -162,5 +162,17 @@ class ActiveDegreeProgrammeService {
   protected function access(Term $term) {
     $handler = new TermAccessControlHandler($term->getEntityType());
     return $handler->access($term, 'view', $this->user);
+  }
+
+  protected function deleteCookie() {
+    user_cookie_delete('degree_programme');
+  }
+
+  protected function saveCookie($cookie) {
+    user_cookie_save($cookie);
+  }
+
+  protected function debug($message) {
+    \Drupal::logger('uhsg_active_degree_programme')->debug($message);
   }
 }
