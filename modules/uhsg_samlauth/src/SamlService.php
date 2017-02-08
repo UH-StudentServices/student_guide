@@ -5,7 +5,7 @@ namespace Drupal\uhsg_samlauth;
 use Drupal\Core\Path\PathValidator;
 use Drupal\Core\Url;
 use Drupal\samlauth\SamlService as OriginalSamlService;
-use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Session\Session;
 
 class SamlService extends OriginalSamlService {
@@ -13,9 +13,9 @@ class SamlService extends OriginalSamlService {
   const SESS_VALUE_KEY = 'postLoginLogoutDestination';
 
   /**
-   * @var Request
+   * @var RequestStack
    */
-  protected $request;
+  protected $requestStack;
 
   /**
    * @var PathValidator
@@ -23,10 +23,10 @@ class SamlService extends OriginalSamlService {
   protected $pathValidator;
 
   /**
-   * @param Request $request
+   * @param RequestStack $requestStack
    */
-  public function setRequest(Request $request) {
-    $this->request = $request;
+  public function setRequestStack(RequestStack $requestStack) {
+    $this->requestStack = $requestStack;
   }
 
   /**
@@ -42,12 +42,12 @@ class SamlService extends OriginalSamlService {
   public function setPostLoginLogoutDestination() {
 
     // Get session. Create the session if it does not exist.
-    if (!$this->request->hasSession()) {
-      $this->request->setSession(new Session());
+    if (!$this->requestStack->getCurrentRequest()->hasSession()) {
+      $this->requestStack->getCurrentRequest()->setSession(new Session());
     }
 
     // Get the URL from the referer if it is valid or else use front page.
-    $referer = $this->request->server->get('HTTP_REFERER');
+    $referer = $this->requestStack->getCurrentRequest()->server->get('HTTP_REFERER');
     $url = new Url('<front>');
     if ($referer) {
       if ($valid_url = $this->pathValidator->getUrlIfValid($referer)) {
@@ -56,7 +56,7 @@ class SamlService extends OriginalSamlService {
     }
 
     // Store the serialized URL into session.
-    $session = $this->request->getSession();
+    $session = $this->requestStack->getCurrentRequest()->getSession();
     $session->set(self::SESS_VALUE_KEY, serialize($url));
     $session->save();
   }
@@ -67,8 +67,8 @@ class SamlService extends OriginalSamlService {
    * @return Url|null
    */
   public function getPostLoginLogoutDestination() {
-    if ($this->request->hasSession() && !empty($this->request->getSession()->get(self::SESS_VALUE_KEY))) {
-      return unserialize($this->request->getSession()->get(self::SESS_VALUE_KEY));
+    if ($this->requestStack->getCurrentRequest()->hasSession() && !empty($this->requestStack->getCurrentRequest()->getSession()->get(self::SESS_VALUE_KEY))) {
+      return unserialize($this->requestStack->getCurrentRequest()->getSession()->get(self::SESS_VALUE_KEY));
     }
     return NULL;
   }
@@ -78,10 +78,10 @@ class SamlService extends OriginalSamlService {
    * done if request has no session.
    */
   public function removePostLoginLogoutDestination() {
-    if ($this->request->hasSession()) {
-      foreach ($this->request->getSession()->all() as $key => $value) {
+    if ($this->requestStack->getCurrentRequest()->hasSession()) {
+      foreach ($this->requestStack->getCurrentRequest()->getSession()->all() as $key => $value) {
         if ($key == self::SESS_VALUE_KEY) {
-          $this->request->getSession()->remove(self::SESS_VALUE_KEY);
+          $this->requestStack->getCurrentRequest()->getSession()->remove(self::SESS_VALUE_KEY);
           break;
         }
       }

@@ -6,15 +6,16 @@ use Drupal\Core\Path\PathValidator;
 use Drupal\Core\Routing\TrustedRedirectResponse;
 use Drupal\samlauth\Controller\SamlController as OriginalSamlController;
 use Drupal\uhsg_samlauth\SamlService;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
-use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RequestStack;
 
 class SamlController extends OriginalSamlController {
 
   /**
-   * @var Request
+   * @var RequestStack
    */
-  protected $request;
+  protected $requestStack;
 
   /**
    * @var PathValidator
@@ -24,14 +25,22 @@ class SamlController extends OriginalSamlController {
   /**
    * {@inheritdoc}
    */
-  public function __construct(SamlService $saml) {
+  public function __construct(SamlService $saml, RequestStack $requestStack, PathValidator $pathValidator) {
     $this->saml = $saml;
     parent::__construct($saml);
+    $this->saml->setRequestStack($requestStack);
+    $this->saml->setPathValidator($pathValidator);
+  }
 
-    // TODO: Why I can't inject these from constructor? Is it because
-    // constructor signature differs from the original constructor?
-    $this->saml->setRequest(\Drupal::request());
-    $this->saml->setPathValidator(\Drupal::pathValidator());
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('samlauth.saml'),
+      $container->get('request_stack'),
+      $container->get('path.validator')
+    );
   }
 
   /**
