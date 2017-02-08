@@ -17,11 +17,6 @@ class SamlService extends OriginalSamlService {
   const SESS_VALUE_KEY = 'postLoginLogoutDestination';
 
   /**
-   * @var Session
-   */
-  protected $session;
-
-  /**
    * @var RequestStack
    */
   protected $requestStack;
@@ -42,25 +37,15 @@ class SamlService extends OriginalSamlService {
    *   The EntityTypeManager service.
    * @param \Psr\Log\LoggerInterface $logger
    *   A logger instance.
-   * @param \Symfony\Component\HttpFoundation\Session\Session
-   *   Session.
    * @param \Symfony\Component\HttpFoundation\RequestStack
    *   Reuqest stack.
    * @param \Drupal\Core\Path\PathValidator
    *   Path validator.
    */
-  public function __construct(ExternalAuth $external_auth, ConfigFactoryInterface $config_factory, EntityTypeManagerInterface $entity_type_manager, LoggerInterface $logger, Session $session, RequestStack $requestStack, PathValidator $pathValidator) {
+  public function __construct(ExternalAuth $external_auth, ConfigFactoryInterface $config_factory, EntityTypeManagerInterface $entity_type_manager, LoggerInterface $logger, RequestStack $requestStack, PathValidator $pathValidator) {
     parent::__construct($external_auth, $config_factory, $entity_type_manager, $logger);
-    $this->setSession($session);
     $this->setRequestStack($requestStack);
     $this->setPathValidator($pathValidator);
-  }
-
-  /**
-   * @param Session $session
-   */
-  public function setSession(Session $session) {
-    $this->session = $session;
   }
 
   /**
@@ -82,6 +67,11 @@ class SamlService extends OriginalSamlService {
    */
   public function setPostLoginLogoutDestination() {
 
+    // Get session. Create the session if it does not exist.
+    if (!$this->requestStack->getCurrentRequest()->hasSession()) {
+      $this->requestStack->getCurrentRequest()->setSession(new Session());
+    }
+
     // Get the URL from the referer if it is valid or else use front page.
     $referer = $this->requestStack->getCurrentRequest()->server->get('HTTP_REFERER');
     $url = new Url('<front>');
@@ -91,11 +81,10 @@ class SamlService extends OriginalSamlService {
       }
     }
 
-    // Store the serialized URL into session
-    if (!$this->session->isStarted()) {
-      $this->session->start();
-    }
-    $this->session->getFlashBag()->set(self::SESS_VALUE_KEY, [serialize($url)]);
+    // Store the serialized URL into session.
+    $session = $this->requestStack->getCurrentRequest()->getSession();
+    $session->set(self::SESS_VALUE_KEY, serialize($url));
+    $session->save();
   }
 
   /**
@@ -104,10 +93,25 @@ class SamlService extends OriginalSamlService {
    * @return Url|null
    */
   public function getPostLoginLogoutDestination() {
-    if ($urls = $this->session->getFlashBag()->get(self::SESS_VALUE_KEY)) {
-      return unserialize($urls[0]);
+    if ($this->requestStack->getCurrentRequest()->hasSession() && !empty($this->requestStack->getCurrentRequest()->getSession()->get(self::SESS_VALUE_KEY))) {
+      return unserialize($this->requestStack->getCurrentRequest()->getSession()->get(self::SESS_VALUE_KEY));
     }
     return NULL;
+  }
+
+  /**
+   * Removes post login/logout destination from existing session. Nothing is
+   * done if request has no session.
+   */
+  public function removePostLoginLogoutDestination() {
+    if ($this->requestStack->getCurrentRequest()->hasSession()) {
+      foreach ($this->requestStack->getCurrentRequest()->getSession()->all() as $key => $value) {
+        if ($key == self::SESS_VALUE_KEY) {
+          $this->requestStack->getCurrentRequest()->getSession()->remove(self::SESS_VALUE_KEY);
+          break;
+        }
+      }
+    }
   }
 
   /**
