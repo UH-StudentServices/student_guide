@@ -41,12 +41,12 @@ class SamlService extends OriginalSamlService {
    */
   public function setPostLoginLogoutDestination() {
 
-    // Get session and create one if not exit
+    // Get session. Create the session if it does not exist.
     if (!$this->request->hasSession()) {
       $this->request->setSession(new Session());
     }
 
-    // Primarly get url from referrer if it is valid or else use front page.
+    // Get the URL from the referer if it is valid or else use front page.
     $referer = $this->request->server->get('HTTP_REFERER');
     $url = new Url('<front>');
     if ($referer) {
@@ -55,7 +55,7 @@ class SamlService extends OriginalSamlService {
       }
     }
 
-    // Store serialized URL into session
+    // Store the serialized URL into session.
     $session = $this->request->getSession();
     $session->set(self::SESS_VALUE_KEY, serialize($url));
     $session->save();
