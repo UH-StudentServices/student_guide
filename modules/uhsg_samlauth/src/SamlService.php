@@ -128,4 +128,30 @@ class SamlService extends OriginalSamlService {
     return $this->getPostLoginLogoutDestination();
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function logout($return_to = null) {
+    if (!$return_to) {
+      $sp_config = $this->samlAuth->getSettings()->getSPData();
+      $return_to = $sp_config['singleLogoutService']['url'];
+    }
+    user_logout();
+    $return_to = $this->appendPostLogoutDestination($return_to);
+    $this->samlAuth->logout($return_to, array('referrer' => $return_to));
+  }
+
+  /**
+   * Adds an return URL into given URL address query.
+   * @param $return_to
+   * @return string
+   */
+  protected function appendPostLogoutDestination($return_to) {
+    $url = Url::fromUri($return_to);
+    $query = $url->getOption('query');
+    $query['return'] = $this->getPostLogoutDestination()->setAbsolute(TRUE)->toString(TRUE)->getGeneratedUrl();
+    $url->setOption('query', $query);
+    return $url->toString(TRUE)->getGeneratedUrl();
+  }
+
 }
