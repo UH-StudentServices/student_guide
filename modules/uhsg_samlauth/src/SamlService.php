@@ -148,9 +148,12 @@ class SamlService extends OriginalSamlService {
    */
   protected function appendPostLogoutDestination($return_to) {
     $url = Url::fromUri($return_to);
-    $query = $url->getOption('query');
-    $query['return'] = $this->getPostLogoutDestination()->setAbsolute(TRUE)->toString(TRUE)->getGeneratedUrl();
-    $url->setOption('query', $query);
+    $return_url = $this->getPostLogoutDestination();
+    if ($return_url) {
+      $query = $url->getOption('query') ?: [];
+      $query['return'] = $return_url->setAbsolute(TRUE)->toString(TRUE)->getGeneratedUrl();
+      $url->setOption('query', $query);
+    }
     return $url->toString(TRUE)->getGeneratedUrl();
   }
 
