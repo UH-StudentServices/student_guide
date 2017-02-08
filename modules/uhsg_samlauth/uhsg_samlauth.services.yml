@@ -1,0 +1,5 @@
+services:
+  uhsg_samlauth.route_subscriber:
+    class: Drupal\uhsg_samlauth\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }
