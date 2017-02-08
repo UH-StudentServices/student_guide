@@ -2,9 +2,13 @@
 
 namespace Drupal\uhsg_samlauth;
 
+use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Path\PathValidator;
 use Drupal\Core\Url;
+use Drupal\externalauth\ExternalAuth;
 use Drupal\samlauth\SamlService as OriginalSamlService;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Session\Session;
 
@@ -21,6 +25,28 @@ class SamlService extends OriginalSamlService {
    * @var PathValidator
    */
   protected $pathValidator;
+
+  /**
+   * Constructor for Drupal\uhsg_samlauth\SamlService.
+   *
+   * @param \Drupal\externalauth\ExternalAuth $external_auth
+   *   The ExternalAuth service.
+   * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
+   *   The config factory.
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
+   *   The EntityTypeManager service.
+   * @param \Psr\Log\LoggerInterface $logger
+   *   A logger instance.
+   * @param \Symfony\Component\HttpFoundation\RequestStack
+   *   Reuqest stack.
+   * @param \Drupal\Core\Path\PathValidator
+   *   Path validator.
+   */
+  public function __construct(ExternalAuth $external_auth, ConfigFactoryInterface $config_factory, EntityTypeManagerInterface $entity_type_manager, LoggerInterface $logger, RequestStack $requestStack, PathValidator $pathValidator) {
+    parent::__construct($external_auth, $config_factory, $entity_type_manager, $logger);
+    $this->setRequestStack($requestStack);
+    $this->setPathValidator($pathValidator);
+  }
 
   /**
    * @param RequestStack $requestStack
