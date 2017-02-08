@@ -47,3 +47,6 @@ msgstr ""
 
 msgid "My Searches"
 msgstr "Mina sökningar"
+
+msgid "More current topics"
+msgstr "Fler aktuella ämnen"

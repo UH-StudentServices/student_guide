@@ -14,9 +14,11 @@
 @import "styleguide/common-elements/**/*";
 @import "styleguide/objects/**/*";
 @import "styleguide/layouts/**/*";
+@import "styleguide/_states.scss";
 
 /* STYLEGUIDE COMPONENTS */
 @import "styleguide/components/box/_box-story.scss";
+@import "styleguide/components/box/_box-subtitle.scss";
 @import "styleguide/components/_index.scss";
 @import "styleguide/components/_list-of-links.scss";
 @import "styleguide/components/_links.scss";
