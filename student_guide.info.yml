@@ -36,6 +36,7 @@ dependencies:
   - uhsg_feedback
   - uhsg_news
   - uhsg_service_provider_details
+  - uhsg_samlauth
   - uhsg_some_links
   - uhsg_themes
   - views

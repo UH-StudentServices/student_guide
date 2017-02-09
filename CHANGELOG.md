@@ -8,6 +8,8 @@
 * Logo link to www.helsinki.fi (HUB-108)
 * Remove links from news degree programme field (HUB-108)
 * Fixed error when having an unknown degree programme in cookies
+* Return the user to the location where the login was done (HUB-96)
+* Added various fixes to current topics block
 * Added front page text (HUB-98)
 
 
