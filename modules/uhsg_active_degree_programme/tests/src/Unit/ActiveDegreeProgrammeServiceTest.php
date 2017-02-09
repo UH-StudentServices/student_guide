@@ -52,7 +52,7 @@ class ActiveDegreeProgrammeServiceTest extends PHPUnit_Framework_TestCase {
   private $entityType;
 
   /** @var HeaderBag */
-  private $headerBag;
+  private $headers;
 
   /** @var LanguageInterface */
   private $language;
@@ -100,11 +100,11 @@ class ActiveDegreeProgrammeServiceTest extends PHPUnit_Framework_TestCase {
     $this->entityManager->getEntityTypeFromClass(Argument::any())->willReturn();
 
     $this->cookies = $this->prophesize(ParameterBag::class);
-    $this->headerBag = $this->prophesize(HeaderBag::class);
+    $this->headers = $this->prophesize(HeaderBag::class);
 
     $this->request = $this->prophesize(Request::class);
     $this->request->cookies = $this->cookies;
-    $this->request->headers = $this->headerBag;
+    $this->request->headers = $this->headers;
 
     $this->requestStack = $this->prophesize(RequestStack::class);
     $this->requestStack->getCurrentRequest()->willReturn($this->request->reveal());
@@ -129,6 +129,16 @@ class ActiveDegreeProgrammeServiceTest extends PHPUnit_Framework_TestCase {
    */
   public function getIdShouldGetActiveDegreeProgrammeIdFromQueryParameter() {
     $this->request->get('degree_programme')->willReturn(self::ACTIVE_DEGREE_PROGRAMME_ID);
+
+    $this->assertEquals(self::ACTIVE_DEGREE_PROGRAMME_ID, $this->activeDegreeProgrammeService->getId());
+  }
+
+  /**
+   * @test
+   */
+  public function getIdShouldGetActiveDegreeProgrammeIdFromRequestHeader() {
+    $this->request->get('degree_programme')->willReturn(NULL);
+    $this->headers->get('x-degree-programme')->willReturn(self::ACTIVE_DEGREE_PROGRAMME_ID);
 
     $this->assertEquals(self::ACTIVE_DEGREE_PROGRAMME_ID, $this->activeDegreeProgrammeService->getId());
   }
