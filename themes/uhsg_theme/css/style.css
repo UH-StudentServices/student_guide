@@ -7539,6 +7539,7 @@ html {
 
 .degree-programme-switcher .degree-programme-switcher__container {
   border: 1px solid #EBEBEB;
+  border-top: 0;
   display: none;
   padding: 1em;
   -webkit-flex: 1 0 100%;
@@ -7553,9 +7554,25 @@ html {
 }
 
 .degree-programme-switcher .degree-programme-switcher__container ul {
+  overflow-y: scroll;
+  scrollbar-face-color: #0098d0;
+  scrollbar-track-color: #EBEBEB;
+  margin-bottom: 0;
   max-height: 20em;
   max-height: 50vh;
-  overflow: scroll;
+}
+
+.degree-programme-switcher .degree-programme-switcher__container ul::-webkit-scrollbar {
+  width: 0.5em;
+  height: 0.5em;
+}
+
+.degree-programme-switcher .degree-programme-switcher__container ul::-webkit-scrollbar-thumb {
+  background: #0098d0;
+}
+
+.degree-programme-switcher .degree-programme-switcher__container ul::-webkit-scrollbar-track {
+  background: #EBEBEB;
 }
 
 .degree-programme-switcher .degree-programme-switcher__container ul li {
@@ -7597,7 +7614,7 @@ html {
 .degree-programme-switcher .degree-programme-switcher__search input[type="submit"] + i {
   width: 35px;
   right: 35px;
-  line-height: 35px;
+  line-height: 30px;
   color: #FFF;
   background: #0098d0;
   position: relative;
@@ -7605,6 +7622,12 @@ html {
   -webkit-flex-shrink: 0;
       -ms-flex-negative: 0;
           flex-shrink: 0;
+}
+
+@media (min-width: 48em) {
+  .degree-programme-switcher .degree-programme-switcher__search input[type="submit"] + i {
+    line-height: 35px;
+  }
 }
 
 .feedback-form {
