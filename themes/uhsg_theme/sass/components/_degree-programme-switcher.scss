@@ -33,6 +33,7 @@
   }
   .degree-programme-switcher__container {
     @include border;
+    border-top: 0;
     display: none;
     padding: 1em;
     flex: 1 0 100%;
@@ -43,9 +44,10 @@
     z-index: 20;
     background: $white;
     ul {
+      @include scrollbar;
+      margin-bottom: 0;
       max-height: 20em;
       max-height: 50vh;
-      overflow: scroll;
       li {
         padding: 0.3em 0;
       }
@@ -73,12 +75,15 @@
       & + i {
         width: 35px;
         right: 35px;
-        line-height: 35px;
+        line-height: 30px;
         color: $white;
         background: $blue;
         position: relative;
         text-align: center;
         flex-shrink: 0;
+        @include breakpoint($small) {
+          line-height: 35px;
+        }
       }
     }
   }
