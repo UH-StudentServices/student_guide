@@ -11,6 +11,7 @@
 * Return the user to the location where the login was done (HUB-96)
 * Added various fixes to current topics block
 * Added scrollbar (chrome + safari) to degree programme switcher (HUB-104)
+* Added favicon and mobile touch icons (HUB-112)
 
 
 ## 1.0-beta0
