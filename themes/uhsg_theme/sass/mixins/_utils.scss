@@ -6,3 +6,24 @@
   word-wrap: break-word;
   -ms-word-break: break-word;
 }
+
+@mixin scrollbar() {
+  overflow-y: scroll;
+  // For Google Chrome
+  &::-webkit-scrollbar {
+    width:  0.5em;
+    height: 0.5em;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $blue;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $lightsilver;
+  }
+
+  // For Internet Explorer
+  scrollbar-face-color: $blue;
+  scrollbar-track-color: $lightsilver;
+}
