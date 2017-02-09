@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\Core\Entity;
+
 /**
  * @file
  * Install, update and uninstall functions for the student guide installation
@@ -30,5 +32,24 @@ function student_guide_update_8001(&$sandbox) {
 
   foreach ($path_aliases as $langcode => $path_alias) {
     \Drupal::service('path.alias_storage')->save($system_path, $path_alias, $langcode);
+  }
+}
+
+/**
+ * Move english login/logout links to main menu.
+ * Delete other login/logout links.
+ */
+function student_guide_update_8002(&$sandbox) {
+  $links = \Drupal::entityTypeManager()->getStorage('menu_link_content')->loadMultiple();
+  $titles_to_delete = ['Kirjaudu sisään', 'Kirjaudu ulos', 'Logga in', 'Logga ut'];
+  $titles_to_move = ['Login', 'Logout'];
+  foreach ($links as $link) {
+    if (in_array($link->getTitle(), $titles_to_delete)) {
+      $link->delete();
+    }
+    if (in_array($link->getTitle(), $titles_to_move)) {
+      $link->set('menu_name', 'main');
+      $link->save();
+    }
   }
 }
