@@ -1,0 +1,5 @@
+.menu-item__align-right {
+	@include breakpoint($small) {
+		margin-left: auto;		
+	}
+}

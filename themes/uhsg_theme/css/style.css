@@ -7843,6 +7843,12 @@ button.button--reset + i {
   }
 }
 
+@media (min-width: 48em) {
+  .menu-item__align-right {
+    margin-left: auto;
+  }
+}
+
 .paragraph:nth-child(odd) {
   background: #FAFAFA;
 }

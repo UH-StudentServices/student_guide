@@ -70,6 +70,11 @@ function uhsg_theme_preprocess_menu(&$variables) {
       $menu_classes = 'menu';
       $variables['home_link']['link'] = \Drupal::config('uhsg_service_provider_details.settings')->get('home_path');
       $variables['home_link']['classes'] = $link_classes . ' main-menu__front';
+      foreach ($variables['items'] as $item) {
+        if (in_array($item['url']->toString(), ['/saml/login', '/saml/logout'])) {
+          $item['attributes']->addClass('menu-item__align-right');
+        }
+      }
       break;
   }
 
