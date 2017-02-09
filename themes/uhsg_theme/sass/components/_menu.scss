@@ -1,5 +1,8 @@
 .menu-item__align-right {
 	@include breakpoint($small) {
-		margin-left: auto;		
+		margin-left: auto;
+		&:last-child {
+			margin-left: initial;
+		}
 	}
 }
