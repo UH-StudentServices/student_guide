@@ -22,6 +22,11 @@ class SamlService extends OriginalSamlService {
   protected $requestStack;
 
   /**
+   * @var Session
+   */
+  protected $session;
+
+  /**
    * @var PathValidator
    */
   protected $pathValidator;
@@ -39,12 +44,15 @@ class SamlService extends OriginalSamlService {
    *   A logger instance.
    * @param \Symfony\Component\HttpFoundation\RequestStack
    *   Reuqest stack.
+   * @param \Symfony\Component\HttpFoundation\Session\Session
+   *   Session.
    * @param \Drupal\Core\Path\PathValidator
    *   Path validator.
    */
-  public function __construct(ExternalAuth $external_auth, ConfigFactoryInterface $config_factory, EntityTypeManagerInterface $entity_type_manager, LoggerInterface $logger, RequestStack $requestStack, PathValidator $pathValidator) {
+  public function __construct(ExternalAuth $external_auth, ConfigFactoryInterface $config_factory, EntityTypeManagerInterface $entity_type_manager, LoggerInterface $logger, RequestStack $requestStack, Session $session, PathValidator $pathValidator) {
     parent::__construct($external_auth, $config_factory, $entity_type_manager, $logger);
     $this->setRequestStack($requestStack);
+    $this->setSession($session);
     $this->setPathValidator($pathValidator);
   }
 
@@ -53,6 +61,13 @@ class SamlService extends OriginalSamlService {
    */
   public function setRequestStack(RequestStack $requestStack) {
     $this->requestStack = $requestStack;
+  }
+
+  /**
+   * @param Session $session
+   */
+  public function setSession(Session $session) {
+    $this->session = $session;
   }
 
   /**
@@ -67,9 +82,9 @@ class SamlService extends OriginalSamlService {
    */
   public function setPostLoginLogoutDestination() {
 
-    // Get session. Create the session if it does not exist.
-    if (!$this->requestStack->getCurrentRequest()->hasSession()) {
-      $this->requestStack->getCurrentRequest()->setSession(new Session());
+    // Ensure that session is started
+    if (!$this->session->isStarted()) {
+      $this->session->start();
     }
 
     // Get the URL from the referer if it is valid or else use front page.
@@ -82,9 +97,8 @@ class SamlService extends OriginalSamlService {
     }
 
     // Store the serialized URL into session.
-    $session = $this->requestStack->getCurrentRequest()->getSession();
-    $session->set(self::SESS_VALUE_KEY, serialize($url));
-    $session->save();
+    $this->session->set(self::SESS_VALUE_KEY, serialize($url));
+    $this->session->save();
   }
 
   /**
@@ -93,8 +107,8 @@ class SamlService extends OriginalSamlService {
    * @return Url|null
    */
   public function getPostLoginLogoutDestination() {
-    if ($this->requestStack->getCurrentRequest()->hasSession() && !empty($this->requestStack->getCurrentRequest()->getSession()->get(self::SESS_VALUE_KEY))) {
-      return unserialize($this->requestStack->getCurrentRequest()->getSession()->get(self::SESS_VALUE_KEY));
+    if ($this->session->isStarted() && !empty($this->session->get(self::SESS_VALUE_KEY))) {
+      return unserialize($this->session->get(self::SESS_VALUE_KEY));
     }
     return NULL;
   }
@@ -104,10 +118,10 @@ class SamlService extends OriginalSamlService {
    * done if request has no session.
    */
   public function removePostLoginLogoutDestination() {
-    if ($this->requestStack->getCurrentRequest()->hasSession()) {
-      foreach ($this->requestStack->getCurrentRequest()->getSession()->all() as $key => $value) {
+    if ($this->session->isStarted()) {
+      foreach ($this->session->all() as $key => $value) {
         if ($key == self::SESS_VALUE_KEY) {
-          $this->requestStack->getCurrentRequest()->getSession()->remove(self::SESS_VALUE_KEY);
+          $this->session->remove(self::SESS_VALUE_KEY);
           break;
         }
       }
@@ -148,9 +162,12 @@ class SamlService extends OriginalSamlService {
    */
   protected function appendPostLogoutDestination($return_to) {
     $url = Url::fromUri($return_to);
-    $query = $url->getOption('query');
-    $query['return'] = $this->getPostLogoutDestination()->setAbsolute(TRUE)->toString(TRUE)->getGeneratedUrl();
-    $url->setOption('query', $query);
+    $return_url = $this->getPostLogoutDestination();
+    if ($return_url) {
+      $query = $url->getOption('query') ?: [];
+      $query['return'] = $return_url->setAbsolute(TRUE)->toString(TRUE)->getGeneratedUrl();
+      $url->setOption('query', $query);
+    }
     return $url->toString(TRUE)->getGeneratedUrl();
   }
 

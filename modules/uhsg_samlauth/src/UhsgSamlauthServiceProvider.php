@@ -17,6 +17,7 @@ class UhsgSamlauthServiceProvider extends ServiceProviderBase {
     $definition = $container->getDefinition('samlauth.saml');
     $definition->setClass('Drupal\uhsg_samlauth\SamlService');
     $definition->addArgument(new Reference('request_stack'));
+    $definition->addArgument(new Reference('session'));
     $definition->addArgument(new Reference('path.validator'));
   }
 }
