@@ -39,16 +39,41 @@ function student_guide_update_8001(&$sandbox) {
  * Move english login/logout links to main menu.
  * Delete other login/logout links.
  */
-function student_guide_update_8002(&$sandbox) {
+function student_guide_update_8003(&$sandbox) {
   $links = \Drupal::entityTypeManager()->getStorage('menu_link_content')->loadMultiple();
-  $titles_to_delete = ['Kirjaudu sisään', 'Kirjaudu ulos', 'Logga in', 'Logga ut'];
-  $titles_to_move = ['Login', 'Logout'];
+
+  $titles = [
+    'en' => [
+      'login' => 'Login',
+      'logout' => 'Logout',
+    ],
+    'fi' => [
+      'login' => 'Kirjaudu sisään',
+      'logout' => 'Kirjaudu ulos',
+    ],
+    'sv' => [
+      'login' => 'Logga in',
+      'logout' => 'Logga ut',
+    ],
+  ];
+
+  $titles_to_delete = array_merge($titles['fi'], $titles['sv']);
+  $titles_to_move = $titles['en'];
+
   foreach ($links as $link) {
     if (in_array($link->getTitle(), $titles_to_delete)) {
       $link->delete();
     }
     if (in_array($link->getTitle(), $titles_to_move)) {
       $link->set('menu_name', 'main');
+      if ($link->getTitle() == 'Login') {
+        $link->addTranslation('sv', ['title' => $titles['sv']['login']]);
+        $link->addTranslation('fi', ['title' => $titles['fi']['login']]);
+      }
+      else {
+        $link->addTranslation('sv', ['title' => $titles['sv']['logout']]);
+        $link->addTranslation('fi', ['title' => $titles['fi']['logout']]);
+      }
       $link->save();
     }
   }
