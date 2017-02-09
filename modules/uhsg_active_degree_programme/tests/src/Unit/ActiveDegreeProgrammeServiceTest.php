@@ -142,6 +142,17 @@ class ActiveDegreeProgrammeServiceTest extends PHPUnit_Framework_TestCase {
 
     $this->assertEquals(self::ACTIVE_DEGREE_PROGRAMME_ID, $this->activeDegreeProgrammeService->getId());
   }
+
+  /**
+   * @test
+   */
+  public function getIdShouldGetActiveDegreeProgrammeIdFromCookie() {
+    $this->request->get('degree_programme')->willReturn(NULL);
+    $this->headers->get('x-degree-programme')->willReturn(NULL);
+    $this->cookies->get('Drupal_visitor_degree_programme')->willReturn(self::ACTIVE_DEGREE_PROGRAMME_ID);
+
+    $this->assertEquals(self::ACTIVE_DEGREE_PROGRAMME_ID, $this->activeDegreeProgrammeService->getId());
+  }
 }
 
 /**
