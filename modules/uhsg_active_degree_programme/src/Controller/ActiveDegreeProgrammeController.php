@@ -28,7 +28,7 @@ class ActiveDegreeProgrammeController extends ControllerBase {
   }
 
   public function setActiveDegreeProgramme($tid) {
-    $term = Term::load($tid);
+    $term = $this->loadTerm($tid);
     if ($term) {
       $this->activeDegreeProgrammeService->set($term);
     }
@@ -36,5 +36,13 @@ class ActiveDegreeProgrammeController extends ControllerBase {
     $url->setOptions(['query' => ['degree_programme' => $tid]]);
     $status = 302;
     return new RedirectResponse($url->toString(), $status);
+  }
+
+  /**
+   * @param int $tid
+   * @return Term
+   */
+  protected function loadTerm($tid) {
+    return Term::load($tid);
   }
 }
