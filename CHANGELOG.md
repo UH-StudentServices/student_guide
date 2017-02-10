@@ -16,6 +16,7 @@
 * Added front page text (HUB-98):
   Run after the deployment: drush php-eval "student_guide_create_front_page_text_block();
 * Allow .tex files to be uploead to file field (HUB-118)
+* Group degree programmes by type (HUB-119)
 
 
 ## 1.0-beta0
