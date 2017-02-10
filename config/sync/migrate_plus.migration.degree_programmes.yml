@@ -22,6 +22,7 @@ source:
       name: Name
 process:
   name: name
+  field_degree_programme_type: type
   langcode:
     plugin: default_value
     default_value: en

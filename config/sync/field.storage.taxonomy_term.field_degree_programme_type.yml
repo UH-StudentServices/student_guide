@@ -12,10 +12,10 @@ type: list_string
 settings:
   allowed_values:
     -
-      value: bachelors_programmes
+      value: bachelor
       label: Kandiohjelmat
     -
-      value: masters_programmes
+      value: master
       label: Maisteriohjelmat
   allowed_values_function: ''
 module: options
