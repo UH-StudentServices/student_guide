@@ -18,6 +18,7 @@
 * Allow .tex files to be uploead to file field (HUB-118)
 * Movie login/logout to main menu (HUB-109):
 	Do after the deployment: translate login/logout links manually: Logga in/Logga ut, Kirjaudu sisään/Kirjaudu ulos
+* Fixed bug with html entities in teaser body (HUB-120)
 
 ## 1.0-beta0
 Release date: 06.02.2017
