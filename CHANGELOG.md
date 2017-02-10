@@ -15,7 +15,8 @@
 * Fixed overlapping news teasers in IE (HUB-114)
 * Added front page text (HUB-98):
   Run after the deployment: drush php-eval "student_guide_create_front_page_text_block();
-* Movie login/logout to main menu (HUB-109)
+* Movie login/logout to main menu (HUB-109):
+	Run after the deployment: translate login/logout links manually: Logga in/Logga ut, Kirjaudu sisään/Kirjaudu ulos
 
 ## 1.0-beta0
 Release date: 06.02.2017
