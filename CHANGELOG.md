@@ -11,8 +11,14 @@
 * Return the user to the location where the login was done (HUB-96)
 * Added various fixes to current topics block
 * Added scrollbar (chrome + safari) to degree programme switcher (HUB-104)
+* Added favicon and mobile touch icons (HUB-112)
+* Fixed overlapping news teasers in IE (HUB-114)
+* Added front page text (HUB-98):
+  Run after the deployment: drush php-eval "student_guide_create_front_page_text_block();
+* Allow .tex files to be uploead to file field (HUB-118)
+* Movie login/logout to main menu (HUB-109):
+	Do after the deployment: translate login/logout links manually: Logga in/Logga ut, Kirjaudu sisään/Kirjaudu ulos
 * Added autologin if already logged in opintoni/opetukseni (HUB-23, HUB-25)
-
 
 ## 1.0-beta0
 Release date: 06.02.2017

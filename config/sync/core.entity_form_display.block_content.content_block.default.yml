@@ -1,0 +1,36 @@
+uuid: fa481305-393d-4a27-a069-362e3812c909
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.content_block
+    - field.field.block_content.content_block.field_content_block_text
+id: block_content.content_block.default
+targetEntityType: block_content
+bundle: content_block
+mode: default
+content:
+  field_content_block_text:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+  info:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+  translation:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

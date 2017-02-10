@@ -1,15 +1,16 @@
-uuid: 7ca0eb24-fa2c-47b1-9eb5-8c28ed8fa38b
+uuid: 087d9891-e155-48b8-8ee6-de245074b6a9
 langcode: en
 status: true
 dependencies:
+  config:
+    - block_content.type.content_block
   module:
     - content_translation
-    - menu_link_content
 third_party_settings:
   content_translation:
     enabled: true
-id: menu_link_content.menu_link_content
-target_entity_type_id: menu_link_content
-target_bundle: menu_link_content
+id: block_content.content_block
+target_entity_type_id: block_content
+target_bundle: content_block
 default_langcode: site_default
 language_alterable: true
