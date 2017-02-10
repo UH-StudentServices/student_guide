@@ -13,10 +13,10 @@ settings:
   allowed_values:
     -
       value: bachelor
-      label: Kandiohjelmat
+      label: 'Bachelor''s programmes'
     -
       value: master
-      label: Maisteriohjelmat
+      label: 'Master''s programmes'
   allowed_values_function: ''
 module: options
 locked: false

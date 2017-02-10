@@ -7560,7 +7560,7 @@ html {
   background: #FFF;
 }
 
-.degree-programme-switcher .degree-programme-switcher__container ul {
+.degree-programme-switcher .degree-programme-switcher__container .view-content {
   overflow-y: scroll;
   scrollbar-face-color: #0098d0;
   scrollbar-track-color: #EBEBEB;
@@ -7569,20 +7569,20 @@ html {
   max-height: 50vh;
 }
 
-.degree-programme-switcher .degree-programme-switcher__container ul::-webkit-scrollbar {
+.degree-programme-switcher .degree-programme-switcher__container .view-content::-webkit-scrollbar {
   width: 0.5em;
   height: 0.5em;
 }
 
-.degree-programme-switcher .degree-programme-switcher__container ul::-webkit-scrollbar-thumb {
+.degree-programme-switcher .degree-programme-switcher__container .view-content::-webkit-scrollbar-thumb {
   background: #0098d0;
 }
 
-.degree-programme-switcher .degree-programme-switcher__container ul::-webkit-scrollbar-track {
+.degree-programme-switcher .degree-programme-switcher__container .view-content::-webkit-scrollbar-track {
   background: #EBEBEB;
 }
 
-.degree-programme-switcher .degree-programme-switcher__container ul li {
+.degree-programme-switcher .degree-programme-switcher__container .view-content li {
   padding: 0.3em 0;
 }
 

@@ -43,7 +43,7 @@
     width: 100%;
     z-index: 20;
     background: $white;
-    ul {
+    .view-content {
       @include scrollbar;
       margin-bottom: 0;
       max-height: 20em;
