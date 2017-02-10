@@ -12,7 +12,7 @@
 * Added various fixes to current topics block
 * Added scrollbar (chrome + safari) to degree programme switcher (HUB-104)
 * Added favicon and mobile touch icons (HUB-112)
-
+* Movie login/logout to main menu (HUB-109)
 
 ## 1.0-beta0
 Release date: 06.02.2017
