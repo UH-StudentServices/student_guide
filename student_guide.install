@@ -21,6 +21,11 @@ function student_guide_install() {
 
   // Allow visitor account creation, but with administrative approval.
   \Drupal::configFactory()->getEditable('user.settings')->set('register', USER_REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL)->save(TRUE);
+
+  // Ensure the translation fields are created in the database.
+  // see https://www.drupal.org/node/2599228
+  \Drupal::service('entity.definition_update_manager')->applyUpdates();
+  student_guide_create_front_page_text_block();
 }
 
 /**

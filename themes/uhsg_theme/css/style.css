@@ -7256,6 +7256,13 @@ ul.pager > li.pager__next a {
   display: flex;
 }
 
+.grid-item > article {
+  display: block;
+  -webkit-flex-basis: 100%;
+      -ms-flex-preferred-size: 100%;
+          flex-basis: 100%;
+}
+
 @media (min-width: 48em) {
   .grid-item {
     padding-left: 15px;
@@ -7359,6 +7366,20 @@ html {
 @media (min-width: 48em) {
   html {
     font-size: 16px;
+  }
+}
+
+.content-block__content-block-text {
+  font-weight: 300;
+  font-style: normal;
+  font-size: 21px;
+  font-size: 1.5rem;
+  color: #979797;
+}
+
+@media (min-width: 48em) {
+  .content-block__content-block-text {
+    font-size: 24px;
   }
 }
 

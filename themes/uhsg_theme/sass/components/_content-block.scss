@@ -1,0 +1,5 @@
+.content-block__content-block-text {
+	@include font-weight-light;
+	@include font-size(24px);
+	color: $silver;
+}

@@ -12,6 +12,9 @@
 * Added various fixes to current topics block
 * Added scrollbar (chrome + safari) to degree programme switcher (HUB-104)
 * Added favicon and mobile touch icons (HUB-112)
+* Fixed overlapping news teasers in IE (HUB-114)
+* Added front page text (HUB-98):
+  Run after the deployment: drush php-eval "student_guide_create_front_page_text_block();
 * Movie login/logout to main menu (HUB-109)
 
 ## 1.0-beta0

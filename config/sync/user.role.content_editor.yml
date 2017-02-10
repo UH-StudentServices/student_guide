@@ -39,3 +39,5 @@ permissions:
   - 'access site-wide contact form'
   - 'bypass node access'
   - 'use text format filtered_html'
+  - 'update any content_block block_content'
+  - 'update own content_block block_content'
