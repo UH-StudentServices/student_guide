@@ -11,6 +11,7 @@
 * Return the user to the location where the login was done (HUB-96)
 * Added various fixes to current topics block
 * Added scrollbar (chrome + safari) to degree programme switcher (HUB-104)
+* Added autologin if already logged in opintoni/opetukseni (HUB-23, HUB-25)
 
 
 ## 1.0-beta0
