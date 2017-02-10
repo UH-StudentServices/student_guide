@@ -37,10 +37,3 @@ function student_guide_update_8001(&$sandbox) {
     \Drupal::service('path.alias_storage')->save($system_path, $path_alias, $langcode);
   }
 }
-
-/**
- * Create content block for front page text.
- */
-function student_guide_update_8002(&$sandbox) {
-  student_guide_create_front_page_text_block();
-}
