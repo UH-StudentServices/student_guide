@@ -18,6 +18,8 @@
 * Allow .tex files to be uploead to file field (HUB-118)
 * Movie login/logout to main menu (HUB-109):
 	Do after the deployment: translate login/logout links manually: Logga in/Logga ut, Kirjaudu sisään/Kirjaudu ulos
+* Group degree programmes by type (HUB-119)
+  Run drush mi degree_programmes --update && drush mi degree_programmes_translation --update 
 
 ## 1.0-beta0
 Release date: 06.02.2017
