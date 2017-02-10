@@ -7256,6 +7256,10 @@ ul.pager > li.pager__next a {
   display: flex;
 }
 
+.grid-item > article {
+  display: block;
+}
+
 @media (min-width: 48em) {
   .grid-item {
     padding-left: 15px;
