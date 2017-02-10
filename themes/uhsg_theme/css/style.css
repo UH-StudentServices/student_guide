@@ -7366,6 +7366,20 @@ html {
   }
 }
 
+.content-block__content-block-text {
+  font-weight: 300;
+  font-style: normal;
+  font-size: 21px;
+  font-size: 1.5rem;
+  color: #979797;
+}
+
+@media (min-width: 48em) {
+  .content-block__content-block-text {
+    font-size: 24px;
+  }
+}
+
 .cc_banner-wrapper {
   z-index: 9001;
   position: relative;
