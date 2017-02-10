@@ -7847,9 +7847,6 @@ button.button--reset + i {
   .menu-item__align-right {
     margin-left: auto;
   }
-  .menu-item__align-right:last-child {
-    margin-left: initial;
-  }
 }
 
 .paragraph:nth-child(odd) {

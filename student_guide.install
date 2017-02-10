@@ -51,14 +51,6 @@ function student_guide_update_8002(&$sandbox) {
     }
     if (in_array($link->getTitle(),  $titles_to_move)) {
       $link->set('menu_name', 'main');
-      if ($link->getTitle() == 'Login') {
-        $link->addTranslation('sv', ['title' => 'Logga in']);
-        $link->addTranslation('fi', ['title' => 'Kirjaudu sisään']);
-      }
-      else {
-        $link->addTranslation('sv', ['title' => 'Logga ut']);
-        $link->addTranslation('fi', ['title' => 'Kirjaudu ulos']);
-      }
       $link->save();
     }
   }
