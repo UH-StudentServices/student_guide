@@ -13,15 +13,21 @@
 * Added scrollbar (chrome + safari) to degree programme switcher (HUB-104)
 * Added favicon and mobile touch icons (HUB-112)
 * Fixed overlapping news teasers in IE (HUB-114)
-* Added front page text (HUB-98):
-  Run after the deployment: drush php-eval "student_guide_create_front_page_text_block();
+* Added front page text (HUB-98)
 * Allow .tex files to be uploead to file field (HUB-118)
-* Movie login/logout to main menu (HUB-109):
-	Do after the deployment: translate login/logout links manually: Logga in/Logga ut, Kirjaudu sisään/Kirjaudu ulos
+* Movie login/logout to main menu (HUB-109)
 * Group degree programmes by type (HUB-119)
-  Run drush mi degree_programmes --update && drush mi degree_programmes_translation --update 
 * Fixed bug with html entities in teaser body (HUB-120)
 * Added autologin if already logged in opintoni/opetukseni (HUB-23, HUB-25)
+
+After installation:
+  * After the deployment run
+    ```
+    drush php-eval "student_guide_create_front_page_text_block()
+    drush mi degree_programmes --update && drush mi degree_programmes_translation --update
+    ```
+  * After the deployment, translate login/logout links manually: Logga in/Logga ut, Kirjaudu sisään/Kirjaudu ulos
+
 
 ## 1.0-beta0
 Release date: 06.02.2017
