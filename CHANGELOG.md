@@ -19,6 +19,7 @@
 * Group degree programmes by type (HUB-119)
 * Fixed bug with html entities in teaser body (HUB-120)
 * Added autologin if already logged in opintoni/opetukseni (HUB-23, HUB-25)
+* Hide empty contextual links (HUB-115)
 
 After installation:
   * After the deployment run
