@@ -4,3 +4,5 @@ description: Redirects to login when visitors has cookie indicating that it shou
 core: 8.x
 version: VERSION
 package: Student Guide
+dependencies:
+  - samlauth
