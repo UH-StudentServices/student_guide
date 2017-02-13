@@ -73,7 +73,7 @@ class RedirectToLogin implements HttpKernelInterface {
     $response = new RedirectResponse('/saml/login');
 
     // Create triggered cookie, so that following requests wouldn't redirect
-    $response->headers->setCookie(new Cookie(self::COOKIE_NAME_TRIGGERED, 'yes'));
+    $response->headers->setCookie(new Cookie(self::COOKIE_NAME_TRIGGERED, $request->getUri()));
 
     return $response;
 

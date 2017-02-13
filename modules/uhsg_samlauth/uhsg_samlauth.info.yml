@@ -6,3 +6,4 @@ version: VERSION
 package: Student Guide
 dependencies:
   - samlauth
+  - uhsg_redirect_to_login
