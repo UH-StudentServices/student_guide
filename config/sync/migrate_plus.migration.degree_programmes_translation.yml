@@ -29,6 +29,7 @@ process:
     source: identifier
     migration: degree_programmes
   name: name
+  field_degree_programme_type: type
   langcode: langcode
 destination:
   plugin: 'entity:taxonomy_term'
