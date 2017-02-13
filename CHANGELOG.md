@@ -1,7 +1,7 @@
 #Changelog
 
-
-## 1.x-dev
+## 1.0-beta1
+Release date: 13.02.2017
 
 * Removed breadcrumb (HUB-103)
 * Remove degree programme from article full view (HUB-101)
