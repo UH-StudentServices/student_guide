@@ -97,7 +97,7 @@
         </div>
       {% endif %}
       <h4 class="box-story__title"> {{ label }} </h4>
-      <div class="box-story__content"> {{ body|striptags }} </div>
+      <div class="box-story__content"> {{ body|striptags|raw }} </div>
     </a>
   </article>
 </div>
