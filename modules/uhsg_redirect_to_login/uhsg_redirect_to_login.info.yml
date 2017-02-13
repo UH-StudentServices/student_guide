@@ -2,5 +2,5 @@ name: Redirect to login
 type: module
 description: Redirects to login when visitors has cookie indicating that it should be logged in.
 core: 8.x
-version: 1.0-beta1
+version: VERSION
 package: Student Guide
