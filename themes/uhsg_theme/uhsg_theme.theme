@@ -121,6 +121,8 @@ function uhsg_theme_preprocess_field(array &$variables, $hook) {
 function uhsg_theme_preprocess_views_view(&$variables) {
   switch ($variables['view']->id()) {
     case 'themes':
+      $variables['content_attributes']['class'][] = 'grid-container';
+      break;
     case 'search':
       $variables['attributes']['class'][] = 'grid-container';
       break;
