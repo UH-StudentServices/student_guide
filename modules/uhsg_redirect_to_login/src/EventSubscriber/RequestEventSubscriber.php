@@ -15,7 +15,9 @@ class RequestEventSubscriber implements EventSubscriberInterface {
    * {@inheritdoc}
    */
   public static function getSubscribedEvents() {
-    $events[KernelEvents::REQUEST][] = ['onRequest'];
+    // Set priority higher than DynamicPageCacheSubscriber (27), but lower than
+    // RedirectResponseSubscriber (100).
+    $events[KernelEvents::REQUEST][] = ['onRequest', 50];
     return $events;
   }
 
