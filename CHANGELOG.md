@@ -21,6 +21,7 @@
 * Group degree programmes by type (HUB-119)
   Run drush mi degree_programmes --update && drush mi degree_programmes_translation --update 
 * Fixed bug with html entities in teaser body (HUB-120)
+* Added autologin if already logged in opintoni/opetukseni (HUB-23, HUB-25)
 
 ## 1.0-beta0
 Release date: 06.02.2017

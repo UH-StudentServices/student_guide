@@ -1,0 +1,5 @@
+services:
+  uhsg_redirect_to_login.request_event_subscriber:
+    class: Drupal\uhsg_redirect_to_login\EventSubscriber\RequestEventSubscriber
+    tags:
+      - { name: 'event_subscriber' }
