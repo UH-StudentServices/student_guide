@@ -1,6 +1,7 @@
 #Changelog
 
 ## 1.0-dev
+* Added support for sorting by author on content listing (HUB-123)
 
 
 ## 1.0-beta1
