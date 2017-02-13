@@ -2,6 +2,7 @@
 
 ## 1.0-dev
 * Added support for sorting by author on content listing (HUB-123)
+* Prevent mobile device input focus zoom in degree programme switcher (HUB-121)
 
 
 ## 1.0-beta1
