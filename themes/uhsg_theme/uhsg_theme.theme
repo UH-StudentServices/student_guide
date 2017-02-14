@@ -112,6 +112,9 @@ function uhsg_theme_preprocess_field(array &$variables, $hook) {
     case 'field_paragraph_body':
       $variables['attributes']['class'][] = 'textarea';
       break;
+    case 'field_accordion_title':
+      $variables['attributes']['class'][] = 'accordion__title button--accordion';
+      break;
   }
 }
 
