@@ -4,7 +4,7 @@
 * Added support for sorting by author on content listing (HUB-123)
 * Added feature to login automatically if logged in in opintoni/opetukseni
   service (HUB-23, HUB-25, HUB-122)
-
+* Fixed empty contextual links (HUB-115)
 
 ## 1.0-beta1
 Release date: 13.02.2017
