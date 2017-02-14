@@ -40,4 +40,10 @@ interface AttributeParserInterface {
    */
   public function getLogoutUrl();
 
+  /**
+   * Returns list of groups from the attributes.
+   * @return array
+   */
+  public function getGroups();
+
 }

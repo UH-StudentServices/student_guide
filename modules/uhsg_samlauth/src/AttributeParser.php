@@ -21,6 +21,7 @@ class AttributeParser implements AttributeParserInterface {
     'userId' => 'urn:oid:0.9.2342.19200300.100.1.1',
     'emailAddress' => 'urn:oid:0.9.2342.19200300.100.1.3',
     'logoutUrl' => 'urn:mace:funet.fi:haka:logout-url',
+    'groups' => 'urn:mace:funet.fi:helsinki.fi:hyGroupCn',
   ];
 
   /**
@@ -137,6 +138,17 @@ class AttributeParser implements AttributeParserInterface {
       return '';
     }
     return (string) $value[0];
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getGroups() {
+    $value = $this->getAttributeValueFromAlias('logoutUrl');
+    if (is_null($value)) {
+      return [];
+    }
+    return $value;
   }
 
 }
