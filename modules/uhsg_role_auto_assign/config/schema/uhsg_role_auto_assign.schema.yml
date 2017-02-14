@@ -1,0 +1,18 @@
+# Schema for the configuration files of the Role auto assign module.
+
+uhsg_role_auto_assign.settings:
+  type: config_object
+  label: 'Role Auto Assign details'
+  mapping:
+    group_to_roles:
+      type: sequence
+      label: 'Group names to role assignments'
+      sequence:
+        type: mapping
+        mapping:
+          group_name:
+            type: string
+            label: 'Group name from SAML2 attributes'
+          rid:
+            type: string
+            label: 'Role ID in Drupal that gets assigned'
