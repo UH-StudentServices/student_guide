@@ -68,7 +68,7 @@ class AttributeParser implements AttributeParserInterface {
     if (is_null($value)) {
       return '';
     }
-    return (string) $value;
+    return (string) $value[0];
   }
 
   /**
@@ -79,7 +79,7 @@ class AttributeParser implements AttributeParserInterface {
     if (is_null($value)) {
       return '';
     }
-    return (string) $value;
+    return (string) $value[0];
   }
 
   /**
@@ -96,7 +96,7 @@ class AttributeParser implements AttributeParserInterface {
      * placeholder for the actual value. Therefore we need some preprocessing
      * prior to return the actual value.
      */
-    $value = (string) $value;
+    $value = (string) $value[0];
     if (mb_strlen($value) > mb_strlen($this->studentIdPrefix)) {
       // OK the value seems to have an sensible string length so return it
       // without the expected prefix.
@@ -114,7 +114,7 @@ class AttributeParser implements AttributeParserInterface {
     if (is_null($value)) {
       return '';
     }
-    return (string) $value;
+    return (string) $value[0];
   }
 
   /**
@@ -125,7 +125,7 @@ class AttributeParser implements AttributeParserInterface {
     if (is_null($value)) {
       return '';
     }
-    return (string) $value;
+    return (string) $value[0];
   }
 
   /**
@@ -136,7 +136,7 @@ class AttributeParser implements AttributeParserInterface {
     if (is_null($value)) {
       return '';
     }
-    return (string) $value;
+    return (string) $value[0];
   }
 
 }
