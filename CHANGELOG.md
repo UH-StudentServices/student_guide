@@ -1,28 +1,29 @@
 #Changelog
 
+## 1.0-dev
+* Added support for sorting by author on content listing (HUB-123)
+* Prevent simultaneous editing of content (HUB-124)
 
-## 1.x-dev
 
-* Removed breadcrumb (HUB-103)
-* Remove degree programme from article full view (HUB-101)
-* Logo link to www.helsinki.fi (HUB-108)
-* Remove links from news degree programme field (HUB-108)
-* Fixed error when having an unknown degree programme in cookies
-* Return the user to the location where the login was done (HUB-96)
+## 1.0-beta1
+Release date: 13.02.2017
+
+* Added front page text (HUB-98)
 * Added various fixes to current topics block
 * Added scrollbar (chrome + safari) to degree programme switcher (HUB-104)
 * Added favicon and mobile touch icons (HUB-112)
+* Added possibility to upload .tex files to file fields (HUB-118)
 * Fixed overlapping news teasers in IE (HUB-114)
-* Added front page text (HUB-98):
-  Run after the deployment: drush php-eval "student_guide_create_front_page_text_block();
-* Allow .tex files to be uploead to file field (HUB-118)
-* Movie login/logout to main menu (HUB-109):
-	Do after the deployment: translate login/logout links manually: Logga in/Logga ut, Kirjaudu sisään/Kirjaudu ulos
-* Group degree programmes by type (HUB-119)
-  Run drush mi degree_programmes --update && drush mi degree_programmes_translation --update 
+* Fixed error when having an unknown degree programme in cookies
 * Fixed bug with html entities in teaser body (HUB-120)
-* Added autologin if already logged in opintoni/opetukseni (HUB-23, HUB-25)
-* Prevent simultaneous editing of content (HUB-124)
+* Changed login/logout menu item by mobing it to main menu (HUB-109)
+* Changed degree programme switcher to group by type (HUB-119)
+* Changed login destination to be the page visitor used to be in (HUB-96)
+* Changed logo link to www.helsinki.fi (HUB-108)
+* Removed links from news degree programme field (HUB-108)
+* Removed breadcrumb (HUB-103)
+* Removed degree programme from article full view (HUB-101)
+
 
 ## 1.0-beta0
 Release date: 06.02.2017
