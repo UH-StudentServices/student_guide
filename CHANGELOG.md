@@ -1,7 +1,10 @@
 #Changelog
 
 ## 1.0-dev
-* Hide empty contextual links (HUB-115)
+* Added support for sorting by author on content listing (HUB-123)
+* Added feature to login automatically if logged in in opintoni/opetukseni
+  service (HUB-23, HUB-25, HUB-122)
+* Fixed empty contextual links (HUB-115)
 
 ## 1.0-beta1
 Release date: 13.02.2017
@@ -21,14 +24,6 @@ Release date: 13.02.2017
 * Removed links from news degree programme field (HUB-108)
 * Removed breadcrumb (HUB-103)
 * Removed degree programme from article full view (HUB-101)
-
-After installation:
-  * After the deployment run
-    ```
-    drush php-eval "student_guide_create_front_page_text_block()
-    drush mi degree_programmes --update && drush mi degree_programmes_translation --update
-    ```
-  * After the deployment, translate login/logout links manually: Logga in/Logga ut, Kirjaudu sisään/Kirjaudu ulos
 
 
 ## 1.0-beta0
