@@ -2,6 +2,8 @@
 
 ## 1.0-dev
 * Added support for sorting by author on content listing (HUB-123)
+* Added feature to login automatically if logged in in opintoni/opetukseni
+  service (HUB-23, HUB-25, HUB-122)
 
 
 ## 1.0-beta1
