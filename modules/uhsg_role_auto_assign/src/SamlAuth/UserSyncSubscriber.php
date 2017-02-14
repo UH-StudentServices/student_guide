@@ -61,8 +61,8 @@ class UserSyncSubscriber implements EventSubscriberInterface {
   }
 
   /**
-   * Gets auto assignable roles defined by the configuration that exists in the
-   * system.
+   * Gets auto assignable roles defined by the configuration and that exists in
+   * the system.
    * @return array
    */
   protected function getAutoAssignableRoles() {
