@@ -5,6 +5,8 @@
 * Added feature to login automatically if logged in in opintoni/opetukseni
   service (HUB-23, HUB-25, HUB-122)
 * Fixed empty contextual links (HUB-115)
+* Removed input focus zoom in degree programme switcher for devices (HUB-121)
+
 
 ## 1.0-beta1
 Release date: 13.02.2017
