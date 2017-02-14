@@ -60,11 +60,16 @@ $grid-gutter: $vert-spacing-unit / 2;
   .col-container {
     display: flex;
   }
+  .col-right {
+    flex-basis: 35%;
+     margin-left: 4em;
+  }
+
   .col-left {
     flex-basis: 35%;
     margin-right: 4em;
   }
-  .col-right {
+  .col-main {
     flex-basis: 65%;
   }
 }

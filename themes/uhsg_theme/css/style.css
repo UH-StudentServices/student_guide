@@ -7398,13 +7398,19 @@ ul.pager > li.pager__next a {
     display: -ms-flexbox;
     display: flex;
   }
+  .col-right {
+    -webkit-flex-basis: 35%;
+        -ms-flex-preferred-size: 35%;
+            flex-basis: 35%;
+    margin-left: 4em;
+  }
   .col-left {
     -webkit-flex-basis: 35%;
         -ms-flex-preferred-size: 35%;
             flex-basis: 35%;
     margin-right: 4em;
   }
-  .col-right {
+  .col-main {
     -webkit-flex-basis: 65%;
         -ms-flex-preferred-size: 65%;
             flex-basis: 65%;
