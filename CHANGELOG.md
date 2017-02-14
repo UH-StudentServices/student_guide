@@ -2,7 +2,9 @@
 
 ## 1.0-dev
 * Added support for sorting by author on content listing (HUB-123)
-* Prevent simultaneous editing of content (HUB-124)
+* Added feature to login automatically if logged in in opintoni/opetukseni
+  service (HUB-23, HUB-25, HUB-122)
+* Added feature for preventing simultaneous content editing (HUB-124)
 
 
 ## 1.0-beta1
