@@ -39,5 +39,8 @@
     {% block content %}
       {{ content }}
     {% endblock %}
+    <span class="{{ reset_link.classes }}">
+      {{ link('Reset'|trans , reset_link.link) }}
+    </span>
   </div>
 </div>
