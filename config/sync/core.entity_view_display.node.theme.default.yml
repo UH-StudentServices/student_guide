@@ -5,9 +5,11 @@ dependencies:
   config:
     - field.field.node.theme.body
     - field.field.node.theme.field_theme_articles
+    - field.field.node.theme.field_theme_faq
     - field.field.node.theme.field_theme_teaser_image
     - node.type.theme
   module:
+    - entity_reference_revisions
     - text
     - user
 id: node.theme.default
@@ -29,6 +31,14 @@ content:
       link: false
     third_party_settings: {  }
     type: entity_reference_entity_view
+  field_theme_faq:
+    type: entity_reference_revisions_entity_view
+    weight: 3
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
   links:
     weight: 0
     settings: {  }
