@@ -7399,21 +7399,21 @@ ul.pager > li.pager__next a {
     display: flex;
   }
   .col-right {
-    -webkit-flex-basis: 35%;
-        -ms-flex-preferred-size: 35%;
-            flex-basis: 35%;
+    -webkit-flex-basis: 100% / 3;
+        -ms-flex-preferred-size: 100% / 3;
+            flex-basis: 100% / 3;
     margin-left: 4em;
   }
   .col-left {
-    -webkit-flex-basis: 35%;
-        -ms-flex-preferred-size: 35%;
-            flex-basis: 35%;
+    -webkit-flex-basis: 100% / 3;
+        -ms-flex-preferred-size: 100% / 3;
+            flex-basis: 100% / 3;
     margin-right: 4em;
   }
   .col-main {
-    -webkit-flex-basis: 65%;
-        -ms-flex-preferred-size: 65%;
-            flex-basis: 65%;
+    -webkit-flex-basis: 66.66667%;
+        -ms-flex-preferred-size: 66.66667%;
+            flex-basis: 66.66667%;
   }
 }
 

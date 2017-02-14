@@ -61,15 +61,15 @@ $grid-gutter: $vert-spacing-unit / 2;
     display: flex;
   }
   .col-right {
-    flex-basis: 35%;
+    flex-basis: 100% / 3;
      margin-left: 4em;
   }
 
   .col-left {
-    flex-basis: 35%;
+    flex-basis: 100% / 3;
     margin-right: 4em;
   }
   .col-main {
-    flex-basis: 65%;
+    flex-basis: 100% / 3 * 2;
   }
 }
