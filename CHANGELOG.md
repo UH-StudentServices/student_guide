@@ -2,7 +2,10 @@
 
 ## 1.0-dev
 * Added support for sorting by author on content listing (HUB-123)
-* Prevent mobile device input focus zoom in degree programme switcher (HUB-121)
+* Added feature to login automatically if logged in in opintoni/opetukseni
+  service (HUB-23, HUB-25, HUB-122)
+* Fixed empty contextual links (HUB-115)
+* Removed input focus zoom in degree programme switcher for devices (HUB-121)
 
 
 ## 1.0-beta1

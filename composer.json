@@ -78,6 +78,9 @@
     },
     "enable-patching": true,
     "patches": {
+      "drupal/contextual": {
+       "2650910-18": "https://www.drupal.org/files/issues/8.2.x-dev-2650910-18_0.patch"
+      },
       "drupal/paragraphs": {
         "2775609-29": "https://www.drupal.org/files/issues/many_error_messages-2775609-29.patch"
       },
