@@ -48,9 +48,6 @@
       margin-bottom: 0;
       max-height: 20em;
       max-height: 50vh;
-      li {
-        padding: 0.3em 0;
-      }
     }
     @include breakpoint($small) {
       padding: 2em;

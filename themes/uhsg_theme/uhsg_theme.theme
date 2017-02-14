@@ -108,6 +108,7 @@ function uhsg_theme_preprocess_field(array &$variables, $hook) {
       break;
     case 'field_accordion_links':
       uhsg_theme_process_link_titles($variables);
+      $variables['attributes']['class'][] = 'list-of-links__compact';
       foreach ($variables['items'] as &$item) {
         $item['content']['#options']['attributes']['class'][] = 'list-of-links__link icon--arrow-right button--action theme-transparent';
       }

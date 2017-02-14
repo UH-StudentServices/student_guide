@@ -5472,7 +5472,7 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
  title: List of links
  description:
 */
-.list-of-links--condensed,
+.list-of-links--condensed, .list-of-links__compact,
 .list-of-links {
   display: block;
   margin-bottom: 30px;
@@ -7417,6 +7417,14 @@ ul.pager > li.pager__next a {
   }
 }
 
+.accordion__accordion-body {
+  margin-bottom: 1em;
+}
+
+.accordion__accordion-links {
+  margin-bottom: 0;
+}
+
 .last-updated {
   font-size: 12.25px;
   font-size: 0.875rem;
@@ -7657,10 +7665,6 @@ html {
 
 .degree-programme-switcher .degree-programme-switcher__container .view-content::-webkit-scrollbar-track {
   background: #EBEBEB;
-}
-
-.degree-programme-switcher .degree-programme-switcher__container .view-content li {
-  padding: 0.3em 0;
 }
 
 @media (min-width: 48em) {
@@ -7945,6 +7949,10 @@ button.button--reset + i {
   button.button--reset + i {
     font-size: 10px;
   }
+}
+
+.list-of-links__compact .list-of-links__link {
+  padding: 0.3em 0;
 }
 
 @media (min-width: 48em) {
