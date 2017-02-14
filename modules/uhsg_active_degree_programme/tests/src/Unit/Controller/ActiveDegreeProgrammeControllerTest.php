@@ -79,6 +79,15 @@ class ActiveDegreeProgrammeControllerTest extends UnitTestCase {
     $this->assertInstanceOf(RedirectResponse::class, $response);
     $this->assertEquals($response->getTargetUrl(), self::HTTP_REFERER);
   }
+
+  /**
+   * @test
+   */
+  public function resetShouldDelegateToActiveDegreeProgrammeService() {
+    $this->activeDegreeProgrammeService->reset()->shouldBeCalled();
+
+    $this->activeDegreeProgrammeController->resetActiveDegreeProgramme();
+  }
 }
 
 class ActiveDegreeProgrammeControllerTestDouble extends ActiveDegreeProgrammeController {
