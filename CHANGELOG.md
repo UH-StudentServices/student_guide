@@ -6,6 +6,7 @@
   service (HUB-23, HUB-25, HUB-122)
 * Fixed empty contextual links (HUB-115)
 * Removed input focus zoom in degree programme switcher for devices (HUB-121)
+* Added feature for preventing simultaneous content editing (HUB-124)
 * Added frequently asked questions to themes (HUB-126)
 
 

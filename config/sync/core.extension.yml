@@ -10,6 +10,8 @@ module:
   contact: 0
   contact_ajax: 0
   contact_block: 0
+  content_lock: 0
+  content_lock_timeout: 0
   contextual: 0
   ctools: 0
   datetime: 0
