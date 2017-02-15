@@ -79,20 +79,14 @@
   ]
 %}
 
-{% set created = node.getCreatedTime|format_date('short') %}
-
 <article {{ attributes.addClass(node_classes) }}>
-  {{ content.field_news_image }}
-  <div class="col-container tube--large">
-    <div class="col-left">
-      <h1> {{ label }} </h1>
-      <div class="tag-list">
-        <div class="tag-list__item"> {{ created }} </div>
-        {{ content.field_news_degree_programme }}
+  <h1> {{ label }} </h1>
+  {{ content|without('field_theme_faq') }}
+  {% if content.field_theme_faq %}
+    <div class="col-container">
+      <div class="col-main">
+        {{ content.field_theme_faq }}
       </div>
     </div>
-    <div class="col-main">
-      {{ content|without('field_news_degree_programme', 'field_news_image') }}
-    </div>
-  </div>
+  {% endif %}
 </article>

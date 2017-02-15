@@ -2,6 +2,7 @@
 
 use Drupal\Core\Language\LanguageInterface;
 use Drupal\Component\Render\FormattableMarkup;
+use Drupal\node\Entity\Node;
 
 /**
  * @file
@@ -99,9 +100,17 @@ function uhsg_theme_preprocess_menu(&$variables) {
 function uhsg_theme_preprocess_field(array &$variables, $hook) {
   switch ($variables['element']['#field_name']) {
     case 'field_paragraph_links':
+      uhsg_theme_process_link_titles($variables);
       $variables['attributes']['class'][] = 'list-of-links';
       foreach ($variables['items'] as &$item) {
         $item['content']['#options']['attributes']['class'][] = 'list-of-links__link button--action icon--arrow-right';
+      }
+      break;
+    case 'field_accordion_links':
+      uhsg_theme_process_link_titles($variables);
+      $variables['attributes']['class'][] = 'list-of-links__compact';
+      foreach ($variables['items'] as &$item) {
+        $item['content']['#options']['attributes']['class'][] = 'list-of-links__link icon--arrow-right button--action theme-transparent';
       }
       break;
     case 'field_theme_articles':
@@ -112,6 +121,40 @@ function uhsg_theme_preprocess_field(array &$variables, $hook) {
     case 'field_paragraph_body':
       $variables['attributes']['class'][] = 'textarea';
       break;
+    case 'field_accordion_title':
+      $variables['attributes']['class'][] = 'accordion__title button--accordion';
+      break;
+  }
+}
+
+
+/**
+ * If the link targets a node and no link title is set, use link target node
+ * title as the link text.
+ *
+ * @param array $variables
+ */
+function uhsg_theme_process_link_titles(array &$variables) {
+  foreach ($variables['items'] as &$item) {
+
+    /** @var $url \Drupal\Core\Url */
+    $url = $item['content']['#url'];
+
+    // If the link is internal and title matches url, no title is set.
+    if ($url->isRouted() && $item['content']['#title'] == $url->toString()) {
+
+      // Check for node links.
+      if ($url->getRouteName() == 'entity.node.canonical') {
+        $params = $url->getRouteParameters();
+        $nid = $params['node'];
+        $node = Node::load($nid);
+        $translation = \Drupal::entityManager()->getTranslationFromContext($node);
+        $item['content']['#title'] = $translation->getTitle();
+
+        // Add target node to cache tags in case the node title changes.
+        $variables['#cache']['tags'][] = 'node:' . $nid;
+      }
+    }
   }
 }
 

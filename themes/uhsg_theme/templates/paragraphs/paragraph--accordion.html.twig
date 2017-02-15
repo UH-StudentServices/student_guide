@@ -36,19 +36,12 @@
  * @ingroup themeable
  */
 #}
-<div {{ attributes }}>
-  <div class="paragraph__content container col-container tube--large">
-    <div class="col-left">
-      <div class="paragraph__title">
-        <h3> {{ content.field_paragraph_title }} </h3>
-      </div>
-      {{ content.field_paragraph_links }}
-      {{ content.field_paragraph_file }}
-    </div>
-    <div class="col-main">
-      {{ content.field_paragraph_body }}
-      {{ content.field_paragraph_image }}
-      {{ content.field_paragraph_video }}
-    </div>
+
+{{ attach_library('uhsg_theme/accordion') }}
+<div class="accordion__item">
+  {{ content.field_accordion_title }}
+  <div class="accordion__content visually-hidden">
+    <div class="textarea">{{ content|without('field_accordion_title') }} </div>
   </div>
 </div>
+

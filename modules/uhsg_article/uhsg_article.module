@@ -8,7 +8,6 @@
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\taxonomy\TermInterface;
 use Drupal\taxonomy\Entity\Term;
-use Drupal\node\Entity\Node;
 
 /**
  * Implements hook_help().
@@ -50,40 +49,6 @@ function uhsg_article_preprocess_field(array &$variables, $hook) {
     // Because of these alterations, our result may vay depending on active
     // degree programme.
     $variables['#cache']['contexts'][] = 'active_degree_programme';
-  }
-
-  uhsg_article_process_paragraph_link_titles($variables);
-}
-
-/**
- * If the link targets a node and no link title is set, use link target node
- * title as the link text.
- *
- * @param array $variables
- */
-function uhsg_article_process_paragraph_link_titles(array &$variables) {
-  if ($variables['element']['#field_name'] == 'field_paragraph_links') {
-    foreach ($variables['items'] as &$item) {
-
-      /** @var $url \Drupal\Core\Url */
-      $url = $item['content']['#url'];
-
-      // If the link is internal and title matches url, no title is set.
-      if ($url->isRouted() && $item['content']['#title'] == $url->toString()) {
-
-        // Check for node links.
-        if ($url->getRouteName() == 'entity.node.canonical') {
-          $params = $url->getRouteParameters();
-          $nid = $params['node'];
-          $node = Node::load($nid);
-          $translation = \Drupal::entityManager()->getTranslationFromContext($node);
-          $item['content']['#title'] = $translation->getTitle();
-
-          // Add target node to cache tags in case the node title changes.
-          $variables['#cache']['tags'][] = 'node:' . $nid;
-        }
-      }
-    }
   }
 }
 

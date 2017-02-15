@@ -3171,10 +3171,10 @@ dl, ol, ul {
  template: 3_7_1-button
  description:
 */
-input[type="submit"],
+input[type="submit"], .accordion__title,
 .button--accordion,
 .button--action-before,
-.button--action, .button--anchor, .button--expand, .button--icon,
+.button--action, .button--anchor, .button--expand, .button--icon, .accordion--dark .accordion__title,
 .button {
   transition-duration: 0.1s;
   transition-property: all;
@@ -3189,16 +3189,16 @@ input[type="submit"],
 }
 
 @media (min-width: 48em) {
-  input[type="submit"],
+  input[type="submit"], .accordion__title,
   .button--accordion,
   .button--action-before,
-  .button--action, .button--anchor, .button--expand, .button--icon,
+  .button--action, .button--anchor, .button--expand, .button--icon, .accordion--dark .accordion__title,
   .button {
     font-size: 15px;
   }
 }
 
-input[type="submit"]:hover,
+input[type="submit"]:hover, .accordion__title:hover,
 .button--accordion:hover,
 .button--action-before:hover,
 .button--action:hover, .button--anchor:hover, .button--expand:hover, .button--icon:hover,
@@ -3207,20 +3207,20 @@ input[type="submit"]:hover,
   color: #FFF;
 }
 
-input[type="submit"]:before,
+input[type="submit"]:before, .accordion__title:before,
 .button--accordion:before,
 .button--action-before:before,
-.button--action:before, .button--anchor:before, .button--expand:before, .button--icon:before, input[type="submit"]:after,
+.button--action:before, .button--anchor:before, .button--expand:before, .button--icon:before, .accordion--dark .accordion__title:before, input[type="submit"]:after, .accordion__title:after,
 .button--accordion:after,
 .button--action-before:after,
-.button--action:after, .button--anchor:after, .button--expand:after, .button--icon:after,
+.button--action:after, .button--anchor:after, .button--expand:after, .button--icon:after, .accordion--dark .accordion__title:after,
 .button:before,
 .button:after {
   transition-duration: 0.1s;
   transition-property: all;
 }
 
-input.theme-transparent[type="submit"],
+input.theme-transparent[type="submit"], .theme-transparent.accordion__title,
 .theme-transparent.button--accordion,
 .theme-transparent.button--action-before,
 .theme-transparent.button--action, .theme-transparent.button--anchor, .theme-transparent.button--expand, .theme-transparent.button--icon,
@@ -3229,7 +3229,7 @@ input.theme-transparent[type="submit"],
   color: #0098d0;
 }
 
-input.theme-transparent[type="submit"]:hover,
+input.theme-transparent[type="submit"]:hover, .theme-transparent.accordion__title:hover,
 .theme-transparent.button--accordion:hover,
 .theme-transparent.button--action-before:hover,
 .theme-transparent.button--action:hover, .theme-transparent.button--anchor:hover, .theme-transparent.button--expand:hover, .theme-transparent.button--icon:hover,
@@ -3237,10 +3237,10 @@ input.theme-transparent[type="submit"]:hover,
   background-color: #0098d0;
 }
 
-input.theme-transparent[type="submit"] a:hover,
+input.theme-transparent[type="submit"] a:hover, .theme-transparent.accordion__title a:hover,
 .theme-transparent.button--accordion a:hover,
 .theme-transparent.button--action-before a:hover,
-.theme-transparent.button--action a:hover, .theme-transparent.button--anchor a:hover, .theme-transparent.button--expand a:hover, .theme-transparent.button--icon a:hover, input.theme-transparent[type="submit"]:hover,
+.theme-transparent.button--action a:hover, .theme-transparent.button--anchor a:hover, .theme-transparent.button--expand a:hover, .theme-transparent.button--icon a:hover, input.theme-transparent[type="submit"]:hover, .theme-transparent.accordion__title:hover,
 .theme-transparent.button--accordion:hover,
 .theme-transparent.button--action-before:hover,
 .theme-transparent.button--action:hover, .theme-transparent.button--anchor:hover, .theme-transparent.button--expand:hover, .theme-transparent.button--icon:hover,
@@ -3255,7 +3255,7 @@ input.theme-transparent[type="submit"] a:hover,
   template: 3_7_2-button--accordion
  description:
 */
-
+.accordion__title,
 .button--accordion {
   border: 2px solid #0098d0;
   display: block;
@@ -3266,7 +3266,7 @@ input.theme-transparent[type="submit"] a:hover,
   position: relative;
 }
 
-
+.accordion__title:before,
 .button--accordion:before {
   display: inline-block;
   font-family: "hy-icons";
@@ -3288,13 +3288,13 @@ input.theme-transparent[type="submit"] a:hover,
   transition-duration: 0.1s;
 }
 
-
+.is-active.accordion__title,
 .button--accordion.is-active {
   background-color: #0098d0;
   color: #FFF;
 }
 
-
+.is-active.accordion__title:before,
 .button--accordion.is-active:before {
   -webkit-transform: translateY(-50%) rotate(90deg);
       -ms-transform: translateY(-50%) rotate(90deg);
@@ -3302,7 +3302,7 @@ input.theme-transparent[type="submit"] a:hover,
   color: #FFF;
 }
 
-a:hover
+a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
 .button--accordion:before,
 .button--accordion:hover:before {
   color: #FFF;
@@ -5165,6 +5165,77 @@ a:hover
 }
 
 /*
+ section: 6.3
+ title: Accordion
+ description:
+*/
+/*
+ section: 6.3.1
+ title: Accordion
+ template: 6_3_1_accordion
+ description:
+*/
+.accordion :focus {
+  outline: none;
+}
+
+.accordion__item {
+  margin-bottom: 15px;
+}
+
+.accordion__title {
+  font-weight: 600;
+  font-style: normal;
+  font-size: 12.25px;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+}
+
+@media (min-width: 48em) {
+  .accordion__title {
+    font-size: 14px;
+  }
+}
+
+.accordion__content > .textarea {
+  padding: 20px 10px;
+}
+
+@media (min-width: 48em) {
+  .accordion__content > .textarea {
+    padding: 20px 40px;
+  }
+}
+
+.accordion--dark .accordion__title {
+  height: auto;
+  line-height: 100%;
+  padding: 0;
+}
+
+.accordion--dark .accordion__title.ui-state-active {
+  background-color: #0882B3;
+}
+
+/*
+ section: 6.3.2
+ title: Accordion (with transparent buttons)
+ template: 6_3_2_accordion-transparent
+ description:
+*/
+/*
+ section: 6.3.3
+ title: Accordion (nested)
+ template: 6_3_3_accordion-nested
+ description:
+*/
+/*
+ section: 6.3.4
+ title: Accordion (nested with transparent buttons)
+ template: 6_3_4_accordion-nested-transparent
+ description:
+*/
+/*
  section: 9.1
  title: Index
 */
@@ -5401,7 +5472,7 @@ a:hover
  title: List of links
  description:
 */
-.list-of-links--condensed,
+.list-of-links--condensed, .list-of-links__compact,
 .list-of-links {
   display: block;
   margin-bottom: 30px;
@@ -7327,17 +7398,31 @@ ul.pager > li.pager__next a {
     display: -ms-flexbox;
     display: flex;
   }
+  .col-right {
+    -webkit-flex-basis: 100% / 3;
+        -ms-flex-preferred-size: 100% / 3;
+            flex-basis: 100% / 3;
+    margin-left: 4em;
+  }
   .col-left {
-    -webkit-flex-basis: 35%;
-        -ms-flex-preferred-size: 35%;
-            flex-basis: 35%;
+    -webkit-flex-basis: 100% / 3;
+        -ms-flex-preferred-size: 100% / 3;
+            flex-basis: 100% / 3;
     margin-right: 4em;
   }
-  .col-right {
-    -webkit-flex-basis: 65%;
-        -ms-flex-preferred-size: 65%;
-            flex-basis: 65%;
+  .col-main {
+    -webkit-flex-basis: 66.66667%;
+        -ms-flex-preferred-size: 66.66667%;
+            flex-basis: 66.66667%;
   }
+}
+
+.accordion__accordion-body {
+  margin-bottom: 1em;
+}
+
+.accordion__accordion-links {
+  margin-bottom: 0;
 }
 
 .last-updated {
@@ -7580,10 +7665,6 @@ html {
 
 .degree-programme-switcher .degree-programme-switcher__container .view-content::-webkit-scrollbar-track {
   background: #EBEBEB;
-}
-
-.degree-programme-switcher .degree-programme-switcher__container .view-content li {
-  padding: 0.3em 0;
 }
 
 @media (min-width: 48em) {
@@ -7887,6 +7968,10 @@ input[type="submit"].button--reset + i {
   input[type="submit"].button--reset + i {
     font-size: 10px;
   }
+}
+
+.list-of-links__compact .list-of-links__link {
+  padding: 0.3em 0;
 }
 
 @media (min-width: 48em) {
