@@ -40,9 +40,8 @@
       {{ content }}
     {% endblock %}
     {% if label %}
-      <span class="{{ reset_link.classes }}">
-        {{ link('Reset'|trans , reset_link.link) }}
-      </span>
+      {{ link('Reset'|trans , reset_link.link, {'class': reset_link.classes }) }}
+      <i class="icon--remove"></i>
     {% endif %}
   </div>
 </div>

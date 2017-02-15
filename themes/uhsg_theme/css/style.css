@@ -7596,6 +7596,11 @@ html {
   display: block;
 }
 
+.degree-programme-switcher .degree-programme-switcher__container .button--reset {
+  float: right;
+  margin-top: 1em;
+}
+
 .degree-programme-switcher .degree-programme-switcher__search {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7845,7 +7850,7 @@ input[type="password"] {
 }
 
 input[type="submit"].button--reset,
-button.button--reset {
+.button--reset {
   background: transparent;
   border: none;
   color: #0098d0;
@@ -7854,7 +7859,7 @@ button.button--reset {
 }
 
 input[type="submit"].button--reset + i,
-button.button--reset + i {
+.button--reset + i {
   font-size: 8.75px;
   font-size: 0.625rem;
   color: #0098d0;
@@ -7865,7 +7870,7 @@ button.button--reset + i {
 
 @media (min-width: 48em) {
   input[type="submit"].button--reset + i,
-  button.button--reset + i {
+  .button--reset + i {
     font-size: 10px;
   }
 }
