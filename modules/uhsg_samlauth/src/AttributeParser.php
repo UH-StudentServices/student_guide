@@ -144,7 +144,7 @@ class AttributeParser implements AttributeParserInterface {
    * {@inheritdoc}
    */
   public function getGroups() {
-    $value = $this->getAttributeValueFromAlias('logoutUrl');
+    $value = $this->getAttributeValueFromAlias('groups');
     if (is_null($value)) {
       return [];
     }
