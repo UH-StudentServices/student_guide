@@ -10,6 +10,7 @@ use Drupal\externalauth\ExternalAuth;
 use Drupal\samlauth\SamlService as OriginalSamlService;
 use Drupal\uhsg_redirect_to_login\StackMiddleware\RedirectToLogin;
 use Psr\Log\LoggerInterface;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Session\Session;
 
@@ -43,6 +44,8 @@ class SamlService extends OriginalSamlService {
    *   The EntityTypeManager service.
    * @param \Psr\Log\LoggerInterface $logger
    *   A logger instance.
+   * @param \Symfony\Component\EventDispatcher\EventDispatcherInterface $event_dispatcher
+   *   Event dispatcher
    * @param \Symfony\Component\HttpFoundation\RequestStack
    *   Reuqest stack.
    * @param \Symfony\Component\HttpFoundation\Session\Session
@@ -50,8 +53,8 @@ class SamlService extends OriginalSamlService {
    * @param \Drupal\Core\Path\PathValidator
    *   Path validator.
    */
-  public function __construct(ExternalAuth $external_auth, ConfigFactoryInterface $config_factory, EntityTypeManagerInterface $entity_type_manager, LoggerInterface $logger, RequestStack $requestStack, Session $session, PathValidator $pathValidator) {
-    parent::__construct($external_auth, $config_factory, $entity_type_manager, $logger);
+  public function __construct(ExternalAuth $external_auth, ConfigFactoryInterface $config_factory, EntityTypeManagerInterface $entity_type_manager, LoggerInterface $logger, EventDispatcherInterface $event_dispatcher, RequestStack $requestStack, Session $session, PathValidator $pathValidator) {
+    parent::__construct($external_auth, $config_factory, $entity_type_manager, $logger, $event_dispatcher);
     $this->setRequestStack($requestStack);
     $this->setSession($session);
     $this->setPathValidator($pathValidator);

@@ -1,0 +1,9 @@
+verbose: 1
+node:
+  article: article
+  news: news
+  theme: theme
+block_content: {  }
+taxonomy_term: {  }
+_core:
+  default_config_hash: _RTmBBYSVFYnTcnkTEcDTYi3hjkaUXBOdERrfuBKmFA
