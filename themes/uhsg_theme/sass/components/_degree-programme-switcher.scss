@@ -58,6 +58,10 @@
     &.collapsed {
       display: block;
     }
+    .button--reset {
+      float: right;
+      margin-bottom: -2em;
+    }
   }
   .degree-programme-switcher__search {
     display: flex;

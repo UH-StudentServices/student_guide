@@ -7,6 +7,7 @@
 * Fixed empty contextual links (HUB-115)
 * Removed input focus zoom in degree programme switcher for devices (HUB-121)
 * Added feature for preventing simultaneous content editing (HUB-124)
+* Allow resetting the active degree programme (HUB-99)
 
 
 ## 1.0-beta1
