@@ -39,7 +39,7 @@
         var title = '<h3>' + Drupal.t('My Searches') + '</h3>';
         $('#my-searches').empty();
         $('#my-searches').append(title + '<ul class="list-of-links">' + content + '</ul>');
-        $('#my-searches').append('<button class="button--reset">' + Drupal.t('Remove') + '</button><i class="icon--remove"></i>');
+        $('#my-searches').append('<a class="button--action icon--remove theme-transparent button--reset">' + Drupal.t('Remove') + '</a>');
 
         // Enable search when clicking one of my searches items.
         $('#my-searches li').on('click', function() {

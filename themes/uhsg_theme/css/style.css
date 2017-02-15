@@ -7598,7 +7598,7 @@ html {
 
 .degree-programme-switcher .degree-programme-switcher__container .button--reset {
   float: right;
-  margin-top: 1em;
+  margin-bottom: -2em;
 }
 
 .degree-programme-switcher .degree-programme-switcher__search {
@@ -7849,8 +7849,24 @@ input[type="password"] {
   }
 }
 
-input[type="submit"].button--reset,
 .button--reset {
+  font-weight: 400;
+  font-style: normal;
+}
+
+.button--reset:after {
+  font-size: 8.75px;
+  font-size: 0.625rem;
+  margin: 1px 0 0 10px;
+}
+
+@media (min-width: 48em) {
+  .button--reset:after {
+    font-size: 10px;
+  }
+}
+
+input[type="submit"].button--reset {
   background: transparent;
   border: none;
   color: #0098d0;
@@ -7858,8 +7874,7 @@ input[type="submit"].button--reset,
   padding-right: 2em;
 }
 
-input[type="submit"].button--reset + i,
-.button--reset + i {
+input[type="submit"].button--reset + i {
   font-size: 8.75px;
   font-size: 0.625rem;
   color: #0098d0;
@@ -7869,8 +7884,7 @@ input[type="submit"].button--reset + i,
 }
 
 @media (min-width: 48em) {
-  input[type="submit"].button--reset + i,
-  .button--reset + i {
+  input[type="submit"].button--reset + i {
     font-size: 10px;
   }
 }

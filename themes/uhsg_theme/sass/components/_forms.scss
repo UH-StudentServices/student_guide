@@ -7,9 +7,16 @@ input[type="password"] {
   max-width: 45em;
 }
 
-// we can't use :after or :before with input so the icon is the adjacent sibling
-input[type="submit"].button--reset,
 .button--reset {
+  @include font-weight-book;
+  &:after {
+    @include font-size(10px);
+    margin: 1px 0 0 10px;
+  }
+}
+
+// we can't use :after or :before with input so the icon is the adjacent sibling
+input[type="submit"].button--reset {
   background: transparent;
   border: none;
   color: $blue;
@@ -23,3 +30,4 @@ input[type="submit"].button--reset,
     z-index: -1;
   }
 }
+

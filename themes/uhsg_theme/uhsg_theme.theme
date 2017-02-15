@@ -144,7 +144,7 @@ function uhsg_theme_preprocess_block(array &$variables) {
       $variables['label'] = \Drupal::service('uhsg_active_degree_programme.active_degree_programme')->getName();
       $variables['#cache']['contexts'][] = 'active_degree_programme';
       $variables['reset_link']['link'] =  \Drupal\Core\Url::fromRoute('uhsg_active_degree_programme.reset_active');
-      $variables['reset_link']['classes'] = 'button--reset';
+      $variables['reset_link']['classes'] = 'button--action icon--remove theme-transparent button--reset';
       break;
   }
 }
