@@ -1,0 +1,5 @@
+services:
+  uhsg_role_auto_assign.saml_auth_user_sync_subscriber:
+    class: Drupal\uhsg_role_auto_assign\SamlAuth\UserSyncSubscriber
+    tags:
+      - { name: event_subscriber }
