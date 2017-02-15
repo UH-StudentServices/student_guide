@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d186f1bdb206bc4ecebdade08be133c0",
-    "content-hash": "c92e2f8c22c3cbe047ff5ea871ffce73",
+    "hash": "e4056a39f003c47136034dc87c21010c",
+    "content-hash": "ffdea9ab3f9b525775e1022439bbca53",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -871,6 +871,57 @@
             "homepage": "https://www.drupal.org/project/contact_block",
             "support": {
                 "source": "http://cgit.drupalcode.org/contact_block"
+            }
+        },
+        {
+            "name": "drupal/content_lock",
+            "version": "1.0.0-alpha1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/content_lock",
+                "reference": "8.x-1.0-alpha1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/content_lock-8.x-1.0-alpha1.zip",
+                "reference": null,
+                "shasum": "62b90e762bf92045542d5ae9d49ad6315f6cec32"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-alpha1",
+                    "datestamp": "1486455482"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Joseph Zhao",
+                    "homepage": "https://www.drupal.org/user/1987218"
+                },
+                {
+                    "name": "chr.fritsch",
+                    "homepage": "https://www.drupal.org/user/2103716"
+                },
+                {
+                    "name": "ergonlogic",
+                    "homepage": "https://www.drupal.org/user/368613"
+                }
+            ],
+            "description": "Prevents multiple users from trying to edit a content entity simultaneously to prevent edit conflicts.",
+            "homepage": "https://www.drupal.org/project/content_lock",
+            "support": {
+                "source": "http://cgit.drupalcode.org/content_lock"
             }
         },
         {
@@ -1829,7 +1880,8 @@
                     "datestamp": "1472786639"
                 },
                 "patches_applied": {
-                    "2816997-7": "https://www.drupal.org/files/issues/samlauth-allow_custom_cert_folder-2816997-7.patch"
+                    "2816997-7": "https://www.drupal.org/files/issues/samlauth-allow_custom_cert_folder-2816997-7.patch",
+                    "2817005-11": "https://www.drupal.org/files/issues/samlauth-add_event_to_map_attributes_to_user-2817005-11.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -7297,7 +7349,8 @@
         "drupal/contact_ajax": 10,
         "drupal/google_analytics": 20,
         "drupal/noreqnewpass": 20,
-        "drupal/block_access": 20
+        "drupal/block_access": 20,
+        "drupal/content_lock": 15
     },
     "prefer-stable": true,
     "prefer-lowest": false,
