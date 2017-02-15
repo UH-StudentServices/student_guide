@@ -50,3 +50,6 @@ msgstr "Omat Haut"
 
 msgid "More current topics"
 msgstr "Lisää ajankohtaisia aiheita"
+
+msgid "This content is now locked by you against simultaneous editing. This content will remain locked if you navigate away from this page without saving or unlocking it."
+msgstr "Tämä sisältö on nyt lukittuna sinulle yhtäaikaisen muokkaamisen estämiseksi. Lukitus vapautuu kun tallennat sisällön tai automaattisesti 30 minuutin kuluessa."
