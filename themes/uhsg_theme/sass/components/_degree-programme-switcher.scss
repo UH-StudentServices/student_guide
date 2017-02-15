@@ -3,6 +3,8 @@
   @include breakpoint($mobile-only) {
     &.collapsed {
       position: fixed;
+      display: flex;
+      flex-direction: column;
       top: 0;
       left: 0;
       z-index: 100;
@@ -12,18 +14,26 @@
     }
     .degree-programme-switcher__header {
       margin: 0;
+      flex-shrink: 0;
+      z-index: 101;
     }
     .degree-programme-switcher__container {
       @include font-size(16px);
-      transition: opacity 0.5s;
+      transform: translateY(-50px);
+      transition: opacity 0.3s, transform 0.3s;
       opacity: 0;
+      display: none;
+      overflow: hidden;
       padding: 1em;
+      flex-direction: column;
+      .view-degree-programmes {
+        display: flex;
+        flex-direction: column;
+      }
       &.collapsed {
         opacity: 1;
-      }
-      .view-content {
-        max-height: 20em;
-        max-height: 64vh;
+        display: flex;
+        transform: translateY(0);
       }
     }
   }
@@ -43,6 +53,14 @@
       background: $white;
       &.collapsed {
         display: block;
+      }
+      .view-content {
+        max-height: 20em;
+        max-height: 50vh;
+      }
+      .button--reset {
+        float: right;
+        margin-bottom: -2em;
       }
     }
   }
@@ -80,16 +98,11 @@
     .view-content {
       @include scrollbar;
       margin-bottom: 0;
-      max-height: 20em;
-      max-height: 50vh;
-    }
-    .button--reset {
-      float: right;
-      margin-bottom: -2em;
     }
   }
   .degree-programme-switcher__search {
     display: flex;
+    position: relative;
     input[type="text"] {
       width: 100%;
       @include breakpoint($mobile-only) {
@@ -106,11 +119,11 @@
       flex-shrink: 0;
       & + i {
         width: 35px;
-        right: 35px;
-        line-height: 30px;
+        right: 0;
+        line-height: 40px;
         color: $white;
         background: $blue;
-        position: relative;
+        position: absolute;
         text-align: center;
         flex-shrink: 0;
         @include breakpoint($small) {
