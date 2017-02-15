@@ -7606,6 +7606,12 @@ html {
   width: 100%;
 }
 
+@media (max-width: 48em) {
+  .degree-programme-switcher .degree-programme-switcher__search input[type="text"] {
+    font-size: initial;
+  }
+}
+
 .degree-programme-switcher .degree-programme-switcher__search input[type="submit"] {
   padding: 0;
   margin: 0;

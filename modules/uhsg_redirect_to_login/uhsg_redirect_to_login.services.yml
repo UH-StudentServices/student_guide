@@ -1,5 +1,5 @@
 services:
-  uhsg_redirect_to_login.request_event_subscriber:
-    class: Drupal\uhsg_redirect_to_login\EventSubscriber\RequestEventSubscriber
+  http_middleware.uhsg_recirect_to_login:
+    class: Drupal\uhsg_redirect_to_login\StackMiddleware\RedirectToLogin
     tags:
-      - { name: 'event_subscriber' }
+      - { name: http_middleware, priority: 250, responder: true }

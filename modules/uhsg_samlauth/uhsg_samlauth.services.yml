@@ -3,3 +3,7 @@ services:
     class: Drupal\uhsg_samlauth\Routing\RouteSubscriber
     tags:
       - { name: event_subscriber }
+  uhsg_samlauth.saml_auth_user_sync_subscriber:
+    class: Drupal\uhsg_samlauth\SamlAuth\UserSyncSubscriber
+    tags:
+      - { name: event_subscriber }

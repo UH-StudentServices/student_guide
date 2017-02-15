@@ -8,7 +8,9 @@ use Drupal\Core\Path\PathValidator;
 use Drupal\Core\Url;
 use Drupal\externalauth\ExternalAuth;
 use Drupal\samlauth\SamlService as OriginalSamlService;
+use Drupal\uhsg_redirect_to_login\StackMiddleware\RedirectToLogin;
 use Psr\Log\LoggerInterface;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Session\Session;
 
@@ -42,6 +44,8 @@ class SamlService extends OriginalSamlService {
    *   The EntityTypeManager service.
    * @param \Psr\Log\LoggerInterface $logger
    *   A logger instance.
+   * @param \Symfony\Component\EventDispatcher\EventDispatcherInterface $event_dispatcher
+   *   Event dispatcher
    * @param \Symfony\Component\HttpFoundation\RequestStack
    *   Reuqest stack.
    * @param \Symfony\Component\HttpFoundation\Session\Session
@@ -49,8 +53,8 @@ class SamlService extends OriginalSamlService {
    * @param \Drupal\Core\Path\PathValidator
    *   Path validator.
    */
-  public function __construct(ExternalAuth $external_auth, ConfigFactoryInterface $config_factory, EntityTypeManagerInterface $entity_type_manager, LoggerInterface $logger, RequestStack $requestStack, Session $session, PathValidator $pathValidator) {
-    parent::__construct($external_auth, $config_factory, $entity_type_manager, $logger);
+  public function __construct(ExternalAuth $external_auth, ConfigFactoryInterface $config_factory, EntityTypeManagerInterface $entity_type_manager, LoggerInterface $logger, EventDispatcherInterface $event_dispatcher, RequestStack $requestStack, Session $session, PathValidator $pathValidator) {
+    parent::__construct($external_auth, $config_factory, $entity_type_manager, $logger, $event_dispatcher);
     $this->setRequestStack($requestStack);
     $this->setSession($session);
     $this->setPathValidator($pathValidator);
@@ -87,11 +91,22 @@ class SamlService extends OriginalSamlService {
       $this->session->start();
     }
 
-    // Get the URL from the referer if it is valid or else use front page.
-    $referer = $this->requestStack->getCurrentRequest()->server->get('HTTP_REFERER');
+    // We default at least to our frontpage
     $url = new Url('<front>');
+
+    // If we can catch the referrer, use that
+    $referer = $this->requestStack->getCurrentRequest()->server->get('HTTP_REFERER');
     if ($referer) {
       if ($valid_url = $this->pathValidator->getUrlIfValid($referer)) {
+        $url = $valid_url;
+      }
+    }
+
+    // In conjunction with "Redirect to login" module, it sets the current URI
+    // when it triggers login. We may catch the URI from the cookie.
+    if ($this->requestStack->getCurrentRequest()->cookies->has(RedirectToLogin::COOKIE_NAME_TRIGGERED)) {
+      $cookie_url = $this->requestStack->getCurrentRequest()->cookies->get(RedirectToLogin::COOKIE_NAME_TRIGGERED);
+      if ($valid_url = $this->pathValidator->getUrlIfValid($cookie_url)) {
         $url = $valid_url;
       }
     }
