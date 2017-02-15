@@ -122,7 +122,7 @@ class SamlService extends OriginalSamlService {
    * @return Url|null
    */
   public function getPostLoginLogoutDestination() {
-    if ($this->session->isStarted() && !empty($this->session->get(self::SESS_VALUE_KEY))) {
+    if (!empty($this->session->get(self::SESS_VALUE_KEY))) {
       return unserialize($this->session->get(self::SESS_VALUE_KEY));
     }
     return NULL;
