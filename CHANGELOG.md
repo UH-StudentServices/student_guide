@@ -8,6 +8,7 @@
 * Removed input focus zoom in degree programme switcher for devices (HUB-121)
 * Added feature for preventing simultaneous content editing (HUB-124)
 * Allow resetting the active degree programme (HUB-99)
+* Added automatic role (un)assignments based on groups from SAML2 (HUB-35)
 * Added frequently asked questions to themes (HUB-126)
 
 
