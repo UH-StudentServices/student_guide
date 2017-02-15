@@ -13,9 +13,10 @@
 
       // toggle collapsed when clicking header
       header.once().on('click', function() {
+        $(degreeProgrammeSwitcher).toggleClass(toggleClass);
         container.toggleClass(toggleClass);
         toggle.text(container.hasClass(toggleClass) ? toggleTextOpen : toggleTextClosed);
-        searchInput.focus();
+        //searchInput.focus();
       });
 
       // close when clicking outside

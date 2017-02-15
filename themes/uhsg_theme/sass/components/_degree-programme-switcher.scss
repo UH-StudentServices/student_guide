@@ -1,20 +1,65 @@
 .degree-programme-switcher {
   position: relative;
+  @include breakpoint($mobile-only) {
+    &.collapsed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      background: $white;
+      width: 100vw;
+      height: 100vh;
+    }
+    .degree-programme-switcher__header {
+      margin: 0;
+    }
+    .degree-programme-switcher__container {
+      @include font-size(16px);
+      transition: opacity 0.5s;
+      opacity: 0;
+      padding: 1em;
+      &.collapsed {
+        opacity: 1;
+      }
+      .view-content {
+        max-height: 20em;
+        max-height: 64vh;
+      }
+    }
+  }
+  @include breakpoint($small) {
+    .degree-programme-switcher__header {
+      margin: 2em 0;
+    }
+    .degree-programme-switcher__container {
+      padding: 2em;
+      flex: 1 0 100%;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      z-index: 20;
+      display: none;
+      background: $white;
+      &.collapsed {
+        display: block;
+      }
+    }
+  }
   .degree-programme-switcher__header {
     @include border;
     display: flex;
     cursor: pointer;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
-    margin: 2em 0;
+    align-items: center; 
     padding: 1em;
   }
   .degree-programme-switcher__icon {
-    padding-right: 0.5em;
-    flex: 0 0 100%;
+    display: none;
+    margin-right: 0.5em;
     @include breakpoint($small) {
-      flex: 0 0 auto;
+      display: flex;
     }
   }
   .degree-programme-switcher__title {
@@ -24,36 +69,19 @@
   }
   .degree-programme-switcher__toggle {
     @include font-weight-medium;
-    align-self: flex-start;
     color: $blue;
     @include breakpoint($small) {
       padding: 0 2em;
-      align-self: auto;
     }
   }
   .degree-programme-switcher__container {
     @include border;
     border-top: 0;
-    display: none;
-    padding: 1em;
-    flex: 1 0 100%;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    z-index: 20;
-    background: $white;
     .view-content {
       @include scrollbar;
       margin-bottom: 0;
       max-height: 20em;
       max-height: 50vh;
-    }
-    @include breakpoint($small) {
-      padding: 2em;
-    }
-    &.collapsed {
-      display: block;
     }
     .button--reset {
       float: right;
