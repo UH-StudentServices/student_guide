@@ -7624,6 +7624,7 @@ ul.pager > li.pager__next a {
   display: -ms-flexbox;
   display: flex;
   border-top: 0;
+  width: 100%;
   -webkit-flex-grow: 2;
       -ms-flex-positive: 2;
           flex-grow: 2;
