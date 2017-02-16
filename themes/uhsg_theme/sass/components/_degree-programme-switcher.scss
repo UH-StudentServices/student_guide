@@ -1,78 +1,15 @@
 .degree-programme-switcher {
   position: relative;
-  @include breakpoint($mobile-only) {
-    &.collapsed {
-      position: fixed;
-      display: flex;
-      flex-direction: column;
-      top: 0;
-      left: 0;
-      z-index: 100;
-      background: $white;
-      width: 100vw;
-      height: 100vh;
-      .degree-programme-switcher__dropdown {
-        opacity: 1;
-        display: flex;
-        margin-top: 0;
-      }
-    }
-    .degree-programme-switcher__header {
-      margin: 0;
-      flex-shrink: 0;
-      z-index: 101;
-    }
-    .degree-programme-switcher__dropdown {
-      @include font-size(16px);
-      margin-top: -50px;
-      transition: opacity 0.3s, margin 0.3s;
-      opacity: 0;
-      display: none;
-      overflow: hidden;
-      padding: 1em;
-      flex-direction: column;
-      flex-grow: 2;
-      justify-content: space-between;
-      .view-degree-programmes {
-        display: flex;
-        flex-direction: column;
-      }
-    }
-  }
-  @include breakpoint($small) {
-    &.collapsed {
-      .degree-programme-switcher__dropdown {
-        display: block;
-      }
-    }
-    .degree-programme-switcher__header {
-      margin: 2em 0;
-    }
-    .degree-programme-switcher__dropdown {
-      padding: 2em;
-      flex: 1 0 100%;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      z-index: 20;
-      display: none;
-      background: $white;
-      .view-content {
-        max-height: 20em;
-        max-height: 50vh;
-      }
-      .button--reset {
-        float: right;
-        margin-bottom: -2em;
-      }
-    }
-  }
-
+  z-index: 100;
+  background: $white;
+  display: flex;
+  flex-direction: column;
   .degree-programme-switcher__header {
     @include border;
     display: flex;
     cursor: pointer;
+    flex-shrink: 0;
+    margin: 0;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center; 
@@ -81,9 +18,6 @@
   .degree-programme-switcher__icon {
     display: none;
     margin-right: 0.5em;
-    @include breakpoint($small) {
-      display: flex;
-    }
   }
   .degree-programme-switcher__title {
     display: flex;
@@ -93,13 +27,19 @@
   .degree-programme-switcher__toggle {
     @include font-weight-medium;
     color: $blue;
-    @include breakpoint($small) {
-      padding: 0 2em;
-    }
   }
   .degree-programme-switcher__dropdown {
     @include border;
+    display: none;
     border-top: 0;
+    flex-grow: 2;
+    flex-direction: column;
+    padding: 1em;
+    background: $white;
+    .view-degree-programmes {
+      display: flex;
+      flex-direction: column;
+    }
     .view-content {
       @include scrollbar;
       margin-bottom: 0;
@@ -140,8 +80,39 @@
         }
       }
     }
-    @include breakpoint($mobile-only) {
+  }
+  &.collapsed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    .degree-programme-switcher__dropdown {
+      display: flex;
+    }
+  }
 
+  @include breakpoint($small) {
+    margin-top: 2em;
+    display: block;
+    .degree-programme-switcher__icon {
+      display: flex;
+    }
+    .degree-programme-switcher__dropdown {
+      padding: 2em;
+      position: absolute;
+      width: 100%;
+      .view-content {
+        max-height: 20em;
+        max-height: 50vh;
+      }
+      .button--reset {
+        align-self: flex-end;
+        margin-bottom: -2em;
+      }
+    }
+    &.collapsed {
+      height: auto;
+      position: relative;
     }
   }
 }
