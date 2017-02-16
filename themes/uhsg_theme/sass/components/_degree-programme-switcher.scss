@@ -139,6 +139,7 @@
     }
     &.collapsed {
       height: auto;
+      margin-top: 2em;
       position: relative;
       .degree-programme-switcher__dropdown {
         display: flex;

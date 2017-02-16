@@ -15,6 +15,7 @@
       // toggle collapsed when clicking header
       header.once().on('click', function() {
         container.toggleClass(toggleClass);
+        $('body').toggleClass('no-scroll-mobile');
         toggle.text(container.hasClass(toggleClass) ? toggleTextOpen : toggleTextClosed);
 
         if (window.matchMedia(breakpoints['small']).matches) {
@@ -27,6 +28,7 @@
         var clickedOutside = $(e.target).parents(degreeProgrammeSwitcher).length == 0;
         if (container.hasClass(toggleClass) && clickedOutside) {
           container.removeClass(toggleClass);
+          $('body').removeClass('no-scroll-mobile');
           toggle.text(container.hasClass(toggleClass) ? toggleTextOpen : toggleTextClosed);
         }
       })

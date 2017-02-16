@@ -7443,17 +7443,6 @@ ul.pager > li.pager__next a {
   }
 }
 
-html {
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif, Nimbus Sans L;
-  font-size: 14px;
-}
-
-@media (min-width: 48em) {
-  html {
-    font-size: 16px;
-  }
-}
-
 .content-block__content-block-text {
   font-weight: 300;
   font-style: normal;
@@ -7792,6 +7781,7 @@ html {
   }
   .degree-programme-switcher.collapsed {
     height: auto;
+    margin-top: 2em;
     position: relative;
   }
   .degree-programme-switcher.collapsed .degree-programme-switcher__dropdown {
@@ -8050,6 +8040,24 @@ input[type="submit"].button--reset + i {
 @media (min-width: 48em) {
   .menu-item__align-right {
     margin-left: auto;
+  }
+}
+
+html {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif, Nimbus Sans L;
+  font-size: 14px;
+}
+
+@media (min-width: 48em) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 48em) {
+  .no-scroll-mobile {
+    position: fixed;
+    overflow: hidden;
   }
 }
 
