@@ -72,8 +72,15 @@ function uhsg_theme_preprocess_menu(&$variables) {
       $variables['home_link']['link'] = \Drupal::config('uhsg_service_provider_details.settings')->get('home_path');
       $variables['home_link']['classes'] = $link_classes . ' main-menu__front';
       foreach ($variables['items'] as $item) {
-        if ($item['url']->isRouted() && in_array($item['url']->getRouteName(), ['samlauth.saml_controller_login', 'samlauth.saml_controller_logout'])) {
-          $item['attributes']->addClass('menu-item__align-right');
+        if ($item['url']->isRouted()) {
+          switch ($item['url']->getRouteName()) {
+            case 'samlauth.saml_controller_login':
+              $item['attributes']->addClass('main-menu__right');
+              break;
+            case 'samlauth.saml_controller_logout':
+              $item['attributes']->addClass(['main-menu__right', 'main-menu__logout']);
+              break;
+          }
         }
       }
       break;
