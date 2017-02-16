@@ -45,17 +45,16 @@ class UserSyncSubscriber implements EventSubscriberInterface {
   public function onUserSync(SamlAuthUserSyncEvent $event) {
     $account = $event->getAccount();
     $attributes = new AttributeParser($event->getAttributes());
-    foreach ($this->getAutoAssignableRoles() as $group => $role) {
-      /** @var Role $role */
-      if (!$account->hasRole($role->id()) && $this->hasGroupInAttributes($group, $attributes)) {
-        $account->addRole($role->id());
+    foreach ($this->getAutoAssignableRoles() as $rid => $groups) {
+      if (!$account->hasRole($rid) && $this->hasGroupsInAttributes($groups, $attributes)) {
+        $account->addRole($rid);
         $event->markAccountChanged();
-        $this->logger->debug('Assigned role @role for user @user', array('@role' => $role->label(), $account->label()));
+        $this->logger->debug('Assigned role @role for user @user', array('@role' => $rid, $account->label()));
       }
-      elseif ($account->hasRole($role->id()) && !$this->hasGroupInAttributes($group, $attributes)) {
-        $account->removeRole($role->id());
+      elseif ($account->hasRole($rid) && !$this->hasGroupsInAttributes($groups, $attributes)) {
+        $account->removeRole($rid);
         $event->markAccountChanged();
-        $this->logger->debug('Unassigned role @role from user @user', array('@role' => $role->label(), $account->label()));
+        $this->logger->debug('Unassigned role @role from user @user', array('@role' => $rid, $account->label()));
       }
     }
   }
@@ -70,7 +69,7 @@ class UserSyncSubscriber implements EventSubscriberInterface {
     if ($this->config->get('group_to_roles')) {
       foreach ($this->config->get('group_to_roles') as $item) {
         if ($role = Role::load($item['rid'])) {
-          $auto_assignable_roles[$item['group_name']] = $role;
+          $auto_assignable_roles[$role->id()][] = $item['group_name'];
         }
       }
     }
@@ -78,14 +77,14 @@ class UserSyncSubscriber implements EventSubscriberInterface {
   }
 
   /**
-   * Checks whether group exists in given attributes.
-   * @param $group
+   * Checks whether one of the groups exists in given attributes.
+   * @param array $groups
    * @param AttributeParserInterface $attributes
    * @return bool
    */
-  protected function hasGroupInAttributes($group, AttributeParserInterface $attributes) {
+  protected function hasGroupsInAttributes(array $groups, AttributeParserInterface $attributes) {
     foreach ($attributes->getGroups() as $attribute_group) {
-      if ($group == $attribute_group) {
+      if (in_array($attribute_group, $groups)) {
         return TRUE;
       }
     }

@@ -47,7 +47,7 @@ class AttributeParser implements AttributeParserInterface {
   protected function getAttributeValueFromAlias($alias) {
 
     // Resolve alias key
-    if (!empty($this->alias_mapping[$alias])) {
+    if (empty($this->alias_mapping[$alias])) {
       return NULL;
     }
     $key = $this->alias_mapping[$alias];
@@ -144,7 +144,7 @@ class AttributeParser implements AttributeParserInterface {
    * {@inheritdoc}
    */
   public function getGroups() {
-    $value = $this->getAttributeValueFromAlias('logoutUrl');
+    $value = $this->getAttributeValueFromAlias('groups');
     if (is_null($value)) {
       return [];
     }

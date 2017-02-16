@@ -10,6 +10,8 @@
 * Allow resetting the active degree programme (HUB-99)
 * Added automatic role (un)assignments based on groups from SAML2 (HUB-35)
 * Added frequently asked questions to themes (HUB-126)
+* Fixed logout destination (HUB-116, HUB-117)
+* Changed degree programme codes (HUB-129)
 * Fullscreen degree programme switcher in mobile (HUB-128)
 
 

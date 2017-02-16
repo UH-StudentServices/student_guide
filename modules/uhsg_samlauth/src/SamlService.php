@@ -122,7 +122,7 @@ class SamlService extends OriginalSamlService {
    * @return Url|null
    */
   public function getPostLoginLogoutDestination() {
-    if ($this->session->isStarted() && !empty($this->session->get(self::SESS_VALUE_KEY))) {
+    if (!empty($this->session->get(self::SESS_VALUE_KEY))) {
       return unserialize($this->session->get(self::SESS_VALUE_KEY));
     }
     return NULL;
@@ -165,25 +165,14 @@ class SamlService extends OriginalSamlService {
       $sp_config = $this->samlAuth->getSettings()->getSPData();
       $return_to = $sp_config['singleLogoutService']['url'];
     }
-    user_logout();
-    $return_to = $this->appendPostLogoutDestination($return_to);
-    $this->samlAuth->logout($return_to, array('referrer' => $return_to));
-  }
 
-  /**
-   * Adds an return URL into given URL address query.
-   * @param $return_to
-   * @return string
-   */
-  protected function appendPostLogoutDestination($return_to) {
-    $url = Url::fromUri($return_to);
-    $return_url = $this->getPostLogoutDestination();
-    if ($return_url) {
-      $query = $url->getOption('query') ?: [];
-      $query['return'] = $return_url->setAbsolute(TRUE)->toString(TRUE)->getGeneratedUrl();
-      $url->setOption('query', $query);
+    // Get logout return URL
+    $parameters = ['referrer' => $return_to];
+    if ($return_url = $this->getPostLogoutDestination()) {
+      $parameters['return'] = $return_url->setAbsolute(TRUE)->toString(TRUE)->getGeneratedUrl();
     }
-    return $url->toString(TRUE)->getGeneratedUrl();
+    user_logout();
+    $this->samlAuth->logout($return_to, $parameters);
   }
 
 }
