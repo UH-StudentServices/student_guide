@@ -22,6 +22,7 @@ class UserSyncSubscriberTest extends UnitTestCase {
 
   const GROUP_1_NAME = 'Group 1 name';
   const GROUP_2_NAME = 'Group 2 name';
+  const GROUP_TO_ROLE_MAPPING = [['rid' => self::ROLE_1_ID, 'group_name' => self::GROUP_1_NAME]];
   const ROLE_1_ID = 1;
   const ROLE_2_ID = 2;
   const USER_NAME = 'User name';
@@ -67,7 +68,7 @@ class UserSyncSubscriberTest extends UnitTestCase {
     $this->account->label()->willReturn(self::USER_NAME);
 
     $this->config = $this->prophesize(ImmutableConfig::class);
-    $this->config->get('group_to_roles')->willReturn([['rid' => self::ROLE_1_ID, 'group_name' => self::GROUP_1_NAME]]);
+    $this->config->get('group_to_roles')->willReturn(self::GROUP_TO_ROLE_MAPPING);
 
     $this->configFactory = $this->prophesize(ConfigFactoryInterface::class);
     $this->configFactory->get('uhsg_role_auto_assign.settings')->willReturn($this->config);
@@ -129,6 +130,42 @@ class UserSyncSubscriberTest extends UnitTestCase {
 
     $this->account->removeRole(Argument::any())->shouldBeCalled();
     $this->event->markAccountChanged()->shouldBeCalled();
+
+    $this->userSyncSubscriber->onUserSync($this->event->reveal());
+  }
+
+  /**
+   * @test
+   */
+  public function shouldNotModifyRolesWhenTheUserDoesNotBelongToAnyGroups() {
+    $this->event->getAttributes()->willReturn(['urn:mace:funet.fi:helsinki.fi:hyGroupCn' => []]);
+
+    $this->account->addRole(Argument::any())->shouldNotBeCalled();
+    $this->account->removeRole(Argument::any())->shouldNotBeCalled();
+
+    $this->userSyncSubscriber->onUserSync($this->event->reveal());
+  }
+
+  /**
+   * @test
+   */
+  public function shouldNotModifyRolesWhenThereAreNoAssignableGroups() {
+    $this->config->get('group_to_roles')->willReturn([]);
+
+    $this->account->addRole(Argument::any())->shouldNotBeCalled();
+    $this->account->removeRole(Argument::any())->shouldNotBeCalled();
+
+    $this->userSyncSubscriber->onUserSync($this->event->reveal());
+  }
+
+  /**
+   * @test
+   */
+  public function shouldNotModifyRolesWhenTheUserAlreadyHasGroupRoleAssigned() {
+    $this->account->hasRole(Argument::any())->willReturn(TRUE);
+
+    $this->account->addRole(Argument::any())->shouldNotBeCalled();
+    $this->account->removeRole(Argument::any())->shouldNotBeCalled();
 
     $this->userSyncSubscriber->onUserSync($this->event->reveal());
   }
