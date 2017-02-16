@@ -1,6 +1,7 @@
 .degree-programme-switcher {
   position: relative;
   z-index: 100;
+  margin-top: 1em;
   background: $white;
   display: flex;
   flex-direction: column;
@@ -48,11 +49,14 @@
       display: flex;
       flex-direction: column;
       width: 100%;
-    }
-    .view-content {
-      @include scrollbar;
-      width: 100%;
-      margin-bottom: 0;
+      .view-filters {
+        flex-shrink: 0;
+      }
+      .view-content {
+        @include scrollbar;
+        width: 100%;
+        margin-bottom: 0;
+      }
     }
     // TODO: get rid of this silly container
     // fix firefox & IE
@@ -101,6 +105,7 @@
   }
   &.collapsed {
     position: fixed;
+    margin-top: 0;
     top: 0;
     left: 0;
     height: 100vh;
