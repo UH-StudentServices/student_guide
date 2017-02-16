@@ -7575,6 +7575,8 @@ html {
 
 .degree-programme-switcher .degree-programme-switcher__header {
   border: 1px solid #EBEBEB;
+  background: #FFF;
+  z-index: 10;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -7620,7 +7622,17 @@ html {
 
 .degree-programme-switcher .degree-programme-switcher__dropdown {
   border: 1px solid #EBEBEB;
-  display: none;
+  -webkit-transform: translateY(-100px);
+      -ms-transform: translateY(-100px);
+          transform: translateY(-100px);
+  opacity: 0;
+  transition: -webkit-transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
+  height: 0;
+  overflow: hidden;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   border-top: 0;
   -webkit-flex-grow: 2;
       -ms-flex-positive: 2;
@@ -7647,6 +7659,7 @@ html {
   overflow-y: scroll;
   scrollbar-face-color: #0098d0;
   scrollbar-track-color: #EBEBEB;
+  width: 100%;
   margin-bottom: 0;
 }
 
@@ -7663,10 +7676,12 @@ html {
   background: #EBEBEB;
 }
 
-.degree-programme-switcher .degree-programme-switcher__dropdown > div {
+.degree-programme-switcher .degree-programme-switcher__dropdown > div,
+.degree-programme-switcher .degree-programme-switcher__dropdown > div > div {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   min-height: 1px;
 }
 
@@ -7734,9 +7749,11 @@ html {
 }
 
 .degree-programme-switcher.collapsed .degree-programme-switcher__dropdown {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  -webkit-transform: none;
+      -ms-transform: none;
+          transform: none;
+  height: auto;
+  opacity: 1;
 }
 
 @media (min-width: 48em) {
@@ -7750,6 +7767,7 @@ html {
     display: flex;
   }
   .degree-programme-switcher .degree-programme-switcher__dropdown {
+    display: none;
     padding: 2em;
     position: absolute;
     width: 100%;
@@ -7767,6 +7785,11 @@ html {
   .degree-programme-switcher.collapsed {
     height: auto;
     position: relative;
+  }
+  .degree-programme-switcher.collapsed .degree-programme-switcher__dropdown {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
   }
 }
 
