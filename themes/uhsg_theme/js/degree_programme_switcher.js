@@ -9,14 +9,18 @@
           searchInput = $('input[name="name"]', degreeProgrammeSwitcher),
           toggleClass = 'collapsed',
           toggleTextClosed = Drupal.t('Change'),
-          toggleTextOpen = Drupal.t('Close');
+          toggleTextOpen = Drupal.t('Close'),
+          breakpoints = settings.breakpoints;
 
       // toggle collapsed when clicking header
       header.once().on('click', function() {
         $(degreeProgrammeSwitcher).toggleClass(toggleClass);
         container.toggleClass(toggleClass);
         toggle.text(container.hasClass(toggleClass) ? toggleTextOpen : toggleTextClosed);
-        //searchInput.focus();
+
+        if (window.matchMedia(breakpoints['small']).matches) {
+          searchInput.focus();
+        }
       });
 
       // close when clicking outside

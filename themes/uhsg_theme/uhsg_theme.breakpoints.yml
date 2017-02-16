@@ -1,0 +1,28 @@
+mobile:
+  label: mobile
+  mediaQuery: 'all and (max-width: 48em)'
+  group: UhsgTheme
+  weight: 0
+  multipliers:
+    - 1x
+small:
+  label: small
+  mediaQuery: 'all and (min-width: 48em)'
+  group: UhsgTheme
+  weight: 1
+  multipliers:
+    - 1x
+medium:
+  label: medium
+  mediaQuery: 'all and (min-width: 62.5em)'
+  group: UhsgTheme
+  weight: 2
+  multipliers:
+    - 1x
+large:
+  label: large
+  mediaQuery: 'all and (min-width: 75em)'
+  group: UhsgTheme
+  weight: 3
+  multipliers:
+    - 1x

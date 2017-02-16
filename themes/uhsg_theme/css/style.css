@@ -7748,6 +7748,13 @@ html {
   display: -ms-flexbox;
   display: flex;
   position: relative;
+  max-width: 30em;
+}
+
+.degree-programme-switcher .degree-programme-switcher__search .form-item {
+  -webkit-flex-grow: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
 }
 
 .degree-programme-switcher .degree-programme-switcher__search input[type="text"] {

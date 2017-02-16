@@ -105,6 +105,10 @@
   .degree-programme-switcher__search {
     display: flex;
     position: relative;
+    max-width: 30em;
+    .form-item {
+      flex-grow: 2;
+    }
     input[type="text"] {
       width: 100%;
       @include breakpoint($mobile-only) {
@@ -132,6 +136,9 @@
           line-height: 35px;
         }
       }
+    }
+    @include breakpoint($mobile-only) {
+
     }
   }
 }
