@@ -40,7 +40,7 @@
       {{ content }}
     {% endblock %}
     {% if label %}
-      <div>{{ link('Reset'|trans , reset_link.link, {'class': reset_link.classes }) }}</div>
+      {{ link('Reset'|trans , reset_link.link, {'class': reset_link.classes }) }}
     {% endif %}
   </div>
 </div>

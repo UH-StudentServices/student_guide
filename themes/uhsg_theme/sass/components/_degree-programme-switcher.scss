@@ -19,13 +19,15 @@
     }
     .degree-programme-switcher__container {
       @include font-size(16px);
-      transform: translateY(-50px);
-      transition: opacity 0.3s, transform 0.3s;
+      margin-top: -50px;
+      transition: opacity 0.3s, margin 0.3s;
       opacity: 0;
       display: none;
       overflow: hidden;
       padding: 1em;
       flex-direction: column;
+      flex-grow: 2;
+      justify-content: space-between;
       .view-degree-programmes {
         display: flex;
         flex-direction: column;
@@ -33,7 +35,7 @@
       &.collapsed {
         opacity: 1;
         display: flex;
-        transform: translateY(0);
+        margin-top: 0;
       }
     }
   }
