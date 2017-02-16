@@ -149,7 +149,7 @@ class UserSyncSubscriberTest extends UnitTestCase {
   /**
    * @test
    */
-  public function shouldNotModifyRolesWhenThereAreNoAssignableGroups() {
+  public function shouldNotModifyRolesWhenThereAreNoGroupToRoleMappings() {
     $this->config->get('group_to_roles')->willReturn([]);
 
     $this->account->addRole(Argument::any())->shouldNotBeCalled();
