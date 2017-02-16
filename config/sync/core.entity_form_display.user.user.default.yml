@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_student_number
     - field.field.user.user.field_study_rights
   module:
     - path
@@ -16,6 +17,13 @@ content:
     weight: -10
   contact:
     weight: 5
+  field_student_number:
+    weight: 32
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
   field_study_rights:
     weight: 31
     settings:
