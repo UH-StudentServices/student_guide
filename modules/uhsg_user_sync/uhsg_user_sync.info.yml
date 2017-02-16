@@ -1,0 +1,6 @@
+name: User Sync
+description: Synchronises user fields from SAML2 attributes
+type: module
+core: 8.x
+version: VERSION
+package: Student Guide
