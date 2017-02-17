@@ -1,21 +1,26 @@
 .degree-programme-switcher {
   position: relative;
+  z-index: 100;
+  margin-top: 1em;
+  background: $white;
+  display: flex;
+  flex-direction: column;
   .degree-programme-switcher__header {
     @include border;
+    background: $white;
+    z-index: 10;
     display: flex;
     cursor: pointer;
+    flex-shrink: 0;
+    margin: 0;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
-    margin: 2em 0;
+    align-items: center; 
     padding: 1em;
   }
   .degree-programme-switcher__icon {
-    padding-right: 0.5em;
-    flex: 0 0 100%;
-    @include breakpoint($small) {
-      flex: 0 0 auto;
-    }
+    display: none;
+    margin-right: 0.5em;
   }
   .degree-programme-switcher__title {
     display: flex;
@@ -24,44 +29,50 @@
   }
   .degree-programme-switcher__toggle {
     @include font-weight-medium;
-    align-self: flex-start;
     color: $blue;
-    @include breakpoint($small) {
-      padding: 0 2em;
-      align-self: auto;
-    }
   }
-  .degree-programme-switcher__container {
+  .degree-programme-switcher__dropdown {
     @include border;
+    transform: translateY(-100px);
+    opacity: 0;
+    transition: transform 0.3s, opacity 0.3s;
+    height: 0;
+    overflow: hidden;
+    display: flex;
     border-top: 0;
-    display: none;
-    padding: 1em;
-    flex: 1 0 100%;
-    position: absolute;
-    top: 100%;
-    left: 0;
     width: 100%;
-    z-index: 20;
+    flex-grow: 2;
+    flex-direction: column;
+    padding: 1em;
+    min-height: 1px;
     background: $white;
-    .view-content {
-      @include scrollbar;
-      margin-bottom: 0;
-      max-height: 20em;
-      max-height: 50vh;
+    .view-degree-programmes {
+      .view-filters {
+        flex-shrink: 0;
+      }
+      .view-content {
+        @include scrollbar;
+        > div {
+          flex-shrink: 0;
+        }
+      }
     }
-    @include breakpoint($small) {
-      padding: 2em;
-    }
-    &.collapsed {
-      display: block;
-    }
-    .button--reset {
-      float: right;
-      margin-bottom: -2em;
+    // TODO: get rid of this silly container
+    // fix firefox & IE
+    div {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      min-height: 1px;
     }
   }
-  .degree-programme-switcher__search {
-    display: flex;
+  div.degree-programme-switcher__search {
+    flex-direction: row;
+    position: relative;
+    max-width: 30em;
+    .form-item {
+      flex-grow: 2;
+    }
     input[type="text"] {
       width: 100%;
       @include breakpoint($mobile-only) {
@@ -78,16 +89,59 @@
       flex-shrink: 0;
       & + i {
         width: 35px;
-        right: 35px;
-        line-height: 30px;
+        right: 0;
+        line-height: 40px;
         color: $white;
         background: $blue;
-        position: relative;
+        position: absolute;
         text-align: center;
         flex-shrink: 0;
         @include breakpoint($small) {
           line-height: 35px;
         }
+      }
+    }
+  }
+  &.collapsed {
+    position: fixed;
+    margin-top: 0;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    .degree-programme-switcher__dropdown {
+      transform: none;
+      height: auto;
+      opacity: 1;
+    }
+  }
+
+  @include breakpoint($small) {
+    margin-top: 2em;
+    display: block;
+    .degree-programme-switcher__icon {
+      display: flex;
+    }
+    .degree-programme-switcher__dropdown {
+      display: none;
+      padding: 2em;
+      position: absolute;
+      width: 100%;
+      .view-content {
+        max-height: 20em;
+        max-height: 50vh;
+      }
+      .button--reset {
+        align-self: flex-end;
+        margin-bottom: -2em;
+      }
+    }
+    &.collapsed {
+      height: auto;
+      margin-top: 2em;
+      position: relative;
+      .degree-programme-switcher__dropdown {
+        display: flex;
       }
     }
   }

@@ -11,6 +11,7 @@ degree_programme_switcher:
   dependencies:
     - core/jquery
     - core/jquery.once
+    - core/matchMedia
     - core/drupal
 
 accordion:
