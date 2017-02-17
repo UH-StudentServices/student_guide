@@ -12,6 +12,8 @@
 * Added frequently asked questions to themes (HUB-126)
 * Fixed logout destination (HUB-116, HUB-117)
 * Changed degree programme codes (HUB-129)
+* Fullscreen degree programme switcher in mobile (HUB-128)
+* Find content by author (HUB-132)
 * Logout link as icon (HUB-131)
 
 
