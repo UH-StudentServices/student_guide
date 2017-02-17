@@ -7696,12 +7696,6 @@ ul.pager > li.pager__next a {
   width: 100%;
 }
 
-@media (max-width: 48em) {
-  .degree-programme-switcher div.degree-programme-switcher__search input[type="text"] {
-    font-size: initial;
-  }
-}
-
 .degree-programme-switcher div.degree-programme-switcher__search input[type="submit"] {
   padding: 0;
   margin: 0;
@@ -7975,8 +7969,7 @@ ul.pager > li.pager__next a {
 
 input[type="text"],
 input[type="password"] {
-  font-size: 12.25px;
-  font-size: 0.875rem;
+  font-size: initial;
   border: 2px solid #0098d0;
   padding: 0.5em;
   width: 100%;
@@ -7985,6 +7978,14 @@ input[type="password"] {
 }
 
 @media (min-width: 48em) {
+  input[type="text"],
+  input[type="password"] {
+    font-size: 12.25px;
+    font-size: 0.875rem;
+  }
+}
+
+@media (min-width: 48em) and (min-width: 48em) {
   input[type="text"],
   input[type="password"] {
     font-size: 14px;

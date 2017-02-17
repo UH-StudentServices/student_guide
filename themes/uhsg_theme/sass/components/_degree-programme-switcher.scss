@@ -75,9 +75,6 @@
     }
     input[type="text"] {
       width: 100%;
-      @include breakpoint($mobile-only) {
-        font-size: initial;
-      }
     }
     input[type="submit"] {
       padding: 0;
