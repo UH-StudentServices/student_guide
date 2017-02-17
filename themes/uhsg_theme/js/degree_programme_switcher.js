@@ -31,7 +31,26 @@
           $('body').removeClass('no-scroll-mobile');
           toggle.text(container.hasClass(toggleClass) ? toggleTextOpen : toggleTextClosed);
         }
-      })
+      });
+
+      var viewName = 'degree_programmes';
+      var instances = Drupal.views.instances;
+      var view;
+
+      // find correct dom id
+      $.each(instances , function( index, element) {
+        if (element.settings.view_name == viewName ) {
+          view = $('.view-dom-id-' + element.settings.view_dom_id);
+        }
+      });
+
+      $('.flag-my_degree_programmes').click(function() {
+        container.find('.form-submit').click();
+        // TODO: make this work
+        //view.triggerHandler('RefreshView');
+      });
+
+
 
     }
   };
