@@ -55,6 +55,22 @@
         > div {
           flex-shrink: 0;
         }
+        li {
+          justify-content: space-between;
+          flex-direction: row;
+          .flag {
+            font-size: 0;
+            color: $silver;
+            &.action-unflag {
+              color: $orange;
+            }
+            &:before {
+              @include icon($icon-favorites);
+              @include font-size(16px);
+              margin-right: 1em;
+            }
+          }
+        }
       }
     }
     // TODO: get rid of this silly container

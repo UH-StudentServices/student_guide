@@ -7667,6 +7667,43 @@ ul.pager > li.pager__next a {
           flex-shrink: 0;
 }
 
+.degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content li {
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content li .flag {
+  font-size: 0;
+  color: #979797;
+}
+
+.degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content li .flag.action-unflag {
+  color: #fca311;
+}
+
+.degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content li .flag:before {
+  display: inline-block;
+  font-family: "hy-icons";
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "";
+  font-size: 14px;
+  font-size: 1rem;
+  margin-right: 1em;
+}
+
+@media (min-width: 48em) {
+  .degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content li .flag:before {
+    font-size: 16px;
+  }
+}
+
 .degree-programme-switcher .degree-programme-switcher__dropdown div {
   display: -webkit-flex;
   display: -ms-flexbox;
