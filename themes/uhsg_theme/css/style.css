@@ -7735,6 +7735,7 @@ ul.pager > li.pager__next a {
 
 .degree-programme-switcher.collapsed {
   position: fixed;
+  z-index: 102;
   margin-top: 0;
   top: 0;
   left: 0;
@@ -7792,7 +7793,7 @@ ul.pager > li.pager__next a {
   font-size: 12.25px;
   font-size: 0.875rem;
   width: 300px;
-  z-index: 10;
+  z-index: 101;
   position: fixed;
   bottom: 1em;
   right: 1em;
