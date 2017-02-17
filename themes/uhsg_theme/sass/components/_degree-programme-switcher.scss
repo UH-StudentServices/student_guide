@@ -55,6 +55,19 @@
         > div {
           flex-shrink: 0;
         }
+        ul {
+          margin-bottom: 0;
+        }
+        .my-degree-programmes {
+          .view-grouping-content h4 {
+            display: none;
+          }
+        }
+        .other {
+          > h4 {
+            display: none;
+          }
+        }
         .flag {
           font-size: 0;
           position: absolute;

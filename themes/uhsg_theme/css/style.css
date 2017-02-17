@@ -7667,6 +7667,18 @@ ul.pager > li.pager__next a {
           flex-shrink: 0;
 }
 
+.degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content ul {
+  margin-bottom: 0;
+}
+
+.degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content .my-degree-programmes .view-grouping-content h4 {
+  display: none;
+}
+
+.degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content .other > h4 {
+  display: none;
+}
+
 .degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content .flag {
   font-size: 0;
   position: absolute;

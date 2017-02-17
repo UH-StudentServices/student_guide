@@ -321,9 +321,9 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          type: yes-no
-          type_custom_true: ''
-          type_custom_false: ''
+          type: custom
+          type_custom_true: 'My degree programmes'
+          type_custom_false: Other
           not: 0
           entity_type: flagging
           plugin_id: flag_flagged
