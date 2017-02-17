@@ -8036,8 +8036,46 @@ input[type="submit"].button--reset + i {
 }
 
 @media (min-width: 48em) {
-  .menu-item__align-right {
-    margin-left: auto;
+  .main-menu li.main-menu__right {
+    position: absolute;
+    right: 1em;
+  }
+  .main-menu li.main-menu__right > a {
+    padding-right: 0;
+  }
+}
+
+@media (min-width: 48em) {
+  .main-menu li.main-menu__logout {
+    top: 50%;
+  }
+}
+
+@media (min-width: 48em) {
+  .main-menu li.main-menu__logout > a {
+    font-size: 0;
+  }
+  .main-menu li.main-menu__logout > a:after {
+    display: inline-block;
+    font-family: "hy-icons";
+    font-style: normal;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "";
+    font-size: 14px;
+    font-size: 1rem;
+    font-weight: 300;
+    font-style: normal;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    transition: opacity 0.2s ease;
+  }
+}
+
+@media (min-width: 48em) and (min-width: 48em) {
+  .main-menu li.main-menu__logout > a:after {
+    font-size: 16px;
   }
 }
 

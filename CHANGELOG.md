@@ -14,6 +14,7 @@
 * Changed degree programme codes (HUB-129)
 * Fullscreen degree programme switcher in mobile (HUB-128)
 * Find content by author (HUB-132)
+* Logout link as icon (HUB-131)
 
 
 ## 1.0-beta1
