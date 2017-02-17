@@ -10,6 +10,21 @@ use Drupal\node\Entity\Node;
  */
 
 /**
+ * Implements hook_page_attachments_alter().
+ * Add breakpoints to javascript
+ */
+function uhsg_theme_page_attachments_alter(array &$page) {
+  $breakpoints = \Drupal::service('breakpoint.manager')->getBreakpointsByGroup('UhsgTheme');
+  if ($breakpoints) {
+    $media_queries = [];
+    foreach ($breakpoints as $id => $breakpoint) {
+      $media_queries[$id] = $breakpoint->getMediaQuery();
+    }
+    $page['#attached']['drupalSettings']['breakpoints'] = $media_queries;
+  }
+}
+
+/**
  * Implements hook_preprocess_HOOK() for Region templates.
  */
 function uhsg_theme_preprocess_region(&$variables) {
@@ -72,8 +87,15 @@ function uhsg_theme_preprocess_menu(&$variables) {
       $variables['home_link']['link'] = \Drupal::config('uhsg_service_provider_details.settings')->get('home_path');
       $variables['home_link']['classes'] = $link_classes . ' main-menu__front';
       foreach ($variables['items'] as $item) {
-        if ($item['url']->isRouted() && in_array($item['url']->getRouteName(), ['samlauth.saml_controller_login', 'samlauth.saml_controller_logout'])) {
-          $item['attributes']->addClass('menu-item__align-right');
+        if ($item['url']->isRouted()) {
+          switch ($item['url']->getRouteName()) {
+            case 'samlauth.saml_controller_login':
+              $item['attributes']->addClass('main-menu__right');
+              break;
+            case 'samlauth.saml_controller_logout':
+              $item['attributes']->addClass(['main-menu__right', 'main-menu__logout']);
+              break;
+          }
         }
       }
       break;
@@ -187,7 +209,7 @@ function uhsg_theme_preprocess_block(array &$variables) {
       $variables['label'] = \Drupal::service('uhsg_active_degree_programme.active_degree_programme')->getName();
       $variables['#cache']['contexts'][] = 'active_degree_programme';
       $variables['reset_link']['link'] =  \Drupal\Core\Url::fromRoute('uhsg_active_degree_programme.reset_active');
-      $variables['reset_link']['classes'] = 'button--action icon--remove theme-transparent button--reset';
+      $variables['reset_link']['classes'] = 'button--action icon--remove theme-transparent button--reset is-center-mobile';
       break;
   }
 }

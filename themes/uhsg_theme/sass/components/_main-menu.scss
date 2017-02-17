@@ -1,0 +1,28 @@
+.main-menu {
+  li.main-menu__right {
+    @include breakpoint($small) {
+      position: absolute;
+      right: 1em;
+      > a {
+        padding-right: 0;
+      }
+    }
+  }
+
+  li.main-menu__logout {
+    @include breakpoint($small) {
+      top: 50%;
+    }
+    > a {
+      @include breakpoint($small) {
+        font-size: 0;
+        &:after {
+          @include icon($icon-logout);
+          @include font-size(16px);
+          @include font-weight-light;
+          @include transition-element(opacity, 0.2s);
+        }
+      }
+    }
+  }
+}
