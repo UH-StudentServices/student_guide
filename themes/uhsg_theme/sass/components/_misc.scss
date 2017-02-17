@@ -6,3 +6,10 @@ html {
     font-size: $base-font-size;
   }
 }
+
+.no-scroll-mobile {
+  @include breakpoint($mobile-only) {
+    position: fixed;
+    overflow: hidden;
+  }
+}
