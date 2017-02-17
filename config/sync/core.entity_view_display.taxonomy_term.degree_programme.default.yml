@@ -25,5 +25,7 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: list_default
+  flag_my_degree_programmes:
+    weight: 10
 hidden:
   langcode: true

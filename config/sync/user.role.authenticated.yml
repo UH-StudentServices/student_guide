@@ -13,3 +13,5 @@ permissions:
   - 'view published some links entities'
   - 'access site-wide contact form'
   - 'change active degree programme'
+  - 'flag my_degree_programmes'
+  - 'unflag my_degree_programmes'
