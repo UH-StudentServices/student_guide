@@ -15,8 +15,8 @@
  */
 #}
 
-<div class="{{ title|striptags|clean_class }}">
-  {% if title|striptags|clean_class != 'other' %}
+<div {{ attributes }}>
+  {% if title %}
     <h4 class="tube">{{ title }}</h4>
   {% endif %}
   <div class="view-grouping-content">{{ content }}</div>

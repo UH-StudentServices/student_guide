@@ -71,7 +71,7 @@
             right: 0;
             color: $silver;
             &.action-unflag {
-              color: $orange;
+              color: $blue;
             }
             &:before {
               @include icon($icon-favorites);
