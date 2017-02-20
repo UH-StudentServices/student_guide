@@ -7709,6 +7709,10 @@ ul.pager > li.pager__next a {
   }
 }
 
+.degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content .throbber {
+  display: none;
+}
+
 .degree-programme-switcher .degree-programme-switcher__dropdown div {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8138,6 +8142,24 @@ html {
     position: fixed;
     overflow: hidden;
   }
+}
+
+.ajax-progress-fullscreen {
+  background: none;
+}
+
+.ajax-progress-fullscreen:after {
+  display: inline-block;
+  font-family: "hy-icons";
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "";
+  color: #0098d0;
+  font-size: 2em;
+  -webkit-animation: icon-spin 2s infinite linear;
+          animation: icon-spin 2s infinite linear;
 }
 
 .paragraph:nth-child(odd) {
