@@ -467,7 +467,20 @@ display:
           entity_type: taxonomy_term
           entity_field: langcode
           plugin_id: language
-      sorts: {  }
+      sorts:
+        flagged:
+          id: flagged
+          table: flagging
+          field: flagged
+          relationship: flag_relationship
+          group_type: group
+          admin_label: ''
+          order: DESC
+          exposed: false
+          expose:
+            label: ''
+          entity_type: flagging
+          plugin_id: flag_sort
       title: 'Choose a degree programme'
       header: {  }
       footer: {  }
