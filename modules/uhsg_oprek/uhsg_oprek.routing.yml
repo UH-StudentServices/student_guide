@@ -1,0 +1,8 @@
+entity.user.uhsg_oprek_info:
+  path: '/user/{user}/oprek'
+  defaults:
+    _title: 'Information from oprek'
+    _controller: '\Drupal\uhsg_oprek\Controller\OprekController::infoPage'
+  requirements:
+    _permission: 'view user oprek info'
+    user: \d+

@@ -1,0 +1,4 @@
+services:
+  uhsg_oprek.oprek_service:
+    class: 'Drupal\uhsg_oprek\Oprek\OprekService'
+    arguments: ['@config.factory', '@http_client']

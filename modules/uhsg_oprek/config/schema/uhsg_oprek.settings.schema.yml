@@ -1,0 +1,9 @@
+# Schema for the configuration files of the oprek module.
+
+uhsg_oprek.settings:
+  type: config_object
+  label: 'Oprek settings'
+  mapping:
+    base_url:
+      type: string
+      label: 'Endpoint base URL where all REST requests are sent to without trailing slash.'
