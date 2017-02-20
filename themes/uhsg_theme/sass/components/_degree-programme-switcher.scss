@@ -63,27 +63,25 @@
             display: none;
           }
         }
-        .other {
-          > h4 {
+        li {
+          padding-right: 2.5em;
+          .flag {
+            font-size: 0;
+            position: absolute;
+            right: 0;
+            color: $silver;
+            &.action-unflag {
+              color: $orange;
+            }
+            &:before {
+              @include icon($icon-favorites);
+              @include font-size(16px);
+              margin-right: 1em;
+            }
+          }
+          .ajax-progress {
             display: none;
           }
-        }
-        .flag {
-          font-size: 0;
-          position: absolute;
-          right: 0;
-          color: $silver;
-          &.action-unflag {
-            color: $orange;
-          }
-          &:before {
-            @include icon($icon-favorites);
-            @include font-size(16px);
-            margin-right: 1em;
-          }
-        }
-        .throbber {
-          display: none;
         }
       }
     }

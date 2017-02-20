@@ -7675,22 +7675,22 @@ ul.pager > li.pager__next a {
   display: none;
 }
 
-.degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content .other > h4 {
-  display: none;
+.degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content li {
+  padding-right: 2.5em;
 }
 
-.degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content .flag {
+.degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content li .flag {
   font-size: 0;
   position: absolute;
   right: 0;
   color: #979797;
 }
 
-.degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content .flag.action-unflag {
+.degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content li .flag.action-unflag {
   color: #fca311;
 }
 
-.degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content .flag:before {
+.degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content li .flag:before {
   display: inline-block;
   font-family: "hy-icons";
   font-style: normal;
@@ -7704,12 +7704,12 @@ ul.pager > li.pager__next a {
 }
 
 @media (min-width: 48em) {
-  .degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content .flag:before {
+  .degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content li .flag:before {
     font-size: 16px;
   }
 }
 
-.degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content .throbber {
+.degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content li .ajax-progress {
   display: none;
 }
 
