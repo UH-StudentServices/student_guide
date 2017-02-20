@@ -36,8 +36,10 @@
       // refresh view after adding to item to my degree programmes
       $.each(Drupal.views.instances, function(index, element) {
         if (element.settings.view_name == 'degree_programmes') {
-          $('.flag-my_degree_programmes').on('click', function() {
-            $('.js-view-dom-id-' + element.settings.view_dom_id).trigger('RefreshView');
+          $(document).ajaxSuccess(function(event, request, settings) {
+            if (~settings.url.indexOf('flag')) {
+              $('.js-view-dom-id-' + element.settings.view_dom_id).trigger('RefreshView');
+            }
           });
         }
       });
