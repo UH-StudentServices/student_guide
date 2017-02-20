@@ -33,25 +33,14 @@
         }
       });
 
-      var viewName = 'degree_programmes';
-      var instances = Drupal.views.instances;
-      var view;
-
-      // find correct dom id
-      $.each(instances , function( index, element) {
-        if (element.settings.view_name == viewName ) {
-          view = $('.view-dom-id-' + element.settings.view_dom_id);
+      // refresh view after adding to item to my degree programmes
+      $.each(Drupal.views.instances, function(index, element) {
+        if (element.settings.view_name == 'degree_programmes') {
+          $('.flag-my_degree_programmes').on('click', function() {
+            $('.js-view-dom-id-' + element.settings.view_dom_id).trigger('RefreshView');
+          });
         }
       });
-
-      $('.flag-my_degree_programmes').click(function() {
-        container.find('.form-submit').click();
-        // TODO: make this work
-        //view.triggerHandler('RefreshView');
-      });
-
-
-
     }
   };
 }(jQuery));
