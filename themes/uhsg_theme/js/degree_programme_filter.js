@@ -16,9 +16,12 @@
     return this.each(function() {
       $(this).keyup(function() {
         var search = $(this).val();
+
+        // by default show all items
         $(opt.itemSelector).show();
         $(opt.groupingTitleSelector).show();
 
+        // hide items that don't match
         if (search && search.length >= opt.charCount) {
           $(opt.itemSelector).not(":containsNoCase(" + search + ")").hide();
         }

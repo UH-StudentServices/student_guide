@@ -37,6 +37,11 @@
     <span class="degree-programme-switcher__toggle"> {{ 'Change'|trans }} </span>
   </div>
   <div class="degree-programme-switcher__dropdown">
+    <h4> {{ 'Search for degree programme'|trans }}</h4>
+    <div class="degree-programme-switcher__search tube">
+      <input type="text" name="filter" placeholder="Name of degree programme">
+      <button class="icon--search"></button>
+    </div>
     {% block content %}
       {{ content }}
     {% endblock %}

@@ -68,35 +68,13 @@
   }
   div.degree-programme-switcher__search {
     flex-direction: row;
-    position: relative;
+    flex-shrink: 0;
     max-width: 30em;
-    .form-item {
-      flex-grow: 2;
-    }
-    input[type="text"] {
-      width: 100%;
-    }
-    input[type="submit"] {
-      padding: 0;
-      margin: 0;
-      width: 35px;
-      font-size: 0;
-      z-index: 10;
-      background: transparent;
-      flex-shrink: 0;
-      & + i {
-        width: 35px;
-        right: 0;
-        line-height: 40px;
-        color: $white;
-        background: $blue;
-        position: absolute;
-        text-align: center;
-        flex-shrink: 0;
-        @include breakpoint($small) {
-          line-height: 35px;
-        }
-      }
+    .icon--search {
+      background: $blue;
+      color: $white;
+      padding: 0 0.5em;
+      border: 0;
     }
   }
   &.collapsed {

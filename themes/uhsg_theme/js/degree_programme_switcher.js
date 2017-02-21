@@ -7,7 +7,7 @@
           header = $('.degree-programme-switcher__header', degreeProgrammeSwitcher),
           dropdown = $('.degree-programme-switcher__dropdown', degreeProgrammeSwitcher),
           toggle = $('.degree-programme-switcher__toggle', degreeProgrammeSwitcher),
-          searchInput = $('input[name="name"]', degreeProgrammeSwitcher),
+          searchInput = $('.degree-programme-switcher__search input', degreeProgrammeSwitcher),
           toggleClass = 'collapsed',
           toggleTextClosed = Drupal.t('Change'),
           toggleTextOpen = Drupal.t('Close'),
@@ -34,8 +34,7 @@
         }
       });
 
-      dropdown.prepend('<input type="text" name="filter" class="degree-programme-switcher__search">');
-      $('.degree-programme-switcher__search').searchFilter({
+      searchInput.searchFilter({
         containerSelector: ".view-degree-programmes",
         itemSelector: ".list-of-links__link",
         groupingTitleSelector: ".view-list-title",
