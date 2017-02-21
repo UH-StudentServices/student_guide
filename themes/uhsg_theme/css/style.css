@@ -7678,7 +7678,7 @@ ul.pager > li.pager__next a {
   min-height: 1px;
 }
 
-.degree-programme-switcher div.degree-programme-switcher__search {
+.degree-programme-switcher div.degree-programme-switcher__filter {
   -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
@@ -7688,7 +7688,7 @@ ul.pager > li.pager__next a {
   max-width: 30em;
 }
 
-.degree-programme-switcher div.degree-programme-switcher__search .icon--search {
+.degree-programme-switcher div.degree-programme-switcher__filter .icon--search {
   background: #0098d0;
   color: #FFF;
   padding: 0.5em;

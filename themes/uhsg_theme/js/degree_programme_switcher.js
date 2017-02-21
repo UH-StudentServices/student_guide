@@ -7,7 +7,7 @@
           header = $('.degree-programme-switcher__header', degreeProgrammeSwitcher),
           dropdown = $('.degree-programme-switcher__dropdown', degreeProgrammeSwitcher),
           toggle = $('.degree-programme-switcher__toggle', degreeProgrammeSwitcher),
-          searchInput = $('.degree-programme-switcher__search input', degreeProgrammeSwitcher),
+          filterInput = $('.degree-programme-switcher__filter input', degreeProgrammeSwitcher),
           toggleClass = 'collapsed',
           toggleTextClosed = Drupal.t('Change'),
           toggleTextOpen = Drupal.t('Close'),
@@ -20,7 +20,7 @@
         toggle.text(container.hasClass(toggleClass) ? toggleTextOpen : toggleTextClosed);
 
         if (window.matchMedia(breakpoints['small']).matches) {
-          searchInput.focus();
+          filterInput.focus();
         }
       });
 
@@ -34,11 +34,10 @@
         }
       });
 
-      searchInput.searchFilter({
-        containerSelector: ".view-degree-programmes",
-        itemSelector: ".list-of-links__link",
-        groupingTitleSelector: ".view-list-title",
-        charCount: 2
+      filterInput.degreeProgrammeFilter({
+        container: ".view-degree-programmes",
+        item: ".list-of-links__link",
+        groupingTitle: ".view-list-title"
       });
     }
   };
