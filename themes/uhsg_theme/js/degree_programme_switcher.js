@@ -5,6 +5,7 @@
       var degreeProgrammeSwitcher = '.degree-programme-switcher',
           container = $('.degree-programme-switcher'),
           header = $('.degree-programme-switcher__header', degreeProgrammeSwitcher),
+          dropdown = $('.degree-programme-switcher__dropdown', degreeProgrammeSwitcher),
           toggle = $('.degree-programme-switcher__toggle', degreeProgrammeSwitcher),
           searchInput = $('input[name="name"]', degreeProgrammeSwitcher),
           toggleClass = 'collapsed',
@@ -31,8 +32,10 @@
           $('body').removeClass('no-scroll-mobile');
           toggle.text(container.hasClass(toggleClass) ? toggleTextOpen : toggleTextClosed);
         }
-      })
+      });
 
+      dropdown.prepend('<input type="text" name="filter" class="degree-programme-switcher__search">');
+      $('.degree-programme-switcher__search').searchFilter({ targetSelector: ".list-of-links__link", charCount: 2});
     }
   };
 }(jQuery));
