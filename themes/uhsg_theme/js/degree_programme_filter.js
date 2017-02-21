@@ -7,18 +7,29 @@
 
   $.fn.searchFilter = function(options) {
     var opt = $.extend({
-      targetSelector: '',
+      containerSelector: '',
+      itemSelector: '',
+      groupingTitleSelector: '',
       charCount: 1
     }, options);
 
     return this.each(function() {
       $(this).keyup(function() {
         var search = $(this).val();
-        $(opt.targetSelector).show();
+        $(opt.itemSelector).show();
+        $(opt.groupingTitleSelector).show();
 
         if (search && search.length >= opt.charCount) {
-          $(opt.targetSelector).not(":containsNoCase(" + search + ")").hide();
+          $(opt.itemSelector).not(":containsNoCase(" + search + ")").hide();
         }
+
+        // hide grouping title if all children are hidden
+        $(opt.groupingTitleSelector).each(function() {
+          if (!$(this).next('ul').children('li:visible').length) {
+            $(this).hide();
+          }
+        });
+
       });
     });
   };

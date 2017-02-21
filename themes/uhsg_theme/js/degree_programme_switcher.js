@@ -35,7 +35,12 @@
       });
 
       dropdown.prepend('<input type="text" name="filter" class="degree-programme-switcher__search">');
-      $('.degree-programme-switcher__search').searchFilter({ targetSelector: ".list-of-links__link", charCount: 2});
+      $('.degree-programme-switcher__search').searchFilter({
+        containerSelector: ".view-degree-programmes",
+        itemSelector: ".list-of-links__link",
+        groupingTitleSelector: ".view-list-title",
+        charCount: 2
+      });
     }
   };
 }(jQuery));
