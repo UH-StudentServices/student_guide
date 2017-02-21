@@ -295,3 +295,17 @@ function uhsg_theme_preprocess_html(&$variables) {
     $variables['page']['#attached']['html_head'][] = [$icon, $file->name];
   }
 }
+
+/**
+ * Implements hook_preprocess_HOOK() for views grouping.
+ * Handle cusotm grouping title with working translation.
+ */
+function uhsg_theme_preprocess_views_view_grouping(&$variables) {
+  if ($variables['view']->id() == 'degree_programmes' && strip_tags($variables['title']) == 1) {
+    $variables['attributes']['class'] = 'my-degree-programmes';
+    $variables['title'] = \Drupal::config('flag.flag.my_degree_programmes')->get('label');;
+  }
+  else {
+    unset($variables['title']);
+  }
+}
