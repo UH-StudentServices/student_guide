@@ -17,6 +17,7 @@
 * Logout link as icon (HUB-131)
 * Removed mobile input focus zoom in search (HUB-133)
 * Added tool for viewing oprek responses for student users (HUB-135)
+* Added up-button to bottom of page (HUB-138)
 
 
 ## 1.0-beta1
