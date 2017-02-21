@@ -5,7 +5,6 @@
       var degreeProgrammeSwitcher = '.degree-programme-switcher',
           container = $('.degree-programme-switcher'),
           header = $('.degree-programme-switcher__header', degreeProgrammeSwitcher),
-          dropdown = $('.degree-programme-switcher__dropdown', degreeProgrammeSwitcher),
           toggle = $('.degree-programme-switcher__toggle', degreeProgrammeSwitcher),
           filterInput = $('.degree-programme-switcher__filter input', degreeProgrammeSwitcher),
           toggleClass = 'collapsed',

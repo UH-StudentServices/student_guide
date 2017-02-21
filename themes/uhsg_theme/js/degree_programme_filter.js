@@ -19,16 +19,16 @@
         var filter = $(this).val();
 
         // by default show all items and grouping titles
-        $(opt.item).show();
-        $(opt.groupingTitle).show();
+        $(opt.item, opt.container).show();
+        $(opt.groupingTitle, opt.container).show();
 
         // hide items that don't match
         if (filter.length >= opt.charCount) {
-          $(opt.item).not(":containsNoCase(" + filter + ")").hide();
+          $(opt.item, opt.container).not(":containsNoCase(" + filter + ")").hide();
         }
 
         // hide grouping title if all children are hidden
-        $(opt.groupingTitle).each(function() {
+        $(opt.groupingTitle, opt.container).each(function() {
           if (!$(this).next('ul').children('li:visible').length) {
             $(this).hide();
           }
