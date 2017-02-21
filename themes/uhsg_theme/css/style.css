@@ -7691,8 +7691,7 @@ ul.pager > li.pager__next a {
 .degree-programme-switcher div.degree-programme-switcher__search .icon--search {
   background: #0098d0;
   color: #FFF;
-  padding: 0 0.5em;
-  border: 0;
+  padding: 0.5em;
 }
 
 .degree-programme-switcher.collapsed {
