@@ -20,6 +20,7 @@
 * Added feature for logged in users to favorite degree programmes (HUB-127)
 * Autosubmit degree programme search (HUB-137)
 * Added up-button to bottom of page (HUB-138)
+* Added autocomplete to search (HUB-134)
 
 
 ## 1.0-beta1
