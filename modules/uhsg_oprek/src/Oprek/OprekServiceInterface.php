@@ -17,11 +17,4 @@ interface OprekServiceInterface {
    */
   public function getStudyRights($studentNumber);
 
-  /**
-   * Gets list of elements from study rights.
-   * @param $studyRights
-   * @return array
-   */
-  public function getStudyRightElements($studyRights);
-
 }
