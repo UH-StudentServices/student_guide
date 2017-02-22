@@ -38,7 +38,7 @@
 
 .search-api-autocomplete-suggestion {
   @include font-size(14px);
-  padding: 0.5em;
+  padding: 0.7em;
 
   .autocomplete-suggestion-user-input {
     @include font-weight-medium;
@@ -49,6 +49,7 @@
   }
   .autocomplete-suggestion-results {
     @include font-size(12px);
+    right: 0.7em;
     color: $silver;
   }
 }
