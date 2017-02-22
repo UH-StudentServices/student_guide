@@ -6,6 +6,9 @@ use Drupal\Core\Config\ConfigFactory;
 use Drupal\Core\Config\ImmutableConfig;
 use Drupal\samlauth\Event\SamlAuthEvents;
 use Drupal\samlauth\Event\SamlAuthUserSyncEvent;
+use Drupal\uhsg_oprek\Oprek\OprekServiceInterface;
+use Drupal\uhsg_oprek\Oprek\StudyRight\Element;
+use Drupal\uhsg_oprek\Oprek\StudyRight\StudyRight;
 use Drupal\uhsg_samlauth\AttributeParser;
 use Drupal\uhsg_samlauth\AttributeParserInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
@@ -17,8 +20,14 @@ class UserSyncSubscriber implements EventSubscriberInterface {
    */
   protected $config;
 
-  public function __construct(ConfigFactory $configFactory) {
+  /**
+   * @var OprekServiceInterface
+   */
+  protected $oprekService;
+
+  public function __construct(ConfigFactory $configFactory, OprekServiceInterface $oprekService) {
     $this->config = $configFactory->get('uhsg_user_sync.settings');
+    $this->oprekService = $oprekService;
   }
 
   /**
@@ -32,6 +41,7 @@ class UserSyncSubscriber implements EventSubscriberInterface {
   public function onUserSync(SamlAuthUserSyncEvent $event) {
     $attributes = new AttributeParser($event->getAttributes());
     $this->syncStudentID($event, $attributes);
+    $this->syncMyDegreeProgrammes($event, $attributes);
   }
 
   /**
@@ -64,6 +74,49 @@ class UserSyncSubscriber implements EventSubscriberInterface {
         $event->markAccountChanged();
       }
     }
+  }
+
+  /**
+   * Synchronises my degree programmes.
+   * @param SamlAuthUserSyncEvent $event
+   * @param AttributeParserInterface $attributes
+   */
+  protected function syncMyDegreeProgrammes(SamlAuthUserSyncEvent $event, AttributeParserInterface $attributes) {
+
+    // Figure out student number.
+    $field_name = $this->config->get('studentID_field_name');
+    if (!$field_name) {
+      // We don't know which field to look from
+      return;
+    }
+    if (!$event->getAccount()->getFieldDefinition($field_name)) {
+      // We can't find the configured field definition
+      return;
+    }
+
+    // TODO: First of all, clear out all existing technical degree programmes
+
+    // When student number is available...
+    if ($student_number = $event->getAccount()->get($field_name)->getString()) {
+
+      // TODO: Collect all known degree programme codes in Drupal
+      $known_degree_programmes = [];
+
+      // Map study rights to known degree programmes
+      if ($study_rights = $this->oprekService->getStudyRights($student_number)) {
+        foreach ($study_rights as $study_right) {
+          /** @var StudyRight $study_right */
+          $state = $study_right->getState();
+          foreach ($study_right->getElements() as $element) {
+            /** @var Element $element */
+            if (isset($known_degree_programmes[$element->getCode()])) {
+              // TODO: Create an flagging based on code and state
+            }
+          }
+        }
+      }
+    }
+
   }
 
 }
