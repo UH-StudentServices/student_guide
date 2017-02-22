@@ -34,8 +34,8 @@ class OprekService implements OprekServiceInterface {
    */
   public function getVersion() {
     $body = $this->get('/version');
-    if (!empty($body->version)) {
-      return (string) $body->version;
+    if (!empty($body['version'])) {
+      return (string) $body['version'];
     }
     return '';
   }
@@ -43,7 +43,7 @@ class OprekService implements OprekServiceInterface {
   /**
    * Gets study rights of given student number.
    * @param $studentNumber
-   * @return object
+   * @return array
    */
   public function getStudyRights($studentNumber) {
     if (!is_string($studentNumber)) {
@@ -51,9 +51,9 @@ class OprekService implements OprekServiceInterface {
     }
     $body = $this->get('/students/:student_number/studyrights', [':student_number' => $studentNumber]);
     if (!empty($body)) {
-      return (object) $body;
+      return (array) $body;
     }
-    return (object) [];
+    return [];
   }
 
   /**
