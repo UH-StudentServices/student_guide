@@ -7683,6 +7683,52 @@ ul.pager > li.pager__next a {
           flex-shrink: 0;
 }
 
+.degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content ul {
+  margin-bottom: 0;
+}
+
+.degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content .my-degree-programmes .view-grouping-content h4 {
+  display: none;
+}
+
+.degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content li {
+  padding-right: 2.5em;
+}
+
+.degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content li .flag {
+  font-size: 0;
+  position: absolute;
+  right: 0;
+  color: #979797;
+}
+
+.degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content li .flag.action-unflag {
+  color: #0098d0;
+}
+
+.degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content li .flag:before {
+  display: inline-block;
+  font-family: "hy-icons";
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "";
+  font-size: 14px;
+  font-size: 1rem;
+  margin-right: 1em;
+}
+
+@media (min-width: 48em) {
+  .degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content li .flag:before {
+    font-size: 16px;
+  }
+}
+
+.degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content li .ajax-progress {
+  display: none;
+}
+
 .degree-programme-switcher .degree-programme-switcher__dropdown div {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8112,6 +8158,24 @@ html {
     position: fixed;
     overflow: hidden;
   }
+}
+
+.ajax-progress-fullscreen {
+  background: none;
+}
+
+.ajax-progress-fullscreen:after {
+  display: inline-block;
+  font-family: "hy-icons";
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "";
+  color: #0098d0;
+  font-size: 2em;
+  -webkit-animation: icon-spin 2s infinite linear;
+          animation: icon-spin 2s infinite linear;
 }
 
 .paragraph:nth-child(odd) {

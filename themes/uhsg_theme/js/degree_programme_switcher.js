@@ -31,8 +31,18 @@
           $('body').removeClass('no-scroll-mobile');
           toggle.text(container.hasClass(toggleClass) ? toggleTextOpen : toggleTextClosed);
         }
-      })
+      });
 
+      // refresh view after adding to item to my degree programmes
+      $.each(Drupal.views.instances, function(index, element) {
+        if (element.settings.view_name == 'degree_programmes') {
+          $(document).ajaxSuccess(function(event, request, settings) {
+            if (~settings.url.indexOf('flag')) {
+              $('.js-view-dom-id-' + element.settings.view_dom_id).trigger('RefreshView');
+            }
+          });
+        }
+      });
     }
   };
 }(jQuery));
