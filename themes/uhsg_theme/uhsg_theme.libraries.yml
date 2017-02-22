@@ -4,6 +4,14 @@ global-styling:
     theme:
       css/style.css: {}
 
+anchor:
+  version: 1.x
+  js:
+    js/anchor.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+
 degree_programme_switcher:
   version: 1.x
   js:
@@ -13,6 +21,13 @@ degree_programme_switcher:
     - core/jquery.once
     - core/matchMedia
     - core/drupal
+
+degree_programme_filter:
+  version: 1.x
+  js:
+    js/degree_programme_filter.js: {}
+  dependencies:
+    - core/jquery
 
 accordion:
   version: 1.x

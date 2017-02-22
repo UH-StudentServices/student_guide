@@ -18,6 +18,9 @@ msgstr ""
 msgid "Name of degree programme"
 msgstr ""
 
+msgid "Search for degree programme"
+msgstr ""
+
 msgid "For example topic or university service"
 msgstr ""
 

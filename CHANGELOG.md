@@ -17,7 +17,9 @@
 * Logout link as icon (HUB-131)
 * Removed mobile input focus zoom in search (HUB-133)
 * Added tool for viewing oprek responses for student users (HUB-135)
-* Added feature for logged in users to favorite degree programmes (HUB-127) 
+* Added feature for logged in users to favorite degree programmes (HUB-127)
+* Autosubmit degree programme search (HUB-137)
+* Added up-button to bottom of page (HUB-138)
 
 
 ## 1.0-beta1

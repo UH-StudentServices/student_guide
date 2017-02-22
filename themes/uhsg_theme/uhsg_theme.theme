@@ -219,10 +219,6 @@ function uhsg_theme_preprocess_block(array &$variables) {
  */
 function uhsg_theme_preprocess_views_exposed_form(&$variables) {
   switch ($variables['form']['#id']) {
-    case 'views-exposed-form-degree-programmes-block-1':
-      $variables['form']['name']['#attributes']['placeholder'] = t('Name of degree programme');
-      $variables['form']['actions']['submit']['#suffix'] = '<i class="icon--search"></i>';
-      break;
     case 'views-exposed-form-search-page-1':
       unset($variables['form']['search_api_fulltext']['#theme_wrappers']);
       $variables['form']['search_api_fulltext']['#suffix'] = '<i class="icon-spin icon--spinner"></i>';

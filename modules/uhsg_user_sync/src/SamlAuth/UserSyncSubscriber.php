@@ -18,7 +18,7 @@ class UserSyncSubscriber implements EventSubscriberInterface {
   protected $config;
 
   public function __construct(ConfigFactory $configFactory) {
-    $this->config = $configFactory->get('uhsg_role_auto_assign.settings');
+    $this->config = $configFactory->get('uhsg_user_sync.settings');
   }
 
   /**
