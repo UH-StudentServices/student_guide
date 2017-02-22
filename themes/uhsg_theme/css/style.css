@@ -8169,6 +8169,7 @@ html {
   -webkit-flex: 1 100%;
       -ms-flex: 1 100%;
           flex: 1 100%;
+  position: relative;
 }
 
 @media (min-width: 48em) {
@@ -8186,9 +8187,18 @@ html {
 .view-search .view-filters input.form-autocomplete + .icon-spin {
   display: none;
   color: #0098d0;
-  position: relative;
+  position: absolute;
+  right: 10px;
+  top: 26px;
   vertical-align: middle;
-  left: -28px;
+}
+
+@media (min-width: 48em) {
+  .view-search .view-filters input.form-autocomplete + .icon-spin {
+    position: relative;
+    top: 0;
+    right: 30px;
+  }
 }
 
 .view-search .view-filters input.form-autocomplete.ui-autocomplete-loading + .icon-spin {
@@ -8216,6 +8226,11 @@ html {
 .ui-autocomplete {
   border: 1px solid #EBEBEB;
   background: #FFF;
+}
+
+.ui-autocomplete .ui-menu-item > a {
+  display: block;
+  cursor: pointer;
 }
 
 .search-api-autocomplete-suggestion {

@@ -1,6 +1,7 @@
 .view-search {
   .view-filters {
     flex: 1 100%;
+    position: relative;
     @include breakpoint($small) {
       flex: 0 62%;
     }
@@ -10,9 +11,15 @@
       & + .icon-spin {
         display: none;
         color: $blue;
-        position: relative;
+        position: absolute;
+        right: 10px;
+        top: 26px;
         vertical-align: middle;
-        left: -28px;
+        @include breakpoint($small) {
+          position: relative;
+          top: 0;
+          right: 30px;
+        }
       }
       &.ui-autocomplete-loading + .icon-spin {
         display: inline-block; 
@@ -34,6 +41,10 @@
 .ui-autocomplete {
   @include border;
   background: $white;
+  .ui-menu-item > a {
+    display: block;
+    cursor: pointer;
+  }
 }
 
 .search-api-autocomplete-suggestion {
