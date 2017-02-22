@@ -13,3 +13,13 @@ html {
     overflow: hidden;
   }
 }
+
+.ajax-progress-fullscreen {
+  background: none;
+  &:after {
+    @include icon($icon-spinner);
+    color: $blue;
+    font-size: 2em;
+    animation: icon-spin 2s infinite linear;
+  }
+}

@@ -55,6 +55,34 @@
         > div {
           flex-shrink: 0;
         }
+        ul {
+          margin-bottom: 0;
+        }
+        .my-degree-programmes {
+          .view-grouping-content h4 {
+            display: none;
+          }
+        }
+        li {
+          padding-right: 2.5em;
+          .flag {
+            font-size: 0;
+            position: absolute;
+            right: 0;
+            color: $silver;
+            &.action-unflag {
+              color: $blue;
+            }
+            &:before {
+              @include icon($icon-favorites);
+              @include font-size(16px);
+              margin-right: 1em;
+            }
+          }
+          .ajax-progress {
+            display: none;
+          }
+        }
       }
     }
     // TODO: get rid of this silly container

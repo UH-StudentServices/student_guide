@@ -1,0 +1,13 @@
+uuid: 79e5162c-9a0d-4f77-b971-d733b7d4264a
+langcode: en
+status: true
+dependencies:
+  module:
+    - flag
+id: flag_action.my_degree_programmes.flag
+label: 'Flag this item'
+type: taxonomy_term
+plugin: 'flag_action:my_degree_programmes.flag'
+configuration:
+  flag_id: my_degree_programmes
+  flag_action: flag

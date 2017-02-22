@@ -33,11 +33,24 @@
         }
       });
 
+      // refresh view after adding to item to my degree programmes
+      $.each(Drupal.views.instances, function(index, element) {
+        if (element.settings.view_name == 'degree_programmes') {
+          $(document).ajaxSuccess(function(event, request, settings) {
+            if (~settings.url.indexOf('flag')) {
+              $('.js-view-dom-id-' + element.settings.view_dom_id).trigger('RefreshView');
+            }
+          });
+        }
+      });
+
+      // Apply view filtering to input
       filterInput.degreeProgrammeFilter({
         container: ".view-degree-programmes",
         item: ".list-of-links__link",
         groupingTitle: ".view-list-title"
       });
+
     }
   };
 }(jQuery));
