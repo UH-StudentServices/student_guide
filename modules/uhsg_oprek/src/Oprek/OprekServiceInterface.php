@@ -13,7 +13,7 @@ interface OprekServiceInterface {
   /**
    * Gets study rights of given student.
    * @param $studentNumber
-   * @return object
+   * @return array
    */
   public function getStudyRights($studentNumber);
 
