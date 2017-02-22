@@ -18,6 +18,7 @@
 * Removed mobile input focus zoom in search (HUB-133)
 * Added tool for viewing oprek responses for student users (HUB-135)
 * Added feature for logged in users to favorite degree programmes (HUB-127) 
+* Autosubmit degree programme search (HUB-137)
 
 
 ## 1.0-beta1
