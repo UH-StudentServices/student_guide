@@ -8196,6 +8196,22 @@ html {
   }
 }
 
+.view-search .view-filters input.form-autocomplete {
+  background: none;
+}
+
+.view-search .view-filters input.form-autocomplete + .icon-spin {
+  display: none;
+  color: #0098d0;
+  position: relative;
+  vertical-align: middle;
+  left: -28px;
+}
+
+.view-search .view-filters input.form-autocomplete.ui-autocomplete-loading + .icon-spin {
+  display: inline-block;
+}
+
 .view-search .view-filters .form-actions {
   margin-top: 2em;
 }

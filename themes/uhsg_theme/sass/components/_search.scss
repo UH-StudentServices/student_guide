@@ -4,6 +4,21 @@
     @include breakpoint($small) {
       flex: 0 62%;
     }
+
+    input.form-autocomplete {
+      background: none;
+      & + .icon-spin {
+        display: none;
+        color: $blue;
+        position: relative;
+        vertical-align: middle;
+        left: -28px;
+      }
+      &.ui-autocomplete-loading + .icon-spin {
+        display: inline-block; 
+      }
+    }
+
     .form-actions {
       margin-top: 2em;
     }
