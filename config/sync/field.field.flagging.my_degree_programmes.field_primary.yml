@@ -1,0 +1,23 @@
+uuid: 37620d3e-ad3c-47e7-963c-d0fd334143f2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.flagging.field_primary
+    - flag.flag.my_degree_programmes
+id: flagging.my_degree_programmes.field_primary
+field_name: field_primary
+entity_type: flagging
+bundle: my_degree_programmes
+label: Primary
+description: 'If degree programme specified by study rights, is this flag primary?'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

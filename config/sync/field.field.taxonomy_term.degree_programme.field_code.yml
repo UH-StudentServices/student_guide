@@ -1,0 +1,19 @@
+uuid: eb7fa182-6bd1-42e6-95c2-0a9d86beab3e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_code
+    - taxonomy.vocabulary.degree_programme
+id: taxonomy_term.degree_programme.field_code
+field_name: field_code
+entity_type: taxonomy_term
+bundle: degree_programme
+label: Code
+description: 'Represents the code identifier of this degree programme.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
