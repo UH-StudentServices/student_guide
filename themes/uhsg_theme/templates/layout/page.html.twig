@@ -73,13 +73,15 @@
   {{ page.after_content }}
 {% endif %}
 
-{% if updated %}
-  <div class="l-action-footer container">
+<div class="l-action-footer container">
+  {{ attach_library('uhsg_theme/anchor') }}
+  <a id="up-anchor" class="button--anchor icon--arrow-up" href="#"> {{ 'Up'|trans }} </a>
+  {% if updated %}
     <div class="last-updated">
        {{ 'Updated'|trans ~ ': ' ~ updated }}
     </div>
-  </div>
-{% endif %}
+  {% endif %}
+</div>
 
 {% if page.footer %}
   <footer role="contentinfo">

@@ -7425,22 +7425,38 @@ ul.pager > li.pager__next a {
   margin-bottom: 0;
 }
 
-.last-updated {
+.l-action-footer {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row-reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.l-action-footer .last-updated {
   font-size: 12.25px;
   font-size: 0.875rem;
   line-height: 60px;
 }
 
 @media (min-width: 48em) {
-  .last-updated {
+  .l-action-footer .last-updated {
     font-size: 14px;
   }
 }
 
 @media (min-width: 48em) {
-  .last-updated {
+  .l-action-footer .last-updated {
     padding-left: 40px;
   }
+}
+
+.l-action-footer #up-anchor {
+  padding-top: 35px;
 }
 
 .content-block__content-block-text {

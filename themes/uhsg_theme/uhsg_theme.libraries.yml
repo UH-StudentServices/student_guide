@@ -4,6 +4,14 @@ global-styling:
     theme:
       css/style.css: {}
 
+anchor:
+  version: 1.x
+  js:
+    js/anchor.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+
 degree_programme_switcher:
   version: 1.x
   js:
