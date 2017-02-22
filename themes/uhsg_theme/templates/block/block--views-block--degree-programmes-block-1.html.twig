@@ -25,6 +25,7 @@
  * @see template_preprocess_block()
  */
 #}
+{{ attach_library('uhsg_theme/degree_programme_filter') }}
 {{ attach_library('uhsg_theme/degree_programme_switcher') }}
 
 <div class="degree-programme-switcher">
@@ -36,6 +37,11 @@
     <span class="degree-programme-switcher__toggle"> {{ 'Change'|trans }} </span>
   </div>
   <div class="degree-programme-switcher__dropdown">
+    <h4> {{ 'Search for degree programme'|trans }}</h4>
+    <div class="degree-programme-switcher__filter tube">
+      <input type="text" name="filter" placeholder="{{ 'Name of degree programme'|trans }}">
+      <i class="icon--search"></i>
+    </div>
     {% block content %}
       {{ content }}
     {% endblock %}

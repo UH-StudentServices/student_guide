@@ -6,7 +6,7 @@
           container = $('.degree-programme-switcher'),
           header = $('.degree-programme-switcher__header', degreeProgrammeSwitcher),
           toggle = $('.degree-programme-switcher__toggle', degreeProgrammeSwitcher),
-          searchInput = $('input[name="name"]', degreeProgrammeSwitcher),
+          filterInput = $('.degree-programme-switcher__filter input', degreeProgrammeSwitcher),
           toggleClass = 'collapsed',
           toggleTextClosed = Drupal.t('Change'),
           toggleTextOpen = Drupal.t('Close'),
@@ -19,7 +19,7 @@
         toggle.text(container.hasClass(toggleClass) ? toggleTextOpen : toggleTextClosed);
 
         if (window.matchMedia(breakpoints['small']).matches) {
-          searchInput.focus();
+          filterInput.focus();
         }
       });
 
@@ -43,6 +43,14 @@
           });
         }
       });
+
+      // Apply view filtering to input
+      filterInput.degreeProgrammeFilter({
+        container: ".view-degree-programmes",
+        item: ".list-of-links__link",
+        groupingTitle: ".view-list-title"
+      });
+
     }
   };
 }(jQuery));
