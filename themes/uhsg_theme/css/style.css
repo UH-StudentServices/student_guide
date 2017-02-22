@@ -8230,6 +8230,45 @@ html {
   }
 }
 
+.ui-autocomplete {
+  border: 1px solid #EBEBEB;
+  background: #FFF;
+}
+
+.search-api-autocomplete-suggestion {
+  font-size: 12.25px;
+  font-size: 0.875rem;
+  padding: 0.5em;
+}
+
+@media (min-width: 48em) {
+  .search-api-autocomplete-suggestion {
+    font-size: 14px;
+  }
+}
+
+.search-api-autocomplete-suggestion .autocomplete-suggestion-user-input {
+  font-weight: 600;
+  font-style: normal;
+  color: #666;
+}
+
+.search-api-autocomplete-suggestion .autocomplete-suggestion-suggestion-suffix {
+  color: #979797;
+}
+
+.search-api-autocomplete-suggestion .autocomplete-suggestion-results {
+  font-size: 10.5px;
+  font-size: 0.75rem;
+  color: #979797;
+}
+
+@media (min-width: 48em) {
+  .search-api-autocomplete-suggestion .autocomplete-suggestion-results {
+    font-size: 12px;
+  }
+}
+
 .theme--box {
   width: 100%;
   background: #222;

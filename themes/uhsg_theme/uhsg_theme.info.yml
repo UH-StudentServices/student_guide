@@ -24,6 +24,11 @@ libraries-override:
         css/components/menu.css: false
         css/components/form.css: false
         css/components/inline-form.css: false
+  core/jquery.ui:
+    css:
+      theme:
+        assets/vendor/jquery.ui/themes/base/theme.css: false
+        assets/vendor/jquery.ui/themes/base/menu.css: false
 
 ckeditor_stylesheets:
   - css/ckeditor-custom.css

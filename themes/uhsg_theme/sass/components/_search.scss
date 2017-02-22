@@ -30,3 +30,25 @@
     }
   }
 }
+
+.ui-autocomplete {
+  @include border;
+  background: $white;
+}
+
+.search-api-autocomplete-suggestion {
+  @include font-size(14px);
+  padding: 0.5em;
+
+  .autocomplete-suggestion-user-input {
+    @include font-weight-medium;
+    color: $gray;
+  }
+  .autocomplete-suggestion-suggestion-suffix {
+    color: $silver;
+  }
+  .autocomplete-suggestion-results {
+    @include font-size(12px);
+    color: $silver;
+  }
+}
