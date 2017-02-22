@@ -8236,15 +8236,7 @@ html {
 }
 
 .search-api-autocomplete-suggestion {
-  font-size: 12.25px;
-  font-size: 0.875rem;
-  padding: 0.7em;
-}
-
-@media (min-width: 48em) {
-  .search-api-autocomplete-suggestion {
-    font-size: 14px;
-  }
+  padding: 0.5em;
 }
 
 .search-api-autocomplete-suggestion .autocomplete-suggestion-user-input {
@@ -8258,13 +8250,39 @@ html {
 }
 
 .search-api-autocomplete-suggestion .autocomplete-suggestion-results {
-  font-size: 10.5px;
-  font-size: 0.75rem;
-  right: 0.7em;
+  font-size: 12.25px;
+  font-size: 0.875rem;
+  right: 0.5em;
   color: #979797;
 }
 
 @media (min-width: 48em) {
+  .search-api-autocomplete-suggestion .autocomplete-suggestion-results {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 48em) {
+  .search-api-autocomplete-suggestion {
+    font-size: 12.25px;
+    font-size: 0.875rem;
+  }
+}
+
+@media (min-width: 48em) and (min-width: 48em) {
+  .search-api-autocomplete-suggestion {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 48em) {
+  .search-api-autocomplete-suggestion .autocomplete-suggestion-results {
+    font-size: 10.5px;
+    font-size: 0.75rem;
+  }
+}
+
+@media (min-width: 48em) and (min-width: 48em) {
   .search-api-autocomplete-suggestion .autocomplete-suggestion-results {
     font-size: 12px;
   }
