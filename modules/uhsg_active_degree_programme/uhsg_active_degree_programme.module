@@ -38,4 +38,15 @@ function uhsg_active_degree_programme_views_post_execute(ViewExecutable $view) {
     $view->total_rows = $view->total_rows - $items_filtered_out;
 
   }
+
+  // Hide old degree programmes from anonymous users
+  $roles = \Drupal::currentUser()->getRoles();
+  if ($view->id() == 'degree_programmes' && !in_array('authenticated', $roles)) {
+    foreach ($view->result as $key => $result) {
+      $type = $result->_entity->get('field_degree_programme_type')->getValue();
+      if (in_array('old', array_shift($type))) {
+        unset($view->result[$key]);
+      }
+    }
+  }
 }
