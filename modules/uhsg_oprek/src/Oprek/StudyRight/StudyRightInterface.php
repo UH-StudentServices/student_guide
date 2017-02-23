@@ -12,7 +12,7 @@ interface StudyRightInterface {
 
   /**
    * Returns list of StudyRightElement items.
-   * @return array
+   * @return Element[]
    */
   public function getElements();
 

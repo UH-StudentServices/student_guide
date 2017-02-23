@@ -44,7 +44,7 @@ class OprekService implements OprekServiceInterface {
   /**
    * Gets study rights of given student number.
    * @param $studentNumber
-   * @return array
+   * @return StudyRight[]
    */
   public function getStudyRights($studentNumber) {
     if (!is_string($studentNumber)) {

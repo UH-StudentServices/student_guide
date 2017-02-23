@@ -2,6 +2,8 @@
 
 namespace Drupal\uhsg_oprek\Oprek;
 
+use Drupal\uhsg_oprek\Oprek\StudyRight\StudyRightInterface;
+
 interface OprekServiceInterface {
 
   /**
@@ -13,7 +15,7 @@ interface OprekServiceInterface {
   /**
    * Gets study rights of given student.
    * @param $studentNumber
-   * @return array
+   * @return StudyRightInterface[]
    */
   public function getStudyRights($studentNumber);
 

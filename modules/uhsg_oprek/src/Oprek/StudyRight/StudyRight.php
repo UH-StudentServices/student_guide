@@ -67,7 +67,7 @@ class StudyRight implements StudyRightInterface {
 
   /**
    * Returns list of study right elements.
-   * @return array
+   * @return Element[]
    */
   public function getElements() {
     $return = [];

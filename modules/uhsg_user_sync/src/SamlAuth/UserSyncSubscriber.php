@@ -176,15 +176,12 @@ class UserSyncSubscriber implements EventSubscriberInterface {
 
     // Collect all known degree programme codes, so we know which Terms we
     // should flag when getting matches.
-    /** @var Term[] $known_degree_programmes */
     $known_degree_programmes = $this->getAllKnownDegreeProgrammes();
 
     // Map study rights to known degree programmes and create flaggings
     if ($study_rights = $this->oprekService->getStudyRights($student_number)) {
-      /** @var StudyRight[] $study_rights */
       foreach ($study_rights as $study_right) {
         foreach ($study_right->getElements() as $element) {
-          /** @var Element $element */
           if (isset($known_degree_programmes[$element->getCode()])) {
 
             // Flag the degree programme
