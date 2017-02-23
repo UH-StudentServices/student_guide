@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.taxonomy_term.degree_programme.field_code
     - field.field.taxonomy_term.degree_programme.field_degree_programme_type
     - taxonomy.vocabulary.degree_programme
   module:
@@ -19,6 +20,13 @@ content:
     weight: 0
     settings: {  }
     third_party_settings: {  }
+  field_code:
+    weight: 11
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
   field_degree_programme_type:
     weight: 1
     label: above

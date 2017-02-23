@@ -1,0 +1,18 @@
+uuid: 6853c3fe-4ddf-42d2-96e6-8f27c6120e4f
+langcode: en
+status: true
+dependencies:
+  module:
+    - flag
+id: flagging.field_applied_by_study_rights
+field_name: field_applied_by_study_rights
+entity_type: flagging
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
