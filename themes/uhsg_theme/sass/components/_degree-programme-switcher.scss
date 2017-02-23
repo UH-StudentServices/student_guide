@@ -43,7 +43,7 @@
     width: 100%;
     flex-grow: 2;
     flex-direction: column;
-    padding: 1em;
+    padding: 1em 1em 0 1em;
     min-height: 1px;
     background: $white;
     .view-degree-programmes {
@@ -84,6 +84,9 @@
           }
         }
       }
+    }
+    .button--reset {
+      flex-shrink: 0;
     }
     // TODO: get rid of this silly container
     // fix firefox & IE

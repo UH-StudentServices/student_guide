@@ -7647,7 +7647,7 @@ ul.pager > li.pager__next a {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 1em;
+  padding: 1em 1em 0 1em;
   min-height: 1px;
   background: #FFF;
 }
@@ -7727,6 +7727,12 @@ ul.pager > li.pager__next a {
 
 .degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content li .ajax-progress {
   display: none;
+}
+
+.degree-programme-switcher .degree-programme-switcher__dropdown .button--reset {
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
 }
 
 .degree-programme-switcher .degree-programme-switcher__dropdown div {
