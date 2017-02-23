@@ -12,7 +12,6 @@ use Drupal\samlauth\Event\SamlAuthEvents;
 use Drupal\samlauth\Event\SamlAuthUserSyncEvent;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\uhsg_oprek\Oprek\OprekServiceInterface;
-use Drupal\uhsg_oprek\Oprek\StudyRight\Element;
 use Drupal\uhsg_oprek\Oprek\StudyRight\StudyRight;
 use Drupal\uhsg_samlauth\AttributeParser;
 use Drupal\uhsg_samlauth\AttributeParserInterface;
