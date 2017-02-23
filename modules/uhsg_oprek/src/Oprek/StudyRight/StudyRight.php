@@ -14,7 +14,7 @@ class StudyRight implements StudyRightInterface {
    * look from the text values (might be in any language).
    * @var array
    */
-  protected $knownStates = ['Optio' => 'option', 'Ensisijainen' => 'primary'];
+  protected $knownStates = ['Optio' => self::STATE_OPTION, 'Ensisijainen' => self::STATE_PRIMARY];
 
   /**
    * StudyRight constructor.

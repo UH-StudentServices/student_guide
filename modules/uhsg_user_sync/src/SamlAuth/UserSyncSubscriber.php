@@ -199,7 +199,7 @@ class UserSyncSubscriber implements EventSubscriberInterface {
 
                 // If study right is in 'primary' state and primary field
                 // exists, then set the priary to TRUE.
-                if ($study_right->getState() == 'primary' && $flagging->hasField($this->primary_field_name)) {
+                if ($study_right->getState() == StudyRight::STATE_PRIMARY && $flagging->hasField($this->primary_field_name)) {
                   $flagging->set($this->primary_field_name, TRUE);
                 }
 
