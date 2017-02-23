@@ -18,8 +18,7 @@ class Element implements ElementInterface {
   }
 
   /**
-   * Returns the code of the element.
-   * @return string
+   * {@inheritdoc}
    */
   public function getCode() {
     if (!empty($this->properties['code']) && is_string($this->properties['code'])) {

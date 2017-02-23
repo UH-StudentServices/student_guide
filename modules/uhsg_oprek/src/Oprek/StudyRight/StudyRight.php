@@ -27,8 +27,7 @@ class StudyRight implements StudyRightInterface {
   }
 
   /**
-   * Get the state of the right study.
-   * @return string|null
+   * {@inheritdoc}
    */
   public function getState() {
     if (!empty($this->properties['state'])) {
@@ -66,8 +65,7 @@ class StudyRight implements StudyRightInterface {
   }
 
   /**
-   * Returns list of study right elements.
-   * @return Element[]
+   * {@inheritdoc}
    */
   public function getElements() {
     $return = [];

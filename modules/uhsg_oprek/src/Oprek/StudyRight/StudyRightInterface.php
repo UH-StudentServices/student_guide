@@ -8,8 +8,8 @@ interface StudyRightInterface {
   const STATE_OPTION = 'option';
 
   /**
-   * Return the state of the element.
-   * @return string
+   * Return the state of the element. If unidentified state, then return NULL.
+   * @return string|null
    */
   public function getState();
 
