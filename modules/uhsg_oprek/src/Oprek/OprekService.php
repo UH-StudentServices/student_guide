@@ -30,8 +30,7 @@ class OprekService implements OprekServiceInterface {
   }
 
   /**
-   * Gets the version of the backend service.
-   * @return string
+   * {@inheritdoc}
    */
   public function getVersion() {
     $body = $this->get('/version');
@@ -42,9 +41,7 @@ class OprekService implements OprekServiceInterface {
   }
 
   /**
-   * Gets study rights of given student number.
-   * @param $studentNumber
-   * @return StudyRight[]
+   * {@inheritdoc}
    */
   public function getStudyRights($studentNumber) {
     if (!is_string($studentNumber)) {
