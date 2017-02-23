@@ -4,8 +4,13 @@ namespace Drupal\uhsg_user_sync\SamlAuth;
 
 use Drupal\Core\Config\ConfigFactory;
 use Drupal\Core\Config\ImmutableConfig;
+use Drupal\Core\Entity\EntityManagerInterface;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\flag\FlaggingInterface;
+use Drupal\flag\FlagServiceInterface;
 use Drupal\samlauth\Event\SamlAuthEvents;
 use Drupal\samlauth\Event\SamlAuthUserSyncEvent;
+use Drupal\taxonomy\Entity\Term;
 use Drupal\uhsg_oprek\Oprek\OprekServiceInterface;
 use Drupal\uhsg_oprek\Oprek\StudyRight\Element;
 use Drupal\uhsg_oprek\Oprek\StudyRight\StudyRight;
@@ -25,9 +30,41 @@ class UserSyncSubscriber implements EventSubscriberInterface {
    */
   protected $oprekService;
 
-  public function __construct(ConfigFactory $configFactory, OprekServiceInterface $oprekService) {
+  /**
+   * @var FlagServiceInterface
+   */
+  protected $flagService;
+
+  /**
+   * @var EntityManagerInterface
+   */
+  protected $entityManager;
+
+  /**
+   * Stores the field name that indicates the flagging being programmatically
+   * managed.
+   * @var string
+   */
+  protected $technical_condition_field_name = 'field_applied_by_study_rights';
+
+  /**
+   * Stores the field name that indicates whether the degree programme is
+   * primary degree programme.
+   * @var string
+   */
+  protected $primary_field_name = 'field_primary';
+
+  /**
+   * Stores the field name where code of degree programmes are.
+   * @var string
+   */
+  protected $code_field_name = 'field_code';
+
+  public function __construct(ConfigFactory $configFactory, OprekServiceInterface $oprekService, FlagServiceInterface $flagService, EntityManagerInterface $entityManager) {
     $this->config = $configFactory->get('uhsg_user_sync.settings');
     $this->oprekService = $oprekService;
+    $this->flagService = $flagService;
+    $this->entityManager = $entityManager;
   }
 
   /**
@@ -41,7 +78,7 @@ class UserSyncSubscriber implements EventSubscriberInterface {
   public function onUserSync(SamlAuthUserSyncEvent $event) {
     $attributes = new AttributeParser($event->getAttributes());
     $this->syncStudentID($event, $attributes);
-    $this->syncMyDegreeProgrammes($event, $attributes);
+    $this->syncMyDegreeProgrammes($event->getAccount());
   }
 
   /**
@@ -78,10 +115,9 @@ class UserSyncSubscriber implements EventSubscriberInterface {
 
   /**
    * Synchronises my degree programmes.
-   * @param SamlAuthUserSyncEvent $event
-   * @param AttributeParserInterface $attributes
+   * @param AccountInterface $account
    */
-  protected function syncMyDegreeProgrammes(SamlAuthUserSyncEvent $event, AttributeParserInterface $attributes) {
+  protected function syncMyDegreeProgrammes(AccountInterface $account) {
 
     // Figure out student number.
     $field_name = $this->config->get('studentID_field_name');
@@ -89,34 +125,112 @@ class UserSyncSubscriber implements EventSubscriberInterface {
       // We don't know which field to look from
       return;
     }
-    if (!$event->getAccount()->getFieldDefinition($field_name)) {
+    if (!$account->getFieldDefinition($field_name)) {
       // We can't find the configured field definition
       return;
     }
 
-    // TODO: First of all, clear out all existing technical degree programmes
+    // Clear out all existing technical degree programmes
+    $this->clearTechnicalDegreeProgrammes($account);
 
     // When student number is available...
-    if ($student_number = $event->getAccount()->get($field_name)->getString()) {
+    if ($student_number = $account->get($field_name)->getString()) {
+      $this->setTechnicalDegreeProgrammes($account, $student_number);
+    }
 
-      // TODO: Collect all known degree programme codes in Drupal
-      $known_degree_programmes = [];
+  }
 
-      // Map study rights to known degree programmes
-      if ($study_rights = $this->oprekService->getStudyRights($student_number)) {
-        foreach ($study_rights as $study_right) {
-          /** @var StudyRight $study_right */
-          $state = $study_right->getState();
-          foreach ($study_right->getElements() as $element) {
-            /** @var Element $element */
-            if (isset($known_degree_programmes[$element->getCode()])) {
-              // TODO: Create an flagging based on code and state
+  /**
+   * Clears my degree programmes that were managed programmatically.
+   * @param AccountInterface $account
+   * @return void
+   */
+  protected function clearTechnicalDegreeProgrammes(AccountInterface $account) {
+    $flags = $this->flagService->getUsersFlags($account);
+    foreach ($flags as $flag) {
+      if ($flag->bundle() == 'my_degree_programmes') {
+        $flaggings = $this->flagService->getFlagFlaggings($flag, $account);
+        foreach ($flaggings as $flagging) {
+          /** @var FlaggingInterface $flagging */
+          if ($flagging->hasField($this->technical_condition_field_name)) {
+            if ($flagging->get($this->technical_condition_field_name)->first()->getValue()) {
+              // Deletes user´s flaggings that was programmatically created,
+              // which is tracked by the hidden boolean field.
+              $flagging->delete();
+            }
+          }
+        }
+        // Once we find my_degree_programme flags, there is no reason to keep
+        // looping...
+        break;
+      }
+    }
+  }
+
+  /**
+   * Sets technical degree programmes based on student number.
+   * @param AccountInterface $account
+   * @param $student_number
+   */
+  protected function setTechnicalDegreeProgrammes(AccountInterface $account, $student_number) {
+
+    // Collect all known degree programme codes, so we know which Terms we
+    // should flag when getting matches.
+    /** @var Term[] $known_degree_programmes */
+    $known_degree_programmes = $this->getAllKnownDegreeProgrammes();
+
+    // Map study rights to known degree programmes and create flaggings
+    if ($study_rights = $this->oprekService->getStudyRights($student_number)) {
+      /** @var StudyRight[] $study_rights */
+      foreach ($study_rights as $study_right) {
+        foreach ($study_right->getElements() as $element) {
+          /** @var Element $element */
+          if (isset($known_degree_programmes[$element->getCode()])) {
+
+            // Flag the degree programme
+            $flag = $this->flagService->getFlagById('my_degree_programmes');
+            $this->flagService->flag($flag, $known_degree_programmes[$element->getCode()], $account);
+
+            // Load the flagging, so we can set some field values
+            /** @var FlaggingInterface[] $flaggings */
+            $flaggings = $this->flagService->getEntityFlaggings($flag, $known_degree_programmes[$element->getCode()], $account);
+            foreach ($flaggings as $flagging) {
+
+              // If "technical condition" field exists, set it to TRUE
+              if ($flagging->hasField($this->technical_condition_field_name)) {
+                $flagging->set($this->technical_condition_field_name, TRUE);
+
+                // If study right is in 'primary' state and primary field
+                // exists, then set the priary to TRUE.
+                if ($study_right->getState() == 'primary' && $flagging->hasField($this->primary_field_name)) {
+                  $flagging->set($this->primary_field_name, TRUE);
+                }
+
+                // And save the flagging
+                $flagging->save();
+              }
             }
           }
         }
       }
     }
 
+  }
+
+  /**
+   * Gets list of degree programmes as taxonomy terms.
+   * @return Term[]
+   */
+  protected function getAllKnownDegreeProgrammes() {
+    $known_degree_programmes = [];
+    foreach ($this->entityManager->getStorage('taxonomy_term')->loadMultiple() as $term) {
+      /** @var Term $term */
+      if ($term->hasField($this->code_field_name)) {
+        $code = $term->get($this->code_field_name)->first()->getString();
+        $known_degree_programmes[$code] = $term;
+      }
+    }
+    return $known_degree_programmes;
   }
 
 }
