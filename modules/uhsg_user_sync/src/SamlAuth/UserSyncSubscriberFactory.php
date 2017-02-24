@@ -2,13 +2,15 @@
 
 namespace Drupal\uhsg_user_sync\SamlAuth;
 
-use Drupal\Core\Config\ConfigFactory;
-use Drupal\Core\Entity\EntityManagerInterface;
-use Drupal\flag\FlagServiceInterface;
-use Drupal\uhsg_oprek\Oprek\OprekServiceInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class UserSyncSubscriberFactory {
-  public static function create(ConfigFactory $configFactory, OprekServiceInterface $oprekService, FlagServiceInterface $flagService, EntityManagerInterface $entityManager) {
-    return new UserSyncSubscriber($configFactory, $oprekService, $flagService, $entityManager);
+  public static function create(ContainerInterface $container) {
+    return new UserSyncSubscriber(
+      $container->get('config.factory'),
+      $container->get('uhsg_oprek.oprek_service'),
+      $container->get('flag'),
+      $container->get('entity.manager')
+    );
   }
 }
