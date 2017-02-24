@@ -174,7 +174,7 @@ class UserSyncSubscriber implements EventSubscriberInterface {
 
               // If "technical condition" field exists, set it to TRUE
               if ($flagging->hasField($this->config->get('technical_condition_field_name'))) {
-                $flagging->set($this->$this->config->get('technical_condition_field_name'), TRUE);
+                $flagging->set($this->this->config->get('technical_condition_field_name'), TRUE);
 
                 // If study right is in 'primary' state and primary field
                 // exists, then set the priary to TRUE.
