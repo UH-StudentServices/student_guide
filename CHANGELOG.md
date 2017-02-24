@@ -21,7 +21,13 @@
 * Autosubmit degree programme search (HUB-137)
 * Added up-button to bottom of page (HUB-138)
 * Fixed hidden degree programme switcher reset button in mobile (HUB-140)
+* Added feature for transitional degree programmes (HUB-141)
 
+Installation instructions:
+  * After installation run:
+    ```
+    drush mi degree_programmes_translation && drush mi degree_programmes
+    ```
 
 ## 1.0-beta1
 Release date: 13.02.2017
