@@ -1,1 +1,4 @@
 studentID_field_name: 'field_student_number'
+technical_condition_field_name: 'field_applied_by_study_rights'
+primary_field_name: 'field_primary'
+code_field_name: 'field_code'
