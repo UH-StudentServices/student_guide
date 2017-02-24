@@ -1,6 +1,3 @@
 base_url: ''
-technical_condition_field_name: field_applied_by_study_rights
-primary_field_name: field_primary
-code_field_name: field_code
 _core:
   default_config_hash: mI2qmsDyEO32YeR984zkJU7Z6YfxsKuckGvxDsmrFIE
