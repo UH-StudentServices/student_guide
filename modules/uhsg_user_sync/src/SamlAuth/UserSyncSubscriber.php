@@ -5,6 +5,7 @@ namespace Drupal\uhsg_user_sync\SamlAuth;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Config\ImmutableConfig;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\flag\Entity\Flagging;
 use Drupal\flag\FlaggingInterface;
 use Drupal\flag\FlagServiceInterface;
 use Drupal\samlauth\Event\SamlAuthEvents;
@@ -179,27 +180,23 @@ class UserSyncSubscriber implements EventSubscriberInterface {
 
             // Flag the degree programme
             $flag = $this->flagService->getFlagById('my_degree_programmes');
-            $this->flagService->flag($flag, $known_degree_programmes[$element->getCode()], $event->getAccount());
+            /** @var Flagging $flagging */
+            $flagging = $this->flagService->flag($flag, $known_degree_programmes[$element->getCode()], $event->getAccount());
 
             // Load the flagging, so we can set some field values
-            /** @var FlaggingInterface[] $flaggings */
-            $flaggings = $this->flagService->getEntityFlaggings($flag, $known_degree_programmes[$element->getCode()], $event->getAccount());
-            foreach ($flaggings as $flagging) {
+            // If "technical condition" field exists, set it to TRUE
+            if ($flagging->hasField($this->config->get('technical_condition_field_name'))) {
+              $flagging->set($this->config->get('technical_condition_field_name'), TRUE);
 
-              // If "technical condition" field exists, set it to TRUE
-              if ($flagging->hasField($this->config->get('technical_condition_field_name'))) {
-                $flagging->set($this->config->get('technical_condition_field_name'), TRUE);
-
-                // If study right is in 'primary' state and primary field
-                // exists, then set the priary to TRUE.
-                if ($study_right->getState() == StudyRight::STATE_PRIMARY && $flagging->hasField($this->config->get('primary_field_name'))) {
-                  $flagging->set($this->config->get('primary_field_name'), TRUE);
-                }
-
-                // And save the flagging
-                $flagging->save();
-                $added++;
+              // If study right is in 'primary' state and primary field
+              // exists, then set the priary to TRUE.
+              if ($study_right->getState() == StudyRight::STATE_PRIMARY && $flagging->hasField($this->config->get('primary_field_name'))) {
+                $flagging->set($this->config->get('primary_field_name'), TRUE);
               }
+
+              // And save the flagging
+              $flagging->save();
+              $added++;
             }
           }
         }
