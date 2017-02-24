@@ -201,7 +201,7 @@ class UserSyncSubscriber implements EventSubscriberInterface {
     $known_degree_programmes = [];
     foreach ($this->entityManager->getStorage('taxonomy_term')->loadMultiple() as $term) {
       /** @var Term $term */
-      if ($term->hasField($this->config->get('code_field_name'))) {
+      if ($term->hasField($this->config->get('code_field_name')) && !$term->get($this->config->get('code_field_name'))->isEmpty()) {
         $code = $term->get($this->config->get('code_field_name'))->first()->getString();
         $known_degree_programmes[$code] = $term;
       }
