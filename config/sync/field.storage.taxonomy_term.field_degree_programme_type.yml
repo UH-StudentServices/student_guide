@@ -18,7 +18,7 @@ settings:
       value: master
       label: 'Master''s Programmes'
     -
-      value: old
+      value: transitional
       label: 'Transitional period 2017-2020 Instructions'
   allowed_values_function: ''
 module: options
