@@ -7,12 +7,3 @@ uhsg_oprek.settings:
     base_url:
       type: string
       label: 'Endpoint base URL where all REST requests are sent to without trailing slash.'
-    technical_condition_field_name:
-      type: string
-      label: 'Field name that indicates the flagging being programmatically managed.'
-    primary_field_name:
-      type: string
-      label: 'Field name that indicates whether the degree programme is primary degree programme.'
-    code_field_name:
-      type: string
-      label: 'Field name where code of degree programmes are.'

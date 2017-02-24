@@ -5,4 +5,6 @@ core: 8.x
 version: VERSION
 package: Student Guide
 dependencies:
+  - flag
   - samlauth
+  - uhsg_oprek
