@@ -4,7 +4,7 @@ namespace Drupal\uhsg_user_sync\SamlAuth;
 
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Config\ImmutableConfig;
-use Drupal\Core\Entity\EntityManagerInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\flag\FlaggingInterface;
 use Drupal\flag\FlagServiceInterface;
 use Drupal\samlauth\Event\SamlAuthEvents;
@@ -34,15 +34,15 @@ class UserSyncSubscriber implements EventSubscriberInterface {
   protected $flagService;
 
   /**
-   * @var EntityManagerInterface
+   * @var EntityTypeManagerInterface
    */
-  protected $entityManager;
+  protected $entityTypeManager;
 
-  public function __construct(ConfigFactoryInterface $configFactory, OprekServiceInterface $oprekService, FlagServiceInterface $flagService, EntityManagerInterface $entityManager) {
+  public function __construct(ConfigFactoryInterface $configFactory, OprekServiceInterface $oprekService, FlagServiceInterface $flagService, EntityTypeManagerInterface $entityTypeManager) {
     $this->config = $configFactory->get('uhsg_user_sync.settings');
     $this->oprekService = $oprekService;
     $this->flagService = $flagService;
-    $this->entityManager = $entityManager;
+    $this->entityTypeManager = $entityTypeManager;
   }
 
   /**
@@ -217,7 +217,7 @@ class UserSyncSubscriber implements EventSubscriberInterface {
    */
   protected function getAllKnownDegreeProgrammes() {
     $known_degree_programmes = [];
-    foreach ($this->entityManager->getStorage('taxonomy_term')->loadMultiple() as $term) {
+    foreach ($this->entityTypeManager->getStorage('taxonomy_term')->loadMultiple() as $term) {
       /** @var Term $term */
       if ($term->hasField($this->config->get('code_field_name')) && !$term->get($this->config->get('code_field_name'))->isEmpty()) {
         $code = $term->get($this->config->get('code_field_name'))->first()->getString();
