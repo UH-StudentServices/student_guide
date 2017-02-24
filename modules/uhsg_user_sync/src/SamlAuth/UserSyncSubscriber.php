@@ -180,8 +180,13 @@ class UserSyncSubscriber implements EventSubscriberInterface {
 
             // Flag the degree programme
             $flag = $this->flagService->getFlagById('my_degree_programmes');
+
+            // Get potentially existing flagging, if not exist, then create.
             /** @var Flagging $flagging */
-            $flagging = $this->flagService->flag($flag, $known_degree_programmes[$element->getCode()], $event->getAccount());
+            $flagging = $this->flagService->getFlagging($flag, $known_degree_programmes[$element->getCode()], $event->getAccount());
+            if (!$flagging) {
+              $flagging = $this->flagService->flag($flag, $known_degree_programmes[$element->getCode()], $event->getAccount());
+            }
 
             // Load the flagging, so we can set some field values
             // If "technical condition" field exists, set it to TRUE
