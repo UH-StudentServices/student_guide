@@ -2,7 +2,6 @@
 
 namespace Drupal\uhsg_user_sync\SamlAuth;
 
-use Drupal\Core\Config\ConfigFactory;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Config\ImmutableConfig;
 use Drupal\Core\Entity\EntityManagerInterface;
