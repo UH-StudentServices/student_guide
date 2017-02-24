@@ -20,6 +20,7 @@
 * Added feature for logged in users to favorite degree programmes (HUB-127)
 * Autosubmit degree programme search (HUB-137)
 * Added up-button to bottom of page (HUB-138)
+* Fixed hidden degree programme switcher reset button in mobile (HUB-140)
 
 
 ## 1.0-beta1
