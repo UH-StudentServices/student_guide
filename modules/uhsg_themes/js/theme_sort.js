@@ -2,6 +2,7 @@
   'use strict';
   Drupal.behaviors.theme_sort = {
     attach: function(context, settings) {
+      console.log('pling plong!');
       var container = document.querySelector('.view-themes .view-content');
       var sort = Sortable.create(container, {
         animation: 250,
