@@ -5,7 +5,6 @@ namespace Drupal\uhsg_user_sync\SamlAuth;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Config\ImmutableConfig;
 use Drupal\Core\Entity\EntityManagerInterface;
-use Drupal\Core\Session\AccountInterface;
 use Drupal\flag\FlaggingInterface;
 use Drupal\flag\FlagServiceInterface;
 use Drupal\samlauth\Event\SamlAuthEvents;
@@ -57,7 +56,7 @@ class UserSyncSubscriber implements EventSubscriberInterface {
   public function onUserSync(SamlAuthUserSyncEvent $event) {
     $attributes = new AttributeParser($event->getAttributes());
     $this->syncStudentID($event, $attributes);
-    $this->syncMyDegreeProgrammes($event->getAccount());
+    $this->syncMyDegreeProgrammes($event);
   }
 
   /**
@@ -94,9 +93,9 @@ class UserSyncSubscriber implements EventSubscriberInterface {
 
   /**
    * Synchronises my degree programmes.
-   * @param AccountInterface $account
+   * @param SamlAuthUserSyncEvent $event
    */
-  protected function syncMyDegreeProgrammes(AccountInterface $account) {
+  protected function syncMyDegreeProgrammes(SamlAuthUserSyncEvent $event) {
 
     // Figure out student number.
     $field_name = $this->config->get('studentID_field_name');
@@ -104,31 +103,38 @@ class UserSyncSubscriber implements EventSubscriberInterface {
       // We don't know which field to look from
       return;
     }
-    if (!$account->getFieldDefinition($field_name)) {
+    if (!$event->getAccount()->getFieldDefinition($field_name)) {
       // We can't find the configured field definition
       return;
     }
 
     // Clear out all existing technical degree programmes
-    $this->clearTechnicalDegreeProgrammes($account);
+    $cleared = $this->clearTechnicalDegreeProgrammes($event);
 
     // When student number is available...
-    if ($student_number = $account->get($field_name)->getString()) {
-      $this->setTechnicalDegreeProgrammes($account, $student_number);
+    $added = FALSE;
+    if ($student_number = $event->getAccount()->get($field_name)->getString()) {
+      $added = $this->setTechnicalDegreeProgrammes($event, $student_number);
+    }
+
+    // Mark account has changed, if cleared or added degree programmes
+    if ($cleared || $added) {
+      $event->markAccountChanged();
     }
 
   }
 
   /**
    * Clears my degree programmes that were managed programmatically.
-   * @param AccountInterface $account
-   * @return void
+   * @param SamlAuthUserSyncEvent $event
+   * @return bool
    */
-  protected function clearTechnicalDegreeProgrammes(AccountInterface $account) {
-    $flags = $this->flagService->getUsersFlags($account);
+  protected function clearTechnicalDegreeProgrammes(SamlAuthUserSyncEvent $event) {
+    $flags = $this->flagService->getUsersFlags($event->getAccount());
+    $cleared = 0;
     foreach ($flags as $flag) {
       if ($flag->bundle() == 'my_degree_programmes') {
-        $flaggings = $this->flagService->getFlagFlaggings($flag, $account);
+        $flaggings = $this->flagService->getFlagFlaggings($flag, $event->getAccount());
         foreach ($flaggings as $flagging) {
           /** @var FlaggingInterface $flagging */
           if ($flagging->hasField($this->config->get('technical_condition_field_name'))) {
@@ -136,6 +142,7 @@ class UserSyncSubscriber implements EventSubscriberInterface {
               // Deletes user´s flaggings that was programmatically created,
               // which is tracked by the hidden boolean field.
               $flagging->delete();
+              $cleared++;
             }
           }
         }
@@ -144,18 +151,25 @@ class UserSyncSubscriber implements EventSubscriberInterface {
         break;
       }
     }
+
+    // Return TRUE if any technical degree programmes were cleared.
+    return $cleared > 0;
   }
 
   /**
    * Sets technical degree programmes based on student number.
-   * @param AccountInterface $account
+   * @param SamlAuthUserSyncEvent $event
    * @param $student_number
+   * @return bool
    */
-  protected function setTechnicalDegreeProgrammes(AccountInterface $account, $student_number) {
+  protected function setTechnicalDegreeProgrammes(SamlAuthUserSyncEvent $event, $student_number) {
 
     // Collect all known degree programme codes, so we know which Terms we
     // should flag when getting matches.
     $known_degree_programmes = $this->getAllKnownDegreeProgrammes();
+
+    // Keep track of new technical degree programmes
+    $added = 0;
 
     // Map study rights to known degree programmes and create flaggings
     if ($study_rights = $this->oprekService->getStudyRights($student_number)) {
@@ -165,11 +179,11 @@ class UserSyncSubscriber implements EventSubscriberInterface {
 
             // Flag the degree programme
             $flag = $this->flagService->getFlagById('my_degree_programmes');
-            $this->flagService->flag($flag, $known_degree_programmes[$element->getCode()], $account);
+            $this->flagService->flag($flag, $known_degree_programmes[$element->getCode()], $event->getAccount());
 
             // Load the flagging, so we can set some field values
             /** @var FlaggingInterface[] $flaggings */
-            $flaggings = $this->flagService->getEntityFlaggings($flag, $known_degree_programmes[$element->getCode()], $account);
+            $flaggings = $this->flagService->getEntityFlaggings($flag, $known_degree_programmes[$element->getCode()], $event->getAccount());
             foreach ($flaggings as $flagging) {
 
               // If "technical condition" field exists, set it to TRUE
@@ -184,12 +198,16 @@ class UserSyncSubscriber implements EventSubscriberInterface {
 
                 // And save the flagging
                 $flagging->save();
+                $added++;
               }
             }
           }
         }
       }
     }
+
+    // Return TRUE if any flags were created.
+    return $added > 0;
 
   }
 
