@@ -4,6 +4,7 @@ namespace Drupal\uhsg_oprek\Oprek;
 
 use Drupal\Component\Serialization\Json;
 use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\uhsg_oprek\Oprek\StudyRight\StudyRight;
 use GuzzleHttp\Client;
 
 class OprekService implements OprekServiceInterface {
@@ -29,8 +30,7 @@ class OprekService implements OprekServiceInterface {
   }
 
   /**
-   * Gets the version of the backend service.
-   * @return string
+   * {@inheritdoc}
    */
   public function getVersion() {
     $body = $this->get('/version');
@@ -41,32 +41,19 @@ class OprekService implements OprekServiceInterface {
   }
 
   /**
-   * Gets study rights of given student number.
-   * @param $studentNumber
-   * @return array
+   * {@inheritdoc}
    */
   public function getStudyRights($studentNumber) {
     if (!is_string($studentNumber)) {
       throw new \InvalidArgumentException('Student number must be string type.');
     }
     $body = $this->get('/students/:student_number/studyrights', [':student_number' => $studentNumber]);
-    if (!empty($body)) {
-      return (array) $body;
-    }
-    return [];
-  }
-
-  /**
-   * Returns the elements of study rights.
-   * @param $studyRights
-   * @return array
-   */
-  public function getStudyRightElements($studyRights) {
-    if (!is_object($studyRights)) {
-      throw new \InvalidArgumentException('Study rights argument must be an object.');
-    }
-    if (!empty($studyRights->elements)) {
-      return (array) $studyRights->elements;
+    if (!empty($body) && is_array($body)) {
+      $return = [];
+      foreach ($body as $study_right) {
+        $return[] = new StudyRight($study_right);
+      }
+      return $return;
     }
     return [];
   }

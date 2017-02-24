@@ -2,10 +2,17 @@
 
 namespace Drupal\uhsg_user_sync\SamlAuth;
 
-use Drupal\Core\Config\ConfigFactory;
+use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Config\ImmutableConfig;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\flag\Entity\Flagging;
+use Drupal\flag\FlaggingInterface;
+use Drupal\flag\FlagServiceInterface;
 use Drupal\samlauth\Event\SamlAuthEvents;
 use Drupal\samlauth\Event\SamlAuthUserSyncEvent;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\uhsg_oprek\Oprek\OprekServiceInterface;
+use Drupal\uhsg_oprek\Oprek\StudyRight\StudyRight;
 use Drupal\uhsg_samlauth\AttributeParser;
 use Drupal\uhsg_samlauth\AttributeParserInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
@@ -17,8 +24,26 @@ class UserSyncSubscriber implements EventSubscriberInterface {
    */
   protected $config;
 
-  public function __construct(ConfigFactory $configFactory) {
+  /**
+   * @var OprekServiceInterface
+   */
+  protected $oprekService;
+
+  /**
+   * @var FlagServiceInterface
+   */
+  protected $flagService;
+
+  /**
+   * @var EntityTypeManagerInterface
+   */
+  protected $entityTypeManager;
+
+  public function __construct(ConfigFactoryInterface $configFactory, OprekServiceInterface $oprekService, FlagServiceInterface $flagService, EntityTypeManagerInterface $entityTypeManager) {
     $this->config = $configFactory->get('uhsg_user_sync.settings');
+    $this->oprekService = $oprekService;
+    $this->flagService = $flagService;
+    $this->entityTypeManager = $entityTypeManager;
   }
 
   /**
@@ -32,6 +57,7 @@ class UserSyncSubscriber implements EventSubscriberInterface {
   public function onUserSync(SamlAuthUserSyncEvent $event) {
     $attributes = new AttributeParser($event->getAttributes());
     $this->syncStudentID($event, $attributes);
+    $this->syncMyDegreeProgrammes($event);
   }
 
   /**
@@ -64,6 +90,143 @@ class UserSyncSubscriber implements EventSubscriberInterface {
         $event->markAccountChanged();
       }
     }
+  }
+
+  /**
+   * Synchronises my degree programmes.
+   * @param SamlAuthUserSyncEvent $event
+   */
+  protected function syncMyDegreeProgrammes(SamlAuthUserSyncEvent $event) {
+
+    // Figure out student number.
+    $field_name = $this->config->get('studentID_field_name');
+    if (!$field_name) {
+      // We don't know which field to look from
+      return;
+    }
+    if (!$event->getAccount()->getFieldDefinition($field_name)) {
+      // We can't find the configured field definition
+      return;
+    }
+
+    // Clear out all existing technical degree programmes
+    $cleared = $this->clearTechnicalDegreeProgrammes($event);
+
+    // When student number is available...
+    $added = FALSE;
+    if ($student_number = $event->getAccount()->get($field_name)->getString()) {
+      $added = $this->setTechnicalDegreeProgrammes($event, $student_number);
+    }
+
+    // Mark account has changed, if cleared or added degree programmes
+    if ($cleared || $added) {
+      $event->markAccountChanged();
+    }
+
+  }
+
+  /**
+   * Clears my degree programmes that were managed programmatically.
+   * @param SamlAuthUserSyncEvent $event
+   * @return bool
+   */
+  protected function clearTechnicalDegreeProgrammes(SamlAuthUserSyncEvent $event) {
+    $flags = $this->flagService->getUsersFlags($event->getAccount());
+    $cleared = 0;
+    foreach ($flags as $flag) {
+      if ($flag->bundle() == 'my_degree_programmes') {
+        $flaggings = $this->flagService->getFlagFlaggings($flag, $event->getAccount());
+        foreach ($flaggings as $flagging) {
+          /** @var FlaggingInterface $flagging */
+          if ($flagging->hasField($this->config->get('technical_condition_field_name'))) {
+            if ($flagging->get($this->config->get('technical_condition_field_name'))->first()->getValue()) {
+              // Deletes user´s flaggings that was programmatically created,
+              // which is tracked by the hidden boolean field.
+              $flagging->delete();
+              $cleared++;
+            }
+          }
+        }
+        // Once we find my_degree_programme flags, there is no reason to keep
+        // looping...
+        break;
+      }
+    }
+
+    // Return TRUE if any technical degree programmes were cleared.
+    return $cleared > 0;
+  }
+
+  /**
+   * Sets technical degree programmes based on student number.
+   * @param SamlAuthUserSyncEvent $event
+   * @param $student_number
+   * @return bool
+   */
+  protected function setTechnicalDegreeProgrammes(SamlAuthUserSyncEvent $event, $student_number) {
+
+    // Collect all known degree programme codes, so we know which Terms we
+    // should flag when getting matches.
+    $known_degree_programmes = $this->getAllKnownDegreeProgrammes();
+
+    // Keep track of new technical degree programmes
+    $added = 0;
+
+    // Map study rights to known degree programmes and create flaggings
+    if ($study_rights = $this->oprekService->getStudyRights($student_number)) {
+      foreach ($study_rights as $study_right) {
+        foreach ($study_right->getElements() as $element) {
+          if (isset($known_degree_programmes[$element->getCode()])) {
+
+            // Flag the degree programme
+            $flag = $this->flagService->getFlagById('my_degree_programmes');
+
+            // Get potentially existing flagging, if not exist, then create.
+            /** @var Flagging $flagging */
+            $flagging = $this->flagService->getFlagging($flag, $known_degree_programmes[$element->getCode()], $event->getAccount());
+            if (!$flagging) {
+              $flagging = $this->flagService->flag($flag, $known_degree_programmes[$element->getCode()], $event->getAccount());
+            }
+
+            // Load the flagging, so we can set some field values
+            // If "technical condition" field exists, set it to TRUE
+            if ($flagging->hasField($this->config->get('technical_condition_field_name'))) {
+              $flagging->set($this->config->get('technical_condition_field_name'), TRUE);
+
+              // If study right is in 'primary' state and primary field
+              // exists, then set the priary to TRUE.
+              if ($study_right->getState() == StudyRight::STATE_PRIMARY && $flagging->hasField($this->config->get('primary_field_name'))) {
+                $flagging->set($this->config->get('primary_field_name'), TRUE);
+              }
+
+              // And save the flagging
+              $flagging->save();
+              $added++;
+            }
+          }
+        }
+      }
+    }
+
+    // Return TRUE if any flags were created.
+    return $added > 0;
+
+  }
+
+  /**
+   * Gets list of degree programmes as taxonomy terms.
+   * @return Term[]
+   */
+  protected function getAllKnownDegreeProgrammes() {
+    $known_degree_programmes = [];
+    foreach ($this->entityTypeManager->getStorage('taxonomy_term')->loadMultiple() as $term) {
+      /** @var Term $term */
+      if ($term->hasField($this->config->get('code_field_name')) && !$term->get($this->config->get('code_field_name'))->isEmpty()) {
+        $code = $term->get($this->config->get('code_field_name'))->first()->getString();
+        $known_degree_programmes[$code] = $term;
+      }
+    }
+    return $known_degree_programmes;
   }
 
 }
