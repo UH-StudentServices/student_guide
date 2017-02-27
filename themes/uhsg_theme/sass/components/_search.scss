@@ -1,9 +1,31 @@
 .view-search {
   .view-filters {
     flex: 1 100%;
+    position: relative;
     @include breakpoint($small) {
       flex: 0 62%;
     }
+
+    input.form-autocomplete {
+      background: none;
+      & + .icon-spin {
+        display: none;
+        color: $blue;
+        position: absolute;
+        right: 10px;
+        top: 26px;
+        vertical-align: middle;
+        @include breakpoint($small) {
+          position: relative;
+          top: 0;
+          right: 30px;
+        }
+      }
+      &.ui-autocomplete-loading + .icon-spin {
+        display: inline-block; 
+      }
+    }
+
     .form-actions {
       margin-top: 2em;
     }
@@ -12,6 +34,37 @@
     flex: 1 100%;
     @include breakpoint($small) {
       flex: 0 35%;
+    }
+  }
+}
+
+.ui-autocomplete {
+  @include border;
+  background: $white;
+  .ui-menu-item > a {
+    display: block;
+    cursor: pointer;
+  }
+}
+
+.search-api-autocomplete-suggestion {
+  padding: 0.5em;
+  .autocomplete-suggestion-user-input {
+    @include font-weight-medium;
+    color: $gray;
+  }
+  .autocomplete-suggestion-suggestion-suffix {
+    color: $silver;
+  }
+  .autocomplete-suggestion-results {
+    @include font-size(14px);
+    right: 0.5em;
+    color: $silver;
+  }
+  @include breakpoint($small) {
+    @include font-size(14px);
+    .autocomplete-suggestion-results {
+      @include font-size(12px);
     }
   }
 }

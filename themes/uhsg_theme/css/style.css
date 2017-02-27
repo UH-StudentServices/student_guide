@@ -8175,6 +8175,7 @@ html {
   -webkit-flex: 1 100%;
       -ms-flex: 1 100%;
           flex: 1 100%;
+  position: relative;
 }
 
 @media (min-width: 48em) {
@@ -8183,6 +8184,31 @@ html {
         -ms-flex: 0 62%;
             flex: 0 62%;
   }
+}
+
+.view-search .view-filters input.form-autocomplete {
+  background: none;
+}
+
+.view-search .view-filters input.form-autocomplete + .icon-spin {
+  display: none;
+  color: #0098d0;
+  position: absolute;
+  right: 10px;
+  top: 26px;
+  vertical-align: middle;
+}
+
+@media (min-width: 48em) {
+  .view-search .view-filters input.form-autocomplete + .icon-spin {
+    position: relative;
+    top: 0;
+    right: 30px;
+  }
+}
+
+.view-search .view-filters input.form-autocomplete.ui-autocomplete-loading + .icon-spin {
+  display: inline-block;
 }
 
 .view-search .view-filters .form-actions {
@@ -8200,6 +8226,69 @@ html {
     -webkit-flex: 0 35%;
         -ms-flex: 0 35%;
             flex: 0 35%;
+  }
+}
+
+.ui-autocomplete {
+  border: 1px solid #EBEBEB;
+  background: #FFF;
+}
+
+.ui-autocomplete .ui-menu-item > a {
+  display: block;
+  cursor: pointer;
+}
+
+.search-api-autocomplete-suggestion {
+  padding: 0.5em;
+}
+
+.search-api-autocomplete-suggestion .autocomplete-suggestion-user-input {
+  font-weight: 600;
+  font-style: normal;
+  color: #666;
+}
+
+.search-api-autocomplete-suggestion .autocomplete-suggestion-suggestion-suffix {
+  color: #979797;
+}
+
+.search-api-autocomplete-suggestion .autocomplete-suggestion-results {
+  font-size: 12.25px;
+  font-size: 0.875rem;
+  right: 0.5em;
+  color: #979797;
+}
+
+@media (min-width: 48em) {
+  .search-api-autocomplete-suggestion .autocomplete-suggestion-results {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 48em) {
+  .search-api-autocomplete-suggestion {
+    font-size: 12.25px;
+    font-size: 0.875rem;
+  }
+}
+
+@media (min-width: 48em) and (min-width: 48em) {
+  .search-api-autocomplete-suggestion {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 48em) {
+  .search-api-autocomplete-suggestion .autocomplete-suggestion-results {
+    font-size: 10.5px;
+    font-size: 0.75rem;
+  }
+}
+
+@media (min-width: 48em) and (min-width: 48em) {
+  .search-api-autocomplete-suggestion .autocomplete-suggestion-results {
+    font-size: 12px;
   }
 }
 
