@@ -15,3 +15,4 @@ permissions:
   - 'change active degree programme'
   - 'flag my_degree_programmes'
   - 'unflag my_degree_programmes'
+  - 'use search_api_autocomplete for search_api_views_search'
