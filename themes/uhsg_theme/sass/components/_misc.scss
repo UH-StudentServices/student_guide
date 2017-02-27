@@ -1,6 +1,6 @@
 html {
   @include font-family-main;
-  font-size: $mobile-font-size;
+  font-size: $base-font-size-mobile;
 
   @include breakpoint($small) {
     font-size: $base-font-size;
