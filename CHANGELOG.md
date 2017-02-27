@@ -29,6 +29,7 @@ Installation instructions:
     ```
     drush mi degree_programmes_translation && drush mi degree_programmes
     ```
+  * Import translations
 
 ## 1.0-beta1
 Release date: 13.02.2017
