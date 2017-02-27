@@ -21,6 +21,9 @@ msgstr "Koulutusohjelman nimi"
 msgid "Search for degree programme"
 msgstr "Hae koulutusohjelmaa"
 
+msgid "Select degree programme"
+msgstr "Valitse koulutusohjelma"
+
 msgid "For example topic or university service"
 msgstr "Esim. aihealue tai yliopiston palvelu"
 
@@ -56,3 +59,6 @@ msgstr "Lisää ajankohtaisia aiheita"
 
 msgid "This content is now locked by you against simultaneous editing. This content will remain locked if you navigate away from this page without saving or unlocking it."
 msgstr "Tämä sisältö on nyt lukittuna sinulle yhtäaikaisen muokkaamisen estämiseksi. Lukitus vapautuu kun tallennat sisällön tai automaattisesti 30 minuutin kuluessa."
+
+msgid "results"
+msgstr "tulosta"

@@ -21,6 +21,9 @@ msgstr ""
 msgid "Search for degree programme"
 msgstr ""
 
+msgid "Select degree programme"
+msgstr "Välj utbildningsprogram"
+
 msgid "For example topic or university service"
 msgstr ""
 
@@ -56,3 +59,6 @@ msgstr "Fler aktuella ämnen"
 
 msgid "This content is now locked by you against simultaneous editing. This content will remain locked if you navigate away from this page without saving or unlocking it."
 msgstr ""
+
+msgid "results"
+msgstr "resultat"
