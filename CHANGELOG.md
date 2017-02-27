@@ -22,6 +22,8 @@
 * Added up-button to bottom of page (HUB-138)
 * Fixed hidden degree programme switcher reset button in mobile (HUB-140)
 * Added feature for transitional degree programmes (HUB-141)
+* Added autocomplete to search (HUB-134)
+* Added per user sorting functionality to themes view (HUB-89)
 
 Installation instructions:
   * After installation run:

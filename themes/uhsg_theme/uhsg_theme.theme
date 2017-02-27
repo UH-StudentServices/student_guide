@@ -224,6 +224,8 @@ function uhsg_theme_preprocess_block(array &$variables) {
 function uhsg_theme_preprocess_views_exposed_form(&$variables) {
   switch ($variables['form']['#id']) {
     case 'views-exposed-form-search-page-1':
+      unset($variables['form']['search_api_fulltext']['#theme_wrappers']);
+      $variables['form']['search_api_fulltext']['#suffix'] = '<i class="icon-spin icon--spinner"></i>';
       $variables['form']['search_api_fulltext']['#attributes']['placeholder'] = t('For example topic or university service');
       $variables['form']['actions']['reset']['#suffix'] = '<i class="icon--remove"></i>';
       $variables['form']['actions']['reset']['#attributes']['class'][] = 'button--reset';
