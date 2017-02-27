@@ -25,6 +25,7 @@
 * Added autocomplete to search (HUB-134)
 * Added per user sorting functionality to themes view (HUB-89)
 * Added email address to the content lock message (HUB-124)
+* Allow multiple email addresses when emailing a news item (HUB-144)
 
 Installation instructions:
   * After installation run:

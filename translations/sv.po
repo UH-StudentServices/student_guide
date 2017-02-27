@@ -39,10 +39,10 @@ msgstr "Ge feedback om tjänsten..."
 msgid "News"
 msgstr "Nyhet"
 
-msgid "This news has been sent to the following email address:"
+msgid "This news has been sent to the following email addresses:"
 msgstr ""
 
-msgid "Send the news to the given email address. The email can be sent just once."
+msgid "Send the news to the given email addresses. The email can be sent just once."
 msgstr ""
 
 msgid "Email sent to @email."
