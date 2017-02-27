@@ -13,7 +13,7 @@
  */
 #}
 
-{{ attach_library('uhsg_theme/menu') }}
+{{ attach_library('uhsg_theme/menu_toggle') }}
 <div class="l-top-bar">
   <div class="l-top-bar__subregion">
     <div class="l-top-bar__main">
@@ -22,7 +22,7 @@
           <h1 class="logo__sitename">{{ logo_text }}</h1>
         </a>
       {% endif %}
-      <a href="#" id="menu-toggle" class="nav-toggle"><span></span>Menu</a>
+      <a href="#" id="menu-toggle" class="nav-toggle"><span></span> {{ 'Menu'|trans }} </a>
     </div>
     <div class="l-top-bar__sub">
       <div class="l-top-bar__subleft">
