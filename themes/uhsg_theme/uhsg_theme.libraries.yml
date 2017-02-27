@@ -37,3 +37,11 @@ accordion:
     - core/jquery
     - core/jquery.once
     - core/drupal
+
+menu:
+  version: 1.x
+  js:
+    js/menu.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once

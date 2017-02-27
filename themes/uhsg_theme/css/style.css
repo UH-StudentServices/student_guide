@@ -7716,17 +7716,6 @@ input[type="submit"].button--reset + i {
   }
 }
 
-html {
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-  font-size: 14px;
-}
-
-@media (min-width: 48em) {
-  html {
-    font-size: 16px;
-  }
-}
-
 @media (max-width: 48em) {
   .no-scroll-mobile {
     position: fixed;
@@ -7770,6 +7759,22 @@ html {
   .paragraph__video > .video-embed-field-responsive-video,
   .paragraph__paragraph-image > img {
     margin-bottom: 2em;
+  }
+}
+
+.main-menu > ul.menu {
+  display: none;
+}
+
+.main-menu > ul.menu.is-open {
+  display: block;
+}
+
+@media (min-width: 48em) {
+  .main-menu > ul.menu {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
   }
 }
 
