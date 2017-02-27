@@ -22,6 +22,7 @@
 * Added up-button to bottom of page (HUB-138)
 * Fixed hidden degree programme switcher reset button in mobile (HUB-140)
 * Added feature for transitional degree programmes (HUB-141)
+* Added email address to the content lock message (HUB-124)
 
 Installation instructions:
   * After installation run:
