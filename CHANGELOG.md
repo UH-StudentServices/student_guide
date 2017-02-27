@@ -24,6 +24,7 @@
 * Added feature for transitional degree programmes (HUB-141)
 * Added autocomplete to search (HUB-134)
 * Added per user sorting functionality to themes view (HUB-89)
+* Added email address to the content lock message (HUB-124)
 
 Installation instructions:
   * After installation run:
