@@ -21,6 +21,9 @@ msgstr ""
 msgid "Search for degree programme"
 msgstr ""
 
+msgid "Select degree programme"
+msgstr "Välj utbildningsprogram"
+
 msgid "For example topic or university service"
 msgstr ""
 
