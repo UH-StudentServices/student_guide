@@ -146,6 +146,9 @@ function uhsg_theme_preprocess_field(array &$variables, $hook) {
     case 'field_accordion_title':
       $variables['attributes']['class'][] = 'accordion__title button--accordion';
       break;
+    case 'field_content_block_text':
+      $variables['attributes']['class'][] = 'box-subtitle__ingress is-center-mobile';
+      break;
   }
 }
 

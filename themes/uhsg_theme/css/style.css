@@ -7399,15 +7399,15 @@ ul.pager > li.pager__next a {
     display: flex;
   }
   .col-right {
-    -webkit-flex-basis: 100% / 3;
-        -ms-flex-preferred-size: 100% / 3;
-            flex-basis: 100% / 3;
+    -webkit-flex-basis: 33.33333%;
+        -ms-flex-preferred-size: 33.33333%;
+            flex-basis: 33.33333%;
     margin-left: 4em;
   }
   .col-left {
-    -webkit-flex-basis: 100% / 3;
-        -ms-flex-preferred-size: 100% / 3;
-            flex-basis: 100% / 3;
+    -webkit-flex-basis: 33.33333%;
+        -ms-flex-preferred-size: 33.33333%;
+            flex-basis: 33.33333%;
     margin-right: 4em;
   }
   .col-main {
@@ -7457,20 +7457,6 @@ ul.pager > li.pager__next a {
 
 .l-action-footer #up-anchor {
   padding-top: 35px;
-}
-
-.content-block__content-block-text {
-  font-weight: 300;
-  font-style: normal;
-  font-size: 21px;
-  font-size: 1.5rem;
-  color: #979797;
-}
-
-@media (min-width: 48em) {
-  .content-block__content-block-text {
-    font-size: 24px;
-  }
 }
 
 .cc_banner-wrapper {
@@ -7569,7 +7555,7 @@ ul.pager > li.pager__next a {
 .degree-programme-switcher {
   position: relative;
   z-index: 100;
-  margin-top: 1em;
+  margin: 1em 0;
   background: #FFF;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7647,7 +7633,6 @@ ul.pager > li.pager__next a {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 1em 1em 0 1em;
   min-height: 1px;
   background: #FFF;
 }
@@ -7778,11 +7763,12 @@ ul.pager > li.pager__next a {
           transform: none;
   height: auto;
   opacity: 1;
+  padding: 1em 1em 0 1em;
 }
 
 @media (min-width: 48em) {
   .degree-programme-switcher {
-    margin-top: 2em;
+    margin: 2em 0;
     display: block;
   }
   .degree-programme-switcher .degree-programme-switcher__icon {
@@ -7792,7 +7778,6 @@ ul.pager > li.pager__next a {
   }
   .degree-programme-switcher .degree-programme-switcher__dropdown {
     display: none;
-    padding: 2em;
     position: absolute;
     width: 100%;
   }
@@ -7815,6 +7800,7 @@ ul.pager > li.pager__next a {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    padding: 2em;
   }
 }
 
