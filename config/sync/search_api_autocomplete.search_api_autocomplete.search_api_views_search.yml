@@ -1,0 +1,14 @@
+uuid: 363a4e3e-c8e4-4fde-92a5-d37c566ede58
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.content_index
+id: search_api_views_search
+label: search_api_views_search
+index_id: content_index
+suggester_id: server
+type: views
+options:
+  results: true
+  fields: {  }
