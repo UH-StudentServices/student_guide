@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains uhsg_active_degree_programme.module.
+ * Contains uhsg_degree_programme.module.
  */
 
 use Drupal\views\ViewExecutable;
@@ -10,7 +10,7 @@ use Drupal\views\ViewExecutable;
 /**
  * Implements hook_views_post_execute().
  */
-function uhsg_active_degree_programme_views_post_execute(ViewExecutable $view) {
+function uhsg_degree_programme_views_post_execute(ViewExecutable $view) {
   if ($view->id() == 'search') {
 
     $active_degree_programme_tid = \Drupal::service('uhsg_active_degree_programme.active_degree_programme')->getId();
