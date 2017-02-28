@@ -14,7 +14,9 @@ class UhsgEditServiceProvider extends ServiceProviderBase {
    * {@inheritdoc}
    */
   public function alter(ContainerBuilder $container) {
-    $definition = $container->getDefinition('content_lock');
-    $definition->setClass('Drupal\uhsg_edit\ContentLock\UhsgContentLock');
+    if ($container->hasDefinition('content_lock')) {
+      $definition = $container->getDefinition('content_lock');
+      $definition->setClass('Drupal\uhsg_edit\ContentLock\UhsgContentLock');
+    }
   }
 }
