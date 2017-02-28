@@ -1,5 +1,3 @@
-$grid-gutter: $vert-spacing-unit / 2;
-
 .container {
   margin: 0 auto;
   max-width: $bp-large;
@@ -31,8 +29,8 @@ $grid-gutter: $vert-spacing-unit / 2;
   @include breakpoint($small) {
     padding-left: $grid-gutter;
     padding-right: $grid-gutter;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 

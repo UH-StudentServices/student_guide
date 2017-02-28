@@ -30,18 +30,29 @@
     'block',
     'block-' ~ configuration.provider|clean_class,
     'block-' ~ plugin_id|clean_class,
+    'l-subregion-wrapper'
   ]
 %}
+
+{%
+  set title_classes = [
+    'l-subregion__title',
+    'is-center-mobile'
+  ]
+%}
+
 <div{{ attributes.addClass(classes) }}>
-  {{ title_prefix }}
-  {% if label %}
-    <h2{{ title_attributes }}>{{ label }}</h2>
-  {% endif %}
-  {{ title_suffix }}
-  <div class="grid-container">
-    {% block content %}
-      {{ content|without('#suffix') }}
-    {% endblock %}
+  <div class="l-subregion">
+    {{ title_prefix }}
+    {% if label %}
+      <h2{{ title_attributes.addClass(title_classes) }}>{{ label }}</h2>
+    {% endif %}
+    {{ title_suffix }}
+    <div{{ content_attributes }}>
+      {% block content %}
+        {{ content|without('#suffix') }}
+      {% endblock %}
+    </div>
+    {{ content['#suffix'] }}
   </div>
-  {{ content['#suffix'] }}
 </div>
