@@ -51,7 +51,7 @@
   padding: 0.5em;
   .autocomplete-suggestion-user-input {
     @include font-weight-medium;
-    color: $gray;
+    color: $lightgray;
   }
   .autocomplete-suggestion-suggestion-suffix {
     color: $silver;

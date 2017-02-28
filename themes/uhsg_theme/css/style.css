@@ -413,14 +413,7 @@ th {
  title: Other colors
  description: The colors used through out the theme.
  color-list: list
- colors: $blue, $blue--active, $darkblue, $darkblue--active, $lightsilver, $silver, $darksilver, $lightgray, $gray, $darkgray, $green, $brown
-*/
-/*
- section: 1.1.3
- title: Faculty colors
- description:  <table><tr><th>Faculty</th><th>Color variable</th></tr><tr><td>humanistinen</td><td>$lightblue</td></tr><tr><td>oikeustieteellinen</td><td>$darkred</td></tr><tr><td>kayttaytymistieteellinen</td><td>$yellow</td></tr><tr><td>laaketieteellinen</td><td>$darkturquoise</td></tr><tr><td>maatalous-metsatieteellinen </td><td>$turquoise</td></tr><tr><td>matemaattis-luonnontieteellinen</td><td>$orange</td></tr><tr><td>svenska-social--och-kommunalhogskolan</td><td>$pink</td></tr><tr><td>farmasian</td><td>$lightturquoise</td></tr><tr><td>valtiotieteellinen</td><td>$red</td></tr><tr><td>teologinen</td><td>$lila</td></tr><tr><td>elainlaaketieteellinen</td><td>$darkgreen</td></tr><tr><td>bio--ja-ymparistotieteellinen  </td><td>$limegreen</td></tr></table>
- color-list: list
- colors: $lightblue,$darkgreen,$yellow,$lila,$darkred,$red,$orange,$turquoise,$darkturquoise,$lightturquoise,$limegreen,$pink
+ colors: $blue, $blue--active, $darkblue, $darkblue--active, $lightsilver, $mediumsilver, $silver, $lightgray, $darkgray, $red, $orange
 */
 @font-face {
   font-family: 'Open Sans';
@@ -539,6 +532,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -549,6 +543,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -559,6 +554,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -569,6 +565,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -579,6 +576,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -589,6 +587,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -599,6 +598,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -609,6 +609,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -619,6 +620,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -629,6 +631,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -639,6 +642,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -649,6 +653,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -659,6 +664,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -669,6 +675,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -679,6 +686,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -689,6 +697,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -699,6 +708,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -709,6 +719,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -719,6 +730,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -729,6 +741,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -739,6 +752,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -749,6 +763,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -759,6 +774,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -769,6 +785,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -779,6 +796,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -789,6 +807,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -799,6 +818,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -809,6 +829,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -819,6 +840,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -829,6 +851,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -839,6 +862,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -849,6 +873,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -859,6 +884,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -869,6 +895,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -879,6 +906,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -889,6 +917,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -899,6 +928,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -909,6 +939,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -919,6 +950,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -929,6 +961,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -939,6 +972,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -949,6 +983,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -959,6 +994,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -969,6 +1005,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -979,6 +1016,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -989,6 +1027,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -999,6 +1038,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1009,6 +1049,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1019,6 +1060,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1029,6 +1071,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1039,6 +1082,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1049,6 +1093,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1059,6 +1104,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1069,6 +1115,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1079,6 +1126,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1089,6 +1137,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1099,6 +1148,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1109,6 +1159,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1119,6 +1170,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1129,6 +1181,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1139,6 +1192,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1149,6 +1203,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1159,6 +1214,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1169,6 +1225,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1179,6 +1236,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1189,6 +1247,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1199,6 +1258,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1209,6 +1269,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1219,6 +1280,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1229,6 +1291,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1239,6 +1302,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1249,6 +1313,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1259,6 +1324,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1269,6 +1335,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1279,6 +1346,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1289,6 +1357,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1299,6 +1368,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1309,6 +1379,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1319,6 +1390,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1329,6 +1401,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1339,6 +1412,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1349,6 +1423,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1359,6 +1434,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1369,6 +1445,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1379,6 +1456,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1389,6 +1467,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1399,6 +1478,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1409,6 +1489,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1419,6 +1500,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1429,6 +1511,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1439,6 +1522,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1449,6 +1533,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1459,6 +1544,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1469,6 +1555,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1479,6 +1566,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1489,6 +1577,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1499,6 +1588,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1509,6 +1599,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1519,6 +1610,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1529,6 +1621,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1539,6 +1632,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1549,6 +1643,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1559,6 +1654,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1569,6 +1665,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1579,6 +1676,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1589,6 +1687,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1599,6 +1698,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1609,6 +1709,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1619,6 +1720,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1629,6 +1731,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1639,6 +1742,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1649,7 +1753,30 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
+}
+
+.icon--square-checked:after {
+  display: inline-block;
+  font-family: "hy-icons";
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
+  content: "";
+}
+
+.icon--square:after {
+  display: inline-block;
+  font-family: "hy-icons";
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
+  content: "";
 }
 
 /*
@@ -1741,6 +1868,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1751,6 +1879,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1761,6 +1890,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1771,6 +1901,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1781,6 +1912,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1791,6 +1923,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1801,6 +1934,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1811,6 +1945,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1821,6 +1956,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1831,6 +1967,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1841,6 +1978,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1851,6 +1989,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1861,6 +2000,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1871,6 +2011,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1881,6 +2022,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1891,6 +2033,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1901,6 +2044,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1911,6 +2055,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1921,6 +2066,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1931,6 +2077,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1941,6 +2088,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1951,6 +2099,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1961,6 +2110,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1971,6 +2121,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1981,6 +2132,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -1991,6 +2143,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2001,6 +2154,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2011,6 +2165,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2021,6 +2176,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2031,6 +2187,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2041,6 +2198,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2051,6 +2209,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2061,6 +2220,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2071,6 +2231,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2081,6 +2242,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2091,6 +2253,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2101,6 +2264,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2111,6 +2275,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2121,6 +2286,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2131,6 +2297,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2141,6 +2308,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2151,6 +2319,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2161,6 +2330,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2171,6 +2341,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2181,6 +2352,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2191,6 +2363,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2201,6 +2374,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2211,6 +2385,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2221,6 +2396,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2231,6 +2407,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2241,6 +2418,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2251,6 +2429,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2261,6 +2440,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2271,6 +2451,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2281,6 +2462,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2291,6 +2473,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2301,6 +2484,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2311,6 +2495,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2321,6 +2506,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2331,6 +2517,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2341,6 +2528,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2351,6 +2539,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2361,6 +2550,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2371,6 +2561,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2381,6 +2572,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2391,6 +2583,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2401,6 +2594,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2411,6 +2605,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2421,6 +2616,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2431,6 +2627,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2441,6 +2638,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2451,6 +2649,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2461,6 +2660,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2471,6 +2671,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2481,6 +2682,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2491,6 +2693,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2501,6 +2704,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2511,6 +2715,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2521,6 +2726,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2531,6 +2737,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2541,6 +2748,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2551,6 +2759,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2561,6 +2770,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2571,6 +2781,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2581,6 +2792,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2591,6 +2803,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2601,6 +2814,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2611,6 +2825,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2621,6 +2836,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2631,6 +2847,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2641,6 +2858,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2651,6 +2869,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2661,6 +2880,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2671,6 +2891,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2681,6 +2902,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2691,6 +2913,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2701,6 +2924,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2711,6 +2935,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2721,6 +2946,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2731,6 +2957,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2741,6 +2968,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2751,6 +2979,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2761,6 +2990,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2771,6 +3001,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2781,6 +3012,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2791,6 +3023,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2801,6 +3034,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2811,6 +3045,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2821,6 +3056,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2831,6 +3067,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2841,6 +3078,7 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -2851,11 +3089,42 @@ th {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
+.icon--square-checked:after {
+  display: inline-block;
+  font-family: "hy-icons";
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
+  content: "";
+}
+
+.icon--square:after {
+  display: inline-block;
+  font-family: "hy-icons";
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
+  content: "";
+}
+
 html {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   box-sizing: border-box;
+  font-size: 14px;
+}
+
+@media (min-width: 48em) {
+  html {
+    font-size: 16px;
+  }
 }
 
 *, *:before, *:after {
@@ -2873,14 +3142,14 @@ video {
 /*
   section: 3
   title: Common elements
-  description: Description about common elements.
+  description: Common HTML-elements.
 */
 html {
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif, Nimbus Sans L;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 }
 
 body {
-  color: #666;
+  color: #777777;
 }
 
 img {
@@ -2891,11 +3160,10 @@ img {
   section: 3.1
   title: Headings
   template: 3_1_headings
-  description: Description about headings.
 */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif, Nimbus Sans L;
-  color: #424242;
+h1, h2, h3, h4, legend, h5, h6 {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  color: #222;
   letter-spacing: -0.05em;
   line-height: 1.2em;
   margin: 0;
@@ -2904,85 +3172,75 @@ h1, h2, h3, h4, h5, h6 {
   word-wrap: break-word;
 }
 
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-  color: #424242;
+h1 a, h2 a, h3 a, h4 a, legend a, h5 a, h6 a {
+  color: #222;
   text-decoration: none;
 }
 
-h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
-  color: #424242;
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, legend a:hover, h5 a:hover, h6 a:hover {
+  color: #222;
   cursor: pointer;
 }
 
 h1 {
-  font-size: 31.5px;
-  font-size: 2.25rem;
+  font-size: 3.125rem;
   letter-spacing: -2px;
   line-height: 1.15em;
 }
 
-@media (min-width: 48em) {
+@media (max-width: 48em) {
   h1 {
-    font-size: 36px;
-  }
-}
-
-@media (min-width: 48em) {
-  h1 {
-    font-size: 38.5px;
-    font-size: 2.75rem;
-  }
-}
-
-@media (min-width: 48em) and (min-width: 48em) {
-  h1 {
-    font-size: 44px;
+    font-size: 2.85714rem;
   }
 }
 
 h2 {
-  font-size: 21.875px;
-  font-size: 1.5625rem;
+  font-size: 2.5rem;
 }
 
-@media (min-width: 48em) {
+@media (max-width: 48em) {
   h2 {
-    font-size: 25px;
-  }
-}
-
-@media (min-width: 62.5em) {
-  h2 {
-    font-size: 30.625px;
-    font-size: 2.1875rem;
-  }
-}
-
-@media (min-width: 62.5em) and (min-width: 48em) {
-  h2 {
-    font-size: 35px;
+    font-size: 2.28571rem;
   }
 }
 
 h3 {
-  font-size: 24.5px;
-  font-size: 1.75rem;
+  font-size: 1.875rem;
 }
 
-@media (min-width: 48em) {
+@media (max-width: 48em) {
   h3 {
-    font-size: 28px;
+    font-size: 1.85714rem;
   }
 }
 
-h4 {
-  font-size: 16.8px;
-  font-size: 1.2rem;
+h4, legend {
+  font-size: 1.25rem;
 }
 
-@media (min-width: 48em) {
-  h4 {
-    font-size: 19.2px;
+@media (max-width: 48em) {
+  h4, legend {
+    font-size: 1.42857rem;
+  }
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+@media (max-width: 48em) {
+  h5 {
+    font-size: 1.14286rem;
+  }
+}
+
+h6 {
+  font-size: 0.875rem;
+}
+
+@media (max-width: 48em) {
+  h6 {
+    font-size: 1rem;
   }
 }
 
@@ -2990,19 +3248,24 @@ h4 {
   section: 3.2
   title: Paragraph
   template: 3_2_paragraphs
-  description: Description about paragraph.
 */
 p {
-  font-size: 14px;
   font-size: 1rem;
-  margin: 0 0 30px 0;
-  letter-spacing: 0.01em;
-  line-height: 1.6em;
+  margin: 0 0 15px 0;
+  letter-spacing: 0;
+  line-height: 1.3em;
+}
+
+@media (max-width: 48em) {
+  p {
+    font-size: 1.07143rem;
+  }
 }
 
 @media (min-width: 48em) {
   p {
-    font-size: 16px;
+    line-height: 1.5em;
+    margin: 0 0 16px 0;
   }
 }
 
@@ -3010,11 +3273,9 @@ p {
   section: 3.3
   title: Links
   template: 3_3_links
-  description:
 */
 a {
   color: #0098d0;
-  outline: 0;
   text-decoration: none;
 }
 
@@ -3022,101 +3283,232 @@ a:hover {
   color: #005479;
 }
 
-a:hover, a:active, a:focus {
-  outline: 0;
-}
-
 /*
   section: 3.4
   title: Blockquote
-  description:
 */
 /*
   section: 3.4.1
   title: Blockquote
   template: 3_4_1_blockquote
-  description:
 */
 blockquote {
-  font-size: 17.5px;
-  font-size: 1.25rem;
-  font-weight: 400;
-  font-style: normal;
   border-left: 10px solid #979797;
-  color: #979797;
-  line-height: 1.1em;
   margin: 20px 10px;
   padding: 10px 25px;
-}
-
-@media (min-width: 48em) {
-  blockquote {
-    font-size: 20px;
-  }
 }
 
 /*
   section: 3.4.2
   title: Blockquote paragraph
   template: 3_4_2_blockquote-paragraph
-  description: Blockquote with a p-element inside.
+  description: Blockquote with a p-elements inside.
 */
+blockquote,
 blockquote p {
-  font-size: 19.25px;
-  font-size: 1.375rem;
+  font-size: 1.125rem;
   font-weight: 400;
   font-style: normal;
   color: #979797;
-  display: inline;
-  line-height: 1.1em;
+  line-height: 1.5em;
 }
 
-@media (min-width: 48em) {
+@media (max-width: 48em) {
+  blockquote,
   blockquote p {
-    font-size: 22px;
+    font-size: 1.14286rem;
   }
+}
+
+blockquote p {
+  margin-bottom: 32px;
+}
+
+blockquote p:last-of-type {
+  margin: 0;
 }
 
 /*
   section: 3.5
-  title: Form components
-  template: 3_5_form-components
-  description: Basic form components
+  title: Form elements
+  template: 3_5_form-elements
+  description: Basic form elements
 */
 button, input, select, textarea {
+  -webkit-appearance: none;
   font-family: inherit;
   font-size: 100%;
   margin: 0;
   vertical-align: baseline;
 }
 
-input {
-  -webkit-appearance: none;
+label {
+  font-size: 1.125rem;
+  color: #777777;
+  font-weight: 300;
+  line-height: 2.4em;
+  padding: 0;
+  margin: 0;
 }
 
-select {
-  background: transparent;
-  border: 1px solid #b8b8b8;
-  padding: 10px 5px;
-  width: 100%;
-}
-
-textarea {
-  font-size: 14px;
-  font-size: 1rem;
+label .is-required {
+  color: #0098d0;
+  font-size: 1.2em;
   font-weight: 600;
-  font-style: normal;
-  border: 1px solid #b8b8b8;
-  color: #666;
-  opacity: 1;
+  line-height: 1.2em;
+}
+
+input[type="submit"] {
+  font-weight: 600;
+  padding: 10px 30px;
+}
+
+input[type="submit"][disabled], input[type="submit"][disabled]:active, input[type="submit"][disabled]:focus, input[type="submit"][disabled]:hover {
+  background-color: #F8F8F8;
+}
+
+select,
+input[type="email"],
+input[type="text"],
+input[type="password"],
+textarea {
+  font-size: 1rem;
+  background: #FFF;
+  border-radius: 0;
+  border: 1px solid #979797;
+  color: #777777;
+  outline-color: rgba(0, 152, 208, 0);
+  outline-offset: -2px;
+  outline-style: solid;
+  outline-width: 2px;
   padding: 10px;
+  transition-duration: 0.2s;
+  transition-property: all;
   width: 100%;
 }
 
-@media (min-width: 48em) {
-  textarea {
-    font-size: 16px;
-  }
+select:focus,
+input[type="email"]:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+  border-color: transparent;
+  outline-color: #0098d0;
+}
+
+select[disabled], select[disabled]:active, select[disabled]:focus, select[disabled]:hover,
+input[type="email"][disabled],
+input[type="email"][disabled]:active,
+input[type="email"][disabled]:focus,
+input[type="email"][disabled]:hover,
+input[type="text"][disabled],
+input[type="text"][disabled]:active,
+input[type="text"][disabled]:focus,
+input[type="text"][disabled]:hover,
+input[type="password"][disabled],
+input[type="password"][disabled]:active,
+input[type="password"][disabled]:focus,
+input[type="password"][disabled]:hover,
+textarea[disabled],
+textarea[disabled]:active,
+textarea[disabled]:focus,
+textarea[disabled]:hover {
+  background-color: #F8F8F8;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+  font-size: 0.875rem;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  display: block;
+  font-weight: normal;
+  line-height: normal;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+input[type="radio"] + label:before,
+input[type="checkbox"] + label:before {
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  position: absolute;
+  top: 50%;
+  position: absolute;
+  left: 0;
+}
+
+input[type="radio"][disabled] + label, input[type="radio"][disabled]:active + label, input[type="radio"][disabled]:focus + label, input[type="radio"][disabled]:hover + label,
+input[type="checkbox"][disabled] + label,
+input[type="checkbox"][disabled]:active + label,
+input[type="checkbox"][disabled]:focus + label,
+input[type="checkbox"][disabled]:hover + label {
+  color: #979797;
+  cursor: default;
+}
+
+input[type="radio"][disabled] + label:before, input[type="radio"][disabled]:active + label:before, input[type="radio"][disabled]:focus + label:before, input[type="radio"][disabled]:hover + label:before,
+input[type="checkbox"][disabled] + label:before,
+input[type="checkbox"][disabled]:active + label:before,
+input[type="checkbox"][disabled]:focus + label:before,
+input[type="checkbox"][disabled]:hover + label:before {
+  border-color: #979797;
+  color: #979797;
+}
+
+input[type="radio"] + label:before {
+  font-size: 1rem;
+  border: 1px solid #0098d0;
+  border-radius: 100%;
+  color: #0098d0;
+  content: "";
+  height: 14px;
+  margin-right: 10px;
+  text-align: center;
+  transition-duration: 0.1s;
+  transition-property: all;
+  width: 14px;
+}
+
+input[type="radio"]:checked + label:before {
+  background-color: #0098d0;
+  box-shadow: inset 0 0 0 3px #FFF;
+}
+
+input[type="checkbox"] + label:before {
+  display: inline-block;
+  font-family: "hy-icons";
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
+  content: "";
+  color: #0098d0;
+  left: 1px;
+  margin-right: 10px;
+}
+
+input[type="checkbox"]:checked + label:before {
+  content: "";
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  font-weight: 800;
 }
 
 /*
@@ -3129,6 +3521,7 @@ table {
 th {
   background: none;
   padding: 0;
+  text-align: left;
 }
 
 dl, ol, ul {
@@ -3144,7 +3537,7 @@ dl, ol, ul {
 }
 
 .bar {
-  border-bottom: 1px solid #EBEBEB;
+  border-bottom: 1px solid #F8F8F8;
   border-left: 0;
   border-right: 0;
   border-top: 0;
@@ -3171,46 +3564,56 @@ dl, ol, ul {
  template: 3_7_1-button
  description:
 */
-input[type="submit"], .accordion__title,
+input[type="submit"], .button--small, .accordion__title,
 .button--accordion,
 .button--action-before,
 .button--action, .button--anchor, .button--expand, .button--icon, .accordion--dark .accordion__title, .cc_btn,
 .button {
-  transition-duration: 0.1s;
-  transition-property: all;
-  font-size: 13.125px;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   font-size: 0.9375rem;
   background-color: #0098d0;
   border: none;
   color: #FFF;
   cursor: pointer;
+  display: inline-block;
   padding: 0.8em 1em;
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif, Nimbus Sans L;
+  transition-duration: 0.1s;
+  transition-property: all;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
-@media (min-width: 48em) {
-  input[type="submit"], .accordion__title,
-  .button--accordion,
-  .button--action-before,
-  .button--action, .button--anchor, .button--expand, .button--icon, .accordion--dark .accordion__title, .cc_btn,
-  .button {
-    font-size: 15px;
-  }
-}
-
-input[type="submit"]:hover, .accordion__title:hover,
+input[type="submit"]:focus, .button--small:focus, .accordion__title:focus,
+.button--accordion:focus,
+.button--action-before:focus,
+.button--action:focus, .button--anchor:focus, .button--expand:focus, .button--icon:focus, .cc_btn:focus, input[type="submit"]:hover, .button--small:hover, .accordion__title:hover,
 .button--accordion:hover,
 .button--action-before:hover,
 .button--action:hover, .button--anchor:hover, .button--expand:hover, .button--icon:hover, .cc_btn:hover,
+.button:focus,
 .button:hover {
   background-color: #005479;
   color: #FFF;
 }
 
-input[type="submit"]:before, .accordion__title:before,
+input[type="submit"]:active, .button--small:active, .accordion__title:active,
+.button--accordion:active,
+.button--action-before:active,
+.button--action:active, .button--anchor:active, .button--expand:active, .button--icon:active, .cc_btn:active, input.is-active[type="submit"], .is-active.button--small, .is-active.accordion__title,
+.is-active.button--accordion,
+.is-active.button--action-before,
+.is-active.button--action, .is-active.button--anchor, .is-active.button--expand, .is-active.button--icon, .is-active.cc_btn,
+.button:active,
+.button.is-active {
+  background-color: #003146;
+}
+
+input[type="submit"]:before, .button--small:before, .accordion__title:before,
 .button--accordion:before,
 .button--action-before:before,
-.button--action:before, .button--anchor:before, .button--expand:before, .button--icon:before, .accordion--dark .accordion__title:before, .cc_btn:before, input[type="submit"]:after, .accordion__title:after,
+.button--action:before, .button--anchor:before, .button--expand:before, .button--icon:before, .accordion--dark .accordion__title:before, .cc_btn:before, input[type="submit"]:after, .button--small:after, .accordion__title:after,
 .button--accordion:after,
 .button--action-before:after,
 .button--action:after, .button--anchor:after, .button--expand:after, .button--icon:after, .accordion--dark .accordion__title:after, .cc_btn:after,
@@ -3220,32 +3623,71 @@ input[type="submit"]:before, .accordion__title:before,
   transition-property: all;
 }
 
-input.theme-transparent[type="submit"], .theme-transparent.accordion__title,
+input.theme-transparent[type="submit"], .theme-transparent.button--small, .theme-transparent.accordion__title,
 .theme-transparent.button--accordion,
 .theme-transparent.button--action-before,
-.theme-transparent.button--action, .theme-transparent.button--anchor, .theme-transparent.button--expand, .theme-transparent.button--icon, .theme-transparent.cc_btn,
-.button.theme-transparent {
+.theme-transparent.button--action, .theme-transparent.button--anchor, .theme-transparent.button--expand, .theme-transparent.button--icon, .theme-transparent.cc_btn, input.theme-transparent-alt[type="submit"], .theme-transparent-alt.button--small, .theme-transparent-alt.accordion__title,
+.theme-transparent-alt.button--accordion,
+.theme-transparent-alt.button--action-before,
+.theme-transparent-alt.button--action, .theme-transparent-alt.button--anchor, .theme-transparent-alt.button--expand, .theme-transparent-alt.button--icon, .theme-transparent-alt.cc_btn,
+.button.theme-transparent,
+.button.theme-transparent-alt {
   background-color: transparent;
   color: #0098d0;
 }
 
-input.theme-transparent[type="submit"]:hover, .theme-transparent.accordion__title:hover,
+input.theme-transparent[type="submit"]:hover, .theme-transparent.button--small:hover, .theme-transparent.accordion__title:hover,
 .theme-transparent.button--accordion:hover,
 .theme-transparent.button--action-before:hover,
-.theme-transparent.button--action:hover, .theme-transparent.button--anchor:hover, .theme-transparent.button--expand:hover, .theme-transparent.button--icon:hover, .theme-transparent.cc_btn:hover,
-.button.theme-transparent:hover {
+.theme-transparent.button--action:hover, .theme-transparent.button--anchor:hover, .theme-transparent.button--expand:hover, .theme-transparent.button--icon:hover, .theme-transparent.cc_btn:hover, input.theme-transparent-alt[type="submit"]:hover, .theme-transparent-alt.button--small:hover, .theme-transparent-alt.accordion__title:hover,
+.theme-transparent-alt.button--accordion:hover,
+.theme-transparent-alt.button--action-before:hover,
+.theme-transparent-alt.button--action:hover, .theme-transparent-alt.button--anchor:hover, .theme-transparent-alt.button--expand:hover, .theme-transparent-alt.button--icon:hover, .theme-transparent-alt.cc_btn:hover,
+.button.theme-transparent:hover,
+.button.theme-transparent-alt:hover {
   background-color: #0098d0;
 }
 
-input.theme-transparent[type="submit"] a:hover, .theme-transparent.accordion__title a:hover,
+input.theme-transparent[type="submit"] a:hover, .theme-transparent.button--small a:hover, .theme-transparent.accordion__title a:hover,
 .theme-transparent.button--accordion a:hover,
 .theme-transparent.button--action-before a:hover,
-.theme-transparent.button--action a:hover, .theme-transparent.button--anchor a:hover, .theme-transparent.button--expand a:hover, .theme-transparent.button--icon a:hover, .theme-transparent.cc_btn a:hover, input.theme-transparent[type="submit"]:hover, .theme-transparent.accordion__title:hover,
+.theme-transparent.button--action a:hover, .theme-transparent.button--anchor a:hover, .theme-transparent.button--expand a:hover, .theme-transparent.button--icon a:hover, .theme-transparent.cc_btn a:hover, input.theme-transparent[type="submit"]:hover, .theme-transparent.button--small:hover, .theme-transparent.accordion__title:hover,
 .theme-transparent.button--accordion:hover,
 .theme-transparent.button--action-before:hover,
-.theme-transparent.button--action:hover, .theme-transparent.button--anchor:hover, .theme-transparent.button--expand:hover, .theme-transparent.button--icon:hover, .theme-transparent.cc_btn:hover,
+.theme-transparent.button--action:hover, .theme-transparent.button--anchor:hover, .theme-transparent.button--expand:hover, .theme-transparent.button--icon:hover, .theme-transparent.cc_btn:hover, input.theme-transparent-alt[type="submit"] a:hover, .theme-transparent-alt.button--small a:hover, .theme-transparent-alt.accordion__title a:hover,
+.theme-transparent-alt.button--accordion a:hover,
+.theme-transparent-alt.button--action-before a:hover,
+.theme-transparent-alt.button--action a:hover, .theme-transparent-alt.button--anchor a:hover, .theme-transparent-alt.button--expand a:hover, .theme-transparent-alt.button--icon a:hover, .theme-transparent-alt.cc_btn a:hover, input.theme-transparent-alt[type="submit"]:hover, .theme-transparent-alt.button--small:hover, .theme-transparent-alt.accordion__title:hover,
+.theme-transparent-alt.button--accordion:hover,
+.theme-transparent-alt.button--action-before:hover,
+.theme-transparent-alt.button--action:hover, .theme-transparent-alt.button--anchor:hover, .theme-transparent-alt.button--expand:hover, .theme-transparent-alt.button--icon:hover, .theme-transparent-alt.cc_btn:hover,
 .button.theme-transparent a:hover,
-.button.theme-transparent:hover {
+.button.theme-transparent:hover,
+.button.theme-transparent-alt a:hover,
+.button.theme-transparent-alt:hover {
+  color: #FFF;
+}
+
+/*
+ section: 3.7.1.1
+ title: Button small
+ template: 3_7_1_1-button--small
+ description:
+*/
+.button--small {
+  background-color: #F8F8F8;
+  color: #222;
+  line-height: 1;
+  padding: .4em .7em;
+}
+
+.button--small:focus, .button--small:hover {
+  background-color: #979797;
+  color: #FFF;
+}
+
+.button--small:active, .button--small.is-active {
+  background-color: #222;
   color: #FFF;
 }
 
@@ -3274,6 +3716,7 @@ input.theme-transparent[type="submit"] a:hover, .theme-transparent.accordion__ti
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
   -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
@@ -3325,10 +3768,20 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
 }
 
 
-.button--action-before:before,
 .button--action-before:after,
-.button--action:before,
 .button--action:after {
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #0882B3;
+  color: #FFF;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   position: absolute;
   right: 0;
   top: 0;
@@ -3336,35 +3789,16 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
 }
 
 
-.button--action-before:before,
-.button--action:before {
-  background-color: #0882B3;
-  content: "";
-  height: 100%;
-}
-
-
-.button--action-before:after,
-.button--action:after {
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
-  position: absolute;
-  top: 50%;
-  color: #FFF;
-  right: -2px;
-  text-align: center;
-}
-
-
-.button--action-before:hover:before,
-.button--action:hover:before {
+.button--action-before:hover:after,
+.button--action:hover:after {
   background: #003146;
 }
 
 
 .theme-transparent.button--action-before,
-.button--action.theme-transparent {
+.theme-transparent-alt.button--action-before,
+.button--action.theme-transparent,
+.button--action.theme-transparent-alt {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
@@ -3376,14 +3810,11 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
 }
 
 
-.theme-transparent.button--action-before:before,
-.button--action.theme-transparent:before {
-  display: none;
-}
-
-
 .theme-transparent.button--action-before:after,
-.button--action.theme-transparent:after {
+.theme-transparent-alt.button--action-before:after,
+.button--action.theme-transparent:after,
+.button--action.theme-transparent-alt:after {
+  background: none;
   color: #0098d0;
   margin-left: 15px;
   line-height: 0;
@@ -3394,8 +3825,12 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
 
 .theme-transparent.button--action-before:hover,
 .theme-transparent.button--action-before:before,
+.theme-transparent-alt.button--action-before:hover,
+.theme-transparent-alt.button--action-before:before,
 .button--action.theme-transparent:hover,
-.button--action.theme-transparent:before {
+.button--action.theme-transparent:before,
+.button--action.theme-transparent-alt:hover,
+.button--action.theme-transparent-alt:before {
   background-color: transparent;
 }
 
@@ -3403,10 +3838,29 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
 .theme-transparent.button--action-before a:hover,
 .theme-transparent.button--action-before:hover,
 .theme-transparent.button--action-before:hover:after,
+.theme-transparent-alt.button--action-before a:hover,
+.theme-transparent-alt.button--action-before:hover,
+.theme-transparent-alt.button--action-before:hover:after,
 .button--action.theme-transparent a:hover,
 .button--action.theme-transparent:hover,
-.button--action.theme-transparent:hover:after {
+.button--action.theme-transparent:hover:after,
+.button--action.theme-transparent-alt a:hover,
+.button--action.theme-transparent-alt:hover,
+.button--action.theme-transparent-alt:hover:after {
   color: #005479;
+}
+
+
+.theme-transparent-alt.button--action-before,
+.button--action.theme-transparent-alt {
+  border-bottom: 1px solid #F8F8F8;
+  padding-right: 1rem;
+}
+
+
+.theme-transparent-alt.button--action-before:after,
+.button--action.theme-transparent-alt:after {
+  position: absolute;
 }
 
 /*
@@ -3422,7 +3876,6 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
 }
 
 
-.button--action-before:before,
 .button--action-before:after {
   left: 0;
   right: auto;
@@ -3432,11 +3885,6 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
 .button--action-before.theme-transparent {
   display: block;
   padding-left: 2em;
-}
-
-
-.button--action-before.theme-transparent:before {
-  display: none;
 }
 
 
@@ -3456,7 +3904,6 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
  description:
 */
 .button--anchor {
-  font-size: 11.375px;
   font-size: 0.8125rem;
   font-weight: 600;
   font-style: normal;
@@ -3469,26 +3916,13 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
   text-align: center;
 }
 
-@media (min-width: 48em) {
-  .button--anchor {
-    font-size: 13px;
-  }
-}
-
 .button--anchor:after {
-  font-size: 13.125px;
   font-size: 0.9375rem;
   height: 100%;
   left: 0;
   position: absolute;
   top: 1em;
   width: 100%;
-}
-
-@media (min-width: 48em) {
-  .button--anchor:after {
-    font-size: 15px;
-  }
 }
 
 .is-overflow-expandable .button--expand {
@@ -3504,7 +3938,6 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
  description:
 */
 .button--icon {
-  font-size: 24.5px;
   font-size: 1.75rem;
   font-weight: 600;
   font-style: normal;
@@ -3515,23 +3948,10 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
   text-align: center;
 }
 
-@media (min-width: 48em) {
-  .button--icon {
-    font-size: 28px;
-  }
-}
-
 .button--icon:after {
-  font-size: 24.5px;
   font-size: 1.75rem;
   padding-left: 3px;
   vertical-align: baseline;
-}
-
-@media (min-width: 48em) {
-  .button--icon:after {
-    font-size: 28px;
-  }
 }
 
 .button--icon.icon--facebook {
@@ -3590,38 +4010,33 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
  template: 3_7_7-button-group
  description:
 */
-.button-group--small,
+
 .button-group {
-  display: inline-block;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
   position: relative;
-  vertical-align: middle;
 }
 
-.button-group--small > .button,
-.button-group > .button {
-  display: inline-block;
-  margin-bottom: 0.3em;
+
+.button-group > .button-group__button {
+  margin-right: 4px;
+  margin-bottom: 4px;
   position: relative;
 }
 
 /*
  section: 3.7.8
- title: Button group small
+ title: Button group (small buttons)
  template: 3_7_8-button-group--small
  description:
 */
-.button-group--small > .button {
-  font-size: 13.125px;
-  font-size: 0.9375rem;
-  padding: 0.3em 0.7em;
-}
-
-@media (min-width: 48em) {
-  .button-group--small > .button {
-    font-size: 15px;
-  }
-}
-
 .island {
   padding: 1em;
 }
@@ -3746,7 +4161,7 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
 }
 
 .border-bottom {
-  border-bottom: 1px solid #EBEBEB;
+  border-bottom: 1px solid #F8F8F8;
   border-left: 0;
   border-right: 0;
   border-top: 0;
@@ -3755,7 +4170,7 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
 .regional-rule-top {
   background: transparent url("../images/bg_shadow.png") no-repeat top center;
   background-size: 100% auto;
-  border-top: 1px solid #EBEBEB;
+  border-top: 1px solid #F8F8F8;
   margin-top: 30px;
   padding-top: 30px;
 }
@@ -3763,17 +4178,17 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
 .regional-rule-bottom {
   background: transparent url("../images/bg_shadow.png") no-repeat top center;
   background-size: 100% auto;
-  border-bottom: 1px solid #EBEBEB;
+  border-bottom: 1px solid #F8F8F8;
 }
 
 .horizontal-rule-top {
-  border-top: 1px solid #EBEBEB;
+  border-top: 1px solid #F8F8F8;
   margin-top: 30px;
   padding-top: 30px;
 }
 
 .horizontal-rule-bottom {
-  border-bottom: 1px solid #EBEBEB;
+  border-bottom: 1px solid #F8F8F8;
   margin-bottom: 30px;
   padding-bottom: 30px;
 }
@@ -3816,131 +4231,6 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
 
 .clearfix:after {
   clear: both;
-}
-
-/*
- Basic component used in multiple row textareas with links, headings, lists and so on.
-*/
-.textarea {
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif, Nimbus Sans L;
-  line-height: 1.8em;
-}
-
-.textarea ul, .textarea ol {
-  margin-bottom: 30px;
-}
-
-.textarea li {
-  line-height: 1.5em;
-  margin-bottom: 0.5em;
-}
-
-.textarea ul {
-  padding-left: 1.5em;
-  position: relative;
-}
-
-.textarea ul li {
-  list-style-type: none;
-}
-
-.textarea ul li:before {
-  font-size: 7.875px;
-  font-size: 0.5625rem;
-  display: inline-block;
-  font-family: "hy-icons";
-  font-style: normal;
-  font-weight: normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  content: "";
-  left: 0;
-  margin-top: 1px;
-  position: absolute;
-}
-
-@media (min-width: 48em) {
-  .textarea ul li:before {
-    font-size: 9px;
-  }
-}
-
-.textarea ol {
-  counter-reset: item;
-  padding-left: 1.5em;
-  position: relative;
-}
-
-.textarea ol li {
-  display: block;
-}
-
-.textarea ol li:before {
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif, Nimbus Sans L;
-  font-weight: 700;
-  font-style: normal;
-  content: counter(item) ". ";
-  counter-increment: item;
-  left: 1px;
-  line-height: 1.7em;
-  position: absolute;
-}
-
-.textarea h3 {
-  font-size: 21px;
-  font-size: 1.5rem;
-}
-
-@media (min-width: 48em) {
-  .textarea h3 {
-    font-size: 24px;
-  }
-}
-
-.textarea table {
-  line-height: normal;
-  margin-bottom: 2em;
-}
-
-/**
- * textarea-initial
- * An element (usually an image) floated left before a textarea.
- */
-
-.textarea-initial {
-  float: left;
-  margin-bottom: 2em;
-  margin-right: 2em;
-}
-
-/**
- * textarea-ingress
- *
- */
-
-.textarea-ingress,
-.textarea-ingress p {
-  color: #666;
-  letter-spacing: 0.01em;
-  line-height: 1.7em;
-}
-
-
-.textarea-infobox {
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif, Nimbus Sans L;
-  background-color: #EBEBEB;
-  margin-bottom: 2em;
-  padding: 1.5em;
-}
-
-
-.textarea-infobox p {
-  line-height: normal;
-}
-
-
-.textarea-infobox p:last-of-type {
-  margin-bottom: 0;
 }
 
 /*
@@ -4025,30 +4315,16 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
 }
 
 .l-footer__copyright p {
-  font-size: 12.25px;
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: 400;
   font-style: normal;
   color: #777777;
   line-height: 1.5em;
-  font-size: 10.5px;
   font-size: 0.75rem;
-  color: #EBEBEB;
+  color: #F8F8F8;
   font-weight: 500;
   padding: 16px 0;
   text-align: center;
-}
-
-@media (min-width: 48em) {
-  .l-footer__copyright p {
-    font-size: 14px;
-  }
-}
-
-@media (min-width: 48em) {
-  .l-footer__copyright p {
-    font-size: 12px;
-  }
 }
 
 @media (min-width: 48em) {
@@ -4073,11 +4349,11 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
 }
 
 .l-subregion-wrapper:nth-of-type(odd) {
-  background-color: #FAFAFA;
+  background-color: #F8F8F8;
 }
 
 .l-before-content .l-subregion-wrapper {
-  border-bottom: 2px solid #EBEBEB;
+  border-bottom: 2px solid #F8F8F8;
   border-top: none;
 }
 
@@ -4156,6 +4432,9 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
   height: 70px;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-order: 2;
       -ms-flex-order: 2;
           order: 2;
@@ -4203,7 +4482,7 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
 
 @media (min-width: 48em) {
   .l-top-bar__subright {
-    border-left: 1px solid #666;
+    border-left: 1px solid #777777;
     margin-left: 15px;
     padding-left: 5px;
   }
@@ -4245,18 +4524,12 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
-  font-size: 10.5px;
   font-size: 0.75rem;
   color: #0098d0;
   margin-left: 0.75em;
   vertical-align: middle;
-}
-
-@media (min-width: 48em) {
-  .is-toggleable-mobile:after {
-    font-size: 12px;
-  }
 }
 
 .is-toggleable-mobile.is-active:after {
@@ -4266,6 +4539,7 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -4307,6 +4581,103 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
   z-index: 1000;
 }
 
+.is-slidein {
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-name: slideIn;
+          animation-name: slideIn;
+}
+
+@-webkit-keyframes slideIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+.is-slideout {
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-name: slideOut;
+          animation-name: slideOut;
+}
+
+@-webkit-keyframes slideOut {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+  }
+}
+
+.is-fadein {
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 /* STYLEGUIDE COMPONENTS */
 /*
  section: 6.10.5
@@ -4321,18 +4692,18 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
 
 .box-story--liftup, .box-story--constrained,
 .box-story {
-  transition-property: background-color;
-  transition-duration: 0.1s;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex: 1 1 auto;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-flex: 1 1 auto;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
   position: relative;
+  transition-duration: 0.1s;
+  transition-property: background-color;
 }
 
 
@@ -4346,16 +4717,7 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
 
 .theme-small.box-story--liftup .box-story__title, .theme-small.box-story--constrained .box-story__title,
 .box-story.theme-small .box-story__title {
-  font-size: 18.375px;
   font-size: 1.3125rem;
-}
-
-@media (min-width: 48em) {
-  
-  .theme-small.box-story--liftup .box-story__title, .theme-small.box-story--constrained .box-story__title,
-  .box-story.theme-small .box-story__title {
-    font-size: 21px;
-  }
 }
 
 
@@ -4363,6 +4725,24 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
 .box-story.theme-plain {
   background-color: #0882B3;
   padding: 3.5em 1.5em;
+}
+
+
+.theme-plain.box-story--liftup .box-story__link-wrapper:after, .theme-plain.box-story--constrained .box-story__link-wrapper:after,
+.box-story.theme-plain .box-story__link-wrapper:after {
+  display: inline-block;
+  font-family: "hy-icons";
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
+  content: "";
+  color: #FFF;
+  bottom: 1em;
+  margin: 0;
+  position: absolute;
+  right: 1.5em;
 }
 
 
@@ -4391,7 +4771,7 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
 .theme-plain.box-story--liftup .box-story__label, .theme-plain.box-story--constrained .box-story__label,
 .box-story.theme-plain .box-story__label {
   background: #FFF;
-  color: #0882B3;
+  color: #0098d0;
 }
 
 
@@ -4409,21 +4789,9 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
 }
 
 
-.theme-plain.box-story--liftup:hover .box-story__link > a, .theme-plain.box-story--constrained:hover .box-story__link > a,
-.box-story.theme-plain:hover .box-story__link > a {
-  color: #FFF;
-}
-
-
-.theme-plain.box-story--liftup:hover .box-story__link > a:after, .theme-plain.box-story--constrained:hover .box-story__link > a:after,
-.box-story.theme-plain:hover .box-story__link > a:after {
-  color: #FFF;
-}
-
-
 .theme-plain-alt.box-story--liftup, .theme-plain-alt.box-story--constrained,
 .box-story.theme-plain-alt {
-  background-color: #e3e3e3;
+  background-color: #D2D2D2;
 }
 
 
@@ -4441,10 +4809,10 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
   color: #222;
   float: right;
-  margin-bottom: 1em;
 }
 
 
@@ -4487,7 +4855,7 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
 
 .theme-plain-alt.box-story--liftup:hover, .theme-plain-alt.box-story--constrained:hover,
 .box-story.theme-plain-alt:hover {
-  background-color: #d2d2d2;
+  background-color: #979797;
 }
 
 @media (min-width: 48em) {
@@ -4534,6 +4902,7 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
     font-weight: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    vertical-align: bottom;
     content: "";
     bottom: 1em;
     color: #FFF;
@@ -4559,7 +4928,6 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
   
   .theme-black.box-story--liftup .box-story__title, .theme-black.box-story--constrained .box-story__title,
   .box-story.theme-black .box-story__title {
-    font-size: 26.25px;
     font-size: 1.875rem;
     color: #FFF;
     padding-right: 20px;
@@ -4567,31 +4935,12 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
   }
 }
 
-@media (min-width: 48em) and (min-width: 48em) {
-  
-  .theme-black.box-story--liftup .box-story__title, .theme-black.box-story--constrained .box-story__title,
-  .box-story.theme-black .box-story__title {
-    font-size: 30px;
-  }
-}
-
-@media (min-width: 48em) {
-  
-  .theme-black.box-story--liftup .box-story__content, .theme-black.box-story--constrained .box-story__content,
-  .box-story.theme-black .box-story__content {
-    color: #FFF;
-    padding-right: 20px;
-  }
-}
-
 .box-story__label {
-  font-size: 9.8px;
   font-size: 0.7rem;
-  font-size: 10.5px;
   font-size: 0.75rem;
   font-weight: 600;
   font-style: normal;
-  background: #0882B3;
+  background-color: #0098d0;
   color: #FFF;
   padding: 0.3em 0.7em;
   text-transform: uppercase;
@@ -4599,18 +4948,6 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
   position: absolute;
   top: 1em;
   z-index: 10;
-}
-
-@media (min-width: 48em) {
-  .box-story__label {
-    font-size: 11.2px;
-  }
-}
-
-@media (min-width: 48em) {
-  .box-story__label {
-    font-size: 12px;
-  }
 }
 
 .box-story__label .theme-thin {
@@ -4636,7 +4973,7 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
 }
 
 .box-story__image img {
-  border: 1px solid #EBEBEB;
+  border: 1px solid #F8F8F8;
   margin-bottom: 2px;
   width: 100%;
 }
@@ -4663,18 +5000,11 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
 }
 
 .box-story__topical {
-  font-size: 10.5px;
   font-size: 0.75rem;
   font-weight: 600;
   font-style: normal;
   margin-bottom: 0.6em;
   overflow: hidden;
-}
-
-@media (min-width: 48em) {
-  .box-story__topical {
-    font-size: 12px;
-  }
 }
 
 @media (min-width: 48em) {
@@ -4691,9 +5021,7 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
 
 .box-story__date,
 .box-story__tag {
-  font-size: 9.8px;
   font-size: 0.7rem;
-  font-size: 10.5px;
   font-size: 0.75rem;
   font-weight: 600;
   font-style: normal;
@@ -4703,20 +5031,6 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
   position: relative;
   margin-right: 0.5em;
   padding-right: 1.5em;
-}
-
-@media (min-width: 48em) {
-  .box-story__date,
-  .box-story__tag {
-    font-size: 11.2px;
-  }
-}
-
-@media (min-width: 48em) {
-  .box-story__date,
-  .box-story__tag {
-    font-size: 12px;
-  }
 }
 
 .box-story__date:last-child:after,
@@ -4733,8 +5047,8 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
 .box-story__date:after, .box-story__date:before,
 .box-story__tag:after,
 .box-story__tag:before {
-  border: 1px solid #EBEBEB;
-  border-color: #d2d2d2;
+  border: 1px solid #F8F8F8;
+  border-color: #D2D2D2;
   border-radius: 50%;
   height: 6px;
   margin-top: -3px;
@@ -4768,19 +5082,12 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
 }
 
 .box-story__content {
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif, Nimbus Sans L;
-  font-size: 12.25px;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   font-size: 0.875rem;
-  color: #666;
+  color: #777777;
   line-height: 1.5em;
   margin-bottom: 0.4em;
   overflow: hidden;
-}
-
-@media (min-width: 48em) {
-  .box-story__content {
-    font-size: 14px;
-  }
 }
 
 .box-story__content:not(.textarea) a {
@@ -4798,26 +5105,12 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
           flex-grow: 1;
 }
 
-.box-story__link-wrapper:after {
-  display: inline-block;
-  font-family: "hy-icons";
-  font-style: normal;
-  font-weight: normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  content: "";
-  bottom: 1em;
-  color: #FFF;
-  position: absolute;
-  right: 1.5em;
-}
-
 .box-story__link {
   font-weight: 600;
   font-style: normal;
   transition-duration: 0.1s;
   transition-property: color;
-  color: #424242;
+  color: #222;
 }
 
 .box-story:active .box-story__link,
@@ -4866,7 +5159,7 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
 }
 
 .box-story__creator {
-  color: #666;
+  color: #777777;
   font-size: 0.9em;
   font-weight: 600;
   margin-bottom: 0.5em;
@@ -4915,22 +5208,13 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
 
 
 .box-story--liftup .box-story__title {
-  font-size: 26.25px;
   font-size: 1.875rem;
   height: auto;
 }
 
-@media (min-width: 48em) {
-  
-  .box-story--liftup .box-story__title {
-    font-size: 30px;
-  }
-}
-
 
 .box-story--liftup .box-story__content {
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif, Nimbus Sans L;
-  font-size: 15.75px;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   font-size: 1.125rem;
   font-weight: 400;
   font-style: normal;
@@ -4938,13 +5222,6 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
   line-height: 1.5em;
   color: #777777;
   overflow: visible;
-}
-
-@media (min-width: 48em) {
-  
-  .box-story--liftup .box-story__content {
-    font-size: 18px;
-  }
 }
 
 @media (min-width: 62.5em) {
@@ -4973,7 +5250,7 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
  description: Constrained story has content that is not full width
 */
 .box-story--constrained {
-  border-bottom: 1px solid #EBEBEB;
+  border-bottom: 1px solid #F8F8F8;
   border-left: 0;
   border-right: 0;
   border-top: 0;
@@ -5050,31 +5327,17 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
 }
 
 .box-story--related .box-story__content-wrapper {
-  background-color: #FAFAFA;
+  background-color: #F8F8F8;
   padding: 1.5em;
 }
 
 .box-story--related .box-story__content {
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif, Nimbus Sans L;
-  font-size: 12.25px;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   font-size: 0.875rem;
-}
-
-@media (min-width: 48em) {
-  .box-story--related .box-story__content {
-    font-size: 14px;
-  }
 }
 
 .box-story--related .box-story__content p {
-  font-size: 12.25px;
   font-size: 0.875rem;
-}
-
-@media (min-width: 48em) {
-  .box-story--related .box-story__content p {
-    font-size: 14px;
-  }
 }
 
 /*
@@ -5094,26 +5357,12 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
 }
 
 .box-subtitle__title {
-  font-size: 15.75px;
   font-size: 1.125rem;
   font-weight: 400;
   font-style: normal;
-  color: #666;
+  color: #777777;
   text-transform: none;
-  font-size: 14px;
   font-size: 1rem;
-}
-
-@media (min-width: 48em) {
-  .box-subtitle__title {
-    font-size: 18px;
-  }
-}
-
-@media (min-width: 48em) {
-  .box-subtitle__title {
-    font-size: 16px;
-  }
 }
 
 @media (min-width: 48em) {
@@ -5123,45 +5372,24 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
 }
 
 .box-subtitle__link a {
-  font-size: 14px;
   font-size: 1rem;
   font-weight: 600;
   font-style: normal;
-}
-
-@media (min-width: 48em) {
-  .box-subtitle__link a {
-    font-size: 16px;
-  }
 }
 
 .box-subtitle__content {
-  font-size: 14px;
   font-size: 1rem;
   font-weight: 600;
   font-style: normal;
 }
 
-@media (min-width: 48em) {
-  .box-subtitle__content {
-    font-size: 16px;
-  }
-}
-
 .box-subtitle__ingress {
-  font-size: 15.75px;
   font-size: 1.125rem;
   font-weight: 400;
   font-style: normal;
   color: #979797;
   line-height: 1.5em;
   margin-bottom: 30px;
-}
-
-@media (min-width: 48em) {
-  .box-subtitle__ingress {
-    font-size: 18px;
-  }
 }
 
 /*
@@ -5186,15 +5414,8 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
 .accordion__title {
   font-weight: 600;
   font-style: normal;
-  font-size: 12.25px;
   font-size: 0.875rem;
   text-transform: uppercase;
-}
-
-@media (min-width: 48em) {
-  .accordion__title {
-    font-size: 14px;
-  }
 }
 
 .accordion__content > .textarea {
@@ -5261,19 +5482,12 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
 }
 
 .index__label {
-  font-size: 15.75px;
   font-size: 1.125rem;
   font-weight: 400;
   font-style: normal;
-  color: #666;
+  color: #777777;
   text-transform: none;
   margin-bottom: 1em;
-}
-
-@media (min-width: 48em) {
-  .index__label {
-    font-size: 18px;
-  }
 }
 
 @media (min-width: 48em) {
@@ -5286,6 +5500,8 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
 
 .index__row {
   margin: 0 0 0.6em 0;
+  page-break-inside: avoid;
+  -webkit-column-break-inside: avoid;
 }
 
 .index__link {
@@ -5306,14 +5522,14 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
 }
 
 .index-alpha__group {
-  border-top: 1px solid #EBEBEB;
+  border-top: 1px solid #F8F8F8;
   clear: both;
   overflow: hidden;
   padding: 1em 0;
 }
 
 .index-alpha__group:last-child {
-  border-bottom: 1px solid #EBEBEB;
+  border-bottom: 1px solid #F8F8F8;
 }
 
 @media (min-width: 48em) {
@@ -5323,8 +5539,7 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
 }
 
 .index-alpha__initial {
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif, Nimbus Sans L;
-  font-size: 35px;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   font-size: 2.5rem;
   font-weight: 700;
   font-style: normal;
@@ -5333,25 +5548,12 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
 
 @media (min-width: 48em) {
   .index-alpha__initial {
-    font-size: 40px;
-  }
-}
-
-@media (min-width: 48em) {
-  .index-alpha__initial {
-    font-size: 70px;
     font-size: 5rem;
     float: left;
     line-height: 70px;
     margin-bottom: 0;
     text-align: center;
     width: 20%;
-  }
-}
-
-@media (min-width: 48em) and (min-width: 48em) {
-  .index-alpha__initial {
-    font-size: 80px;
   }
 }
 
@@ -5376,25 +5578,18 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
 }
 
 .index-alpha__title > a {
-  font-size: 13.125px;
   font-size: 0.9375rem;
   font-weight: 700;
   font-style: normal;
 }
 
-@media (min-width: 48em) {
-  .index-alpha__title > a {
-    font-size: 15px;
-  }
-}
-
 .index-alpha__subtitle {
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif, Nimbus Sans L;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 }
 
 /*
  section: 9.1.3
- title: Index
+ title: Index topical
  template: 9_1_3-index-topical
  description: Topical index of content
 */
@@ -5409,24 +5604,19 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
 }
 
 .index-topical__title > a {
-  font-size: 13.125px;
   font-size: 0.9375rem;
   font-weight: 700;
   font-style: normal;
 }
 
-@media (min-width: 48em) {
-  .index-topical__title > a {
-    font-size: 15px;
-  }
-}
-
 .index-topical__field {
+  font-size: 0.875rem;
   display: inline-block;
   position: relative;
   margin-right: 0.5em;
   padding-right: 1.5em;
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif, Nimbus Sans L;
+  color: #979797;
+  font-weight: 600;
 }
 
 .index-topical__field:last-child:after {
@@ -5439,8 +5629,8 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
 }
 
 .index-topical__field:after, .index-topical__field:before {
-  border: 1px solid #EBEBEB;
-  border-color: #d2d2d2;
+  border: 1px solid #F8F8F8;
+  border-color: #D2D2D2;
   border-radius: 50%;
   height: 6px;
   margin-top: -3px;
@@ -5464,7 +5654,7 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
 }
 
 .index-topical__description {
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif, Nimbus Sans L;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 }
 
 /*
@@ -5483,24 +5673,15 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
 }
 
 .list-of-links__subtitle {
-  font-size: 9.625px;
   font-size: 0.6875rem;
   font-weight: 600;
   font-style: normal;
-  color: #888888;
+  color: #979797;
   margin-bottom: 1em;
   text-transform: uppercase;
 }
 
-@media (min-width: 48em) {
-  .list-of-links__subtitle {
-    font-size: 11px;
-  }
-}
-
 .list-of-links__link {
-  font-weight: 600;
-  font-style: normal;
   margin-bottom: 2px;
   padding-left: 10px;
 }
@@ -5509,118 +5690,26 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
   color: #FFF;
 }
 
-.list-of-links__link:after {
-  height: auto;
-}
-
-.theme-dark .list-of-links__link {
-  transition-duration: 0.2s;
-  transition-property: color background-color;
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif, Nimbus Sans L;
-  font-size: 13.125px;
-  font-size: 0.9375rem;
-  display: block;
-  line-height: normal;
-  overflow: hidden;
-  padding-bottom: 0.8em;
-  padding-left: 0;
-  padding-top: 0.8em;
-  position: relative;
-  background: #0098d0;
-  color: #FFF;
-  overflow: visible;
-  padding-left: 1em;
-  padding-right: 4em;
-}
-
-@media (min-width: 48em) {
-  .theme-dark .list-of-links__link {
-    font-size: 15px;
-  }
-}
-
-.theme-dark .list-of-links__link:after {
-  display: inline-block;
-  font-family: "hy-icons";
-  font-style: normal;
-  font-weight: normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  content: "";
-  color: inherit;
-  font-weight: 200;
-  height: 100%;
-  margin-left: 1em;
-}
-
-a:hover .theme-dark .list-of-links__link:after, .theme-dark .list-of-links__link:hover:after {
-  color: #005479;
-}
-
-.theme-dark .list-of-links__link:after {
-  transition-duration: 0.2s;
-  transition-property: color background-color;
-  background-color: #0882B3;
-  color: #FFF;
-  line-height: 2.8em;
-  margin-top: 0;
-  padding-left: 1em;
-  padding-right: 1em;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-.theme-dark .list-of-links__link:hover {
-  background-color: #005479;
-  color: #FFF;
-}
-
-a:hover .theme-dark .list-of-links__link:hover:after, .theme-dark .list-of-links__link:hover:after {
-  background: #003146;
-  color: #FFF;
-}
-
-a:hover .theme-dark .list-of-links__link {
-  background-color: #005479;
-  color: #FFF;
-}
-
-a:hover .theme-dark .list-of-links__link:after {
-  background: #003146;
-  color: #FFF;
-}
-
-.theme-footer .list-of-links__link,
 .theme-info-footer .list-of-links__link {
-  border-bottom: 1px solid #EBEBEB;
-  border-bottom-color: #cccccc;
-  color: #5c5c5c;
+  border-bottom-color: #D2D2D2;
+  color: #222;
 }
 
-.theme-footer .list-of-links__link:before, .theme-footer .list-of-links__link:after,
-.theme-info-footer .list-of-links__link:before,
-.theme-info-footer .list-of-links__link:after {
-  color: #666;
-  position: absolute;
-  right: 0;
+.theme-info-footer .list-of-links__link:before, .theme-info-footer .list-of-links__link:after {
+  color: #777777;
 }
 
-.theme-footer .list-of-links__link:hover,
 .theme-info-footer .list-of-links__link:hover {
   color: #222;
 }
 
-.theme-footer .list-of-links__link:hover:before, .theme-footer .list-of-links__link:hover:after,
-.theme-info-footer .list-of-links__link:hover:before,
-.theme-info-footer .list-of-links__link:hover:after {
+.theme-info-footer .list-of-links__link:hover:before, .theme-info-footer .list-of-links__link:hover:after {
   color: #222;
 }
 
 .theme-footer .list-of-links__link {
-  border-bottom-color: black;
+  border-bottom-color: #777777;
   color: #FFF;
-  display: block;
 }
 
 .theme-footer .list-of-links__link:before, .theme-footer .list-of-links__link:after {
@@ -5628,11 +5717,11 @@ a:hover .theme-dark .list-of-links__link:after {
 }
 
 .theme-footer .list-of-links__link:hover {
-  color: #cccccc;
+  color: #D2D2D2;
 }
 
 .theme-footer .list-of-links__link:hover:before, .theme-footer .list-of-links__link:hover:after {
-  color: #cccccc;
+  color: #D2D2D2;
 }
 
 /*
@@ -5643,7 +5732,7 @@ a:hover .theme-dark .list-of-links__link:after {
 */
 /*
  section: 6.2.2
- title: List of links (with transparent buttons)
+ title: List of links (with transparent and transparent-alt buttons)
  template: 6_2_2_list-of-links-transparent
  description:
 */
@@ -5651,7 +5740,7 @@ a:hover .theme-dark .list-of-links__link:after {
  section: 6.2.3
  title: List of links condensed
  template: 6_2_2_list-of-links-condensed
- description:
+ description: Condensed version with footer themes applied. Also uses transparent-alt theme on the buttons.
 */
 .list-of-links--condensed {
   margin-bottom: 1em;
@@ -5660,16 +5749,9 @@ a:hover .theme-dark .list-of-links__link:after {
 .list-of-links--condensed .list-of-links__link {
   font-weight: 400;
   font-style: normal;
-  font-size: 12.25px;
   font-size: 0.875rem;
   padding-bottom: 0.8em;
   padding-top: 0.8em;
-}
-
-@media (min-width: 48em) {
-  .list-of-links--condensed .list-of-links__link {
-    font-size: 14px;
-  }
 }
 
 /*
@@ -5708,19 +5790,12 @@ a:hover .theme-dark .list-of-links__link:after {
 .links__link {
   font-weight: 600;
   font-style: normal;
-  font-size: 10.5px;
   font-size: 0.75rem;
-  color: #424242;
+  color: #222;
   display: inline-block;
   padding: 16px 5px 16px 10px;
   text-decoration: none;
   text-transform: uppercase;
-}
-
-@media (min-width: 48em) {
-  .links__link {
-    font-size: 12px;
-  }
 }
 
 .links__link:hover {
@@ -5729,7 +5804,7 @@ a:hover .theme-dark .list-of-links__link:after {
 
 @media (min-width: 48em) {
   .links__link {
-    color: #cccccc;
+    color: #D2D2D2;
     padding: 5px 0 5px 9px;
   }
   .links__link:hover {
@@ -5750,15 +5825,18 @@ a:hover .theme-dark .list-of-links__link:after {
     font-size: 0;
   }
   .links__link.theme-language abbr[title]:after {
-    font-size: 10.5px;
     font-size: 0.75rem;
     content: attr(title);
   }
 }
 
-@media (min-width: 62.5em) and (min-width: 48em) {
-  .links__link.theme-language abbr[title]:after {
-    font-size: 12px;
+span.links__link.theme-language {
+  color: #D2D2D2;
+}
+
+@media (min-width: 48em) {
+  span.links__link.theme-language {
+    color: #777777;
   }
 }
 
@@ -5775,10 +5853,10 @@ a:hover .theme-dark .list-of-links__link:after {
 
 @media (min-width: 48em) {
   .main-menu {
-    border-bottom: 1px solid #cacaca;
+    border-bottom: 1px solid #D2D2D2;
   }
   .main-menu.is-open {
-    border-bottom: none;
+    border-bottom-color: #FFF;
   }
 }
 
@@ -5805,7 +5883,6 @@ a:hover .theme-dark .list-of-links__link:after {
 }
 
 .main-menu a {
-  font-size: 13.125px;
   font-size: 0.9375rem;
   font-weight: 700;
   font-style: normal;
@@ -5817,18 +5894,12 @@ a:hover .theme-dark .list-of-links__link:after {
   text-decoration: none;
 }
 
-@media (min-width: 48em) {
-  .main-menu a {
-    font-size: 15px;
-  }
-}
-
 .main-menu a:hover, .main-menu a.active-trail, .main-menu a.active {
   color: #005479;
 }
 
 .main-menu > ul.menu {
-  border-bottom: 1px solid #cacaca;
+  border-bottom: 1px solid #D2D2D2;
 }
 
 @media (min-width: 48em) {
@@ -5850,11 +5921,11 @@ a:hover .theme-dark .list-of-links__link:after {
 }
 
 .main-menu li.is-lvl1 {
-  border-top: 1px solid #d2d2d2;
+  border-top: 1px solid #D2D2D2;
 }
 
 .main-menu li.is-lvl1.is-open {
-  background: #f2f2f2;
+  background: #F8F8F8;
 }
 
 .main-menu li.is-lvl1 > a {
@@ -5932,20 +6003,14 @@ a:hover .theme-dark .list-of-links__link:after {
     font-weight: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    vertical-align: bottom;
     content: "";
-    font-size: 14px;
     font-size: 1rem;
     font-weight: 300;
     font-style: normal;
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
     transition: opacity 0.2s ease;
-  }
-}
-
-@media (min-width: 48em) and (min-width: 48em) {
-  li.main-menu__front > a:after {
-    font-size: 16px;
   }
 }
 
@@ -5967,7 +6032,6 @@ a:hover .theme-dark .list-of-links__link:after {
 }
 
 .main-menu__expand:before {
-  font-size: 12.25px;
   font-size: 0.875rem;
   display: inline-block;
   font-family: "hy-icons";
@@ -5975,23 +6039,19 @@ a:hover .theme-dark .list-of-links__link:after {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
-  transition-duration: 0.2s;
-  transition-property: color, border-color;
-  color: #cacaca;
+  color: #D2D2D2;
   cursor: pointer;
   display: inline-block;
   height: 2em;
   line-height: 2em;
   position: relative;
   top: 10px;
+  transition-duration: 0.2s;
+  transition-property: color, border-color, -webkit-transform;
+  transition-property: color, border-color, transform;
   width: 2em;
-}
-
-@media (min-width: 48em) {
-  .main-menu__expand:before {
-    font-size: 14px;
-  }
 }
 
 .main-menu__expand:hover:before {
@@ -6017,7 +6077,6 @@ a:hover .theme-dark .list-of-links__link:after {
     width: 1.2em;
   }
   .main-menu__expand:before {
-    font-size: 10.5px;
     font-size: 0.75rem;
     height: auto;
     line-height: normal;
@@ -6027,21 +6086,10 @@ a:hover .theme-dark .list-of-links__link:after {
   }
 }
 
-@media (min-width: 48em) and (min-width: 48em) {
-  .main-menu__expand:before {
-    font-size: 12px;
-  }
-}
-
 .is-open > .main-menu__expand:before {
-  display: inline-block;
-  font-family: "hy-icons";
-  font-style: normal;
-  font-weight: normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  content: "";
   color: #0098d0;
+  -webkit-transform: rotate3d(1, 0, 0, 180deg);
+          transform: rotate3d(1, 0, 0, 180deg);
 }
 
 .is-open > .main-menu__expand:hover:before {
@@ -6067,7 +6115,7 @@ a:hover .theme-dark .list-of-links__link:after {
 }
 
 .fatmenu.is-open {
-  border-bottom: 1px solid #cacaca;
+  border-bottom: 1px solid #D2D2D2;
 }
 
 @media (min-width: 48em) {
@@ -6113,7 +6161,6 @@ a:hover .theme-dark .list-of-links__link:after {
 .fatmenu li.is-lvl2 > a {
   font-weight: 700;
   font-style: normal;
-  font-size: 13.125px;
   font-size: 0.9375rem;
   display: block;
   letter-spacing: 0;
@@ -6121,12 +6168,6 @@ a:hover .theme-dark .list-of-links__link:after {
   padding: 15px 0 0;
   position: relative;
   text-decoration: none;
-}
-
-@media (min-width: 48em) {
-  .fatmenu li.is-lvl2 > a {
-    font-size: 15px;
-  }
 }
 
 .fatmenu li.is-lvl2 > a:hover {
@@ -6144,7 +6185,6 @@ a:hover .theme-dark .list-of-links__link:after {
 }
 
 .fatmenu li.is-lvl3 > a {
-  font-size: 12.25px;
   font-size: 0.875rem;
   font-weight: 400;
   font-style: normal;
@@ -6152,12 +6192,6 @@ a:hover .theme-dark .list-of-links__link:after {
   padding: 4.28571px 0 4.28571px 0;
   position: relative;
   text-transform: none;
-}
-
-@media (min-width: 48em) {
-  .fatmenu li.is-lvl3 > a {
-    font-size: 14px;
-  }
 }
 
 .fatmenu li.is-lvl3 > a:hover, .fatmenu li.is-lvl3 > a.active-trail, .fatmenu li.is-lvl3 > a.active {
@@ -6177,7 +6211,6 @@ a:hover .theme-dark .list-of-links__link:after {
 }
 
 .fatmenu__title a:after {
-  font-size: 14px;
   font-size: 1rem;
   display: inline-block;
   font-family: "hy-icons";
@@ -6185,21 +6218,15 @@ a:hover .theme-dark .list-of-links__link:after {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
   margin-left: 1em;
   position: absolute;
 }
 
-@media (min-width: 48em) {
-  .fatmenu__title a:after {
-    font-size: 16px;
-  }
-}
-
 .fatmenu__collapse {
   font-weight: 600;
   font-style: normal;
-  font-size: 17.5px;
   font-size: 1.25rem;
   -webkit-align-items: center;
       -ms-flex-align: center;
@@ -6221,12 +6248,6 @@ a:hover .theme-dark .list-of-links__link:after {
   width: 2em;
 }
 
-@media (min-width: 48em) {
-  .fatmenu__collapse {
-    font-size: 20px;
-  }
-}
-
 .fatmenu__collapse:hover {
   color: #005479;
 }
@@ -6238,6 +6259,7 @@ a:hover .theme-dark .list-of-links__link:after {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
 }
 
@@ -6253,29 +6275,22 @@ a:hover .theme-dark .list-of-links__link:after {
  description:
 */
 .table-sortable thead tr {
-  border: 2px solid #666;
+  border: 2px solid #777777;
 }
 
 .table-sortable thead tr th {
-  background: #424242;
+  background: #222;
   color: #FFF;
   padding: 0.6em 0.9em;
 }
 
 .table-sortable thead tr th, .table-sortable thead tr th a, .table-sortable thead tr th a.active {
-  font-size: 14px;
   font-size: 1rem;
   font-weight: 700;
   font-style: normal;
   color: #FFF;
   text-decoration: none;
   text-transform: uppercase;
-}
-
-@media (min-width: 48em) {
-  .table-sortable thead tr th, .table-sortable thead tr th a, .table-sortable thead tr th a.active {
-    font-size: 16px;
-  }
 }
 
 .table-sortable thead tr th:hover, .table-sortable thead tr th a:hover, .table-sortable thead tr th a.active:hover {
@@ -6287,17 +6302,10 @@ a:hover .theme-dark .list-of-links__link:after {
 }
 
 .table-sortable tbody tr td {
-  font-size: 11.375px;
   font-size: 0.8125rem;
-  border: 2px dotted #EBEBEB;
-  color: #666;
+  border: 2px dotted #D2D2D2;
+  color: #777777;
   padding: 1.2em 0.9em;
-}
-
-@media (min-width: 48em) {
-  .table-sortable tbody tr td {
-    font-size: 13px;
-  }
 }
 
 .table-sortable tbody tr td a, .table-sortable tbody tr td a.active {
@@ -6311,15 +6319,15 @@ a:hover .theme-dark .list-of-links__link:after {
 }
 
 .table-sortable tbody tr td.active {
-  color: #666;
+  color: #777777;
 }
 
 .table-sortable tbody tr.odd {
-  background-color: #f2f2f2;
+  background-color: #F8F8F8;
 }
 
 .table-sortable tbody tr.odd td.active {
-  background-color: #e6e6e6;
+  background-color: #D2D2D2;
 }
 
 .table-sortable tbody tr.even {
@@ -6327,7 +6335,7 @@ a:hover .theme-dark .list-of-links__link:after {
 }
 
 .table-sortable tbody tr.even td.active {
-  background-color: #f2f2f2;
+  background-color: #F8F8F8;
 }
 
 /*
@@ -6336,50 +6344,42 @@ a:hover .theme-dark .list-of-links__link:after {
  template: 6_1_2_table-simple
  description:
 */
-.textarea table,
+
 .table-simple {
-  font-size: 12.25px;
   font-size: 0.875rem;
 }
 
-@media (min-width: 48em) {
-  .textarea table,
-  .table-simple {
-    font-size: 14px;
-  }
-}
 
-.textarea table tr,
 .table-simple tr {
-  background-color: #fafafa;
+  background-color: #F8F8F8;
 }
 
-.textarea table tr th,
+
 .table-simple tr th {
-  background-color: #f2f2f2;
+  background-color: #F8F8F8;
 }
 
-.textarea table tr:nth-of-type(2n),
+
 .table-simple tr:nth-of-type(2n) {
   background-color: #FFF;
 }
 
-.textarea table tr:nth-of-type(2n) th,
+
 .table-simple tr:nth-of-type(2n) th {
-  background-color: #fafafa;
+  background-color: #F8F8F8;
 }
 
-.textarea table td, .textarea table th,
+
 .table-simple td,
 .table-simple th {
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif, Nimbus Sans L;
-  border: 2px dotted #EBEBEB;
-  color: #666;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  border: 2px dotted #D2D2D2;
+  color: #777777;
   padding: 0.7em 0.9em;
   vertical-align: top;
 }
 
-.textarea table td a, .textarea table td a.active, .textarea table th a, .textarea table th a.active,
+
 .table-simple td a,
 .table-simple td a.active,
 .table-simple th a,
@@ -6388,7 +6388,7 @@ a:hover .theme-dark .list-of-links__link:after {
   text-decoration: none;
 }
 
-.textarea table td a:hover, .textarea table td a.active:hover, .textarea table th a:hover, .textarea table th a.active:hover,
+
 .table-simple td a:hover,
 .table-simple td a.active:hover,
 .table-simple th a:hover,
@@ -6397,13 +6397,13 @@ a:hover .theme-dark .list-of-links__link:after {
   text-decoration: none;
 }
 
-.textarea table td.active, .textarea table th.active,
+
 .table-simple td.active,
 .table-simple th.active {
-  color: #666;
+  color: #777777;
 }
 
-.textarea table td:first-child, .textarea table th:first-child,
+
 .table-simple td:first-child,
 .table-simple th:first-child {
   font-weight: 700;
@@ -6424,15 +6424,8 @@ a:hover .theme-dark .list-of-links__link:after {
 }
 
 .is-table-wrapped table {
-  font-size: 11.375px;
   font-size: 0.8125rem;
   margin-bottom: 0 !important;
-}
-
-@media (min-width: 48em) {
-  .is-table-wrapped table {
-    font-size: 13px;
-  }
 }
 
 .is-table-wrapped th, .is-table-wrapped td {
@@ -6478,7 +6471,7 @@ a:hover .theme-dark .list-of-links__link:after {
 }
 
 .is-table-scrollable {
-  border-right: 2px dotted #EBEBEB;
+  border-right: 2px dotted #F8F8F8;
   margin-left: 35%;
   overflow-x: auto;
   position: relative;
@@ -6530,7 +6523,7 @@ a:hover .theme-dark .list-of-links__link:after {
   width: 100%;
 }
 
-.logo-block__content h4, .logo-block__content p {
+.logo-block__content h4, .logo-block__content legend, .logo-block__content p {
   text-align: center;
   color: #FFF;
 }
@@ -6539,32 +6532,18 @@ a:hover .theme-dark .list-of-links__link:after {
   .logo-block__content {
     float: left;
   }
-  .logo-block__content h4, .logo-block__content p {
+  .logo-block__content h4, .logo-block__content legend, .logo-block__content p {
     text-align: left;
   }
 }
 
-.logo-block__content h4 {
-  font-size: 14px;
+.logo-block__content h4, .logo-block__content legend {
   font-size: 1rem;
 }
 
-@media (min-width: 48em) {
-  .logo-block__content h4 {
-    font-size: 16px;
-  }
-}
-
 .logo-block__content p {
-  font-size: 12.25px;
   font-size: 0.875rem;
   line-height: 1.2em;
-}
-
-@media (min-width: 48em) {
-  .logo-block__content p {
-    font-size: 14px;
-  }
 }
 
 .logo-block__content br {
@@ -6589,7 +6568,6 @@ a:hover .theme-dark .list-of-links__link:after {
 }
 
 .logo:before {
-  font-size: 47.25px;
   font-size: 3.375rem;
   color: #fff;
   content: "";
@@ -6597,28 +6575,14 @@ a:hover .theme-dark .list-of-links__link:after {
   font-weight: 300;
 }
 
-@media (min-width: 48em) {
-  .logo:before {
-    font-size: 54px;
-  }
-}
-
 .logo.theme-big:before {
-  font-size: 87.5px;
   font-size: 6.25rem;
   line-height: 100px;
-}
-
-@media (min-width: 48em) {
-  .logo.theme-big:before {
-    font-size: 100px;
-  }
 }
 
 .logo__sitename {
   font-weight: 700;
   font-style: normal;
-  font-size: 14px;
   font-size: 1rem;
   color: #FFF;
   letter-spacing: -0.05em;
@@ -6629,21 +6593,8 @@ a:hover .theme-dark .list-of-links__link:after {
 
 @media (min-width: 48em) {
   .logo__sitename {
-    font-size: 16px;
-  }
-}
-
-@media (min-width: 48em) {
-  .logo__sitename {
-    font-size: 14.875px;
     font-size: 1.0625rem;
     padding-right: 0;
-  }
-}
-
-@media (min-width: 48em) and (min-width: 48em) {
-  .logo__sitename {
-    font-size: 17px;
   }
 }
 
@@ -6655,67 +6606,34 @@ a:hover .theme-dark .list-of-links__link:after {
 */
 
 ul.pager {
-  font-size: 13.125px;
   font-size: 0.9375rem;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: #FFF;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: 30px 0;
-}
-
-@media (min-width: 48em) {
-  
-  ul.pager {
-    font-size: 15px;
-  }
 }
 
 
 ul.pager > li {
-  display: inline-block;
-  margin-bottom: 0.3em;
+  margin-right: 4px;
 }
 
 
-ul.pager > li > a {
-  position: relative;
-}
-
-
-ul.pager > li.is-active {
-  transition-duration: 0.1s;
-  transition-property: all;
-  font-size: 13.125px;
-  font-size: 0.9375rem;
-  background-color: #0098d0;
-  border: none;
-  color: #FFF;
-  cursor: pointer;
-  padding: 0.8em 1em;
-  background-color: #005479;
-}
-
-@media (min-width: 48em) {
-  
-  ul.pager > li.is-active {
-    font-size: 15px;
-  }
-}
-
-
-ul.pager > li.is-active:hover {
-  background-color: #005479;
-  color: #FFF;
-}
-
-
-ul.pager > li.is-active:before,
-ul.pager > li.is-active:after {
-  transition-duration: 0.1s;
-  transition-property: all;
-}
-
-
-ul.pager > li.is-active > a {
-  background-color: inherit;
+ul.pager > li:last-of-type {
+  margin: 0;
 }
 
 
@@ -6727,7 +6645,7 @@ ul.pager > li.pager__ellipsis {
 @media (min-width: 48em) {
   
   ul.pager > li.pager__ellipsis {
-    display: inline-block;
+    display: block;
   }
 }
 
@@ -6739,242 +6657,12 @@ ul.pager > li.pager__page {
 @media (min-width: 48em) {
   
   ul.pager > li.pager__page {
-    display: inline-block;
+    display: block;
   }
 }
 
 
 ul.pager > li.pager__page a {
-  transition-duration: 0.1s;
-  transition-property: all;
-  font-size: 13.125px;
-  font-size: 0.9375rem;
-  background-color: #0098d0;
-  border: none;
-  color: #FFF;
-  cursor: pointer;
-  padding: 0.8em 1em;
-  display: block;
-}
-
-@media (min-width: 48em) {
-  
-  ul.pager > li.pager__page a {
-    font-size: 15px;
-  }
-}
-
-
-ul.pager > li.pager__page a:hover {
-  background-color: #005479;
-  color: #FFF;
-}
-
-
-ul.pager > li.pager__page a:before,
-ul.pager > li.pager__page a:after {
-  transition-duration: 0.1s;
-  transition-property: all;
-}
-
-
-ul.pager > li.pager__previous a {
-  transition-duration: 0.2s;
-  transition-property: color background-color;
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif, Nimbus Sans L;
-  font-size: 13.125px;
-  font-size: 0.9375rem;
-  display: block;
-  line-height: normal;
-  overflow: hidden;
-  padding-bottom: 0.8em;
-  padding-left: 0;
-  padding-top: 0.8em;
-  position: relative;
-  background: #0098d0;
-  color: #FFF;
-  overflow: visible;
-  padding-left: 1em;
-  padding-right: 4em;
-  padding-left: 4em;
-  padding-right: 1em;
-}
-
-@media (min-width: 48em) {
-  
-  ul.pager > li.pager__previous a {
-    font-size: 15px;
-  }
-}
-
-
-ul.pager > li.pager__previous a:after {
-  display: inline-block;
-  font-family: "hy-icons";
-  font-style: normal;
-  font-weight: normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  content: "";
-  color: inherit;
-  font-weight: 200;
-  height: 100%;
-  margin-left: 1em;
-}
-
-a:hover
-ul.pager > li.pager__previous a:after,
-ul.pager > li.pager__previous a:hover:after {
-  color: #005479;
-}
-
-
-ul.pager > li.pager__previous a:after {
-  transition-duration: 0.2s;
-  transition-property: color background-color;
-  background-color: #0882B3;
-  color: #FFF;
-  line-height: 2.8em;
-  margin-top: 0;
-  padding-left: 1em;
-  padding-right: 1em;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-
-ul.pager > li.pager__previous a:hover {
-  background-color: #005479;
-  color: #FFF;
-}
-
-a:hover
-ul.pager > li.pager__previous a:hover:after,
-ul.pager > li.pager__previous a:hover:after {
-  background: #003146;
-  color: #FFF;
-}
-
-a:hover
-ul.pager > li.pager__previous a {
-  background-color: #005479;
-  color: #FFF;
-}
-
-a:hover
-ul.pager > li.pager__previous a:after {
-  background: #003146;
-  color: #FFF;
-}
-
-
-ul.pager > li.pager__previous a:after {
-  display: inline-block;
-  font-family: "hy-icons";
-  font-style: normal;
-  font-weight: normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  content: "";
-  left: 0;
-  margin-left: 0;
-  margin-right: 1em;
-  right: auto;
-}
-
-
-ul.pager > li.pager__next a {
-  transition-duration: 0.2s;
-  transition-property: color background-color;
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif, Nimbus Sans L;
-  font-size: 13.125px;
-  font-size: 0.9375rem;
-  display: block;
-  line-height: normal;
-  overflow: hidden;
-  padding-bottom: 0.8em;
-  padding-left: 0;
-  padding-top: 0.8em;
-  position: relative;
-  background: #0098d0;
-  color: #FFF;
-  overflow: visible;
-  padding-left: 1em;
-  padding-right: 4em;
-}
-
-@media (min-width: 48em) {
-  
-  ul.pager > li.pager__next a {
-    font-size: 15px;
-  }
-}
-
-
-ul.pager > li.pager__next a:after {
-  display: inline-block;
-  font-family: "hy-icons";
-  font-style: normal;
-  font-weight: normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  content: "";
-  color: inherit;
-  font-weight: 200;
-  height: 100%;
-  margin-left: 1em;
-}
-
-a:hover
-ul.pager > li.pager__next a:after,
-ul.pager > li.pager__next a:hover:after {
-  color: #005479;
-}
-
-
-ul.pager > li.pager__next a:after {
-  transition-duration: 0.2s;
-  transition-property: color background-color;
-  background-color: #0882B3;
-  color: #FFF;
-  line-height: 2.8em;
-  margin-top: 0;
-  padding-left: 1em;
-  padding-right: 1em;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-
-ul.pager > li.pager__next a:hover {
-  background-color: #005479;
-  color: #FFF;
-}
-
-a:hover
-ul.pager > li.pager__next a:hover:after,
-ul.pager > li.pager__next a:hover:after {
-  background: #003146;
-  color: #FFF;
-}
-
-a:hover
-ul.pager > li.pager__next a {
-  background-color: #005479;
-  color: #FFF;
-}
-
-a:hover
-ul.pager > li.pager__next a:after {
-  background: #003146;
-  color: #FFF;
-}
-
-
-ul.pager > li.pager__previous a,
-ul.pager > li.pager__next a {
   display: block;
 }
 
@@ -6990,29 +6678,22 @@ ul.pager > li.pager__next a {
  description:
 */
 .table-sortable thead tr {
-  border: 2px solid #666;
+  border: 2px solid #777777;
 }
 
 .table-sortable thead tr th {
-  background: #424242;
+  background: #222;
   color: #FFF;
   padding: 0.6em 0.9em;
 }
 
 .table-sortable thead tr th, .table-sortable thead tr th a, .table-sortable thead tr th a.active {
-  font-size: 14px;
   font-size: 1rem;
   font-weight: 700;
   font-style: normal;
   color: #FFF;
   text-decoration: none;
   text-transform: uppercase;
-}
-
-@media (min-width: 48em) {
-  .table-sortable thead tr th, .table-sortable thead tr th a, .table-sortable thead tr th a.active {
-    font-size: 16px;
-  }
 }
 
 .table-sortable thead tr th:hover, .table-sortable thead tr th a:hover, .table-sortable thead tr th a.active:hover {
@@ -7024,17 +6705,10 @@ ul.pager > li.pager__next a {
 }
 
 .table-sortable tbody tr td {
-  font-size: 11.375px;
   font-size: 0.8125rem;
-  border: 2px dotted #EBEBEB;
-  color: #666;
+  border: 2px dotted #D2D2D2;
+  color: #777777;
   padding: 1.2em 0.9em;
-}
-
-@media (min-width: 48em) {
-  .table-sortable tbody tr td {
-    font-size: 13px;
-  }
 }
 
 .table-sortable tbody tr td a, .table-sortable tbody tr td a.active {
@@ -7048,15 +6722,15 @@ ul.pager > li.pager__next a {
 }
 
 .table-sortable tbody tr td.active {
-  color: #666;
+  color: #777777;
 }
 
 .table-sortable tbody tr.odd {
-  background-color: #f2f2f2;
+  background-color: #F8F8F8;
 }
 
 .table-sortable tbody tr.odd td.active {
-  background-color: #e6e6e6;
+  background-color: #D2D2D2;
 }
 
 .table-sortable tbody tr.even {
@@ -7064,7 +6738,7 @@ ul.pager > li.pager__next a {
 }
 
 .table-sortable tbody tr.even td.active {
-  background-color: #f2f2f2;
+  background-color: #F8F8F8;
 }
 
 /*
@@ -7073,50 +6747,42 @@ ul.pager > li.pager__next a {
  template: 6_1_2_table-simple
  description:
 */
-.textarea table,
+
 .table-simple {
-  font-size: 12.25px;
   font-size: 0.875rem;
 }
 
-@media (min-width: 48em) {
-  .textarea table,
-  .table-simple {
-    font-size: 14px;
-  }
-}
 
-.textarea table tr,
 .table-simple tr {
-  background-color: #fafafa;
+  background-color: #F8F8F8;
 }
 
-.textarea table tr th,
+
 .table-simple tr th {
-  background-color: #f2f2f2;
+  background-color: #F8F8F8;
 }
 
-.textarea table tr:nth-of-type(2n),
+
 .table-simple tr:nth-of-type(2n) {
   background-color: #FFF;
 }
 
-.textarea table tr:nth-of-type(2n) th,
+
 .table-simple tr:nth-of-type(2n) th {
-  background-color: #fafafa;
+  background-color: #F8F8F8;
 }
 
-.textarea table td, .textarea table th,
+
 .table-simple td,
 .table-simple th {
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif, Nimbus Sans L;
-  border: 2px dotted #EBEBEB;
-  color: #666;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  border: 2px dotted #D2D2D2;
+  color: #777777;
   padding: 0.7em 0.9em;
   vertical-align: top;
 }
 
-.textarea table td a, .textarea table td a.active, .textarea table th a, .textarea table th a.active,
+
 .table-simple td a,
 .table-simple td a.active,
 .table-simple th a,
@@ -7125,7 +6791,7 @@ ul.pager > li.pager__next a {
   text-decoration: none;
 }
 
-.textarea table td a:hover, .textarea table td a.active:hover, .textarea table th a:hover, .textarea table th a.active:hover,
+
 .table-simple td a:hover,
 .table-simple td a.active:hover,
 .table-simple th a:hover,
@@ -7134,13 +6800,13 @@ ul.pager > li.pager__next a {
   text-decoration: none;
 }
 
-.textarea table td.active, .textarea table th.active,
+
 .table-simple td.active,
 .table-simple th.active {
-  color: #666;
+  color: #777777;
 }
 
-.textarea table td:first-child, .textarea table th:first-child,
+
 .table-simple td:first-child,
 .table-simple th:first-child {
   font-weight: 700;
@@ -7161,15 +6827,8 @@ ul.pager > li.pager__next a {
 }
 
 .is-table-wrapped table {
-  font-size: 11.375px;
   font-size: 0.8125rem;
   margin-bottom: 0 !important;
-}
-
-@media (min-width: 48em) {
-  .is-table-wrapped table {
-    font-size: 13px;
-  }
 }
 
 .is-table-wrapped th, .is-table-wrapped td {
@@ -7215,7 +6874,7 @@ ul.pager > li.pager__next a {
 }
 
 .is-table-scrollable {
-  border-right: 2px dotted #EBEBEB;
+  border-right: 2px dotted #F8F8F8;
   margin-left: 35%;
   overflow-x: auto;
   position: relative;
@@ -7248,7 +6907,6 @@ ul.pager > li.pager__next a {
 }
 
 .tag-list__item {
-  font-size: 10.5px;
   font-size: 0.75rem;
   font-weight: 600;
   font-style: normal;
@@ -7258,12 +6916,6 @@ ul.pager > li.pager__next a {
   position: relative;
   margin-right: 0.5em;
   padding-right: 1.5em;
-}
-
-@media (min-width: 48em) {
-  .tag-list__item {
-    font-size: 12px;
-  }
 }
 
 .tag-list__item:last-child:after {
@@ -7276,8 +6928,8 @@ ul.pager > li.pager__next a {
 }
 
 .tag-list__item:after, .tag-list__item:before {
-  border: 1px solid #EBEBEB;
-  border-color: #d2d2d2;
+  border: 1px solid #F8F8F8;
+  border-color: #D2D2D2;
   border-radius: 50%;
   height: 6px;
   margin-top: -3px;
@@ -7438,15 +7090,8 @@ ul.pager > li.pager__next a {
 }
 
 .l-action-footer .last-updated {
-  font-size: 12.25px;
   font-size: 0.875rem;
   line-height: 60px;
-}
-
-@media (min-width: 48em) {
-  .l-action-footer .last-updated {
-    font-size: 14px;
-  }
 }
 
 @media (min-width: 48em) {
@@ -7480,7 +7125,6 @@ ul.pager > li.pager__next a {
 }
 
 .cc_btn {
-  font-size: 12.25px;
   font-size: 0.875rem;
   -webkit-align-self: center;
       -ms-flex-item-align: center;
@@ -7495,27 +7139,14 @@ ul.pager > li.pager__next a {
   margin-left: 1em;
 }
 
-@media (min-width: 48em) {
-  .cc_btn {
-    font-size: 14px;
-  }
-}
-
 .cc_message {
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif, Nimbus Sans L;
-  font-size: 12.25px;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   font-size: 0.875rem;
   -webkit-align-self: center;
       -ms-flex-item-align: center;
           align-self: center;
   color: #FFF;
   margin: 0;
-}
-
-@media (min-width: 48em) {
-  .cc_message {
-    font-size: 14px;
-  }
 }
 
 .cc_logo {
@@ -7541,7 +7172,7 @@ ul.pager > li.pager__next a {
 }
 
 .degree-programme-switcher .degree-programme-switcher__header {
-  border: 1px solid #EBEBEB;
+  border: 1px solid #F8F8F8;
   background: #FFF;
   z-index: 10;
   display: -webkit-flex;
@@ -7588,7 +7219,7 @@ ul.pager > li.pager__next a {
 }
 
 .degree-programme-switcher .degree-programme-switcher__dropdown {
-  border: 1px solid #EBEBEB;
+  border: 1px solid #F8F8F8;
   -webkit-transform: translateY(-100px);
       -ms-transform: translateY(-100px);
           transform: translateY(-100px);
@@ -7621,7 +7252,7 @@ ul.pager > li.pager__next a {
 .degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content {
   overflow-y: scroll;
   scrollbar-face-color: #0098d0;
-  scrollbar-track-color: #EBEBEB;
+  scrollbar-track-color: #F8F8F8;
 }
 
 .degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content::-webkit-scrollbar {
@@ -7634,7 +7265,7 @@ ul.pager > li.pager__next a {
 }
 
 .degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content::-webkit-scrollbar-track {
-  background: #EBEBEB;
+  background: #F8F8F8;
 }
 
 .degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content > div {
@@ -7647,7 +7278,7 @@ ul.pager > li.pager__next a {
   margin-bottom: 0;
 }
 
-.degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content .my-degree-programmes .view-grouping-content h4 {
+.degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content .my-degree-programmes .view-grouping-content h4, .degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content .my-degree-programmes .view-grouping-content legend {
   display: none;
 }
 
@@ -7673,16 +7304,10 @@ ul.pager > li.pager__next a {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
-  font-size: 14px;
   font-size: 1rem;
   margin-right: 1em;
-}
-
-@media (min-width: 48em) {
-  .degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content li .flag:before {
-    font-size: 16px;
-  }
 }
 
 .degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content li .ajax-progress {
@@ -7780,19 +7405,12 @@ ul.pager > li.pager__next a {
 }
 
 .feedback-form {
-  font-size: 12.25px;
   font-size: 0.875rem;
   width: 300px;
   z-index: 101;
   position: fixed;
   bottom: 1em;
   right: 1em;
-}
-
-@media (min-width: 48em) {
-  .feedback-form {
-    font-size: 14px;
-  }
 }
 
 .feedback-form .feedback-form__toggle {
@@ -7850,6 +7468,7 @@ ul.pager > li.pager__next a {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
   display: block;
   font-size: 2em;
@@ -7866,27 +7485,20 @@ ul.pager > li.pager__next a {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
   display: block;
   font-size: 2em;
 }
 
 .feedback-form form {
-  font-size: 11.375px;
   font-size: 0.8125rem;
   padding: 1em;
   background: #222;
 }
 
-@media (min-width: 48em) {
-  .feedback-form form {
-    font-size: 13px;
-  }
-}
-
 .feedback-form form textarea,
 .feedback-form form input[type="email"] {
-  font-size: 11.375px;
   font-size: 0.8125rem;
   box-shadow: none;
   max-width: 100%;
@@ -7896,13 +7508,6 @@ ul.pager > li.pager__next a {
   background: #222;
   padding: 0;
   border: 0;
-}
-
-@media (min-width: 48em) {
-  .feedback-form form textarea,
-  .feedback-form form input[type="email"] {
-    font-size: 13px;
-  }
 }
 
 .feedback-form form textarea::-webkit-input-placeholder,
@@ -7945,18 +7550,11 @@ ul.pager > li.pager__next a {
 }
 
 .feedback-form form .button {
-  font-size: 11.375px;
   font-size: 0.8125rem;
   font-weight: 600;
   font-style: normal;
   background-color: transparent;
   padding: 0;
-}
-
-@media (min-width: 48em) {
-  .feedback-form form .button {
-    font-size: 13px;
-  }
 }
 
 .feedback-form form .button:hover {
@@ -7976,15 +7574,7 @@ input[type="password"] {
 @media (min-width: 48em) {
   input[type="text"],
   input[type="password"] {
-    font-size: 12.25px;
     font-size: 0.875rem;
-  }
-}
-
-@media (min-width: 48em) and (min-width: 48em) {
-  input[type="text"],
-  input[type="password"] {
-    font-size: 14px;
   }
 }
 
@@ -7994,15 +7584,8 @@ input[type="password"] {
 }
 
 .button--reset:after {
-  font-size: 8.75px;
   font-size: 0.625rem;
   margin: 1px 0 0 10px;
-}
-
-@media (min-width: 48em) {
-  .button--reset:after {
-    font-size: 10px;
-  }
 }
 
 input[type="submit"].button--reset {
@@ -8014,18 +7597,11 @@ input[type="submit"].button--reset {
 }
 
 input[type="submit"].button--reset + i {
-  font-size: 8.75px;
   font-size: 0.625rem;
   color: #0098d0;
   position: relative;
   right: 2em;
   z-index: -1;
-}
-
-@media (min-width: 48em) {
-  input[type="submit"].button--reset + i {
-    font-size: 10px;
-  }
 }
 
 .list-of-links__compact .list-of-links__link {
@@ -8059,20 +7635,14 @@ input[type="submit"].button--reset + i {
     font-weight: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    vertical-align: bottom;
     content: "";
-    font-size: 14px;
     font-size: 1rem;
     font-weight: 300;
     font-style: normal;
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
     transition: opacity 0.2s ease;
-  }
-}
-
-@media (min-width: 48em) and (min-width: 48em) {
-  .main-menu li.main-menu__logout > a:after {
-    font-size: 16px;
   }
 }
 
@@ -8157,6 +7727,7 @@ input[type="submit"].button--reset + i {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
   content: "";
   color: #0098d0;
   font-size: 2em;
@@ -8165,7 +7736,7 @@ input[type="submit"].button--reset + i {
 }
 
 .paragraph:nth-child(odd) {
-  background: #EBEBEB;
+  background: #F8F8F8;
 }
 
 .paragraph__title {
@@ -8259,7 +7830,7 @@ input[type="submit"].button--reset + i {
 }
 
 .ui-autocomplete {
-  border: 1px solid #EBEBEB;
+  border: 1px solid #F8F8F8;
   background: #FFF;
 }
 
@@ -8275,7 +7846,7 @@ input[type="submit"].button--reset + i {
 .search-api-autocomplete-suggestion .autocomplete-suggestion-user-input {
   font-weight: 600;
   font-style: normal;
-  color: #666;
+  color: #777777;
 }
 
 .search-api-autocomplete-suggestion .autocomplete-suggestion-suggestion-suffix {
@@ -8283,41 +7854,14 @@ input[type="submit"].button--reset + i {
 }
 
 .search-api-autocomplete-suggestion .autocomplete-suggestion-results {
-  font-size: 12.25px;
   font-size: 0.875rem;
   right: 0.5em;
   color: #979797;
 }
 
 @media (min-width: 48em) {
-  .search-api-autocomplete-suggestion .autocomplete-suggestion-results {
-    font-size: 14px;
-  }
-}
-
-@media (min-width: 48em) {
   .search-api-autocomplete-suggestion {
-    font-size: 12.25px;
     font-size: 0.875rem;
-  }
-}
-
-@media (min-width: 48em) and (min-width: 48em) {
-  .search-api-autocomplete-suggestion {
-    font-size: 14px;
-  }
-}
-
-@media (min-width: 48em) {
-  .search-api-autocomplete-suggestion .autocomplete-suggestion-results {
-    font-size: 10.5px;
-    font-size: 0.75rem;
-  }
-}
-
-@media (min-width: 48em) and (min-width: 48em) {
-  .search-api-autocomplete-suggestion .autocomplete-suggestion-results {
-    font-size: 12px;
   }
 }
 
