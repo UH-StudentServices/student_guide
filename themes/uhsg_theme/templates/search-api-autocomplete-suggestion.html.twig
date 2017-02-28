@@ -1,0 +1,19 @@
+{% spaceless %}
+  <div class="search-api-autocomplete-suggestion">
+    {% if prefix %}
+      <span class="autocomplete-suggestion-note">{{ prefix }}</span>
+    {% endif %}
+    {% if suggestion_prefix %}
+      <span class="autocomplete-suggestion-suggestion-prefix">{{ suggestion_prefix }}</span>
+    {% endif %}
+    {% if user_input %}
+      <span class="autocomplete-suggestion-user-input">{{ user_input }}</span>
+    {% endif %}
+    {% if suggestion_suffix %}
+      <span class="autocomplete-suggestion-suggestion-suffix">{{ suggestion_suffix }}</span>
+    {% endif %}
+    {% if results %}
+      <span class="autocomplete-suggestion-results">({{ [results,'results'|trans]|join(' ') }})</span>
+    {% endif %}
+  </div>
+{% endspaceless %}

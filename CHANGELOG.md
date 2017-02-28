@@ -22,6 +22,10 @@
 * Added up-button to bottom of page (HUB-138)
 * Fixed hidden degree programme switcher reset button in mobile (HUB-140)
 * Added feature for transitional degree programmes (HUB-141)
+* Added autocomplete to search (HUB-134)
+* Added per user sorting functionality to themes view (HUB-89)
+* Added email address to the content lock message (HUB-124)
+* Allow multiple email addresses when emailing a news item (HUB-144)
 * Added mobile menu (HUB-146)
 
 Installation instructions:

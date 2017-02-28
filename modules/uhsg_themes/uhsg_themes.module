@@ -85,3 +85,14 @@ function uhsg_themes_filter_articles_with_degree_programme(array &$variables) {
     }
   }
 }
+
+/**
+ * Implements hook_preprocess_HOOK() for views.
+ * Make theme view sortable.
+ */
+function uhsg_themes_preprocess_views_view(&$variables) {
+  if ($variables['view']->id() == 'themes') {
+    $variables['#attached']['library'][] = 'uhsg_themes/sortable';
+    $variables['#attached']['library'][] = 'uhsg_themes/theme_sort';
+  }
+}
