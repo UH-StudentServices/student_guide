@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var autoPrefixer = require('gulp-autoprefixer');
 var bower = require('gulp-bower');
+var del = require('del');
 var sass = require('gulp-sass');
 var globbing = require('node-sass-globbing');
 var browserSync = require('browser-sync').create();
@@ -33,11 +34,19 @@ gulp.task('watch', ['sass'], function () {
 });
 
 gulp.task('bower', function() {
-  return bower();
+  return bower({ cmd: 'update'});
+});
+
+// Clean styleguide assets
+gulp.task('styleguide-clean', function() {
+  return del([
+    'fonts/**/*',
+    'sass/styleguide'
+  ]);
 });
 
 // Updates styleguide with bower and moves relevant assets to correct path
-gulp.task('styleguide-update',['bower'], function(){
+gulp.task('styleguide-update',['bower', 'styleguide-clean'], function(){
   gulp.src('./bower_components/Styleguide/fonts/**/*')
     .pipe(gulp.dest('./fonts'));
 
