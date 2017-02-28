@@ -78,7 +78,7 @@ function uhsg_theme_preprocess_menu(&$variables) {
     case 'footer-links-en':
     case 'footer-links-fi':
     case 'footer-links-sv':
-      $link_classes = 'list-of-links__link button--action icon--arrow-right theme-transparent';
+      $link_classes = 'list-of-links__link button--action icon--arrow-right theme-transparent-alt';
       $menu_classes = 'list-of-links--condensed theme-footer';
       break;
     case 'main':
