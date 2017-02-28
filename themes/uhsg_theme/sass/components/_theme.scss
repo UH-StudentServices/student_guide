@@ -5,7 +5,6 @@
   overflow: hidden;
   
   .theme__title {
-    @include hyphenate;
     position: relative;
     z-index: 1;
     color: $white;

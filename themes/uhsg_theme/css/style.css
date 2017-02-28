@@ -6979,6 +6979,7 @@ ul.pager > li.pager__page a {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  overflow: hidden;
 }
 
 .grid-item > article {
@@ -7602,9 +7603,12 @@ input[type="submit"].button--reset {
 
 input[type="submit"].button--reset + i {
   font-size: 0.625rem;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   color: #0098d0;
   position: relative;
-  right: 2em;
+  right: 2.5em;
   z-index: -1;
 }
 
@@ -7739,6 +7743,15 @@ input[type="submit"].button--reset + i {
           animation: icon-spin 2s infinite linear;
 }
 
+h1, h2, h3, h4, legend {
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+      hyphens: auto;
+  word-break: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-word;
+}
+
 .paragraph__title {
   margin-bottom: 1em;
 }
@@ -7812,7 +7825,7 @@ input[type="submit"].button--reset + i {
 }
 
 .view-search .view-filters .form-actions {
-  margin-top: 2em;
+  margin-top: 1em;
 }
 
 .view-search .view-header {
@@ -7894,12 +7907,6 @@ input[type="submit"].button--reset + i {
 }
 
 .theme--box .theme__title {
-  -webkit-hyphens: auto;
-  -ms-hyphens: auto;
-      hyphens: auto;
-  word-break: break-word;
-  word-wrap: break-word;
-  -ms-word-break: break-word;
   position: relative;
   z-index: 1;
   color: #FFF;

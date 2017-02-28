@@ -22,6 +22,7 @@
   margin-left: auto;
   margin-right: auto;
   display: flex;
+  overflow: hidden;
   > article {
     display: block;
     flex-basis: 100%;

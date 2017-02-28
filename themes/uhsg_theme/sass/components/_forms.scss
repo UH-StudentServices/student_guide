@@ -28,9 +28,10 @@ input[type="submit"].button--reset {
   padding-right: 2em;
   & + i {
     @include font-size(10px);
+    display: inline-flex;
     color: $blue;
     position: relative;
-    right: 2em;
+    right: 2.5em;
     z-index: -1;
   }
 }

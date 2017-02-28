@@ -14,3 +14,7 @@
     animation: icon-spin 2s infinite linear;
   }
 }
+
+h1, h2, h3, h4 {
+  @include hyphenate;
+}
