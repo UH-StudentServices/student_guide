@@ -8053,6 +8053,10 @@ h1, h2, h3, h4, legend {
   }
 }
 
+.view-search .view-result {
+  margin: 2em 0 1em 0;
+}
+
 .ui-autocomplete {
   border: 1px solid #F8F8F8;
   background: #FFF;
