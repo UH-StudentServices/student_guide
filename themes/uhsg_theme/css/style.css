@@ -6344,32 +6344,32 @@ span.links__link.theme-language {
  template: 6_1_2_table-simple
  description:
 */
-
+.textarea table,
 .table-simple {
   font-size: 0.875rem;
 }
 
-
+.textarea table tr,
 .table-simple tr {
   background-color: #F8F8F8;
 }
 
-
+.textarea table tr th,
 .table-simple tr th {
   background-color: #F8F8F8;
 }
 
-
+.textarea table tr:nth-of-type(2n),
 .table-simple tr:nth-of-type(2n) {
   background-color: #FFF;
 }
 
-
+.textarea table tr:nth-of-type(2n) th,
 .table-simple tr:nth-of-type(2n) th {
   background-color: #F8F8F8;
 }
 
-
+.textarea table td, .textarea table th,
 .table-simple td,
 .table-simple th {
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
@@ -6379,7 +6379,7 @@ span.links__link.theme-language {
   vertical-align: top;
 }
 
-
+.textarea table td a, .textarea table td a.active, .textarea table th a, .textarea table th a.active,
 .table-simple td a,
 .table-simple td a.active,
 .table-simple th a,
@@ -6388,7 +6388,7 @@ span.links__link.theme-language {
   text-decoration: none;
 }
 
-
+.textarea table td a:hover, .textarea table td a.active:hover, .textarea table th a:hover, .textarea table th a.active:hover,
 .table-simple td a:hover,
 .table-simple td a.active:hover,
 .table-simple th a:hover,
@@ -6397,13 +6397,13 @@ span.links__link.theme-language {
   text-decoration: none;
 }
 
-
+.textarea table td.active, .textarea table th.active,
 .table-simple td.active,
 .table-simple th.active {
   color: #777777;
 }
 
-
+.textarea table td:first-child, .textarea table th:first-child,
 .table-simple td:first-child,
 .table-simple th:first-child {
   font-weight: 700;
@@ -6667,6 +6667,76 @@ ul.pager > li.pager__page a {
 }
 
 /*
+ section: 3.6
+ title: Page title
+ description: TODO: Move the following away from section 3, these are not common elements anymore
+*/
+/*
+ section: 3.6.1
+ title: Page title
+ template: 3_6_1-page-title
+*/
+/*
+ section: 3.6.2
+ title: Page title small
+ template: 3_6_2-page-title--small
+*/
+/*
+ section: 3.6.3
+ title: Page title suffix
+ template: 3_6_3-page-title--suffix
+*/
+/*
+ section: 3.6.4
+ title: Page title listing
+ template: 3_6_4-page-title--listing
+*/
+.page-title--small {
+  font-size: 2.5rem;
+  line-height: 1em;
+}
+
+.page-title--suffix {
+  border-bottom: 1px solid #F8F8F8;
+  font-size: 1.125rem;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: 0px;
+  line-height: 1.2em;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  text-transform: initial;
+}
+
+.page-title--suffix .page-title__firstrow {
+  margin-bottom: 0.5em;
+}
+
+.page-title--suffix .page-title__secondrow {
+  font-size: 0.875rem;
+}
+
+@media (min-width: 62.5em) {
+  .page-title--suffix .page-title__secondrow {
+    font-size: 1rem;
+  }
+}
+
+.page-title--listing {
+  border-bottom: 1px solid #F8F8F8;
+  margin-bottom: 1em;
+}
+
+.page-title--listing .page-title__subheading {
+  font-size: 1rem;
+  color: #979797;
+  float: right;
+  font-weight: 400;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+/*
  section: 6.1
  title: Table
  description:
@@ -6747,32 +6817,32 @@ ul.pager > li.pager__page a {
  template: 6_1_2_table-simple
  description:
 */
-
+.textarea table,
 .table-simple {
   font-size: 0.875rem;
 }
 
-
+.textarea table tr,
 .table-simple tr {
   background-color: #F8F8F8;
 }
 
-
+.textarea table tr th,
 .table-simple tr th {
   background-color: #F8F8F8;
 }
 
-
+.textarea table tr:nth-of-type(2n),
 .table-simple tr:nth-of-type(2n) {
   background-color: #FFF;
 }
 
-
+.textarea table tr:nth-of-type(2n) th,
 .table-simple tr:nth-of-type(2n) th {
   background-color: #F8F8F8;
 }
 
-
+.textarea table td, .textarea table th,
 .table-simple td,
 .table-simple th {
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
@@ -6782,7 +6852,7 @@ ul.pager > li.pager__page a {
   vertical-align: top;
 }
 
-
+.textarea table td a, .textarea table td a.active, .textarea table th a, .textarea table th a.active,
 .table-simple td a,
 .table-simple td a.active,
 .table-simple th a,
@@ -6791,7 +6861,7 @@ ul.pager > li.pager__page a {
   text-decoration: none;
 }
 
-
+.textarea table td a:hover, .textarea table td a.active:hover, .textarea table th a:hover, .textarea table th a.active:hover,
 .table-simple td a:hover,
 .table-simple td a.active:hover,
 .table-simple th a:hover,
@@ -6800,13 +6870,13 @@ ul.pager > li.pager__page a {
   text-decoration: none;
 }
 
-
+.textarea table td.active, .textarea table th.active,
 .table-simple td.active,
 .table-simple th.active {
   color: #777777;
 }
 
-
+.textarea table td:first-child, .textarea table th:first-child,
 .table-simple td:first-child,
 .table-simple th:first-child {
   font-weight: 700;
@@ -6946,6 +7016,143 @@ ul.pager > li.pager__page a {
 
 .tag-list__item a:hover {
   color: #005479;
+}
+
+/*
+ section: 6.11.1
+ title: Textarea
+ template: 6_11_1_textarea
+ description: Basic component used in multiple row textareas with links, headings, lists and so on. Class .theme-ingress is used on textarea without p-tags inside. Class .dropcap is an optional class for the first letter to make dropcaps.
+*/
+.textarea {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  line-height: 1.5em;
+}
+
+.textarea ul, .textarea ol {
+  margin-bottom: 30px;
+}
+
+.textarea li {
+  line-height: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.textarea ul {
+  padding-left: 1.5em;
+  position: relative;
+}
+
+.textarea ul li {
+  list-style-type: none;
+}
+
+.textarea ul li:before {
+  font-size: 0.5625rem;
+  display: inline-block;
+  font-family: "hy-icons";
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
+  content: "";
+  left: 0;
+  margin-top: 1px;
+  position: absolute;
+}
+
+.textarea ol {
+  counter-reset: item;
+  padding-left: 1.5em;
+  position: relative;
+}
+
+.textarea ol li {
+  display: block;
+}
+
+.textarea ol li:before {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  content: counter(item) ". ";
+  counter-increment: item;
+  left: 1px;
+  line-height: 1.7em;
+  position: absolute;
+}
+
+.textarea h1, .textarea h2, .textarea h3, .textarea h4, .textarea legend, .textarea h5, .textarea h6 {
+  margin-top: 32px;
+}
+
+.textarea h1:first-child, .textarea h2:first-child, .textarea h3:first-child, .textarea h4:first-child, .textarea legend:first-child, .textarea h5:first-child, .textarea h6:first-child {
+  margin-top: 0;
+}
+
+.textarea a {
+  word-wrap: break-word;
+}
+
+.textarea table {
+  line-height: normal;
+  margin-bottom: 2em;
+}
+
+.textarea.theme-ingress {
+  font-size: 1.2em;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.5em;
+  margin-bottom: 30px;
+}
+
+@media (min-width: 48em) {
+  .textarea .dropcap {
+    font-size: 4.6875rem;
+    font-weight: 700;
+    font-style: normal;
+    float: left;
+    line-height: 65px;
+    padding-right: 10px;
+    text-transform: uppercase;
+  }
+}
+
+/**
+ * textarea-initial
+ * An element (usually an image) floated left before a textarea.
+ */
+
+.textarea-initial {
+  float: left;
+  margin-bottom: 2em;
+  margin-right: 2em;
+}
+
+/*
+ section: 6.11.2
+ title: Textarea infobox
+ template: 6_11_2_textarea-infobox
+ description: Infobox type textarea.
+*/
+
+.textarea-infobox {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  background-color: #F8F8F8;
+  margin-bottom: 2em;
+  padding: 1.5em;
+}
+
+
+.textarea-infobox p {
+  line-height: normal;
+}
+
+
+.textarea-infobox p:last-of-type {
+  margin-bottom: 0;
 }
 
 /* STUDENT GUIDE THEMING */
@@ -7591,6 +7798,10 @@ input[type="password"] {
 .button--reset:after {
   font-size: 0.625rem;
   margin: 1px 0 0 10px;
+}
+
+input[type="submit"] {
+  border-radius: 0;
 }
 
 input[type="submit"].button--reset {
