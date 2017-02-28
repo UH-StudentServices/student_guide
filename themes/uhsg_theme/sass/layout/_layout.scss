@@ -21,6 +21,8 @@ $grid-gutter: $vert-spacing-unit / 2;
 
 .grid-item {
   padding-bottom: $vert-spacing-unit;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   > article {
     display: block;
@@ -29,6 +31,8 @@ $grid-gutter: $vert-spacing-unit / 2;
   @include breakpoint($small) {
     padding-left: $grid-gutter;
     padding-right: $grid-gutter;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 

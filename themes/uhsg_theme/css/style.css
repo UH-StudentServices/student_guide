@@ -6974,6 +6974,8 @@ ul.pager > li.pager__page a {
 
 .grid-item {
   padding-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -6990,6 +6992,8 @@ ul.pager > li.pager__page a {
   .grid-item {
     padding-left: 15px;
     padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
