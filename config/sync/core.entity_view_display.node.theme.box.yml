@@ -28,5 +28,6 @@ content:
 hidden:
   body: true
   field_theme_articles: true
+  field_theme_faq: true
   langcode: true
   links: true
