@@ -37,3 +37,11 @@ accordion:
     - core/jquery
     - core/jquery.once
     - core/drupal
+
+menu_toggle:
+  version: 1.x
+  js:
+    js/menu_toggle.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
