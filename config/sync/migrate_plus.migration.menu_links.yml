@@ -26,7 +26,7 @@ source:
       link_uri: URI
 process:
   title: title
-  'link/uri': link_uri
+  link/uri: link_uri
   menu_name: menu_name
   weight: weight
   langcode:

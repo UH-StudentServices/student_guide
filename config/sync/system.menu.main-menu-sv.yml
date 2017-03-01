@@ -1,0 +1,8 @@
+uuid: c235ade7-3091-4003-9260-476fb6e3e83c
+langcode: sv
+status: true
+dependencies: {  }
+id: main-menu-sv
+label: 'Main menu SV'
+description: ''
+locked: false
