@@ -23,9 +23,21 @@ id,weight,menu_name,title,link_uri
 22,5,footer-links-fi,Anna palautetta,https://www.helsinki.fi/fi/anna-palautetta
 23,5,footer-links-en,Give Feedback,https://www.helsinki.fi/en/give-feedback
 24,5,footer-links-sv,Ge respons,https://www.helsinki.fi/sv/ge-respons
-25,0,main,Weboodi,https://weboodi.helsinki.fi/hy/alkusivu.jsp?Kieli=1
-26,1,main,Course search,https://courses.helsinki.fi/search
-27,2,main,Guide,internal:/
-28,3,main,Opinder,https://opinder.helsinki.fi
-29,4,main,Login,internal:/saml/login
-30,5,main,Logout,internal:/saml/logout
+25,0,main-menu-en,Weboodi,https://weboodi.helsinki.fi/hy/alkusivu.jsp?Kieli=2
+26,1,main-menu-en,Course search,https://courses.helsinki.fi/search
+27,2,main-menu-en,Guide,internal:/
+28,3,main-menu-en,Opinder,https://opinder.helsinki.fi
+29,4,main-menu-en,Login,internal:/saml/login
+30,5,main-menu-en,Logout,internal:/saml/logout
+31,0,main-menu-fi,Weboodi,https://weboodi.helsinki.fi/hy/alkusivu.jsp?Kieli=1
+32,1,main-menu-fi,Hae opetusta,https://courses.helsinki.fi/fi/search
+33,2,main-menu-fi,Guide,internal:/
+34,3,main-menu-fi,Opinder,https://opinder.helsinki.fi
+35,4,main-menu-fi,Login,internal:/saml/login
+36,5,main-menu-fi,Logout,internal:/saml/logout
+37,0,main-menu-sv,Weboodi,https://weboodi.helsinki.fi/hy/alkusivu.jsp?Kieli=6
+38,1,main-menu-sv,Sök undervisning,https://courses.helsinki.fi/sv/search
+39,2,main-menu-sv,Guide,internal:/
+40,3,main-menu-sv,Opinder,https://opinder.helsinki.fi
+41,4,main-menu-sv,Login,internal:/saml/login
+42,5,main-menu-sv,Logout,internal:/saml/logout
