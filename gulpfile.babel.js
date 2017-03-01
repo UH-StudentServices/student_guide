@@ -1,21 +1,23 @@
-var gulp = require('gulp');
-var autoPrefixer = require('gulp-autoprefixer');
-var bower = require('gulp-bower');
-var del = require('del');
-var sass = require('gulp-sass');
-var globbing = require('node-sass-globbing');
-var browserSync = require('browser-sync').create();
-var eslint = require('gulp-eslint');
+'use strict';
 
-var rootDir = process.cwd();
-var paths = {
+import gulp from 'gulp';
+import autoPrefixer from 'gulp-autoprefixer';
+import bower from 'gulp-bower';
+import del from 'del';
+import sass from 'gulp-sass';
+import globbing from 'node-sass-globbing';
+import browserSync from 'browser-sync';
+import eslint from 'gulp-eslint';
+
+const rootDir = process.cwd();
+const paths = {
   theme: rootDir + '/themes/uhsg_theme',
   modules: rootDir + '/modules'
 };
 
-var browserSyncProxyTarget = 'https://local.guide.student.helsinki.fi';
+const browserSyncProxyTarget = 'https://local.guide.student.helsinki.fi';
 
-var sass_config = {
+const sass_config = {
   importer: globbing,
   outputStyle: 'expanded',
   includePaths: [
@@ -25,7 +27,7 @@ var sass_config = {
 };
 
 // Compile sass.
-gulp.task('sass', function () {
+gulp.task('sass', () => {
   process.chdir(paths.theme);
   gulp.src('sass/**/*.scss')
     .pipe(sass(sass_config).on('error', sass.logError))
@@ -36,18 +38,18 @@ gulp.task('sass', function () {
     browserSync.reload();
 });
 
-gulp.task('watch', ['sass'], function () {
+gulp.task('watch', ['sass'], () => {
   process.chdir(paths.theme);
   gulp.watch('sass/**/*.scss', ['sass']);
 });
 
-gulp.task('bower', function() {
+gulp.task('bower', () => {
   process.chdir(paths.theme);
   return bower({ cmd: 'update'});
 });
 
 // Clean styleguide assets
-gulp.task('styleguide-clean', function() {
+gulp.task('styleguide-clean', () => {
   process.chdir(paths.theme);
   return del([
     'fonts/**/*',
@@ -56,7 +58,7 @@ gulp.task('styleguide-clean', function() {
 });
 
 // Updates styleguide with bower and moves relevant assets to correct path
-gulp.task('styleguide-update',['bower', 'styleguide-clean'], function() {
+gulp.task('styleguide-update',['bower', 'styleguide-clean'], () => {
   process.chdir(paths.theme);
   gulp.src('./bower_components/Styleguide/fonts/**/*')
     .pipe(gulp.dest('./fonts'));
@@ -68,7 +70,7 @@ gulp.task('styleguide-update',['bower', 'styleguide-clean'], function() {
 });
 
 // Live reload css changes
-gulp.task('browsersync', ['watch'], function() {
+gulp.task('browsersync', ['watch'], () => {
   process.chdir(paths.theme);
   browserSync.init({
     proxy: browserSyncProxyTarget,
@@ -77,7 +79,7 @@ gulp.task('browsersync', ['watch'], function() {
 });
 
 // Linting
-gulp.task('lint', function() {
+gulp.task('lint', () => {
   return gulp.src([paths.theme + '/**/*.js', paths.modules + '/**/*.js', '!**/node_modules/**', '!**/bower_components/**'])
     .pipe(eslint())
     .pipe(eslint.format())
