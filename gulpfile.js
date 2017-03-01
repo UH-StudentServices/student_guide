@@ -7,6 +7,12 @@ var globbing = require('node-sass-globbing');
 var browserSync = require('browser-sync').create();
 var eslint = require('gulp-eslint');
 
+var rootDir = process.cwd();
+var paths = {
+  theme: rootDir + '/themes/uhsg_theme',
+  modules: rootDir + '/modules'
+};
+
 var browserSyncProxyTarget = 'https://local.guide.student.helsinki.fi';
 
 var sass_config = {
@@ -20,6 +26,7 @@ var sass_config = {
 
 // Compile sass.
 gulp.task('sass', function () {
+  process.chdir(paths.theme);
   gulp.src('sass/**/*.scss')
     .pipe(sass(sass_config).on('error', sass.logError))
     .pipe(autoPrefixer({
@@ -30,15 +37,18 @@ gulp.task('sass', function () {
 });
 
 gulp.task('watch', ['sass'], function () {
+  process.chdir(paths.theme);
   gulp.watch('sass/**/*.scss', ['sass']);
 });
 
 gulp.task('bower', function() {
+  process.chdir(paths.theme);
   return bower({ cmd: 'update'});
 });
 
 // Clean styleguide assets
 gulp.task('styleguide-clean', function() {
+  process.chdir(paths.theme);
   return del([
     'fonts/**/*',
     'sass/styleguide'
@@ -46,7 +56,8 @@ gulp.task('styleguide-clean', function() {
 });
 
 // Updates styleguide with bower and moves relevant assets to correct path
-gulp.task('styleguide-update',['bower', 'styleguide-clean'], function(){
+gulp.task('styleguide-update',['bower', 'styleguide-clean'], function() {
+  process.chdir(paths.theme);
   gulp.src('./bower_components/Styleguide/fonts/**/*')
     .pipe(gulp.dest('./fonts'));
 
@@ -58,6 +69,7 @@ gulp.task('styleguide-update',['bower', 'styleguide-clean'], function(){
 
 // Live reload css changes
 gulp.task('browsersync', ['watch'], function() {
+  process.chdir(paths.theme);
   browserSync.init({
     proxy: browserSyncProxyTarget,
     reloadDelay: 1000
@@ -66,7 +78,7 @@ gulp.task('browsersync', ['watch'], function() {
 
 // Linting
 gulp.task('lint', function() {
-  return gulp.src(['themes/**/*.js', 'modules/**/*.js', '!**/node_modules/**', '!**/bower_components/**'])
+  return gulp.src([paths.theme + '/**/*.js', paths.modules + '/**/*.js', '!**/node_modules/**', '!**/bower_components/**'])
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(eslint.failAfterError());
