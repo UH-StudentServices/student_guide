@@ -533,12 +533,12 @@ display:
             operator: search_api_fulltext_op
             identifier: search_api_fulltext
             required: false
-            remember: false
+            remember: true
             multiple: false
             remember_roles:
+              anonymous: anonymous
               authenticated: authenticated
-              anonymous: '0'
-              content_editor: '0'
+              content_editor: content_editor
           is_grouped: false
           group_info:
             label: ''
