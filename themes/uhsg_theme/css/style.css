@@ -8138,6 +8138,12 @@ h1, h2, h3, h4, legend {
   padding: 2em;
 }
 
+@media (min-width: 48em) {
+  .theme--box .theme__link-wrapper {
+    position: absolute;
+  }
+}
+
 .theme--box .theme__teaser-image {
   position: absolute;
   opacity: 0.4;
