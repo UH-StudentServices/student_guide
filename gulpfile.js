@@ -46,11 +46,7 @@ gulp.task('styleguide-clean', function() {
 });
 
 // Updates styleguide with bower and moves relevant assets to correct path
-<<<<<<< HEAD:gulpfile.js
-gulp.task('styleguide-update',['bower'], function() {
-=======
 gulp.task('styleguide-update',['bower', 'styleguide-clean'], function(){
->>>>>>> develop:themes/uhsg_theme/gulpfile.js
   gulp.src('./bower_components/Styleguide/fonts/**/*')
     .pipe(gulp.dest('./fonts'));
 
