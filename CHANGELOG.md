@@ -28,6 +28,7 @@
 * Allow multiple email addresses when emailing a news item (HUB-144)
 * Added mobile menu (HUB-146)
 * Added more degree programmes (HUB-142)
+* Added menu links for Weboodi, course search and opinder (HUB-148)
 
 Installation instructions:
   * After installation run:
