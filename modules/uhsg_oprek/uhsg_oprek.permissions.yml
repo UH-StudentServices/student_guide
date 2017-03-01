@@ -1,0 +1,4 @@
+view user oprek info:
+  title: 'View user oprek information'
+  description: 'View user information given by oprek service'
+  restrict access: true

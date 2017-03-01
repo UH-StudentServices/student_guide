@@ -32,7 +32,8 @@
       {%
         set classes = [
           entity.icon_class.value,
-          'button--icon'
+          'button--icon',
+          'button-group__button'
         ]
       %}
       {{ link('', entity.url.value, {'class': classes, 'title': entity.name.value}) }}

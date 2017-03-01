@@ -1,0 +1,30 @@
+uuid: dce443f3-912a-4225-9e79-500630a52cda
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - taxonomy
+id: taxonomy_term.field_degree_programme_type
+field_name: field_degree_programme_type
+entity_type: taxonomy_term
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: bachelor
+      label: 'Bachelor''s Programmes'
+    -
+      value: master
+      label: 'Master''s Programmes'
+    -
+      value: transitional
+      label: 'Transitional period 2017-2020 Instructions'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

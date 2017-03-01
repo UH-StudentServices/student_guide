@@ -1,0 +1,33 @@
+uuid: 024f3164-7cd7-48ee-8612-63c653031376
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_theme_faq
+    - node.type.theme
+    - paragraphs.paragraphs_type.accordion
+  module:
+    - entity_reference_revisions
+id: node.theme.field_theme_faq
+field_name: field_theme_faq
+entity_type: node
+bundle: theme
+label: 'Frequently asked questions'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      accordion: accordion
+    target_bundles_drag_drop:
+      accordion:
+        enabled: true
+        weight: 3
+      paragraph:
+        weight: 4
+        enabled: false
+field_type: entity_reference_revisions

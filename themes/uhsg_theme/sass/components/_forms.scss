@@ -1,26 +1,42 @@
 input[type="text"],
 input[type="password"] {
-  @include font-size(14px);
+  font-size: initial;
   border: 2px solid $blue;
   padding: 0.5em;
   width: 100%;
+  border-radius: 0;
   max-width: 45em;
-}
-
-input[type="submit"],
-button {
-  &.button--reset {
-    background: transparent;
-    border: none;
-    color: $blue;
-    margin-right: 0;
-    padding-right: 2em;
-    & + i {
-      @include font-size(10px);
-      color: $blue;
-      position: relative;
-      right: 2em;
-      z-index: -1;
-    }
+  @include breakpoint($small) {
+    @include font-size(14px);
   }
 }
+
+.button--reset {
+  @include font-weight-book;
+  &:after {
+    @include font-size(10px);
+    margin: 1px 0 0 10px;
+  }
+}
+
+input[type="submit"] {
+  border-radius: 0;
+}
+
+// we can't use :after or :before with input so the icon is the adjacent sibling
+input[type="submit"].button--reset {
+  background: transparent;
+  border: none;
+  color: $blue;
+  margin-right: 0;
+  padding-right: 2em;
+  & + i {
+    @include font-size(10px);
+    display: inline-flex;
+    color: $blue;
+    position: relative;
+    right: 2.5em;
+    z-index: -1;
+  }
+}
+

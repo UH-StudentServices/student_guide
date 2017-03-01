@@ -7,3 +7,12 @@ uhsg_active_degree_programme.set_active:
   requirements:
     _permission: 'change active degree programme'
     tid: \d+
+
+uhsg_active_degree_programme.reset_active:
+  path: /degree-programme/reset
+  defaults:
+    _controller: '\Drupal\uhsg_active_degree_programme\Controller\ActiveDegreeProgrammeController::resetActiveDegreeProgramme'
+  options:
+    no_cache: TRUE
+  requirements:
+    _permission: 'change active degree programme'

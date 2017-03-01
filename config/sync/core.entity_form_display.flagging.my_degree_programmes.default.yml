@@ -1,0 +1,26 @@
+uuid: 492ab3e3-f44a-4cf5-8589-c0ceb021ba01
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.flagging.my_degree_programmes.field_applied_by_study_rights
+    - field.field.flagging.my_degree_programmes.field_primary
+    - flag.flag.my_degree_programmes
+id: flagging.my_degree_programmes.default
+targetEntityType: flagging
+bundle: my_degree_programmes
+mode: default
+content:
+  field_applied_by_study_rights:
+    weight: 0
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+  field_primary:
+    weight: 1
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+hidden: {  }

@@ -1,0 +1,14 @@
+.l-subregion__title {
+  margin-bottom: 0.4em;
+
+  &.theme-small {
+    @include font-size(26px);
+  }
+}
+
+.l-subregion__centered-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+}

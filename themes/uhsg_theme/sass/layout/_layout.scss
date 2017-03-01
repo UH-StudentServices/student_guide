@@ -1,23 +1,78 @@
 .container {
   margin: 0 auto;
-  max-width: $large;
-  padding-left: 1em;
-  padding-right: 1em;
+  max-width: $bp-large;
+  padding-left: $grid-gutter;
+  padding-right: $grid-gutter;
 }
 
 .grid-container {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  & > * {
-    flex: 1 100%;
+  @include breakpoint($small) {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0 (-$grid-gutter);
+    & > * {
+      width: 100%;
+      padding: 0 $grid-gutter;
+    }
   }
 }
 
-.grid-item-3 {
-  flex: 1 100%;
-  margin-bottom: 2em;
+.grid-item {
+  padding-bottom: $vert-spacing-unit;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  overflow: hidden;
+  > article {
+    display: block;
+    flex-basis: 100%;
+  }
   @include breakpoint($small) {
-    flex: 0 31%;
+    padding-left: $grid-gutter;
+    padding-right: $grid-gutter;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@for $grid-columns from 2 through 4 {
+  .grid-item-#{$grid-columns} {
+    max-width: $bp-large / $grid-columns;
+    @include breakpoint($small) {
+      width: 100% / $grid-columns;
+    }
+  }
+}
+
+.grid-item-square {
+  @include breakpoint($small) {
+    width: $bp-small / 2;
+    height: $bp-small / 2;
+  }
+  @include breakpoint($medium) {
+    width: $bp-medium / 3;
+    height: $bp-medium / 3;
+  }
+  @include breakpoint($large) {
+    width: $bp-large / 4;
+    height: $bp-large / 4;
+  }
+}
+
+@include breakpoint($small) {
+  .col-container {
+    display: flex;
+  }
+  .col-right {
+    flex-basis: (100% / 3);
+     margin-left: 4em;
+  }
+
+  .col-left {
+    flex-basis: (100% / 3);
+    margin-right: 4em;
+  }
+  .col-main {
+    flex-basis: (100% / 3 ) * 2;
   }
 }

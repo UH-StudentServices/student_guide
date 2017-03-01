@@ -16,8 +16,7 @@
 }
 
 .cc_btn {
-  @include button;
-  //@extend %button;
+  @extend %button;
   @include font-size(14px);
   align-self: center;
   flex-shrink: 0;

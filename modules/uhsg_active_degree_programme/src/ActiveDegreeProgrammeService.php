@@ -63,7 +63,14 @@ class ActiveDegreeProgrammeService {
   public function set(Term $term) {
     $tid = $term->id();
     $cookie = ['degree_programme' => $tid];
-    user_cookie_save($cookie);
+    $this->saveCookie($cookie);
+  }
+
+  /**
+   * Resets active degree programme.
+   */
+  public function reset() {
+    $this->deleteCookie();
   }
 
   /**
@@ -101,10 +108,14 @@ class ActiveDegreeProgrammeService {
     $query_param = $this->requestStack->getCurrentRequest()->get('degree_programme');
     if ($query_param) {
       $term = Term::load($query_param);
-      if ($this->access($term)) {
-        \Drupal::logger('uhsg_acive_degree_programme')->debug('Resolved by parameter ' . $term->id());
+      if (!is_null($term) && $this->access($term)) {
+        $this->debug('Resolved by parameter ' . $term->id());
         $this->resolvedTerm = $term;
         return $this->resolvedTerm;
+      }
+      else {
+        // If we can't load the term, then reset active degree programme.
+        $this->reset();
       }
     }
 
@@ -112,10 +123,14 @@ class ActiveDegreeProgrammeService {
     $degree_programme_from_headers = $this->requestStack->getCurrentRequest()->headers->get('x-degree-programme');
     if ($degree_programme_from_headers) {
       $term = Term::load($this->requestStack->getCurrentRequest()->headers->get('x-degree-programme'));
-      if ($this->access($term)) {
-        \Drupal::logger('uhsg_acive_degree_programme')->debug('Resolved by header ' . $term->id());
+      if (!is_null($term) && $this->access($term)) {
+        $this->debug('Resolved by header ' . $term->id());
         $this->resolvedTerm = $term;
         return $this->resolvedTerm;
+      }
+      else {
+        // If we can't load the term, then reset active degree programme.
+        $this->reset();
       }
     }
 
@@ -123,10 +138,14 @@ class ActiveDegreeProgrammeService {
     $degree_programme_from_cookies = $this->requestStack->getCurrentRequest()->cookies->get('Drupal_visitor_degree_programme');
     if ($degree_programme_from_cookies) {
       $term = Term::load($degree_programme_from_cookies);
-      if ($this->access($term)) {
-        \Drupal::logger('uhsg_acive_degree_programme')->debug('Resolved by cookie ' . $term->id());
+      if (!is_null($term) && $this->access($term)) {
+        $this->debug('Resolved by cookie ' . $term->id());
         $this->resolvedTerm = $term;
         return $this->resolvedTerm;
+      }
+      else {
+        // If we can't load the term, then reset active degree programme.
+        $this->reset();
       }
     }
 
@@ -143,5 +162,17 @@ class ActiveDegreeProgrammeService {
   protected function access(Term $term) {
     $handler = new TermAccessControlHandler($term->getEntityType());
     return $handler->access($term, 'view', $this->user);
+  }
+
+  protected function deleteCookie() {
+    user_cookie_delete('degree_programme');
+  }
+
+  protected function saveCookie($cookie) {
+    user_cookie_save($cookie);
+  }
+
+  protected function debug($message) {
+    \Drupal::logger('uhsg_active_degree_programme')->debug($message);
   }
 }

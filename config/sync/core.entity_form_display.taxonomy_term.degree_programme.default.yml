@@ -1,0 +1,55 @@
+uuid: 9783e2c1-fed9-474f-b66a-4e526496167c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.degree_programme.field_code
+    - field.field.taxonomy_term.degree_programme.field_degree_programme_type
+    - taxonomy.vocabulary.degree_programme
+  module:
+    - path
+    - text
+id: taxonomy_term.degree_programme.default
+targetEntityType: taxonomy_term
+bundle: degree_programme
+mode: default
+content:
+  description:
+    type: text_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_code:
+    weight: 32
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_degree_programme_type:
+    weight: 31
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  langcode:
+    type: language_select
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: -5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    settings: {  }
+    third_party_settings: {  }
+  translation:
+    weight: 10
+hidden: {  }

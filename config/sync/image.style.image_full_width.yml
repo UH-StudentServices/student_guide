@@ -1,0 +1,14 @@
+uuid: f08b9d21-d96d-4aa9-93d8-3252fc57afcc
+langcode: fi
+status: true
+dependencies: {  }
+name: image_full_width
+label: 'Image full width'
+effects:
+  0dbd2c4f-90f2-4844-b332-c1c2a0f7e86a:
+    uuid: 0dbd2c4f-90f2-4844-b332-c1c2a0f7e86a
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1200
+      height: 400

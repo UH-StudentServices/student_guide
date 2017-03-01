@@ -6,6 +6,8 @@ dependencies:
     - core.entity_view_mode.node.constrained
     - field.field.node.news.body
     - field.field.node.news.field_news_degree_programme
+    - field.field.node.news.field_news_email
+    - field.field.node.news.field_news_email_sent
     - field.field.node.news.field_news_image
     - node.type.news
   module:
@@ -28,7 +30,7 @@ content:
     weight: 0
     label: hidden
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
 hidden:
   field_news_email: true

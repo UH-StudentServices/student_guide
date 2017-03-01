@@ -6,7 +6,7 @@ id,menu_name,title,link_uri
 5,header-links-sv,Flamma,https://flamma.helsinki.fi/portal/home/login
 6,header-links-sv,Helsingfors stad,http://www.hel.fi/www/helsinki/sv
 7,footer-links-fi,Yhteystiedot,https://www.helsinki.fi/fi/yhteystiedot
-8,footer-links-en,Yhteystiedot,https://www.helsinki.fi/en/contact-information
+8,footer-links-en,Contact,https://www.helsinki.fi/en/contact-information
 9,footer-links-sv,Kontakt,https://www.helsinki.fi/sv/kontaktuppgifter
 10,footer-links-fi,Medialle,https://www.helsinki.fi/fi/ajankohtaista/medialle
 11,footer-links-en,Press and Media,https://www.helsinki.fi/en/news/press-and-media
@@ -24,3 +24,5 @@ id,menu_name,title,link_uri
 23,footer-links-en,Give Feedback,https://www.helsinki.fi/en/give-feedback
 24,footer-links-sv,Ge respons,https://www.helsinki.fi/sv/ge-respons
 25,main,Guide,internal:/
+26,main,Login,internal:/saml/login
+27,main,Logout,internal:/saml/logout

@@ -1,18 +1,26 @@
 .degree-programme-switcher {
-  @include border;
-  display: flex;
   position: relative;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  margin: 2em 0;
-  padding: 1em;
+  z-index: 100;
+  margin: 1em 0;
+  background: $white;
+  display: flex;
+  flex-direction: column;
+  .degree-programme-switcher__header {
+    @include border;
+    background: $white;
+    z-index: 10;
+    display: flex;
+    cursor: pointer;
+    flex-shrink: 0;
+    margin: 0;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center; 
+    padding: 1em;
+  }
   .degree-programme-switcher__icon {
-    padding-right: 0.5em;
-    flex: 0 0 100%;
-    @include breakpoint($small) {
-      flex: 0 0 auto;
-    }
+    display: none;
+    margin-right: 0.5em;
   }
   .degree-programme-switcher__title {
     display: flex;
@@ -21,58 +29,125 @@
   }
   .degree-programme-switcher__toggle {
     @include font-weight-medium;
-    cursor: pointer;
-    align-self: flex-start;
     color: $blue;
-    @include breakpoint($small) {
-      padding: 0 2em;
-      align-self: auto;
-    }
   }
-  .degree-programme-switcher__container {
+  .degree-programme-switcher__dropdown {
     @include border;
-    padding: 1em;
-    flex: 1 0 100%;
-    position: absolute;
-    top: 100%;
-    left: 0;
+    transform: translateY(-100px);
+    opacity: 0;
+    transition: transform 0.3s, opacity 0.3s;
+    height: 0;
+    overflow: hidden;
+    display: flex;
+    border-top: 0;
     width: 100%;
-    z-index: 20;
+    flex-grow: 2;
+    flex-direction: column;
+    min-height: 1px;
     background: $white;
-    ul {
-      max-height: 20em;
-      max-height: 50vh;
-      overflow: scroll;
-      li {
-        padding: 0.3em 0;
+    .view-degree-programmes {
+      .view-filters {
+        flex-shrink: 0;
+      }
+      .view-content {
+        @include scrollbar;
+        > div {
+          flex-shrink: 0;
+        }
+        ul {
+          margin-bottom: 0;
+        }
+        .my-degree-programmes {
+          .view-grouping-content h4 {
+            display: none;
+          }
+        }
+        li {
+          padding-right: 2.5em;
+          .flag {
+            font-size: 0;
+            position: absolute;
+            right: 0;
+            color: $silver;
+            &.action-unflag {
+              color: $orange;
+            }
+            &:before {
+              @include icon($icon-favorites);
+              @include font-size(16px);
+              margin-right: 1em;
+            }
+          }
+          .ajax-progress {
+            display: none;
+          }
+        }
       }
     }
-    @include breakpoint($small) {
-      padding: 2em;
+    .button--reset {
+      flex-shrink: 0;
+    }
+    // TODO: get rid of this silly container
+    // fix firefox & IE
+    div {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      min-height: 1px;
     }
   }
-  .degree-programme-switcher__search {
-    display: flex;
-    input[type="text"] {
-      width: 100%;
+  div.degree-programme-switcher__filter {
+    flex-direction: row;
+    flex-shrink: 0;
+    max-width: 30em;
+    .icon--search {
+      background: $blue;
+      color: $white;
+      padding: 0.5em;
     }
-    input[type="submit"] {
-      padding: 0;
-      margin: 0;
-      width: 35px;
-      font-size: 0;
-      z-index: 10;
-      background: transparent;
-      flex-shrink: 0;
-      & + i {
-        width: 35px;
-        right: 35px;
-        line-height: 35px;
-        color: $white;
-        background: $blue;
-        position: relative;
-        text-align: center;
-        flex-shrink: 0;
+  }
+  &.collapsed {
+    position: fixed;
+    z-index: 102;
+    margin-top: 0;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    .degree-programme-switcher__dropdown {
+      transform: none;
+      height: auto;
+      opacity: 1;
+      padding: 1em 1em 0 1em;
+    }
+  }
+
+  @include breakpoint($small) {
+    margin: 2em 0;
+    display: block;
+    .degree-programme-switcher__icon {
+      display: flex;
+    }
+    .degree-programme-switcher__dropdown {
+      display: none;
+      position: absolute;
+      width: 100%;
+      .view-content {
+        max-height: 20em;
+        max-height: 50vh;
+      }
+      .button--reset {
+        align-self: flex-end;
+        margin-bottom: -2em;
+      }
+    }
+    &.collapsed {
+      height: auto;
+      margin-top: 2em;
+      position: relative;
+      .degree-programme-switcher__dropdown {
+        display: flex;
+        padding: 2em;
       }
     }
   }

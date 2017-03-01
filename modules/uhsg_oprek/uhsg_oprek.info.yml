@@ -1,0 +1,6 @@
+name: Oprek Service
+description: Utility module for getting information from "oprek".
+type: module
+core: 8.x
+version: VERSION
+package: Student Guide

@@ -1,0 +1,23 @@
+uuid: 090b7765-f3cb-49a8-8ebc-fa2b0b75a535
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.flagging.field_applied_by_study_rights
+    - flag.flag.my_degree_programmes
+id: flagging.my_degree_programmes.field_applied_by_study_rights
+field_name: field_applied_by_study_rights
+entity_type: flagging
+bundle: my_degree_programmes
+label: 'Applied by study rights'
+description: 'Technical detail of the flag whether this has been applied during the login by study rights information.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
