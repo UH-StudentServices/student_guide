@@ -27,6 +27,7 @@
 * Added email address to the content lock message (HUB-124)
 * Allow multiple email addresses when emailing a news item (HUB-144)
 * Added mobile menu (HUB-146)
+* Added more degree programmes (HUB-142)
 
 Installation instructions:
   * After installation run:
