@@ -32,8 +32,8 @@
 * Added feature that synchronises students degree programmes (HUB-56, HUB-58)
 * Added feature that active degree programme falls back to primary degree
   programme that is specified by oprek integration (HUB-56, HUB-58)
-* Added menu links for Weboodi, course search and opinder (HUB-148)
 * Fixed broken revisions (HUB-150)
+* Added menu links for Weboodi, course search and opinder (HUB-148)
 
 Installation instructions:
   * After installation run:
