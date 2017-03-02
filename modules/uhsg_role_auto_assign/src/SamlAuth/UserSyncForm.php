@@ -103,6 +103,7 @@ class UserSyncForm extends ConfigFormBase {
 
   private function getGroupToRoleMapping(FormStateInterface $form_state) {
     $groupToRolesText = $form_state->getValue(self::GROUP_TO_ROLES);
+    $groupToRolesText = str_replace("\r\n", "\n", $groupToRolesText);
     $groupToRolesLines = array_map('trim', explode("\n", $groupToRolesText));
     $groupToRolesLines = array_filter($groupToRolesLines, function ($line) {
       return !empty(trim($line));
