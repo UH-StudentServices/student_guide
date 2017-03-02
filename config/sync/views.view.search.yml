@@ -533,7 +533,7 @@ display:
             operator: search_api_fulltext_op
             identifier: search_api_fulltext
             required: false
-            remember: true
+            remember: false
             multiple: false
             remember_roles:
               anonymous: anonymous
@@ -596,7 +596,7 @@ display:
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
-      use_ajax: true
+      use_ajax: false
       filter_groups:
         operator: AND
         groups:
