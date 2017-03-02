@@ -2,5 +2,5 @@ name: HY Cookie Consent
 type: module
 description: This module aims at making the website compliant with the new EU cookie regulation.
 core: 8.x
-version: 1.0-rc0
+version: VERSION
 package: Student Guide
