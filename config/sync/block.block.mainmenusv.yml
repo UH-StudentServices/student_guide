@@ -1,0 +1,32 @@
+uuid: 26fa98f1-0674-4832-bb57-9d80aba778a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main-menu-sv
+  module:
+    - language
+    - system
+  theme:
+    - uhsg_theme
+id: mainmenusv
+theme: uhsg_theme
+region: navigation
+weight: 0
+provider: null
+plugin: 'system_menu_block:main-menu-sv'
+settings:
+  id: 'system_menu_block:main-menu-sv'
+  label: 'Main menu SV'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility:
+  language:
+    id: language
+    langcodes:
+      sv: sv
+    negate: false
+    context_mapping:
+      language: '@language.current_language_context:language_interface'
