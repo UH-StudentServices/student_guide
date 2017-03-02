@@ -36,6 +36,9 @@ Installation instructions:
     drush mi degree_programmes_translation && drush mi degree_programmes
     ```
   * Import translations
+  * Add SSO groups to Drupal role mappings at admin/config/people/role-auto-assign
+    (see the environment specific settings.php files for the intended groups and roles)
+    
 
 ## 1.0-beta1
 Release date: 13.02.2017
