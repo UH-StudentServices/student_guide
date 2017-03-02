@@ -11,8 +11,8 @@ id,weight,menu_name,title,link_uri
 10,1,footer-links-fi,Medialle,https://www.helsinki.fi/fi/ajankohtaista/medialle
 11,1,footer-links-en,Press and Media,https://www.helsinki.fi/en/news/press-and-media
 12,1,footer-links-sv,Press och media,https://www.helsinki.fi/sv/aktuellt/press-och-media
-13,2,footer-links-fi,Kirjasto,http://www.helsinki.fi/kirjasto/en
-14,2,footer-links-en,Library,http://www.helsinki.fi/kirjasto
+13,2,footer-links-fi,Kirjasto,http://www.helsinki.fi/kirjasto
+14,2,footer-links-en,Library,http://www.helsinki.fi/kirjasto/en
 15,2,footer-links-sv,Bibliotek,http://www.helsinki.fi/kirjasto/sv
 16,3,footer-links-fi,Flamma,https://flamma.helsinki.fi/portal/home/login
 17,3,footer-links-en,Flamma,https://flamma.helsinki.fi/portal/home/login
