@@ -70,9 +70,10 @@ class MyDegreeProgrammeFlagType extends EntityFlagType {
       // Get the flagging and deny access if the flagging has been created
       // programmatically.
       if ($flagging = $this->flagService->getFlagging($flag, $flaggable, $account)) {
-        if ($flagging->hasField($this->config->get('technical_condition_field_name')) &&
-            !$flagging->get($this->config->get('technical_condition_field_name'))->isEmpty() &&
-            $flagging->get($this->config->get('technical_condition_field_name'))->first()->getValue()['value']) {
+        $technical_condition_field_name = $this->config->get('technical_condition_field_name');
+        if ($flagging->hasField($technical_condition_field_name) &&
+            !$flagging->get($technical_condition_field_name)->isEmpty() &&
+            $flagging->get($technical_condition_field_name)->first()->getValue()['value']) {
           $access = $access->andIf(new AccessResultForbidden());
         }
       }
