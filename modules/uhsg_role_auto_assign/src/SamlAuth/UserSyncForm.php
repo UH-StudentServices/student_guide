@@ -36,6 +36,8 @@ class UserSyncForm extends ConfigFormBase {
       '#type' => 'textarea',
       '#title' => $this->t('Group to role mapping'),
       '#default_value' => $this->getMappingAsPlainText(),
+      '#description' => $this->t('Write each definition into its own line. Definitions are set in following format: <code>grp-doo-myteam content_editor</code>'),
+      '#placeholder' => 'grp-doo-myteam content_editor',
       '#maxlength' => 256,
     ];
 
