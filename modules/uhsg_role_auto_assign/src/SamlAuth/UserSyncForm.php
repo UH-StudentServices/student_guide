@@ -44,6 +44,7 @@ class UserSyncForm extends ConfigFormBase {
 
   private function getMappingAsPlainText() {
     $groupToRoleMapping = $this->config(self::EDITABLE_CONFIG_NAME)->get(self::GROUP_TO_ROLES);
+    $groupToRoleMapping = empty($groupToRoleMapping) ? [] : $groupToRoleMapping;
 
     $mappingAsText = array_map(function ($mapping) {
       return "{$mapping[self::GROUP_NAME]} {$mapping[self::RID]}\n";
