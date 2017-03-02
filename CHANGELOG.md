@@ -28,6 +28,7 @@
 * Allow multiple email addresses when emailing a news item (HUB-144)
 * Added mobile menu (HUB-146)
 * Added more degree programmes (HUB-142)
+* Added an UI for configuring SSO groups to Drupal roles mappings (HUB-139)
 
 Installation instructions:
   * After installation run:
