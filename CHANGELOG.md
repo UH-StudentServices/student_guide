@@ -34,6 +34,7 @@
   programme that is specified by oprek integration (HUB-56, HUB-58)
 * Fixed broken revisions (HUB-150)
 * Added menu links for Weboodi, course search and opinder (HUB-148)
+* Added an UI for configuring SSO groups to Drupal roles mappings (HUB-139)
 
 Installation instructions:
   * After installation run:
@@ -41,6 +42,9 @@ Installation instructions:
     drush mi degree_programmes_translation && drush mi degree_programmes
     ```
   * Import translations
+  * Add SSO groups to Drupal role mappings at admin/config/people/role-auto-assign
+    (see the environment specific settings.php files for the intended groups and roles)
+    
 
 ## 1.0-beta1
 Release date: 13.02.2017

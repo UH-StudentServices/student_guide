@@ -62,3 +62,12 @@ msgstr "Tämä sisältö on nyt lukittuna sinulle yhtäaikaisen muokkaamisen est
 
 msgid "results"
 msgstr "tulosta"
+
+msgid "Role auto assign"
+msgstr "Automaattinen roolien määrittely"
+
+msgid "Group to role mapping"
+msgstr "Ryhmästä rooliin kartoitus"
+
+msgid "Write each definition into its own line. Definitions are set in following format: <code>grp-doo-myteam content_editor</code>. Available roles are: @roles"
+msgstr "Kirjoita määrittelyt omille riville. Määritelmät ovat muotoa: <code>grp-doo-myteam content_editor</code>. Saatavilla olevat roolit: @roles"
