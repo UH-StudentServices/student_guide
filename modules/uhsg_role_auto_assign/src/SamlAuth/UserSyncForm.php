@@ -32,11 +32,13 @@ class UserSyncForm extends ConfigFormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
 
+    $available_roles = array_keys(user_roles(TRUE));
+    $available_roles = array_filter($available_roles, function($role) { if ($role !='authenticated') { return $role; } });
     $form[self::GROUP_TO_ROLES] = [
       '#type' => 'textarea',
       '#title' => $this->t('Group to role mapping'),
       '#default_value' => $this->getMappingAsPlainText(),
-      '#description' => $this->t('Write each definition into its own line. Definitions are set in following format: <code>grp-doo-myteam content_editor</code>'),
+      '#description' => $this->t('Write each definition into its own line. Definitions are set in following format: <code>grp-doo-myteam content_editor</code>. Available roles are: @roles', array('@roles' => implode(', ', $available_roles))),
       '#placeholder' => 'grp-doo-myteam content_editor',
       '#maxlength' => 256,
     ];
