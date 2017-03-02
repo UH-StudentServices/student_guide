@@ -28,6 +28,9 @@
 * Allow multiple email addresses when emailing a news item (HUB-144)
 * Added mobile menu (HUB-146)
 * Added more degree programmes (HUB-142)
+* Added feature that synchronises students degree programmes (HUB-56, HUB-58)
+* Added feature that active degree programme falls back to primary degree
+  programme that is specified by oprek integration (HUB-56, HUB-58)
 
 Installation instructions:
   * After installation run:
