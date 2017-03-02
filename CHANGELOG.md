@@ -1,40 +1,40 @@
 #Changelog
 
 ## 1.0-dev
+
 * Added support for sorting by author on content listing (HUB-123)
 * Added feature to login automatically if logged in in opintoni/opetukseni
   service (HUB-23, HUB-25, HUB-122)
-* Fixed empty contextual links (HUB-115)
-* Removed input focus zoom in degree programme switcher for devices (HUB-121)
 * Added feature for preventing simultaneous content editing (HUB-124)
-* Allow resetting the active degree programme (HUB-99)
 * Added automatic role (un)assignments based on groups from SAML2 (HUB-35)
 * Added frequently asked questions to themes (HUB-126)
-* Fixed logout destination (HUB-116, HUB-117)
-* Changed degree programme codes (HUB-129)
-* Fullscreen degree programme switcher in mobile (HUB-128)
-* Find content by author (HUB-132)
-* Logout link as icon (HUB-131)
-* Removed mobile input focus zoom in search (HUB-133)
 * Added tool for viewing oprek responses for student users (HUB-135)
 * Added feature for logged in users to favorite degree programmes (HUB-127)
-* Autosubmit degree programme search (HUB-137)
 * Added up-button to bottom of page (HUB-138)
-* Fixed hidden degree programme switcher reset button in mobile (HUB-140)
 * Added feature for transitional degree programmes (HUB-141)
 * Added autocomplete to search (HUB-134)
 * Added per user sorting functionality to themes view (HUB-89)
 * Added email address to the content lock message (HUB-124)
-* Allow multiple email addresses when emailing a news item (HUB-144)
 * Added mobile menu (HUB-146)
 * Added more degree programmes (HUB-142)
 * Added remember last search functionality (HUB-149)
 * Added feature that synchronises students degree programmes (HUB-56, HUB-58)
 * Added feature that active degree programme falls back to primary degree
   programme that is specified by oprek integration (HUB-56, HUB-58)
-* Fixed broken revisions (HUB-150)
 * Added menu links for Weboodi, course search and opinder (HUB-148)
 * Added an UI for configuring SSO groups to Drupal roles mappings (HUB-139)
+* Added resetting possibility to the active degree programme (HUB-99, HUB-140)
+* Added fullscreen degree programme switcher in mobile (HUB-128)
+* Added feature for finding content by author (HUB-132)
+* Added autosubmit degree programme search (HUB-137)
+* Added possibility to use multiple email addresses in news edit (HUB-144)
+* Fixed empty contextual links (HUB-115)
+* Fixed logout destination (HUB-116, HUB-117)
+* Fixed broken revisions (HUB-150)
+* Changed degree programme codes (HUB-129)
+* Changed logout link to an icon link (HUB-131)
+* Removed mobile input focus zoom in search (HUB-133)
+* Removed input focus zoom in degree programme switcher for devices (HUB-121)
 
 Installation instructions:
   * After installation run:
