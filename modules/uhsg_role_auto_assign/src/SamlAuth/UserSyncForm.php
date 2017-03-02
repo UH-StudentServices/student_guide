@@ -60,7 +60,22 @@ class UserSyncForm extends ConfigFormBase {
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
     $groupToRoleMapping = $this->getGroupToRoleMapping($form_state);
-    $this->validateRoles($form_state, array_column($groupToRoleMapping, self::RID));
+    $this->validateRoleMapping($form_state, $groupToRoleMapping);
+    if (empty($form_state->getErrors())) {
+      $groupToRoleMapping = $this->getGroupToRoleAsStructured($groupToRoleMapping);
+      $this->validateRoles($form_state, array_column($groupToRoleMapping, self::RID));
+    }
+  }
+
+  private function validateRoleMapping(FormStateInterface $form_state, $groupToRolesLines) {
+    // Loop each line and ensure it has two values separated by delimiter
+    foreach ($groupToRolesLines as $groupToRolesLine) {
+      $groupsRolesParts = explode(' ', $groupToRolesLine);
+      // The validation: Ensure we have two parts in the line
+      if (count($groupsRolesParts) != 2) {
+        $form_state->setErrorByName(self::GROUP_TO_ROLES, $this->t('Each line must have two values separated whitespace.'));
+      }
+    }
   }
 
   private function validateRoles(FormStateInterface $form_state, array $rids) {
@@ -77,6 +92,7 @@ class UserSyncForm extends ConfigFormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $groupToRoleMapping = $this->getGroupToRoleMapping($form_state);
+    $groupToRoleMapping = $this->getGroupToRoleAsStructured($groupToRoleMapping);
 
     $this->config(self::EDITABLE_CONFIG_NAME)
       ->set(self::GROUP_TO_ROLES, $groupToRoleMapping)
@@ -88,10 +104,14 @@ class UserSyncForm extends ConfigFormBase {
   private function getGroupToRoleMapping(FormStateInterface $form_state) {
     $groupToRolesText = $form_state->getValue(self::GROUP_TO_ROLES);
     $groupToRolesLines = array_map('trim', explode("\n", $groupToRolesText));
-
     $groupToRolesLines = array_filter($groupToRolesLines, function ($line) {
       return !empty(trim($line));
     });
+    return $groupToRolesLines;
+
+  }
+
+  private function getGroupToRoleAsStructured($groupToRolesLines) {
 
     $groupToRoleMapping = array_map(function ($groupToRolesLine) {
       $groupsRolesParts = explode(' ', $groupToRolesLine);
