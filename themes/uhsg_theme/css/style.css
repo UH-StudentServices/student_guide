@@ -8053,6 +8053,10 @@ h1, h2, h3, h4, legend {
   }
 }
 
+.view-search .view-header .top-searches li:last-child {
+  display: none;
+}
+
 .view-search .view-result {
   margin: 2em 0 1em 0;
 }
