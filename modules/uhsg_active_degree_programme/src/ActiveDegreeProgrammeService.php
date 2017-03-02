@@ -7,8 +7,11 @@
  
 namespace Drupal\uhsg_active_degree_programme;
 
+use Drupal\Core\Config\ConfigFactory;
 use Drupal\Core\Entity\EntityRepositoryInterface;
 use Drupal\Core\Session\AccountInterface;
+use Drupal\flag\FlaggingInterface;
+use Drupal\flag\FlagServiceInterface;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\taxonomy\TermAccessControlHandler;
 use Symfony\Component\HttpFoundation\RequestStack;
@@ -37,6 +40,11 @@ class ActiveDegreeProgrammeService {
   protected $user;
 
   /**
+   * @var FlagServiceInterface
+   */
+  protected $flagService;
+
+  /**
    * Stores the resolved term.
    *
    * @var \Drupal\taxonomy\Entity\Term|null
@@ -44,15 +52,31 @@ class ActiveDegreeProgrammeService {
   protected $resolvedTerm;
 
   /**
+   * Specifies the entity type where degree programmes are stored.
+   * @var string
+   */
+  protected $degreeProgrammeEntityType = 'taxonomy_term';
+
+  /**
+   * Specifies the bundle of entity type where degree programmes are.
+   * @var string
+   */
+  protected $degreeProgrammeBundle = 'degree_programme';
+
+  /**
    * ActiveDegreeProgrammeService constructor.
+   * @param ConfigFactory $configFactory
    * @param RequestStack $requestStack
    * @param EntityRepositoryInterface $entityRepository
    * @param AccountInterface $user
+   * @param FlagServiceInterface $flagService
    */
-  public function __construct(RequestStack $requestStack, EntityRepositoryInterface $entityRepository, AccountInterface $user) {
+  public function __construct(ConfigFactory $configFactory, RequestStack $requestStack, EntityRepositoryInterface $entityRepository, AccountInterface $user, FlagServiceInterface $flagService) {
+    $this->config = $configFactory->get('uhsg_active_degree_programme.settings');
     $this->requestStack = $requestStack;
     $this->entityRepository = $entityRepository;
     $this->user = $user;
+    $this->flagService = $flagService;
     $this->resolvedTerm = NULL;
   }
 
@@ -149,7 +173,32 @@ class ActiveDegreeProgrammeService {
       }
     }
 
-    // TODO: Fourthly check from logged in user study rights
+    // Fourhtly check from flaggings
+    if ($this->user->isAuthenticated()) {
+      $flag = $this->flagService->getFlagById('my_degree_programmes');
+      /** @var FlaggingInterface[] $flaggings */
+      $flaggings = $this->flagService->getFlagFlaggings($flag, $this->user);
+      $primary_field_name = $this->config->get('primary_field_name');
+      foreach ($flaggings as $flagging) {
+        if ($flagging->hasField($primary_field_name) && !$flagging->get($primary_field_name)->isEmpty()) {
+          if (!empty($flagging->get($primary_field_name)->first()->getValue()['value'])) {
+
+            // This flagging is primary
+            $entity = $flagging->getFlaggable();
+            if (!is_null($entity) && $entity->getEntityTypeId() == $this->degreeProgrammeEntityType && $this->access($entity)) {
+              $this->debug('Resolved by cookie ' . $entity->id());
+              $this->resolvedTerm = $entity;
+              return $this->resolvedTerm;
+            }
+            else {
+              // If we can't load the term, then reset active degree programme.
+              $this->reset();
+            }
+
+          }
+        }
+      }
+    }
 
     return $this->resolvedTerm;
   }
