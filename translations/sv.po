@@ -62,3 +62,9 @@ msgstr ""
 
 msgid "results"
 msgstr "resultat"
+
+msgid "Role auto assign"
+msgstr ""
+
+msgid "Write each definition into its own line. Definitions are set in following format: <code>grp-doo-myteam content_editor</code>. Available roles are: @roles"
+msgstr ""
