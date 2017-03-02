@@ -10,5 +10,15 @@ index_id: content_index
 suggester_id: server
 type: views
 options:
-  results: true
-  fields: {  }
+  suggester_configuration:
+    fields:
+      title: 0
+      body: 0
+      field_paragraph_body: 0
+  min_length: '1'
+  results: 0
+  delay: ''
+  custom:
+    display: default
+  submit_button_selector: ':submit'
+  autosubmit: 0

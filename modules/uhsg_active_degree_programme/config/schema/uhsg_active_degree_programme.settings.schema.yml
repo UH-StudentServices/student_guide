@@ -1,0 +1,9 @@
+# Schema for the configuration files of the active degree programme module.
+
+uhsg_active_degree_programme.settings:
+  type: config_object
+  label: 'Active Degree Programme settings'
+  mapping:
+    primary_field_name:
+      type: string
+      label: 'Field name that indicates whether the degree programme is primary degree programme.'
