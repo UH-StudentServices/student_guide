@@ -1,11 +1,13 @@
 <?php
 
 use Drupal\Core\Cache\Context\CacheContextsManager;
+use Drupal\Core\Config\ConfigFactory;
 use Drupal\Core\Entity\EntityManagerInterface;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityRepositoryInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Extension\ModuleHandlerInterface;
+use Drupal\flag\FlagService;
 use Drupal\Core\Language\LanguageInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\taxonomy\Entity\Term;
@@ -29,6 +31,12 @@ class ActiveDegreeProgrammeServiceTest extends PHPUnit_Framework_TestCase {
 
   /** @var ActiveDegreeProgrammeService */
   private $activeDegreeProgrammeService;
+
+  /** @var ConfigFactory */
+  private $configFactory;
+
+  /** @var FlagService */
+  private $flagService;
 
   /** @var ContainerInterface */
   private $container;
@@ -73,6 +81,7 @@ class ActiveDegreeProgrammeServiceTest extends PHPUnit_Framework_TestCase {
     parent::setUp();
 
     $this->account = $this->prophesize(AccountInterface::class);
+    $this->account->isAuthenticated()->willReturn(TRUE);
 
     $this->cacheContextsManager = $this->prophesize(CacheContextsManager::class);
     $this->cacheContextsManager->assertValidTokens(Argument::any())->willReturn(TRUE);
@@ -106,6 +115,10 @@ class ActiveDegreeProgrammeServiceTest extends PHPUnit_Framework_TestCase {
     $this->request->cookies = $this->cookies;
     $this->request->headers = $this->headers;
 
+    $this->configFactory = $this->prophesize(ConfigFactory::class);
+
+    $this->flagService = $this->prophesize(FlagService::class);
+
     $this->requestStack = $this->prophesize(RequestStack::class);
     $this->requestStack->getCurrentRequest()->willReturn($this->request->reveal());
 
@@ -120,7 +133,7 @@ class ActiveDegreeProgrammeServiceTest extends PHPUnit_Framework_TestCase {
     Drupal::setContainer($this->container->reveal());
 
     $this->activeDegreeProgrammeService = new ActiveDegreeProgrammeServiceTestDouble(
-      $this->requestStack->reveal(),  $this->entityRepository->reveal(),  $this->account->reveal()
+      $this->configFactory->reveal(), $this->requestStack->reveal(),  $this->entityRepository->reveal(),  $this->account->reveal(), $this->flagService->reveal()
     );
   }
 
