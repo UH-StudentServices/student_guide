@@ -16,6 +16,8 @@ source:
     -
       id: Identifier
     -
+      weight: Weight
+    -
       menu_name: 'Menu name'
     -
       title: Title
@@ -25,6 +27,7 @@ process:
   title: title
   'link/uri': link_uri
   menu_name: menu_name
+  weight: weight
   langcode:
     plugin: default_value
     default_value: en

@@ -1,0 +1,32 @@
+uuid: aa6b1c63-eb2c-4c35-8376-fa9336b1d4a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main-menu-en
+  module:
+    - language
+    - system
+  theme:
+    - uhsg_theme
+id: mainmenuen
+theme: uhsg_theme
+region: navigation
+weight: 0
+provider: null
+plugin: 'system_menu_block:main-menu-en'
+settings:
+  id: 'system_menu_block:main-menu-en'
+  label: 'Main menu EN'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility:
+  language:
+    id: language
+    langcodes:
+      en: en
+    negate: false
+    context_mapping:
+      language: '@language.current_language_context:language_interface'
