@@ -252,13 +252,9 @@ function uhsg_theme_preprocess_paragraph(&$variables) {
  * Add Node or term changed time as variable.
  */
 function uhsg_theme_preprocess_page(&$variables) {
-  $node = \Drupal::routeMatch()->getParameter('node');
-  $term = \Drupal::routeMatch()->getParameter('taxonomy_term');
-  if ($node) {
+  if (isset($variables['node'])) {
+    $node = is_object($variables['node']) ? $variables['node'] : Node::load($variables['node']);
     $variables['updated'] = \Drupal::service('date.formatter')->format($node->getChangedTime(), 'short');
-  }
-  if ($term) {
-    $variables['updated'] = \Drupal::service('date.formatter')->format($term->getChangedTime(), 'short');
   }
 }
 
