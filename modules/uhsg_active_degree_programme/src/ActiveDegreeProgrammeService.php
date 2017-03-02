@@ -178,9 +178,10 @@ class ActiveDegreeProgrammeService {
       $flag = $this->flagService->getFlagById('my_degree_programmes');
       /** @var FlaggingInterface[] $flaggings */
       $flaggings = $this->flagService->getFlagFlaggings($flag, $this->user);
+      $primary_field_name = $this->config->get('primary_field_name');
       foreach ($flaggings as $flagging) {
-        if ($flagging->hasField($this->config->get('primary_field_name')) && !$flagging->get($this->config->get('primary_field_name'))->isEmpty()) {
-          if (!empty($flagging->get($this->config->get('primary_field_name'))->first()->getValue()['value'])) {
+        if ($flagging->hasField($primary_field_name) && !$flagging->get($primary_field_name)->isEmpty()) {
+          if (!empty($flagging->get($primary_field_name)->first()->getValue()['value'])) {
 
             // This flagging is primary
             $entity = $flagging->getFlaggable();
