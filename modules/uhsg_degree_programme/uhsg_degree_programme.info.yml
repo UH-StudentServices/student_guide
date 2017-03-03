@@ -6,3 +6,4 @@ version: VERSION
 package: Student Guide
 dependencies:
   - uhsg_active_degree_programme
+  - flag
