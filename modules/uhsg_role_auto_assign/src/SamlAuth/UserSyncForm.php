@@ -34,11 +34,27 @@ class UserSyncForm extends ConfigFormBase {
 
     $available_roles = array_keys(user_roles(TRUE));
     $available_roles = array_filter($available_roles, function($role) { if ($role !='authenticated') { return $role; } });
+
+    $formDescription = $this->t(
+      'Specified roles are given to the members of the IAM groups listed below. If you want to add a new group, search for the group at the <a href=":url" target="_blank">group administration tool</a>.',
+      [':url' => 'https://idm.helsinki.fi/web/groupadmin/group_search.htm?searchgroup=searchgroup']
+    );
+
+    $form['description'] = [
+      '#type' => 'item',
+      '#description' => $formDescription
+    ];
+
+    $mappingFormatDescription = $this->t(
+      'Write each definition into its own line. Definitions are set in following format: <code>grp-doo-myteam content_editor</code>. Available roles are: @roles',
+      ['@roles' => implode(', ', $available_roles)]
+    );
+
     $form[self::GROUP_TO_ROLES] = [
       '#type' => 'textarea',
       '#title' => $this->t('Group to role mapping'),
       '#default_value' => $this->getMappingAsPlainText(),
-      '#description' => $this->t('Write each definition into its own line. Definitions are set in following format: <code>grp-doo-myteam content_editor</code>. Available roles are: @roles', array('@roles' => implode(', ', $available_roles))),
+      '#description' => $mappingFormatDescription,
       '#placeholder' => 'grp-doo-myteam content_editor',
       '#maxlength' => 256,
     ];
@@ -110,8 +126,8 @@ class UserSyncForm extends ConfigFormBase {
     $groupToRolesLines = array_filter($groupToRolesLines, function ($line) {
       return !empty(trim($line));
     });
-    return $groupToRolesLines;
 
+    return $groupToRolesLines;
   }
 
   private function getGroupToRoleAsStructured($groupToRolesLines) {

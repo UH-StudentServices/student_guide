@@ -68,3 +68,6 @@ msgstr ""
 
 msgid "Write each definition into its own line. Definitions are set in following format: <code>grp-doo-myteam content_editor</code>. Available roles are: @roles"
 msgstr ""
+
+msgid "Specified roles are given to the members of the IAM groups listed below. If you want to add a new group, search for the group at the <a href=\":url\" target=\"_blank\">group administration tool</a>."
+msgstr "Innhållsredaktörs behörighet ges till nedannämnda IAM-gruppens medlemmar. Om du vill lägga till ett grupp, sök gruppets namn på <a href=\":url\" target=\"_blank\">verktyg för gruppadministrering</a>."
