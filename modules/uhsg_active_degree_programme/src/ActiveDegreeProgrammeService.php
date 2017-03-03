@@ -128,7 +128,7 @@ class ActiveDegreeProgrammeService {
       return $this->resolvedTerm;
     }
 
-    // First check from parameters
+    // Check from parameters.
     $query_param = $this->requestStack->getCurrentRequest()->get('degree_programme');
     if ($query_param) {
       $term = Term::load($query_param);
@@ -143,7 +143,7 @@ class ActiveDegreeProgrammeService {
       }
     }
 
-    // Secondly check from X-Headers
+    // Check from X-Headers.
     $degree_programme_from_headers = $this->requestStack->getCurrentRequest()->headers->get('x-degree-programme');
     if ($degree_programme_from_headers) {
       $term = Term::load($this->requestStack->getCurrentRequest()->headers->get('x-degree-programme'));
@@ -158,7 +158,7 @@ class ActiveDegreeProgrammeService {
       }
     }
 
-    // Thirdly check from cookies
+    // Check from cookies.
     $degree_programme_from_cookies = $this->requestStack->getCurrentRequest()->cookies->get('Drupal_visitor_degree_programme');
     if ($degree_programme_from_cookies) {
       $term = Term::load($degree_programme_from_cookies);
@@ -173,7 +173,7 @@ class ActiveDegreeProgrammeService {
       }
     }
 
-    // Fourhtly check from flaggings
+    // Check from flaggings.
     if ($this->user->isAuthenticated()) {
       $flag = $this->flagService->getFlagById('my_degree_programmes');
       /** @var FlaggingInterface[] $flaggings */
