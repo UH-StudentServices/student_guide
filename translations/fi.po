@@ -62,3 +62,15 @@ msgstr "Tämä sisältö on nyt lukittuna sinulle yhtäaikaisen muokkaamisen est
 
 msgid "results"
 msgstr "tulosta"
+
+msgid "Role auto assign"
+msgstr "Automaattinen roolien määrittely"
+
+msgid "Group to role mapping"
+msgstr "Ryhmästä rooliin kartoitus"
+
+msgid "Write each definition into its own line. Definitions are set in following format: <code>grp-doo-myteam content_editor</code>. Available roles are: @roles"
+msgstr "Kirjoita määrittelyt omille riveille. Määritelmät ovat muotoa: <code>grp-doo-myteam content_editor</code>. Saatavilla olevat roolit: @roles"
+
+msgid "Specified roles are given to the members of the IAM groups listed below. If you want to add a new group, search for the group at the <a href=\":url\" target=\"_blank\">group administration tool</a>."
+msgstr "Määritellyt roolit annetaan alla olevien IAM-ryhmien jäsenille. Jos haluat lisätä uuden ryhmän, hae sen nimi <a href=\":url\" target=\"_blank\">ryhmienhallintatyökalusta</a>."

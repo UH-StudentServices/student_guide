@@ -28,7 +28,7 @@ class RedirectToLogin implements HttpKernelInterface {
    */
   public function handle(Request $request, $type = self::MASTER_REQUEST, $catch = TRUE) {
     if ($type == self::MASTER_REQUEST && $this->hasLoggedIn($request) && !$this->hasTriggered($request)) {
-      $response = $this->redirectToLoginResponse($request, $type, $catch);
+      $response = $this->redirectToLoginResponse($request);
     }
     else {
       $response = $this->httpKernel->handle($request, $type, $catch);
@@ -62,11 +62,9 @@ class RedirectToLogin implements HttpKernelInterface {
    * Returns an redirect response to login.
    *
    * @param Request $request
-   * @param $type
-   * @param $catch
    * @return \Symfony\Component\HttpFoundation\Response
    */
-  protected function redirectToLoginResponse(Request $request, $type, $catch) {
+  protected function redirectToLoginResponse(Request $request) {
 
     // When cookie has been found, but not yet triggered, create redirect
     // response.

@@ -81,7 +81,9 @@ function uhsg_theme_preprocess_menu(&$variables) {
       $link_classes = 'list-of-links__link button--action icon--arrow-right theme-transparent-alt';
       $menu_classes = 'list-of-links--condensed theme-footer';
       break;
-    case 'main':
+    case 'main-menu-en':
+    case 'main-menu-fi':
+    case 'main-menu-sv':
       $link_classes = 'is-lvl1 menu-item';
       $menu_classes = 'menu';
       $variables['home_link']['link'] = \Drupal::config('uhsg_service_provider_details.settings')->get('home_path');
@@ -207,7 +209,9 @@ function uhsg_theme_preprocess_views_view(&$variables) {
  */
 function uhsg_theme_preprocess_block(array &$variables) {
   switch ($variables['elements']['#id']) {
-    case 'mainnavigation':
+    case 'mainmenuen':
+    case 'mainmenufi':
+    case 'mainmenusv':
       $variables['attributes']['class'][] = 'main-menu';
       break;
     case 'views_block__degree_programmes_block_1':
@@ -252,13 +256,9 @@ function uhsg_theme_preprocess_paragraph(&$variables) {
  * Add Node or term changed time as variable.
  */
 function uhsg_theme_preprocess_page(&$variables) {
-  $node = \Drupal::routeMatch()->getParameter('node');
-  $term = \Drupal::routeMatch()->getParameter('taxonomy_term');
-  if ($node) {
+  if (isset($variables['node'])) {
+    $node = is_object($variables['node']) ? $variables['node'] : Node::load($variables['node']);
     $variables['updated'] = \Drupal::service('date.formatter')->format($node->getChangedTime(), 'short');
-  }
-  if ($term) {
-    $variables['updated'] = \Drupal::service('date.formatter')->format($term->getChangedTime(), 'short');
   }
 }
 
@@ -333,4 +333,22 @@ function uhsg_theme_theme_suggestions_block_alter(&$suggestions, $vars, $hook) {
     $suggestions[] = 'block' . '__' . 'subregion';
   }
 }
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ * add template for main menus
+ */
+function uhsg_theme_theme_suggestions_menu_alter(&$suggestions, $vars, $hook) {
+
+  $main_menus = [
+    'main-menu-en',
+    'main-menu-fi',
+    'main-menu-sv',
+  ];
+
+  if (in_array($vars['menu_name'], $main_menus)) {
+    $suggestions[] = 'menu__main';
+  }
+}
+
 

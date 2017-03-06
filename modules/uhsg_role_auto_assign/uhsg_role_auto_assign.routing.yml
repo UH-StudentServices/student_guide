@@ -1,0 +1,7 @@
+uhsg_role_auto_assign.settings:
+  path: '/admin/config/people/role-auto-assign'
+  defaults:
+    _form: '\Drupal\uhsg_role_auto_assign\SamlAuth\UserSyncForm'
+    _title: 'Role auto assign'
+  requirements:
+    _permission: 'administer site configuration'
