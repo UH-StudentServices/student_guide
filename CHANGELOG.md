@@ -2,6 +2,8 @@
 
 ## 1.0-dev
 
+* Do not prevent login when getting study rights from oprek fails (HUB-153)
+
 
 ## 1.0-rc0
 Release date: 02.03.2017
