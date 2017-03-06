@@ -1,7 +1,7 @@
 #Changelog
 
 ## 1.0-dev
-
+* Fix issues with search autocomplete on mobile devices (HUB-136)
 
 ## 1.0-rc0
 Release date: 02.03.2017
