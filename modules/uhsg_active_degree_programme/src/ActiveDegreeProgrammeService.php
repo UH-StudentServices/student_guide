@@ -109,14 +109,13 @@ class ActiveDegreeProgrammeService {
   }
 
   /**
-   * Return id of active degree programme.
-   * @return int|mixed|null|string
+   * Return the ID of the active degree programme.
+   * @return int|null
    */
   public function getId() {
     $term = $this->getTerm();
-    if ($term) {
-      return $term->id();
-    }
+
+    return $term ? $term->id() : NULL;
   }
 
   /**
