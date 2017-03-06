@@ -10,3 +10,4 @@ theme_sort:
   dependencies:
     - core/jquery
     - core/jquery.once
+    - core/modernizr
