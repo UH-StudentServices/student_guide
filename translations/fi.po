@@ -54,6 +54,9 @@ msgstr "Sähköpostin lähettäminen epäonistui."
 msgid "My Searches"
 msgstr "Omat Haut"
 
+msgid "Top content"
+msgstr "Luetuimmat sisällöt"
+
 msgid "More current topics"
 msgstr "Lisää ajankohtaisia aiheita"
 

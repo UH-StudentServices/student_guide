@@ -1,6 +1,7 @@
 #Changelog
 
 ## 1.0-dev
+* Add top content block (HUB-36)
 
 
 ## 1.0-rc0
