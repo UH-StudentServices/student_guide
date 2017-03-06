@@ -5,6 +5,8 @@ namespace Drupal\uhsg_user_sync\SamlAuth;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Config\ImmutableConfig;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Logger\LoggerChannel;
+use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\flag\Entity\Flagging;
 use Drupal\flag\FlaggingInterface;
 use Drupal\flag\FlagServiceInterface;
@@ -18,6 +20,8 @@ use Drupal\uhsg_samlauth\AttributeParserInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class UserSyncSubscriber implements EventSubscriberInterface {
+
+  use StringTranslationTrait;
 
   /**
    * @var ImmutableConfig
@@ -39,11 +43,17 @@ class UserSyncSubscriber implements EventSubscriberInterface {
    */
   protected $entityTypeManager;
 
-  public function __construct(ConfigFactoryInterface $configFactory, OprekServiceInterface $oprekService, FlagServiceInterface $flagService, EntityTypeManagerInterface $entityTypeManager) {
+  /**
+   * @var LoggerChannel
+   */
+  protected $logger;
+
+  public function __construct(ConfigFactoryInterface $configFactory, OprekServiceInterface $oprekService, FlagServiceInterface $flagService, EntityTypeManagerInterface $entityTypeManager, LoggerChannel $logger) {
     $this->config = $configFactory->get('uhsg_user_sync.settings');
     $this->oprekService = $oprekService;
     $this->flagService = $flagService;
     $this->entityTypeManager = $entityTypeManager;
+    $this->logger = $logger;
   }
 
   /**
@@ -57,7 +67,13 @@ class UserSyncSubscriber implements EventSubscriberInterface {
   public function onUserSync(SamlAuthUserSyncEvent $event) {
     $attributes = new AttributeParser($event->getAttributes());
     $this->syncStudentID($event, $attributes);
-    $this->syncMyDegreeProgrammes($event);
+
+    try {
+      $this->syncMyDegreeProgrammes($event);
+    } catch (\Exception $e) {
+      $this->logger->error($this->t('Could not get degree programmes. Error: @error (code @code)', ['@error' => $e->getMessage(), '@code' => $e->getCode()]));
+      drupal_set_message($this->t('Could not get degree programmes.'), 'warning');
+    }
   }
 
   /**
