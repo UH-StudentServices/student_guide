@@ -2,6 +2,8 @@
 
 ## 1.0-dev
 
+* Minor security improvements to my searches functionality (HUB-152)
+
 
 ## 1.0-rc0
 Release date: 02.03.2017
