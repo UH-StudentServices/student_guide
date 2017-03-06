@@ -9,7 +9,6 @@
   };
   // autocomlete requires the user to click twice in iOS, fix that
   Drupal.autocomplete.options.open = function (event, ui) {
-    console.log('open jepajee.');
     $('.ui-autocomplete').off('menufocus hover mouseover');
   };
 }(jQuery));
