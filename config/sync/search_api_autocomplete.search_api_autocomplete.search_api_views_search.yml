@@ -21,4 +21,4 @@ options:
   custom:
     display: default
   submit_button_selector: ':submit'
-  autosubmit: 0
+  autosubmit: 1
