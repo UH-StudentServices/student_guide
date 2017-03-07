@@ -7633,7 +7633,7 @@ ul.pager > li.pager__page a {
   margin-bottom: 0;
 }
 
-.degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content .my-degree-programmes .view-grouping-content h4, .degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content .my-degree-programmes .view-grouping-content legend {
+.degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content .my-degree-programmes .view-list-title {
   display: none;
 }
 
