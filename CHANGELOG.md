@@ -5,6 +5,7 @@
 * Minor security improvements to my searches functionality (HUB-152)
 * Remove theme sorting when using mobile devices (HUB-89)
 * Do not prevent login when getting study rights from oprek fails (HUB-153)
+* Add top content block (HUB-36)
 
 
 ## 1.0-rc0
