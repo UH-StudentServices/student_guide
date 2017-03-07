@@ -6264,6 +6264,149 @@ span.links__link.theme-language {
 }
 
 /*
+ section: 6.12
+ title: Messages
+ description:
+*/
+/*
+ section: 6.12.1
+ title: Status message
+ template: 6_12_1-message-status
+ description: Used for displaying status messages to the user.
+*/
+/*
+ section: 6.12.2
+ title: Info message
+ template: 6_12_2-message-info
+ description: Used for displaying informational messages to the user.
+*/
+/*
+ section: 6.12.3
+ title: Error message
+ template: 6_12_3-message-error
+ description: Used for displaying error messages to the user.
+*/
+.messages {
+  font-size: 0.75rem;
+  padding: 1.3em 0;
+  text-align: center;
+}
+
+.messages p {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-size: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.messages a {
+  font-weight: 700;
+  font-style: normal;
+}
+
+.messages.status {
+  background-color: #b2e576;
+  color: #222;
+}
+
+.messages.status * {
+  color: #222;
+}
+
+.messages.status.alternative {
+  background-color: #f2f7eb;
+  color: #81b43b;
+}
+
+.messages.status.alternative * {
+  color: #81b43b;
+}
+
+.messages.status p:before,
+.messages.status li:before {
+  display: inline-block;
+  font-family: "hy-icons";
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
+  content: "";
+  font-size: 1.4em;
+  margin-right: 0.5em;
+  position: relative;
+  top: 2px;
+}
+
+.messages.info {
+  background-color: #52c6af;
+  color: #FFF;
+}
+
+.messages.info * {
+  color: #FFF;
+}
+
+.messages.info.alternative {
+  background-color: #f8f8f8;
+  color: #222;
+}
+
+.messages.info.alternative * {
+  color: #222;
+}
+
+.messages.info p:before,
+.messages.info li:before {
+  display: inline-block;
+  font-family: "hy-icons";
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
+  content: "";
+  font-size: 1.4em;
+  margin-right: 0.5em;
+  position: relative;
+  top: 2px;
+}
+
+.messages.error {
+  background-color: #964822;
+  color: #FFF;
+}
+
+.messages.error * {
+  color: #FFF;
+}
+
+.messages.error.alternative {
+  background-color: #f4ece8;
+  color: #964822;
+}
+
+.messages.error.alternative * {
+  color: #964822;
+}
+
+.messages.error p:before,
+.messages.error li:before {
+  display: inline-block;
+  font-family: "hy-icons";
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
+  content: "";
+  font-size: 1.4em;
+  margin-right: 0.5em;
+  position: relative;
+  top: 2px;
+}
+
+/*
  section: 6.1
  title: Table
  description:
