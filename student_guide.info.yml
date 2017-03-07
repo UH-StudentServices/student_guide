@@ -16,6 +16,7 @@ dependencies:
   - dblog
   - dynamic_page_cache
   - field_ui
+  - google_analytics_reports
   - honeypot
   - image
   - language
@@ -39,6 +40,7 @@ dependencies:
   - uhsg_samlauth
   - uhsg_some_links
   - uhsg_themes
+  - uhsg_top_content
   - views
   - views_ui
 themes:
