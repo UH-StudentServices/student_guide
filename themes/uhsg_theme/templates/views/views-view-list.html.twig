@@ -16,10 +16,11 @@
  * @see template_preprocess_views_view_list()
  */
 #}
-
-<div class="view-degree-programmes__sub-section">
+{% if attributes -%}
+  <div{{ attributes }}>
+{% endif %}
   {% if title %}
-    <h4 class="tube view-list-title view-degree-programmes__subtitle">{{ title }}</h4>
+    <h4 class="tube view-list-title view-subtitle">{{ title }}</h4>
   {% endif %}
 
   <{{ list.type }}{{ list.attributes }}>
@@ -29,4 +30,7 @@
     {% endfor %}
 
   </{{ list.type }}>
-</div>
+
+{% if attributes -%}
+  </div>
+{% endif %}
