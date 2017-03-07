@@ -48,7 +48,7 @@
       filterInput.degreeProgrammeFilter({
         container: ".view-degree-programmes",
         item: ".list-of-links__link",
-        groupingTitle: ".view-list-title"
+        groupingTitle: ".view-subtitle"
       });
 
     }

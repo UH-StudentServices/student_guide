@@ -20,7 +20,7 @@
 
         // by default show all items and grouping titles
         $(opt.item, opt.container).show();
-        $(opt.groupingTitle, opt.container).show();
+        $(opt.groupingTitle, opt.container).removeClass('visually-hidden');
 
         // hide items that don't match
         if (filter.length >= opt.charCount) {
@@ -29,8 +29,8 @@
 
         // hide grouping title if all children are hidden
         $(opt.groupingTitle, opt.container).each(function() {
-          if (!$(this).next('ul').children('li:visible').length) {
-            $(this).hide();
+          if (!$(this).siblings().find('li:visible').length) {
+            $(this).addClass('visually-hidden');
           }
         });
 
