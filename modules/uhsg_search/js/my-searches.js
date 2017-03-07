@@ -3,22 +3,24 @@
   Drupal.behaviors.uhsg_search_my_searches = {
     attach: function(context, settings) {
 
+      var cleanupString = this.cleanupString;
       var searchInput = $('.view-search .views-exposed-form input[name="search_api_fulltext"]');
+      var searchString = cleanupString(searchInput.val());
       var searchSubmit = $('.view-search .views-exposed-form .form-submit:not(".button--reset")');
       var mySearches = $.cookie('my_searches') ? JSON.parse($.cookie('my_searches')) : [];
       var empty = $('.view-empty', '.view-search').length;
       var maxLatestSearches = 4;
 
       // Store submitted value in a cookie.
-      if (searchInput.val() && !empty) {
+      if (searchString && !empty) {
 
         // Avoid duplicates.
         var dupe = mySearches.find(function(item) {
-          return item == searchInput.val();
+          return item == searchString;
         });
 
         if (!dupe) {
-          mySearches.unshift(searchInput.val());
+          mySearches.unshift(searchString);
 
           if (mySearches.length > maxLatestSearches) {
             mySearches.pop();
@@ -33,7 +35,7 @@
       if (mySearches.length) {
         var content = '';
         mySearches.map(function(value) {
-          content += '<li class="list-of-links__link button--action-before icon--search theme-transparent">' + value + '</li>';
+          content += '<li class="list-of-links__link button--action-before icon--search theme-transparent">' + cleanupString(value) + '</li>';
         });
 
         var title = '<h3>' + Drupal.t('My Searches') + '</h3>';
@@ -43,7 +45,7 @@
 
         // Enable search when clicking one of my searches items.
         $('#my-searches li').on('click', function() {
-          searchInput.val($(this).text());
+          searchInput.val(cleanupString($(this).text()));
           searchSubmit.click();
         });
 
@@ -53,6 +55,10 @@
           $('#my-searches').empty();
         });
       }
+    },
+
+    cleanupString: function (text) {
+      return text.replace(/[^A-Za-z0-9\s!?]/g,'');
     }
   };
 }(jQuery));
