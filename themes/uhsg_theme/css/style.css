@@ -7979,6 +7979,8 @@ input[type="submit"].button--reset + i {
 @media (min-width: 48em) {
   .main-menu li.main-menu__right {
     margin-left: auto;
+    position: relative;
+    left: 2em;
   }
   .main-menu li.main-menu__right ~ li.main-menu__right {
     margin-left: 0;
@@ -8027,17 +8029,6 @@ input[type="submit"].button--reset + i {
 
 .main-menu li.main-menu__avatar.main-menu__avatar--default img {
   padding: 0.75em;
-}
-
-@media (min-width: 48em) {
-  .main-menu li.main-menu__avatar {
-    padding-left: 1em;
-    position: relative;
-    left: 1em;
-  }
-  .main-menu li.main-menu__avatar a {
-    padding: 0;
-  }
 }
 
 .nav-toggle {
