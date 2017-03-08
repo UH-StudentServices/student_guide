@@ -86,6 +86,11 @@ function uhsg_theme_preprocess_menu(&$variables) {
     case 'main-menu-sv':
       $link_classes = 'is-lvl1 menu-item';
       $menu_classes = 'menu';
+
+      $oodi_uid = 123456789;
+      $variables['avatar_image']['url'] = \Drupal::currentUser()->isAuthenticated() ? \Drupal::service('uhsg_avatar.avatar_service')->fetchAvatar($oodi_uid) : NULL;
+      $variables['avatar_image']['classes'] = $link_classes . ' main-menu__right main-menu__avatar';
+
       $variables['home_link']['link'] = \Drupal::config('uhsg_service_provider_details.settings')->get('home_path');
       $variables['home_link']['classes'] = $link_classes . ' main-menu__front';
       foreach ($variables['items'] as $item) {
