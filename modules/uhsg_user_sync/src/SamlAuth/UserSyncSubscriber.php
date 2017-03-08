@@ -66,6 +66,7 @@ class UserSyncSubscriber implements EventSubscriberInterface {
 
   public function onUserSync(SamlAuthUserSyncEvent $event) {
     $attributes = new AttributeParser($event->getAttributes());
+    $this->logger->debug(print_r($attributes, TRUE));
     $this->syncStudentID($event, $attributes);
 
     try {
