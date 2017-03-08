@@ -8014,9 +8014,16 @@ input[type="submit"].button--reset + i {
   }
 }
 
+.main-menu li.main-menu__avatar a {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
 .main-menu li.main-menu__avatar img {
-  background-color: #0098d0;
-  height: 35px;
+  background-color: rgba(123, 70, 163, 0.45);
+  height: 3em;
+  width: 3em;
+  padding: 0.75em;
 }
 
 @media (min-width: 48em) {
@@ -8027,9 +8034,6 @@ input[type="submit"].button--reset + i {
   }
   .main-menu li.main-menu__avatar a {
     padding: 0;
-  }
-  .main-menu li.main-menu__avatar img {
-    height: 48px;
   }
 }
 

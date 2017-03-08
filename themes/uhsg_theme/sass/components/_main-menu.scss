@@ -32,9 +32,15 @@
     }
   }
   li.main-menu__avatar {
+    a {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
     img {
-      background-color: $blue;
-      height: 35px;
+      background-color: rgba(#7b46a3, .45);
+      height: 3em;
+      width: 3em;
+      padding: 0.75em;
     }
     @include breakpoint($small) {
       padding-left: 1em;
@@ -42,9 +48,6 @@
       left: 1em;
       a {
         padding: 0;
-      }
-      img {
-        height: 48px
       }
     }
   }
