@@ -87,6 +87,8 @@ function uhsg_theme_preprocess_menu(&$variables) {
       $link_classes = 'is-lvl1 menu-item';
       $menu_classes = 'menu';
 
+      $variables['#cache']['contexts'][] = 'user';
+      $variables['#cache']['contexts'][] = 'session';
       $avatar_image_url = \Drupal::service('uhsg_avatar.avatar_service')->getAvatar();
       $variables['avatar_image']['url'] = $avatar_image_url;
       $variables['avatar_image']['classes'] = $link_classes . ' main-menu__right main-menu__avatar';
