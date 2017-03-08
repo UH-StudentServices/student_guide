@@ -3,7 +3,6 @@
 use Drupal\Core\Language\LanguageInterface;
 use Drupal\Component\Render\FormattableMarkup;
 use Drupal\node\Entity\Node;
-use Drupal\user\Entity\User;
 
 /**
  * @file
@@ -87,17 +86,8 @@ function uhsg_theme_preprocess_menu(&$variables) {
     case 'main-menu-sv':
       $link_classes = 'is-lvl1 menu-item';
       $menu_classes = 'menu';
-
-      // fetch avatar
-      if (\Drupal::currentUser()->isAuthenticated()) {
-        $user = User::load(\Drupal::currentUser()->id());
-        $oodi_uid = $user->get('field_oodi_uid')->getString();
-        if ($oodi_uid) {
-          $variables['avatar_image']['url'] = \Drupal::currentUser()->isAuthenticated() ? \Drupal::service('uhsg_avatar.avatar_service')->fetchAvatar($oodi_uid) : NULL;
-          $variables['avatar_image']['classes'] = $link_classes . ' main-menu__right main-menu__avatar';
-        }
-      }
-
+      $variables['avatar_image']['url'] = \Drupal::service('uhsg_avatar.avatar_service')->getAvatar();
+      $variables['avatar_image']['classes'] = $link_classes . ' main-menu__right main-menu__avatar';
       $variables['home_link']['link'] = \Drupal::config('uhsg_service_provider_details.settings')->get('home_path');
       $variables['home_link']['classes'] = $link_classes . ' main-menu__front';
       foreach ($variables['items'] as $item) {
