@@ -13,9 +13,9 @@ use Drupal\user\Entity\User;
 class AvatarService {
 
   private function getApiUrl($oodi_uid) {
-    $api_base_url = 'https://student.helsinki.fi/';
-    $api_path = "api/public/v1/profile/$oodi_uid";
-    return $api_base_url . $api_path;
+    $api_base_url = \Drupal::config('uhsg_avatar.config')->get('api_base_url');
+    $api_path = \Drupal::config('uhsg_avatar.config')->get('api_path');
+    return $api_base_url . $api_path . $oodi_uid;
   }
 
   private function getOodiUid() {
@@ -29,7 +29,7 @@ class AvatarService {
    * check if image is default.
    */
   public function isDefault($url) {
-    return $url == 'https://student.helsinki.fi/assets/icons/avatar.png';
+    return $url == \Drupal::config('uhsg_avatar.config')->get('default_image_url');;
   }
 
   /**

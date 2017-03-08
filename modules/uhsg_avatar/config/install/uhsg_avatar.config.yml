@@ -1,0 +1,3 @@
+api_base_url: 'https://student.helsinki.fi/'
+api_path: 'api/public/v1/profile/'
+default_image_url: 'https://student.helsinki.fi/assets/icons/avatar.png'

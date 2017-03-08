@@ -1,0 +1,5 @@
+api_base_url: 'https://student.helsinki.fi/'
+api_path: api/public/v1/profile/
+default_image_url: 'https://student.helsinki.fi/assets/icons/avatar.png'
+_core:
+  default_config_hash: IPb-y-GrfQU2Kwo6_Sqi-sG1VQnB7kSfutedevpqj3s
