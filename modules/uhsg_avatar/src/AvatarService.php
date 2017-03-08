@@ -7,6 +7,7 @@
  
 namespace Drupal\uhsg_avatar;
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\RequestException;
 use Drupal\user\Entity\User;
 
 class AvatarService {
@@ -25,6 +26,13 @@ class AvatarService {
   }
 
   /**
+   * check if image is default.
+   */
+  public function isDefault($url) {
+    return $url == 'https://student.helsinki.fi/assets/icons/avatar.png';
+  }
+
+  /**
    * Fetch avatar.
    */
   public function getAvatar() {
@@ -33,12 +41,17 @@ class AvatarService {
 
     if ($api_url) {
       $client = new \GuzzleHttp\Client();
-      $api_response = $client->get($api_url, ['http_errors' => false]);
 
-      if ($api_response->getStatusCode() == 200) {
-        $body = $api_response->getBody();
-        $obj = json_decode($body);
-        return $obj->avatarImageUrl;
+      try {
+        $api_response = $client->get($api_url);
+        if ($api_response->getStatusCode() == 200) {
+          $body = $api_response->getBody();
+          $obj = json_decode($body);
+          return $obj->avatarImageUrl;
+        }
+      }
+      catch (RequestException $e) {
+        return NULL;
       }
     }
   }
