@@ -88,6 +88,11 @@ function uhsg_theme_preprocess_menu(&$variables) {
       $menu_classes = 'menu';
       $variables['avatar_image']['url'] = \Drupal::service('uhsg_avatar.avatar_service')->getAvatar();
       $variables['avatar_image']['classes'] = $link_classes . ' main-menu__right main-menu__avatar';
+
+      if ($variables['avatar_image']['url'] == 'https://student.helsinki.fi/assets/icons/avatar.png') {
+        $variables['avatar_image']['classes'] .= ' main-menu__avatar--default';
+      }
+
       $variables['home_link']['link'] = \Drupal::config('uhsg_service_provider_details.settings')->get('home_path');
       $variables['home_link']['classes'] = $link_classes . ' main-menu__front';
       foreach ($variables['items'] as $item) {
