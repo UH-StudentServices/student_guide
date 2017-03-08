@@ -1,0 +1,3 @@
+services:
+  uhsg_avatar.avatar_service:
+    class: Drupal\uhsg_avatar\AvatarService
