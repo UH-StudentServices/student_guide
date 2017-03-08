@@ -7,6 +7,7 @@
 * Do not prevent login when getting study rights from oprek fails (HUB-153)
 * Add top content block (HUB-36)
 * Fixed degree programme filtering (HUB-154)
+* Removed default paragraph when creating new article or theme (HUB-160)
 
 
 ## 1.0-rc0

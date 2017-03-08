@@ -46,9 +46,10 @@ content:
     settings:
       title: Paragraph
       title_plural: Paragraphs
-      edit_mode: open
-      add_mode: dropdown
+      edit_mode: preview
+      add_mode: button
       form_display_mode: default
+      default_paragraph_type: _none
     third_party_settings: {  }
   field_theme_teaser_image:
     weight: 33
@@ -88,6 +89,8 @@ content:
     third_party_settings: {  }
   translation:
     weight: 10
+    settings: {  }
+    third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
     weight: 5
