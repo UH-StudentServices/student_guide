@@ -4,15 +4,18 @@ uhsg_user_sync.settings:
   type: config_object
   label: 'User Sync settings'
   mapping:
+    code_field_name:
+      type: string
+      label: 'Field name where code of degree programmes are.'
+    oodiUID_field_name:
+      type: string
+      label: 'Field name where Oodi UID gets synchronised.'
+    primary_field_name:
+      type: string
+      label: 'Field name that indicates whether the degree programme is primary degree programme.'
     studentID_field_name:
       type: string
       label: 'Field name where student ID gets synchronised.'
     technical_condition_field_name:
       type: string
       label: 'Field name that indicates the flagging being programmatically managed.'
-    primary_field_name:
-      type: string
-      label: 'Field name that indicates whether the degree programme is primary degree programme.'
-    code_field_name:
-      type: string
-      label: 'Field name where code of degree programmes are.'

@@ -86,6 +86,16 @@ function uhsg_theme_preprocess_menu(&$variables) {
     case 'main-menu-sv':
       $link_classes = 'is-lvl1 menu-item';
       $menu_classes = 'menu';
+
+      $variables['#cache']['contexts'][] = 'user';
+      $variables['#cache']['contexts'][] = 'session';
+      $avatar_image_url = \Drupal::service('uhsg_avatar.avatar_service')->getAvatar();
+      $variables['avatar_image']['url'] = $avatar_image_url;
+      $variables['avatar_image']['classes'] = $link_classes . ' main-menu__right avatar';
+      if (\Drupal::service('uhsg_avatar.avatar_service')->isDefault($avatar_image_url)) {
+        $variables['avatar_image']['classes'] .= ' avatar--default';
+      }
+
       $variables['home_link']['link'] = \Drupal::config('uhsg_service_provider_details.settings')->get('home_path');
       $variables['home_link']['classes'] = $link_classes . ' main-menu__front';
       foreach ($variables['items'] as $item) {

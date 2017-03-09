@@ -1,0 +1,16 @@
+li.avatar {
+  position: relative;
+  left: 15px;
+  > a {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  img {
+    background-color: $avatarbg;
+    height: 47px;
+    width: 47px;
+  }
+  &.avatar--default img {
+    padding: 12px;
+  }
+}

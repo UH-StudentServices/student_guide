@@ -8,6 +8,7 @@
 * Add top content block (HUB-36)
 * Fixed degree programme filtering (HUB-154)
 * Removed default paragraph when creating new article or theme (HUB-160)
+* Show user avatar (HUB-130)
 
 Installation instructions:
   * Import translations

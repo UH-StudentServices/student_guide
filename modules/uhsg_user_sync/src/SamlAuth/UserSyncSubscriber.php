@@ -66,6 +66,7 @@ class UserSyncSubscriber implements EventSubscriberInterface {
 
   public function onUserSync(SamlAuthUserSyncEvent $event) {
     $attributes = new AttributeParser($event->getAttributes());
+    $this->syncOodiUID($event, $attributes);
     $this->syncStudentID($event, $attributes);
 
     try {
@@ -77,7 +78,39 @@ class UserSyncSubscriber implements EventSubscriberInterface {
   }
 
   /**
-   * Syncrhonises student ID field.
+   * Synchronises Oodi UID field.
+   * @param SamlAuthUserSyncEvent $event
+   * @param AttributeParserInterface $attributes
+   */
+  protected function syncOodiUID(SamlAuthUserSyncEvent $event, AttributeParserInterface $attributes) {
+
+    // Specify what is the name of the field we want to set Oodi UID to?
+    $field_name = $this->config->get('oodiUID_field_name');
+    if (!$field_name) {
+      return;
+    }
+
+    // If specified field definition has been found
+    if ($event->getAccount()->getFieldDefinition($field_name)) {
+      $previous_value = $event->getAccount()->get($field_name)->getString();
+      $new_value = $attributes->getOodiUid();
+      if ($new_value && $new_value != $previous_value) {
+        // When we have new value and it's different from previous value, it
+        // means that we need to update it to the account.
+        $event->getAccount()->get($field_name)->setValue($new_value);
+        $event->markAccountChanged();
+      }
+      elseif ($previous_value && !$new_value) {
+        // When we don't have new value but previous value, it means that
+        // Oodi UID has/must been removed.
+        $event->getAccount()->get($field_name)->setValue(NULL);
+        $event->markAccountChanged();
+      }
+    }
+  }
+
+  /**
+   * Synchronises student ID field.
    * @param SamlAuthUserSyncEvent $event
    * @param AttributeParserInterface $attributes
    */
