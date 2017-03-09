@@ -41,7 +41,8 @@ accordion:
 menu_toggle:
   version: 1.x
   js:
-    js/menu_toggle.js: {}
+    js/responsive_navigation.js: {}
   dependencies:
     - core/jquery
     - core/jquery.once
+    - core/matchMedia
