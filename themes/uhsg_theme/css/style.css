@@ -7461,25 +7461,18 @@ ul.pager > li.pager__page a {
 
 li.avatar {
   position: relative;
-  left: 1em;
+  left: 15px;
 }
 
-li.avatar a {
-  padding-top: 0;
-  padding-bottom: 0;
+li.avatar > a {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
 
 li.avatar img {
   background-color: rgba(123, 70, 163, 0.45);
-  height: 3.3em;
-  width: 3.3em;
-}
-
-@media (min-width: 48em) {
-  li.avatar img {
-    height: 3em;
-    width: 3em;
-  }
+  height: 47px;
+  width: 47px;
 }
 
 li.avatar.avatar--default img {
@@ -8000,6 +7993,12 @@ input[type="submit"].button--reset + i {
 @media (min-width: 48em) {
   .main-menu > ul.menu {
     max-height: 55px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .main-menu li.is-lvl1 > a {
+    padding-top: 1.2em;
+    padding-bottom: 1.2em;
   }
 }
 

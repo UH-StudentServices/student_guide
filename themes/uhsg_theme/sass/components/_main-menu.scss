@@ -2,7 +2,13 @@
   @include breakpoint($small) {
     > ul.menu {
       max-height: 55px;
+      padding-top: 0;
+      padding-bottom: 0;
     }    
+    li.is-lvl1 > a {
+      padding-top: 1.2em;
+      padding-bottom: 1.2em;
+    }
   }
 
   li.main-menu__right {
