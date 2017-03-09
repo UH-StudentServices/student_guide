@@ -72,7 +72,7 @@ class UserSyncSubscriber implements EventSubscriberInterface {
       $this->syncMyDegreeProgrammes($event);
     } catch (\Exception $e) {
       $this->logger->error($this->t('Could not get degree programmes. Error: @error (code @code)', ['@error' => $e->getMessage(), '@code' => $e->getCode()]));
-      drupal_set_message($this->t('Could not get degree programmes.'), 'warning');
+      drupal_set_message($this->t('There is a problem with the connection to Oodi and your degree programmes cannot be shown.'), 'warning');
     }
   }
 

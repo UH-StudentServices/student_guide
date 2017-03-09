@@ -77,3 +77,6 @@ msgstr "Kirjoita määrittelyt omille riveille. Määritelmät ovat muotoa: <cod
 
 msgid "Specified roles are given to the members of the IAM groups listed below. If you want to add a new group, search for the group at the <a href=\":url\" target=\"_blank\">group administration tool</a>."
 msgstr "Määritellyt roolit annetaan alla olevien IAM-ryhmien jäsenille. Jos haluat lisätä uuden ryhmän, hae sen nimi <a href=\":url\" target=\"_blank\">ryhmienhallintatyökalusta</a>."
+
+msgid "There is a problem with the connection to Oodi and your degree programmes cannot be shown."
+msgstr "Yhteys Oodiin ei toimi eikä opinto-oikeuksiesi mukaisia koulutusohjelmia voida näyttää."
