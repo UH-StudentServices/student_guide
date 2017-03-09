@@ -7682,6 +7682,7 @@ li.avatar.avatar--default img {
   vertical-align: bottom;
   content: "";
   font-size: 1rem;
+  display: block;
   margin-right: 1em;
 }
 
