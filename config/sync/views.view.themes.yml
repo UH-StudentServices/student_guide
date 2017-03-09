@@ -434,6 +434,10 @@ display:
         type: perm
         options:
           perm: 'edit any theme content'
+      pager:
+        type: none
+        options:
+          offset: 0
     cache_metadata:
       max-age: 0
       contexts:
