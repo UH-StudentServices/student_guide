@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.box
     - node.type.theme
+    - system.menu.admin
   module:
     - draggableviews
     - node
@@ -219,10 +220,10 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
-  themes_table_drag:
-    display_plugin: attachment
-    id: themes_table_drag
-    display_title: Attachment
+  page_1:
+    display_plugin: page
+    id: page_1
+    display_title: Page
     position: 2
     display_options:
       display_extenders: {  }
@@ -427,9 +428,6 @@ display:
           entity_type: node
           entity_field: nid
           plugin_id: draggable_views_field
-      displays:
-        block_1: block_1
-      attachment_position: after
       access:
         type: perm
         options:
@@ -438,6 +436,16 @@ display:
         type: none
         options:
           offset: 0
+      path: admin/structure/theme-ordering
+      menu:
+        type: normal
+        title: 'Theme ordering'
+        description: ''
+        expanded: false
+        parent: system.admin
+        weight: 0
+        context: '0'
+        menu_name: admin
     cache_metadata:
       max-age: 0
       contexts:

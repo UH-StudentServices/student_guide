@@ -40,3 +40,4 @@ permissions:
   31: 'use text format filtered_html'
   32: 'update any content_block block_content'
   33: 'update own content_block block_content'
+  34: 'access draggableviews'
