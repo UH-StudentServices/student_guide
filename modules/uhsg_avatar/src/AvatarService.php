@@ -29,7 +29,7 @@ class AvatarService {
    * check if image is default.
    */
   public function isDefault($url) {
-    return $url == \Drupal::config('uhsg_avatar.config')->get('default_image_url');;
+    return $url == \Drupal::config('uhsg_avatar.config')->get('default_image_url');
   }
 
   /**
