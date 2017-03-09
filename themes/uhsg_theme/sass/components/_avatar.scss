@@ -1,18 +1,14 @@
 li.avatar {
   position: relative;
-  left: 1em;
-  a {
-    padding-top: 0;
-    padding-bottom: 0;
+  left: 15px;
+  > a {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
   }
   img {
     background-color: rgba(#7b46a3, .45);
-    height: 3.3em;
-    width: 3.3em;
-    @include breakpoint($small) {
-      height: 3em;
-      width: 3em;      
-    }
+    height: 47px;
+    width: 47px;
   }
   &.avatar--default img {
     padding: 0.75em;
