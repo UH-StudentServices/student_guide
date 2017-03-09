@@ -1,3 +1,8 @@
 services:
   uhsg_avatar.avatar_service:
     class: Drupal\uhsg_avatar\AvatarService
+    arguments: ['@config.factory', '@current_user', '@http_client', '@logger.channel.uhsg_avatar']
+
+  logger.channel.uhsg_avatar:
+    parent: logger.channel_base
+    arguments: ['uhsg_avatar']
