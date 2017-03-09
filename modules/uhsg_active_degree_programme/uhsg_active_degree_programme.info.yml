@@ -6,3 +6,4 @@ version: VERSION
 package: Student Guide
 dependencies:
   - views
+  - flag

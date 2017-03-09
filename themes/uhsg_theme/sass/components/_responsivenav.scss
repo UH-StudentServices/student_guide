@@ -1,0 +1,11 @@
+.main-menu > ul.menu {
+  display: none;
+
+  &.is-open {
+    display: block;
+  }
+
+  @include breakpoint($small) {
+    display: flex;
+  }
+}

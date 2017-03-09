@@ -2,11 +2,27 @@
 
 use Drupal\Core\Language\LanguageInterface;
 use Drupal\Component\Render\FormattableMarkup;
+use Drupal\node\Entity\Node;
 
 /**
  * @file
  * Functions to support theming in the uhsg_theme theme.
  */
+
+/**
+ * Implements hook_page_attachments_alter().
+ * Add breakpoints to javascript
+ */
+function uhsg_theme_page_attachments_alter(array &$page) {
+  $breakpoints = \Drupal::service('breakpoint.manager')->getBreakpointsByGroup('UhsgTheme');
+  if ($breakpoints) {
+    $media_queries = [];
+    foreach ($breakpoints as $id => $breakpoint) {
+      $media_queries[$id] = $breakpoint->getMediaQuery();
+    }
+    $page['#attached']['drupalSettings']['breakpoints'] = $media_queries;
+  }
+}
 
 /**
  * Implements hook_preprocess_HOOK() for Region templates.
@@ -23,8 +39,8 @@ function uhsg_theme_preprocess_region(&$variables) {
       $variables['contact_info'] = \Drupal::config('uhsg_service_provider_details.settings')->get('contact_info');
       break;
     case 'before_content':
-    case 'after_content':
       $variables['attributes']['class'][] = 'container';
+      break;
   }
 }
 
@@ -62,14 +78,38 @@ function uhsg_theme_preprocess_menu(&$variables) {
     case 'footer-links-en':
     case 'footer-links-fi':
     case 'footer-links-sv':
-      $link_classes = 'list-of-links__link button--action icon--arrow-right theme-transparent';
+      $link_classes = 'list-of-links__link button--action icon--arrow-right theme-transparent-alt';
       $menu_classes = 'list-of-links--condensed theme-footer';
       break;
-    case 'main':
+    case 'main-menu-en':
+    case 'main-menu-fi':
+    case 'main-menu-sv':
       $link_classes = 'is-lvl1 menu-item';
       $menu_classes = 'menu';
-      $variables['home_link']['link'] = \Drupal::config('uhsg_service_provider_details.settings')->get('logo_path');
+
+      $variables['#cache']['contexts'][] = 'user';
+      $variables['#cache']['contexts'][] = 'session';
+      $avatar_image_url = \Drupal::service('uhsg_avatar.avatar_service')->getAvatar();
+      $variables['avatar_image']['url'] = $avatar_image_url;
+      $variables['avatar_image']['classes'] = $link_classes . ' main-menu__right avatar';
+      if (\Drupal::service('uhsg_avatar.avatar_service')->isDefault($avatar_image_url)) {
+        $variables['avatar_image']['classes'] .= ' avatar--default';
+      }
+
+      $variables['home_link']['link'] = \Drupal::config('uhsg_service_provider_details.settings')->get('home_path');
       $variables['home_link']['classes'] = $link_classes . ' main-menu__front';
+      foreach ($variables['items'] as $item) {
+        if ($item['url']->isRouted()) {
+          switch ($item['url']->getRouteName()) {
+            case 'samlauth.saml_controller_login':
+              $item['attributes']->addClass('main-menu__right');
+              break;
+            case 'samlauth.saml_controller_logout':
+              $item['attributes']->addClass(['main-menu__right', 'main-menu__logout']);
+              break;
+          }
+        }
+      }
       break;
   }
 
@@ -94,9 +134,17 @@ function uhsg_theme_preprocess_menu(&$variables) {
 function uhsg_theme_preprocess_field(array &$variables, $hook) {
   switch ($variables['element']['#field_name']) {
     case 'field_paragraph_links':
+      uhsg_theme_process_link_titles($variables);
       $variables['attributes']['class'][] = 'list-of-links';
       foreach ($variables['items'] as &$item) {
         $item['content']['#options']['attributes']['class'][] = 'list-of-links__link button--action icon--arrow-right';
+      }
+      break;
+    case 'field_accordion_links':
+      uhsg_theme_process_link_titles($variables);
+      $variables['attributes']['class'][] = 'list-of-links__compact';
+      foreach ($variables['items'] as &$item) {
+        $item['content']['#options']['attributes']['class'][] = 'list-of-links__link icon--arrow-right button--action theme-transparent';
       }
       break;
     case 'field_theme_articles':
@@ -107,12 +155,45 @@ function uhsg_theme_preprocess_field(array &$variables, $hook) {
     case 'field_paragraph_body':
       $variables['attributes']['class'][] = 'textarea';
       break;
-    case 'field_news_degree_programme':
-      foreach ($variables['items'] as &$item) {
-        $item['content']['#options']['attributes']['class'][] = 'box-story__tag';
-        $variables['nowrapper'] = TRUE;
-      }
+    case 'field_accordion_title':
+      $variables['attributes']['class'][] = 'accordion__title button--accordion';
       break;
+    case 'field_content_block_text':
+      $variables['attributes']['class'][] = 'box-subtitle__ingress is-center-mobile';
+      break;
+  }
+}
+
+
+/**
+ * If the link targets a node and no link title is set, use link target node
+ * title as the link text.
+ *
+ * @param array $variables
+ */
+function uhsg_theme_process_link_titles(array &$variables) {
+  foreach ($variables['items'] as &$item) {
+
+    /** @var $url \Drupal\Core\Url */
+    $url = $item['content']['#url'];
+
+    // If the link is internal and title matches url, no title is set.
+    if ($url->isRouted() && $item['content']['#title'] == $url->toString()) {
+
+      // Check for node links.
+      if ($url->getRouteName() == 'entity.node.canonical') {
+        $params = $url->getRouteParameters();
+        $nid = $params['node'];
+        $node = Node::load($nid);
+        if ($node) {
+          $translation = \Drupal::entityManager()->getTranslationFromContext($node);
+          $item['content']['#title'] = $translation->getTitle();
+        }
+
+        // Add target node to cache tags in case the node title changes.
+        $variables['#cache']['tags'][] = 'node:' . $nid;
+      }
+    }
   }
 }
 
@@ -121,23 +202,15 @@ function uhsg_theme_preprocess_field(array &$variables, $hook) {
  */
 function uhsg_theme_preprocess_views_view(&$variables) {
   switch ($variables['view']->id()) {
+    case 'themes':
+      $variables['content_attributes']['class'][] = 'grid-container';
+      break;
     case 'search':
       $variables['attributes']['class'][] = 'grid-container';
-      $variables['lang'] = Drupal::languageManager()->getCurrentLanguage()->getId();
-      break;
-    case 'themes':
-      $variables['attributes']['class'][] = 'grid-container';
-      break;
-    case 'taxonomy_term':
-    case 'news_per_degree_programme':
-      $variables['attributes']['class'][] = 'grid-container tube--large';
       break;
     case 'news':
       $variables['attributes']['class'][] = 'tube';
       break;
-    case 'degree_programmes':
-      $variables['title'] = \Drupal::service('uhsg_active_degree_programme.active_degree_programme')->getName();
-      $variables['#cache']['contexts'][] = 'active_degree_programme';
   }
 }
 
@@ -146,8 +219,21 @@ function uhsg_theme_preprocess_views_view(&$variables) {
  */
 function uhsg_theme_preprocess_block(array &$variables) {
   switch ($variables['elements']['#id']) {
-    case 'mainnavigation':
+    case 'mainmenuen':
+    case 'mainmenufi':
+    case 'mainmenusv':
       $variables['attributes']['class'][] = 'main-menu';
+      break;
+    case 'views_block__degree_programmes_block_1':
+      $degree_programme_name = \Drupal::service('uhsg_active_degree_programme.active_degree_programme')->getName();
+      $variables['label'] = $degree_programme_name ? $degree_programme_name : t('Select degree programme');
+      $variables['#cache']['contexts'][] = 'active_degree_programme';
+      $variables['reset_link']['link'] =  \Drupal\Core\Url::fromRoute('uhsg_active_degree_programme.reset_active');
+      $variables['reset_link']['classes'] = 'button--action icon--remove theme-transparent button--reset is-center-mobile';
+      break;
+    case 'newsperdegreeprogramme':
+    case 'newsperdegreeprogramme_2':
+      $variables['content_attributes']['class'][] = 'grid-container';
       break;
   }
 }
@@ -157,11 +243,9 @@ function uhsg_theme_preprocess_block(array &$variables) {
  */
 function uhsg_theme_preprocess_views_exposed_form(&$variables) {
   switch ($variables['form']['#id']) {
-    case 'views-exposed-form-degree-programmes-block-1':
-      $variables['form']['name']['#attributes']['placeholder'] = t('Name of degree programme');
-      $variables['form']['actions']['submit']['#suffix'] = '<i class="icon--search"></i>';
-      break;
     case 'views-exposed-form-search-page-1':
+      unset($variables['form']['search_api_fulltext']['#theme_wrappers']);
+      $variables['form']['search_api_fulltext']['#suffix'] = '<i class="icon-spin icon--spinner"></i>';
       $variables['form']['search_api_fulltext']['#attributes']['placeholder'] = t('For example topic or university service');
       $variables['form']['actions']['reset']['#suffix'] = '<i class="icon--remove"></i>';
       $variables['form']['actions']['reset']['#attributes']['class'][] = 'button--reset';
@@ -175,7 +259,6 @@ function uhsg_theme_preprocess_views_exposed_form(&$variables) {
  */
 function uhsg_theme_preprocess_paragraph(&$variables) {
   $variables['attributes']['id'] = 'paragraph-' . $variables['paragraph']->id();
-  $variables['attributes']['class'][] = 'paragraph';
 }
 
 /**
@@ -183,13 +266,9 @@ function uhsg_theme_preprocess_paragraph(&$variables) {
  * Add Node or term changed time as variable.
  */
 function uhsg_theme_preprocess_page(&$variables) {
-  $node = \Drupal::routeMatch()->getParameter('node');
-  $term = \Drupal::routeMatch()->getParameter('taxonomy_term');
-  if ($node) {
+  if (isset($variables['node'])) {
+    $node = is_object($variables['node']) ? $variables['node'] : Node::load($variables['node']);
     $variables['updated'] = \Drupal::service('date.formatter')->format($node->getChangedTime(), 'short');
-  }
-  if ($term) {
-    $variables['updated'] = \Drupal::service('date.formatter')->format($term->getChangedTime(), 'short');
   }
 }
 
@@ -209,12 +288,77 @@ function uhsg_theme_preprocess_file_link(&$variables) {
 function uhsg_theme_preprocess_node(&$variables) {
   if ($variables['view_mode'] == 'teaser') {
     $variables['type'] = $variables['node']->type->entity->label();
-    switch ($variables['node']->getType()) {
-      case 'theme':
-      case 'article':
-        $variables['attributes']['class'][] = 'theme-plain';
-        break;
-    }
   }
 }
+
+/**
+ * Implements template_preprocess_html().
+ * Add touch icons to head.
+ */
+function uhsg_theme_preprocess_html(&$variables) {
+  $theme_path = drupal_get_path('theme', 'uhsg_theme');
+  $files = file_scan_directory($theme_path . '/images/favicons', '/.*\.png$/');
+
+  foreach ($files as $url => $file) {
+    $icon = [
+      '#tag' => 'link',
+      '#attributes' => [
+        'rel' => preg_match('/(apple-touch-icon)/',$file->name) ? 'apple-touch-icon' : 'icon',
+        'href' => file_create_url($file->uri),
+        'type' => preg_match('/(apple-touch-icon)/',$file->name) ? NULL : 'image/png',
+        'sizes' => preg_match('/[0-9]\w+/',$file->name, $matches) ? $matches[0] : NULL
+      ],
+    ];
+    $variables['page']['#attached']['html_head'][] = [$icon, $file->name];
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for views grouping.
+ * Handle cusotm grouping title with working translation.
+ */
+function uhsg_theme_preprocess_views_view_grouping(&$variables) {
+  if ($variables['view']->id() == 'degree_programmes' && strip_tags($variables['title']) == 1) {
+    $variables['attributes']['class'] = 'my-degree-programmes';
+    $variables['title'] = \Drupal::config('flag.flag.my_degree_programmes')->get('label');;
+  }
+  else {
+    unset($variables['title']);
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ * add subregion template for blocks
+ */
+function uhsg_theme_theme_suggestions_block_alter(&$suggestions, $vars, $hook) {
+
+  $subregion_blocks = [
+    'views_block__themes_block_1',
+    'newsperdegreeprogramme',
+    'newsperdegreeprogramme_2',
+  ];
+
+  if (in_array($vars['elements']['#id'], $subregion_blocks)) {
+    $suggestions[] = 'block' . '__' . 'subregion';
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ * add template for main menus
+ */
+function uhsg_theme_theme_suggestions_menu_alter(&$suggestions, $vars, $hook) {
+
+  $main_menus = [
+    'main-menu-en',
+    'main-menu-fi',
+    'main-menu-sv',
+  ];
+
+  if (in_array($vars['menu_name'], $main_menus)) {
+    $suggestions[] = 'menu__main';
+  }
+}
+
 

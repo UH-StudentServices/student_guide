@@ -18,6 +18,12 @@ msgstr "Päivitetty"
 msgid "Name of degree programme"
 msgstr "Koulutusohjelman nimi"
 
+msgid "Search for degree programme"
+msgstr "Hae koulutusohjelmaa"
+
+msgid "Select degree programme"
+msgstr "Valitse koulutusohjelma"
+
 msgid "For example topic or university service"
 msgstr "Esim. aihealue tai yliopiston palvelu"
 
@@ -33,14 +39,14 @@ msgstr "Anna palautetta palvelusta..."
 msgid "News"
 msgstr "Uutinen"
 
-msgid "This news has been sent to the following email address:"
-msgstr "Tämä uutinen on lähetty seuraavaan sähköpostiosoitteeseen:"
+msgid "This news has been sent to the following email addresses:"
+msgstr "Tämä uutinen on lähetty seuraaviin sähköpostiosoitteisiin:"
 
-msgid "Send the news to the given email address. The email can be sent just once."
-msgstr "Lähetä uutinen annettuun sähköpostiosoitteeseen. Sähköpostin voi lähettää ainoastaan kerran."
+msgid "Send the news to the given email addresses. The email can be sent just once."
+msgstr "Lähetä uutinen annettuihin sähköpostiosoitteisiin. Sähköpostin voi lähettää ainoastaan kerran."
 
 msgid "Email sent to @email."
-msgstr "Sähköposti lähetetty osoitteeseen @email."
+msgstr "Sähköposti lähetetty osoitteisiin @email."
 
 msgid "Email sending failed."
 msgstr "Sähköpostin lähettäminen epäonistui."
@@ -50,3 +56,27 @@ msgstr "Omat Haut"
 
 msgid "Top content"
 msgstr "Luetuimmat sisällöt"
+
+msgid "More current topics"
+msgstr "Lisää ajankohtaisia aiheita"
+
+msgid "This content is now locked by you against simultaneous editing. This content will remain locked if you navigate away from this page without saving or unlocking it."
+msgstr "Tämä sisältö on nyt lukittuna sinulle yhtäaikaisen muokkaamisen estämiseksi. Lukitus vapautuu kun tallennat sisällön tai automaattisesti 30 minuutin kuluessa."
+
+msgid "results"
+msgstr "tulosta"
+
+msgid "Role auto assign"
+msgstr "Automaattinen roolien määrittely"
+
+msgid "Group to role mapping"
+msgstr "Ryhmästä rooliin kartoitus"
+
+msgid "Write each definition into its own line. Definitions are set in following format: <code>grp-doo-myteam content_editor</code>. Available roles are: @roles"
+msgstr "Kirjoita määrittelyt omille riveille. Määritelmät ovat muotoa: <code>grp-doo-myteam content_editor</code>. Saatavilla olevat roolit: @roles"
+
+msgid "Specified roles are given to the members of the IAM groups listed below. If you want to add a new group, search for the group at the <a href=\":url\" target=\"_blank\">group administration tool</a>."
+msgstr "Määritellyt roolit annetaan alla olevien IAM-ryhmien jäsenille. Jos haluat lisätä uuden ryhmän, hae sen nimi <a href=\":url\" target=\"_blank\">ryhmienhallintatyökalusta</a>."
+
+msgid "There is a problem with the connection to Oodi and your degree programmes cannot be shown."
+msgstr "Yhteys Oodiin ei toimi eikä opinto-oikeuksiesi mukaisia koulutusohjelmia voida näyttää."

@@ -24,9 +24,9 @@
   We call a macro which calls itself to render the full tree.
   @see http://twig.sensiolabs.org/doc/tags/macro.html
 #}
-{{ menus.menu_links(items, attributes, 0, home_link) }}
+{{ menus.menu_links(items, attributes, 0, home_link, avatar_image) }}
 
-{% macro menu_links(items, attributes, menu_level, home_link) %}
+{% macro menu_links(items, attributes, menu_level, home_link, avatar_image) %}
   {% import _self as menus %}
   {% if items %}
     <ul{{ attributes }}>
@@ -42,6 +42,14 @@
           {{ link(item.title, item.url, { 'class':[ item.is_active ? 'active' ] }) }}
         </li>
       {% endfor %}
+
+      {% if avatar_image.url and home_link %}
+        <li class="{{ avatar_image.classes }}">
+          <a href={{ home_link.link }}>
+            <img src={{ avatar_image.url }} />
+          </a>
+        </li>
+      {% endif %}
 
     </ul>
   {% endif %}

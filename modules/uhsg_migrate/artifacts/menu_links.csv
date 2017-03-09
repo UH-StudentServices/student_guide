@@ -1,26 +1,43 @@
-id,menu_name,title,link_uri
-1,header-links-fi,Flamma,https://flamma.helsinki.fi/portal/home/login
-2,header-links-fi,Helsingin Kaupunki,http://www.hel.fi/www/helsinki/fi
-3,header-links-en,Flamma,https://flamma.helsinki.fi/portal/home/login
-4,header-links-en,City of Helsinki,http://www.hel.fi/www/helsinki/en
-5,header-links-sv,Flamma,https://flamma.helsinki.fi/portal/home/login
-6,header-links-sv,Helsingfors stad,http://www.hel.fi/www/helsinki/sv
-7,footer-links-fi,Yhteystiedot,https://www.helsinki.fi/fi/yhteystiedot
-8,footer-links-en,Yhteystiedot,https://www.helsinki.fi/en/contact-information
-9,footer-links-sv,Kontakt,https://www.helsinki.fi/sv/kontaktuppgifter
-10,footer-links-fi,Medialle,https://www.helsinki.fi/fi/ajankohtaista/medialle
-11,footer-links-en,Press and Media,https://www.helsinki.fi/en/news/press-and-media
-12,footer-links-sv,Press och media,https://www.helsinki.fi/sv/aktuellt/press-och-media
-13,footer-links-fi,Kirjasto,http://www.helsinki.fi/kirjasto/en
-14,footer-links-en,Library,http://www.helsinki.fi/kirjasto
-15,footer-links-sv,Bibliotek,http://www.helsinki.fi/kirjasto/sv
-16,footer-links-fi,Flamma,https://flamma.helsinki.fi/portal/home/login
-17,footer-links-en,Flamma,https://flamma.helsinki.fi/portal/home/login
-18,footer-links-sv,Flamma,https://flamma.helsinki.fi/portal/home/login
-19,footer-links-fi,Tietoa sivustosta,https://www.helsinki.fi/fi/yliopisto/tietoa-sivustosta
-20,footer-links-en,About the website,https://www.helsinki.fi/en/university/about-the-website
-21,footer-links-sv,Information om webbplatsen,https://www.helsinki.fi/sv/universitetet/information-om-webbplatsen
-22,footer-links-fi,Anna palautetta,https://www.helsinki.fi/fi/anna-palautetta
-23,footer-links-en,Give Feedback,https://www.helsinki.fi/en/give-feedback
-24,footer-links-sv,Ge respons,https://www.helsinki.fi/sv/ge-respons
-25,main,Guide,internal:/
+id,weight,menu_name,title,link_uri
+1,0,header-links-fi,Flamma,https://flamma.helsinki.fi/portal/home/login
+2,1,header-links-fi,Helsingin Kaupunki,http://www.hel.fi/www/helsinki/fi
+3,0,header-links-en,Flamma,https://flamma.helsinki.fi/portal/home/login
+4,1,header-links-en,City of Helsinki,http://www.hel.fi/www/helsinki/en
+5,0,header-links-sv,Flamma,https://flamma.helsinki.fi/portal/home/login
+6,1,header-links-sv,Helsingfors stad,http://www.hel.fi/www/helsinki/sv
+7,0,footer-links-fi,Yhteystiedot,https://www.helsinki.fi/fi/yhteystiedot
+8,0,footer-links-en,Contact,https://www.helsinki.fi/en/contact-information
+9,0,footer-links-sv,Kontakt,https://www.helsinki.fi/sv/kontaktuppgifter
+10,1,footer-links-fi,Medialle,https://www.helsinki.fi/fi/ajankohtaista/medialle
+11,1,footer-links-en,Press and Media,https://www.helsinki.fi/en/news/press-and-media
+12,1,footer-links-sv,Press och media,https://www.helsinki.fi/sv/aktuellt/press-och-media
+13,2,footer-links-fi,Kirjasto,http://www.helsinki.fi/kirjasto
+14,2,footer-links-en,Library,http://www.helsinki.fi/kirjasto/en
+15,2,footer-links-sv,Bibliotek,http://www.helsinki.fi/kirjasto/sv
+16,3,footer-links-fi,Flamma,https://flamma.helsinki.fi/portal/home/login
+17,3,footer-links-en,Flamma,https://flamma.helsinki.fi/portal/home/login
+18,3,footer-links-sv,Flamma,https://flamma.helsinki.fi/portal/home/login
+19,4,footer-links-fi,Tietoa sivustosta,https://www.helsinki.fi/fi/yliopisto/tietoa-sivustosta
+20,4,footer-links-en,About the website,https://www.helsinki.fi/en/university/about-the-website
+21,4,footer-links-sv,Information om webbplatsen,https://www.helsinki.fi/sv/universitetet/information-om-webbplatsen
+22,5,footer-links-fi,Anna palautetta,https://www.helsinki.fi/fi/anna-palautetta
+23,5,footer-links-en,Give Feedback,https://www.helsinki.fi/en/give-feedback
+24,5,footer-links-sv,Ge respons,https://www.helsinki.fi/sv/ge-respons
+25,0,main-menu-en,Weboodi,https://weboodi.helsinki.fi/hy/alkusivu.jsp?Kieli=6
+26,1,main-menu-en,Course search,https://courses.helsinki.fi/search
+27,2,main-menu-en,Guide,internal:/
+28,3,main-menu-en,Opinder,https://opinder.helsinki.fi
+29,4,main-menu-en,Login,internal:/saml/login
+30,5,main-menu-en,Logout,internal:/saml/logout
+31,0,main-menu-fi,Weboodi,https://weboodi.helsinki.fi/hy/alkusivu.jsp?Kieli=1
+32,1,main-menu-fi,Hae opetusta,https://courses.helsinki.fi/fi/search
+33,2,main-menu-fi,Guide,internal:/
+34,3,main-menu-fi,Opinder,https://opinder.helsinki.fi
+35,4,main-menu-fi,Login,internal:/saml/login
+36,5,main-menu-fi,Logout,internal:/saml/logout
+37,0,main-menu-sv,Weboodi,https://weboodi.helsinki.fi/hy/alkusivu.jsp?Kieli=2
+38,1,main-menu-sv,Sök undervisning,https://courses.helsinki.fi/sv/search
+39,2,main-menu-sv,Guide,internal:/
+40,3,main-menu-sv,Opinder,https://opinder.helsinki.fi
+41,4,main-menu-sv,Login,internal:/saml/login
+42,5,main-menu-sv,Logout,internal:/saml/logout

@@ -1,0 +1,6 @@
+uhsg_role_auto_assign.uhsg_role_auto_assign_settings:
+  title: 'Role auto assign'
+  parent: user.admin_index
+  description: 'Configure role auto assign'
+  weight: -10
+  route_name: uhsg_role_auto_assign.settings

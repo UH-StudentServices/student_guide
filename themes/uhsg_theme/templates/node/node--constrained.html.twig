@@ -91,6 +91,6 @@
     {{ content.field_news_degree_programme }}
   </div>
   <div class="box-story__content">
-    <a href="{{ url }}"> {{ body|striptags }} </a>
+    <a href="{{ url }}"> {{ body|striptags|raw }} </a>
   </div>
 </article>

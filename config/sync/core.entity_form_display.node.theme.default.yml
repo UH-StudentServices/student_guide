@@ -5,11 +5,13 @@ dependencies:
   config:
     - field.field.node.theme.body
     - field.field.node.theme.field_theme_articles
+    - field.field.node.theme.field_theme_faq
     - field.field.node.theme.field_theme_teaser_image
     - image.style.thumbnail
     - node.type.theme
   module:
     - image
+    - paragraphs
     - path
     - text
 id: node.theme.default
@@ -38,6 +40,17 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+  field_theme_faq:
+    type: entity_reference_paragraphs
+    weight: 34
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: preview
+      add_mode: button
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
   field_theme_teaser_image:
     weight: 33
     settings:
@@ -76,6 +89,8 @@ content:
     third_party_settings: {  }
   translation:
     weight: 10
+    settings: {  }
+    third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
     weight: 5

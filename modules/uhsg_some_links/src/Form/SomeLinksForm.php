@@ -16,12 +16,7 @@ class SomeLinksForm extends ContentEntityForm {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    /* @var $entity \Drupal\uhsg_some_links\Entity\SomeLinks */
-    $form = parent::buildForm($form, $form_state);
-
-    $entity = $this->entity;
-
-    return $form;
+    return parent::buildForm($form, $form_state);
   }
 
   /**

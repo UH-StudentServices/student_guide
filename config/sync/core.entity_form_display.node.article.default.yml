@@ -18,7 +18,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 31
+    weight: 8
     settings:
       rows: 9
       summary_rows: 3
@@ -26,11 +26,11 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 3
     settings: {  }
     third_party_settings: {  }
   field_article_degree_programme:
-    weight: 33
+    weight: 9
     settings:
       match_operator: CONTAINS
       size: 60
@@ -39,50 +39,51 @@ content:
     type: entity_reference_autocomplete
   field_article_paragraph:
     type: entity_reference_paragraphs
-    weight: 32
+    weight: 10
     settings:
       title: Paragraph
       title_plural: Paragraphs
       edit_mode: preview
       add_mode: button
       form_display_mode: default
+      default_paragraph_type: _none
     third_party_settings: {  }
   langcode:
     type: language_select
-    weight: 2
+    weight: 1
     settings: {  }
     third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 7
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 15
+    weight: 5
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 16
+    weight: 6
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: -5
+    weight: 0
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 10
+    weight: 4
     settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 2
     settings:
       match_operator: CONTAINS
       size: 60

@@ -3,6 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_oodi_uid
+    - field.field.user.user.field_student_number
     - field.field.user.user.field_study_rights
   module:
     - path
@@ -13,11 +15,29 @@ bundle: user
 mode: default
 content:
   account:
-    weight: -10
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
   contact:
-    weight: 5
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+  field_oodi_uid:
+    type: string_textfield
+    weight: 8
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_student_number:
+    weight: 7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
   field_study_rights:
-    weight: 31
+    weight: 6
     settings:
       match_operator: CONTAINS
       size: 60
@@ -25,15 +45,21 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
   google_analytics:
-    weight: 3
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
   language:
-    weight: 0
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 5
     settings: {  }
     third_party_settings: {  }
   timezone:
-    weight: 6
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   langcode: true

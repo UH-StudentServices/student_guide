@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_article_paragraph
     - node.type.article
+    - paragraphs.paragraphs_type.paragraph
   module:
     - entity_reference_revisions
 id: node.article.field_article_paragraph
@@ -20,5 +21,13 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    target_bundles: null
+    target_bundles:
+      paragraph: paragraph
+    target_bundles_drag_drop:
+      accordion:
+        weight: 3
+        enabled: false
+      paragraph:
+        enabled: true
+        weight: 4
 field_type: entity_reference_revisions

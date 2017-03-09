@@ -10,6 +10,9 @@ uhsg_service_provider_details.settings:
     logo_path:
       type: text
       label: 'Target link path from logo'
+    home_path:
+      type: text
+      label: 'Home link path'
     copyright_text:
       type: text
       label: 'Copyright text'

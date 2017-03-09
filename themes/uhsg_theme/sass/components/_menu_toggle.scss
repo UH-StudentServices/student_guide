@@ -1,0 +1,53 @@
+// Burger menu button
+.nav-toggle {
+  align-items: center;
+  background: $black;
+  display: flex;
+  font-size: 0;
+  flex-shrink: 0;
+  height: 70px;
+  justify-content: center;
+  position: relative;
+  width: 70px;
+  z-index: 15;
+
+  span {
+    background: $white;
+    display: block;
+    height: 4px;
+    width: 24px;
+
+    &:after,
+    &:before {
+      background-color: $white;
+      content: "";
+      display: block;
+      height: 4px;
+      position: absolute;
+      transition-duration: 0.1s;
+      transition-property: all;
+      width: inherit;
+    }
+
+    &:before {
+      transform: translateY(-7px);
+    }
+
+    &:after {
+      transform: translateY(7px);
+    }
+  }
+
+  &.active {
+    span {
+      &:after,
+      &:before {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  @include breakpoint($small) {
+    display: none;
+  }
+}

@@ -1,0 +1,13 @@
+sortable:
+  version: 1.x
+  js:
+    /libraries/Sortable/Sortable.min.js: {}
+
+theme_sort:
+  version: 1.x
+  js:
+    js/theme_sort.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/modernizr

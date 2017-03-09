@@ -47,17 +47,11 @@
 
 {% block content %}
   {% if not label_hidden %}
-    <h3{{ title_attributes }}>{{ label }}</h3>
+    <h4{{ title_attributes.addClass('tube') }}>{{ label }}</h4>
   {% endif %}
-  {% if nowrapper %}
+  <div{{ attributes.addClass(classes) }}>
     {% for item in items %}
       {{ item.content }}
     {% endfor %}
-  {% else %}
-    <div{{ attributes.addClass(classes) }}>
-      {% for item in items %}
-        {{ item.content }}
-      {% endfor %}
-    </div>
-  {% endif %}
+  </div>
 {% endblock %}

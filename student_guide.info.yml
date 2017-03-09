@@ -6,17 +6,20 @@ core: 8.x
 dependencies:
   - admin_toolbar
   - block
+  - block_content
+  - block_access
   - ckeditor
   - config
   - contextual
+  - content_translation
   - datetime
   - dblog
   - dynamic_page_cache
-  - easy_breadcrumb
   - field_ui
   - google_analytics_reports
   - honeypot
   - image
+  - language
   - menu_ui
   - menu_link_content
   - node
@@ -30,10 +33,13 @@ dependencies:
   - uhsg_active_degree_programme
   - uhsg_article
   - uhsg_cookie_consent
+  - uhsg_edit
   - uhsg_feedback
   - uhsg_news
   - uhsg_service_provider_details
+  - uhsg_samlauth
   - uhsg_some_links
+  - uhsg_themes
   - uhsg_top_content
   - views
   - views_ui

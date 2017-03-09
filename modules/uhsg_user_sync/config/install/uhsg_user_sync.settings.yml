@@ -1,0 +1,5 @@
+code_field_name: 'field_code'
+oodiUID_field_name: 'field_oodi_uid'
+primary_field_name: 'field_primary'
+studentID_field_name: 'field_student_number'
+technical_condition_field_name: 'field_applied_by_study_rights'

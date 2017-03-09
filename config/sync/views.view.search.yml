@@ -537,9 +537,9 @@ display:
             remember: false
             multiple: false
             remember_roles:
+              anonymous: anonymous
               authenticated: authenticated
-              anonymous: '0'
-              content_editor: '0'
+              content_editor: content_editor
           is_grouped: false
           group_info:
             label: ''
@@ -608,7 +608,7 @@ display:
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
-      use_ajax: true
+      use_ajax: false
       filter_groups:
         operator: AND
         groups:

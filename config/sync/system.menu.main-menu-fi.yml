@@ -1,0 +1,8 @@
+uuid: 202b0b67-c2ea-41c8-ad79-60d1568c5e7e
+langcode: fi
+status: true
+dependencies: {  }
+id: main-menu-fi
+label: 'Main menu FI'
+description: ''
+locked: false

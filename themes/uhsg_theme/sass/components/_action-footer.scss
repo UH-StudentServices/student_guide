@@ -1,7 +1,15 @@
-.last-updated {
-  @include font-size(14px);
-  line-height: 60px;
-  @include breakpoint($small) {
-    padding-left: 40px;
+.l-action-footer {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  .last-updated {
+    @include font-size(14px);
+    line-height: 60px;
+    @include breakpoint($small) {
+      padding-left: 40px;
+    }
+  }
+  #up-anchor {
+    padding-top: 35px;
   }
 }

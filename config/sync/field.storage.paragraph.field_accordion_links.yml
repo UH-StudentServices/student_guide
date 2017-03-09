@@ -1,0 +1,19 @@
+uuid: 837e47b3-034d-419c-8929-9f9bebc565d6
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - paragraphs
+id: paragraph.field_accordion_links
+field_name: field_accordion_links
+entity_type: paragraph
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
