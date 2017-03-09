@@ -5,7 +5,7 @@
       var mainUl = $('.main-menu > ul'),
           menuToggle = $('#menu-toggle'),
           breakpoints = settings.breakpoints,
-          avatar = $('.main-menu__avatar'),
+          avatar = $('.avatar'),
           avatarMobileMenu = $('.block-language .links'),
           avatarDesktopMenu = $('.main-menu .menu');
 

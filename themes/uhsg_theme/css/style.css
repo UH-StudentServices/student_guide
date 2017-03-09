@@ -7459,6 +7459,33 @@ ul.pager > li.pager__page a {
   padding-top: 35px;
 }
 
+li.avatar {
+  position: relative;
+  left: 1em;
+}
+
+li.avatar a {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+li.avatar img {
+  background-color: rgba(123, 70, 163, 0.45);
+  height: 3.3em;
+  width: 3.3em;
+}
+
+@media (min-width: 48em) {
+  li.avatar img {
+    height: 3em;
+    width: 3em;
+  }
+}
+
+li.avatar.avatar--default img {
+  padding: 0.75em;
+}
+
 .cc_banner-wrapper {
   z-index: 9001;
   position: relative;
@@ -8014,21 +8041,6 @@ input[type="submit"].button--reset + i {
     transition: opacity 0.2s ease;
     padding-left: 1em;
   }
-}
-
-.main-menu li.main-menu__avatar a {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
-.main-menu li.main-menu__avatar img {
-  background-color: rgba(123, 70, 163, 0.45);
-  height: 3em;
-  width: 3em;
-}
-
-.main-menu li.main-menu__avatar.main-menu__avatar--default img {
-  padding: 0.75em;
 }
 
 .nav-toggle {

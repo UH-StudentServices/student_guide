@@ -33,18 +33,4 @@
       }
     }
   }
-  li.main-menu__avatar {
-    a {
-      padding-top: 0;
-      padding-bottom: 0;
-    }
-    img {
-      background-color: rgba(#7b46a3, .45);
-      height: 3em;
-      width: 3em;
-    }
-    &.main-menu__avatar--default img {
-      padding: 0.75em;
-    }
-  }
 }
