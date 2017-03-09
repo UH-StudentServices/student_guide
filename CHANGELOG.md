@@ -9,6 +9,9 @@
 * Fixed degree programme filtering (HUB-154)
 * Removed default paragraph when creating new article or theme (HUB-160)
 
+Installation instructions:
+  * Import translations
+  * Add Google Analytics Reports API settings
 
 ## 1.0-rc0
 Release date: 02.03.2017
