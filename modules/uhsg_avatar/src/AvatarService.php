@@ -12,21 +12,8 @@ use Drupal\user\Entity\User;
 
 class AvatarService {
 
-  private function getApiUrl($oodi_uid) {
-    $api_base_url = \Drupal::config('uhsg_avatar.config')->get('api_base_url');
-    $api_path = \Drupal::config('uhsg_avatar.config')->get('api_path');
-    return $api_base_url . $api_path . $oodi_uid;
-  }
-
-  private function getOodiUid() {
-    if (\Drupal::currentUser()->isAuthenticated()) {
-      $user = User::load(\Drupal::currentUser()->id());
-      return $user->get('field_oodi_uid')->getString();
-    }
-  }
-
   /**
-   * check if image is default.
+   * Check if the image is default image.
    */
   public function isDefault($url) {
     return $url == \Drupal::config('uhsg_avatar.config')->get('default_image_url');
@@ -54,5 +41,18 @@ class AvatarService {
         return NULL;
       }
     }
+  }
+
+  private function getOodiUid() {
+    if (\Drupal::currentUser()->isAuthenticated()) {
+      $user = User::load(\Drupal::currentUser()->id());
+      return $user->get('field_oodi_uid')->getString();
+    }
+  }
+
+  private function getApiUrl($oodi_uid) {
+    $api_base_url = \Drupal::config('uhsg_avatar.config')->get('api_base_url');
+    $api_path = \Drupal::config('uhsg_avatar.config')->get('api_path');
+    return $api_base_url . $api_path . $oodi_uid;
   }
 }
