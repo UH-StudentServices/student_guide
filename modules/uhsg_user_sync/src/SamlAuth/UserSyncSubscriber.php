@@ -182,13 +182,15 @@ class UserSyncSubscriber implements EventSubscriberInterface {
   protected function clearTechnicalDegreeProgrammes(SamlAuthUserSyncEvent $event) {
     $flags = $this->flagService->getUsersFlags($event->getAccount());
     $cleared = 0;
+    $technical_condition_field_name = $this->config->get('technical_condition_field_name');
+
     foreach ($flags as $flag) {
       if ($flag->bundle() == 'my_degree_programmes') {
         $flaggings = $this->flagService->getFlagFlaggings($flag, $event->getAccount());
         foreach ($flaggings as $flagging) {
           /** @var FlaggingInterface $flagging */
-          if ($flagging->hasField($this->config->get('technical_condition_field_name'))) {
-            if ($flagging->get($this->config->get('technical_condition_field_name'))->first()->getValue()) {
+          if ($flagging->hasField($technical_condition_field_name)) {
+            if ($flagging->get($technical_condition_field_name)->first()->getValue()) {
               // Deletes user´s flaggings that was programmatically created,
               // which is tracked by the hidden boolean field.
               $flagging->delete();
@@ -223,6 +225,9 @@ class UserSyncSubscriber implements EventSubscriberInterface {
 
     // Map study rights to known degree programmes and create flaggings
     if ($study_rights = $this->oprekService->getStudyRights($student_number)) {
+      $technical_condition_field_name = $this->config->get('technical_condition_field_name');
+      $primary_field_name = $this->config->get('primary_field_name');
+
       foreach ($study_rights as $study_right) {
         foreach ($study_right->getElements() as $element) {
           if (isset($known_degree_programmes[$element->getCode()])) {
@@ -239,13 +244,13 @@ class UserSyncSubscriber implements EventSubscriberInterface {
 
             // Load the flagging, so we can set some field values
             // If "technical condition" field exists, set it to TRUE
-            if ($flagging->hasField($this->config->get('technical_condition_field_name'))) {
-              $flagging->set($this->config->get('technical_condition_field_name'), TRUE);
+            if ($flagging->hasField($technical_condition_field_name)) {
+              $flagging->set($technical_condition_field_name, TRUE);
 
               // If study right is in 'primary' state and primary field
               // exists, then set the priary to TRUE.
-              if ($study_right->getState() == StudyRight::STATE_PRIMARY && $flagging->hasField($this->config->get('primary_field_name'))) {
-                $flagging->set($this->config->get('primary_field_name'), TRUE);
+              if ($study_right->getState() == StudyRight::STATE_PRIMARY && $flagging->hasField($primary_field_name)) {
+                $flagging->set($primary_field_name, TRUE);
               }
 
               // And save the flagging
@@ -268,10 +273,12 @@ class UserSyncSubscriber implements EventSubscriberInterface {
    */
   protected function getAllKnownDegreeProgrammes() {
     $known_degree_programmes = [];
+    $code_field_name = $this->config->get('code_field_name');
+
     foreach ($this->entityTypeManager->getStorage('taxonomy_term')->loadMultiple() as $term) {
       /** @var Term $term */
-      if ($term->hasField($this->config->get('code_field_name')) && !$term->get($this->config->get('code_field_name'))->isEmpty()) {
-        $code = $term->get($this->config->get('code_field_name'))->first()->getString();
+      if ($term->hasField($code_field_name) && !$term->get($code_field_name)->isEmpty()) {
+        $code = $term->get($code_field_name)->first()->getString();
         $known_degree_programmes[$code] = $term;
       }
     }
