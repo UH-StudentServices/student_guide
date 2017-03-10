@@ -2,6 +2,7 @@
 
 namespace Drupal\uhsg_avatar;
 
+use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Config\ConfigFactory;
 use Drupal\Core\Config\ImmutableConfig;
 use Drupal\Core\Logger\LoggerChannel;
@@ -10,6 +11,12 @@ use Drupal\user\Entity\User;
 use GuzzleHttp\Client;
 
 class AvatarService {
+
+  const CACHE_EXPIRE_SECONDS = 21600; // 6 hours.
+  const CACHE_KEY_PREFIX = 'avatar-';
+
+  /** @var CacheBackendInterface */
+  protected $cache;
 
   /** @var Client */
   protected $client;
@@ -26,11 +33,12 @@ class AvatarService {
   /** @var LoggerChannel */
   protected $logger;
 
-  public function __construct(ConfigFactory $configFactory, AccountProxyInterface $currentUser, Client $client, LoggerChannel $logger) {
+  public function __construct(ConfigFactory $configFactory, AccountProxyInterface $currentUser, Client $client, LoggerChannel $logger, CacheBackendInterface $cache) {
     $this->config = $configFactory->get('uhsg_avatar.config');
     $this->currentUser = $currentUser;
     $this->client = $client;
     $this->logger = $logger;
+    $this->cache = $cache;
   }
 
   /**
@@ -48,25 +56,35 @@ class AvatarService {
    */
   public function getAvatar() {
     $oodiUid = $this->getOodiUid();
-    $apiUrl = $this->getApiUrl($oodiUid);
-    $avatarUrl = NULL;
+    $avatarUrl = $this->getAvatarUrlFromCache($oodiUid);
 
-    if ($apiUrl && $oodiUid) {
-      try {
-        $apiResponse = $this->client->get($apiUrl);
+    if (!$avatarUrl) {
+      $apiUrl = $this->getApiUrl($oodiUid);
 
-        if ($apiResponse->getStatusCode() == 200) {
-          $body = $apiResponse->getBody();
-          $decodedBody = json_decode($body);
-          $avatarUrl = $decodedBody->avatarImageUrl;
+      if ($apiUrl) {
+        try {
+          $apiResponse = $this->client->get($apiUrl);
+
+          if ($apiResponse->getStatusCode() == 200) {
+            $body = $apiResponse->getBody();
+            $decodedBody = json_decode($body);
+            $avatarUrl = $decodedBody->avatarImageUrl;
+            $this->setAvatarUrlToCache($oodiUid, $avatarUrl);
+          }
+        } catch (\Exception $e) {
+          $this->logger->error($e->getMessage());
         }
-      }
-      catch (\Exception $e) {
-        $this->logger->error($e->getMessage());
       }
     }
 
     return $avatarUrl;
+  }
+
+  private function getAvatarUrlFromCache($oodiUid) {
+    $cacheKey = $this->getCacheKey($oodiUid);
+    $avatarUrl = $cacheKey ? $this->cache->get($cacheKey) : NULL;
+
+    return $avatarUrl ? $avatarUrl->data : NULL;
   }
 
   private function getOodiUid() {
@@ -86,6 +104,18 @@ class AvatarService {
     $apiBaseUrl = $this->config->get('api_base_url');
     $apiPath = $this->config->get('api_path');
 
-    return $apiBaseUrl . $apiPath . $oodiUid;
+    return isset($apiBaseUrl, $apiPath, $oodiUid) ? $apiBaseUrl . $apiPath . $oodiUid : NULL;
+  }
+
+  private function setAvatarUrlToCache($oodiUid, $avatarUrl) {
+    $this->cache->set($this->getCacheKey($oodiUid), $avatarUrl, $this->getCacheExpireTimestamp());
+  }
+
+  private function getCacheKey($oodiUid) {
+    return $oodiUid ? self::CACHE_KEY_PREFIX . $oodiUid : NULL;
+  }
+
+  private function getCacheExpireTimestamp() {
+    return REQUEST_TIME + self::CACHE_EXPIRE_SECONDS;
   }
 }
