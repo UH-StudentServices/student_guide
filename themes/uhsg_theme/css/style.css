@@ -7536,7 +7536,7 @@ li.avatar.avatar--default img {
 .degree-programme-switcher {
   position: relative;
   z-index: 100;
-  margin: 1em 0;
+  margin-top: 1em;
   background: #FFF;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7988,7 +7988,8 @@ input[type="submit"].button--reset + i {
 }
 
 .list-of-links__compact .list-of-links__link {
-  padding: 0.3em 0;
+  padding-top: 0.4em;
+  padding-bottom: 0.4em;
 }
 
 @media (min-width: 48em) {
@@ -8173,6 +8174,15 @@ h1, h2, h3, h4, legend {
   }
 }
 
+@media (max-width: 48em) {
+  .view-search .col-main {
+    margin-bottom: 30px;
+  }
+  .view-search .col-right {
+    margin-bottom: 15px;
+  }
+}
+
 .view-search .view-filters {
   position: relative;
 }
@@ -8203,15 +8213,19 @@ h1, h2, h3, h4, legend {
 }
 
 .view-search .view-filters .form-actions {
-  margin-top: 1em;
+  margin-top: 30px;
 }
 
 .view-search .view-header .top-searches li:last-child {
   display: none;
 }
 
+.view-search .view-header #my-searches .list-of-links__compact {
+  margin-bottom: 0;
+}
+
 .view-search .view-result {
-  margin: 2em 0 1em 0;
+  margin-bottom: 15px;
 }
 
 .ui-autocomplete {
