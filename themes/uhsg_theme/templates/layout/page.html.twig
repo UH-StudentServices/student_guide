@@ -63,7 +63,7 @@
 
 <main role="main" {{ attributes.addClass(container_classes) }}>
   <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
-  {% if not node %}
+  {% if not node and not is_front %}
     <h1>{{ page['#title']|raw }}</h1>
   {% endif %}
   {{ page.content }}

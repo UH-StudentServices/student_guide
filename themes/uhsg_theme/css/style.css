@@ -8174,18 +8174,7 @@ h1, h2, h3, h4, legend {
 }
 
 .view-search .view-filters {
-  -webkit-flex: 1 100%;
-      -ms-flex: 1 100%;
-          flex: 1 100%;
   position: relative;
-}
-
-@media (min-width: 48em) {
-  .view-search .view-filters {
-    -webkit-flex: 0 62%;
-        -ms-flex: 0 62%;
-            flex: 0 62%;
-  }
 }
 
 .view-search .view-filters input.form-autocomplete {
@@ -8215,20 +8204,6 @@ h1, h2, h3, h4, legend {
 
 .view-search .view-filters .form-actions {
   margin-top: 1em;
-}
-
-.view-search .view-header {
-  -webkit-flex: 1 100%;
-      -ms-flex: 1 100%;
-          flex: 1 100%;
-}
-
-@media (min-width: 48em) {
-  .view-search .view-header {
-    -webkit-flex: 0 35%;
-        -ms-flex: 0 35%;
-            flex: 0 35%;
-  }
 }
 
 .view-search .view-header .top-searches li:last-child {
