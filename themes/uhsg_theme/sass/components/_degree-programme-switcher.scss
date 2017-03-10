@@ -75,6 +75,7 @@
             &:before {
               @include icon($icon-favorites);
               @include font-size(16px);
+              display: block;
               margin-right: 1em;
             }
           }
