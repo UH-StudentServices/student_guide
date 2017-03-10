@@ -55,7 +55,7 @@
 
   {% if header %}
     <div class="view-header">
-      {% if header.view %}
+      {% if header.view['#rows'] %}
         <h3> {{ 'Top content'|trans }} </h3>
         {{ header.view }}
       {% endif %}

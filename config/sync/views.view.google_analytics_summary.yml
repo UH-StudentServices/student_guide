@@ -1471,6 +1471,7 @@ display:
           validate_options: {  }
           plugin_id: google_analytics_argument
           custom_field_number: '1'
+      block_hide_empty: true
     cache_metadata:
       max-age: 0
       contexts:

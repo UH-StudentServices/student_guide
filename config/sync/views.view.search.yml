@@ -578,7 +578,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          empty: true
+          empty: false
           view_to_insert: 'google_analytics_summary:top_searches_block'
           inherit_arguments: false
           plugin_id: view
