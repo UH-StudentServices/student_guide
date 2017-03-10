@@ -10,6 +10,7 @@
 * Removed default paragraph when creating new article or theme (HUB-160)
 * Show user avatar (HUB-130)
 * Added admin view for default ordering of themes (HUB-161)
+* Disabled search autocomplete because of major usability issues
 
 Installation instructions:
   * Import translations
