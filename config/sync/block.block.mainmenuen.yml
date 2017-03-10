@@ -12,7 +12,7 @@ dependencies:
 id: mainmenuen
 theme: uhsg_theme
 region: navigation
-weight: 0
+weight: -9
 provider: null
 plugin: 'system_menu_block:main-menu-en'
 settings:
