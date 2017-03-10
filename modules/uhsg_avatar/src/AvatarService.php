@@ -57,23 +57,20 @@ class AvatarService {
   public function getAvatar() {
     $oodiUid = $this->getOodiUid();
     $avatarUrl = $this->getAvatarUrlFromCache($oodiUid);
+    $apiUrl = $this->getApiUrl($oodiUid);
 
-    if (!$avatarUrl) {
-      $apiUrl = $this->getApiUrl($oodiUid);
+    if ($apiUrl && !$avatarUrl) {
+      try {
+        $apiResponse = $this->client->get($apiUrl);
 
-      if ($apiUrl) {
-        try {
-          $apiResponse = $this->client->get($apiUrl);
-
-          if ($apiResponse->getStatusCode() == 200) {
-            $body = $apiResponse->getBody();
-            $decodedBody = json_decode($body);
-            $avatarUrl = $decodedBody->avatarImageUrl;
-            $this->setAvatarUrlToCache($oodiUid, $avatarUrl);
-          }
-        } catch (\Exception $e) {
-          $this->logger->error($e->getMessage());
+        if ($apiResponse->getStatusCode() == 200) {
+          $body = $apiResponse->getBody();
+          $decodedBody = json_decode($body);
+          $avatarUrl = $decodedBody->avatarImageUrl;
+          $this->setAvatarUrlToCache($oodiUid, $avatarUrl);
         }
+      } catch (\Exception $e) {
+        $this->logger->error($e->getMessage());
       }
     }
 
