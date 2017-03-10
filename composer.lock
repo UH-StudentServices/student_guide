@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "032cdb0ea3e75d18c58606d5eec557e1",
-    "content-hash": "a17a1ea7b086aeb752bf7b049f085b99",
+    "hash": "d6617768c332ec5122bb4165aeb78201",
+    "content-hash": "15ae4fa68850c31513f54a3bcd774028",
     "packages": [
         {
             "name": "RubaXa/Sortable",
@@ -1245,6 +1245,69 @@
             "homepage": "https://www.drupal.org/project/ctools",
             "support": {
                 "source": "http://cgit.drupalcode.org/ctools"
+            }
+        },
+        {
+            "name": "drupal/draggableviews",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/draggableviews",
+                "reference": "8.x-1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/draggableviews-8.x-1.0.zip",
+                "reference": null,
+                "shasum": "007082c2621b45bd8cf73fe5fdd4d292ee88a458"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0",
+                    "datestamp": "1477076039"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "dixon_",
+                    "homepage": "https://www.drupal.org/user/239911"
+                },
+                {
+                    "name": "ginc",
+                    "homepage": "https://www.drupal.org/user/332249"
+                },
+                {
+                    "name": "iStryker",
+                    "homepage": "https://www.drupal.org/user/303676"
+                },
+                {
+                    "name": "podarok",
+                    "homepage": "https://www.drupal.org/user/116002"
+                },
+                {
+                    "name": "sevi",
+                    "homepage": "https://www.drupal.org/user/199290"
+                },
+                {
+                    "name": "ygerasimov",
+                    "homepage": "https://www.drupal.org/user/257311"
+                }
+            ],
+            "description": "Complete rewrite of D7 draggableviews",
+            "homepage": "https://www.drupal.org/project/draggableviews",
+            "support": {
+                "source": "http://cgit.drupalcode.org/draggableviews"
             }
         },
         {
@@ -7090,16 +7153,16 @@
         },
         {
             "name": "sebastian/recursion-context",
-            "version": "1.0.2",
+            "version": "1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/recursion-context.git",
-                "reference": "913401df809e99e4f47b27cdd781f4a258d58791"
+                "reference": "b19cc3298482a335a95f3016d2f8a6950f0fbcd7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/recursion-context/zipball/913401df809e99e4f47b27cdd781f4a258d58791",
-                "reference": "913401df809e99e4f47b27cdd781f4a258d58791",
+                "url": "https://api.github.com/repos/sebastianbergmann/recursion-context/zipball/b19cc3298482a335a95f3016d2f8a6950f0fbcd7",
+                "reference": "b19cc3298482a335a95f3016d2f8a6950f0fbcd7",
                 "shasum": ""
             },
             "require": {
@@ -7139,7 +7202,7 @@
             ],
             "description": "Provides functionality to recursively process PHP variables",
             "homepage": "http://www.github.com/sebastianbergmann/recursion-context",
-            "time": "2015-11-11 19:50:13"
+            "time": "2016-10-03 07:41:43"
         },
         {
             "name": "sebastian/version",
@@ -7256,16 +7319,16 @@
         },
         {
             "name": "symfony/browser-kit",
-            "version": "v3.2.4",
+            "version": "v3.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/browser-kit.git",
-                "reference": "394a2475a3a89089353fde5714a7f402fbb83880"
+                "reference": "2fe0caa60c1a1dfeefd0425741182687a9b382b8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/browser-kit/zipball/394a2475a3a89089353fde5714a7f402fbb83880",
-                "reference": "394a2475a3a89089353fde5714a7f402fbb83880",
+                "url": "https://api.github.com/repos/symfony/browser-kit/zipball/2fe0caa60c1a1dfeefd0425741182687a9b382b8",
+                "reference": "2fe0caa60c1a1dfeefd0425741182687a9b382b8",
                 "shasum": ""
             },
             "require": {
@@ -7309,20 +7372,20 @@
             ],
             "description": "Symfony BrowserKit Component",
             "homepage": "https://symfony.com",
-            "time": "2017-01-31 21:49:23"
+            "time": "2017-02-21 09:12:04"
         },
         {
             "name": "symfony/config",
-            "version": "v3.2.4",
+            "version": "v3.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/config.git",
-                "reference": "9f99453e77771e629af8a25eeb0a6c4ed1e19da2"
+                "reference": "741d6d4cd1414d67d48eb71aba6072b46ba740c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/config/zipball/9f99453e77771e629af8a25eeb0a6c4ed1e19da2",
-                "reference": "9f99453e77771e629af8a25eeb0a6c4ed1e19da2",
+                "url": "https://api.github.com/repos/symfony/config/zipball/741d6d4cd1414d67d48eb71aba6072b46ba740c2",
+                "reference": "741d6d4cd1414d67d48eb71aba6072b46ba740c2",
                 "shasum": ""
             },
             "require": {
@@ -7365,7 +7428,7 @@
             ],
             "description": "Symfony Config Component",
             "homepage": "https://symfony.com",
-            "time": "2017-02-14 16:27:43"
+            "time": "2017-03-01 18:18:25"
         },
         {
             "name": "symfony/css-selector",
@@ -7422,16 +7485,16 @@
         },
         {
             "name": "symfony/dom-crawler",
-            "version": "v3.2.4",
+            "version": "v3.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dom-crawler.git",
-                "reference": "b814b41373fc4e535aff8c765abe39545216f391"
+                "reference": "403944e294cf4ceb3b8447f54cbad88ea7b99cee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/b814b41373fc4e535aff8c765abe39545216f391",
-                "reference": "b814b41373fc4e535aff8c765abe39545216f391",
+                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/403944e294cf4ceb3b8447f54cbad88ea7b99cee",
+                "reference": "403944e294cf4ceb3b8447f54cbad88ea7b99cee",
                 "shasum": ""
             },
             "require": {
@@ -7474,20 +7537,20 @@
             ],
             "description": "Symfony DomCrawler Component",
             "homepage": "https://symfony.com",
-            "time": "2017-01-21 17:14:11"
+            "time": "2017-02-21 09:12:04"
         },
         {
             "name": "symfony/filesystem",
-            "version": "v3.2.4",
+            "version": "v3.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
-                "reference": "a0c6ef2dc78d33b58d91d3a49f49797a184d06f4"
+                "reference": "bc0f17bed914df2cceb989972c3b996043c4da4a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/filesystem/zipball/a0c6ef2dc78d33b58d91d3a49f49797a184d06f4",
-                "reference": "a0c6ef2dc78d33b58d91d3a49f49797a184d06f4",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/bc0f17bed914df2cceb989972c3b996043c4da4a",
+                "reference": "bc0f17bed914df2cceb989972c3b996043c4da4a",
                 "shasum": ""
             },
             "require": {
@@ -7523,7 +7586,7 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "https://symfony.com",
-            "time": "2017-01-08 20:47:33"
+            "time": "2017-03-06 19:30:27"
         },
         {
             "name": "symfony/finder",
