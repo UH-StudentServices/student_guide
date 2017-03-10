@@ -7794,12 +7794,14 @@ li.avatar.avatar--default img {
   background: #222;
   float: right;
   cursor: pointer;
-  padding: 0.4em 0.6em 0.1em 0.6em;
+  padding: 0.6em 0.6em 0.3em 0.6em;
   text-align: center;
 }
 
 .feedback-form .feedback-form__toggle .feedback-form__icon {
-  display: block;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .feedback-form .feedback-form__toggle.active {
