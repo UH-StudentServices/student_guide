@@ -51,7 +51,7 @@ class AvatarService {
     $apiUrl = $this->getApiUrl($oodiUid);
     $avatarUrl = NULL;
 
-    if ($apiUrl) {
+    if ($apiUrl && $oodiUid) {
       try {
         $apiResponse = $this->client->get($apiUrl);
 
