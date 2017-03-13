@@ -1,6 +1,8 @@
 #Changelog
 
-## 1.0-dev
+## 1.0
+Release date: 13.03.2017
+
 * Fix issues with search autocomplete on mobile devices (HUB-136)
 * Minor security improvements to my searches functionality (HUB-152)
 * Remove theme sorting when using mobile devices (HUB-89)
