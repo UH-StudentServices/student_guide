@@ -1390,7 +1390,7 @@ display:
           default_row_class: true
           type: ul
           wrapper_class: ''
-          class: list-of-links
+          class: list-of-links__compact
       row:
         type: fields
         options:
