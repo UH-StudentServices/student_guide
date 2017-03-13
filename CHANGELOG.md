@@ -11,6 +11,7 @@
 * Show user avatar (HUB-130)
 * Added admin view for default ordering of themes (HUB-161)
 * Disabled search autocomplete because of major usability issues
+* Fixed search to work with paragraph titles and acccordion content (HUB-166)
 
 Installation instructions:
   * Import translations

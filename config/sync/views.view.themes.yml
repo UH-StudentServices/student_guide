@@ -5,7 +5,6 @@ dependencies:
   config:
     - core.entity_view_mode.node.box
     - node.type.theme
-    - system.menu.admin
   module:
     - draggableviews
     - node
@@ -436,13 +435,13 @@ display:
         type: none
         options:
           offset: 0
-      path: admin/structure/theme-ordering
+      path: admin/content/theme-ordering
       menu:
-        type: normal
+        type: tab
         title: 'Theme ordering'
         description: ''
         expanded: false
-        parent: system.admin
+        parent: system.admin_content
         weight: 0
         context: '0'
         menu_name: admin
