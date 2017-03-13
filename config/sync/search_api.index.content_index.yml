@@ -9,6 +9,9 @@ dependencies:
     - field.storage.paragraph.field_paragraph_body
     - field.storage.node.field_article_degree_programme
     - field.storage.node.field_news_degree_programme
+    - field.storage.node.field_theme_faq
+    - field.storage.paragraph.field_accordion_title
+    - field.storage.paragraph.field_accordion_body
     - search_api.server.student_guide
   module:
     - paragraphs
@@ -42,7 +45,7 @@ field_settings:
     label: 'Paragraph » Paragraph » Title'
     datasource_id: 'entity:node'
     property_path: 'field_article_paragraph:entity:field_paragraph_title'
-    type: string
+    type: text
     dependencies:
       config:
         - field.storage.node.field_article_paragraph
@@ -80,6 +83,28 @@ field_settings:
         - field.storage.node.field_news_degree_programme
       module:
         - taxonomy
+  field_accordion_title:
+    label: 'Frequently asked questions » Paragraph » Accordion title'
+    datasource_id: 'entity:node'
+    property_path: 'field_theme_faq:entity:field_accordion_title'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_theme_faq
+        - field.storage.paragraph.field_accordion_title
+      module:
+        - paragraphs
+  field_accordion_body:
+    label: 'Frequently asked questions » Paragraph » Accordion body'
+    datasource_id: 'entity:node'
+    property_path: 'field_theme_faq:entity:field_accordion_body'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_theme_faq
+        - field.storage.paragraph.field_accordion_body
+      module:
+        - paragraphs
 datasource_settings:
   'entity:node':
     bundles:
