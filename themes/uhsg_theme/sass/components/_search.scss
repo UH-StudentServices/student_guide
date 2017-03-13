@@ -1,11 +1,14 @@
 .view-search {
-  .view-filters {
-    flex: 1 100%;
-    position: relative;
-    @include breakpoint($small) {
-      flex: 0 62%;
+  @include breakpoint($mobile-only) {
+    .col-main {
+      margin-bottom: $vert-spacing-unit;
     }
-
+    .col-right {
+      margin-bottom: $vert-spacing-unit / 2;
+    }
+  }
+  .view-filters {
+    position: relative;
     input.form-autocomplete {
       background: none;
       & + .icon-spin {
@@ -27,21 +30,20 @@
     }
 
     .form-actions {
-      margin-top: 1em;
+      margin-top: $vert-spacing-unit;
     }
   }
   .view-header {
-    flex: 1 100%;
-    @include breakpoint($small) {
-      flex: 0 35%;
-    }
     // this empty result can't be removed in the view or in pre_render?
     .top-searches li:last-child {
       display: none;
     }
+    #my-searches .list-of-links__compact {
+      margin-bottom: 0;
+    }
   }
   .view-result {
-    margin: 2em 0 1em 0;
+    margin-bottom: $vert-spacing-unit / 2;
   }
 }
 
