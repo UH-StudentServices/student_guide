@@ -41,29 +41,36 @@
 %}
 
 <div{{ attributes.addClass(classes) }}>
-  {{ title_prefix }}
-  {% if title %}
-    {{ title }}
-  {% endif %}
-  {{ title_suffix }}
-
-  {% if exposed %}
-    <div class="view-filters tube">
-      {{ exposed }}
-    </div>
-  {% endif %}
-
-  {% if header %}
-    <div class="view-header">
-      {% if header.view['#rows'] %}
-        <h3> {{ 'Top content'|trans }} </h3>
-        {{ header.view }}
+  <div class="col-container">
+    <div class="col-main">
+      {{ title_prefix }}
+      {% if title %}
+        <h1 class="is-center-mobile">{{ title }}</h1>
       {% endif %}
-      {{ attach_library('uhsg_search/my-searches') }}
-      <div id="my-searches">
-      </div>
+      {{ title_suffix }}
+
+      {{ frontpagetextblock }}
+
+      {% if exposed %}
+        <div class="view-filters">
+          {{ exposed }}
+        </div>
+      {% endif %}
     </div>
-  {% endif %}
+    <div class="col-right">
+      {% if header %}
+        <div class="view-header">
+          {% if header.view['#rows'] %}
+            <h4> {{ 'Top content'|trans }} </h4>
+            {{ header.view }}
+          {% endif %}
+          {{ attach_library('uhsg_search/my-searches') }}
+          <div id="my-searches">
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
 
   {% if header.result %}
     <div class="view-result is-center-mobile">

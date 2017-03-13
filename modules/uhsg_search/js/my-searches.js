@@ -38,10 +38,10 @@
           content += '<li class="list-of-links__link button--action-before icon--search theme-transparent">' + cleanupString(value) + '</li>';
         });
 
-        var title = '<h3>' + Drupal.t('My Searches') + '</h3>';
+        var title = '<h4>' + Drupal.t('My Searches') + '</h4>';
+        var resetButton = '<a class="button--action icon--remove theme-transparent button--reset">' + Drupal.t('Remove') + '</a>';
         $('#my-searches').empty();
-        $('#my-searches').append(title + '<ul class="list-of-links">' + content + '</ul>');
-        $('#my-searches').append('<a class="button--action icon--remove theme-transparent button--reset">' + Drupal.t('Remove') + '</a>');
+        $('#my-searches').append(title + '<ul class="list-of-links__compact">' + content + resetButton + '</ul>');
 
         // Enable search when clicking one of my searches items.
         $('#my-searches li').on('click', function() {

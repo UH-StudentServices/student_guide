@@ -206,6 +206,13 @@ function uhsg_theme_preprocess_views_view(&$variables) {
       $variables['content_attributes']['class'][] = 'grid-container';
       break;
     case 'search':
+      // add front page text block
+      $block_entity = \Drupal\block_content\Entity\BlockContent::load(1);
+      $block_view = \Drupal::entityTypeManager()->getViewBuilder('block_content')->view($block_entity);
+      if ($block_view) {
+        $variables['frontpagetextblock'] = $block_view;
+      }
+      $variables['title'] = $variables['view']->getTitle();
       $variables['attributes']['class'][] = 'grid-container';
       break;
     case 'news':
