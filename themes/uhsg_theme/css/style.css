@@ -8176,10 +8176,11 @@ h1, h2, h3, h4, legend {
   }
 }
 
+.view-search .col-main {
+  margin-bottom: 30px;
+}
+
 @media (max-width: 48em) {
-  .view-search .col-main {
-    margin-bottom: 30px;
-  }
   .view-search .col-right {
     margin-bottom: 15px;
   }

@@ -1,8 +1,8 @@
 .view-search {
+  .col-main {
+    margin-bottom: $vert-spacing-unit;
+  }
   @include breakpoint($mobile-only) {
-    .col-main {
-      margin-bottom: $vert-spacing-unit;
-    }
     .col-right {
       margin-bottom: $vert-spacing-unit / 2;
     }
