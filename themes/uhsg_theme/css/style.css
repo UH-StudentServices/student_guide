@@ -7323,7 +7323,7 @@ ul.pager > li.pager__page a {
 }
 
 .grid-item {
-  padding-bottom: 30px;
+  padding-bottom: 2em;
   margin-left: auto;
   margin-right: auto;
   display: -webkit-flex;
@@ -8303,6 +8303,7 @@ h1, h2, h3, h4, legend {
 
 .theme--box .theme__link-wrapper {
   height: 100%;
+  width: 100%;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
