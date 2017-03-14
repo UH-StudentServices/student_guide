@@ -54,7 +54,8 @@
     "RubaXa/Sortable": "1.4.0",
     "drupal/facets": "^1.0@alpha",
     "drupal/config_ignore": "^1.3",
-    "drupal/draggableviews": "^1.0"
+    "drupal/draggableviews": "^1.0",
+    "drupal/better_exposed_filters": "3.0-alpha2"
   },
   "repositories": [
     {
