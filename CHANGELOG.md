@@ -2,9 +2,8 @@
 
 ## 1.0-dev
 * Fixed warning message when google analytic reports isn't authorized (HUB-36)
-
 * Improved cache clears for search results to avoid stale results (HUB-168)
-
+* Fix top content always linking to source translation (HUB-36) 
 
 ## 1.0
 Release date: 13.03.2017
