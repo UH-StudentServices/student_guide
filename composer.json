@@ -36,7 +36,7 @@
     "drupal/migrate_tools": "^3.0-beta1",
     "drupal/purge": "^3.0@beta",
     "drupal/purge_purger_http": "^1.0@beta",
-    "drupal/search_api": "^1.0@beta",
+    "drupal/search_api": "1.x-dev#1a29559f9f09b181e5da4b9becf36ae9a41b9440",
     "drupal/search_api_solr": "1.x-dev#7cb30ed5ecbe76171438c668abf1d3e9045cfa81",
     "drupal/search_api_autocomplete": "1.0.0-alpha1",
     "drupal/contact_ajax": "^1.4@beta",
