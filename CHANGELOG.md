@@ -1,7 +1,7 @@
 #Changelog
 
 ## 1.0-dev
-
+* Fix top content always linking to source translation (HUB-36) 
 
 ## 1.0
 Release date: 13.03.2017
