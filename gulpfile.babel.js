@@ -11,8 +11,8 @@ import eslint from 'gulp-eslint';
 
 const rootDir = process.cwd();
 const paths = {
-  theme: rootDir + '/themes/uhsg_theme',
-  modules: rootDir + '/modules'
+  theme: `${rootDir}/themes/uhsg_theme`,
+  modules: `${rootDir}/modules`
 };
 
 const browserSyncProxyTarget = 'https://local.guide.student.helsinki.fi';
@@ -21,8 +21,8 @@ const sass_config = {
   importer: globbing,
   outputStyle: 'expanded',
   includePaths: [
-    'node_modules/normalize.css/',
-    'node_modules/breakpoint-sass/stylesheets/'
+    `${rootDir}/node_modules/normalize.css/`,
+    `${rootDir}/node_modules/breakpoint-sass/stylesheets/`
   ]
 };
 
@@ -80,7 +80,7 @@ gulp.task('browsersync', ['watch'], () => {
 
 // Linting
 gulp.task('lint', () => {
-  return gulp.src([paths.theme + '/**/*.js', paths.modules + '/**/*.js', '!**/node_modules/**', '!**/bower_components/**'])
+  return gulp.src([`${paths.theme}/**/*.js`, `${paths.modules}/**/*.js`, '!**/node_modules/**', '!**/bower_components/**'])
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(eslint.failAfterError());
