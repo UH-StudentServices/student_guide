@@ -46,9 +46,6 @@
     min-height: 1px;
     background: $white;
     .view-degree-programmes {
-      .view-filters {
-        flex-shrink: 0;
-      }
       .view-content {
         @include scrollbar;
         > div {
@@ -85,7 +82,8 @@
         }
       }
     }
-    .button--reset {
+    .button--reset,
+    > h4 {
       flex-shrink: 0;
     }
     // TODO: get rid of this silly container
