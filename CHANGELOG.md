@@ -6,7 +6,7 @@
 * Fix top content always linking to source translation (HUB-36)
 * Changed two login/logout links into one logical menu item per menu (HUB-105)
 
-Installation instrcutions:
+Installation instructions:
   - Remove login/logout links from all main menus prior to installation
 
 
