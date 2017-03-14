@@ -1,6 +1,11 @@
 #Changelog
 
 ## 1.0-dev
+
+
+## 1.0
+Release date: 13.03.2017
+
 * Fix issues with search autocomplete on mobile devices (HUB-136)
 * Minor security improvements to my searches functionality (HUB-152)
 * Remove theme sorting when using mobile devices (HUB-89)
@@ -13,9 +18,6 @@
 * Disabled search autocomplete because of major usability issues
 * Fixed search to work with paragraph titles and acccordion content (HUB-166)
 
-Installation instructions:
-  * Import translations
-  * Add Google Analytics Reports API settings
 
 ## 1.0-rc0
 Release date: 02.03.2017
@@ -53,15 +55,6 @@ Release date: 02.03.2017
 * Changed logout link to an icon link (HUB-131)
 * Removed mobile input focus zoom in search (HUB-133)
 * Removed input focus zoom in degree programme switcher for devices (HUB-121)
-
-Installation instructions:
-  * After installation run:
-    ```
-    drush mi degree_programmes_translation && drush mi degree_programmes
-    ```
-  * Import translations
-  * Add SSO groups to Drupal role mappings at admin/config/people/role-auto-assign
-    (see the environment specific settings.php files for the intended groups and roles)
     
 
 ## 1.0-beta1
