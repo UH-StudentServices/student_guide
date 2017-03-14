@@ -2,6 +2,8 @@
 
 ## 1.0-dev
 
+* Improved cache clears for search results to avoid stale results (HUB-168)
+
 
 ## 1.0
 Release date: 13.03.2017
