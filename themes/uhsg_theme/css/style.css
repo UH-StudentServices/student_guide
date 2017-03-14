@@ -8131,7 +8131,8 @@ input[type="submit"].button--reset + i {
           animation: icon-spin 2s infinite linear;
 }
 
-h1, h2, h3, h4, legend {
+h1, h2, h3, h4, legend,
+.box-story__content {
   -webkit-hyphens: auto;
   -ms-hyphens: auto;
       hyphens: auto;
