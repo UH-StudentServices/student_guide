@@ -1,0 +1,402 @@
+diff --git a/google_analytics_reports_api/config/install/google_analytics_reports_api.settings.yml b/google_analytics_reports_api/config/install/google_analytics_reports_api.settings.yml
+index ad76a68..bf28236 100644
+--- a/google_analytics_reports_api/config/install/google_analytics_reports_api.settings.yml
++++ b/google_analytics_reports_api/config/install/google_analytics_reports_api.settings.yml
+@@ -1,9 +1,5 @@
+-access_token: ''
+ cache_length: 259200
+ client_id: ''
+ client_secret: ''
+ default_page: ''
+-expires_at: 0
+ profile_id: 0
+-redirect_uri: ''
+-refresh_token: ''
+diff --git a/google_analytics_reports_api/config/schema/google_analytics_reports_api.schema.yml b/google_analytics_reports_api/config/schema/google_analytics_reports_api.schema.yml
+index d4595f5..1696460 100644
+--- a/google_analytics_reports_api/config/schema/google_analytics_reports_api.schema.yml
++++ b/google_analytics_reports_api/config/schema/google_analytics_reports_api.schema.yml
+@@ -4,9 +4,6 @@ google_analytics_reports_api.settings:
+   type: config_object
+   label: 'Google Analytics Reports API settings'
+   mapping:
+-    access_token:
+-      type: string
+-      label: 'Access token from Google Analytics API'
+     cache_length:
+       type: integer
+       label: 'Query cache length'
+@@ -19,15 +16,6 @@ google_analytics_reports_api.settings:
+     default_page:
+       type: string
+       label: 'Default page for selected profile'
+-    expires_at:
+-      type: integer
+-      label: 'Token will work before this timestamp'
+     profile_id:
+       type: integer
+       label: 'Google Analytics profile ID'
+-    redirect_uri:
+-      type: string
+-      label: 'Redirect URI for Google Aanalytics API'
+-    refresh_token:
+-      type: string
+-      label: 'Google Analytics API refresh token'
+diff --git a/google_analytics_reports_api/google_analytics_reports_api.install b/google_analytics_reports_api/google_analytics_reports_api.install
+index 56d9578..f347273 100644
+--- a/google_analytics_reports_api/google_analytics_reports_api.install
++++ b/google_analytics_reports_api/google_analytics_reports_api.install
+@@ -12,7 +12,7 @@ use Drupal\Core\Url;
+ function google_analytics_reports_api_requirements($phase) {
+   $requirements = [];
+   if ($phase == 'runtime') {
+-    $access_token = \Drupal::config('google_analytics_reports_api.settings')->get('access_token');
++    $access_token = \Drupal::state()->get('google_analytics_reports_api.access_token');
+     $value = ($access_token) ? t('You have successfully authorized.') :
+       t('You must <a href="@url">authorize</a> Drupal to use your Google Analytics account before you can view reports.', [
+       '@url' => Url::fromRoute('google_analytics_reports_api.settings')
+@@ -28,3 +28,31 @@ function google_analytics_reports_api_requirements($phase) {
+ 
+   return $requirements;
+ }
++
++/**
++ * Move the access_token, expires_at and refresh_token from config to state.
++ */
++function google_analytics_reports_api_update_8001() {
++  $config = \Drupal::configFactory()->getEditable('google_analytics_reports_api.settings');
++  $state = \Drupal::state();
++
++  $access_token = $config->get('access_token');
++  if ($access_token) {
++    $state->set('google_analytics_reports_api.access_token', $access_token);
++    $config->clear('access_token');
++  }
++
++  $expires_at = $config->get('expires_at');
++  if ($expires_at) {
++    $state->set('google_analytics_reports_api.expires_at', $expires_at);
++    $config->clear('expires_at');
++  }
++
++  $refresh_token = $config->get('refresh_token');
++  if ($refresh_token) {
++    $state->set('google_analytics_reports_api.refresh_token', $refresh_token);
++    $config->clear('refresh_token');
++  }
++
++  $config->save();
++}
+\ No newline at end of file
+diff --git a/google_analytics_reports_api/google_analytics_reports_api.module b/google_analytics_reports_api/google_analytics_reports_api.module
+index e7ff8ca..cb5e16e 100644
+--- a/google_analytics_reports_api/google_analytics_reports_api.module
++++ b/google_analytics_reports_api/google_analytics_reports_api.module
+@@ -5,9 +5,8 @@
+  * Implements the API through which Google Analytics data can be accessed.
+  */
+ 
+-use Drupal\google_analytics_reports_api\GoogleAnalyticsReportsApiFeed;
+-use Drupal\Core\Cache\CacheableRedirectResponse;
+ use Drupal\Core\Url;
++use Drupal\google_analytics_reports_api\GoogleAnalyticsReportsApiFeed;
+ 
+ /**
+  * Instantiate a new GoogleAnalyticsReportsApiFeed object.
+@@ -17,66 +16,68 @@ use Drupal\Core\Url;
+  *   from the Google Analytics Core Reporting API.
+  */
+ function google_analytics_reports_api_gafeed() {
+-  $config = \Drupal::configFactory()->getEditable('google_analytics_reports_api.settings');
++  $config = \Drupal::configFactory()->get('google_analytics_reports_api.settings');
++  $state = \Drupal::state();
+ 
+   // If the access token is still valid, return an authenticated
+   // GoogleAnalyticsReportsApiFeed.
+-  $access_token = $config->get('access_token');
++  $access_token = $state->get('google_analytics_reports_api.access_token');
+ 
+-  if ($access_token && time() < $config->get('expires_at')) {
++  if ($access_token && time() < $state->get('google_analytics_reports_api.expires_at')) {
+     return new GoogleAnalyticsReportsApiFeed($access_token);
+   }
+   else {
+     // If the site has an access token and refresh token, but the access
+     // token has expired, authenticate the user with the refresh token.
+-    $refresh_token = $config->get('refresh_token');
++    $refresh_token = $state->get('google_analytics_reports_api.refresh_token');
+     if ($refresh_token) {
+       try {
+         $google_analytics_reports_api_feed = new GoogleAnalyticsReportsApiFeed();
+         $google_analytics_reports_api_feed->refreshToken($config->get('client_id'), $config->get('client_secret'), $refresh_token);
+ 
+-        $config
+-          ->set('access_token', $google_analytics_reports_api_feed->accessToken)
+-          ->set('expires_at', $google_analytics_reports_api_feed->expiresAt)
+-          ->save();
++        $state->setMultiple([
++          'google_analytics_reports_api.access_token' => $google_analytics_reports_api_feed->accessToken,
++          'google_analytics_reports_api.expires_at' => $google_analytics_reports_api_feed->expiresAt,
++        ]);
+ 
+         return $google_analytics_reports_api_feed;
+       }
+       catch (\Exception $e) {
+         drupal_set_message(t('There was an authentication error. Message: @message.', ['@message' => $e->getMessage()]), 'error', FALSE);
+         \Drupal::logger('google_analytics_reports_api')->error('There was an authentication error. Message: @message.', ['@message' => $e->getMessage()]);
+-        return NULL;
+-      }
+-    }
+-    else {
+-      // If there is no access token or refresh token and client is returned
+-      // to the config page with an access code, complete the authentication.
+-      if (isset($_GET['code'])) {
+-        try {
+-          $google_analytics_reports_api_feed = new GoogleAnalyticsReportsApiFeed();
+-          $redirect_uri = $config->get('redirect_uri');
+-
+-          $google_analytics_reports_api_feed->finishAuthentication($config->get('client_id'), $config->get('client_secret'), $redirect_uri);
+-
+-          $config
+-            ->set('access_token', $google_analytics_reports_api_feed->accessToken)
+-            ->set('expires_at', $google_analytics_reports_api_feed->expiresAt)
+-            ->set('refresh_token', $google_analytics_reports_api_feed->refreshToken)
+-            ->clear('redirect_uri')
+-            ->save();
+-
+-          drupal_set_message(t('You have been successfully authenticated.'));
+-
+-          $response = new CacheableRedirectResponse(Url::fromUri($redirect_uri)->toString());
+-          $response->send();
+-        }
+-        catch (Exception $e) {
+-          drupal_set_message(t('There was an authentication error. Message: @message.', ['@message' => $e->getMessage()]), 'error', FALSE);
+-          \Drupal::logger('google_analytics_reports_api')->error('There was an authentication error. Message: @message.', ['@message' => $e->getMessage()]);
+-          return NULL;
+-        }
+       }
+     }
++
++    return NULL;
++  }
++}
++
++/**
++ * Finish authentication.
++ */
++function google_analytics_reports_api_authenticate($code) {
++  $config = \Drupal::config('google_analytics_reports_api.settings');
++  $state = \Drupal::state();
++
++  $redirect_uri = Url::fromRoute('google_analytics_reports_api.settings')
++    ->setAbsolute()
++    ->toString();
++
++  try {
++    $google_analytics_reports_api_feed = new GoogleAnalyticsReportsApiFeed();
++    $google_analytics_reports_api_feed->finishAuthentication($config->get('client_id'), $config->get('client_secret'), $redirect_uri);
++
++    $state->setMultiple([
++      'google_analytics_reports_api.access_token' => $google_analytics_reports_api_feed->accessToken,
++      'google_analytics_reports_api.expires_at' => $google_analytics_reports_api_feed->expiresAt,
++      'google_analytics_reports_api.refresh_token' => $google_analytics_reports_api_feed->refreshToken,
++    ]);
++
++    drupal_set_message(t('You have been successfully authenticated.'));
++  }
++  catch (Exception $e) {
++    drupal_set_message(t('There was an authentication error. Message: @message.', ['@message' => $e->getMessage()]), 'error', FALSE);
++    \Drupal::logger('google_analytics_reports_api')->error('There was an authentication error. Message: @message.', ['@message' => $e->getMessage()]);
+   }
+ }
+ 
+@@ -136,18 +137,21 @@ function google_analytics_reports_api_revoke() {
+   $ga_feed->revokeToken();
+ 
+   $config = \Drupal::configFactory()->getEditable('google_analytics_reports_api.settings');
++  $state = \Drupal::state();
++
+   // Delete module variables.
+   $config
+-    ->clear('access_token')
+     ->clear('client_id')
+     ->clear('client_secret')
+     ->clear('default_page')
+-    ->clear('expires_at')
+     ->clear('profile_id')
+-    ->clear('redirect_uri')
+-    ->clear('refresh_token')
+     ->save();
+ 
++  $state->deleteMultiple([
++    'google_analytics_reports_api.access_token',
++    'google_analytics_reports_api.expires_at',
++    'google_analytics_reports_api.refresh_token',
++  ]);
+ }
+ 
+ /**
+diff --git a/google_analytics_reports_api/google_analytics_reports_api.routing.yml b/google_analytics_reports_api/google_analytics_reports_api.routing.yml
+index 6c87e96..e2289e7 100644
+--- a/google_analytics_reports_api/google_analytics_reports_api.routing.yml
++++ b/google_analytics_reports_api/google_analytics_reports_api.routing.yml
+@@ -1,7 +1,7 @@
+-google_analytics_reports_api.settings:
+-  path: '/admin/config/services/google-analytics-reports-api'
+-  defaults:
+-    _form: 'Drupal\google_analytics_reports_api\Form\GoogleAnalyticsReportsApiAdminSettingsForm'
+-    _title: 'Google Analytics Reports API'
+-  requirements:
++google_analytics_reports_api.settings:
++  path: '/admin/config/services/google-analytics-reports-api'
++  defaults:
++    _form: 'Drupal\google_analytics_reports_api\Form\GoogleAnalyticsReportsApiAdminSettingsForm'
++    _title: 'Google Analytics Reports API'
++  requirements:
+     _permission: 'administer google analytics reports api'
+\ No newline at end of file
+diff --git a/google_analytics_reports_api/src/Form/GoogleAnalyticsReportsApiAdminSettingsForm.php b/google_analytics_reports_api/src/Form/GoogleAnalyticsReportsApiAdminSettingsForm.php
+index 73d1905..d2a7558 100644
+--- a/google_analytics_reports_api/src/Form/GoogleAnalyticsReportsApiAdminSettingsForm.php
++++ b/google_analytics_reports_api/src/Form/GoogleAnalyticsReportsApiAdminSettingsForm.php
+@@ -12,6 +12,7 @@ use Drupal\Core\Form\FormBase;
+ use Drupal\Core\Link;
+ use Drupal\Core\Url;
+ use Drupal\google_analytics_reports_api\GoogleAnalyticsReportsApiFeed;
++use Symfony\Component\HttpFoundation\RedirectResponse;
+ 
+ /**
+  * Represents the admin settings form for google_analytics_reports_api.
+@@ -36,6 +37,21 @@ class GoogleAnalyticsReportsApiAdminSettingsForm extends FormBase {
+    * {@inheritdoc}
+    */
+   public function buildForm(array $form, FormStateInterface $form_state) {
++    // TODO move to a separate controller/url? Problematic could be that
++    // users have set this url as the allowed redirect url in google console.
++    // We could use a event listener?
++    $code = $this->getRequest()->query->get('code');
++    if ($code) {
++      google_analytics_reports_api_authenticate($code);
++
++      $redirect_uri = Url::fromRoute('google_analytics_reports_api.settings')
++        ->setAbsolute()
++        ->toString();
++      $redirect = new RedirectResponse($redirect_uri);
++      $redirect->send();
++      exit;
++    }
++
+     $account = google_analytics_reports_api_gafeed();
+     $config = $this->config('google_analytics_reports_api.settings');
+ 
+@@ -176,17 +192,19 @@ class GoogleAnalyticsReportsApiAdminSettingsForm extends FormBase {
+    * Save Google Analytics Reports API admin setup.
+    */
+   public function adminSubmitSetup(array &$form, FormStateInterface $form_state) {
+-    $redirect_uri = GoogleAnalyticsReportsApiFeed::currentUrl();
+-
+     $config = \Drupal::configFactory()->getEditable('google_analytics_reports_api.settings');
+     $config
+       ->set('client_id', $form_state->getValue('client_id'))
+       ->set('client_secret', $form_state->getValue('client_secret'))
+-      ->set('redirect_uri', $redirect_uri)
+       ->save();
+ 
++    $redirect_uri = Url::fromRoute('google_analytics_reports_api.settings')
++      ->setAbsolute()
++      ->toString();
++
+     $google_analytics_reports_api_feed = new GoogleAnalyticsReportsApiFeed();
+-    $google_analytics_reports_api_feed->beginAuthentication($form_state->getValue('client_id'), $redirect_uri);
++    $response = $google_analytics_reports_api_feed->beginAuthentication($form_state->getValue('client_id'), $redirect_uri);
++    $form_state->setResponse($response);
+   }
+ 
+   /**
+diff --git a/google_analytics_reports_api/src/GoogleAnalyticsReportsApiFeed.php b/google_analytics_reports_api/src/GoogleAnalyticsReportsApiFeed.php
+index cd19119..b67605b 100644
+--- a/google_analytics_reports_api/src/GoogleAnalyticsReportsApiFeed.php
++++ b/google_analytics_reports_api/src/GoogleAnalyticsReportsApiFeed.php
+@@ -10,8 +10,8 @@
+ 
+ namespace Drupal\google_analytics_reports_api;
+ 
++use Drupal\Core\Routing\TrustedRedirectResponse;
+ use Drupal\Core\Url;
+-use Drupal\Core\Cache\CacheableRedirectResponse;
+ use GuzzleHttp\Client;
+ use GuzzleHttp\Exception\ClientException;
+ 
+@@ -210,10 +210,11 @@ class GoogleAnalyticsReportsApiFeed {
+    *   Client id.
+    * @param string $redirect_uri
+    *   Redirect uri.
++   *
++   * @return \Drupal\Core\Routing\TrustedRedirectResponse
+    */
+   public function beginAuthentication($client_id, $redirect_uri) {
+-    $response = new CacheableRedirectResponse($this->createAuthUrl($client_id, $redirect_uri));
+-    $response->send();
++    return new TrustedRedirectResponse($this->createAuthUrl($client_id, $redirect_uri));
+   }
+ 
+   /**
+diff --git a/src/Plugin/views/query/GoogleAnalyticsQuery.php b/src/Plugin/views/query/GoogleAnalyticsQuery.php
+index 7eead42..0d7b22f 100644
+--- a/src/Plugin/views/query/GoogleAnalyticsQuery.php
++++ b/src/Plugin/views/query/GoogleAnalyticsQuery.php
+@@ -9,8 +9,9 @@ namespace Drupal\google_analytics_reports\Plugin\views\query;
+ use Drupal\Core\Config\ConfigFactoryInterface;
+ use Drupal\Core\Extension\ModuleHandlerInterface;
+ use Drupal\Core\Form\FormStateInterface;
+-use Drupal\Core\Link;
+ use Drupal\Component\Utility\Html;
++use Drupal\Core\State\StateInterface;
++use Drupal\Core\Url;
+ use Drupal\views\Plugin\views\display\DisplayPluginBase;
+ use Drupal\views\Plugin\views\query\QueryPluginBase;
+ use Drupal\views\ResultRow;
+@@ -76,12 +77,20 @@ class GoogleAnalyticsQuery extends QueryPluginBase {
+   public $configFactory;
+ 
+   /**
++   * The state service.
++   *
++   * @var \Drupal\Core\State\StateInterface
++   */
++  protected $state;
++
++  /**
+    * {@inheritdoc}
+    */
+-  public function __construct(array $configuration, $plugin_id, $plugin_definition, ModuleHandlerInterface $module_handler, ConfigFactoryInterface $config_factory) {
++  public function __construct(array $configuration, $plugin_id, $plugin_definition, ModuleHandlerInterface $module_handler, ConfigFactoryInterface $config_factory, StateInterface $state) {
+     parent::__construct($configuration, $plugin_id, $plugin_definition);
+     $this->moduleHandler = $module_handler;
+     $this->configFactory = $config_factory;
++    $this->state = $state;
+   }
+ 
+   /**
+@@ -93,7 +102,8 @@ class GoogleAnalyticsQuery extends QueryPluginBase {
+       $plugin_id,
+       $plugin_definition,
+       $container->get('module_handler'),
+-      $container->get('config.factory')
++      $container->get('config.factory'),
++      $container->get('state')
+     );
+   }
+ 
+@@ -309,9 +319,9 @@ class GoogleAnalyticsQuery extends QueryPluginBase {
+    */
+   public function execute(ViewExecutable $view) {
+     // Initial check to see if we should attempt to run the query.
+-    if (!$this->configFactory->get('google_analytics_reports_api.settings')->get('access_token')) {
++    if (!$this->state->get('google_analytics_reports_api.access_token')) {
+       // Optionally do not warn users on every query attempt before auth.
+-      drupal_set_message(t('You must @link Drupal to use your Google Analytics account before you can view reports.', ['@link' => Link::createFromRoute('Authorize', 'google_analytics_reports_api.settings')]));
++      drupal_set_message(t('You must <a href="@url">authorize</a> Drupal to use your Google Analytics account before you can view reports.', ['@url' => Url::fromRoute('google_analytics_reports_api.settings')->toString()]));
+       return;
+     }
+ 
