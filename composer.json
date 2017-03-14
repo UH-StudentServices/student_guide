@@ -106,7 +106,7 @@
         "2817005-11": "https://www.drupal.org/files/issues/samlauth-add_event_to_map_attributes_to_user-2817005-11.patch"
       },
       "drupal/google_analytics_reports": {
-        "2795115-6": "https://www.drupal.org/files/issues/2795115-6.patch"
+        "2795115-6-and-2860399-1": "patches/google_analytics_reports.patch"
       },
       "drupal/flag" : {
         "2846111-4": "https://www.drupal.org/files/issues/broken_ajax_link_views-2846111-4.patch"
