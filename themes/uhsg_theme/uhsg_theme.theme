@@ -213,7 +213,7 @@ function uhsg_theme_preprocess_views_view(&$variables) {
         $variables['frontpagetextblock'] = $block_view;
       }
       $variables['title'] = $variables['view']->getTitle();
-      $variables['attributes']['class'][] = 'grid-container';
+      $variables['content_attributes']['class'][] = 'view-content';
       break;
     case 'news':
       $variables['attributes']['class'][] = 'tube';
@@ -367,5 +367,3 @@ function uhsg_theme_theme_suggestions_menu_alter(&$suggestions, $vars, $hook) {
     $suggestions[] = 'menu__main';
   }
 }
-
-

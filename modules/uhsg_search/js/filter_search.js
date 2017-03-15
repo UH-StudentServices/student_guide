@@ -3,11 +3,11 @@
   Drupal.behaviors.uhsg_search_filter_search = {
     attach: function(context, settings) {
       var titles = {
-            'article_degree_programme_specific': Drupal.t('Degree programme specific instructions'),
-            'article_general': Drupal.t('General instructions'),
-            'theme': Drupal.t('Theme'),
-            'news': Drupal.t('News'),
-            'all': Drupal.t('All')
+            'article_degree_programme_specific': Drupal.t('Degree programme specific instructions', {}, {context: 'Search Filters'}),
+            'article_general': Drupal.t('General instructions', {}, {context: 'Search Filters'}),
+            'theme': Drupal.t('Theme', {}, {context: 'Search Filters'}),
+            'news': Drupal.t('News', {}, {context: 'Search Filters'}),
+            'all': Drupal.t('All', {}, {context: 'Search Filters'})
           },
           view = '.view-search',
           results = $('.view-content article', view),
@@ -41,7 +41,7 @@
             $(this).hide();
           }
         });
-        numResults.text(Drupal.t('Results' + results.filter(':visible').length));
+        numResults.text(Drupal.t('Results (@results)', {'@results': results.filter(':visible').length}, {context: 'Search Filters'}));
       });
 
       function createFilterButton(type) {
