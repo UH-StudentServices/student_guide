@@ -3,7 +3,12 @@
 ## 1.0-dev
 * Fixed warning message when google analytic reports isn't authorized (HUB-36)
 * Improved cache clears for search results to avoid stale results (HUB-168)
-* Fix top content always linking to source translation (HUB-36) 
+* Fix top content always linking to source translation (HUB-36)
+* Changed two login/logout links into one logical menu item per menu (HUB-105)
+
+Installation instructions:
+  - Remove login/logout links from all main menus prior to installation
+
 
 ## 1.0
 Release date: 13.03.2017
