@@ -85,7 +85,9 @@
   {% endif %}
 
   {% if rows %}
+    <div {{ content_attributes.addClass(content_classes) }}>
       {{ rows }}
+    </div>
   {% elseif empty %}
     <div class="view-empty">
       {{ empty }}
