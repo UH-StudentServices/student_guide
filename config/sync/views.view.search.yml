@@ -80,9 +80,9 @@ display:
         options:
           view_modes:
             'entity:node':
-              article: teaser
-              news: teaser
-              theme: teaser
+              article: constrained
+              news: constrained
+              theme: constrained
       fields:
         title:
           id: title
