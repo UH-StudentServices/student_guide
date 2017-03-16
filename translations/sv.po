@@ -19,7 +19,7 @@ msgid "Name of degree programme"
 msgstr ""
 
 msgid "Search for degree programme"
-msgstr ""
+msgstr "Sök utbildningsprogram"
 
 msgid "Select degree programme"
 msgstr "Välj utbildningsprogram"
