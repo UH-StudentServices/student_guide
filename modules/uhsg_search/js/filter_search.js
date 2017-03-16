@@ -6,7 +6,7 @@
 
       $('.view-search').once().each(function() {
         var results = $('.view-content article', this),
-            resultCount = $('.view-before-content h3', this).after('<div id="search-filters" class="button-group is-center-mobile"></div>'),
+            resultCount = $('.view-before-content h3', this),
             filterTitles = {
               'all': Drupal.t('All', {}, {context: 'Search Filters'}),
               'article_general': Drupal.t('General instructions', {}, {context: 'Search Filters'}),
@@ -14,7 +14,13 @@
               'theme': Drupal.t('Theme', {}, {context: 'Search Filters'}),
               'news': Drupal.t('News', {}, {context: 'Search Filters'})
             },
-            filterButtons = $('#search-filters', this).append(filter.createFilterButton('all', filterTitles, 'is-active'));
+            filterButtons = $('#search-filters', this)
+
+        // add container
+        resultCount.after('<div id="search-filters" class="button-group is-center-mobile"></div>');
+
+        // add 'All' button
+        filterButtons.append(filter.createFilterButton('all', filterTitles, 'is-active'));
 
         // create buttons for available filter types
         var availableTypes = filter.getAvailableTypes(results);
@@ -22,10 +28,10 @@
           filterButtons.append(filter.createFilterButton(type, filterTitles));
         });
 
-        // reorder buttons
+        // buttons order same as in filterTitles
         filter.reorderButtons(filterButtons, filterTitles);
 
-        // filter results
+        // filter results on click
         $('a', filterButtons).on('click', function(event) {
           event.preventDefault();
           filter.filterResults($(this), results);
