@@ -1,0 +1,12 @@
+uhsg_samlauth.samlauth_controller.en.logout:
+  weight: 10
+  menu_name: main-menu-en
+  class: Drupal\samlauth\Plugin\Menu\LoginLogoutMenuLink
+uhsg_samlauth.samlauth_controller.fi.logout:
+  weight: 10
+  menu_name: main-menu-fi
+  class: Drupal\samlauth\Plugin\Menu\LoginLogoutMenuLink
+uhsg_samlauth.samlauth_controller.sv.logout:
+  weight: 10
+  menu_name: main-menu-sv
+  class: Drupal\samlauth\Plugin\Menu\LoginLogoutMenuLink
