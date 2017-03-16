@@ -16,16 +16,13 @@ msgid "Updated"
 msgstr ""
 
 msgid "Name of degree programme"
-msgstr ""
+msgstr "Utbildningsprogrammets namn"
 
 msgid "Search for degree programme"
-msgstr ""
+msgstr "Sök utbildningsprogram"
 
 msgid "Select degree programme"
 msgstr "Välj utbildningsprogram"
-
-msgid "For example topic or university service"
-msgstr ""
 
 msgid "Feedback"
 msgstr "Feedback"

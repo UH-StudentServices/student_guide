@@ -3,6 +3,8 @@
 ## 1.x-dev
 * Changed Search results to display as a list with filter buttons (HUB-173)
 
+* Translation updates (HUB-179).
+
 
 ## 1.1
 Release date: 16.03.2017
