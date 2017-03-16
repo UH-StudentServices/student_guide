@@ -4,7 +4,7 @@
     attach: function(context, settings) {
       var view = '.view-search',
           results = $('.view-content article', view),
-          numResults = $('.view-before-content h3', view).after('<div id="search-filters" class="button-group"></div>'),
+          numResults = $('.view-before-content h3', view).after('<div id="search-filters" class="button-group is-center-mobile"></div>'),
           filterTitles = {
             'article_degree_programme_specific': Drupal.t('Degree programme specific instructions', {}, {context: 'Search Filters'}),
             'article_general': Drupal.t('General instructions', {}, {context: 'Search Filters'}),
