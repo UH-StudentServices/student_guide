@@ -12,3 +12,10 @@ my-searches:
   dependencies:
     - core/jquery
     - core/jquery.cookie
+
+filter_search:
+  version: 1.x
+  js:
+    js/filter_search.js: {}
+  dependencies:
+    - core/jquery

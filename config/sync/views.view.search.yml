@@ -44,11 +44,11 @@ display:
           reset_button: true
           reset_button_label: Clear
           exposed_sorts_label: 'Sort by'
-          expose_sort_order: true
+          expose_sort_order: false
           sort_asc_label: Asc
           sort_desc_label: Desc
           text_input_required: ''
-          text_input_required_format: plain_text
+          text_input_required_format: filtered_html
       pager:
         type: some
         options:
@@ -61,9 +61,9 @@ display:
         options:
           view_modes:
             'entity:node':
-              article: teaser
-              news: teaser
-              theme: teaser
+              article: constrained
+              news: constrained
+              theme: constrained
       fields:
         title:
           id: title

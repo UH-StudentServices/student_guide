@@ -1,6 +1,7 @@
 #Changelog
 
 ## 1.x-dev
+* Changed Search results to display as a list with filter buttons (HUB-173)
 
 
 ## 1.1

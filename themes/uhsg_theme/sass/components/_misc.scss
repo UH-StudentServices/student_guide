@@ -19,3 +19,13 @@ h1, h2, h3, h4,
 .box-story__content {
   @include hyphenate;
 }
+
+.box-story--constrained {
+  .box-story__content {
+    a {
+      @include breakpoint($mobile-only) {
+        @include trimtext();
+      }
+    }
+  }
+}

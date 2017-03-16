@@ -1,0 +1,32 @@
+uuid: 0b19f103-9078-444e-8612-6026f2528c55
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.constrained
+    - field.field.node.theme.body
+    - field.field.node.theme.field_theme_articles
+    - field.field.node.theme.field_theme_faq
+    - field.field.node.theme.field_theme_teaser_image
+    - node.type.theme
+  module:
+    - text
+    - user
+id: node.theme.constrained
+targetEntityType: node
+bundle: theme
+mode: constrained
+content:
+  body:
+    label: hidden
+    type: text_trimmed
+    weight: 0
+    settings:
+      trim_length: 200
+    third_party_settings: {  }
+hidden:
+  field_theme_articles: true
+  field_theme_faq: true
+  field_theme_teaser_image: true
+  langcode: true
+  links: true

@@ -42,8 +42,13 @@
       margin-bottom: 0;
     }
   }
-  .view-result {
+  .view-before-content {
     margin-bottom: $vert-spacing-unit / 2;
+    @include breakpoint($small) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
 }
 

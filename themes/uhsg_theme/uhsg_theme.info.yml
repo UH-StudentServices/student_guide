@@ -31,7 +31,7 @@ libraries-override:
   core/jquery.ui.menu:
     css:
       component:
-        assets/vendor/jquery.ui/themes/base/menu.css: false    
+        assets/vendor/jquery.ui/themes/base/menu.css: false
 
 ckeditor_stylesheets:
   - css/ckeditor-custom.css
