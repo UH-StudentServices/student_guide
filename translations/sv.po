@@ -16,7 +16,7 @@ msgid "Updated"
 msgstr ""
 
 msgid "Name of degree programme"
-msgstr ""
+msgstr "Utbildningsprogrammets namn"
 
 msgid "Search for degree programme"
 msgstr "Sök utbildningsprogram"
