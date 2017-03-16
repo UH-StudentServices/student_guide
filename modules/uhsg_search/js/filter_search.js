@@ -12,7 +12,7 @@
             'theme': Drupal.t('Theme', {}, {context: 'Search Filters'}),
             'news': Drupal.t('News', {}, {context: 'Search Filters'})
           },
-          filterButtons = $('#search-filters', view).append(createFilterButton('all')),
+          filterButtons = $('#search-filters', view).append(createFilterButton('all', 'is-active')),
           filterOptions = [];
       
       // create buttons for available filter types
@@ -66,8 +66,9 @@
         numResults.text(numResultsText);
       });
 
-      function createFilterButton(type) {
-        return '<div class="button-group__button"><a class="button--small" href="#" data-type="' + type + '">' + filterTitles[type] + '</a></div>';
+      function createFilterButton(type, classes) {
+        var buttonClasses = classes ? classes + ' button--small': 'button--small';
+        return '<div class="button-group__button"><a class="' + buttonClasses + '" href="#" data-type="' + type + '">' + filterTitles[type] + '</a></div>';
       }
 
       function getNumResults() {
