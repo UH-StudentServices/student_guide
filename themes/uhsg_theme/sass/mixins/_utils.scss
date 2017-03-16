@@ -27,3 +27,10 @@
   scrollbar-face-color: $blue;
   scrollbar-track-color: $lightsilver;
 }
+
+@mixin trimtext() {
+  text-overflow: ellipsis;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+}
