@@ -32,10 +32,6 @@ libraries-override:
     css:
       component:
         assets/vendor/jquery.ui/themes/base/menu.css: false
-  better_exposed_filters/general:
-    css:
-      theme:
-        css/better_exposed_filters.css: false
 
 ckeditor_stylesheets:
   - css/ckeditor-custom.css
