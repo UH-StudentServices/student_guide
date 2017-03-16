@@ -6,15 +6,16 @@
           results = $('.view-content article', view),
           numResults = $('.view-before-content h3', view).after('<div id="search-filters" class="button-group is-center-mobile"></div>'),
           filterTitles = {
-            'article_degree_programme_specific': Drupal.t('Degree programme specific instructions', {}, {context: 'Search Filters'}),
+            'all': Drupal.t('All', {}, {context: 'Search Filters'}),
             'article_general': Drupal.t('General instructions', {}, {context: 'Search Filters'}),
+            'article_degree_programme_specific': Drupal.t('Degree programme specific instructions', {}, {context: 'Search Filters'}),
             'theme': Drupal.t('Theme', {}, {context: 'Search Filters'}),
-            'news': Drupal.t('News', {}, {context: 'Search Filters'}),
-            'all': Drupal.t('All', {}, {context: 'Search Filters'})
+            'news': Drupal.t('News', {}, {context: 'Search Filters'})
           },
           filterButtons = $('#search-filters', view).append(createFilterButton('all')),
           filterOptions = [];
       
+      // create buttons for available filter types
       results.each(function() {
         var type = $(this).attr('data-type');
 
@@ -27,6 +28,26 @@
           filterButtons.append(createFilterButton(type));
         }
       });
+
+      // reorder buttons
+      $('div', filterButtons).sort(function(a, b) {
+        var aType = $(a).children('a').attr('data-type'),
+            bType = $(b).children('a').attr('data-type'),
+            match = null;
+
+        // use order in filterTitles for sorting
+        $.each(filterTitles, function(index, value) {
+          if (index == aType) {
+            match = -1;
+            return false;
+          }
+          if (index == bType) {
+            match = 1;
+            return false;
+          }
+        });
+        return match;
+      }).appendTo(filterButtons);
 
       $('a', filterButtons).on('click', function(e) {
         e.preventDefault();
