@@ -2,16 +2,16 @@
   'use strict';
   Drupal.behaviors.uhsg_search_filter_search = {
     attach: function(context, settings) {
-      var titles = {
+      var view = '.view-search',
+          results = $('.view-content article', view),
+          numResults = $('.view-before-content h3', view).after('<div id="search-filters" class="button-group"></div>'),
+          filterTitles = {
             'article_degree_programme_specific': Drupal.t('Degree programme specific instructions', {}, {context: 'Search Filters'}),
             'article_general': Drupal.t('General instructions', {}, {context: 'Search Filters'}),
             'theme': Drupal.t('Theme', {}, {context: 'Search Filters'}),
             'news': Drupal.t('News', {}, {context: 'Search Filters'}),
             'all': Drupal.t('All', {}, {context: 'Search Filters'})
           },
-          view = '.view-search',
-          results = $('.view-content article', view),
-          numResults = $('.view-result h3', view).after('<div id="search-filters" class="button-group"></div>'),
           filterButtons = $('#search-filters', view).append(createFilterButton('all')),
           filterOptions = [];
       
@@ -41,11 +41,16 @@
             $(this).hide();
           }
         });
-        numResults.text(Drupal.t('Results (@results)', {'@results': results.filter(':visible').length}, {context: 'Search Filters'}));
+        var numResultsText = Drupal.t('Results (@results)', {'@results': getNumResults()}, {context: 'Search Filters'});
+        numResults.text(numResultsText);
       });
 
       function createFilterButton(type) {
-        return '<div class="button-group__button"><a class="button--small" href="#" data-type="' + type + '">' + titles[type] + '</a></div>';
+        return '<div class="button-group__button"><a class="button--small" href="#" data-type="' + type + '">' + filterTitles[type] + '</a></div>';
+      }
+
+      function getNumResults() {
+        return results.filter(':visible').length;
       }
 
     }
