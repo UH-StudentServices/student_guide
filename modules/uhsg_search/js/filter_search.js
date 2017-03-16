@@ -56,10 +56,10 @@
         $(this).parent().siblings().children().removeClass('is-active');
         results.each(function() {
           if ($(this).attr('data-type') == filterType || filterType == 'all') {
-            $(this).show();
+            $(this)[0].style.display = 'flex';
           }
           else {
-            $(this).hide();
+             $(this)[0].style.display = 'none';
           }
         });
         var numResultsText = Drupal.t('Results (@results)', {'@results': getNumResults()}, {context: 'Search Filters'});
