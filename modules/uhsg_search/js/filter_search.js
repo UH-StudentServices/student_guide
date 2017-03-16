@@ -13,13 +13,13 @@
               'article_degree_programme_specific': Drupal.t('Degree programme specific instructions', {}, {context: 'Search Filters'}),
               'theme': Drupal.t('Theme', {}, {context: 'Search Filters'}),
               'news': Drupal.t('News', {}, {context: 'Search Filters'})
-            },
-            filterButtons = $('#search-filters', this)
+            };
 
         // add container
         resultCount.after('<div id="search-filters" class="button-group is-center-mobile"></div>');
 
         // add 'All' button
+        var filterButtons = $('#search-filters', this);
         filterButtons.append(filter.createFilterButton('all', filterTitles, 'is-active'));
 
         // create buttons for available filter types
