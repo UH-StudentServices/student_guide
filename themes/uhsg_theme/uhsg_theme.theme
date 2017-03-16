@@ -293,7 +293,7 @@ function uhsg_theme_preprocess_file_link(&$variables) {
  * Add styleguide classes.
  */
 function uhsg_theme_preprocess_node(&$variables) {
-  if ($variables['view_mode'] == 'teaser') {
+  if (in_array($variables['view_mode'], ['teaser', 'constrained'])) {
     $variables['type'] = $variables['node']->type->entity->label();
   }
 }
