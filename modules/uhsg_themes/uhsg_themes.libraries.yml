@@ -6,7 +6,7 @@ sortable:
 theme_sort:
   version: 1.x
   js:
-    js/theme_sort.js: {}
+    js/themeSort.js: {}
   dependencies:
     - core/jquery
     - core/jquery.once

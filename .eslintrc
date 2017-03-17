@@ -1,5 +1,5 @@
 {
-  "extends": "airbnb-base",
+  "extends": "eslint:recommended",
   "plugins": [
     "filenames"
   ],
@@ -10,8 +10,5 @@
       "camelcase": 1,
       "comma-dangle": 2,
       "quotes": 0
-  },
-  "parserOptions": {
-    "sourceType": "script"
   }
 }
