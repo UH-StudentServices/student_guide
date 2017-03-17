@@ -1,7 +1,9 @@
+/* global Drupal, jQuery */
+
 (function ($) {
   'use strict';
-  Drupal.behaviors.uhsg_search_filter_search = {
-    attach: function(context, settings) {
+  Drupal.behaviors.filterSearch = {
+    attach: function() {
       var filter = this;
 
       $('.view-search').once().each(function() {
@@ -71,7 +73,7 @@
             match = null;
 
         // use order in filterTitles for sorting
-        $.each(filterTitles, function(index, value) {
+        $.each(filterTitles, function(index) {
           if (index == aType) {
             match = -1;
             return false;

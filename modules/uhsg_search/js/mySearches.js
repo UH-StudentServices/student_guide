@@ -1,7 +1,9 @@
+/* global Drupal, jQuery */
+
 (function ($) {
   'use strict';
-  Drupal.behaviors.uhsg_search_my_searches = {
-    attach: function(context, settings) {
+  Drupal.behaviors.mySearches = {
+    attach: function() {
 
       var cleanupString = this.cleanupString;
       var searchInput = $('.view-search .views-exposed-form input[name="search_api_fulltext"]');
