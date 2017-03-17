@@ -3,6 +3,7 @@
 ## 1.x-dev
 * Changed Search results to display as a list with filter buttons (HUB-173)
 * Added custom block listing page for editors (HUB-174)
+* Remove soft hyphens from node title to prevent them messing up search and url aliases (HUB-183)
 
 * Translation updates (HUB-179).
 
