@@ -1,9 +1,8 @@
-/* global Drupal, jQuery */
-
 (function ($) {
+  'use strict';
   // Submit search when clicking suggestions.
   var oldSelect = Drupal.autocomplete.options.select;
-  Drupal.autocomplete.options.select = function() {
+  Drupal.autocomplete.options.select = function () {
     oldSelect.call(this);
     if ($(this).hasClass('ui-autocomplete-input')) {
       $(this).siblings('.form-actions').children('#edit-submit-search').trigger('click');

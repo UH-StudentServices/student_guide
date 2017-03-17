@@ -1,11 +1,11 @@
-/* global Drupal, jQuery, Modernizr, Sortable, localStorage */
+/* global Sortable */
 
 (function ($) {
   'use strict';
   Drupal.behaviors.themeSort = {
-    attach: function() {
+    attach: function () {
       if (!Modernizr.touchevents) {
-        $('.view-themes .view-content').once().each(function() {
+        $('.view-themes .view-content').once().each(function () {
           Sortable.create(this, {
             animation: 250,
             group: 'theme-sort',
