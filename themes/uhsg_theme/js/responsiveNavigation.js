@@ -1,6 +1,8 @@
+/* global Drupal, jQuery, window */
+
 (function ($) {
   'use strict';
-  Drupal.behaviors.responsive_navigation = {
+  Drupal.behaviors.responsiveNavigation = {
     attach: function(context, settings) {
       var mainUl = $('.main-menu > ul'),
           menuToggle = $('#menu-toggle'),

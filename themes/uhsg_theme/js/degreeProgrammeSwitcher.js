@@ -1,3 +1,5 @@
+/* global Drupal, jQuery, document, window */
+
 (function ($) {
   'use strict';
   Drupal.behaviors.degreeProgrammeSwitcher = {
