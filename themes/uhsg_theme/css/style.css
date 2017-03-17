@@ -8237,20 +8237,6 @@ h1, h2, h3, h4, legend,
   margin-bottom: 15px;
 }
 
-@media (min-width: 48em) {
-  .view-search .view-before-content {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-justify-content: space-between;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-}
-
 .ui-autocomplete {
   border: 1px solid #F8F8F8;
   background: #FFF;

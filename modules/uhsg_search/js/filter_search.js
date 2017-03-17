@@ -16,7 +16,7 @@
             };
 
         // add container
-        resultCount.after('<div id="search-filters" class="button-group is-center-mobile"></div>');
+        resultCount.after('<div id="search-filters" class="button-group is-center-mobile tube"></div>');
 
         // add 'All' button
         var filterButtons = $('#search-filters', this);
