@@ -12,3 +12,13 @@
 function uhsg_edit_form_node_form_alter(&$form, &$form_state, $form_id) {
   $form['#attached']['library'][] = 'uhsg_edit/node-form-addons';
 }
+
+/**
+ * Implements hook_ENTITY_TYPE_presave().
+ * Remove soft hyphens from node title that might come from copy/pasting.
+ */
+function uhsg_edit_node_presave(Drupal\Core\Entity\EntityInterface $entity) {
+  if (in_array($entity->bundle(), ['article', 'theme', 'news'])) {
+    $entity->title->value = str_replace('­', '', $entity->title->value);
+  }
+}
