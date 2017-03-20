@@ -1,7 +1,7 @@
 (function ($) {
   'use strict';
   Drupal.behaviors.mySearches = {
-    attach: function () {
+    attach: function (context, settings) {
 
       var cleanupString = this.cleanupString;
       var searchInput = $('.view-search .views-exposed-form input[name="search_api_fulltext"]');

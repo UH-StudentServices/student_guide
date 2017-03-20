@@ -2,7 +2,7 @@
   'use strict';
 
   Drupal.behaviors.feedbackForm = {
-    attach: function () {
+    attach: function (context, settings) {
       $('.feedback-form__toggle', '.feedback-form').once().on('click', function () {
         $(this).toggleClass('active').next('#feedback-form__content').children('form').toggleClass('visually-hidden');
         $(this).hasClass('active') ? // eslint-disable-line no-unused-expressions

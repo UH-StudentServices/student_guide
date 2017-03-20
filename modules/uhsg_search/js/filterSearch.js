@@ -1,7 +1,7 @@
 (function ($) {
   'use strict';
   Drupal.behaviors.filterSearch = {
-    attach: function () {
+    attach: function (context, settings) {
       var filter = this;
 
       $('.view-search').once().each(function () {

@@ -3,7 +3,7 @@
 (function ($) {
   'use strict';
   Drupal.behaviors.themeSort = {
-    attach: function () {
+    attach: function (context, settings) {
       if (!Modernizr.touchevents) {
         $('.view-themes .view-content').once().each(function () {
           Sortable.create(this, {
