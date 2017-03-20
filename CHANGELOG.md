@@ -3,6 +3,7 @@
 ## 1.x-dev
 * Changed Search results to display as a list with filter buttons (HUB-173)
 * Added custom block listing page for editors (HUB-174)
+* Add nofollow attribute to degree programme switcher links to prevent google indexing (HUB-184)
 
 * Translation updates (HUB-179).
 
