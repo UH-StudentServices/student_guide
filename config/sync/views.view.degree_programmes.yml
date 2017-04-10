@@ -165,7 +165,7 @@ display:
             path_case: none
             trim_whitespace: false
             alt: ''
-            rel: ''
+            rel: nofollow
             link_class: ''
             prefix: ''
             suffix: ''
