@@ -15,7 +15,7 @@ anchor:
 degree_programme_switcher:
   version: 1.x
   js:
-    js/degree_programme_switcher.js: {}
+    js/degreeProgrammeSwitcher.js: {}
   dependencies:
     - core/jquery
     - core/jquery.once
@@ -25,7 +25,7 @@ degree_programme_switcher:
 degree_programme_filter:
   version: 1.x
   js:
-    js/degree_programme_filter.js: {}
+    js/degreeProgrammeFilter.js: {}
   dependencies:
     - core/jquery
 
@@ -41,7 +41,7 @@ accordion:
 menu_toggle:
   version: 1.x
   js:
-    js/responsive_navigation.js: {}
+    js/responsiveNavigation.js: {}
   dependencies:
     - core/jquery
     - core/jquery.once
