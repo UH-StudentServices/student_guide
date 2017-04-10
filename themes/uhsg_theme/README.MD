@@ -13,10 +13,10 @@ Getting started (for development):
   - Install npm packages (to install bower and gulp)
       $ npm install
   - Install HY Styleguide
-      $ gulp styleguide-update
+      $ npm run gulp styleguide-update
   - Lint Javascript
-      $ gulp lint
+      $ npm run gulp lint
   - Optional: Initialize SASS watcher
-      $ gulp watch
+      $ npm run gulp watch
   - Optional: Automatically reload changes in your browser
-      $ gulp browsersync
+      $ npm run gulp browsersync

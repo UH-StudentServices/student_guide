@@ -17,7 +17,8 @@
     "normalize.css": "^3.0.0"
   },
   "scripts": {
-    "postinstall": "find node_modules/ -name '*.info' -type f -delete"
+    "postinstall": "find node_modules/ -name '*.info' -type f -delete",
+    "gulp": "gulp"
   },
   "engines": {
     "node": "~6.9.1"
