@@ -7314,6 +7314,10 @@ li.avatar.avatar--default img {
   padding: 12px;
 }
 
+.box-story--no-label.theme-plain {
+  padding: 1.5em;
+}
+
 .cc_banner-wrapper {
   z-index: 9001;
   position: relative;
