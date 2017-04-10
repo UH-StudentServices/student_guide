@@ -38,16 +38,16 @@
 #}
 
 {% block content %}
-	<div{{ attributes.addClass('tag-list', 'tube') }}>
-		{% if created %}
-			<div class="tag-list__item">
-				{{ created|format_date('short') }}
-			</div>
-		{% endif %}
-	  {% for item in items %}
-	    <div{{ item.attributes.addClass('tag-list__item') }}>
-	      {{ item.content }}
-	    </div>
-	  {% endfor %}
-	</div>
+  <div{{ attributes.addClass('tag-list', 'tube') }}>
+    {% if created %}
+      <div class="tag-list__item">
+        {{ created|format_date('short') }}
+      </div>
+    {% endif %}
+    {% for item in items %}
+      <div{{ item.attributes.addClass('tag-list__item') }}>
+        {{ item.content }}
+      </div>
+    {% endfor %}
+  </div>
 {% endblock %}
