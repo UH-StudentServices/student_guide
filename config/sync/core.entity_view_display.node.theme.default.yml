@@ -23,6 +23,7 @@ content:
     weight: 1
     settings: {  }
     third_party_settings: {  }
+    region: content
   field_theme_articles:
     weight: 2
     label: hidden
@@ -31,6 +32,7 @@ content:
       link: false
     third_party_settings: {  }
     type: entity_reference_entity_view
+    region: content
   field_theme_faq:
     type: entity_reference_revisions_entity_view
     weight: 3
@@ -39,10 +41,12 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    region: content
   links:
     weight: 0
     settings: {  }
     third_party_settings: {  }
+    region: content
 hidden:
   field_theme_teaser_image: true
   langcode: true

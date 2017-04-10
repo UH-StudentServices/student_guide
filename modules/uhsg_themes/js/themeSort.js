@@ -1,9 +1,11 @@
+/* global Sortable */
+
 (function ($) {
   'use strict';
-  Drupal.behaviors.theme_sort = {
-    attach: function(context, settings) {
+  Drupal.behaviors.themeSort = {
+    attach: function (context, settings) {
       if (!Modernizr.touchevents) {
-        $('.view-themes .view-content').once().each(function() {
+        $('.view-themes .view-content').once().each(function () {
           Sortable.create(this, {
             animation: 250,
             group: 'theme-sort',

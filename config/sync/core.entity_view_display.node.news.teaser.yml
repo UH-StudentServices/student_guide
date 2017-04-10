@@ -6,6 +6,8 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.news.body
     - field.field.node.news.field_news_degree_programme
+    - field.field.node.news.field_news_email
+    - field.field.node.news.field_news_email_sent
     - field.field.node.news.field_news_image
     - image.style.news_teaser_image
     - node.type.news
@@ -25,6 +27,7 @@ content:
     settings:
       trim_length: 200
     third_party_settings: {  }
+    region: content
   field_news_image:
     type: image
     weight: 0
@@ -33,6 +36,7 @@ content:
       image_style: news_teaser_image
       image_link: ''
     third_party_settings: {  }
+    region: content
 hidden:
   field_news_degree_programme: true
   field_news_email: true

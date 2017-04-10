@@ -1,4 +1,5 @@
 label: Startsida
+description: 'All content promoted to the front page.'
 display:
   default:
     display_options:

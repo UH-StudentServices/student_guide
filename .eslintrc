@@ -1,17 +1,11 @@
 {
-  "extends": "airbnb-base",
+  "extends": "eslint-config-drupal",
   "plugins": [
     "filenames"
   ],
-  "rules":{
-      "filenames/match-regex": 2,
-      "filenames/match-exported": 2,
-      "filenames/no-index": 2,
-      "camelcase": 1,
-      "comma-dangle": 2,
-      "quotes": 0
-  },
-  "parserOptions": {
-    "sourceType": "script"
+  "rules": {
+    "filenames/match-regex": 2,
+    "filenames/match-exported": 2,
+    "filenames/no-index": 2,
   }
 }

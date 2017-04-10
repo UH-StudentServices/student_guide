@@ -1,7 +1,7 @@
 feedback_form:
   version: 1.x
   js:
-    js/feedback_form.js: {}
+    js/feedbackForm.js: {}
   dependencies:
     - core/jquery
     - core/jquery.once

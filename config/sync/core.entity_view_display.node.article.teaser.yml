@@ -23,6 +23,7 @@ content:
     settings:
       trim_length: 300
     third_party_settings: {  }
+    region: content
 hidden:
   field_article_degree_programme: true
   field_article_paragraph: true

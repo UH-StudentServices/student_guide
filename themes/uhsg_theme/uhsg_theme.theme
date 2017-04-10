@@ -160,6 +160,8 @@ function uhsg_theme_preprocess_field(array &$variables, $hook) {
     case 'field_content_block_text':
       $variables['attributes']['class'][] = 'box-subtitle__ingress is-center-mobile';
       break;
+    case 'field_news_degree_programme':
+      $variables['created'] = $variables['element']['#object']->getCreatedTime();
   }
 }
 
@@ -365,5 +367,21 @@ function uhsg_theme_theme_suggestions_menu_alter(&$suggestions, $vars, $hook) {
 
   if (in_array($vars['menu_name'], $main_menus)) {
     $suggestions[] = 'menu__main';
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ * add template for tag lists.
+ */
+function uhsg_theme_theme_suggestions_field_alter(&$suggestions, $vars, $hook) {
+  $tag_fields = [
+    'field_article_degree_programme',
+    'field_news_degree_programme',
+    'field_paragraph_degree_programme',
+  ];
+
+  if (in_array($vars['element']['#field_name'], $tag_fields)) {
+    $suggestions[] = 'field__tag_list_item';
   }
 }

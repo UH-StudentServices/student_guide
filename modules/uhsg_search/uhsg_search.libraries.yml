@@ -1,14 +1,14 @@
 uhsg-search:
   version: 1.x
   js:
-    js/uhsg-search.js: {}
+    js/uhsgSearch.js: {}
   dependencies:
     - core/drupal.autocomplete
 
 my-searches:
   version: 1.x
   js:
-    js/my-searches.js: {}
+    js/mySearches.js: {}
   dependencies:
     - core/jquery
     - core/jquery.cookie
@@ -16,6 +16,6 @@ my-searches:
 filter_search:
   version: 1.x
   js:
-    js/filter_search.js: {}
+    js/filterSearch.js: {}
   dependencies:
     - core/jquery
