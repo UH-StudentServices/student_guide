@@ -148,8 +148,7 @@ function uhsg_theme_preprocess_field(array &$variables, $hook) {
       }
       break;
     case 'field_theme_articles':
-      $variables['title_attributes']['class'][] = 'tube';
-      $variables['attributes']['class'][] = 'grid-container';
+      $variables['attributes']['class'][] = 'grid-container tube--large';
       break;
     case 'body':
     case 'field_paragraph_body':
@@ -293,7 +292,8 @@ function uhsg_theme_preprocess_file_link(&$variables) {
  */
 function uhsg_theme_preprocess_node(&$variables) {
   if (in_array($variables['view_mode'], ['teaser', 'constrained'])) {
-    $variables['type'] = $variables['node']->type->entity->label();
+    $current_page_is_theme = \Drupal::routeMatch()->getParameter('node')->bundle() == 'theme';
+    $variables['type'] = !$current_page_is_theme ? $variables['node']->type->entity->label() : NULL;
   }
 }
 
