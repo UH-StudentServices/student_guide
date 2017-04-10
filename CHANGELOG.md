@@ -2,6 +2,8 @@
 
 ## 1.x-dev
 
+* Display a list of degree programmes when viewing instructions (HUB-192).
+
 
 ## 1.2
 Release date: 20.03.2017
@@ -11,7 +13,6 @@ Release date: 20.03.2017
 * Removed soft hyphens from node title to prevent them messing up search and url aliases (HUB-183)
 * Add nofollow attribute to degree programme switcher links to prevent google indexing (HUB-184)
 * Translation updates (HUB-179).
-* Display a list of degree programmes when viewing instructions (HUB-192).
 
 
 ## 1.1
