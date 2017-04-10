@@ -1,9 +1,15 @@
 #Changelog
 
 ## 1.x-dev
+
+
+## 1.2
+Release date: 20.03.2017
+
 * Changed Search results to display as a list with filter buttons (HUB-173)
 * Added custom block listing page for editors (HUB-174)
-
+* Removed soft hyphens from node title to prevent them messing up search and url aliases (HUB-183)
+* Add nofollow attribute to degree programme switcher links to prevent google indexing (HUB-184)
 * Translation updates (HUB-179).
 
 

@@ -48,7 +48,7 @@ class ActiveDegreeProgrammeControllerTest extends UnitTestCase {
     $this->activeDegreeProgrammeService = $this->prophesize(ActiveDegreeProgrammeService::class);
 
     $this->server = $this->prophesize(ServerBag::class);
-    $this->server->get('HTTP_REFERER')->willReturn(self::HTTP_REFERER);
+    $this->server->get('HTTP_REFERER', 'internal:/')->willReturn(self::HTTP_REFERER);
 
     $this->request = $this->prophesize(Request::class);
     $this->request->server = $this->server;

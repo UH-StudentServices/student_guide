@@ -32,7 +32,7 @@ class ActiveDegreeProgrammeController extends ControllerBase {
     if ($term) {
       $this->activeDegreeProgrammeService->set($term);
     }
-    $url = Url::fromUri(\Drupal::request()->server->get('HTTP_REFERER'));
+    $url = $this->getHttpReferer();
     $url->setOptions(['query' => ['degree_programme' => $tid]]);
 
     return new RedirectResponse($url->toString());
@@ -40,10 +40,14 @@ class ActiveDegreeProgrammeController extends ControllerBase {
 
   public function resetActiveDegreeProgramme() {
     $this->activeDegreeProgrammeService->reset();
-    $url = Url::fromUri(\Drupal::request()->server->get('HTTP_REFERER'));
+    $url = $this->getHttpReferer();
     $urlWithoutParameters = parse_url($url->toString(), PHP_URL_PATH);
 
     return new RedirectResponse($urlWithoutParameters);
+  }
+
+  private function getHttpReferer() {
+    return Url::fromUri(\Drupal::request()->server->get('HTTP_REFERER', 'internal:/'));
   }
 
   /**
