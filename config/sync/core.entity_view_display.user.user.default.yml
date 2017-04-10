@@ -20,6 +20,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   field_study_rights:
     weight: 1
     label: above
@@ -27,10 +28,12 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
   member_for:
     weight: 0
     settings: {  }
     third_party_settings: {  }
+    region: content
 hidden:
   field_oodi_uid: true
   langcode: true

@@ -24,6 +24,7 @@ content:
     settings:
       link: false
     third_party_settings: {  }
+    region: content
   field_paragraph_title:
     weight: 0
     label: hidden
@@ -31,6 +32,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
 hidden:
   created: true
   field_paragraph_body: true

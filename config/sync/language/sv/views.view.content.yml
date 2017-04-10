@@ -27,8 +27,6 @@ display:
           label: Författare
         status:
           label: Status
-        changed:
-          label: Uppdaterad
         operations:
           label: Funktioner
       filters:
@@ -63,4 +61,5 @@ display:
         title: Innehåll
       tab_options:
         title: Innehåll
+        description: 'Hitta och hantera innehåll'
     display_title: Sida

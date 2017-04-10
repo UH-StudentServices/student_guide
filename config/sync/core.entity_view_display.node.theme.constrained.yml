@@ -24,6 +24,7 @@ content:
     settings:
       trim_length: 200
     third_party_settings: {  }
+    region: content
 hidden:
   field_theme_articles: true
   field_theme_faq: true

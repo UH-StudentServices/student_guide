@@ -10,8 +10,8 @@ weight: 0
 is_admin: false
 permissions:
   - 'access content'
-  - 'view published some links entities'
-  - 'access site-wide contact form'
   - 'access google analytics reports'
+  - 'access site-wide contact form'
   - 'change active degree programme'
   - 'use search_api_autocomplete for search_api_views_search'
+  - 'view published some links entities'

@@ -3,3 +3,4 @@ threshold:
   requirements_error: 1209600
 _core:
   default_config_hash: '-AdsU8mf1E5WC0xLgqccjTYM9ch3YkNEWHMQpGVgAwc'
+logging: 1

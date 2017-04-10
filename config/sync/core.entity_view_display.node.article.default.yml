@@ -22,6 +22,7 @@ content:
     weight: 2
     settings: {  }
     third_party_settings: {  }
+    region: content
   field_article_degree_programme:
     type: entity_reference_label
     weight: 1
@@ -37,9 +38,11 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    region: content
   links:
     weight: 0
     settings: {  }
     third_party_settings: {  }
+    region: content
 hidden:
   langcode: true

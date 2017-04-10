@@ -18,10 +18,12 @@ content:
     weight: 0
     settings: {  }
     third_party_settings: {  }
+    region: content
   contact:
     weight: 3
     settings: {  }
     third_party_settings: {  }
+    region: content
   field_oodi_uid:
     type: string_textfield
     weight: 8
@@ -29,6 +31,7 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
   field_student_number:
     weight: 7
     settings:
@@ -36,6 +39,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
   field_study_rights:
     weight: 6
     settings:
@@ -44,22 +48,27 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+    region: content
   google_analytics:
     weight: 2
     settings: {  }
     third_party_settings: {  }
+    region: content
   language:
     weight: 1
     settings: {  }
     third_party_settings: {  }
+    region: content
   path:
     type: path
     weight: 5
     settings: {  }
     third_party_settings: {  }
+    region: content
   timezone:
     weight: 4
     settings: {  }
     third_party_settings: {  }
+    region: content
 hidden:
   langcode: true

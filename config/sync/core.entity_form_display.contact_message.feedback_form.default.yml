@@ -18,10 +18,12 @@ content:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
+    region: content
   mail:
     weight: 2
     settings: {  }
     third_party_settings: {  }
+    region: content
   message:
     type: string_textarea
     weight: 0
@@ -29,8 +31,10 @@ content:
       rows: 7
       placeholder: ''
     third_party_settings: {  }
+    region: content
   preview:
     weight: 40
+    region: content
 hidden:
   copy: true
   langcode: true
