@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.box
     - field.field.node.theme.body
     - field.field.node.theme.field_theme_articles
+    - field.field.node.theme.field_theme_faq
     - field.field.node.theme.field_theme_teaser_image
     - image.style.theme_teaser_image
     - node.type.theme
@@ -25,6 +26,7 @@ content:
       image_style: theme_teaser_image
       image_link: ''
     third_party_settings: {  }
+    region: content
 hidden:
   body: true
   field_theme_articles: true

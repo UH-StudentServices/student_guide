@@ -17,6 +17,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
+    region: content
   info:
     type: string_textfield
     weight: 0
@@ -24,13 +25,16 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
   langcode:
     type: language_select
     weight: 2
     settings: {  }
     third_party_settings: {  }
+    region: content
   translation:
     weight: 3
     settings: {  }
     third_party_settings: {  }
+    region: content
 hidden: {  }

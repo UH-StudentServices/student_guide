@@ -21,6 +21,7 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
   field_code:
     weight: 32
     settings:
@@ -28,16 +29,19 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
   field_degree_programme_type:
     weight: 31
     settings: {  }
     third_party_settings: {  }
     type: options_select
+    region: content
   langcode:
     type: language_select
     weight: 2
     settings: {  }
     third_party_settings: {  }
+    region: content
   name:
     type: string_textfield
     weight: -5
@@ -45,11 +49,14 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
   path:
     type: path
     weight: 30
     settings: {  }
     third_party_settings: {  }
+    region: content
   translation:
     weight: 10
+    region: content
 hidden: {  }

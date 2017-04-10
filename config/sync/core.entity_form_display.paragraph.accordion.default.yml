@@ -21,6 +21,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
+    region: content
   field_accordion_links:
     weight: 2
     settings:
@@ -28,6 +29,7 @@ content:
       placeholder_title: ''
     third_party_settings: {  }
     type: link_default
+    region: content
   field_accordion_title:
     weight: 0
     settings:
@@ -35,8 +37,10 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
   translation:
     weight: 10
+    region: content
 hidden:
   created: true
   status: true

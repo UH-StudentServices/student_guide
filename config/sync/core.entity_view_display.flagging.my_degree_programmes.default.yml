@@ -20,6 +20,7 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     type: boolean
+    region: content
   field_primary:
     weight: 1
     label: hidden
@@ -29,4 +30,5 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     type: boolean
+    region: content
 hidden: {  }

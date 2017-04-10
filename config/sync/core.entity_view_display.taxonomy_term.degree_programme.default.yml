@@ -20,6 +20,7 @@ content:
     weight: 0
     settings: {  }
     third_party_settings: {  }
+    region: content
   field_code:
     weight: 11
     label: above
@@ -27,13 +28,16 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   field_degree_programme_type:
     weight: 1
     label: above
     settings: {  }
     third_party_settings: {  }
     type: list_default
+    region: content
   flag_my_degree_programmes:
     weight: 10
+    region: content
 hidden:
   langcode: true
