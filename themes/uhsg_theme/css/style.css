@@ -8150,19 +8150,15 @@ h1, h2, h3, h4, legend,
   }
 }
 
-.paragraph__title {
-  margin-bottom: 15px;
-}
-
 .paragraph__video > .video-embed-field-responsive-video,
 .paragraph__paragraph-image > img {
-  margin-bottom: 15px;
+  margin-bottom: 1em;
 }
 
 @media (min-width: 48em) {
   .paragraph__video > .video-embed-field-responsive-video,
   .paragraph__paragraph-image > img {
-    margin-bottom: 30px;
+    margin-bottom: 2em;
   }
 }
 
@@ -8302,6 +8298,18 @@ h1, h2, h3, h4, legend,
   word-wrap: break-word;
   -ms-word-break: break-word;
   margin-bottom: 15px;
+}
+
+.tag-list__item {
+  display: inline;
+  padding-right: 0;
+  margin-right: 1em;
+}
+
+.tag-list__item:after {
+  display: inline-block;
+  position: static;
+  margin-left: 1em;
 }
 
 .theme--box {

@@ -1,11 +1,7 @@
-.paragraph__title {
-  margin-bottom: $vert-spacing-unit / 2;
-}
-
 .paragraph__video > .video-embed-field-responsive-video,
 .paragraph__paragraph-image > img {
-  margin-bottom: $vert-spacing-unit / 2;
+  margin-bottom: 1em;
   @include breakpoint($small) {
-    margin-bottom: $vert-spacing-unit;
+    margin-bottom: 2em;
   }
 }
