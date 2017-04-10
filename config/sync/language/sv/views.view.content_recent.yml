@@ -1,4 +1,5 @@
 label: 'Nyligen uppdaterat innehåll'
+description: 'Recent content.'
 display:
   default:
     display_title: Huvud

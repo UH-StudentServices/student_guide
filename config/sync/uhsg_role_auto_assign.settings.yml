@@ -1,1 +1,10 @@
-group_to_roles: {  }
+group_to_roles:
+  -
+    group_name: hy-ypa-opa-opne
+    rid: content_editor
+  -
+    group_name: hy-ypa-opa-kosu
+    rid: content_editor
+  -
+    group_name: grp-guide-editor
+    rid: content_editor

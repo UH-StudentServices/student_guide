@@ -1,1 +1,4 @@
 label: 'Haluan vastauksen palautteeseeni'
+settings:
+  on_label: 'Yes'
+  off_label: 'No'

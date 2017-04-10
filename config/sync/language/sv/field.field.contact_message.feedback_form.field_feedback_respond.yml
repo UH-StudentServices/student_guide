@@ -1,1 +1,4 @@
 label: 'Jag vill gärna ha svar på min feedback'
+settings:
+  on_label: 'Yes'
+  off_label: 'No'

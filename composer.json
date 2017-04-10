@@ -28,7 +28,7 @@
     "cweagans/composer-patches": "^1.5.0",
     "composer/installers": "^1.0",
     "drupal/admin_toolbar": "^1.18",
-    "drupal/core": "^8.0",
+    "drupal/core": "^8.3",
     "drupal/paragraphs": "^1.0",
     "drupal/pathauto": "^1.0-beta2",
     "drupal/migrate_plus": "^3.0-beta1",
@@ -85,9 +85,6 @@
     "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold"
   },
   "extra": {
-    "packagist.drupal-composer.org": {
-      "discover-make-files": false
-    },
     "installer-paths": {
       "web/core": ["type:drupal-core"],
       "web/libraries/{$name}": ["type:drupal-library"],
@@ -98,9 +95,6 @@
     },
     "enable-patching": true,
     "patches": {
-      "drupal/core": {
-       "2650910-18": "https://www.drupal.org/files/issues/8.2.x-dev-2650910-18_0.patch"
-      },
       "drupal/samlauth": {
         "2816997-7": "https://www.drupal.org/files/issues/samlauth-allow_custom_cert_folder-2816997-7.patch",
         "2817005-11": "https://www.drupal.org/files/issues/samlauth-add_event_to_map_attributes_to_user-2817005-11.patch",
