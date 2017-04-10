@@ -2,6 +2,8 @@
 
 ## 1.x-dev
 
+* Display a list of degree programmes when viewing instructions (HUB-192).
+
 
 ## 1.2
 Release date: 20.03.2017

@@ -79,17 +79,12 @@
   ]
 %}
 
-{% set created = node.getCreatedTime|format_date('short') %}
-
 <article {{ attributes.addClass(node_classes) }}>
   {{ content.field_news_image }}
   <div class="col-container tube--large">
     <div class="col-left">
       <h1 class="page-title--small"> {{ label }} </h1>
-      <div class="tag-list">
-        <div class="tag-list__item"> {{ created }} </div>
-        {{ content.field_news_degree_programme }}
-      </div>
+      {{ content.field_news_degree_programme }}
     </div>
     <div class="col-main">
       {{ content|without('field_news_degree_programme', 'field_news_image') }}
