@@ -288,11 +288,12 @@ function uhsg_theme_preprocess_file_link(&$variables) {
 
 /**
  * Implements template_preprocess_node().
- * Add styleguide classes.
+ * Add node type as label if current page is not a theme.
  */
 function uhsg_theme_preprocess_node(&$variables) {
   if (in_array($variables['view_mode'], ['teaser', 'constrained'])) {
-    $current_page_is_theme = \Drupal::routeMatch()->getParameter('node')->bundle() == 'theme';
+    $node_viewed = \Drupal::routeMatch()->getParameter('node');
+    $current_page_is_theme = $node_viewed && $node_viewed->bundle() == 'theme';
     $variables['type'] = !$current_page_is_theme ? $variables['node']->type->entity->label() : NULL;
   }
 }
