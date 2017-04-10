@@ -5,6 +5,7 @@
 * Display a list of degree programmes when viewing instructions (HUB-192).
 * Updated Drupal core to 8.3.x (HUB-206).
 * Updated JS validation, so that it is consistent with Drupal core.
+* Remove heading and type labels from theme articles (HUB-188) 
 
 
 ## 1.2
@@ -15,7 +16,6 @@ Release date: 20.03.2017
 * Removed soft hyphens from node title to prevent them messing up search and url aliases (HUB-183)
 * Add nofollow attribute to degree programme switcher links to prevent google indexing (HUB-184)
 * Translation updates (HUB-179).
-* Remove heading and type labels from theme articles (HUB-188) 
 
 
 ## 1.1
