@@ -4,6 +4,8 @@
 
 * Display a list of degree programmes when viewing instructions (HUB-192).
 * Updated Drupal core to 8.3.x (HUB-206).
+* Updated JS validation, so that it is consistent with Drupal core.
+
 
 ## 1.2
 Release date: 20.03.2017
