@@ -38,7 +38,7 @@
 #}
 
 {% block content %}
-	<div{{ attributes.addClass('tag-list') }}>
+	<div{{ attributes.addClass('tag-list', 'tube') }}>
 		{% if created %}
 			<div class="tag-list__item">
 				{{ created|format_date('short') }}
