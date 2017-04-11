@@ -101,3 +101,9 @@ msgstr "Teema"
 msgctxt "Search Filters"
 msgid "Results (@results)"
 msgstr "Tulokset (@results kpl)"
+
+msgid "Login"
+msgstr "Kirjaudu"
+
+msgid "Logout"
+msgstr "Kirjaudu ulos"

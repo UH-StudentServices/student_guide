@@ -1,0 +1,35 @@
+uuid: cfc8628f-cfdc-44a4-93e0-0c3f18e514ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.theme_teaser_image_desktop
+    - image.style.theme_teaser_image_mobile
+    - image.style.theme_teaser_image_tablet
+  theme:
+    - uhsg_theme
+id: theme_teaser_image
+label: 'Theme teaser image'
+image_style_mappings:
+  -
+    breakpoint_id: large
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: theme_teaser_image_desktop
+  -
+    breakpoint_id: medium
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: theme_teaser_image_tablet
+  -
+    breakpoint_id: small
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: theme_teaser_image_tablet
+  -
+    breakpoint_id: mobile
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: theme_teaser_image_mobile
+breakpoint_group: UhsgTheme
+fallback_image_style: theme_teaser_image_desktop
