@@ -24,21 +24,28 @@ bundle: paragraph
 mode: default
 content:
   field_paragraph_body:
-    weight: 1
+    weight: 2
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
+  field_paragraph_degree_programme:
+    type: entity_reference_label
+    weight: 1
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
   field_paragraph_file:
-    weight: 4
+    weight: 5
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: file_default
     region: content
   field_paragraph_image:
-    weight: 3
+    weight: 4
     label: hidden
     settings:
       image_style: paragraph_image
@@ -47,7 +54,7 @@ content:
     type: image
     region: content
   field_paragraph_links:
-    weight: 2
+    weight: 3
     label: hidden
     settings:
       trim_length: 80
@@ -67,7 +74,7 @@ content:
     type: string
     region: content
   field_paragraph_video:
-    weight: 5
+    weight: 6
     label: hidden
     settings:
       responsive: true
@@ -79,5 +86,4 @@ content:
     region: content
 hidden:
   created: true
-  field_paragraph_degree_programme: true
   uid: true

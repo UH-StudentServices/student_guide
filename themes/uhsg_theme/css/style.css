@@ -7946,18 +7946,18 @@ h1, h2, h3, h4, legend,
 }
 
 .paragraph__title {
-  margin-bottom: 1em;
+  margin-bottom: 15px;
 }
 
 .paragraph__video > .video-embed-field-responsive-video,
 .paragraph__paragraph-image > img {
-  margin-bottom: 1em;
+  margin-bottom: 15px;
 }
 
 @media (min-width: 48em) {
   .paragraph__video > .video-embed-field-responsive-video,
   .paragraph__paragraph-image > img {
-    margin-bottom: 2em;
+    margin-bottom: 30px;
   }
 }
 
@@ -8083,6 +8083,28 @@ h1, h2, h3, h4, legend,
   -ms-flex-pack: center;
       justify-content: center;
   margin: 0 auto;
+}
+
+.tag-list {
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+      hyphens: auto;
+  word-break: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-word;
+  margin-bottom: 15px;
+}
+
+.tag-list__item {
+  display: inline;
+  padding-right: 0;
+  margin-right: 1em;
+}
+
+.tag-list__item:after {
+  display: inline-block;
+  position: static;
+  margin-left: 1em;
 }
 
 .theme--box {

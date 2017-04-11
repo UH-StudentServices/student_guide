@@ -1,0 +1,15 @@
+.tag-list {
+  @include hyphenate;
+  margin-bottom: $vert-spacing-unit / 2;
+}
+
+.tag-list__item {
+  display: inline;
+  padding-right: 0;
+  margin-right: 1em;
+  &:after {
+    display: inline-block;
+    position: static;
+    margin-left: 1em;
+  }
+}
