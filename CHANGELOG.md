@@ -7,7 +7,10 @@
 * Updated JS validation, so that it is consistent with Drupal core.
 * Remove heading and type labels from theme articles (HUB-188) 
 * Display a list of degree programmes on each paragraph on instructions (HUB-193)
-
+* Partial word search support (HUB-164).
+  - See uhsg_search/README.md for Solr configuration files to replace
+  - Restart Solr (sudo service solr restart)
+  - Re-index Solr (drush sapi-c && drush sapi-i)
 
 ## 1.2
 Release date: 20.03.2017
