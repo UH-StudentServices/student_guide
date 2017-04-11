@@ -30,6 +30,7 @@ content:
     settings:
       link: false
     third_party_settings: {  }
+    region: content
   field_article_paragraph:
     type: entity_reference_revisions_entity_view
     weight: 3
