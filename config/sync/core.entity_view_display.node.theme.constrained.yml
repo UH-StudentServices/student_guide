@@ -19,7 +19,7 @@ mode: constrained
 content:
   body:
     label: hidden
-    type: text_trimmed
+    type: text_summary_or_trimmed
     weight: 0
     settings:
       trim_length: 200

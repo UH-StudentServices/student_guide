@@ -22,7 +22,7 @@ mode: teaser
 content:
   body:
     label: hidden
-    type: text_trimmed
+    type: text_summary_or_trimmed
     weight: 1
     settings:
       trim_length: 200

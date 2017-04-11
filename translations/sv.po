@@ -98,3 +98,9 @@ msgstr "Tema"
 msgctxt "Search Filters"
 msgid "Results (@results)"
 msgstr "Resultat (@results)"
+
+msgid "Login"
+msgstr "Logga in"
+
+msgid "Logout"
+msgstr "Logga ut"

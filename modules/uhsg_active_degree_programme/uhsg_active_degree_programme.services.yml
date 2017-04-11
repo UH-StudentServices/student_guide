@@ -7,8 +7,3 @@ services:
   uhsg_active_degree_programme.active_degree_programme:
     class: Drupal\uhsg_active_degree_programme\ActiveDegreeProgrammeService
     arguments: ['@config.factory', '@request_stack', '@entity.repository', '@current_user', '@flag']
-  uhsg_active_degree_programme.page_cache_request_policy.deny_active_degree_programme:
-      class: Drupal\uhsg_active_degree_programme\PageCache\DenyActiveDegreeProgramme
-      arguments: ['@uhsg_active_degree_programme.active_degree_programme']
-      tags:
-        - { name: page_cache_response_policy }
