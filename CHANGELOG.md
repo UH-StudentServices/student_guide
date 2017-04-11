@@ -12,6 +12,10 @@
 * Removed page caching for anonymous users as it was causing issues with degree
   programme selector functionality (HUB-182).
 * Fix theme teaser background image in firefox and use responsive images (HUB-205)
+* Partial word search support (HUB-164).
+  - See uhsg_search/README.md for Solr configuration files to replace
+  - Restart Solr (sudo service solr restart)
+  - Re-index Solr (drush sapi-c && drush sapi-i)
 
 
 ## 1.2

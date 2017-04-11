@@ -44,3 +44,37 @@ function uhsg_search_article_is_degree_programme_specific($node) {
   }
   return FALSE;
 }
+
+/**
+ * Implements hook_search_api_solr_query_alter().
+ */
+function uhsg_search_search_api_solr_query_alter(\Solarium\QueryType\Select\Query\Query $solarium_query, \Drupal\search_api\Query\QueryInterface $query) {
+  uhsg_search_wildcard_query($solarium_query);
+}
+
+/**
+ * Transform single word queries into wildcard queries to match partial words.
+ * Does not affect the query when multiple words are provided.
+ *
+ * Example transformation:
+ *
+ * "teachi" -> teachi*
+ *
+ * @param \Solarium\QueryType\Select\Query\Query $solarium_query
+ */
+function uhsg_search_wildcard_query(\Solarium\QueryType\Select\Query\Query $solarium_query) {
+  $query = $solarium_query->getQuery();
+  $single_word_query = strpos($query, '+') === FALSE;
+
+  if ($single_word_query) {
+
+    // Remove quotes.
+    $word = str_replace('"', '', $query);
+
+    // Append wildcard.
+    $query = "$word*";
+
+    // Override query.
+    $solarium_query->setQuery($query);
+  }
+}
