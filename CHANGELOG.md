@@ -9,6 +9,8 @@
 * Display a list of degree programmes on each paragraph on instructions (HUB-193)
 * Use summary instead of body in teasers and search results when available (HUB-185)
 * Changed login and logout link titles (HUB-186)
+* Removed page caching for anonymous users as it was causing issues with degree
+  programme selector functionality (HUB-182).
 
 
 ## 1.2

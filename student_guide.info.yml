@@ -24,7 +24,6 @@ dependencies:
   - menu_link_content
   - node
   - options
-  - page_cache
   - paragraphs
   - pathauto
   - samlauth
