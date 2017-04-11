@@ -7,6 +7,7 @@
 * Updated JS validation, so that it is consistent with Drupal core.
 * Remove heading and type labels from theme articles (HUB-188) 
 * Display a list of degree programmes on each paragraph on instructions (HUB-193)
+* Changed login and logout link titles (HUB-186)
 
 
 ## 1.2
