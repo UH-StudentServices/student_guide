@@ -1,13 +1,22 @@
 .theme--box {
+  @include hyphenate;
+  @include font-size(25px);
   width: 100%;
   background: $black;
   position: relative;
   overflow: hidden;
-  
+  @include breakpoint($large) {
+    @include font-size(30px);
+  }
+
   .theme__title {
     position: relative;
     z-index: 1;
     color: $white;
+    text-transform: uppercase;
+    letter-spacing: -0.05em;
+    line-height: 1.2em;
+    font-weight: 700;
   }
 
   .theme__link-wrapper {
@@ -15,7 +24,7 @@
     width: 100%;
     display: flex;
     align-items: center;
-    padding: 2em;
+    padding: 1em;
     @include breakpoint($small) {
       position: absolute;
     }
@@ -27,6 +36,7 @@
     transition: opacity 0.2s ease-in-out;
     left: 0;
     top: 0;
+    width: 100%;
   }
 
   &:hover {
@@ -35,3 +45,6 @@
     }
   }
 }
+
+
+//268x268

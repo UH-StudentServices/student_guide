@@ -26,6 +26,7 @@ dependencies:
   - options
   - paragraphs
   - pathauto
+  - responsive_image
   - samlauth
   - toolbar
   - taxonomy

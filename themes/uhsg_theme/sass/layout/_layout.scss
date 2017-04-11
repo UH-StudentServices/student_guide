@@ -45,13 +45,16 @@
 }
 
 .grid-item-square {
+  @include breakpoint($mobile-only) {
+    max-width: $bp-small / 2;
+  }
   @include breakpoint($small) {
-    width: $bp-small / 2;
-    height: $bp-small / 2;
+    width: $bp-small / 3;
+    height: $bp-small / 3;
   }
   @include breakpoint($medium) {
-    width: $bp-medium / 3;
-    height: $bp-medium / 3;
+    width: $bp-medium / 4;
+    height: $bp-medium / 4;
   }
   @include breakpoint($large) {
     width: $bp-large / 4;

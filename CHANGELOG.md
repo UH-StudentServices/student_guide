@@ -11,6 +11,7 @@
 * Changed login and logout link titles (HUB-186)
 * Removed page caching for anonymous users as it was causing issues with degree
   programme selector functionality (HUB-182).
+* Fix theme teaser background image in firefox and use responsive images (HUB-205)
 
 
 ## 1.2
