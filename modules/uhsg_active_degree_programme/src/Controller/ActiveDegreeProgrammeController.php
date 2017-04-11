@@ -33,7 +33,6 @@ class ActiveDegreeProgrammeController extends ControllerBase {
       $this->activeDegreeProgrammeService->set($term);
     }
     $url = $this->getHttpReferer();
-    $url->setOptions(['query' => ['degree_programme' => $tid]]);
 
     return new RedirectResponse($url->toString());
   }

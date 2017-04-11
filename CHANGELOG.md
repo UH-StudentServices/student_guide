@@ -7,6 +7,8 @@
 * Updated JS validation, so that it is consistent with Drupal core.
 * Remove heading and type labels from theme articles (HUB-188) 
 * Display a list of degree programmes on each paragraph on instructions (HUB-193)
+* Removed page caching for anonymous users as it was causing issues with degree
+  programme selector functionality (HUB-182).
 
 
 ## 1.2
