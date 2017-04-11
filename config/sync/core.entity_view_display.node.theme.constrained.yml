@@ -1,6 +1,6 @@
 uuid: 0b19f103-9078-444e-8612-6026f2528c55
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - core.entity_view_mode.node.constrained
@@ -19,7 +19,7 @@ mode: constrained
 content:
   body:
     label: hidden
-    type: text_trimmed
+    type: text_summary_or_trimmed
     weight: 0
     settings:
       trim_length: 200
