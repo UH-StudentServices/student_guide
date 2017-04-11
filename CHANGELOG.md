@@ -8,6 +8,8 @@
 * Remove heading and type labels from theme articles (HUB-188) 
 * Display a list of degree programmes on each paragraph on instructions (HUB-193)
 * Use summary instead of body in teasers and search results when available (HUB-185)
+* Changed login and logout link titles (HUB-186)
+
 
 ## 1.2
 Release date: 20.03.2017
