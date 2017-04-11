@@ -1,0 +1,14 @@
+uuid: 0e545a75-14dc-4405-9b06-78f73fc213a0
+langcode: en
+status: true
+dependencies: {  }
+name: theme_teaser_image_desktop
+label: 'Theme teaser image desktop'
+effects:
+  79f4c220-03b9-4fe8-8758-0165712dc55d:
+    uuid: 79f4c220-03b9-4fe8-8758-0165712dc55d
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 268
+      height: 268

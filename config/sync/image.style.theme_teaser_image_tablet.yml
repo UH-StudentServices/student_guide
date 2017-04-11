@@ -1,0 +1,14 @@
+uuid: 3bbc0bfc-776d-45d3-982b-e5059f7edeed
+langcode: en
+status: true
+dependencies: {  }
+name: theme_teaser_image_tablet
+label: 'Theme teaser image tablet'
+effects:
+  613d54b3-b43f-40a0-8220-3974cb400cf9:
+    uuid: 613d54b3-b43f-40a0-8220-3974cb400cf9
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 224
+      height: 224

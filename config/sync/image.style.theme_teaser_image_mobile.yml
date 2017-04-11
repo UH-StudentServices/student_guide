@@ -1,0 +1,14 @@
+uuid: 58ebaca0-3fa6-4338-bf25-b63b82ed26c8
+langcode: en
+status: true
+dependencies: {  }
+name: theme_teaser_image_mobile
+label: 'Theme teaser image mobile'
+effects:
+  b78fef0f-cbcd-4fe5-a381-8a9f41fb6b61:
+    uuid: b78fef0f-cbcd-4fe5-a381-8a9f41fb6b61
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 336
+      height: 200
