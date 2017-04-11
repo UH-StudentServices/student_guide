@@ -7,6 +7,7 @@
 * Updated JS validation, so that it is consistent with Drupal core.
 * Remove heading and type labels from theme articles (HUB-188) 
 * Display a list of degree programmes on each paragraph on instructions (HUB-193)
+* Use summary instead of body in teasers and search results when available (HUB-185)
 * Partial word search support (HUB-164).
   - See uhsg_search/README.md for Solr configuration files to replace
   - Restart Solr (sudo service solr restart)
