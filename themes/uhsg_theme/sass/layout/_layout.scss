@@ -77,5 +77,6 @@
   }
   .col-main {
     flex-basis: (100% / 3 ) * 2;
+    flex-grow: 2;
   }
 }
