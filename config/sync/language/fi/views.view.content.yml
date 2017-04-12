@@ -8,8 +8,8 @@ display:
           submit_button: Suodatin
           reset_button_label: 'Palauta oletusarvoihin'
           exposed_sorts_label: Lajittele
-          sort_asc_label: Asc
-          sort_desc_label: Desc
+          sort_asc_label: Nouseva
+          sort_desc_label: Laskeva
       pager:
         options:
           tags:
@@ -30,6 +30,8 @@ display:
           label: Päivitetty
         operations:
           label: Toimenpiteet
+        field_article_degree_programme:
+          label: 'Koulutusohjelma (ohje)'
       filters:
         status:
           expose:
@@ -51,6 +53,12 @@ display:
         langcode:
           expose:
             label: Kieli
+        field_article_degree_programme_target_id:
+          expose:
+            label: 'Koulutusohjelma (ohje)'
+        uid:
+          expose:
+            label: Tekijä
       title: Sisältö
       empty:
         area_text_custom:
