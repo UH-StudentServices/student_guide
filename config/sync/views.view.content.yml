@@ -2,8 +2,12 @@ uuid: 141e1421-af2a-411b-a01e-41fa49c4479c
 langcode: en
 status: true
 dependencies:
+  config:
+    - field.storage.node.field_article_degree_programme
+    - taxonomy.vocabulary.degree_programme
   module:
     - node
+    - taxonomy
     - user
 _core:
   default_config_hash: ikQgJA-GO0ni32wrs5t5AyQ5T7kNB6vgaJyTVEXHeT4
@@ -279,6 +283,69 @@ display:
           plugin_id: field
           entity_type: node
           entity_field: changed
+        field_article_degree_programme:
+          id: field_article_degree_programme
+          table: node__field_article_degree_programme
+          field: field_article_degree_programme
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Degree programme (instructions)'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
         operations:
           id: operations
           table: node
@@ -548,6 +615,51 @@ display:
           entity_type: user
           entity_field: uid
           plugin_id: user_name
+        field_article_degree_programme_target_id:
+          id: field_article_degree_programme_target_id
+          table: node__field_article_degree_programme
+          field: field_article_degree_programme_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_article_degree_programme_target_id_op
+            label: 'Degree programme (instructions)'
+            description: ''
+            use_operator: true
+            operator: field_article_degree_programme_target_id_op
+            identifier: field_article_degree_programme_target_id
+            required: false
+            remember: false
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: degree_programme
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
       sorts: {  }
       title: Content
       empty:
@@ -587,7 +699,8 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       max-age: 0
-      tags: {  }
+      tags:
+        - 'config:field.storage.node.field_article_degree_programme'
   page_1:
     display_options:
       path: admin/content/node
@@ -619,4 +732,5 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       max-age: 0
-      tags: {  }
+      tags:
+        - 'config:field.storage.node.field_article_degree_programme'
