@@ -302,6 +302,8 @@ function uhsg_theme_preprocess_node(&$variables) {
   }
   if ($variables['node']->bundle() == 'article' && $variables['page']) {
     $view = Views::getView('themes_referencing_instruction_viewed');
+    $view->setDisplay('block_1');
+    $variables['themes_title'] = $view->getTitle();
     $variables['themes'] = $view->buildRenderable('block_1');
   }
 }

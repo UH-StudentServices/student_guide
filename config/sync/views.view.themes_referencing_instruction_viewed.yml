@@ -34,7 +34,7 @@ display:
         type: views_query
         options:
           disable_sql_rewrite: false
-          distinct: false
+          distinct: true
           replica: false
           query_comment: ''
           query_tags: {  }
@@ -234,7 +234,7 @@ display:
           expose:
             label: ''
           plugin_id: standard
-      title: 'Themes referencing instruction viewed'
+      title: Themes
       header: {  }
       footer: {  }
       empty: {  }
@@ -304,6 +304,7 @@ display:
     display_options:
       display_extenders: {  }
       rendering_language: '***LANGUAGE_entity_translation***'
+      block_hide_empty: true
     cache_metadata:
       max-age: -1
       contexts:
