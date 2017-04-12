@@ -7478,6 +7478,14 @@ li.avatar.avatar--default img {
   padding-right: 2.5em;
 }
 
+.degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content li:hover {
+  border-bottom: 1px solid #F8F8F8;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  transition: none;
+}
+
 .degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content li .flag {
   font-size: 0;
   position: absolute;
