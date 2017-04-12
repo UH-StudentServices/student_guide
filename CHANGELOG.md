@@ -16,6 +16,7 @@
   - See uhsg_search/README.md for Solr configuration files to replace
   - Restart Solr (sudo service solr restart)
   - Re-index Solr (drush sapi-c && drush sapi-i)
+* Sort degree programmes alphabetically (HUB-207)
 * Admin content view: List content by degree programme (HUB-189)
 
 
