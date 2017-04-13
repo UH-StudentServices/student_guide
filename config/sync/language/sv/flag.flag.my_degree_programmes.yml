@@ -1,1 +1,3 @@
 label: 'Mina utbildningsprogram '
+flag_long: 'Lägg till mina utbildningsprogram'
+unflag_long: 'Radera från mina utbildningsprogram'
