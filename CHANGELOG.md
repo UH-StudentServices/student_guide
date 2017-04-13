@@ -20,6 +20,7 @@
 * Admin content view: List content by degree programme (HUB-189)
 * Add links to related themes on each instruction page (HUB-195)
 * Added underline to degree programme switcher items when hovering (HUB-204)
+* Display search filters only when more than one type of result (HUB-202)
 
 
 ## 1.2
