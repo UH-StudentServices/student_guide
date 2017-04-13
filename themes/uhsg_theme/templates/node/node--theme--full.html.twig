@@ -74,19 +74,27 @@
   set node_classes = [
     node.bundle|clean_class,
     view_mode ? node.bundle|clean_class ~ '--' ~ view_mode|clean_class,
+  ]
+%}
+
+{%
+  set container_classes = [
     'container',
-    'tube',
+    'tube'
   ]
 %}
 
 <article {{ attributes.addClass(node_classes) }}>
-  <h1> {{ label }} </h1>
-  {{ content|without('field_theme_faq') }}
-  {% if content.field_theme_faq %}
-    <div class="col-container">
-      <div class="col-main">
-        {{ content.field_theme_faq }}
+  <div{{ content_attributes.addClass(container_classes) }}>
+    <h1> {{ label }} </h1>
+    {{ content|without('field_theme_faq', 'field_theme_section') }}
+    {% if content.field_theme_faq %}
+      <div class="col-container">
+        <div class="col-main">
+          {{ content.field_theme_faq }}
+        </div>
       </div>
-    </div>
-  {% endif %}
+    {% endif %}
+  </div>
+  {{ content.field_theme_section }}
 </article>

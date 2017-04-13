@@ -163,6 +163,12 @@ function uhsg_theme_preprocess_field(array &$variables, $hook) {
       break;
     case 'field_news_degree_programme':
       $variables['created'] = $variables['element']['#object']->getCreatedTime();
+    case 'field_theme_section_title':
+      $variables['attributes']['class'][] = 'is-center-mobile';
+      break;
+    case 'field_theme_section_instructions':
+      $variables['attributes']['class'][] = 'grid-container';
+      break;
   }
 }
 
