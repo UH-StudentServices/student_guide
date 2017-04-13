@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.theme_section.field_theme_section_instructions
+    - field.field.paragraph.theme_section.field_theme_section_title
     - paragraphs.paragraphs_type.theme_section
 id: paragraph.theme_section.default
 targetEntityType: paragraph
@@ -11,12 +12,20 @@ bundle: theme_section
 mode: default
 content:
   field_theme_section_instructions:
-    weight: 0
+    weight: 1
     label: hidden
     settings:
       view_mode: teaser
       link: false
     third_party_settings: {  }
     type: entity_reference_entity_view
+    region: content
+  field_theme_section_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
 hidden: {  }

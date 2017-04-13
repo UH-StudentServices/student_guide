@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.theme_section.field_theme_section_instructions
+    - field.field.paragraph.theme_section.field_theme_section_title
     - paragraphs.paragraphs_type.theme_section
 id: paragraph.theme_section.default
 targetEntityType: paragraph
@@ -11,13 +12,21 @@ bundle: theme_section
 mode: default
 content:
   field_theme_section_instructions:
-    weight: 0
+    weight: 1
     settings:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+    region: content
+  field_theme_section_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
 hidden:
   created: true
