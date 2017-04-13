@@ -45,7 +45,6 @@ class ThemesReferencingInstructions extends BlockBase {
       $themes = $themes + $result;
     }
 
-    // create links
     if (!empty($themes)) {
   
       $links = [];
@@ -66,6 +65,7 @@ class ThemesReferencingInstructions extends BlockBase {
         '#theme' => 'item_list',
         '#type' => 'ul',
         '#items' => $links,
+        '#prefix' => '<h3>' . t('Themes') . '</h3>',
       ];
     }
     else {
