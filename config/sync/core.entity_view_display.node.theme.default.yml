@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.theme.body
     - field.field.node.theme.field_theme_articles
     - field.field.node.theme.field_theme_faq
+    - field.field.node.theme.field_theme_section
     - field.field.node.theme.field_theme_teaser_image
     - node.type.theme
   module:
@@ -35,8 +36,17 @@ content:
     region: content
   field_theme_faq:
     type: entity_reference_revisions_entity_view
-    weight: 3
+    weight: 4
     label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_theme_section:
+    type: entity_reference_revisions_entity_view
+    weight: 3
+    label: hidden
     settings:
       view_mode: default
       link: ''
@@ -44,9 +54,9 @@ content:
     region: content
   links:
     weight: 0
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden:
   field_theme_teaser_image: true
   langcode: true
