@@ -167,7 +167,7 @@ function uhsg_theme_preprocess_field(array &$variables, $hook) {
       $variables['attributes']['class'][] = 'is-center-mobile';
       break;
     case 'field_theme_section_instructions':
-      $variables['attributes']['class'][] = 'grid-container';
+      $variables['attributes']['class'][] = 'grid-container tube';
       break;
   }
 }

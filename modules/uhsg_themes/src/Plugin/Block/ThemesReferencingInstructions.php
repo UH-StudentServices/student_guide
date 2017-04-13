@@ -3,10 +3,8 @@
 namespace Drupal\uhsg_themes\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
-use Drupal\Core\Cache\Cache;
 use Drupal\Core\Link;
 use Drupal\node\Entity\Node;
-use Drupal\views\Views;
 
 /**
  * Provides a 'themes_referencing_instructions' block.
@@ -47,25 +45,31 @@ class ThemesReferencingInstructions extends BlockBase {
       $themes = $themes + $result;
     }
 
+    // create links
     if (!empty($themes)) {
+  
       $links = [];
       foreach ($themes as $nid) {
         $node = Node::load($nid);
         $translation = \Drupal::entityManager()->getTranslationFromContext($node);
-        $link = Link::createFromRoute($translation->getTitle(), 'entity.node.canonical', ['node' => $nid],
+        $links[] = Link::createFromRoute($translation->getTitle(), 'entity.node.canonical', ['node' => $nid],
         ['attributes' => ['class' => 'list-of-links__link button--action icon--arrow-right']]);
       }
+
+      return [
+        '#attributes' => [
+          'class' => ['list-of-links'],
+        ],
+        '#cache' => [
+          'tags' => ['node_list'],
+        ],
+        '#theme' => 'item_list',
+        '#type' => 'ul',
+        '#items' => $links,
+      ];
     }
-
-    return [
-      '#attributes' => [
-        'class' => ['list-of-links'],
-      ],
-      '#cache' => [
-        'tags' => ['node_list'],
-      ],
-      '#markup' => $link->toString(),
-    ];
-
+    else {
+      return NULL;
+    }
   }
 }
