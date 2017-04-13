@@ -18,6 +18,7 @@
   - Re-index Solr (drush sapi-c && drush sapi-i)
 * Sort degree programmes alphabetically (HUB-207)
 * Admin content view: List content by degree programme (HUB-189)
+* Add links to related themes on each instruction page (HUB-195)
 
 
 ## 1.2

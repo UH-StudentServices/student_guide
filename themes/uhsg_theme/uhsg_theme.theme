@@ -3,6 +3,7 @@
 use Drupal\Core\Language\LanguageInterface;
 use Drupal\Component\Render\FormattableMarkup;
 use Drupal\node\Entity\Node;
+use Drupal\views\Views;
 
 /**
  * @file
@@ -291,12 +292,22 @@ function uhsg_theme_preprocess_file_link(&$variables) {
 /**
  * Implements template_preprocess_node().
  * Add node type as label if current page is not a theme.
+ * Add referencing themes view.
  */
 function uhsg_theme_preprocess_node(&$variables) {
   if (in_array($variables['view_mode'], ['teaser', 'constrained'])) {
     $node_viewed = \Drupal::routeMatch()->getParameter('node');
     $current_page_is_theme = $node_viewed && $node_viewed->bundle() == 'theme';
     $variables['type'] = !$current_page_is_theme ? $variables['node']->type->entity->label() : NULL;
+  }
+  if ($variables['node']->bundle() == 'article' && $variables['page']) {
+    $view = Views::getView('themes_referencing_instruction_viewed');
+    $view->setDisplay('block_1');
+    $view->execute();
+    if (!empty($view->result)) {
+      $variables['themes_title'] = $view->getTitle();
+      $variables['themes'] = $view->buildRenderable();
+    }
   }
 }
 
