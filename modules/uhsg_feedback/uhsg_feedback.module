@@ -16,9 +16,17 @@ function uhsg_feedback_mail_alter(&$message) {
   // Restrict alteration to contact mail.
   if ($message['id'] == 'contact_page_mail') {
 
+    $replyTo = $message['reply-to'];
+
+    // From: Either the email of the sender or the site default.
+    if (!empty($replyTo)) {
+      $message['from'] = $replyTo;
+      $message['headers']['From'] = $replyTo;
+    }
+
     // Reply-to: Either the email of the sender, or noreply@helsinki.fi.
     $noReply = 'noreply@helsinki.fi';
-    $message['headers']['Reply-to'] = empty($message['reply-to']) ? $noReply : $message['reply-to'];
+    $message['headers']['Reply-to'] = empty($replyTo) ? $noReply : $replyTo;
 
     // Reset to empty body.
     $message['body'] = [];
@@ -35,7 +43,7 @@ function uhsg_feedback_mail_alter(&$message) {
 
     // I would like to get a response to my feedback.
     if ($contact_message->get('field_feedback_respond')->value) {
-      $message['body'][] = t('I would like to get a response to my feedback') . ': ' . $message['reply-to'];
+      $message['body'][] = t('I would like to get a response to my feedback') . ': ' . $replyTo;
     }
 
     // Current page URL.
