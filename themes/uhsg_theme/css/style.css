@@ -7265,6 +7265,8 @@ ul.pager > li.pager__page a {
   .col-main {
     -ms-flex-preferred-size: 66.66667%;
         flex-basis: 66.66667%;
+    -ms-flex-positive: 2;
+        flex-grow: 2;
   }
 }
 
