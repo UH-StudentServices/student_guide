@@ -29,12 +29,12 @@ class ActiveDegreeProgrammeController extends ControllerBase {
 
   public function setActiveDegreeProgramme($tid) {
     $term = $this->loadTerm($tid);
+
     if ($term) {
       $this->activeDegreeProgrammeService->set($term);
     }
-    $url = $this->getHttpReferer();
 
-    return new RedirectResponse($url->toString());
+    return $this->doRedirect();
   }
 
   public function resetActiveDegreeProgramme() {
@@ -55,5 +55,17 @@ class ActiveDegreeProgrammeController extends ControllerBase {
    */
   protected function loadTerm($tid) {
     return Term::load($tid);
+  }
+
+  /**
+   * @return RedirectResponse
+   */
+  protected function doRedirect() {
+    $httpReferer = $this->getHttpReferer()->toString();
+    $schemeAndHttpHost = \Drupal::request()->getSchemeAndHttpHost();
+    $internal = strpos($httpReferer, $schemeAndHttpHost) !== FALSE;
+    $frontPageUrl = Url::fromUri('internal:/')->toString();
+
+    return $internal ? new RedirectResponse($httpReferer) : new RedirectResponse($frontPageUrl);
   }
 }
