@@ -20,6 +20,8 @@
 * Admin content view: List content by degree programme (HUB-189)
 * Add links to related themes on each instruction page (HUB-195)
 * Added underline to degree programme switcher items when hovering (HUB-204)
+* Added title (hover) texts to degree programme favorite widget (HUB-200)
+* Feedback: User email address as the from address (HUB-190)
 * Display search filters only when more than one type of result (HUB-202)
 
 
