@@ -22,6 +22,7 @@
 * Added underline to degree programme switcher items when hovering (HUB-204)
 * Added title (hover) texts to degree programme favorite widget (HUB-200)
 * Feedback: User email address as the from address (HUB-190)
+* Display search filters only when more than one type of result (HUB-202)
 
 
 ## 1.2
