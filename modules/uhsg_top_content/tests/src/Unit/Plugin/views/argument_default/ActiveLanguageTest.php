@@ -21,4 +21,11 @@ class ActiveLanguageTest extends UnitTestCase {
   public function shouldNotGetCached() {
     $this->assertEquals(0, $this->activeLanguage->getCacheMaxAge());
   }
+
+  /**
+   * @test
+   */
+  public function shouldHaveInterfaceLanguageAsCacheContext() {
+    $this->assertEquals(['languages:language_interface'], $this->activeLanguage->getCacheContexts());
+  }
 }
