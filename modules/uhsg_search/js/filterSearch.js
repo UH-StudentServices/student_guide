@@ -15,31 +15,35 @@
           news: Drupal.t('News', {}, {context: 'Search Filters'})
         };
 
-        // add container
-        resultCount.after('<div id="search-filters" class="button-group is-center-mobile tube"></div>');
-
-        // add 'All' button
-        var filterButtons = $('#search-filters', this);
-        filterButtons.append(filter.createFilterButton('all', filterTitles, 'is-active'));
-
-        // create buttons for available filter types
+        // create buttons for available filter types if more than one type of result
         var availableTypes = filter.getAvailableTypes(results);
-        $.each(availableTypes, function (index, type) {
-          filterButtons.append(filter.createFilterButton(type, filterTitles));
-        });
 
-        // buttons order same as in filterTitles
-        filter.reorderButtons(filterButtons, filterTitles);
+        if (availableTypes.length > 1) {
 
-        // filter results on click
-        $('a', filterButtons).on('click', function (event) {
-          event.preventDefault();
-          filter.filterResults($(this), results);
+          // add container
+          resultCount.after('<div id="search-filters" class="button-group is-center-mobile tube"></div>');
 
-          // update result count
-          var resultCountText = Drupal.t('Results (@results)', {'@results': filter.getResultCount(results)}, {context: 'Search Filters'});
-          resultCount.text(resultCountText);
-        });
+          // add 'All' button
+          var filterButtons = $('#search-filters', this);
+          filterButtons.append(filter.createFilterButton('all', filterTitles, 'is-active'));
+
+          $.each(availableTypes, function (index, type) {
+            filterButtons.append(filter.createFilterButton(type, filterTitles));
+          });
+
+          // buttons order same as in filterTitles
+          filter.reorderButtons(filterButtons, filterTitles);
+
+          // filter results on click
+          $('a', filterButtons).on('click', function (event) {
+            event.preventDefault();
+            filter.filterResults($(this), results);
+
+            // update result count
+            var resultCountText = Drupal.t('Results (@results)', {'@results': filter.getResultCount(results)}, {context: 'Search Filters'});
+            resultCount.text(resultCountText);
+          });
+        }
       });
     },
 
