@@ -24,6 +24,7 @@ libraries-override:
         css/components/menu.css: false
         css/components/form.css: false
         css/components/inline-form.css: false
+        css/components/item-list.css: false
   core/jquery.ui:
     css:
       theme:

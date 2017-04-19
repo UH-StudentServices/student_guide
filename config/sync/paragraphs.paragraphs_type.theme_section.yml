@@ -1,0 +1,7 @@
+uuid: 5fee0009-c5e8-41d0-b297-9d8109174814
+langcode: en
+status: true
+dependencies: {  }
+id: theme_section
+label: 'Theme section'
+behavior_plugins: {  }

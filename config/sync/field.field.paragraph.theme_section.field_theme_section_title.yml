@@ -1,0 +1,19 @@
+uuid: d4244265-5c57-4375-9585-2e7810496b07
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_theme_section_title
+    - paragraphs.paragraphs_type.theme_section
+id: paragraph.theme_section.field_theme_section_title
+field_name: field_theme_section_title
+entity_type: paragraph
+bundle: theme_section
+label: 'Theme section title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

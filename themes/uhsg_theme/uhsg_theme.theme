@@ -163,6 +163,12 @@ function uhsg_theme_preprocess_field(array &$variables, $hook) {
       break;
     case 'field_news_degree_programme':
       $variables['created'] = $variables['element']['#object']->getCreatedTime();
+    case 'field_theme_section_title':
+      $variables['attributes']['class'][] = 'is-center-mobile';
+      break;
+    case 'field_theme_section_instructions':
+      $variables['attributes']['class'][] = 'grid-container tube';
+      break;
   }
 }
 
@@ -301,13 +307,8 @@ function uhsg_theme_preprocess_node(&$variables) {
     $variables['type'] = !$current_page_is_theme ? $variables['node']->type->entity->label() : NULL;
   }
   if ($variables['node']->bundle() == 'article' && $variables['page']) {
-    $view = Views::getView('themes_referencing_instruction_viewed');
-    $view->setDisplay('block_1');
-    $view->execute();
-    if (!empty($view->result)) {
-      $variables['themes_title'] = $view->getTitle();
-      $variables['themes'] = $view->buildRenderable();
-    }
+    $block = \Drupal::service('plugin.manager.block')->createInstance('themes_referencing_instructions', []);
+    $variables['themes'] = $block->build();
   }
 }
 
