@@ -22,7 +22,6 @@ class ThemesReferencingInstructions extends BlockBase {
   public function build() {
 
     // get current page nid
-    $lang = \Drupal::languageManager()->getCurrentLanguage()->getId();
     $nid = \Drupal::routeMatch()->getParameter('node')->id();
 
     // get paragraphs referencing the current node
@@ -31,27 +30,30 @@ class ThemesReferencingInstructions extends BlockBase {
       ->condition('type', 'theme_section')
       ->condition('field_theme_section_instructions', $nid)
       ->sort('created', 'DESC');
+
     $paragraphs = $query->execute();
 
     // get theme nodes referencing the paragraphs
     $themes = [];
-    foreach ($paragraphs as $paragraph_id) {
+
+    if (!empty($paragraphs)) {
       $query = \Drupal::entityQuery('node')
         ->condition('status', 1)
         ->condition('type', 'theme')
-        ->condition('field_theme_section', $paragraph_id)
+        ->condition('field_theme_section', $paragraphs, 'IN')
         ->sort('created', 'DESC');
-      $result = $query->execute();
-      $themes = $themes + $result;
+
+      $themes = $query->execute();
     }
 
     if (!empty($themes)) {
   
       $links = [];
-      foreach ($themes as $nid) {
-        $node = Node::load($nid);
+      $nodes = Node::loadMultiple($themes);
+
+      foreach ($nodes as $node) {
         $translation = \Drupal::entityManager()->getTranslationFromContext($node);
-        $links[] = Link::createFromRoute($translation->getTitle(), 'entity.node.canonical', ['node' => $nid],
+        $links[] = Link::createFromRoute($translation->getTitle(), 'entity.node.canonical', ['node' => $node->id()],
         ['attributes' => ['class' => 'list-of-links__link button--action icon--arrow-right']]);
       }
 
