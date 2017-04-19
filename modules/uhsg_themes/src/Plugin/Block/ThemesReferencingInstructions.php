@@ -46,8 +46,9 @@ class ThemesReferencingInstructions extends BlockBase {
       $themes = $query->execute();
     }
 
+    $renderableArray = [];
+
     if (!empty($themes)) {
-  
       $links = [];
       $nodes = Node::loadMultiple($themes);
 
@@ -57,7 +58,7 @@ class ThemesReferencingInstructions extends BlockBase {
         ['attributes' => ['class' => 'list-of-links__link button--action icon--arrow-right']]);
       }
 
-      return [
+      $renderableArray = [
         '#attributes' => [
           'class' => ['list-of-links'],
         ],
@@ -70,8 +71,7 @@ class ThemesReferencingInstructions extends BlockBase {
         '#title' => t('Themes'),
       ];
     }
-    else {
-      return NULL;
-    }
+
+    return $renderableArray;
   }
 }
