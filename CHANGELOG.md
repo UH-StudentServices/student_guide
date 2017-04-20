@@ -14,9 +14,6 @@ Release date: 20.04.2017
   programme selector functionality (HUB-182).
 * Fix theme teaser background image in firefox and use responsive images (HUB-205)
 * Partial word search support (HUB-164).
-  - See uhsg_search/README.md for Solr configuration files to replace
-  - Restart Solr (sudo service solr restart)
-  - Re-index Solr (drush sapi-c && drush sapi-i)
 * Sort degree programmes alphabetically (HUB-207)
 * Admin content view: List content by degree programme (HUB-189)
 * Add links to related themes on each instruction page (HUB-195)
