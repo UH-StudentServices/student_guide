@@ -2,8 +2,8 @@
 
 ## Overridden "text" type field ("textEdgeNGram")
 
-/usr/local/share/solr/drupal/solr/collection1/conf/schema_extra_types.xml
+* Copy from `uhsg_search/solr-conf/schema_extra_types.xml` to `/usr/local/share/solr/drupal/solr/collection1/conf/schema_extra_types.xml`
 
 ## Separate field definitions to use the overridden text type
 
-/usr/local/share/solr/drupal/solr/collection1/conf/schema_extra_fields.xml
+* Copy from `uhsg_search/solr-conf/schema_extra_fields.xml` to `/usr/local/share/solr/drupal/solr/collection1/conf/schema_extra_fields.xml`
