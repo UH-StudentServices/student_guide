@@ -1,6 +1,7 @@
 #Changelog
 
-## 1.x-dev
+## 1.3
+Release date: 20.04.2017
 
 * Display a list of degree programmes when viewing instructions (HUB-192).
 * Updated Drupal core to 8.3.0 (HUB-206).
