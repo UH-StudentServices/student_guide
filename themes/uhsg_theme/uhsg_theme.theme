@@ -290,7 +290,10 @@ function uhsg_theme_preprocess_page(&$variables) {
 }
 
 /**
- * Collect table of contents.
+ * Create table of contents.
+ *
+ * Important: There are some items that gets filtered during module
+ * pre-processing phase, so it is important to run this after filtering is done.
  *
  * @param array $variables
  */
