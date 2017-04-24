@@ -5,5 +5,6 @@ core: 8.x
 version: VERSION
 package: Student Guide
 dependencies:
+  - taxonomy
   - views
   - flag
