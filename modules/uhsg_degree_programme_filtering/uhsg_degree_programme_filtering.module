@@ -26,6 +26,11 @@ function uhsg_degree_programme_filtering_preprocess_field(array &$variables, $ho
       $target_entity_type = 'paragraph';
       $filter_untranslated_targets = FALSE;
       break;
+    case 'field_theme_section':
+      $reference_field = 'field_paragraph_degree_programme';
+      $target_entity_type = 'paragraph';
+      $filter_untranslated_targets = TRUE;
+      break;
   }
 
   // If no reference field or target entity resolved, stop here.

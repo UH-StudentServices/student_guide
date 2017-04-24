@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.theme_section.field_paragraph_degree_programme
     - field.field.paragraph.theme_section.field_theme_section_instructions
     - field.field.paragraph.theme_section.field_theme_section_title
     - paragraphs.paragraphs_type.theme_section
@@ -28,4 +29,5 @@ content:
     third_party_settings: {  }
     type: string
     region: content
-hidden: {  }
+hidden:
+  field_paragraph_degree_programme: true

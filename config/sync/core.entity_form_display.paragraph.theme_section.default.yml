@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.theme_section.field_paragraph_degree_programme
     - field.field.paragraph.theme_section.field_theme_section_instructions
     - field.field.paragraph.theme_section.field_theme_section_title
     - paragraphs.paragraphs_type.theme_section
@@ -11,6 +12,15 @@ targetEntityType: paragraph
 bundle: theme_section
 mode: default
 content:
+  field_paragraph_degree_programme:
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_theme_section_instructions:
     weight: 1
     settings:
@@ -29,8 +39,10 @@ content:
     type: string_textfield
     region: content
   translation:
-    weight: 10
+    weight: 3
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   created: true
   status: true
