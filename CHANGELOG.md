@@ -1,5 +1,10 @@
 #Changelog
 
+## 1.4-dev
+
+* Added some validation related to active degree programme detection mechanism
+
+
 ## 1.3
 Release date: 20.04.2017
 
