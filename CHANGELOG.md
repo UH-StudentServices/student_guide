@@ -5,6 +5,11 @@
 * Added some validation related to active degree programme detection mechanism
 
 
+## 1.4-dev
+
+* Added possibility to filter by degree programmes to theme sections (HUB-201)
+
+
 ## 1.3
 Release date: 20.04.2017
 

@@ -68,6 +68,7 @@ module:
   uhsg_avatar: 0
   uhsg_cookie_consent: 0
   uhsg_degree_programme: 0
+  uhsg_degree_programme_filtering: 0
   uhsg_edit: 0
   uhsg_feedback: 0
   uhsg_migrate: 0

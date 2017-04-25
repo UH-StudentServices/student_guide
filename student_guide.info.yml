@@ -33,6 +33,8 @@ dependencies:
   - uhsg_active_degree_programme
   - uhsg_article
   - uhsg_cookie_consent
+  - uhsg_degree_programme
+  - uhsg_degree_programme_filtering
   - uhsg_edit
   - uhsg_feedback
   - uhsg_news
