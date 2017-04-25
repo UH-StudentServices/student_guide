@@ -2,6 +2,11 @@
 
 ## 1.4-dev
 
+* Added some validation related to active degree programme detection mechanism
+
+
+## 1.4-dev
+
 * Added possibility to filter by degree programmes to theme sections (HUB-201)
 
 
