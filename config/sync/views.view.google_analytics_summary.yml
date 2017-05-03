@@ -1386,7 +1386,7 @@ display:
         type: html_list
         options:
           grouping: {  }
-          row_class: 'list-of-links__link button--action-before icon--search theme-transparent'
+          row_class: 'list-of-links__link button--action-before theme-transparent'
           default_row_class: true
           type: ul
           wrapper_class: ''

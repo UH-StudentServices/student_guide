@@ -8255,6 +8255,10 @@ h1, h2, h3, h4, legend,
   display: none;
 }
 
+.view-search .view-header .top-searches .list-of-links__link {
+  padding-left: 0;
+}
+
 .view-search #my-searches {
   padding-top: 1em;
 }

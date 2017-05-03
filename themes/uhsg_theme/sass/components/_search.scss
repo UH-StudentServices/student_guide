@@ -35,8 +35,13 @@
   }
   .view-header {
     // this empty result can't be removed in the view or in pre_render?
-    .top-searches li:last-child {
-      display: none;
+    .top-searches {
+      li:last-child {
+        display: none;
+      }
+      .list-of-links__link {
+        padding-left: 0;
+      }
     }
   }
   #my-searches {
