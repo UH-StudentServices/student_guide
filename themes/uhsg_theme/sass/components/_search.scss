@@ -48,8 +48,9 @@
     padding-top: 2em;
     .list-of-links__link {
       display: inline;
-      @include breakpoint($mobile-only) {
-        padding-left: 0.5em;
+      padding-left: 0.5em;
+      @include breakpoint($medium) {
+        padding-left: 2em;
       }
     }
     .list-of-links__compact {

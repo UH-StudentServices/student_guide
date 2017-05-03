@@ -8265,11 +8265,12 @@ h1, h2, h3, h4, legend,
 
 .view-search #my-searches .list-of-links__link {
   display: inline;
+  padding-left: 0.5em;
 }
 
-@media (max-width: 48em) {
+@media (min-width: 62.5em) {
   .view-search #my-searches .list-of-links__link {
-    padding-left: 0.5em;
+    padding-left: 2em;
   }
 }
 
