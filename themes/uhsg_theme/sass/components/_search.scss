@@ -45,7 +45,7 @@
     }
   }
   #my-searches {
-    padding-top: 1em;
+    padding-top: 2em;
     .list-of-links__link {
       display: inline;
       @include breakpoint($mobile-only) {
@@ -64,18 +64,26 @@
     margin-bottom: $vert-spacing-unit / 2;
   }
   #edit-search-api-fulltext {
-    width: 60%;
+    @include breakpoint($small) {
+      width: 60%;
+    }
   }
   #edit-actions {
-    display: inline;
-    white-space: nowrap;
+    @include breakpoint($small) {
+      display: inline;
+      white-space: nowrap;
+    }
   }
   #edit-submit-search {
-    padding: 0.55em;
+    @include breakpoint($small) {
+      padding: 0.55em;
+    }
   }
   #edit-reset {
-    margin: 0;
-    padding-left: 0.5em;
+    @include breakpoint($small) {
+      margin: 0;
+      padding-left: 0.5em;
+    }
   }
 }
 

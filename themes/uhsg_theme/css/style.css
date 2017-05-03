@@ -8260,7 +8260,7 @@ h1, h2, h3, h4, legend,
 }
 
 .view-search #my-searches {
-  padding-top: 1em;
+  padding-top: 2em;
 }
 
 .view-search #my-searches .list-of-links__link {
@@ -8288,22 +8288,30 @@ h1, h2, h3, h4, legend,
   margin-bottom: 15px;
 }
 
-.view-search #edit-search-api-fulltext {
-  width: 60%;
+@media (min-width: 48em) {
+  .view-search #edit-search-api-fulltext {
+    width: 60%;
+  }
 }
 
-.view-search #edit-actions {
-  display: inline;
-  white-space: nowrap;
+@media (min-width: 48em) {
+  .view-search #edit-actions {
+    display: inline;
+    white-space: nowrap;
+  }
 }
 
-.view-search #edit-submit-search {
-  padding: 0.55em;
+@media (min-width: 48em) {
+  .view-search #edit-submit-search {
+    padding: 0.55em;
+  }
 }
 
-.view-search #edit-reset {
-  margin: 0;
-  padding-left: 0.5em;
+@media (min-width: 48em) {
+  .view-search #edit-reset {
+    margin: 0;
+    padding-left: 0.5em;
+  }
 }
 
 .ui-autocomplete {
