@@ -8275,8 +8275,20 @@ h1, h2, h3, h4, legend,
 }
 
 .view-search #my-searches .list-of-links__compact {
-  display: inline;
   margin-bottom: 0;
+}
+
+.view-search #my-searches .list-of-links__compact li:first-child {
+  padding-left: 0;
+}
+
+@media (min-width: 62.5em) {
+  .view-search #my-searches .list-of-links__compact {
+    display: inline;
+  }
+  .view-search #my-searches .list-of-links__compact li:first-child {
+    padding-left: 2em;
+  }
 }
 
 .view-search #my-searches .button--reset {

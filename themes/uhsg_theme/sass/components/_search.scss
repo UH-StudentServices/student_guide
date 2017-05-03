@@ -54,7 +54,15 @@
       }
     }
     .list-of-links__compact {
-      display: inline;
+      li:first-child {
+        padding-left: 0;
+      }
+      @include breakpoint($medium) {
+        display: inline;
+        li:first-child {
+          padding-left: 2em;
+        }
+      }
       margin-bottom: 0;
     }
     .button--reset {
