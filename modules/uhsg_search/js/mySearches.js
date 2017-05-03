@@ -35,11 +35,11 @@
       if (mySearches.length) {
         var content = '';
         mySearches.map(function (value) {
-          content += '<li class="list-of-links__link button--action-before icon--search theme-transparent">' + cleanupString(value) + '</li>';
+          content += '<li class="list-of-links__link button--action-before theme-transparent">' + cleanupString(value) + '</li>';
         });
 
-        var title = '<h4>' + Drupal.t('My Searches') + '</h4>';
-        var resetButton = '<a class="button--action icon--remove theme-transparent button--reset">' + Drupal.t('Remove') + '</a>';
+        var title = '<span>' + Drupal.t('My Searches') + '</span>';
+        var resetButton = '<a class="button--action icon--remove theme-transparent button--reset" title="' + Drupal.t('Remove') + '"></a>';
         $('#my-searches').empty();
         $('#my-searches').append(title + '<ul class="list-of-links__compact">' + content + resetButton + '</ul>');
 

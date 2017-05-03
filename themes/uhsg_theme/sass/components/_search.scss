@@ -38,12 +38,39 @@
     .top-searches li:last-child {
       display: none;
     }
-    #my-searches .list-of-links__compact {
+  }
+  #my-searches {
+    padding-top: 1em;
+    .list-of-links__link {
+      display: inline;
+      @include breakpoint($mobile-only) {
+        padding-left: 0.5em;
+      }
+    }
+    .list-of-links__compact {
+      display: inline;
       margin-bottom: 0;
+    }
+    .button--reset {
+      display: inline-flex;
     }
   }
   .view-before-content {
     margin-bottom: $vert-spacing-unit / 2;
+  }
+  #edit-search-api-fulltext {
+    width: 60%;
+  }
+  #edit-actions {
+    display: inline;
+    white-space: nowrap;
+  }
+  #edit-submit-search {
+    padding: 0.55em;
+  }
+  #edit-reset {
+    margin: 0;
+    padding-left: 0.5em;
   }
 }
 

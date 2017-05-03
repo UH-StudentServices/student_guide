@@ -8255,12 +8255,51 @@ h1, h2, h3, h4, legend,
   display: none;
 }
 
-.view-search .view-header #my-searches .list-of-links__compact {
+.view-search #my-searches {
+  padding-top: 1em;
+}
+
+.view-search #my-searches .list-of-links__link {
+  display: inline;
+}
+
+@media (max-width: 48em) {
+  .view-search #my-searches .list-of-links__link {
+    padding-left: 0.5em;
+  }
+}
+
+.view-search #my-searches .list-of-links__compact {
+  display: inline;
   margin-bottom: 0;
+}
+
+.view-search #my-searches .button--reset {
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .view-search .view-before-content {
   margin-bottom: 15px;
+}
+
+.view-search #edit-search-api-fulltext {
+  width: 60%;
+}
+
+.view-search #edit-actions {
+  display: inline;
+  white-space: nowrap;
+}
+
+.view-search #edit-submit-search {
+  padding: 0.55em;
+}
+
+.view-search #edit-reset {
+  margin: 0;
+  padding-left: 0.5em;
 }
 
 .ui-autocomplete {
