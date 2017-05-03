@@ -20,56 +20,59 @@ class ThemesReferencingInstructions extends BlockBase {
    * {@inheritdoc}
    */
   public function build() {
+    $renderableArray = [];
+    $nodeFromParameter = \Drupal::routeMatch()->getParameter('node');
 
-    // get current page nid
-    $nid = \Drupal::routeMatch()->getParameter('node')->id();
+    if (isset($nodeFromParameter)) {
 
-    // get paragraphs referencing the current node
-    $query = \Drupal::entityQuery('paragraph')
-      ->condition('status', 1)
-      ->condition('type', 'theme_section')
-      ->condition('field_theme_section_instructions', $nid)
-      ->sort('created', 'DESC');
+      // get current page nid
+      $nid = $nodeFromParameter->id();
 
-    $paragraphs = $query->execute();
-
-    // get theme nodes referencing the paragraphs
-    $themes = [];
-
-    if (!empty($paragraphs)) {
-      $query = \Drupal::entityQuery('node')
+      // get paragraphs referencing the current node
+      $query = \Drupal::entityQuery('paragraph')
         ->condition('status', 1)
-        ->condition('type', 'theme')
-        ->condition('field_theme_section', $paragraphs, 'IN')
+        ->condition('type', 'theme_section')
+        ->condition('field_theme_section_instructions', $nid)
         ->sort('created', 'DESC');
 
-      $themes = $query->execute();
-    }
+      $paragraphs = $query->execute();
 
-    $renderableArray = [];
+      // get theme nodes referencing the paragraphs
+      $themes = [];
 
-    if (!empty($themes)) {
-      $links = [];
-      $nodes = Node::loadMultiple($themes);
+      if (!empty($paragraphs)) {
+        $query = \Drupal::entityQuery('node')
+          ->condition('status', 1)
+          ->condition('type', 'theme')
+          ->condition('field_theme_section', $paragraphs, 'IN')
+          ->sort('created', 'DESC');
 
-      foreach ($nodes as $node) {
-        $translation = \Drupal::entityManager()->getTranslationFromContext($node);
-        $links[] = Link::createFromRoute($translation->getTitle(), 'entity.node.canonical', ['node' => $node->id()],
-        ['attributes' => ['class' => 'list-of-links__link button--action icon--arrow-right']]);
+        $themes = $query->execute();
       }
 
-      $renderableArray = [
-        '#attributes' => [
-          'class' => ['list-of-links'],
-        ],
-        '#cache' => [
-          'tags' => ['node_list'],
-        ],
-        '#theme' => 'item_list',
-        '#type' => 'ul',
-        '#items' => $links,
-        '#title' => t('Themes'),
-      ];
+      if (!empty($themes)) {
+        $links = [];
+        $nodes = Node::loadMultiple($themes);
+
+        foreach ($nodes as $node) {
+          $translation = \Drupal::entityManager()->getTranslationFromContext($node);
+          $links[] = Link::createFromRoute($translation->getTitle(), 'entity.node.canonical', ['node' => $node->id()],
+          ['attributes' => ['class' => 'list-of-links__link button--action icon--arrow-right']]);
+        }
+
+        $renderableArray = [
+          '#attributes' => [
+            'class' => ['list-of-links'],
+          ],
+          '#cache' => [
+            'tags' => ['node_list'],
+          ],
+          '#theme' => 'item_list',
+          '#type' => 'ul',
+          '#items' => $links,
+          '#title' => t('Themes'),
+        ];
+      }
     }
 
     return $renderableArray;

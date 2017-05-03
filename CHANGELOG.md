@@ -3,6 +3,7 @@
 ## 1.4-dev
 
 * Added some validation related to active degree programme detection mechanism
+* Fixed node preview (HUB-211)
 
 
 ## 1.4-dev
