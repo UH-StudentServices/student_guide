@@ -8011,6 +8011,12 @@ input[type="submit"].button--reset + i {
   z-index: -1;
 }
 
+.node-preview-backlink {
+  background-color: white;
+  padding: 0.6em;
+  border: 1px solid #979797;
+}
+
 .list-of-links__compact .list-of-links__link {
   padding-top: 0.4em;
   padding-bottom: 0.4em;
