@@ -1386,8 +1386,8 @@ display:
         type: html_list
         options:
           grouping: {  }
-          row_class: 'list-of-links__link button--action-before icon--search theme-transparent'
-          default_row_class: true
+          row_class: 'list-of-links__link button--action-before theme-transparent'
+          default_row_class: 1
           type: ul
           wrapper_class: ''
           class: list-of-links__compact
@@ -1401,8 +1401,8 @@ display:
       pager:
         type: some
         options:
-          items_per_page: 5
-          offset: 0
+          items_per_page: '4'
+          offset: '0'
       empty: {  }
       header: {  }
       display_description: ''
