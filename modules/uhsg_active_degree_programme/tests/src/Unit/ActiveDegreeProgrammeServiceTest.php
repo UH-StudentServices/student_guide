@@ -30,6 +30,7 @@ use Symfony\Component\HttpFoundation\RequestStack;
 class ActiveDegreeProgrammeServiceTest extends PHPUnit_Framework_TestCase {
 
   const ACTIVE_DEGREE_PROGRAMME_ID = 123;
+  const DEGREE_PROGRAMME_BUNDLE = 'degree_programme';
   const PRIMARY_FIELD_NAME = 'Primary field name';
 
   /** @var AccountInterface */
@@ -121,6 +122,7 @@ class ActiveDegreeProgrammeServiceTest extends PHPUnit_Framework_TestCase {
     $this->term->uuid()->willReturn();
     $this->term->getEntityType()->willReturn($this->entityType->reveal());
     $this->term->getEntityTypeId()->willReturn('taxonomy_term');
+    $this->term->getVocabularyId()->willReturn(self::DEGREE_PROGRAMME_BUNDLE);
 
     $this->entityStorage = $this->prophesize(EntityStorageInterface::class);
     $this->entityStorage->load(Argument::any())->willReturn($this->term);
