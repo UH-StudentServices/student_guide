@@ -6,6 +6,7 @@ use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Language\LanguageInterface;
 use Drupal\Core\Session\AccountInterface;
+use Drupal\Tests\UnitTestCase;
 use Drupal\uhsg_some_links\SomeLinksAccessControlHandler;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Prophecy\Argument;
@@ -13,7 +14,7 @@ use Prophecy\Argument;
 /**
  * @group uhsg
  */
-class SomeLinksAccessControlHandlerTest extends PHPUnit_Framework_TestCase {
+class SomeLinksAccessControlHandlerTest extends UnitTestCase {
 
   /** @var AccountInterface */
   private $account;
