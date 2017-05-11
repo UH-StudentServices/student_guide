@@ -7802,6 +7802,10 @@ li.avatar.avatar--default img {
   }
 }
 
+.degree-programme-switcher label {
+  display: none;
+}
+
 .feedback-form {
   font-size: 0.875rem;
   width: 300px;
