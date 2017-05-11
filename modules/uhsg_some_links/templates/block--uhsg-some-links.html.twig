@@ -36,7 +36,7 @@
           'button-group__button'
         ]
       %}
-      {{ link('', entity.url.value, {'class': classes, 'title': entity.name.value}) }}
+      {{ link('', entity.url.value, {'class': classes, 'title': entity.name.value, 'aria-label': entity.name.value}) }}
     {% endfor %}
   </div>
 {% endif %}
