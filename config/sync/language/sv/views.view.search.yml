@@ -12,3 +12,8 @@ display:
       empty:
         area_text_custom:
           content: '<h3>Inget resultat</h3>'
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Sök
+label: Sök
