@@ -6,6 +6,7 @@
 * Fixed node preview (HUB-211)
 * Front page visual changes (HUB-198)
 * List themes referencing the current instruction (HUB-210)
+* Accessibility improvements (HUB-214)
 
 
 ## 1.4-dev

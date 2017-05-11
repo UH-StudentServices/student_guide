@@ -7802,6 +7802,10 @@ li.avatar.avatar--default img {
   }
 }
 
+.degree-programme-switcher label {
+  display: none;
+}
+
 .feedback-form {
   font-size: 0.875rem;
   width: 300px;
@@ -8251,6 +8255,14 @@ h1, h2, h3, h4, legend,
 
 .view-search .view-filters input.form-autocomplete.ui-autocomplete-loading + .icon-spin {
   display: inline-block;
+}
+
+.view-search .view-filters .form-item-search-api-fulltext {
+  display: inline;
+}
+
+.view-search .view-filters label {
+  display: none;
 }
 
 .view-search .view-filters .form-actions {
