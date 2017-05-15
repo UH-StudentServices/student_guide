@@ -34,7 +34,7 @@ class UserSyncForm extends ConfigFormBase {
     $available_roles = array_keys(user_roles(TRUE));
 
     $available_roles = array_filter($available_roles, function($role) {
-      return $role !='authenticated';
+      return $role != 'authenticated';
     });
 
     $formDescription = $this->t(
