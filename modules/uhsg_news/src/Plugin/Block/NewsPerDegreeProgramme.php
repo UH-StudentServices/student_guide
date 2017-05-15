@@ -22,6 +22,7 @@ class NewsPerDegreeProgramme extends BlockBase {
    * {@inheritdoc}
    */
   public function build() {
+    $renderableArray = [];
     $lang = \Drupal::languageManager()->getCurrentLanguage()->getId();
 
     $query = \Drupal::entityQuery('node')
@@ -63,7 +64,7 @@ class NewsPerDegreeProgramme extends BlockBase {
       $render_controller = \Drupal::entityTypeManager()->getViewBuilder('node');
       $render_output = $render_controller->viewMultiple($nodes, 'teaser');
 
-      return [
+      $renderableArray = [
         '#attributes' => [
           'class' => ['clearfix', 'tube'],
         ],
@@ -75,6 +76,8 @@ class NewsPerDegreeProgramme extends BlockBase {
         '#suffix' => $link
       ];
     }
+
+    return $renderableArray;
   }
 
   /**
