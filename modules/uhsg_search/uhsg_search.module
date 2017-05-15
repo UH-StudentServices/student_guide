@@ -27,9 +27,10 @@ function uhsg_search_preprocess_node(&$variables) {
 }
 
 /**
- * return TRUE if active degree programme is one of the terms in the node.
+ * Return TRUE if active degree programme is one of the terms in the node.
  *
  * @param $node
+ * @return bool TRUE if active degree programme is one of the terms in the node.
  */
 function uhsg_search_article_is_degree_programme_specific($node) {
   $active_degree_programme = \Drupal::service('uhsg_active_degree_programme.active_degree_programme')->getId();
