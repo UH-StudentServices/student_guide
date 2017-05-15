@@ -31,9 +31,11 @@ class UserSyncForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-
     $available_roles = array_keys(user_roles(TRUE));
-    $available_roles = array_filter($available_roles, function($role) { if ($role !='authenticated') { return $role; } });
+
+    $available_roles = array_filter($available_roles, function($role) {
+      return $role !='authenticated';
+    });
 
     $formDescription = $this->t(
       'Specified roles are given to the members of the IAM groups listed below. If you want to add a new group, search for the group at the <a href=":url" target="_blank">group administration tool</a>.',
