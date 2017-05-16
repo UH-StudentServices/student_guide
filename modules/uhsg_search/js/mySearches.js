@@ -58,7 +58,7 @@
     },
 
     cleanupString: function (text) {
-      return text.replace(/[^A-Za-z0-9\s!?]/g, '');
+      return text.replace(/[^A-Öa-ö0-9\s!?]/g, '');
     }
   };
 }(jQuery));
