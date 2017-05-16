@@ -5,6 +5,7 @@
  * Contains uhsg_degree_programme.module.
  */
 
+use Drupal\views\Plugin\views\query\QueryPluginBase;
 use Drupal\views\ViewExecutable;
 
 /**
@@ -46,6 +47,34 @@ function uhsg_degree_programme_views_post_execute(ViewExecutable $view) {
       if (in_array('transitional', array_shift($type))) {
         unset($view->result[$key]);
       }
+    }
+  }
+}
+
+/**
+ * Implements hook_views_query_alter().
+ */
+function uhsg_degree_programme_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
+  uhsg_degree_programme_alter_degree_programmes_query($view, $query);
+}
+
+/**
+ * Remove langcode column join condition from degree programme type join query
+ * in degree programmes view. We want to handle degree programme type as a
+ * language neutral value (disregarding the UI language), so that the degree
+ * programme type is present as a sorting filter for all languages (HUB-207).
+ * Without this removal the degree programme grouping order will vary between
+ * English and other languages, since the degree programme type is only stored
+ * in English.
+ */
+function uhsg_degree_programme_alter_degree_programmes_query(ViewExecutable $view, QueryPluginBase $query) {
+  if ($view->id() == 'degree_programmes') {
+
+    /** @var $query \Drupal\views\Plugin\views\query\Sql */
+    $table = $query->getTableInfo('taxonomy_term__field_degree_programme_type');
+
+    if (isset($table['join']->extra[1]['left_field']) && $table['join']->extra[1]['left_field'] == 'langcode') {
+      unset($table['join']->extra[1]);
     }
   }
 }
