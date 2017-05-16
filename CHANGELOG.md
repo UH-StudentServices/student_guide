@@ -7,6 +7,7 @@
 * Front page visual changes (HUB-198)
 * List themes referencing the current instruction (HUB-210)
 * Accessibility improvements (HUB-214)
+* Allow a-ö (was a-z) in "My searches" filtering (HUB-215)
 
 
 ## 1.4-dev
