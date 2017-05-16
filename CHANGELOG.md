@@ -8,6 +8,7 @@
 * List themes referencing the current instruction (HUB-210)
 * Accessibility improvements (HUB-214)
 * Allow a-ö (was a-z) in "My searches" filtering (HUB-215)
+* Fix degree programme listing order (HUB-207)
 
 
 ## 1.4-dev
