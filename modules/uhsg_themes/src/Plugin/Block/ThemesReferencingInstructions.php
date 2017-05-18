@@ -4,6 +4,7 @@ namespace Drupal\uhsg_themes\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Entity\EntityManagerInterface;
+use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Link;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
@@ -23,11 +24,15 @@ class ThemesReferencingInstructions extends BlockBase implements ContainerFactor
   /** @var EntityManagerInterface */
   protected $entityManager;
 
+  /** @var LanguageManagerInterface */
+  protected $languageManager;
+
   /** @var RouteMatchInterface */
   protected $routeMatch;
 
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityManagerInterface $entityManager, RouteMatchInterface $routeMatch) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityManagerInterface $entityManager, LanguageManagerInterface $languageManager, RouteMatchInterface $routeMatch) {
     $this->entityManager = $entityManager;
+    $this->languageManager = $languageManager;
     $this->routeMatch = $routeMatch;
 
     parent::__construct($configuration, $plugin_id, $plugin_definition);
@@ -42,6 +47,7 @@ class ThemesReferencingInstructions extends BlockBase implements ContainerFactor
       $plugin_id,
       $plugin_definition,
       $container->get('entity.manager'),
+      $container->get('language_manager'),
       $container->get('current_route_match')
     );
   }
@@ -51,9 +57,13 @@ class ThemesReferencingInstructions extends BlockBase implements ContainerFactor
    */
   public function build() {
     $renderableArray = [];
+
+    /** @var $nodeFromParameter Node */
     $nodeFromParameter = $this->routeMatch->getParameter('node');
 
-    if (isset($nodeFromParameter)) {
+    $currentLanguageCode = $this->languageManager->getCurrentLanguage()->getId();
+
+    if (isset($nodeFromParameter) && $nodeFromParameter->hasTranslation($currentLanguageCode)) {
 
       // Get current page node ID.
       $nid = $nodeFromParameter->id();
