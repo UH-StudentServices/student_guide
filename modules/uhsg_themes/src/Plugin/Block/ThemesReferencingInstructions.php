@@ -3,8 +3,12 @@
 namespace Drupal\uhsg_themes\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Entity\EntityManagerInterface;
 use Drupal\Core\Link;
+use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\node\Entity\Node;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides a 'themes_referencing_instructions' block.
@@ -14,14 +18,40 @@ use Drupal\node\Entity\Node;
  *  admin_label = @Translation("Themes referencing instructions"),
  * )
  */
-class ThemesReferencingInstructions extends BlockBase {
+class ThemesReferencingInstructions extends BlockBase implements ContainerFactoryPluginInterface {
+
+  /** @var EntityManagerInterface */
+  protected $entityManager;
+
+  /** @var RouteMatchInterface */
+  protected $routeMatch;
+
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityManagerInterface $entityManager, RouteMatchInterface $routeMatch) {
+    $this->entityManager = $entityManager;
+    $this->routeMatch = $routeMatch;
+
+    parent::__construct($configuration, $plugin_id, $plugin_definition);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
+    return new static(
+      $configuration,
+      $plugin_id,
+      $plugin_definition,
+      $container->get('entity.manager'),
+      $container->get('current_route_match')
+    );
+  }
 
   /**
    * {@inheritdoc}
    */
   public function build() {
     $renderableArray = [];
-    $nodeFromParameter = \Drupal::routeMatch()->getParameter('node');
+    $nodeFromParameter = $this->routeMatch->getParameter('node');
 
     if (isset($nodeFromParameter)) {
 
@@ -101,7 +131,7 @@ class ThemesReferencingInstructions extends BlockBase {
       $nodes = Node::loadMultiple($themes);
 
       foreach ($nodes as $node) {
-        $translation = \Drupal::entityManager()->getTranslationFromContext($node);
+        $translation = $this->entityManager->getTranslationFromContext($node);
 
         $links[] = Link::createFromRoute(
           $translation->getTitle(),

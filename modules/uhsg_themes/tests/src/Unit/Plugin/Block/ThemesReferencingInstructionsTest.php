@@ -1,21 +1,21 @@
 <?php
 
+use Drupal\Core\Entity\EntityManagerInterface;
 use Drupal\Core\Routing\CurrentRouteMatch;
 use Drupal\node\Entity\Node;
 use Drupal\Tests\UnitTestCase;
 use Drupal\uhsg_themes\Plugin\Block\ThemesReferencingInstructions;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * @group uhsg
  */
 class ThemesReferencingInstructionsTest extends UnitTestCase {
 
-  /** @var ContainerInterface */
-  private $container;
-
   /** @var CurrentRouteMatch */
   private $currentRouteMatch;
+
+  /** @var EntityManagerInterface */
+  private $entityManager;
 
   /** @var Node */
   private $node;
@@ -31,12 +31,9 @@ class ThemesReferencingInstructionsTest extends UnitTestCase {
     $this->currentRouteMatch = $this->prophesize(CurrentRouteMatch::class);
     $this->currentRouteMatch->getParameter('node')->willReturn($this->node);
 
-    $this->container = $this->prophesize(ContainerInterface::class);
-    $this->container->get('current_route_match')->willReturn($this->currentRouteMatch);
+    $this->entityManager = $this->prophesize(EntityManagerInterface::class);
 
-    Drupal::setContainer($this->container->reveal());
-
-    $this->themesReferencingInstructions = new ThemesReferencingInstructionsTestDouble();
+    $this->themesReferencingInstructions = new ThemesReferencingInstructions([], NULL, NULL, $this->entityManager->reveal(), $this->currentRouteMatch->reveal());
   }
 
   /**
@@ -46,15 +43,5 @@ class ThemesReferencingInstructionsTest extends UnitTestCase {
     $this->currentRouteMatch->getParameter('node')->willReturn(NULL);
 
     $this->assertEmpty($this->themesReferencingInstructions->build());
-  }
-}
-
-/**
- * Test double for overriding difficult to test methods.
- */
-class ThemesReferencingInstructionsTestDouble extends ThemesReferencingInstructions {
-
-  public function __construct(array $configuration = [], $plugin_id = NULL, $plugin_definition = NULL) {
-    // Do nothing.
   }
 }
