@@ -1,6 +1,7 @@
 #Changelog
 
-## 1.4-dev
+## 1.4
+Release date: 23.05.2017
 
 * Added some validation related to active degree programme detection mechanism
 * Fixed node preview (HUB-211)
