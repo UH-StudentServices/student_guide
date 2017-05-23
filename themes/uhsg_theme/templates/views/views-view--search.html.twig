@@ -56,6 +56,9 @@
           {{ exposed }}
         </div>
       {% endif %}
+      {{ attach_library('uhsg_search/my-searches') }}
+      <div id="my-searches">
+      </div>
     </div>
     <div class="col-right">
       {% if header %}
@@ -64,9 +67,6 @@
             <h4> {{ 'Top content'|trans }} </h4>
             {{ header.view }}
           {% endif %}
-          {{ attach_library('uhsg_search/my-searches') }}
-          <div id="my-searches">
-          </div>
         </div>
       {% endif %}
     </div>

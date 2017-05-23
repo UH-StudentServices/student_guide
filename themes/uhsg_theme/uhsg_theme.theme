@@ -36,6 +36,7 @@ function uhsg_theme_preprocess_region(&$variables) {
       break;
     case 'footer':
       $variables['logo_path'] = \Drupal::config('uhsg_service_provider_details.settings')->get('logo_path');
+      $variables['logo_text'] = \Drupal::config('uhsg_service_provider_details.settings')->get('logo_text');
       $variables['copyright_text'] = \Drupal::config('uhsg_service_provider_details.settings')->get('copyright_text');
       $variables['contact_info'] = \Drupal::config('uhsg_service_provider_details.settings')->get('contact_info');
       break;
@@ -160,7 +161,8 @@ function uhsg_theme_preprocess_field(array &$variables, $hook) {
       break;
     case 'field_content_block_text':
       $variables['attributes']['class'][] = 'box-subtitle__ingress is-center-mobile';
-      break;
+
+      $variables['attributes']['class'][] = 'is-center-mobile';      break;
     case 'field_news_degree_programme':
       $variables['created'] = $variables['element']['#object']->getCreatedTime();
     case 'field_theme_section_title':
@@ -169,9 +171,11 @@ function uhsg_theme_preprocess_field(array &$variables, $hook) {
     case 'field_theme_section_instructions':
       $variables['attributes']['class'][] = 'grid-container tube';
       break;
+    case 'field_article_paragraph':
+        uhsg_theme_collect_table_of_contents($variables);
+      break;
   }
 }
-
 
 /**
  * If the link targets a node and no link title is set, use link target node
@@ -259,8 +263,6 @@ function uhsg_theme_preprocess_block(array &$variables) {
 function uhsg_theme_preprocess_views_exposed_form(&$variables) {
   switch ($variables['form']['#id']) {
     case 'views-exposed-form-search-page-1':
-      unset($variables['form']['search_api_fulltext']['#theme_wrappers']);
-      //$variables['form']['search_api_fulltext']['#suffix'] = '<i class="icon-spin icon--spinner"></i>';
       $variables['form']['actions']['reset']['#suffix'] = '<i class="icon--remove"></i>';
       $variables['form']['actions']['reset']['#attributes']['class'][] = 'button--reset';
       break;
@@ -283,6 +285,24 @@ function uhsg_theme_preprocess_page(&$variables) {
   if (isset($variables['node'])) {
     $node = is_object($variables['node']) ? $variables['node'] : Node::load($variables['node']);
     $variables['updated'] = \Drupal::service('date.formatter')->format($node->getChangedTime(), 'short');
+  }
+}
+
+/**
+ * Create table of contents.
+ *
+ * Important: There are some items that gets filtered during module
+ * pre-processing phase, so it is important to run this after filtering is done.
+ *
+ * @param array $variables
+ */
+function uhsg_theme_collect_table_of_contents(array &$variables) {
+  $variables['table_of_contents'] = [];
+  foreach ($variables['items'] as $key => $item) {
+    $variables['table_of_contents'][] = [
+      'id' => $item['content']['#paragraph']->id(),
+      'title' => $item['content']['#paragraph']->get('field_paragraph_title')
+    ];
   }
 }
 

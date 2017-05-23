@@ -7802,6 +7802,10 @@ li.avatar.avatar--default img {
   }
 }
 
+.degree-programme-switcher label {
+  display: none;
+}
+
 .feedback-form {
   font-size: 0.875rem;
   width: 300px;
@@ -8009,6 +8013,12 @@ input[type="submit"].button--reset + i {
   position: relative;
   right: 2.5em;
   z-index: -1;
+}
+
+.node-preview-backlink {
+  background-color: white;
+  padding: 0.6em;
+  border: 1px solid #979797;
 }
 
 .list-of-links__compact .list-of-links__link {
@@ -8247,6 +8257,14 @@ h1, h2, h3, h4, legend,
   display: inline-block;
 }
 
+.view-search .view-filters .form-item-search-api-fulltext {
+  display: inline;
+}
+
+.view-search .view-filters label {
+  display: none;
+}
+
 .view-search .view-filters .form-actions {
   margin-top: 30px;
 }
@@ -8255,12 +8273,80 @@ h1, h2, h3, h4, legend,
   display: none;
 }
 
-.view-search .view-header #my-searches .list-of-links__compact {
+.view-search .view-header .top-searches .list-of-links__link {
+  padding-left: 0;
+}
+
+.view-search .view-header .top-searches .button--action-before.theme-transparent:after {
+  display: none;
+}
+
+.view-search #my-searches {
+  padding-top: 2em;
+}
+
+.view-search #my-searches .list-of-links__link {
+  display: inline;
+  padding-left: 0.5em;
+}
+
+@media (min-width: 62.5em) {
+  .view-search #my-searches .list-of-links__link {
+    padding-left: 2em;
+  }
+}
+
+.view-search #my-searches .list-of-links__compact {
   margin-bottom: 0;
+}
+
+.view-search #my-searches .list-of-links__compact li:first-child {
+  padding-left: 0;
+}
+
+@media (min-width: 62.5em) {
+  .view-search #my-searches .list-of-links__compact {
+    display: inline;
+  }
+  .view-search #my-searches .list-of-links__compact li:first-child {
+    padding-left: 2em;
+  }
+}
+
+.view-search #my-searches .button--reset {
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .view-search .view-before-content {
   margin-bottom: 15px;
+}
+
+@media (min-width: 48em) {
+  .view-search #edit-search-api-fulltext {
+    width: 60%;
+  }
+}
+
+@media (min-width: 48em) {
+  .view-search #edit-actions {
+    display: inline;
+    white-space: nowrap;
+  }
+}
+
+@media (min-width: 48em) {
+  .view-search #edit-submit-search {
+    padding: 0.55em;
+  }
+}
+
+@media (min-width: 48em) {
+  .view-search #edit-reset {
+    margin: 0;
+    padding-left: 0.5em;
+  }
 }
 
 .ui-autocomplete {

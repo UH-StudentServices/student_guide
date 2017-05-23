@@ -1,0 +1,192 @@
+<?php
+
+use Drupal\taxonomy\TermInterface;
+use Drupal\taxonomy\Entity\Term;
+
+/**
+ * Implements hook_preprocess_field().
+ * Show articles only if they are translated to the active language, and if
+ * they have the active degree programme or no degree programme.
+ */
+function uhsg_degree_programme_filtering_preprocess_field(array &$variables, $hook) {
+
+  // Resolve what is the reference field that contains the degree programme
+  // reference we filter by.
+  $reference_field = '';
+  $target_entity_type = '';
+  $filter_untranslated_targets = TRUE;
+  switch ($variables['element']['#field_name']) {
+    case 'field_theme_articles':
+      $reference_field = 'field_article_degree_programme';
+      $target_entity_type = 'node';
+      $filter_untranslated_targets = TRUE;
+      break;
+    case 'field_article_paragraph':
+      $reference_field = 'field_paragraph_degree_programme';
+      $target_entity_type = 'paragraph';
+      $filter_untranslated_targets = FALSE;
+      break;
+    case 'field_theme_section':
+      $reference_field = 'field_paragraph_degree_programme';
+      $target_entity_type = 'paragraph';
+      $filter_untranslated_targets = TRUE;
+      break;
+  }
+
+  // If no reference field or target entity resolved, stop here.
+  if (empty($reference_field) || empty($target_entity_type)) {
+    return;
+  }
+
+  // Filter untranslated targets
+  if ($filter_untranslated_targets) {
+    uhsg_degree_programme_filtering_by_active_language($variables, $target_entity_type);
+  }
+
+  // If we have active degree programme, filter by that or else filter out all
+  // targets that has any degree programme chosen.
+  $active_degree_programme_tid = \Drupal::service('uhsg_active_degree_programme.active_degree_programme')->getId();
+  if ($active_degree_programme_tid) {
+    $active_degree_programme = Term::load($active_degree_programme_tid);
+    uhsg_degree_programme_filtering_by_paragraph_article_degree_programme($variables, $active_degree_programme, 'field_theme_section', 'field_theme_section_instructions', 'field_article_degree_programme');
+    uhsg_degree_programme_filtering_by_degree_programme($variables, $active_degree_programme, $reference_field, $target_entity_type);
+  }
+  else {
+    uhsg_degree_programme_filtering_with_degree_programme($variables, $reference_field, $target_entity_type);
+  }
+
+  // Because of these alterations, our result may vay depending on active
+  // degree programme.
+  $variables['#cache']['contexts'][] = 'active_degree_programme';
+}
+
+/**
+ * Filter untranslated targets.
+ *
+ * Can be used within hook_preprocess_field() for node reference fields.
+ *
+ * TODO: find a more drupal way to do this?
+ * @param array $variables
+ * @param $target_entity_type
+ */
+function uhsg_degree_programme_filtering_by_active_language(array &$variables, $target_entity_type) {
+
+  // Ensure we have correct target entity type
+  if (empty($variables['items'][0]['content']['#' . $target_entity_type])) {
+    return;
+  }
+
+  // Filter out if no translation for active language found from the target.
+  $active_lang = Drupal::languageManager()->getCurrentLanguage()->getId();
+  foreach ($variables['items'] as $key => $item) {
+    $article_lang = $item['content']['#' . $target_entity_type]->language()->getId();
+    if ($article_lang != $active_lang) {
+      unset($variables['items'][$key]);
+    }
+  }
+
+}
+
+/**
+ * Filter articles by active degree programme.
+ *
+ * @param array $variables
+ * @param TermInterface $degree_programme
+ * @param $reference_field_name
+ * @param $target_entity_type
+ */
+function uhsg_degree_programme_filtering_by_degree_programme(array &$variables, TermInterface $degree_programme, $reference_field_name, $target_entity_type) {
+
+  // Ensure we have correct target entity type
+  if (empty($variables['items'][0]['content']['#' . $target_entity_type])) {
+    return;
+  }
+
+  // Loop over each target to detect if degree programme matches.
+  foreach ($variables['items'] as $key => $item) {
+    // Filter only if none of the targets matches the given degree programme.
+    $terms = $item['content']['#' . $target_entity_type]->get($reference_field_name)->getValue();
+    if ($terms) {
+      $valid_term_found = FALSE;
+      foreach ($terms as $term) {
+        if ($degree_programme->id() == $term['target_id']) {
+          $valid_term_found = TRUE;
+          break;
+        }
+      }
+      if (!$valid_term_found) {
+        unset($variables['items'][$key]);
+      }
+    }
+  }
+
+}
+
+/**
+ * Filter articles if they have any degree programme defined.
+ *
+ * @param array $variables
+ * @param $reference_field_name
+ * @param $target_entity_type
+ */
+function uhsg_degree_programme_filtering_with_degree_programme(array &$variables, $reference_field_name, $target_entity_type) {
+
+  // Ensure we have correct target entity type
+  if (empty($variables['items'][0]['content']['#' . $target_entity_type])) {
+    return;
+  }
+
+  // Filter all targets that have any degree programme
+  foreach ($variables['items'] as $key => $item) {
+    $terms = $item['content']['#' . $target_entity_type]->get($reference_field_name)->getValue();
+    if ($terms) {
+      unset($variables['items'][$key]);
+    }
+  }
+
+}
+
+/**
+ * Filter articles referenced from paragraphs by active degree programme.
+ *
+ * @param array $variables
+ * @param TermInterface $degree_programme
+ * @param $field_name
+ * @param $article_reference_field_name
+ * @param $article_degree_programme_reference_field_name
+ */
+function uhsg_degree_programme_filtering_by_paragraph_article_degree_programme(array &$variables, TermInterface $degree_programme, $field_name, $article_reference_field_name, $article_degree_programme_reference_field_name) {
+  if ($variables['element']['#field_name'] == $field_name) {
+
+    foreach ($variables['items'] as $key => $item) {
+      $article_references = $item['content']['#paragraph']->get($article_reference_field_name)->getValue();
+
+      if ($article_references) {
+
+        foreach ($article_references as $article_key => $article_reference) {
+          $article_nid = $article_reference['target_id'];
+          $article_node = \Drupal\node\Entity\Node::load($article_nid);
+          $degree_programme_references = $article_node->get($article_degree_programme_reference_field_name)->getValue();
+
+          if ($degree_programme_references) {
+            $valid_degree_programme_found = FALSE;
+
+            foreach ($degree_programme_references as $degree_programme_reference) {
+
+              if ($degree_programme->id() == $degree_programme_reference['target_id']) {
+                $valid_degree_programme_found = TRUE;
+                break;
+              }
+            }
+
+            if (!$valid_degree_programme_found) {
+              if (isset($variables['items'][$key]['content']['#paragraph']->{$article_reference_field_name}[$article_key])) {
+                $variables['items'][$key]['content']['#paragraph']->{$article_reference_field_name}[$article_key]->target_id = NULL;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

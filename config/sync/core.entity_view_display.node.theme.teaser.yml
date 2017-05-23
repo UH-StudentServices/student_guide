@@ -28,6 +28,7 @@ content:
 hidden:
   field_theme_articles: true
   field_theme_faq: true
+  field_theme_section: true
   field_theme_teaser_image: true
   langcode: true
   links: true

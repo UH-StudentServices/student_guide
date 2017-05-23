@@ -1,5 +1,6 @@
 <?php
 
+use Drupal\Core\Path\PathValidator;
 use Drupal\Core\Utility\UnroutedUrlAssembler;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\Tests\UnitTestCase;
@@ -30,6 +31,9 @@ class ActiveDegreeProgrammeControllerTest extends UnitTestCase {
   /** @var ContainerInterface */
   private $container;
 
+  /** @var PathValidator */
+  private $pathValidator;
+
   /** @var Request */
   private $request;
 
@@ -47,6 +51,8 @@ class ActiveDegreeProgrammeControllerTest extends UnitTestCase {
 
     $this->activeDegreeProgrammeService = $this->prophesize(ActiveDegreeProgrammeService::class);
 
+    $this->pathValidator = $this->prophesize(PathValidator::class);
+
     $this->server = $this->prophesize(ServerBag::class);
     $this->server->get('HTTP_REFERER', 'internal:/')->willReturn(self::HTTP_REFERER);
 
@@ -60,6 +66,7 @@ class ActiveDegreeProgrammeControllerTest extends UnitTestCase {
     $this->unroutedUrlAssembler->assemble(Argument::any(), Argument::any(), Argument::any())->willReturn(self::HTTP_REFERER);
 
     $this->container = $this->prophesize(ContainerInterface::class);
+    $this->container->get('path.validator')->willReturn($this->pathValidator);
     $this->container->get('request_stack')->willReturn($this->requestStack);
     $this->container->get('unrouted_url_assembler')->willReturn($this->unroutedUrlAssembler);
 

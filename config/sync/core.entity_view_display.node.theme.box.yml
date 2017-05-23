@@ -31,5 +31,6 @@ hidden:
   body: true
   field_theme_articles: true
   field_theme_faq: true
+  field_theme_section: true
   langcode: true
   links: true

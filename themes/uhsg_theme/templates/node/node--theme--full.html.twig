@@ -88,6 +88,9 @@
   <div{{ content_attributes.addClass(container_classes) }}>
     <h1> {{ label }} </h1>
     {{ content|without('field_theme_faq', 'field_theme_section') }}
+  </div>
+  {{ content.field_theme_section }}
+  <div{{ content_attributes.addClass(container_classes) }}>
     {% if content.field_theme_faq %}
       <div class="col-container">
         <div class="col-main">
@@ -96,5 +99,4 @@
       </div>
     {% endif %}
   </div>
-  {{ content.field_theme_section }}
 </article>

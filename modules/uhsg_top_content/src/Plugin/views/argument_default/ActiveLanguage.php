@@ -1,8 +1,11 @@
 <?php
+
 namespace Drupal\uhsg_top_content\Plugin\views\argument_default;
-use Drupal\views\Plugin\views\argument_default\ArgumentDefaultPluginBase;
+
 use Drupal\Core\Cache\CacheableDependencyInterface;
-use Drupal\Core\Language\LanguageInterface;
+use Drupal\Core\Language\LanguageManagerInterface;
+use Drupal\views\Plugin\views\argument_default\ArgumentDefaultPluginBase;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * The active degree programme argument default handler.
@@ -15,11 +18,36 @@ use Drupal\Core\Language\LanguageInterface;
  * )
  */
 class ActiveLanguage extends ArgumentDefaultPluginBase implements CacheableDependencyInterface {
+
+  /** @var LanguageManagerInterface */
+  protected $languageManager;
+
+  /**
+   * {@inheritdoc}
+   */
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, LanguageManagerInterface $languageManager) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition);
+
+    $this->languageManager = $languageManager;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
+    return new static(
+      $configuration,
+      $plugin_id,
+      $plugin_definition,
+      $container->get('language_manager')
+    );
+  }
+
   /**
    * {@inheritdoc}
    */
   public function getArgument() {
-    return \Drupal::languageManager()->getCurrentLanguage()->getId();
+    return $this->languageManager->getCurrentLanguage()->getId();
   }
 
   /**

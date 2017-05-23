@@ -3,7 +3,9 @@
 namespace Drupal\uhsg_active_degree_programme\Plugin\views\argument_default;
 
 use Drupal\Core\Cache\CacheableDependencyInterface;
+use Drupal\uhsg_active_degree_programme\ActiveDegreeProgrammeService;
 use Drupal\views\Plugin\views\argument_default\ArgumentDefaultPluginBase;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * The active degree programme argument default handler.
@@ -17,12 +19,35 @@ use Drupal\views\Plugin\views\argument_default\ArgumentDefaultPluginBase;
  */
 class ActiveDegreeProgramme extends ArgumentDefaultPluginBase implements CacheableDependencyInterface {
 
+  /** @var ActiveDegreeProgrammeService */
+  protected $activeDegreeProgrammeService;
+
+  /**
+   * {@inheritdoc}
+   */
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, ActiveDegreeProgrammeService $activeDegreeProgrammeService) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition);
+
+    $this->activeDegreeProgrammeService = $activeDegreeProgrammeService;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
+    return new static(
+      $configuration,
+      $plugin_id,
+      $plugin_definition,
+      $container->get('uhsg_active_degree_programme.active_degree_programme')
+    );
+  }
+
   /**
    * {@inheritdoc}
    */
   public function getArgument() {
-    // TODO: Can I access the service through dependency injection?
-    return \Drupal::service('uhsg_active_degree_programme.active_degree_programme')->getId();
+    return $this->activeDegreeProgrammeService->getId();
   }
 
   /**
