@@ -5,6 +5,8 @@ namespace Drupal\uhsg_rest\Plugin\rest\resource;
 use Drupal\Core\Cache\CacheableDependencyInterface;
 use Drupal\Core\Entity\EntityRepositoryInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Language\LanguageInterface;
+use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\rest\Plugin\ResourceBase;
 use Drupal\rest\ResourceResponse;
 use Drupal\taxonomy\TermInterface;
@@ -30,10 +32,23 @@ class DegreeProgrammeResource extends ResourceBase {
   /** @var EntityTypeManagerInterface */
   protected $entityTypeManager;
 
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, array $serializer_formats, LoggerInterface $logger, EntityRepositoryInterface $entityRepository, EntityTypeManagerInterface $entityTypeManager) {
+  /** @var LanguageManagerInterface */
+  protected $languageManager;
+
+  public function __construct(
+    array $configuration,
+    $plugin_id,
+    $plugin_definition,
+    array $serializer_formats,
+    LoggerInterface $logger,
+    EntityRepositoryInterface $entityRepository,
+    EntityTypeManagerInterface $entityTypeManager,
+    LanguageManagerInterface $languageManager) {
+
     parent::__construct($configuration, $plugin_id, $plugin_definition, $serializer_formats, $logger);
     $this->entityRepository = $entityRepository;
     $this->entityTypeManager = $entityTypeManager;
+    $this->languageManager = $languageManager;
   }
 
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
@@ -44,7 +59,8 @@ class DegreeProgrammeResource extends ResourceBase {
       $container->getParameter('serializer.formats'),
       $container->get('logger.factory')->get('rest'),
       $container->get('entity.repository'),
-      $container->get('entity_type.manager')
+      $container->get('entity_type.manager'),
+      $container->get('language_manager')
     );
   }
 
@@ -90,11 +106,16 @@ class DegreeProgrammeResource extends ResourceBase {
    */
   private function getNameTranslations(TermInterface $term) {
     $nameTranslations = [];
-    $languages = ['en', 'fi', 'sv'];
+    $languages = $this->languageManager->getLanguages();
 
-    foreach ($languages as $language) {
-      $name = $this->entityRepository->getTranslationFromContext($term, $language)->label();
-      $nameTranslations[$language] = $name;
+    $languageCodes = array_map(function ($language) {
+      /** @var $language LanguageInterface */
+      return $language->getId();
+    }, $languages);
+
+    foreach ($languageCodes as $languageCode) {
+      $name = $this->entityRepository->getTranslationFromContext($term, $languageCode)->label();
+      $nameTranslations[$languageCode] = $name;
     }
 
     return $nameTranslations;
