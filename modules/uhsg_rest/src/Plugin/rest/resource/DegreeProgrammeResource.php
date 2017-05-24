@@ -2,7 +2,6 @@
 
 namespace Drupal\uhsg_rest\Plugin\rest\resource;
 
-use Drupal\Core\Cache\CacheableDependencyInterface;
 use Drupal\Core\Entity\EntityRepositoryInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Language\LanguageInterface;
@@ -125,19 +124,4 @@ class DegreeProgrammeResource extends ResourceBase {
     return $nameTranslations;
   }
 
-}
-
-class DegreeProgrammeCacheableMetadata implements CacheableDependencyInterface {
-
-  public function getCacheContexts() {
-    return [];
-  }
-
-  public function getCacheTags() {
-    return ['taxonomy_term_list'];
-  }
-
-  public function getCacheMaxAge() {
-    return 0;
-  }
 }
