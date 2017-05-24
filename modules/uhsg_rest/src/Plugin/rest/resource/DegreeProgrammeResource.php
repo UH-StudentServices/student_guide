@@ -2,6 +2,7 @@
 
 namespace Drupal\uhsg_rest\Plugin\rest\resource;
 
+use Drupal\Core\Cache\CacheableDependencyInterface;
 use Drupal\Core\Entity\EntityRepositoryInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\rest\Plugin\ResourceBase;
@@ -54,18 +55,27 @@ class DegreeProgrammeResource extends ResourceBase {
    *   The response containing the degree programmes.
    */
   public function get() {
-    return new ResourceResponse($this->loadAll());
+    $degreeProgrammeTerms = $this->loadAllDegreeProgrammeTerms();
+    $degreeProgrammeResponse = $this->formatDegreeProgrammeTermsForResponse($degreeProgrammeTerms);
+    $response = new ResourceResponse($degreeProgrammeResponse);
+    $response->addCacheableDependency(new DegreeProgrammeCacheableMetadata());
+
+    return $response;
   }
 
   /**
    * @return TermInterface[]
    */
-  private function loadAll() {
+  private function loadAllDegreeProgrammeTerms() {
+    return $this->entityTypeManager->getStorage('taxonomy_term')->loadTree('degree_programme', 0, NULL, TRUE);
+  }
 
-    /** @var $terms TermInterface[] */
-    $terms = $this->entityTypeManager->getStorage('taxonomy_term')->loadTree('degree_programme', 0, NULL, TRUE);
-
-    foreach ($terms as $term) {
+  /**
+   * @param TermInterface[] $degreeProgrammeTerms
+   * @return array
+   */
+  private function formatDegreeProgrammeTermsForResponse($degreeProgrammeTerms) {
+    foreach ($degreeProgrammeTerms as $term) {
       $code = $term->get('field_code')->value;
       $name = $this->getNameTranslations($term);
       $degreeProgrammes[] = ['code' => $code, 'name' => $name];
@@ -90,4 +100,19 @@ class DegreeProgrammeResource extends ResourceBase {
     return $nameTranslations;
   }
 
+}
+
+class DegreeProgrammeCacheableMetadata implements CacheableDependencyInterface {
+
+  public function getCacheContexts() {
+    return [];
+  }
+
+  public function getCacheTags() {
+    return ['taxonomy_term_list'];
+  }
+
+  public function getCacheMaxAge() {
+    return 0;
+  }
 }
