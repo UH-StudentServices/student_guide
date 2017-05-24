@@ -76,6 +76,10 @@ class DegreeProgrammeResource extends ResourceBase {
     $response = new ResourceResponse($degreeProgrammeResponse);
     $response->addCacheableDependency(new DegreeProgrammeCacheableMetadata());
 
+    foreach ($degreeProgrammeTerms as $degreeProgrammeTerm) {
+      $response->addCacheableDependency($degreeProgrammeTerm);
+    }
+
     return $response;
   }
 
