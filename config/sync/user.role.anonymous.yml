@@ -13,5 +13,6 @@ permissions:
   - 'access google analytics reports'
   - 'access site-wide contact form'
   - 'change active degree programme'
+  - 'restful get degree_programme'
   - 'use search_api_autocomplete for search_api_views_search'
   - 'view published some links entities'

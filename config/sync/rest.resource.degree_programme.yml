@@ -1,0 +1,18 @@
+uuid: 272da851-f9f1-4a69-be90-a36015cdb9d0
+langcode: en
+status: true
+dependencies:
+  module:
+    - serialization
+    - uhsg_rest
+    - user
+id: degree_programme
+plugin_id: degree_programme
+granularity: resource
+configuration:
+  methods:
+    - GET
+  formats:
+    - json
+  authentication:
+    - cookie
