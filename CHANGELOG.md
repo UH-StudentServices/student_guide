@@ -2,6 +2,8 @@
 
 ## 1.5-dev
 
+* Added an API for getting all degree programmes (HUB-217)
+
 
 ## 1.4
 Release date: 23.05.2017
