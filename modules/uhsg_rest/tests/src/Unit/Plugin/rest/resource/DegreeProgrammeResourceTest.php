@@ -5,7 +5,6 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Language\LanguageInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
-use Drupal\Core\TypedData\TypedDataInterface;
 use Drupal\taxonomy\TermInterface;
 use Drupal\taxonomy\TermStorageInterface;
 use Drupal\Tests\UnitTestCase;
@@ -56,9 +55,6 @@ class DegreeProgrammeResourceTest extends UnitTestCase {
 
   /** @var TermStorageInterface */
   private $termStorage;
-
-  /** @var TypedDataInterface */
-  private $typedData;
 
   public function setUp() {
     parent::setUp();
