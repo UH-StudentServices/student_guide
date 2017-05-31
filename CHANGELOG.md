@@ -3,6 +3,8 @@
 ## 1.5-dev
 
 * Added an API for getting all degree programmes (HUB-217)
+* News page pagination tweaking and styling (HUB-216)
+  - Import translations
 
 
 ## 1.4
