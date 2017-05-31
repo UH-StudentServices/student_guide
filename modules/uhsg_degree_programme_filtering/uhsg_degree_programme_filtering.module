@@ -46,14 +46,17 @@ function uhsg_degree_programme_filtering_preprocess_field(array &$variables, $ho
   // If we have active degree programme, filter by that or else filter out all
   // targets that has any degree programme chosen.
   $active_degree_programme_tid = \Drupal::service('uhsg_active_degree_programme.active_degree_programme')->getId();
+  $active_degree_programme = NULL;
+
   if ($active_degree_programme_tid) {
     $active_degree_programme = Term::load($active_degree_programme_tid);
-    uhsg_degree_programme_filtering_by_paragraph_article_degree_programme($variables, $active_degree_programme, 'field_theme_section', 'field_theme_section_instructions', 'field_article_degree_programme');
     uhsg_degree_programme_filtering_by_degree_programme($variables, $active_degree_programme, $reference_field, $target_entity_type);
   }
   else {
     uhsg_degree_programme_filtering_with_degree_programme($variables, $reference_field, $target_entity_type);
   }
+
+  uhsg_degree_programme_filtering_by_paragraph_article_degree_programme($variables, $active_degree_programme, 'field_theme_section', 'field_theme_section_instructions', 'field_article_degree_programme');
 
   // Because of these alterations, our result may vay depending on active
   // degree programme.
@@ -150,12 +153,12 @@ function uhsg_degree_programme_filtering_with_degree_programme(array &$variables
  * Filter articles referenced from paragraphs by active degree programme.
  *
  * @param array $variables
- * @param TermInterface $degree_programme
+ * @param TermInterface|null $degree_programme
  * @param $field_name
  * @param $article_reference_field_name
  * @param $article_degree_programme_reference_field_name
  */
-function uhsg_degree_programme_filtering_by_paragraph_article_degree_programme(array &$variables, TermInterface $degree_programme, $field_name, $article_reference_field_name, $article_degree_programme_reference_field_name) {
+function uhsg_degree_programme_filtering_by_paragraph_article_degree_programme(array &$variables, $degree_programme, $field_name, $article_reference_field_name, $article_degree_programme_reference_field_name) {
   if ($variables['element']['#field_name'] == $field_name) {
 
     foreach ($variables['items'] as $key => $item) {
@@ -168,14 +171,15 @@ function uhsg_degree_programme_filtering_by_paragraph_article_degree_programme(a
           $article_node = \Drupal\node\Entity\Node::load($article_nid);
           $degree_programme_references = $article_node->get($article_degree_programme_reference_field_name)->getValue();
 
-          if ($degree_programme_references) {
+          if (!empty($degree_programme_references)) {
             $valid_degree_programme_found = FALSE;
 
-            foreach ($degree_programme_references as $degree_programme_reference) {
-
-              if ($degree_programme->id() == $degree_programme_reference['target_id']) {
-                $valid_degree_programme_found = TRUE;
-                break;
+            if (isset($degree_programme)) {
+              foreach ($degree_programme_references as $degree_programme_reference) {
+                if ($degree_programme->id() == $degree_programme_reference['target_id']) {
+                  $valid_degree_programme_found = TRUE;
+                  break;
+                }
               }
             }
 
