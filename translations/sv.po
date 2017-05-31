@@ -104,3 +104,6 @@ msgstr "Logga in"
 
 msgid "Logout"
 msgstr "Logga ut"
+
+msgid "Previous"
+msgstr "Föregående"
