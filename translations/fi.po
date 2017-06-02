@@ -110,3 +110,6 @@ msgstr "Kirjaudu ulos"
 
 msgid "Previous"
 msgstr "Edellinen"
+
+msgid "Go to page @key"
+msgstr "Siirry sivulle @key"
