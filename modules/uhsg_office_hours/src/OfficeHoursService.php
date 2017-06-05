@@ -20,10 +20,10 @@ class OfficeHoursService {
 
     // TODO: Use the real data. These are for testing.
     $officeHours = [
-      ['name' => 'Teacher 1', 'hours' => 'My office hours'],
-      ['name' => 'Teacher 2', 'hours' => 'My office hours'],
-      ['name' => 'Teacher 3', 'hours' => 'My office hours'],
-      ['name' => 'Teacher 4', 'hours' => 'My office hours'],
+      ['name' => 'Teacher 1', 'hours' => 'My office hours', 'degree_programme_code' => 'ABC'],
+      ['name' => 'Teacher 2', 'hours' => 'My office hours', 'degree_programme_code' => 'DEF'],
+      ['name' => 'Teacher 3', 'hours' => 'My office hours', 'degree_programme_code' => 'GHI'],
+      ['name' => 'Teacher 4', 'hours' => 'My office hours', 'degree_programme_code' => 'JKL'],
     ];
 
     return $officeHours;
