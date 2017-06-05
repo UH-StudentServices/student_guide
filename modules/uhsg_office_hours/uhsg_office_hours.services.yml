@@ -1,0 +1,4 @@
+services:
+  uhsg_office_hours.office_hours_service:
+    class: Drupal\uhsg_office_hours\OfficeHoursService
+    arguments: ['@http_client', '@cache.default']

@@ -36,17 +36,16 @@
  * @ingroup themeable
  */
 #}
-<div {{ attributes.addClass('l-subregion-wrapper') }}>
-  <div class="l-subregion col-container">
-    <div class="col-left">
-      <h3>Mr Teacher</h3>
+
+{% for item in office_hours %}
+  <div {{ attributes.addClass('l-subregion-wrapper') }}>
+    <div class="l-subregion col-container">
+      <div class="col-left">
+        <h3>{{ item.name }}</h3>
+      </div>
+      <div class="col-main">
+        {{ item.hours }}
+      </div>
     </div>
-    <div class="col-main">
-      <ul>
-        <li>Mon 8-17</li>
-        <li>Tue 9-16</li>
-      </ul>
-    </div>
-    {{ content }}
   </div>
-</div>
+{% endfor %}
