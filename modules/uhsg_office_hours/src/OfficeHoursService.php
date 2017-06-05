@@ -23,7 +23,7 @@ class OfficeHoursService {
       ['name' => 'Teacher 1', 'hours' => 'My office hours', 'degree_programme_tid' => '123'],
       ['name' => 'Teacher 2', 'hours' => 'My office hours', 'degree_programme_tid' => '456'],
       ['name' => 'Teacher 3', 'hours' => 'My office hours', 'degree_programme_tid' => '789'],
-      ['name' => 'Teacher 4', 'hours' => 'My office hours', 'degree_programme_tid' => '333'],
+      ['name' => 'Teacher 4', 'hours' => 'My office hours', 'degree_programme_tid' => '175'],
     ];
 
     return $officeHours;
