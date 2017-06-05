@@ -28,4 +28,8 @@ class OfficeHoursService {
 
     return $officeHours;
   }
+
+  public function getDegreeProgrammeCodeTidMap() {
+    // TODO: Return degree programme code -> tid mapping.
+  }
 }
