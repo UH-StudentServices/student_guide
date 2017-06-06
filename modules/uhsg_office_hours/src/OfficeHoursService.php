@@ -5,6 +5,7 @@ namespace Drupal\uhsg_office_hours;
 use Drupal\Component\Datetime\TimeInterface;
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Logger\LoggerChannel;
 use Drupal\taxonomy\TermInterface;
 use GuzzleHttp\Client;
 use Psr\Http\Message\ResponseInterface;
@@ -23,14 +24,18 @@ class OfficeHoursService {
   /** @var EntityTypeManagerInterface */
   protected $entityTypeManager;
 
+  /** @var LoggerChannel */
+  protected $logger;
+
   /** @var TimeInterface */
   protected $time;
 
-  public function __construct(Client $client, CacheBackendInterface $cache, EntityTypeManagerInterface $entityTypeManager, TimeInterface $time) {
+  public function __construct(Client $client, CacheBackendInterface $cache, EntityTypeManagerInterface $entityTypeManager, TimeInterface $time, LoggerChannel $logger) {
     $this->client = $client;
     $this->cache = $cache;
     $this->entityTypeManager = $entityTypeManager;
     $this->time = $time;
+    $this->logger = $logger;
   }
 
   /**
@@ -43,12 +48,18 @@ class OfficeHoursService {
       return $cachedOfficeHours;
     }
 
-    // TODO: Call the real endpoint when it is ready.
-    $apiResponse = $this->client->get('http://www.example.com');
-    $officeHours = $this->handleResponse($apiResponse);
+    $officeHours = [];
 
-    if (!empty($officeHours)) {
-      $this->setOfficeHoursToCache($officeHours);
+    try {
+      // TODO: Call the real endpoint when it is ready.
+      $apiResponse = $this->client->get('http://www.example.com');
+      $officeHours = $this->handleResponse($apiResponse);
+
+      if (!empty($officeHours)) {
+        $this->setOfficeHoursToCache($officeHours);
+      }
+    } catch (\Exception $e) {
+      $this->logger->error($e->getMessage());
     }
 
     return $officeHours;
