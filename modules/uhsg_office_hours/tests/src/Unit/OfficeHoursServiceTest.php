@@ -17,6 +17,7 @@ use Psr\Http\Message\ResponseInterface;
 class OfficeHoursServiceTest extends UnitTestCase {
 
   const CACHED_RESPONSE = ['cached response'];
+  const EXCEPTION_MESSAGE = 'Exception';
   
   /** @var CacheBackendInterface */
   private $cache;
@@ -40,6 +41,8 @@ class OfficeHoursServiceTest extends UnitTestCase {
     parent::setUp();
 
     $this->cache = $this->prophesize(CacheBackendInterface::class);
+    $this->cache->get(Argument::any())->willReturn(FALSE);
+
     $this->client = $this->prophesize(Client::class);
     $this->entityTypeManager = $this->prophesize(EntityTypeManagerInterface::class);
     $this->logger = $this->prophesize(LoggerChannel::class);
@@ -65,5 +68,16 @@ class OfficeHoursServiceTest extends UnitTestCase {
     $this->client->get(Argument::any())->shouldNotBeCalled();
 
     $this->assertEquals(self::CACHED_RESPONSE, $this->officeHoursService->getOfficeHours());
+  }
+
+  /**
+   * @test
+   */
+  public function shouldLogApiRequestException() {
+    $this->client->get(Argument::any())->willThrow(new Exception(self::EXCEPTION_MESSAGE));
+
+    $this->logger->error(self::EXCEPTION_MESSAGE)->shouldBeCalled();
+
+    $this->officeHoursService->getOfficeHours();
   }
 }
