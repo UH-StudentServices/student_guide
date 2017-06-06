@@ -51,6 +51,8 @@ class OfficeHoursService {
     $officeHours = [];
 
     try {
+      // TODO: Get the endpoint URL and other related data from configs.
+      // TODO: We might need to have different configs per environment?
       // TODO: Call the real endpoint when it is ready.
       $apiResponse = $this->client->get('http://www.example.com');
       $officeHours = $this->handleResponse($apiResponse);
