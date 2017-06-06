@@ -34,6 +34,9 @@ class OfficeHoursServiceTest extends UnitTestCase {
   /** @var OfficeHoursService */
   private $officeHoursService;
 
+  /** @var ResponseInterface */
+  private $response;
+
   /** @var TimeInterface */
   private $time;
   
@@ -43,7 +46,12 @@ class OfficeHoursServiceTest extends UnitTestCase {
     $this->cache = $this->prophesize(CacheBackendInterface::class);
     $this->cache->get(Argument::any())->willReturn(FALSE);
 
+    $this->response = $this->prophesize(ResponseInterface::class);
+    $this->response->getStatusCode()->willReturn(200);
+
     $this->client = $this->prophesize(Client::class);
+    $this->client->get(Argument::any())->willReturn($this->response);
+
     $this->entityTypeManager = $this->prophesize(EntityTypeManagerInterface::class);
     $this->logger = $this->prophesize(LoggerChannel::class);
     $this->time = $this->prophesize(TimeInterface::class);
@@ -79,5 +87,14 @@ class OfficeHoursServiceTest extends UnitTestCase {
     $this->logger->error(self::EXCEPTION_MESSAGE)->shouldBeCalled();
 
     $this->officeHoursService->getOfficeHours();
+  }
+
+  /**
+   * @test
+   */
+  public function shouldReturnAnEmptyArrayWhenResponseCodeIsNot200() {
+    $this->response->getStatusCode()->willReturn(404);
+
+    $this->assertEmpty($this->officeHoursService->getOfficeHours());
   }
 }
