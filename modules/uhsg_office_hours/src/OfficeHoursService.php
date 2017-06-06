@@ -3,33 +3,85 @@
 namespace Drupal\uhsg_office_hours;
 
 use Drupal\Core\Cache\CacheBackendInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\taxonomy\TermInterface;
 use GuzzleHttp\Client;
 
 class OfficeHoursService {
 
+  /** @var CacheBackendInterface */
+  protected $cache;
+
   /** @var Client */
   protected $client;
 
-  public function __construct(Client $client, CacheBackendInterface $cache) {
+  /** @var EntityTypeManagerInterface */
+  protected $entityTypeManager;
+
+  public function __construct(Client $client, CacheBackendInterface $cache, EntityTypeManagerInterface $entityTypeManager) {
     $this->client = $client;
+    $this->cache = $cache;
+    $this->entityTypeManager = $entityTypeManager;
   }
 
   public function getOfficeHours() {
     // TODO: Call the real endpoint when it is ready.
-    //$this->client->get('http://www.example.com');
+    //$apiResponse = $this->client->get('http://www.example.com');
 
-    // TODO: Use the real data. These are for testing.
-    $officeHours = [
-      ['name' => 'Teacher 1', 'hours' => 'My office hours', 'degree_programme_tid' => '123'],
-      ['name' => 'Teacher 2', 'hours' => 'My office hours', 'degree_programme_tid' => '456'],
-      ['name' => 'Teacher 3', 'hours' => 'My office hours', 'degree_programme_tid' => '789'],
-      ['name' => 'Teacher 4', 'hours' => 'My office hours', 'degree_programme_tid' => '175'],
-    ];
+    // Test:
+    $responseBody = '[
+      {
+        "name": "Olli Opettaja",
+        "officeHours": "Maanantaisin klo 8.00",
+        "degreeProgrammes": ["KH10_001", "KH60_001"]
+      },
+      {
+        "name": "Leila Lehtori",
+        "officeHours": "Parillisten kuukausien kolmas torstai klo 11.15–11.45.",
+        "degreeProgrammes": ["KH60_001"]
+      }
+    ]';
 
-    return $officeHours;
+    $decodedBody = json_decode($responseBody);
+    $degreeProgrammeCodeTidMap = $this->getDegreeProgrammeCodeTidMap();
+
+    foreach ($decodedBody as $officeHour) {
+      $degreeProgrammeCodes = $officeHour->degreeProgrammes;
+      $degreeProgrammeTids = [];
+
+      foreach ($degreeProgrammeCodes as $degreeProgrammeCode) {
+        if (isset($degreeProgrammeCodeTidMap[$degreeProgrammeCode])) {
+          $degreeProgrammeTids[] = $degreeProgrammeCodeTidMap[$degreeProgrammeCode];
+        }
+      }
+
+      $officeHours[] = [
+        'name' => $officeHour->name,
+        'hours' => $officeHour->officeHours,
+        'degree_programme_tids' => implode(',', $degreeProgrammeTids),
+      ];
+    }
+
+    return isset($officeHours) ? $officeHours : [];
   }
 
-  public function getDegreeProgrammeCodeTidMap() {
-    // TODO: Return degree programme code -> tid mapping.
+  private function getDegreeProgrammeCodeTidMap() {
+    $degreeProgrammeTerms = $this->loadAllDegreeProgrammeTerms();
+    $degreeProgrammeCodeTidMap = [];
+
+    foreach ($degreeProgrammeTerms as $term) {
+      $code = $term->get('field_code')->value;
+      $tid = $term->id();
+      $degreeProgrammeCodeTidMap[$code] = $tid;
+    }
+
+    return $degreeProgrammeCodeTidMap;
+  }
+
+  /**
+   * @return TermInterface[]
+   */
+  private function loadAllDegreeProgrammeTerms() {
+    return $this->entityTypeManager->getStorage('taxonomy_term')->loadTree('degree_programme', 0, NULL, TRUE);
   }
 }

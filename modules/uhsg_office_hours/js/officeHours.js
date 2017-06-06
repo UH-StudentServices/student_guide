@@ -6,7 +6,9 @@
 
       if (degreeProgramme) {
         $('.office-hours').once().each(function () {
-          if ($(this).attr('data-degree-programme-tid') !== degreeProgramme) {
+          var tids = $(this).attr('data-degree-programme-tids').split(',');
+
+          if ($.inArray(degreeProgramme, tids) === -1) {
             $(this).hide();
           }
         });
