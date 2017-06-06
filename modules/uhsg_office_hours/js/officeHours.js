@@ -1,5 +1,7 @@
 (function ($) {
   'use strict';
+
+  // Hides office hours that do not match the active degree programme.
   Drupal.behaviors.filterOfficeHours = {
     attach: function (context, settings) {
       var degreeProgramme = $.cookie('Drupal.visitor.degree_programme');
