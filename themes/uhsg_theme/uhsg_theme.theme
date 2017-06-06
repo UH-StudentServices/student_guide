@@ -271,7 +271,9 @@ function uhsg_theme_preprocess_views_exposed_form(&$variables) {
 
 /**
  * Implements hook_preprocess_HOOK().
- * Add id attribute to each paragraph for linking to it from the table of contents.
+ *
+ * Add an id attribute to each paragraph for linking to it from the table of
+ * contents. Handle office hours paragraph type.
  */
 function uhsg_theme_preprocess_paragraph(&$variables) {
   $variables['attributes']['id'] = 'paragraph-' . $variables['paragraph']->id();
