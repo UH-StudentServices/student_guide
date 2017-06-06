@@ -97,4 +97,13 @@ class OfficeHoursServiceTest extends UnitTestCase {
 
     $this->assertEmpty($this->officeHoursService->getOfficeHours());
   }
+
+  /**
+   * @test
+   */
+  public function shouldReturnAnEmptyArrayWhenTheResponseIsEmpty() {
+    $this->response->getBody()->willReturn('[]');
+
+    $this->assertEmpty($this->officeHoursService->getOfficeHours());
+  }
 }
