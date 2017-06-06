@@ -46,7 +46,10 @@ class OfficeHoursService {
     // TODO: Call the real endpoint when it is ready.
     $apiResponse = $this->client->get('http://www.example.com');
     $officeHours = $this->handleResponse($apiResponse);
-    $this->setOfficeHoursToCache($officeHours);
+
+    if (!empty($officeHours)) {
+      $this->setOfficeHoursToCache($officeHours);
+    }
 
     return $officeHours;
   }
@@ -83,16 +86,19 @@ class OfficeHoursService {
       ]';
 
       $decodedBody = json_decode($responseBody);
-      $degreeProgrammeCodeTidMap = $this->getDegreeProgrammeCodeTidMap();
 
-      foreach ($decodedBody as $officeHour) {
-        $degreeProgrammeTids = $this->mapDegreeProgrammeCodesToTids($officeHour->degreeProgrammes, $degreeProgrammeCodeTidMap);
+      if (is_array($decodedBody) && !empty($decodedBody)) {
+        $degreeProgrammeCodeTidMap = $this->getDegreeProgrammeCodeTidMap();
 
-        $officeHours[] = [
-          'name' => $officeHour->name,
-          'hours' => $officeHour->officeHours,
-          'degree_programme_tids' => implode(',', $degreeProgrammeTids),
-        ];
+        foreach ($decodedBody as $officeHour) {
+          $degreeProgrammeTids = $this->mapDegreeProgrammeCodesToTids($officeHour->degreeProgrammes, $degreeProgrammeCodeTidMap);
+
+          $officeHours[] = [
+            'name' => $officeHour->name,
+            'hours' => $officeHour->officeHours,
+            'degree_programme_tids' => implode(',', $degreeProgrammeTids),
+          ];
+        }
       }
     }
 
