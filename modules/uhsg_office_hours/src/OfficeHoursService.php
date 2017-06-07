@@ -4,6 +4,8 @@ namespace Drupal\uhsg_office_hours;
 
 use Drupal\Component\Datetime\TimeInterface;
 use Drupal\Core\Cache\CacheBackendInterface;
+use Drupal\Core\Config\ConfigFactory;
+use Drupal\Core\Config\ImmutableConfig;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Logger\LoggerChannel;
 use Drupal\taxonomy\TermInterface;
@@ -14,12 +16,21 @@ class OfficeHoursService {
 
   const CACHE_EXPIRE_SECONDS = 900; // 15 minutes.
   const CACHE_KEY = 'uhsg-office-hours';
+  const CONFIG_NAME = 'uhsg_office_hours.config';
+  const CONFIG_API_BASE_URL = 'api_base_url';
+  const CONFIG_API_PATH = 'api_path';
 
   /** @var CacheBackendInterface */
   protected $cache;
 
   /** @var Client */
   protected $client;
+
+  /** @var ImmutableConfig */
+  protected $config;
+
+  /** @var ConfigFactory */
+  protected $configFactory;
 
   /** @var EntityTypeManagerInterface */
   protected $entityTypeManager;
@@ -30,50 +41,68 @@ class OfficeHoursService {
   /** @var TimeInterface */
   protected $time;
 
-  public function __construct(Client $client, CacheBackendInterface $cache, EntityTypeManagerInterface $entityTypeManager, TimeInterface $time, LoggerChannel $logger) {
-    $this->client = $client;
+  public function __construct(
+    CacheBackendInterface $cache,
+    Client $client,
+    ConfigFactory $configFactory,
+    EntityTypeManagerInterface $entityTypeManager,
+    LoggerChannel $logger,
+    TimeInterface $time) {
+
     $this->cache = $cache;
+    $this->client = $client;
+    $this->config = $configFactory->get(self::CONFIG_NAME);
     $this->entityTypeManager = $entityTypeManager;
-    $this->time = $time;
     $this->logger = $logger;
+    $this->time = $time;
   }
 
   /**
    * @return array
    */
   public function getOfficeHours() {
+    $officeHours = [];
     $cachedOfficeHours = $this->getOfficeHoursFromCache();
 
     if ($cachedOfficeHours) {
       return $cachedOfficeHours;
     }
 
-    $officeHours = [];
+    $apiUrl = $this->getApiUrl();
 
-    try {
-      // TODO: Get the endpoint URL and other related data from configs.
-      // TODO: We might need to have different configs per environment?
-      // TODO: Call the real endpoint when it is ready.
-      $apiResponse = $this->client->get('http://www.example.com');
-      $officeHours = $this->handleResponse($apiResponse);
+    if (!empty($apiUrl)) {
+      try {
+        $apiResponse = $this->client->get($apiUrl);
+        $officeHours = $this->handleResponse($apiResponse);
 
-      if (!empty($officeHours)) {
-        $this->setOfficeHoursToCache($officeHours);
+        if (!empty($officeHours)) {
+          $this->setOfficeHoursToCache($officeHours);
+        }
+      } catch (\Exception $e) {
+        $this->logger->error($e->getMessage());
       }
-    } catch (\Exception $e) {
-      $this->logger->error($e->getMessage());
     }
 
     return $officeHours;
   }
 
   /**
-   * @return array|NULL
+   * @return null|array
    */
   private function getOfficeHoursFromCache() {
     $officeHours = $this->cache->get(self::CACHE_KEY);
 
     return $officeHours ? $officeHours->data : NULL;
+  }
+
+  /**
+   * @return null|string
+   */
+  private function getApiUrl() {
+    $apiBaseUrl = $this->config->get(self::CONFIG_API_BASE_URL);
+    $apiPath = $this->config->get(self::CONFIG_API_PATH);
+
+    return isset($apiBaseUrl, $apiPath) ? $apiBaseUrl . $apiPath : NULL;
   }
 
   /**
