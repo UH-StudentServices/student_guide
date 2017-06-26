@@ -1,0 +1,8 @@
+services:
+  uhsg_office_hours.office_hours_service:
+    class: Drupal\uhsg_office_hours\OfficeHoursService
+    arguments: ['@cache.default', '@http_client', '@config.factory', '@entity_type.manager', '@logger.channel.uhsg_office_hours', '@datetime.time']
+
+  logger.channel.uhsg_office_hours:
+    parent: logger.channel_base
+    arguments: ['uhsg_office_hours']

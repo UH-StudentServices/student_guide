@@ -1,0 +1,7 @@
+office-hours:
+  version: 1.x
+  js:
+    js/officeHours.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.cookie
