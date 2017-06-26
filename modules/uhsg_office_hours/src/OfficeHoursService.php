@@ -10,6 +10,7 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Logger\LoggerChannel;
 use Drupal\taxonomy\TermInterface;
 use GuzzleHttp\Client;
+use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\ResponseInterface;
 
 class OfficeHoursService {
@@ -19,6 +20,8 @@ class OfficeHoursService {
   const CONFIG_NAME = 'uhsg_office_hours.config';
   const CONFIG_API_BASE_URL = 'api_base_url';
   const CONFIG_API_PATH = 'api_path';
+  const CONNECT_TIMEOUT_SECONDS = 2;
+  const REQUEST_TIMEOUT_SECONDS = 2;
 
   /** @var CacheBackendInterface */
   protected $cache;
@@ -72,7 +75,7 @@ class OfficeHoursService {
 
     if (!empty($apiUrl)) {
       try {
-        $apiResponse = $this->client->get($apiUrl);
+        $apiResponse = $this->client->get($apiUrl, $this->getRequestOptions());
         $officeHours = $this->handleResponse($apiResponse);
 
         if (!empty($officeHours)) {
@@ -106,27 +109,22 @@ class OfficeHoursService {
   }
 
   /**
+   * @return array
+   */
+  private function getRequestOptions() {
+    return [
+      RequestOptions::CONNECT_TIMEOUT => self::CONNECT_TIMEOUT_SECONDS,
+      RequestOptions::TIMEOUT => self::REQUEST_TIMEOUT_SECONDS
+    ];
+  }
+
+  /**
    * @param ResponseInterface $apiResponse
    * @return array
    */
   private function handleResponse(ResponseInterface $apiResponse) {
     if ($apiResponse->getStatusCode() == 200) {
       $responseBody = $apiResponse->getBody();
-
-      // TODO: This is just a test:
-      $responseBody = '[
-        {
-          "name": "Olli Opettaja",
-          "officeHours": "Maanantaisin klo 8.00",
-          "degreeProgrammes": ["KH10_001", "KH60_001"]
-        },
-        {
-          "name": "Leila Lehtori",
-          "officeHours": "Parillisten kuukausien kolmas torstai klo 11.15–11.45.",
-          "degreeProgrammes": ["KH60_001"]
-        }
-      ]';
-
       $decodedBody = json_decode($responseBody);
 
       if (is_array($decodedBody) && !empty($decodedBody)) {
