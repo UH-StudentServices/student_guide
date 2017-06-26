@@ -1,7 +1,7 @@
 display:
   default:
     display_options:
-      title: Haku
+      title: 'Opiskelijan ohjeet'
       exposed_form:
         options:
           submit_button: 'Näytä tulokset'

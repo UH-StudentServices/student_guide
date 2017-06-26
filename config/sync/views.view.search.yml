@@ -569,7 +569,7 @@ display:
           expose:
             label: ''
           plugin_id: search_api
-      title: Search
+      title: 'Instructions for students'
       header:
         view:
           id: view
