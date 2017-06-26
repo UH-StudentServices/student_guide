@@ -7,6 +7,7 @@
   - Import translations
 * Added a special paragraph type for displaying office hours (HUB-219)
   - Provision settings to configure environment specific API URLs
+* Updated Drupal core (HUB-227)
 
 
 ## 1.4
