@@ -71,7 +71,7 @@ class OfficeHoursServiceTest extends UnitTestCase {
     $this->response->getStatusCode()->willReturn(200);
 
     $this->client = $this->prophesize(Client::class);
-    $this->client->get(Argument::any())->willReturn($this->response);
+    $this->client->get(Argument::any(), Argument::any())->willReturn($this->response);
 
     $this->entityStorage = $this->prophesize(EntityStorageInterface::class);
 
@@ -99,7 +99,7 @@ class OfficeHoursServiceTest extends UnitTestCase {
     $cacheEntry->data = self::CACHED_RESPONSE;
     $this->cache->get(OfficeHoursService::CACHE_KEY)->willReturn($cacheEntry);
 
-    $this->client->get(Argument::any())->shouldNotBeCalled();
+    $this->client->get(Argument::any(), Argument::any())->shouldNotBeCalled();
 
     $this->assertEquals(self::CACHED_RESPONSE, $this->officeHoursService->getOfficeHours());
   }
@@ -108,7 +108,7 @@ class OfficeHoursServiceTest extends UnitTestCase {
    * @test
    */
   public function shouldLogApiRequestException() {
-    $this->client->get(Argument::any())->willThrow(new Exception(self::EXCEPTION_MESSAGE));
+    $this->client->get(Argument::any(), Argument::any())->willThrow(new Exception(self::EXCEPTION_MESSAGE));
 
     $this->logger->error(self::EXCEPTION_MESSAGE)->shouldBeCalled();
 
