@@ -8,6 +8,7 @@
 * Added a special paragraph type for displaying office hours (HUB-219)
   - Provision settings to configure environment specific API URLs
 * Updated Drupal core (HUB-227)
+* Updated search title to "Instructions for students" (HUB-223)
 
 
 ## 1.4
