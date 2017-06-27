@@ -11,6 +11,7 @@
 * Updated search title to "Instructions for students" (HUB-223)
 * Fixed PHP warning of unexpected variable type when degree programmes without
   type were listed in switcher
+* Switched to use one of our ported D8 module from Drupal.org
 
 
 ## 1.4

@@ -1,5 +1,0 @@
-services:
-  edit_own_user_account_permission.route_subscriber:
-    class: Drupal\edit_own_user_account_permission\Routing\RouteSubscriber
-    tags:
-      - { name: event_subscriber }

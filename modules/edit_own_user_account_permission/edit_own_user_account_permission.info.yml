@@ -1,5 +1,0 @@
-name: Edit own user account permission
-type: module
-description: Provides a permission to control whether or not users can edit their own account
-package: Permissions
-core: 8.x

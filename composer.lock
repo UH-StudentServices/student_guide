@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d62bca089833419a748f8004d91c56a7",
+    "content-hash": "e53c544b6ea2aef8a6457e3ecd09c9aa",
     "packages": [
         {
             "name": "RubaXa/Sortable",
@@ -737,7 +737,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.18",
-                    "datestamp": "1480614184"
+                    "datestamp": "1491487683"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -822,7 +822,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.3",
-                    "datestamp": "1487336284"
+                    "datestamp": "1490346183"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -916,7 +916,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.3",
-                    "datestamp": "1481007784"
+                    "datestamp": "1493036943"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -1195,7 +1195,7 @@
                 },
                 "drupal": {
                     "version": "8.x-3.0-alpha27",
-                    "datestamp": "1471723439"
+                    "datestamp": "1490677984"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -1314,6 +1314,48 @@
             }
         },
         {
+            "name": "drupal/edit_own_user_account_permission",
+            "version": "dev-1.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/edit_own_user_account_permission",
+                "reference": "68b5906f02df22506faf2a8599f063ba76552a78"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.x-dev",
+                    "datestamp": "1494102484"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "BassistJimmyJam",
+                    "homepage": "https://www.drupal.org/user/284457"
+                },
+                {
+                    "name": "Yaremchuk",
+                    "homepage": "https://www.drupal.org/user/576918"
+                }
+            ],
+            "description": "Provides a permission to control whether or not users can edit their own account",
+            "homepage": "https://www.drupal.org/project/edit_own_user_account_permission",
+            "support": {
+                "source": "http://cgit.drupalcode.org/edit_own_user_account_permission"
+            },
+            "time": "2017-05-06 20:17:50"
+        },
+        {
             "name": "drupal/entity_reference_revisions",
             "version": "1.2.0",
             "source": {
@@ -1340,7 +1382,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.2",
-                    "datestamp": "1485790085"
+                    "datestamp": "1495814284"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -1391,7 +1433,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0-alpha4",
-                    "datestamp": "1474662540"
+                    "datestamp": "1490096883"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -1445,7 +1487,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0-alpha7",
-                    "datestamp": "1482263583"
+                    "datestamp": "1490003883"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -1464,26 +1506,6 @@
                 {
                     "name": "borisson_",
                     "homepage": "https://www.drupal.org/user/2393360"
-                },
-                {
-                    "name": "drunken monkey",
-                    "homepage": "https://www.drupal.org/user/205582"
-                },
-                {
-                    "name": "jurcello",
-                    "homepage": "https://www.drupal.org/user/774070"
-                },
-                {
-                    "name": "marthinal",
-                    "homepage": "https://www.drupal.org/user/387593"
-                },
-                {
-                    "name": "mr.baileys",
-                    "homepage": "https://www.drupal.org/user/383424"
-                },
-                {
-                    "name": "swentel",
-                    "homepage": "https://www.drupal.org/user/107403"
                 }
             ],
             "description": "The Facet module allows site builders to easily create and manage faceted search interfaces.",
@@ -1518,7 +1540,7 @@
                 },
                 "drupal": {
                     "version": "8.x-4.0-alpha1",
-                    "datestamp": "1483948886"
+                    "datestamp": "1494517385"
                 },
                 "patches_applied": {
                     "2846111-4": "https://www.drupal.org/files/issues/broken_ajax_link_views-2846111-4.patch"
@@ -1589,8 +1611,8 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.1+7-dev",
-                    "datestamp": "1475613839"
+                    "version": "8.x-2.1+24-dev",
+                    "datestamp": "1491162482"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -1760,7 +1782,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.23",
-                    "datestamp": "1457671745"
+                    "datestamp": "1490277183"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -1819,7 +1841,7 @@
                 },
                 "drupal": {
                     "version": "8.x-3.0-beta1",
-                    "datestamp": "1476307739"
+                    "datestamp": "1494450485"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -1831,6 +1853,10 @@
                     "name": "Mike Ryan",
                     "homepage": "https://www.drupal.org/u/mikeryan",
                     "role": "Maintainer"
+                },
+                {
+                    "name": "mikeryan",
+                    "homepage": "https://www.drupal.org/user/4420"
                 }
             ],
             "description": "Enhancements to core migration support.",
@@ -1920,7 +1946,7 @@
                 },
                 "drupal": {
                     "version": "8.x-3.0-beta1",
-                    "datestamp": "1476313439"
+                    "datestamp": "1494450485"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2087,7 +2113,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0-rc1",
-                    "datestamp": "1485702484"
+                    "datestamp": "1493468044"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2282,7 +2308,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.14",
-                    "datestamp": "1493396643"
+                    "datestamp": "1496919842"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2380,7 +2406,7 @@
                 "reference": "1a29559f9f09b181e5da4b9becf36ae9a41b9440"
             },
             "require": {
-                "drupal/core": "^8.2"
+                "drupal/core": "^8.3"
             },
             "require-dev": {
                 "drupal/search_api_db": "*"
@@ -2391,8 +2417,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-beta4+32-dev",
-                    "datestamp": "1488030783"
+                    "version": "8.x-1.2+1-dev",
+                    "datestamp": "1498403042"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2447,7 +2473,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0-alpha1",
-                    "datestamp": "1478684640"
+                    "datestamp": "1495529883"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2552,7 +2578,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0-rc1",
-                    "datestamp": "1483290542"
+                    "datestamp": "1493466843"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2621,7 +2647,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.x",
-                    "datestamp": "1484253183",
+                    "datestamp": "1493246342",
                     "package": "Field types"
                 }
             },
@@ -5532,7 +5558,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/devel-8.x-1.0-rc1.zip",
-                "reference": "8.x-1.0-rc1",
+                "reference": null,
                 "shasum": "04a01f50d508eca70e065b7eba38cd6c83a436c0"
             },
             "require": {
@@ -5548,7 +5574,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0-rc1",
-                    "datestamp": "1484837884"
+                    "datestamp": "1492989244"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -5583,24 +5609,12 @@
                     "homepage": "https://www.drupal.org/node/3236/committers"
                 },
                 {
-                    "name": "moshe weitzman",
-                    "homepage": "https://www.drupal.org/user/23"
-                },
-                {
-                    "name": "pcambra",
-                    "homepage": "https://www.drupal.org/user/122101"
-                },
-                {
                     "name": "salvis",
                     "homepage": "https://www.drupal.org/user/82964"
                 },
                 {
                     "name": "willzyx",
                     "homepage": "https://www.drupal.org/user/1043862"
-                },
-                {
-                    "name": "yched",
-                    "homepage": "https://www.drupal.org/user/39567"
                 }
             ],
             "description": "Various blocks, pages, and functions for developers.",
@@ -5928,7 +5942,7 @@
                 {
                     "name": "Anthon Pang",
                     "email": "apang@softwaredevelopment.ca",
-                    "role": "Fork Maintainer"
+                    "role": "Fork maintainer"
                 }
             ],
             "description": "PHP WebDriver for Selenium 2",
@@ -7875,7 +7889,8 @@
         "drupal/noreqnewpass": 20,
         "drupal/block_access": 20,
         "drupal/content_lock": 15,
-        "drupal/facets": 15
+        "drupal/facets": 15,
+        "drupal/edit_own_user_account_permission": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
