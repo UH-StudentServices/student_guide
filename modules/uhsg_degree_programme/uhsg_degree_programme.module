@@ -43,9 +43,10 @@ function uhsg_degree_programme_views_post_execute(ViewExecutable $view) {
   // Hide transitional degree programmes from anonymous users
   if ($view->id() == 'degree_programmes' && \Drupal::currentUser()->isAnonymous()) {
     foreach ($view->result as $key => $result) {
-      $type = $result->_entity->get('field_degree_programme_type')->getValue();
-      if (in_array('transitional', array_shift($type))) {
-        unset($view->result[$key]);
+      if ($type = $result->_entity->get('field_degree_programme_type')->getValue()) {
+        if (in_array('transitional', array_shift($type))) {
+          unset($view->result[$key]);
+        }
       }
     }
   }

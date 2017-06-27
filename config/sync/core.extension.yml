@@ -53,10 +53,13 @@ module:
   purge_tokens: 0
   purge_ui: 0
   responsive_image: 0
+  rest: 0
+  restui: 0
   samlauth: 0
   search_api: 0
   search_api_autocomplete: 0
   search_api_solr: 0
+  serialization: 0
   syslog: 0
   system: 0
   taxonomy: 0
@@ -73,8 +76,10 @@ module:
   uhsg_feedback: 0
   uhsg_migrate: 0
   uhsg_news: 0
+  uhsg_office_hours: 0
   uhsg_oprek: 0
   uhsg_redirect_to_login: 0
+  uhsg_rest: 0
   uhsg_role_auto_assign: 0
   uhsg_samlauth: 0
   uhsg_search: 0
