@@ -15,7 +15,7 @@ use Psr\Http\Message\ResponseInterface;
 
 class OfficeHoursService {
 
-  const CACHE_EXPIRE_SECONDS = 900; // 15 minutes.
+  const CACHE_EXPIRE_SECONDS = 60; // 1 minute.
   const CACHE_KEY = 'uhsg-office-hours';
   const CONFIG_NAME = 'uhsg_office_hours.config';
   const CONFIG_API_BASE_URL = 'api_base_url';
