@@ -9,6 +9,8 @@
   - Provision settings to configure environment specific API URLs
 * Updated Drupal core (HUB-227)
 * Updated search title to "Instructions for students" (HUB-223)
+* Fixed PHP warning of unexpected variable type when degree programmes without
+  type were listed in switcher
 
 
 ## 1.4
