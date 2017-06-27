@@ -283,7 +283,7 @@ function uhsg_theme_preprocess_paragraph(&$variables) {
     $office_hours_service = \Drupal::service('uhsg_office_hours.office_hours_service');
     $variables['office_hours'] = $office_hours_service->getOfficeHours();
     $variables['attributes']['class'][] = 'office-hours';
-    $variables['elements']['#cache']['max-age'] = 0;
+    $variables['#cache']['max-age'] = 0;
   }
 }
 
