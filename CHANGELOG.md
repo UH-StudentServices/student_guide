@@ -1,6 +1,7 @@
 #Changelog
 
-## 1.5-dev
+## 1.5
+Release date: 27.06.2017
 
 * Added an API for getting all degree programmes (HUB-217)
 * News page pagination tweaking and styling (HUB-216)
