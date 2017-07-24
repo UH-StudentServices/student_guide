@@ -1,7 +1,9 @@
 #Changelog
 
 ## 1.6-dev
+Release date: ??.??.2017
 
+* Changed feedback recipient email address (HUB-228)
 
 ## 1.5
 Release date: 27.06.2017
