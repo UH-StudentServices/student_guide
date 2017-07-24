@@ -15,7 +15,7 @@ _core:
 id: feedback_form
 label: 'Feedback form'
 recipients:
-  - opetusteknologia@helsinki.fi
+  - neu-tuki@helsinki.fi
 reply: ''
 weight: 0
 message: 'Thank you!'
