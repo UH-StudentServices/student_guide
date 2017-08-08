@@ -35,6 +35,7 @@ settings:
           name: Tools
           items:
             - Source
+            - DrupalImage
         -
           name: Table
           items:
@@ -45,10 +46,10 @@ settings:
     stylescombo:
       styles: ''
 image_upload:
-  status: false
+  status: true
   scheme: public
   directory: inline-images
   max_size: ''
   max_dimensions:
-    width: null
+    width: 720
     height: null
