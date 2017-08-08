@@ -5,6 +5,7 @@ Release date: ??.??.2017
 
 * Changed location of paragraph images (HUB-231)
 * Changed feedback recipient email address (HUB-228)
+* Cleaned up transitional degree programme handling (HUB-220)
 
 ## 1.5
 Release date: 27.06.2017
