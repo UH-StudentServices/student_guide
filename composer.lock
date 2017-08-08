@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e53c544b6ea2aef8a6457e3ecd09c9aa",
+    "content-hash": "cb898c7a8b8b0bb5012a77c77621e7eb",
     "packages": [
         {
             "name": "RubaXa/Sortable",
@@ -16,6 +16,34 @@
                 "shasum": null
             },
             "type": "drupal-library"
+        },
+        {
+            "name": "UH-StudentServices/video_embed_unitube",
+            "version": "1.0-alpha1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/UH-StudentServices/video_embed_unitube.git",
+                "reference": "f87cd650f3bbc2e07a489199a6ba3b5e7f1f25c6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/UH-StudentServices/video_embed_unitube/zipball/f87cd650f3bbc2e07a489199a6ba3b5e7f1f25c6",
+                "reference": "f87cd650f3bbc2e07a489199a6ba3b5e7f1f25c6",
+                "shasum": ""
+            },
+            "require": {
+                "drupal/video_embed_field": "~1.5"
+            },
+            "type": "drupal-module",
+            "license": [
+                "GPL-3.0+"
+            ],
+            "description": "Use UniTube video URLs while embedding your video with Video Embed Field module.",
+            "support": {
+                "source": "https://github.com/UH-StudentServices/video_embed_unitube/tree/1.0-alpha1",
+                "issues": "https://github.com/UH-StudentServices/video_embed_unitube/issues"
+            },
+            "time": "2017-08-08T13:21:54+00:00"
         },
         {
             "name": "asm89/stack-cors",
@@ -2620,17 +2648,17 @@
         },
         {
             "name": "drupal/video_embed_field",
-            "version": "1.4.0",
+            "version": "1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/video_embed_field",
-                "reference": "8.x-1.4"
+                "reference": "8.x-1.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/video_embed_field-8.x-1.4.zip",
-                "reference": "8.x-1.4",
-                "shasum": "7bf93a52e2e8d639b4dbefd65f0ee2b170d73f43"
+                "url": "https://ftp.drupal.org/files/projects/video_embed_field-8.x-1.5.zip",
+                "reference": "8.x-1.5",
+                "shasum": "f54d470ef7f863604e51e6ae98cd40ef25de5f79"
             },
             "require": {
                 "drupal/core": "*"
@@ -5558,7 +5586,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/devel-8.x-1.0-rc1.zip",
-                "reference": null,
+                "reference": "8.x-1.0-rc1",
                 "shasum": "04a01f50d508eca70e065b7eba38cd6c83a436c0"
             },
             "require": {
