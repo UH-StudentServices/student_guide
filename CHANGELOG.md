@@ -5,6 +5,7 @@ Release date: ??.??.2017
 
 * Changed location of paragraph images (HUB-231)
 * Added possibility to attach inline images to body fields (HUB-229)
+* Changed location of paragraph videos (HUB-232)
 * Changed feedback recipient email address (HUB-228)
 * Cleaned up transitional degree programme handling (HUB-220)
 
