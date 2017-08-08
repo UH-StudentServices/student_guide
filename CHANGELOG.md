@@ -3,6 +3,7 @@
 ## 1.6-dev
 Release date: ??.??.2017
 
+* Changed location of paragraph images (HUB-231)
 * Changed feedback recipient email address (HUB-228)
 * Cleaned up transitional degree programme handling (HUB-220)
 
