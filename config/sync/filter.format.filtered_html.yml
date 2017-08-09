@@ -12,7 +12,7 @@ filters:
     status: true
     weight: -10
     settings:
-      allowed_html: '<a href hreflang> <em> <strong><ul type> <ol start type> <li> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <img src alt data-entity-type data-entity-uuid data-align data-caption height width>'
+      allowed_html: '<a href hreflang data-entity-type data-entity-uuid> <em> <strong><ul type> <ol start type> <li> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <img src alt data-entity-type data-entity-uuid data-align data-caption height width>'
       filter_html_help: true
       filter_html_nofollow: false
   filter_url:
