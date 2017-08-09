@@ -23,22 +23,6 @@ class NewsPerDegreeProgramme extends BlockBase {
    */
   public function build() {
     $renderableArray = [];
-    $lang = \Drupal::languageManager()->getCurrentLanguage()->getId();
-
-    $query = \Drupal::entityQuery('node')
-      ->condition('status', 1)
-      ->condition('langcode', $lang)
-      ->condition('type', 'news')
-      ->sort('created', 'DESC')
-      ->range(0, 3);
-    $group = $query->orConditionGroup()
-      ->condition('field_news_degree_programme', NULL, 'IS NULL');
-
-    // if on term page, add tid to condition group
-    $tid = \Drupal::service('uhsg_active_degree_programme.active_degree_programme')->getId();
-    if ($tid) {
-      $group->condition('field_news_degree_programme', $tid);
-    }
 
     // get link to news view
     $view = Views::getView('news');
@@ -57,7 +41,8 @@ class NewsPerDegreeProgramme extends BlockBase {
     ]);
     $link = Link::fromTextAndUrl($this->t('More current topics'), $url)->toString();
 
-    $nids = $query->condition($group)->execute();
+    $targeted_news = \Drupal::service('uhsg_news.targeted_news');
+    $nids = $targeted_news->getTargetedNewsNids();
 
     if ($nids) {
       $nodes = Node::loadMultiple($nids);

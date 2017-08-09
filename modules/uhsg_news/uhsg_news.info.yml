@@ -4,3 +4,5 @@ description: Provides advanced properties for news like filtered listings and em
 core: 8.x
 version: VERSION
 package: Student Guide
+dependencies:
+  - uhsg_active_degree_programme
