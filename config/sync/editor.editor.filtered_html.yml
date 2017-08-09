@@ -6,6 +6,13 @@ dependencies:
     - filter.format.filtered_html
   module:
     - ckeditor
+    - editor_file
+third_party_settings:
+  editor_file:
+    status: true
+    scheme: public
+    directory: inline-files
+    extensions: 'txt pdf docx xlsx jpg png gif tex'
 format: filtered_html
 editor: ckeditor
 settings:
@@ -35,6 +42,7 @@ settings:
           name: Tools
           items:
             - Source
+            - DrupalFile
             - DrupalImage
         -
           name: Table
