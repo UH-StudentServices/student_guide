@@ -57,7 +57,8 @@
         "drupal/draggableviews": "^1.0",
         "drupal/restui": "^1.14",
         "drupal/edit_own_user_account_permission": "1.x-dev#68b5906f02df22506faf2a8599f063ba76552a78",
-        "UH-StudentServices/video_embed_unitube": "^1.0-alpha1"
+        "UH-StudentServices/video_embed_unitube": "^1.0-alpha1",
+        "drupal/editor_file": "^1.2"
     },
     "repositories": {
         "0": {
