@@ -113,3 +113,6 @@ msgstr "Edellinen"
 
 msgid "Go to page @key"
 msgstr "Siirry sivulle @key"
+
+msgid "Add FAQ section from original translation."
+msgstr "Lisää FAQ -osio alkuperäiskielisessä teemassa."
