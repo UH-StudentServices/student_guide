@@ -92,6 +92,7 @@ class NewsFeedController extends ControllerBase {
         if ($node->get('body')->count() > 0) {
           $entry->setDescription(text_summary($node->get('body')
             ->first()
+            ->get('value')
             ->getString()));
         }
         $feed->addEntry($entry);
