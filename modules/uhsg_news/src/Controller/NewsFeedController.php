@@ -78,19 +78,24 @@ class NewsFeedController extends ControllerBase {
     /** @var \Drupal\node\Entity\Node $node */
     $modified = array();
     foreach ($nodes as $node) {
-      // Setup item
-      $url = $node->url('canonical', ['absolute' => TRUE]);
-      $modified[] = $node->getChangedTime();
-      $entry = $feed->createEntry();
-      $entry->setTitle($node->label());
-      $entry->setLink($url);
-      $entry->setId($url);
-      $entry->setDateCreated(new \DateTime('@' . $node->getCreatedTime()));
-      $entry->setDateModified(new \DateTime('@' . $node->getChangedTime()));
-      if ($node->get('body')->count() > 0) {
-        $entry->setDescription(text_summary($node->get('body')->first()->getString()));
+      // List nodes that we have access to.
+      if ($node->access()) {
+        // Setup item
+        $url = $node->url('canonical', ['absolute' => TRUE]);
+        $modified[] = $node->getChangedTime();
+        $entry = $feed->createEntry();
+        $entry->setTitle($node->label());
+        $entry->setLink($url);
+        $entry->setId($url);
+        $entry->setDateCreated(new \DateTime('@' . $node->getCreatedTime()));
+        $entry->setDateModified(new \DateTime('@' . $node->getChangedTime()));
+        if ($node->get('body')->count() > 0) {
+          $entry->setDescription(text_summary($node->get('body')
+            ->first()
+            ->getString()));
+        }
+        $feed->addEntry($entry);
       }
-      $feed->addEntry($entry);
     }
 
     if (empty($modified)) {
