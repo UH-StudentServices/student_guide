@@ -60,12 +60,12 @@ class TargetedNewsService {
       ->sort('created', 'DESC')
       ->range(0, $limit);
     $group = $query->orConditionGroup()
-      ->condition($referenceField, NULL, 'IS NULL');
+      ->condition($this->referenceField, NULL, 'IS NULL');
 
     // If active degree programme present, add tid to condition group
     $tid = $this->activeDegreeProgrammeService->getId();
     if ($tid) {
-      $group->condition($referenceField, $tid);
+      $group->condition($this->referenceField, $tid);
     }
 
     $nids = $query->condition($group)->execute();
