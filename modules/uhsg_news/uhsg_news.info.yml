@@ -1,6 +1,8 @@
 name: News
 type: module
-description: Provides a news block.
+description: Provides advanced properties for news like filtered listings and emailing.
 core: 8.x
 version: VERSION
 package: Student Guide
+dependencies:
+  - uhsg_active_degree_programme

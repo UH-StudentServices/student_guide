@@ -1,0 +1,7 @@
+uhsg_news.rss:
+  path: '/news/feed.xml'
+  defaults:
+    _controller: '\Drupal\uhsg_news\Controller\NewsFeedController::feed'
+    _title: 'News Atom feed'
+  requirements:
+    _permission: 'access content'

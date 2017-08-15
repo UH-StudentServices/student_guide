@@ -9,6 +9,7 @@ namespace Drupal\uhsg_active_degree_programme;
 
 use Drupal\Core\Config\ConfigFactory;
 use Drupal\Core\Entity\EntityRepositoryInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\flag\FlaggingInterface;
 use Drupal\flag\FlagServiceInterface;
@@ -31,6 +32,13 @@ class ActiveDegreeProgrammeService {
    * @var \Drupal\Core\Entity\EntityRepositoryInterface
    */
   protected $entityRepository;
+
+  /**
+   * Used for querying by degree programme codes.
+   *
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
+   */
+  protected $entityTypeManager;
 
   /**
    * Stores the current user.
@@ -68,13 +76,15 @@ class ActiveDegreeProgrammeService {
    * @param ConfigFactory $configFactory
    * @param RequestStack $requestStack
    * @param EntityRepositoryInterface $entityRepository
+   * @param EntityTypeManagerInterface $entityTypeManager
    * @param AccountInterface $user
    * @param FlagServiceInterface $flagService
    */
-  public function __construct(ConfigFactory $configFactory, RequestStack $requestStack, EntityRepositoryInterface $entityRepository, AccountInterface $user, FlagServiceInterface $flagService) {
+  public function __construct(ConfigFactory $configFactory, RequestStack $requestStack, EntityRepositoryInterface $entityRepository, EntityTypeManagerInterface $entityTypeManager, AccountInterface $user, FlagServiceInterface $flagService) {
     $this->config = $configFactory->get('uhsg_active_degree_programme.settings');
     $this->requestStack = $requestStack;
     $this->entityRepository = $entityRepository;
+    $this->entityTypeManager = $entityTypeManager;
     $this->user = $user;
     $this->flagService = $flagService;
     $this->resolvedTerm = NULL;
@@ -118,6 +128,45 @@ class ActiveDegreeProgrammeService {
   }
 
   /**
+   * Tries to get term ID from request.
+   * @return string|null
+   *   Returns an term ID or NULL, when not found.
+   */
+  protected function getTidFromQuery() {
+
+    // If term id is given directly, return that
+    $query_param_tid = $this->requestStack->getCurrentRequest()->get('degree_programme');
+    if ($query_param_tid) {
+      return $query_param_tid;
+    }
+
+    // If code is given, resolve its term ID first
+    $query_param_code = $this->requestStack->getCurrentRequest()->get('degree_programme_code');
+    if ($query_param_code) {
+      return $this->resolveTidFromCode($query_param_code);
+    }
+
+    return NULL;
+  }
+
+  /**
+   * @param $code string
+   *
+   * @return int|null
+   *   Returns ID of taxonomy term or NULL if not found.
+   */
+  protected function resolveTidFromCode($code) {
+    $entity_query = $this->entityTypeManager->getStorage($this->degreeProgrammeEntityType)->getQuery('AND');
+    $entity_query->condition('field_code', $code);
+    $entity_ids = $entity_query->execute();
+    if (!empty($entity_ids)) {
+      $ids = array_keys($entity_ids);
+      return $ids[0];
+    }
+    return NULL;
+  }
+
+  /**
    * Return term of active degree programme.
    * @return \Drupal\taxonomy\Entity\Term|null
    */
@@ -127,7 +176,7 @@ class ActiveDegreeProgrammeService {
     }
 
     // Check from parameters.
-    $query_param = $this->requestStack->getCurrentRequest()->get('degree_programme');
+    $query_param = $this->getTidFromQuery();
     if ($query_param) {
       $term = Term::load($query_param);
       if (!is_null($term) && $this->access($term) && $term->getVocabularyId() == $this->degreeProgrammeBundle) {
