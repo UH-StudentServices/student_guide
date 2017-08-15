@@ -81,16 +81,17 @@ class NewsFeedController extends ControllerBase {
       // List nodes that we have access to.
       if ($node->access()) {
         // Setup item
-        $url = $node->url('canonical', ['absolute' => TRUE]);
-        $modified[] = $node->getChangedTime();
+        $translation = $node->getTranslation($this->languageManager()->getCurrentLanguage()->getId());
+        $url = $translation->url('canonical', ['absolute' => TRUE]);
+        $modified[] = $translation->getChangedTime();
         $entry = $feed->createEntry();
-        $entry->setTitle($node->label());
+        $entry->setTitle($translation->label());
         $entry->setLink($url);
         $entry->setId($url);
-        $entry->setDateCreated(new \DateTime('@' . $node->getCreatedTime()));
-        $entry->setDateModified(new \DateTime('@' . $node->getChangedTime()));
-        if ($node->get('body')->count() > 0) {
-          $entry->setDescription(text_summary($node->get('body')
+        $entry->setDateCreated(new \DateTime('@' . $translation->getCreatedTime()));
+        $entry->setDateModified(new \DateTime('@' . $translation->getChangedTime()));
+        if ($translation->get('body')->count() > 0) {
+          $entry->setDescription(text_summary($translation->get('body')
             ->first()
             ->get('value')
             ->getString()));
