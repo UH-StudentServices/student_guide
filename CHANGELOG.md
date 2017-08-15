@@ -11,6 +11,7 @@ Release date: ??.??.2017
 * Changed feedback recipient email address (HUB-228)
 * Cleaned up transitional degree programme handling (HUB-220)
 * Added Atom+RSS news feed that support degree programme targeting (HUB-234)
+* Changed text about how to add FAQ sections from original translation (HUB-222)
 
 ## 1.5
 Release date: 27.06.2017
