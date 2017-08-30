@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e53c544b6ea2aef8a6457e3ecd09c9aa",
+    "content-hash": "282848da9ecdb20f94e110620401f82d",
     "packages": [
         {
             "name": "RubaXa/Sortable",
@@ -16,6 +16,34 @@
                 "shasum": null
             },
             "type": "drupal-library"
+        },
+        {
+            "name": "UH-StudentServices/video_embed_unitube",
+            "version": "1.0-alpha1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/UH-StudentServices/video_embed_unitube.git",
+                "reference": "f87cd650f3bbc2e07a489199a6ba3b5e7f1f25c6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/UH-StudentServices/video_embed_unitube/zipball/f87cd650f3bbc2e07a489199a6ba3b5e7f1f25c6",
+                "reference": "f87cd650f3bbc2e07a489199a6ba3b5e7f1f25c6",
+                "shasum": ""
+            },
+            "require": {
+                "drupal/video_embed_field": "~1.5"
+            },
+            "type": "drupal-module",
+            "license": [
+                "GPL-3.0+"
+            ],
+            "description": "Use UniTube video URLs while embedding your video with Video Embed Field module.",
+            "support": {
+                "source": "https://github.com/UH-StudentServices/video_embed_unitube/tree/1.0-alpha1",
+                "issues": "https://github.com/UH-StudentServices/video_embed_unitube/issues"
+            },
+            "time": "2017-08-08T13:21:54+00:00"
         },
         {
             "name": "asm89/stack-cors",
@@ -796,7 +824,7 @@
                 "source": "https://github.com/larowlan/block_access/tree/8.x-1.x",
                 "issues": "https://github.com/larowlan/block_access/issues"
             },
-            "time": "2017-01-12 08:55:41"
+            "time": "2017-01-12T08:55:41+00:00"
         },
         {
             "name": "drupal/config_ignore",
@@ -988,16 +1016,16 @@
         },
         {
             "name": "drupal/core",
-            "version": "8.3.4",
+            "version": "8.3.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core.git",
-                "reference": "f34eee7255142ab5416107972ef13d011f11e163"
+                "reference": "32f66ed9cc593f8e9ab0eaaaeff4cadbd859d5ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core/zipball/f34eee7255142ab5416107972ef13d011f11e163",
-                "reference": "f34eee7255142ab5416107972ef13d011f11e163",
+                "url": "https://api.github.com/repos/drupal/core/zipball/32f66ed9cc593f8e9ab0eaaaeff4cadbd859d5ff",
+                "reference": "32f66ed9cc593f8e9ab0eaaaeff4cadbd859d5ff",
                 "shasum": ""
             },
             "require": {
@@ -1169,7 +1197,7 @@
                 "GPL-2.0+"
             ],
             "description": "Drupal is an open source content management platform powering millions of websites and applications.",
-            "time": "2017-06-21T18:13:27+00:00"
+            "time": "2017-08-16T17:10:35+00:00"
         },
         {
             "name": "drupal/ctools",
@@ -1353,7 +1381,50 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/edit_own_user_account_permission"
             },
-            "time": "2017-05-06 20:17:50"
+            "time": "2017-05-06T20:17:50+00:00"
+        },
+        {
+            "name": "drupal/editor_file",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/editor_file",
+                "reference": "8.x-1.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/editor_file-8.x-1.2.zip",
+                "reference": null,
+                "shasum": "e1fdfec93f98c219a6adea133033f1d21b8c53de"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.2",
+                    "datestamp": "1478115534"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "DuaelFr",
+                    "homepage": "https://www.drupal.org/user/931394"
+                }
+            ],
+            "description": "Allow users to link uploaded files in the text Editor.",
+            "homepage": "https://www.drupal.org/project/editor_file",
+            "support": {
+                "source": "http://cgit.drupalcode.org/editor_file"
+            }
         },
         {
             "name": "drupal/entity_reference_revisions",
@@ -1635,7 +1706,7 @@
                 "source": "http://git.drupal.org/project/google_analytics.git",
                 "issues": "https://www.drupal.org/project/issues/google_analytics"
             },
-            "time": "2016-09-03 15:20:18"
+            "time": "2016-09-03T15:20:18+00:00"
         },
         {
             "name": "drupal/google_analytics_reports",
@@ -2017,7 +2088,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/noreqnewpass"
             },
-            "time": "2016-10-07 15:16:43"
+            "time": "2016-10-07T15:16:43+00:00"
         },
         {
             "name": "drupal/paragraphs",
@@ -2446,7 +2517,7 @@
                 "issues": "https://www.drupal.org/project/issues/search_api",
                 "irc": "irc://irc.freenode.org/drupal-search-api"
             },
-            "time": "2017-03-13 17:16:05"
+            "time": "2017-03-13T17:16:05+00:00"
         },
         {
             "name": "drupal/search_api_autocomplete",
@@ -2552,7 +2623,7 @@
                 "issues": "https://www.drupal.org/project/issues/search_api_solr",
                 "irc": "irc://irc.freenode.org/drupal-search-api"
             },
-            "time": "2017-01-30 17:52:46"
+            "time": "2017-01-30T17:52:46+00:00"
         },
         {
             "name": "drupal/token",
@@ -2620,17 +2691,17 @@
         },
         {
             "name": "drupal/video_embed_field",
-            "version": "1.4.0",
+            "version": "1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/video_embed_field",
-                "reference": "8.x-1.4"
+                "reference": "8.x-1.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/video_embed_field-8.x-1.4.zip",
-                "reference": "8.x-1.4",
-                "shasum": "7bf93a52e2e8d639b4dbefd65f0ee2b170d73f43"
+                "url": "https://ftp.drupal.org/files/projects/video_embed_field-8.x-1.5.zip",
+                "reference": "8.x-1.5",
+                "shasum": "f54d470ef7f863604e51e6ae98cd40ef25de5f79"
             },
             "require": {
                 "drupal/core": "*"
@@ -5558,7 +5629,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/devel-8.x-1.0-rc1.zip",
-                "reference": null,
+                "reference": "8.x-1.0-rc1",
                 "shasum": "04a01f50d508eca70e065b7eba38cd6c83a436c0"
             },
             "require": {

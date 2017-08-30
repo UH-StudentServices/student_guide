@@ -20,6 +20,7 @@ module:
   dynamic_page_cache: 0
   edit_own_user_account_permission: 0
   editor: 0
+  editor_file: 0
   entity_reference_revisions: 0
   externalauth: 0
   field: 0
@@ -90,6 +91,7 @@ module:
   uhsg_user_sync: 0
   user: 0
   video_embed_field: 0
+  video_embed_unitube: 0
   views_ui: 0
   menu_link_content: 1
   pathauto: 1

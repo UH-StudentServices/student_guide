@@ -110,3 +110,6 @@ msgstr "Föregående"
 
 msgid "Go to page @key"
 msgstr "Gå till sidan @key"
+
+msgid "Add FAQ section from original translation."
+msgstr "Lägg till FAQ-sektion från original översättning."

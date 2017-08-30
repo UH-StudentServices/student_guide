@@ -15,3 +15,18 @@ function uhsg_themes_preprocess_views_view(&$variables) {
     $variables['#attached']['library'][] = 'uhsg_themes/theme_sort';
   }
 }
+
+/**
+ * Implements hook_form_alter().
+ * We would like to change the one paragraph field help text from 'No Paragraphs
+ * added yet.' to something more helpful. See HUB-222.
+ */
+function uhsg_themes_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if (in_array($form_id, ['node_theme_form', 'node_theme_edit_form']) && !empty($form['field_theme_faq']['widget']['text']['value']['#markup'])) {
+    /** @var \Drupal\Core\StringTranslation\TranslatableMarkup $markup */
+    $markup = $form['field_theme_faq']['widget']['text']['value']['#markup'];
+    if ($markup->getUntranslatedString() == 'No @title added yet.') {
+      $form['field_theme_faq']['widget']['text']['value']['#markup'] = new \Drupal\Core\StringTranslation\TranslatableMarkup('Add FAQ section from original translation.');
+    }
+  }
+}

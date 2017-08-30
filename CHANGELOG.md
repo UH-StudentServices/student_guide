@@ -1,5 +1,20 @@
 #Changelog
 
+## 1.6
+Release date: 30.08.2017
+
+* Changed location of paragraph images (HUB-231)
+* Added possibility to use UniTube video links (HUB-233)
+* Added possibility to attach inline images to body fields (HUB-229)
+* Changed location of paragraph videos (HUB-232)
+* Added possibility to attach inline files to body fields (HUB-226)
+* Changed feedback recipient email address (HUB-228)
+* Cleaned up transitional degree programme handling (HUB-220)
+* Added Atom+RSS news feed that support degree programme targeting (HUB-234)
+* Changed text about how to add FAQ sections from original translation (HUB-222)
+* Updated Drupal core (HUB-235)
+
+
 ## 1.5
 Release date: 27.06.2017
 
