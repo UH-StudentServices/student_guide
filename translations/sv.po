@@ -52,7 +52,7 @@ msgid "My searches"
 msgstr "Mina sökningar"
 
 msgid "Top content"
-msgstr "Populär innehåll"
+msgstr "Populärt innehåll"
 
 msgid "More current topics"
 msgstr "Fler aktuella ämnen"
