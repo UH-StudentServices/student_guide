@@ -1,5 +1,9 @@
 #Changelog
 
+## 1.7-dev
+Release date: ??.??.201?
+
+
 ## 1.6
 Release date: 30.08.2017
 
