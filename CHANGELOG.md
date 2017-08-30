@@ -1,7 +1,7 @@
 #Changelog
 
-## 1.6-dev
-Release date: ??.??.2017
+## 1.6
+Release date: 30.08.2017
 
 * Changed location of paragraph images (HUB-231)
 * Added possibility to use UniTube video links (HUB-233)
