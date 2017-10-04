@@ -4,6 +4,7 @@
 Release date: ??.??.201?
 
 * Translation update (HUB-236)
+* Search both exact and partial text (HUB-243)
 
 
 ## 1.6
