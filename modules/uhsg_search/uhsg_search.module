@@ -72,8 +72,8 @@ function uhsg_search_wildcard_query(\Solarium\QueryType\Select\Query\Query $sola
     // Remove quotes.
     $word = str_replace('"', '', $query);
 
-    // Append wildcard.
-    $query = "$word*";
+    // Query with exact and wildcard term to match both exact and partial text.
+    $query = "$word OR $word*";
 
     // Override query.
     $solarium_query->setQuery($query);
