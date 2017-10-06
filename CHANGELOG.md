@@ -1,5 +1,8 @@
 #Changelog
 
+## 1.8-dev
+Release date: ??.??.????
+
 ## 1.7
 Release date: 06.10.2017
 
