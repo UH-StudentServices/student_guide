@@ -2,7 +2,7 @@ name: Degree programme
 type: module
 description: Provides some improvements and utility features for degree programmes.
 core: 8.x
-version: VERSION
+version: 1.7
 package: Student Guide
 dependencies:
   - uhsg_active_degree_programme

@@ -1,7 +1,7 @@
 #Changelog
 
-## 1.7-dev
-Release date: ??.??.201?
+## 1.7
+Release date: 06.10.2017
 
 * Translation update (HUB-236)
 * Search both exact and partial text (HUB-243)
