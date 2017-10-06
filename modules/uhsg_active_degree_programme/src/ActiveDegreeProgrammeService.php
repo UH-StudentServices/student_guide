@@ -80,7 +80,14 @@ class ActiveDegreeProgrammeService {
    * @param AccountInterface $user
    * @param FlagServiceInterface $flagService
    */
-  public function __construct(ConfigFactory $configFactory, RequestStack $requestStack, EntityRepositoryInterface $entityRepository, EntityTypeManagerInterface $entityTypeManager, AccountInterface $user, FlagServiceInterface $flagService) {
+  public function __construct(
+    ConfigFactory $configFactory,
+    RequestStack $requestStack,
+    EntityRepositoryInterface $entityRepository,
+    EntityTypeManagerInterface $entityTypeManager,
+    AccountInterface $user,
+    FlagServiceInterface $flagService) {
+
     $this->config = $configFactory->get('uhsg_active_degree_programme.settings');
     $this->requestStack = $requestStack;
     $this->entityRepository = $entityRepository;

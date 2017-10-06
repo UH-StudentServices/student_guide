@@ -7,6 +7,7 @@ use Drupal\Core\Entity\EntityManagerInterface;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityRepositoryInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\TypedData\TypedDataInterface;
@@ -66,6 +67,9 @@ class ActiveDegreeProgrammeServiceTest extends UnitTestCase {
 
   /** @var EntityTypeInterface */
   private $entityType;
+
+  /** @var EntityTypeManagerInterface */
+  private $entityTypeManager;
 
   /** @var FieldItemListInterface */
   private $fieldItemList;
@@ -132,6 +136,8 @@ class ActiveDegreeProgrammeServiceTest extends UnitTestCase {
     $this->entityManager->getStorage(Argument::any())->willReturn($this->entityStorage->reveal());
     $this->entityManager->getEntityTypeFromClass(Argument::any())->willReturn();
 
+    $this->entityTypeManager = $this->prophesize(EntityTypeManagerInterface::class);
+
     $this->cookies = $this->prophesize(ParameterBag::class);
     $this->headers = $this->prophesize(HeaderBag::class);
 
@@ -177,7 +183,12 @@ class ActiveDegreeProgrammeServiceTest extends UnitTestCase {
     Drupal::setContainer($this->container->reveal());
 
     $this->activeDegreeProgrammeService = new ActiveDegreeProgrammeServiceTestDouble(
-      $this->configFactory->reveal(), $this->requestStack->reveal(),  $this->entityRepository->reveal(),  $this->account->reveal(), $this->flagService->reveal()
+      $this->configFactory->reveal(),
+      $this->requestStack->reveal(),
+      $this->entityRepository->reveal(),
+      $this->entityTypeManager->reveal(),
+      $this->account->reveal(),
+      $this->flagService->reveal()
     );
   }
 
@@ -186,6 +197,7 @@ class ActiveDegreeProgrammeServiceTest extends UnitTestCase {
    */
   public function getIdShouldGetActiveDegreeProgrammeIdFromQueryParameter() {
     $this->request->get('degree_programme')->willReturn(self::ACTIVE_DEGREE_PROGRAMME_ID);
+    $this->request->get('degree_programme_code')->willReturn(NULL);
 
     $this->assertEquals(self::ACTIVE_DEGREE_PROGRAMME_ID, $this->activeDegreeProgrammeService->getId());
   }
@@ -195,6 +207,7 @@ class ActiveDegreeProgrammeServiceTest extends UnitTestCase {
    */
   public function getIdShouldGetActiveDegreeProgrammeIdFromRequestHeader() {
     $this->request->get('degree_programme')->willReturn(NULL);
+    $this->request->get('degree_programme_code')->willReturn(NULL);
     $this->headers->get('x-degree-programme')->willReturn(self::ACTIVE_DEGREE_PROGRAMME_ID);
 
     $this->assertEquals(self::ACTIVE_DEGREE_PROGRAMME_ID, $this->activeDegreeProgrammeService->getId());
@@ -205,6 +218,7 @@ class ActiveDegreeProgrammeServiceTest extends UnitTestCase {
    */
   public function getIdShouldGetActiveDegreeProgrammeIdFromCookie() {
     $this->request->get('degree_programme')->willReturn(NULL);
+    $this->request->get('degree_programme_code')->willReturn(NULL);
     $this->headers->get('x-degree-programme')->willReturn(NULL);
     $this->cookies->get('Drupal_visitor_degree_programme')->willReturn(self::ACTIVE_DEGREE_PROGRAMME_ID);
 
@@ -216,6 +230,7 @@ class ActiveDegreeProgrammeServiceTest extends UnitTestCase {
    */
   public function getIdShouldGetActiveDegreeProgrammeIdFromFlaggings() {
     $this->request->get('degree_programme')->willReturn(NULL);
+    $this->request->get('degree_programme_code')->willReturn(NULL);
     $this->headers->get('x-degree-programme')->willReturn(NULL);
     $this->cookies->get('Drupal_visitor_degree_programme')->willReturn(NULL);
     $this->term->id()->willReturn(self::ACTIVE_DEGREE_PROGRAMME_ID);
