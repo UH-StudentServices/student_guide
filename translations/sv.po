@@ -113,3 +113,9 @@ msgstr "Gå till sidan @key"
 
 msgid "Add FAQ section from original translation."
 msgstr "Lägg till FAQ-sektion från original översättning."
+
+msgid "Degree programme specific office hours"
+msgstr "Utbildningsprogramspecifika mottagningstider"
+
+msgid "Language Centre teachers\' office hours"
+msgstr "Lärarnas mottagningstider vid Språkcentrum"

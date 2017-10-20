@@ -1,24 +1,29 @@
 (function ($) {
   'use strict';
 
-  // Hides office hours that do not match the active degree programme.
+  // Hides degree programme office hours that do not match the active degree programme.
+  // General office hours are always displayed.
   Drupal.behaviors.filterOfficeHours = {
     attach: function (context, settings) {
-      var degreeProgramme = $.cookie('Drupal.visitor.degree_programme');
+      var selectedDegreeProgrammeTermId = $.cookie('Drupal.visitor.degree_programme');
 
-      $('.office-hours').once().each(function () {
-        // When degree programme is available filter out certain items.
-        if (degreeProgramme) {
-          var tids = $(this).attr('data-degree-programme-tids').split(',');
-          if ($.inArray(degreeProgramme, tids) === -1) {
+      $('.degree-programme-office-hours .office-hours').once().each(function () {
+        if (!selectedDegreeProgrammeTermId) {
+          $(this).hide();
+        }
+        else {
+          var termIds = $(this).attr('data-degree-programme-term-ids');
+          if ($.inArray(selectedDegreeProgrammeTermId, termIds.split(',')) === -1) {
             $(this).hide();
           }
         }
-        else {
-          // When no degree programme available, then hide everything.
-          $(this).hide();
-        }
       });
+
+      var visibleDegreeProgrammeOfficeHours = $('.degree-programme-office-hours .office-hours:visible').length > 0;
+
+      if (!visibleDegreeProgrammeOfficeHours) {
+        $('.degree-programme-office-hours').hide();
+      }
     }
   };
 }(jQuery));
