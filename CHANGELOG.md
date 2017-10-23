@@ -3,6 +3,9 @@
 ## 1.8-dev
 Release date: ??.??.????
 
+* Language Centre office hours support (HUB-245)
+
+
 ## 1.7
 Release date: 06.10.2017
 

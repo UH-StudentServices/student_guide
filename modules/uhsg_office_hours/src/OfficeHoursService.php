@@ -128,16 +128,28 @@ class OfficeHoursService {
       $decodedBody = json_decode($responseBody);
 
       if (is_array($decodedBody) && !empty($decodedBody)) {
-        $degreeProgrammeCodeTidMap = $this->getDegreeProgrammeCodeTidMap();
+        $officeHours = [];
+        $officeHours['degree_programme'] = [];
+        $officeHours['general'] = [];
+        $degreeProgrammeCodeTermIdMap = $this->getDegreeProgrammeCodeTermIdMap();
 
         foreach ($decodedBody as $officeHour) {
-          $degreeProgrammeTids = $this->mapDegreeProgrammeCodesToTids($officeHour->degreeProgrammes, $degreeProgrammeCodeTidMap);
+          $degreeProgrammeCodes = isset($officeHour->degreeProgrammes) ? $officeHour->degreeProgrammes : [];
+          $degreeProgrammeTermIds = $this->mapDegreeProgrammeCodesToTermIds($degreeProgrammeCodes, $degreeProgrammeCodeTermIdMap);
 
-          $officeHours[] = [
-            'name' => $officeHour->name,
-            'hours' => $officeHour->officeHours,
-            'degree_programme_tids' => implode(',', $degreeProgrammeTids),
-          ];
+          if (empty($degreeProgrammeCodes)) {
+            $officeHours['general'][] = [
+              'name' => $officeHour->name,
+              'hours' => $officeHour->officeHours
+            ];
+          }
+          else {
+            $officeHours['degree_programme'][] = [
+              'name' => $officeHour->name,
+              'hours' => $officeHour->officeHours,
+              'degree_programme_term_ids' => implode(',', $degreeProgrammeTermIds),
+            ];
+          }
         }
       }
     }
@@ -148,17 +160,16 @@ class OfficeHoursService {
   /**
    * @return array
    */
-  private function getDegreeProgrammeCodeTidMap() {
+  private function getDegreeProgrammeCodeTermIdMap() {
     $degreeProgrammeTerms = $this->loadAllDegreeProgrammeTerms();
-    $degreeProgrammeCodeTidMap = [];
+    $degreeProgrammeCodeTermIdMap = [];
 
     foreach ($degreeProgrammeTerms as $term) {
       $code = $term->get('field_code')->value;
-      $tid = $term->id();
-      $degreeProgrammeCodeTidMap[$code] = $tid;
+      $degreeProgrammeCodeTermIdMap[$code] = $term->id();
     }
 
-    return $degreeProgrammeCodeTidMap;
+    return $degreeProgrammeCodeTermIdMap;
   }
 
   /**
@@ -170,19 +181,21 @@ class OfficeHoursService {
 
   /**
    * @param array $degreeProgrammeCodes
-   * @param array $degreeProgrammeCodeTidMap
+   * @param array $degreeProgrammeCodeTermIdMap
    * @return array
    */
-  private function mapDegreeProgrammeCodesToTids(array $degreeProgrammeCodes, array $degreeProgrammeCodeTidMap) {
-    $degreeProgrammeTids = [];
+  private function mapDegreeProgrammeCodesToTermIds($degreeProgrammeCodes, array $degreeProgrammeCodeTermIdMap) {
+    $degreeProgrammeTermIds = [];
 
-    foreach ($degreeProgrammeCodes as $degreeProgrammeCode) {
-      if (isset($degreeProgrammeCodeTidMap[$degreeProgrammeCode])) {
-        $degreeProgrammeTids[] = $degreeProgrammeCodeTidMap[$degreeProgrammeCode];
+    if (!empty($degreeProgrammeCodes)) {
+      foreach ($degreeProgrammeCodes as $degreeProgrammeCode) {
+        if (isset($degreeProgrammeCodeTermIdMap[$degreeProgrammeCode])) {
+          $degreeProgrammeTermIds[] = $degreeProgrammeCodeTermIdMap[$degreeProgrammeCode];
+        }
       }
     }
 
-    return $degreeProgrammeTids;
+    return $degreeProgrammeTermIds;
   }
 
   /**
