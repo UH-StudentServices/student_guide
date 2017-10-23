@@ -166,8 +166,7 @@ class OfficeHoursService {
 
     foreach ($degreeProgrammeTerms as $term) {
       $code = $term->get('field_code')->value;
-      $termId = $term->id();
-      $degreeProgrammeCodeTermIdMap[$code] = $termId;
+      $degreeProgrammeCodeTermIdMap[$code] = $term->id();
     }
 
     return $degreeProgrammeCodeTermIdMap;
