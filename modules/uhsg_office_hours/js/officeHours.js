@@ -19,9 +19,9 @@
         }
       });
 
-      var visibleDegreeProgrammeOfficeHours = $('.degree-programme-office-hours .office-hours:visible').length > 0;
+      var showDegreeProgrammeOfficeHoursAccordion = $('.degree-programme-office-hours .office-hours:visible').length > 0;
 
-      if (!visibleDegreeProgrammeOfficeHours) {
+      if (!showDegreeProgrammeOfficeHoursAccordion) {
         $('.degree-programme-office-hours').hide();
       }
     }
