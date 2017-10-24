@@ -11,34 +11,34 @@ display:
           sort_desc_label: Fallande
       fields:
         sessions:
-          format_plural_string: "1\x03@count"
+          format_plural_string: !!binary MQNAY291bnQ=
         users:
           label: Users
-          format_plural_string: "1\x03@count"
+          format_plural_string: !!binary MQNAY291bnQ=
         pageviews:
-          format_plural_string: "1\x03@count"
+          format_plural_string: !!binary MQNAY291bnQ=
         pageviewsPerSession:
-          format_plural_string: "1\x03@count"
+          format_plural_string: !!binary MQNAY291bnQ=
         bounceRate:
-          format_plural_string: "1\x03@count"
+          format_plural_string: !!binary MQNAY291bnQ=
           suffix: '%'
         percentNewSessions:
-          format_plural_string: "1\x03@count"
+          format_plural_string: !!binary MQNAY291bnQ=
           suffix: '%'
   attachment_top_keywords:
     display_options:
       fields:
         sessions:
-          format_plural_string: "1\x03@count"
+          format_plural_string: !!binary MQNAY291bnQ=
   attachment_top_pages:
     display_options:
       fields:
         pageviews:
-          format_plural_string: "1\x03@count"
+          format_plural_string: !!binary MQNAY291bnQ=
   attachment_top_sources:
     display_options:
       fields:
         sessions:
-          format_plural_string: "1\x03@count"
+          format_plural_string: !!binary MQNAY291bnQ=
   page_1:
     display_title: Sida
