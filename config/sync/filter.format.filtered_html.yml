@@ -28,14 +28,14 @@ filters:
     status: true
     weight: 0
     settings: {  }
-  filter_align:
-    id: filter_align
+  filter_caption:
+    id: filter_caption
     provider: filter
     status: true
     weight: 0
     settings: {  }
-  filter_caption:
-    id: filter_caption
+  filter_align:
+    id: filter_align
     provider: filter
     status: true
     weight: 0

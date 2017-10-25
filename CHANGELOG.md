@@ -4,7 +4,8 @@
 Release date: ??.??.????
 
 * Language Centre office hours support (HUB-245)
-
+* Drupal core 8.4 update (HUB-244)
+  - Need to run `drush entup` after build to complete pending updates.
 
 ## 1.7
 Release date: 06.10.2017

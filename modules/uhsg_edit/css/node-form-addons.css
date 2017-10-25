@@ -9,3 +9,17 @@
   background-color: #ececec;
   border-top: 1px solid #bfbfbf;
 }
+
+.layout-node-form .layout-region-node-footer__content {
+  border-top: 0 !important;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.layout-node-form .layout-region-node-footer #edit-footer {
+  display: inline-block;
+}
+
+.layout-node-form .layout-region-node-footer #edit-actions {
+  display: inline-block;
+}
