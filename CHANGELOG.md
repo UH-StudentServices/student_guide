@@ -1,5 +1,11 @@
 #Changelog
 
+## 1.8
+Release date: 26.10.2017
+
+* Language Centre office hours support (HUB-245)
+* Drupal core 8.4 update (HUB-244)
+
 ## 1.7
 Release date: 06.10.2017
 

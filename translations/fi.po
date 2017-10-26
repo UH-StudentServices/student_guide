@@ -116,3 +116,9 @@ msgstr "Siirry sivulle @key"
 
 msgid "Add FAQ section from original translation."
 msgstr "Lisää FAQ -osio alkuperäiskielisessä teemassa."
+
+msgid "Degree programme specific office hours"
+msgstr "Koulutusohjelmakohtaiset vastaanottoajat"
+
+msgid "Language Centre teachers\' office hours"
+msgstr "Kielikeskuksen opettajien vastaanottoajat"
