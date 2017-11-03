@@ -3,6 +3,8 @@
 ## 1.9-dev
 Release date: ??.??.????
 
+* Changed site title (HUB-242)
+
 
 ## 1.8
 Release date: 26.10.2017
