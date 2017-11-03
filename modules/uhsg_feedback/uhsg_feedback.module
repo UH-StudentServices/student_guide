@@ -32,7 +32,7 @@ function uhsg_feedback_mail_alter(&$message) {
     $message['body'] = [];
 
     // Subject.
-    $message['subject'] = t('Feedback from Student Guide');
+    $message['subject'] = t('Feedback from Instructions for students');
 
     // Date and time.
     $message['body'][] = date('d.m.Y H:i:s');

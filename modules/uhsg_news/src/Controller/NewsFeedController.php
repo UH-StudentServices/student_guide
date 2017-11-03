@@ -65,7 +65,7 @@ class NewsFeedController extends ControllerBase {
     // Create the feed
     $feed = new Feed();
     $feed->setTitle($this->t('News feed')->render());
-    $feed->setDescription($this->t('Latest relevant news from Guide.')->render());
+    $feed->setDescription($this->t('Latest relevant news from Instructions for students.')->render());
 
     // Generate URL to news (HTML page)
     $view = Views::getView('news');
