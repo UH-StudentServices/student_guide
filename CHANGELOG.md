@@ -1,7 +1,7 @@
 #Changelog
 
-## 1.9-dev
-Release date: ??.??.????
+## 1.9
+Release date: 06.11.2017
 
 * Changed site title (HUB-242)
 * Created and configured administrator role (HUB-247)
