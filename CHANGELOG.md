@@ -4,6 +4,7 @@
 Release date: ??.??.????
 
 * Changed site title (HUB-242)
+* Created and configured administrator role (HUB-247)
 
 
 ## 1.8
