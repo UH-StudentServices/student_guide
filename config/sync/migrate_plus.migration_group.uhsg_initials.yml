@@ -5,7 +5,7 @@ dependencies: {  }
 _core:
   default_config_hash: JY5OP3SMyO_3ts8loV-mF9RYw2RrOkpOhySeF7DPXq8
 id: uhsg_initials
-label: 'Student Guide initials'
+label: 'Instructions for students initials'
 description: 'Migrations importing initial content for the service.'
 source_type: null
 module: null

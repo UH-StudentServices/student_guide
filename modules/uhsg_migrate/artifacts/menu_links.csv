@@ -25,15 +25,15 @@ id,weight,menu_name,title,link_uri
 24,5,footer-links-sv,Ge respons,https://www.helsinki.fi/sv/ge-respons
 25,0,main-menu-en,Weboodi,https://weboodi.helsinki.fi/hy/alkusivu.jsp?Kieli=6
 26,1,main-menu-en,Course search,https://courses.helsinki.fi/search
-27,2,main-menu-en,Guide,internal:/
+27,2,main-menu-en,Instructions for students,internal:/
 28,3,main-menu-en,Opinder,https://opinder.helsinki.fi
 
 31,0,main-menu-fi,Weboodi,https://weboodi.helsinki.fi/hy/alkusivu.jsp?Kieli=1
 32,1,main-menu-fi,Hae opetusta,https://courses.helsinki.fi/fi/search
-33,2,main-menu-fi,Guide,internal:/
+33,2,main-menu-fi,Opiskelijan ohjeet,internal:/
 34,3,main-menu-fi,Opinder,https://opinder.helsinki.fi
 
 37,0,main-menu-sv,Weboodi,https://weboodi.helsinki.fi/hy/alkusivu.jsp?Kieli=2
 38,1,main-menu-sv,Sök undervisning,https://courses.helsinki.fi/sv/search
-39,2,main-menu-sv,Guide,internal:/
+39,2,main-menu-sv,Instruktioner för studerande,internal:/
 40,3,main-menu-sv,Opinder,https://opinder.helsinki.fi
