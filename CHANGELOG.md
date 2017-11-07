@@ -3,6 +3,8 @@
 ## 1.10-dev
 Release date: ??.??.????
 
+* Allow redirect login to happen even with logged in users (HUB-246)
+
 
 ## 1.9
 Release date: 06.11.2017
