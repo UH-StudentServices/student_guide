@@ -3,3 +3,7 @@ services:
     class: Drupal\uhsg_redirect_to_login\StackMiddleware\RedirectToLogin
     tags:
       - { name: http_middleware, priority: 250, responder: true }
+  uhsg_redirect_to_login.route_subscriber:
+    class: Drupal\uhsg_redirect_to_login\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }
