@@ -15,11 +15,8 @@ class RouteSubscriber extends RouteSubscriberBase {
       // bootstrapping even when user is logged in. As it is expensive process
       // to check there whether to redirect or not, we allow user to access saml
       // login at any role.
-      if ($route->hasRequirement('_role')) {
-        $requirements = $route->getRequirements();
-        unset($requirements['_role']);
-        $route->setRequirements($requirements);
-      }
+      $anonymousOrAuthenticatedRole = 'anonymous+authenticated';
+      $route->setRequirement('_role', $anonymousOrAuthenticatedRole);
     }
   }
 }
