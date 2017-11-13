@@ -1,7 +1,7 @@
 #Changelog
 
-## 1.10-dev
-Release date: ??.??.????
+## 1.10
+Release date: 13.11.2017
 
 * Allow redirect login to happen even with logged in users (HUB-246)
 
