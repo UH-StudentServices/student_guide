@@ -270,24 +270,6 @@ function uhsg_theme_preprocess_views_exposed_form(&$variables) {
 }
 
 /**
- * Implements hook_preprocess_HOOK().
- *
- * Add an id attribute to each paragraph for linking to it from the table of
- * contents. Handle office hours paragraph type.
- */
-function uhsg_theme_preprocess_paragraph(&$variables) {
-  $variables['attributes']['id'] = 'paragraph-' . $variables['paragraph']->id();
-
-  if ($variables['paragraph']->getType() == 'office_hours') {
-    /** @var $office_hours_service \Drupal\uhsg_office_hours\OfficeHoursService */
-    $office_hours_service = \Drupal::service('uhsg_office_hours.office_hours_service');
-    $variables['office_hours'] = $office_hours_service->getOfficeHours();
-    $variables['attributes']['class'][] = 'office-hours';
-    $variables['#cache']['max-age'] = 0;
-  }
-}
-
-/**
  * Implements template_preprocess_page().
  * Add Node or term changed time as variable.
  */
