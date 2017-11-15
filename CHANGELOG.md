@@ -3,6 +3,7 @@
 ## 1.11-dev
 Release date: ??.??.????
 
+* Support for new office hours API (HUB-251)
 
 
 ## 1.10

@@ -1,0 +1,10 @@
+<?php
+
+/**
+ * Clear caches that may contain deprecated API response.
+ */
+function uhsg_office_hours_update_8001() {
+  /** @var \Drupal\Core\Cache\CacheBackendInterface $cache */
+  $cache = \Drupal::service('cache.default');
+  $cache->delete(\Drupal\uhsg_office_hours\OfficeHoursService::CACHE_KEY);
+}
