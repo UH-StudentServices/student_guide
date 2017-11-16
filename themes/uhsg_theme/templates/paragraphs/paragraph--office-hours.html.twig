@@ -39,6 +39,7 @@
 
 {{ attach_library('uhsg_theme/accordion') }}
 
+{% if office_hours['degree_programme'] is not empty %}
 <div class="l-subregion-wrapper degree-programme-office-hours">
   <div class="l-subregion">
     <div class="accordion__item">
@@ -60,6 +61,7 @@
     </div>
   </div>
 </div>
+{% endif %}
 
 {% if office_hours['general'] is not empty %}
   <div class="l-subregion-wrapper general-office-hours">
@@ -84,5 +86,3 @@
     </div>
   </div>
 {% endif %}
-
-{{ attach_library('uhsg_office_hours/office-hours') }}
