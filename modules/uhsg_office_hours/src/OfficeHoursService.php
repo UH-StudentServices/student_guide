@@ -68,23 +68,21 @@ class OfficeHoursService {
   public function getOfficeHours() {
 
     // Try to fetch from cache
-    $cachedOfficeHours = $this->getOfficeHoursFromCache();
-    if ($cachedOfficeHours) {
-      return $cachedOfficeHours;
-    }
-
-    // Fetch from external API
-    $apiUrl = $this->getApiUrl();
-    $officeHoursResponse = [];
-    if (!empty($apiUrl)) {
-      try {
-        $apiResponse = $this->client->get($apiUrl, $this->getRequestOptions());
-        $officeHoursResponse = $this->handleResponse($apiResponse);
-        if (!empty($officeHoursResponse)) {
-          $this->setOfficeHoursToCache($officeHoursResponse);
+    $officeHoursResponse = $this->getOfficeHoursFromCache();
+    if (!$officeHoursResponse) {
+      // Fetch from external API
+      $apiUrl = $this->getApiUrl();
+      $officeHoursResponse = [];
+      if (!empty($apiUrl)) {
+        try {
+          $apiResponse = $this->client->get($apiUrl, $this->getRequestOptions());
+          $officeHoursResponse = $this->handleResponse($apiResponse);
+          if (!empty($officeHoursResponse)) {
+            $this->setOfficeHoursToCache($officeHoursResponse);
+          }
+        } catch (\Exception $e) {
+          $this->logger->error($e->getMessage());
         }
-      } catch (\Exception $e) {
-        $this->logger->error($e->getMessage());
       }
     }
 
