@@ -128,6 +128,97 @@ class OfficeHoursService {
   private function handleResponse(ResponseInterface $apiResponse) {
     if ($apiResponse->getStatusCode() == 200) {
       $responseBody = $apiResponse->getBody();
+      $responseBody = '[
+                {
+                    "name": "Olli Opettaja",
+                    "officeHours": [
+                        {
+                            "additionalInfo": "Lisätieto 1",
+                            "degreeProgrammes": [
+                                "KH40_002"
+                            ],
+                            "description": "Tue 14-15",
+                            "location": "ART-CENTRE-105"
+                        },
+                        {
+                            "additionalInfo": "Taideaika 2",
+                            "degreeProgrammes": [
+                                "KH40_002"
+                            ],
+                            "description": "Wed 14-15",
+                            "location": "ART-CENTRE-105"
+                        },
+                        {
+                            "additionalInfo": "T\u00e4ss\u00e4 on biologia ja kemia",
+                            "degreeProgrammes": [
+                                "KH57_001",
+                                "KH50_003"
+                            ],
+                            "description": "Maanantaisin 12-15",
+                            "location": null
+                        }
+                    ]
+                },
+                {
+                    "name": "Matti Meikäläinen",
+                    "officeHours": [
+                        {
+                            "additionalInfo": "Matin lisätieto 1",
+                            "degreeProgrammes": [
+                                "KH40_002"
+                            ],
+                            "description": "Mon 08-09",
+                            "location": "Matinpaikka 15"
+                        },
+                        {
+                            "additionalInfo": "Matin lisätieto 2",
+                            "degreeProgrammes": [
+                                "KH40_002"
+                            ],
+                            "description": "Sat 12-14",
+                            "location": "Matinpaikka 123"
+                        }
+                    ]
+                },
+                {
+                    "name": "Kieli Mielinen",
+                    "officeHours": [
+                        {
+                            "additionalInfo": "Kielilisätieto 1",
+                            "degreeProgrammes": [],
+                            "description": "Wed 12-13",
+                            "location": "Kielikeskus 1"
+                        },
+                        {
+                            "additionalInfo": "Kielilisätieto 2",
+                            "description": "thu 17-18",
+                            "location": "Kielikeskus 2"
+                        },
+                        {
+                            "additionalInfo": "Kielilisätieto 3",
+                            "degreeProgrammes": [],
+                            "description": "Maanantaisin 13-15",
+                            "location": null
+                        }
+                    ]
+                },
+                {
+                    "name": "Kielten Opettaja",
+                    "officeHours": [
+                        {
+                            "additionalInfo": "Kielilisätieto XXX",
+                            "degreeProgrammes": [],
+                            "description": "Wed 15-19",
+                            "location": "Kielikeskus 123"
+                        },
+                        {
+                            "additionalInfo": "Kielilisätieto ABC",
+                            "description": "Fri 09-10",
+                            "location": "Kielikeskus 222"
+                        }
+                    ]
+                }
+            ]';
       $decodedBody = json_decode($responseBody);
       if (is_array($decodedBody)) {
         $restructuredOfficeHours = $this->restructureOfficeHours($decodedBody);
