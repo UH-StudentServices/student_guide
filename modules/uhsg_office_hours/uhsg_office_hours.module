@@ -15,5 +15,6 @@ function uhsg_office_hours_preprocess_paragraph(&$variables) {
     $variables['office_hours'] = $office_hours_service->getOfficeHours();
     $variables['attributes']['class'][] = 'office-hours';
     $variables['#cache']['max-age'] = 0;
+    $variables['#cache']['contexts'][] = 'active_degree_programme';
   }
 }
