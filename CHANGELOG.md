@@ -1,7 +1,7 @@
 #Changelog
 
-## 1.11-dev
-Release date: ??.??.????
+## 1.11
+Release date: 20.11.2017
 
 * Support for new office hours API (HUB-251)
 
