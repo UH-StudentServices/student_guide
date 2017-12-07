@@ -8028,13 +8028,17 @@ input[type="submit"].button--reset + i {
 
 @media (min-width: 48em) {
   .main-menu > ul.menu {
-    max-height: 55px;
     padding-top: 0;
     padding-bottom: 0;
   }
   .main-menu li.is-lvl1 > a {
     padding-top: 1.2em;
     padding-bottom: 1.2em;
+  }
+  .main-menu li.is-expandable {
+    -webkit-align-items: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
   }
 }
 
