@@ -10,6 +10,15 @@
     }
     li.is-expandable {
       align-items: baseline;
+
+      nav {
+        position: fixed;
+        margin-top: 3.4em;
+        z-index: 200;
+        background: white;
+        width: 100%;
+        border-left: 1px solid $mediumsilver;
+      }
     }
   }
 

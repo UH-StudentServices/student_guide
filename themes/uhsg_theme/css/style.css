@@ -8040,6 +8040,14 @@ input[type="submit"].button--reset + i {
         -ms-flex-align: baseline;
             align-items: baseline;
   }
+  .main-menu li.is-expandable nav {
+    position: fixed;
+    margin-top: 3.4em;
+    z-index: 200;
+    background: white;
+    width: 100%;
+    border-left: 1px solid #D2D2D2;
+  }
 }
 
 @media (min-width: 48em) {
