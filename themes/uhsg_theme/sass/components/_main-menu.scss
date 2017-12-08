@@ -4,9 +4,11 @@
       padding-top: 0;
       padding-bottom: 0;
     }
-    li.is-lvl1 > a {
-      padding-top: 1.2em;
-      padding-bottom: 1.2em;
+    li.is-lvl1 {
+      > a, span[data-drupal-link-system-path] {
+        padding-top: 1.2em;
+        padding-bottom: 1.2em;
+      }
     }
     li.is-expandable {
       align-items: baseline;
@@ -20,6 +22,15 @@
         border-left: 1px solid $mediumsilver;
       }
     }
+    li.is-lvl1 span[data-drupal-link-system-path] {
+      @include link-menu;
+      padding-right: 1em;
+      padding-left: 1.8em;
+    }
+  }
+
+  li.is-lvl1 span[data-drupal-link-system-path] {
+    padding: 15px 20px 15px 60px;
   }
 
   li.main-menu__right {
