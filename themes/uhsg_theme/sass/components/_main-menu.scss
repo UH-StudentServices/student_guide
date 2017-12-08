@@ -1,4 +1,5 @@
 .main-menu {
+  overflow: visible;
   @include breakpoint($small) {
     > ul.menu {
       padding-top: 0;
@@ -14,12 +15,13 @@
       align-items: baseline;
 
       nav {
-        position: fixed;
-        margin-top: 3.4em;
+        position: absolute;
+        top: 55px;
         z-index: 200;
         background: white;
-        width: 100%;
         border-left: 1px solid $mediumsilver;
+        border-bottom: 1px solid $mediumsilver;
+        border-right: 1px solid $mediumsilver;
       }
     }
     li.is-lvl1 span[data-drupal-link-system-path] {
@@ -31,6 +33,14 @@
 
   li.is-lvl1 span[data-drupal-link-system-path] {
     padding: 18px 20px 15px 60px;
+  }
+
+  li.is-lvl2 {
+    > a {
+      @include breakpoint($small) {
+        padding: 20px 30px;
+      }
+    }
   }
 
   li.main-menu__right {
