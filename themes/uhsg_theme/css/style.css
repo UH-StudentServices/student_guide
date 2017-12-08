@@ -8064,7 +8064,7 @@ input[type="submit"].button--reset + i {
 }
 
 .main-menu li.is-lvl1 span[data-drupal-link-system-path] {
-  padding: 15px 20px 15px 60px;
+  padding: 18px 20px 15px 60px;
 }
 
 @media (min-width: 48em) {
