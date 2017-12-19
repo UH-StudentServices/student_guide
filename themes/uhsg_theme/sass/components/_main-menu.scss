@@ -33,6 +33,10 @@
 
   li.is-lvl1 span[data-drupal-link-system-path] {
     padding: 18px 20px 15px 60px;
+
+    @include breakpoint($small) {
+      padding: 1.2em 1em 1.2em 1.8em;
+    }
   }
 
   li.is-lvl2 {
