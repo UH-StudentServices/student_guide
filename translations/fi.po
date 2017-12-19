@@ -98,6 +98,10 @@ msgid "News"
 msgstr "Uutiset"
 
 msgctxt "Search Filters"
+msgid "Notice"
+msgstr "Tiedote"
+
+msgctxt "Search Filters"
 msgid "Theme"
 msgstr "Teema"
 

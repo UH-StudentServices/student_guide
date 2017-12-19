@@ -95,6 +95,10 @@ msgid "News"
 msgstr "Nyheter"
 
 msgctxt "Search Filters"
+msgid "Notice"
+msgstr "Meddelande"
+
+msgctxt "Search Filters"
 msgid "Theme"
 msgstr "Tema"
 
