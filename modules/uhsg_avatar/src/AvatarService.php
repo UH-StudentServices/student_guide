@@ -55,22 +55,26 @@ class AvatarService {
    * Fetch avatar.
    */
   public function getAvatar() {
+    $avatarUrl = NULL;
     $oodiUid = $this->getOodiUid();
-    $avatarUrl = $this->getAvatarUrlFromCache($oodiUid);
-    $apiUrl = $this->getApiUrl($oodiUid);
 
-    if ($apiUrl && !$avatarUrl) {
-      try {
-        $apiResponse = $this->client->get($apiUrl);
+    if ($oodiUid) {
+      $avatarUrl = $this->getAvatarUrlFromCache($oodiUid);
+      $apiUrl = $this->getApiUrl($oodiUid);
 
-        if ($apiResponse->getStatusCode() == 200) {
-          $body = $apiResponse->getBody();
-          $decodedBody = json_decode($body);
-          $avatarUrl = $decodedBody->avatarImageUrl;
-          $this->setAvatarUrlToCache($oodiUid, $avatarUrl);
+      if ($apiUrl && !$avatarUrl) {
+        try {
+          $apiResponse = $this->client->get($apiUrl);
+
+          if ($apiResponse->getStatusCode() == 200) {
+            $body = $apiResponse->getBody();
+            $decodedBody = json_decode($body);
+            $avatarUrl = $decodedBody->avatarImageUrl;
+            $this->setAvatarUrlToCache($oodiUid, $avatarUrl);
+          }
+        } catch (\Exception $e) {
+          $this->logger->error($e->getMessage());
         }
-      } catch (\Exception $e) {
-        $this->logger->error($e->getMessage());
       }
     }
 
@@ -87,7 +91,7 @@ class AvatarService {
   private function getOodiUid() {
     $oodiUid = NULL;
 
-    if ($this->currentUser->isAuthenticated()) {
+    if ($this->currentUser->isAuthenticated() && $this->currentUser->id() != 1) {
 
       /** @var $user User */
       $user = User::load($this->currentUser->id());

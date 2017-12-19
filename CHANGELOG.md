@@ -4,6 +4,7 @@
 Release date: ??.??.????
 
 * Support for second level main navigation (HUB-237)
+* Fetch avatar only when the user has Oodi UID (HUB-249)
 
 ## 1.11
 Release date: 20.11.2017
