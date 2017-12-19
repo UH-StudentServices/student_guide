@@ -36,6 +36,9 @@ msgstr "Anna palautetta palvelusta..."
 msgid "News"
 msgstr "Uutinen"
 
+msgid "Notice"
+msgstr "Tiedote"
+
 msgid "This news has been sent to the following email addresses:"
 msgstr "Tämä uutinen on lähetty seuraaviin sähköpostiosoitteisiin:"
 
