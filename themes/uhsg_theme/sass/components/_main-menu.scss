@@ -1,13 +1,49 @@
 .main-menu {
+  overflow: visible;
   @include breakpoint($small) {
     > ul.menu {
-      max-height: 55px;
       padding-top: 0;
       padding-bottom: 0;
-    }    
-    li.is-lvl1 > a {
-      padding-top: 1.2em;
-      padding-bottom: 1.2em;
+    }
+    li.is-lvl1 {
+      > a, span[data-drupal-link-system-path] {
+        padding-top: 1.2em;
+        padding-bottom: 1.2em;
+      }
+    }
+    li.is-expandable {
+      align-items: baseline;
+
+      nav {
+        position: absolute;
+        top: 55px;
+        z-index: 200;
+        background: white;
+        border-left: 1px solid $mediumsilver;
+        border-bottom: 1px solid $mediumsilver;
+        border-right: 1px solid $mediumsilver;
+      }
+    }
+    li.is-lvl1 span[data-drupal-link-system-path] {
+      @include link-menu;
+      padding-right: 1em;
+      padding-left: 1.8em;
+    }
+  }
+
+  li.is-lvl1 span[data-drupal-link-system-path] {
+    padding: 18px 20px 15px 60px;
+
+    @include breakpoint($small) {
+      padding: 1.2em 1em 1.2em 1.8em;
+    }
+  }
+
+  li.is-lvl2 {
+    > a {
+      @include breakpoint($small) {
+        padding: 20px 30px;
+      }
     }
   }
 

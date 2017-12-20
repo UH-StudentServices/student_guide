@@ -1,5 +1,12 @@
 #Changelog
 
+## 1.12
+Release date: 20.12.2017
+
+* Support for second level main navigation (HUB-237)
+* Renamed News to Notice (HUB-253)
+* Fetch avatar only when the user has Oodi UID (HUB-249)
+
 ## 1.11
 Release date: 20.11.2017
 

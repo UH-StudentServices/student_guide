@@ -36,6 +36,9 @@ msgstr "Ge feedback om tjänsten..."
 msgid "News"
 msgstr "Nyhet"
 
+msgid "Notice"
+msgstr "Meddelande"
+
 msgid "This news has been sent to the following email addresses:"
 msgstr ""
 
@@ -90,6 +93,10 @@ msgstr "Allt"
 msgctxt "Search Filters"
 msgid "News"
 msgstr "Nyheter"
+
+msgctxt "Search Filters"
+msgid "Notice"
+msgstr "Meddelande"
 
 msgctxt "Search Filters"
 msgid "Theme"

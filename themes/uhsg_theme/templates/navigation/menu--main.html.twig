@@ -40,6 +40,18 @@
       {% for item in items %}
         <li{{ item.attributes.addClass(classes) }}>
           {{ link(item.title, item.url, { 'class':[ item.is_active ? 'active' ] }) }}
+          {% if item.below %}
+            <span class="main-menu__expand"></span>
+            <nav role="navigation">
+              <ul{{ attributes }}>
+                {% for child_item in item.below %}
+                  <li{{ child_item.attributes.addClass(classes) }}>
+                    {{ link(child_item.title, child_item.url, { 'class':[ child_item.is_active ? 'active' ] }) }}
+                  </li>
+                {% endfor %}
+              </ul>
+            </nav>
+          {% endif %}
         </li>
       {% endfor %}
 

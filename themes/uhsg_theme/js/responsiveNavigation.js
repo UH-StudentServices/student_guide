@@ -7,7 +7,7 @@
       var breakpoints = settings.breakpoints;
       var avatar = $('.avatar');
       var avatarMobileMenu = $('.block-language .links');
-      var avatarDesktopMenu = $('.main-menu .menu');
+      var avatarDesktopMenu = $('.main-menu > .menu');
 
       // toggle mobile menu
       menuToggle.once().on('click', function (e) {

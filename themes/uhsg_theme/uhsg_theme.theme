@@ -117,13 +117,29 @@ function uhsg_theme_preprocess_menu(&$variables) {
 
   if ($menu_classes && $link_classes) {
     $variables['attributes']['class'][] = $menu_classes;
+
     foreach ($variables['items'] as &$item) {
       $item['attributes']->addClass($link_classes);
 
       // we want a different active-class than what drupal provides.
       $current_path = \Drupal::request()->getRequestUri();
+
       if ($item['url']->toString() == $current_path) {
         $item['is_active'] = TRUE;
+      }
+
+      $item_has_children = !empty($item['below']);
+
+      if ($item_has_children) {
+        $item['attributes']->addClass('is-expandable');
+
+        if (isset($item['is_active'])) {
+          $item['attributes']->addClass('is-open');
+        }
+      }
+
+      foreach ($item['below'] as &$child_item) {
+        $child_item['attributes']->addClass('is-lvl2 menu-item');
       }
     }
   }

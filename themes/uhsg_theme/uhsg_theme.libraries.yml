@@ -42,6 +42,7 @@ menu_toggle:
   version: 1.x
   js:
     js/responsiveNavigation.js: {}
+    js/fatNavigation.js: {}
   dependencies:
     - core/jquery
     - core/jquery.once
