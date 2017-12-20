@@ -1,7 +1,7 @@
 #Changelog
 
-## 1.12-dev
-Release date: ??.??.????
+## 1.12
+Release date: 20.12.2017
 
 * Support for second level main navigation (HUB-237)
 * Renamed News to Notice (HUB-253)
