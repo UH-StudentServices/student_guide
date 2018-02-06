@@ -47,3 +47,10 @@ menu_toggle:
     - core/jquery
     - core/jquery.once
     - core/matchMedia
+
+tooltip:
+  version: 1.x
+  js:
+    js/tooltip.js: {}
+  dependencies:
+    - core/jquery.ui.tooltip

@@ -10,7 +10,7 @@ field_name: field_article_new_students
 entity_type: node
 bundle: article
 label: 'For new students'
-description: 'Is the target audience new students?'
+description: 'New students study in the new degree programmes that started August 1, 2017. Students studying according to the old degree structure are referred to as old students.'
 required: false
 translatable: false
 default_value:
