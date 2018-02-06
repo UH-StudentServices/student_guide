@@ -2,7 +2,7 @@
   'use strict';
   Drupal.behaviors.tooltip = {
     attach: function (context, settings) {
-      $(document).tooltip();
+      $(document).tooltip({tooltipClass: "description"});
     }
   };
 }(jQuery));
