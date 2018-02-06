@@ -92,7 +92,10 @@
         <div class="box-story__label"> {{ type }} </div>
       {% endif %}
       {% if node.field_article_new_students is not empty and new_students_label is not empty and new_students_description is not empty  %}
-        <div class="box-story__label" title="{{ new_students_description }}"> {{ new_students_label }} </div>
+        <div class="box-story__label" title="{{ new_students_description }}">
+          {{ new_students_label }}
+          <span class="description-toggle"/>
+        </div>
       {% endif %}
       {% if content.field_news_image|render %}
         <div class="box-story__image"> {{ content.field_news_image }} </div>

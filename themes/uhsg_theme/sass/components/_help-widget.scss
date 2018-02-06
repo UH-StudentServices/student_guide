@@ -1,0 +1,31 @@
+.description-toggle {
+  @include font-size(18px);
+  display: inline-block;
+  position: relative;
+  cursor: help;
+  margin-top: -1em;
+  padding-left: 1em;
+  &:after {
+    @include icon($icon-question);
+    vertical-align: middle;
+    display: inline-block;
+    color: $blue;
+  }
+  @include breakpoint($mobile-only) {
+    float: left;
+    padding-right: 0.5em;
+  }
+}
+
+.description {
+  @include hyphenate;
+  font-size: 0.75em;
+  left: -15px;
+  top: 30px;
+  color: $white;
+  position: absolute;
+  padding: 0 1em;
+  &.collapsed {
+    padding: 1em;
+  }
+}

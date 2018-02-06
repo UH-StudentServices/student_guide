@@ -8021,6 +8021,55 @@ input[type="submit"].button--reset + i {
   border: 1px solid #979797;
 }
 
+.description-toggle {
+  font-size: 1.125rem;
+  display: inline-block;
+  position: relative;
+  cursor: help;
+  margin-top: -1em;
+  padding-left: 1em;
+}
+
+.description-toggle:after {
+  display: inline-block;
+  font-family: "hy-icons";
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
+  content: "";
+  vertical-align: middle;
+  display: inline-block;
+  color: #0098d0;
+}
+
+@media (max-width: 48em) {
+  .description-toggle {
+    float: left;
+    padding-right: 0.5em;
+  }
+}
+
+.description {
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+      hyphens: auto;
+  word-break: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-word;
+  font-size: 0.75em;
+  left: -15px;
+  top: 30px;
+  color: #FFF;
+  position: absolute;
+  padding: 0 1em;
+}
+
+.description.collapsed {
+  padding: 1em;
+}
+
 .list-of-links__compact .list-of-links__link {
   padding-top: 0.4em;
   padding-bottom: 0.4em;
