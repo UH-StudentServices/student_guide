@@ -3,6 +3,8 @@
 ## 1.13-dev
 Release date: ??.??.????
 
+* More news items on front page (HUB-267)
+
 ## 1.12
 Release date: 20.12.2017
 
