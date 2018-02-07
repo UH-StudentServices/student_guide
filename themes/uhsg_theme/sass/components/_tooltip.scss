@@ -2,6 +2,20 @@
   cursor: help;
 }
 
+.article--full {
+  .tooltip {
+    position: initial;
+    display: inline-block;
+    margin-bottom: 1em;
+  }
+
+  .tooltip-toggle {
+    &:after {
+      color: $white;
+    }
+  }
+}
+
 .tooltip-toggle {
   @include font-size(18px);
   display: inline-block;

@@ -8539,6 +8539,16 @@ h1, h2, h3, h4, legend,
   cursor: help;
 }
 
+.article--full .tooltip {
+  position: initial;
+  display: inline-block;
+  margin-bottom: 1em;
+}
+
+.article--full .tooltip-toggle:after {
+  color: #FFF;
+}
+
 .tooltip-toggle {
   font-size: 1.125rem;
   display: inline-block;
