@@ -1,4 +1,8 @@
-.description-toggle {
+.tooltip {
+  cursor: help;
+}
+
+.tooltip-toggle {
   @include font-size(18px);
   display: inline-block;
   position: relative;
@@ -11,21 +15,16 @@
     display: inline-block;
     color: $blue;
   }
-  @include breakpoint($mobile-only) {
-    float: left;
-    padding-right: 0.5em;
-  }
 }
 
-.description {
+.ui-tooltip {
   @include hyphenate;
+  background-color: black;
   font-size: 0.75em;
   left: -15px;
   top: 30px;
   color: $white;
   position: absolute;
-  padding: 0 1em;
-  &.collapsed {
-    padding: 1em;
-  }
+  padding: 1em;
+  border-radius: 10px;
 }
