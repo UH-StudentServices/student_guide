@@ -3,6 +3,8 @@
 ## 1.13-dev
 Release date: ??.??.????
 
+* Limited allowed file types (HUB-263)
+
 ## 1.12
 Release date: 20.12.2017
 
