@@ -132,3 +132,6 @@ msgstr "Nya studerande"
 
 msgid "New students study in the new degree programmes that started August 1, 2017. Students studying according to the old degree structure are referred to as old students."
 msgstr "Nya studerandena studerar i de nya utbildningsprogrammen som startade den 1 augusti 2017. Studerandena som studerar enligt den gamla utbildningsstrukturen är gamla studerandena."
+
+msgid "Search instructions by text (try also the beginning of a word)"
+msgstr "Sök anvisningar efter ord (prova också första delen av ordet)"
