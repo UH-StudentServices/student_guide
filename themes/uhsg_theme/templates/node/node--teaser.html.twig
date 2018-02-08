@@ -83,7 +83,7 @@
 {% set created = node.getCreatedTime|format_date('short') %}
 {% set body %}
   {{ content.body }}
-{% endset %}  
+{% endset %}
 {% set grid_items_per_row = node.bundle == 'news' ? 4 : 3 %}
 
 <div class="grid-item grid-item-{{grid_items_per_row}}">
@@ -91,6 +91,12 @@
     <a href="{{ url }}" rel="bookmark" class="box-story__link-wrapper">
       {% if type %}
         <div class="box-story__label"> {{ type }} </div>
+      {% endif %}
+      {% if node.field_article_new_students is not empty and new_students_label is not empty and new_students_description is not empty  %}
+        <div class="box-story__label tooltip" title="{{ new_students_description }}">
+          {{ new_students_label }}
+          <span class="tooltip-toggle"/>
+        </div>
       {% endif %}
       {% if content.field_news_image|render %}
         <div class="box-story__image"> {{ content.field_news_image }} </div>

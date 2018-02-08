@@ -3,6 +3,7 @@
 ## 1.13-dev
 Release date: ??.??.????
 
+* Support for marking instructions for new students (HUB-266)
 * More news items on front page (HUB-267)
 
 ## 1.12
