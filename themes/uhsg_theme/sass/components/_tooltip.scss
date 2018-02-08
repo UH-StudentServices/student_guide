@@ -1,0 +1,44 @@
+.tooltip {
+  cursor: help;
+}
+
+.article--full {
+  .tooltip {
+    position: initial;
+    display: inline-block;
+    margin-bottom: 1em;
+  }
+
+  .tooltip-toggle {
+    &:after {
+      color: $white;
+    }
+  }
+}
+
+.tooltip-toggle {
+  @include font-size(18px);
+  display: inline-block;
+  position: relative;
+  cursor: help;
+  margin-top: -1em;
+  padding-left: 1em;
+  &:after {
+    @include icon($icon-question);
+    vertical-align: middle;
+    display: inline-block;
+    color: $blue;
+  }
+}
+
+.ui-tooltip {
+  @include hyphenate;
+  background-color: black;
+  font-size: 0.75em;
+  left: -15px;
+  top: 30px;
+  color: $white;
+  position: absolute;
+  padding: 1em;
+  border-radius: 10px;
+}

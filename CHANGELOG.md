@@ -3,6 +3,8 @@
 ## 1.13-dev
 Release date: ??.??.????
 
+* Support for marking instructions for new students (HUB-266)
+
 ## 1.12
 Release date: 20.12.2017
 

@@ -327,8 +327,10 @@ function uhsg_theme_preprocess_file_link(&$variables) {
 
 /**
  * Implements template_preprocess_node().
+ *
  * Add node type as label if current page is not a theme.
  * Add referencing themes view.
+ * Add jQuery Tooltip when viewing instructions.
  */
 function uhsg_theme_preprocess_node(&$variables) {
   if (in_array($variables['view_mode'], ['teaser', 'constrained'])) {
@@ -339,6 +341,11 @@ function uhsg_theme_preprocess_node(&$variables) {
   if ($variables['node']->bundle() == 'article' && $variables['page']) {
     $block = \Drupal::service('plugin.manager.block')->createInstance('themes_referencing_instructions', []);
     $variables['themes'] = $block->build();
+  }
+  if ($variables['node']->bundle() == 'article') {
+    $variables['new_students_label'] = t('New students');
+    $variables['new_students_description'] = t('New students study in the new degree programmes that started August 1, 2017. Students studying according to the old degree structure are referred to as old students.');
+    $variables['#attached']['library'][] = 'uhsg_theme/tooltip';
   }
 }
 
