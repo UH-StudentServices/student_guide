@@ -62,6 +62,7 @@
   }
 }
 
+// Flat Box.
 .grid-item-flat-box {
   @include breakpoint($mobile-only) {
     max-width: $bp-small / 2;

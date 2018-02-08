@@ -4,6 +4,7 @@
 Release date: ??.??.????
 
 * Support for marking instructions for new students (HUB-266)
+* Smaller theme boxes on front page (HUB-268)
 
 ## 1.12
 Release date: 20.12.2017
