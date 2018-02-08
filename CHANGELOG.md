@@ -3,6 +3,7 @@
 ## 1.13-dev
 Release date: ??.??.????
 
+* Support for marking instructions for new students (HUB-266)
 * Limited allowed file types (HUB-263)
 
 ## 1.12

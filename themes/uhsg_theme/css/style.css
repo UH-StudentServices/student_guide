@@ -7489,7 +7489,7 @@ li.avatar.avatar--default img {
 }
 
 .box-story--no-label.theme-plain {
-  padding: 1.5em;
+  padding: 2.8em 1.5em 1.5em 1.5em;
 }
 
 .cc_banner-wrapper {
@@ -8533,4 +8533,58 @@ h1, h2, h3, h4, legend,
 
 .theme--box:hover .theme__teaser-image {
   opacity: 0.25;
+}
+
+.tooltip {
+  cursor: help;
+}
+
+.article--full .tooltip {
+  position: initial;
+  display: inline-block;
+  margin-bottom: 1em;
+}
+
+.article--full .tooltip-toggle:after {
+  color: #FFF;
+}
+
+.tooltip-toggle {
+  font-size: 1.125rem;
+  display: inline-block;
+  position: relative;
+  cursor: help;
+  margin-top: -1em;
+  padding-left: 1em;
+}
+
+.tooltip-toggle:after {
+  display: inline-block;
+  font-family: "hy-icons";
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
+  content: "";
+  vertical-align: middle;
+  display: inline-block;
+  color: #0098d0;
+}
+
+.ui-tooltip {
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+      hyphens: auto;
+  word-break: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-word;
+  background-color: black;
+  font-size: 0.75em;
+  left: -15px;
+  top: 30px;
+  color: #FFF;
+  position: absolute;
+  padding: 1em;
+  border-radius: 10px;
 }
