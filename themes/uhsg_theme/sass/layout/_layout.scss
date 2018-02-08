@@ -62,6 +62,24 @@
   }
 }
 
+.grid-item-flat-box {
+  @include breakpoint($mobile-only) {
+    max-width: $bp-small / 2;
+  }
+  @include breakpoint($small) {
+    width: $bp-small / 3;
+    height: $bp-small / 5;
+  }
+  @include breakpoint($medium) {
+    width: $bp-medium / 4;
+    height: $bp-medium / 6;
+  }
+  @include breakpoint($large) {
+    width: $bp-large / 4;
+    height: $bp-large / 6;
+  }
+}
+
 @include breakpoint($small) {
   .col-container {
     display: flex;
