@@ -4,6 +4,7 @@
 Release date: ??.??.????
 
 * Support for marking instructions for new students (HUB-266)
+* Search field info placeholder (HUB-269)
 
 ## 1.12
 Release date: 20.12.2017
