@@ -6,6 +6,7 @@ Release date: ??.??.????
 * Support for marking instructions for new students (HUB-266)
 * Limited allowed file types (HUB-263)
 * More news items on front page (HUB-267)
+* Search field info placeholder (HUB-269)
 
 ## 1.12
 Release date: 20.12.2017
