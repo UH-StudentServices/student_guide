@@ -4,6 +4,7 @@
 Release date: ??.??.????
 
 * Support for marking instructions for new students (HUB-266)
+* Limited allowed file types (HUB-263)
 
 ## 1.12
 Release date: 20.12.2017
