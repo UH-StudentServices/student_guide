@@ -84,8 +84,9 @@
 {% set body %}
   {{ content.body }}
 {% endset %}
+{% set grid_items_per_row = node.bundle == 'news' ? 4 : 3 %}
 
-<div class="grid-item grid-item-3">
+<div class="grid-item grid-item-{{grid_items_per_row}}">
   <article {{ attributes.addClass(node_classes) }}>
     <a href="{{ url }}" rel="bookmark" class="box-story__link-wrapper">
       {% if type %}
