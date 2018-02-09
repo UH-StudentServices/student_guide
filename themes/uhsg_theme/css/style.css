@@ -8359,7 +8359,42 @@ h1, h2, h3, h4, legend,
 
 @media (min-width: 48em) {
   .view-search #edit-search-api-fulltext {
-    width: 60%;
+    width: 70%;
+  }
+}
+
+.view-search #edit-search-api-fulltext::-webkit-input-placeholder {
+  color: #979797;
+  font-size: smaller;
+}
+
+.view-search #edit-search-api-fulltext::-moz-placeholder {
+  color: #979797;
+  font-size: smaller;
+}
+
+.view-search #edit-search-api-fulltext:-ms-input-placeholder {
+  color: #979797;
+  font-size: smaller;
+}
+
+.view-search #edit-search-api-fulltext::placeholder {
+  color: #979797;
+  font-size: smaller;
+}
+
+@media (min-width: 62.5em) {
+  .view-search #edit-search-api-fulltext::-webkit-input-placeholder {
+    font-size: 0.875rem;
+  }
+  .view-search #edit-search-api-fulltext::-moz-placeholder {
+    font-size: 0.875rem;
+  }
+  .view-search #edit-search-api-fulltext:-ms-input-placeholder {
+    font-size: 0.875rem;
+  }
+  .view-search #edit-search-api-fulltext::placeholder {
+    font-size: 0.875rem;
   }
 }
 

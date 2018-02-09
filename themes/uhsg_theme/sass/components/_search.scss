@@ -71,7 +71,14 @@
   }
   #edit-search-api-fulltext {
     @include breakpoint($small) {
-      width: 60%;
+      width: 70%;
+    }
+    &::placeholder {
+      color: $silver;
+      font-size: smaller;
+      @include breakpoint($medium) {
+        @include font-size(14px);
+      }
     }
   }
   #edit-actions {
