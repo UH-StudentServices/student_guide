@@ -4,6 +4,7 @@
 Release date: ??.??.????
 
 * Support for marking instructions for new students (HUB-266)
+* Top content placement and visual changes (HUB-270)
 
 ## 1.12
 Release date: 20.12.2017
