@@ -4,6 +4,7 @@
 Release date: ??.??.????
 
 * Support for marking instructions for new students (HUB-266)
+* Limited allowed file types (HUB-263)
 * More news items on front page (HUB-267)
 
 ## 1.12
