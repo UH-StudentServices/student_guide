@@ -8315,18 +8315,6 @@ h1, h2, h3, h4, legend,
   margin-top: 30px;
 }
 
-.view-search .view-header .top-searches li:last-child {
-  display: none;
-}
-
-.view-search .view-header .top-searches .list-of-links__link {
-  padding-left: 0;
-}
-
-.view-search .view-header .top-searches .button--action-before.theme-transparent:after {
-  display: none;
-}
-
 .view-search #my-searches {
   padding-top: 2em;
 }
@@ -8622,4 +8610,8 @@ h1, h2, h3, h4, legend,
   position: absolute;
   padding: 1em;
   border-radius: 10px;
+}
+
+.top-content li:last-child {
+  display: none;
 }

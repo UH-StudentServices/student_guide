@@ -395,6 +395,7 @@ function uhsg_theme_theme_suggestions_block_alter(&$suggestions, $vars, $hook) {
     'views_block__themes_block_1',
     'newsperdegreeprogramme',
     'newsperdegreeprogramme_2',
+    'views_block__google_analytics_summary_top_searches_block'
   ];
 
   if (in_array($vars['elements']['#id'], $subregion_blocks)) {

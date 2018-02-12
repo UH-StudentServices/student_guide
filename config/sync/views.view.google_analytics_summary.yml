@@ -1367,8 +1367,8 @@ display:
         filters: false
         filter_groups: false
         arguments: false
-      title: 'Top pages over the last 30 days'
-      css_class: top-searches
+      title: 'Top content'
+      css_class: top-content
       sorts:
         pageviews:
           id: pageviews
@@ -1386,7 +1386,7 @@ display:
         type: html_list
         options:
           grouping: {  }
-          row_class: 'list-of-links__link button--action-before theme-transparent'
+          row_class: 'list-of-links__link button--action icon--arrow-right theme-transparent'
           default_row_class: 1
           type: ul
           wrapper_class: ''
@@ -1401,7 +1401,7 @@ display:
       pager:
         type: some
         options:
-          items_per_page: '4'
+          items_per_page: '5'
           offset: '0'
       empty: {  }
       header: {  }
