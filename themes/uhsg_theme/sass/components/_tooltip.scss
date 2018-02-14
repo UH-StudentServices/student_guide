@@ -14,6 +14,13 @@
       color: $white;
     }
   }
+
+  // IE11 position fix.
+  .box-story__label {
+    position: static;
+    left: auto;
+    top: auto;
+  }
 }
 
 .tooltip-toggle {
