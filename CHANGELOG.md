@@ -8,6 +8,7 @@ Release date: ??.??.????
 * More news items on front page (HUB-267)
 * Search field info placeholder (HUB-269)
 * Top content placement and visual changes (HUB-270)
+* Filter news page by active degree programme (HUB-258)
 
 ## 1.12
 Release date: 20.12.2017

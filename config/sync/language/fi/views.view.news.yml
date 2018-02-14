@@ -2,3 +2,6 @@ display:
   default:
     display_options:
       title: Ajankohtaista
+      empty:
+        area_text_custom:
+          content: '<h3>Ei tuloksia</h3>'
