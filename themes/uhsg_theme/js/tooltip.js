@@ -14,7 +14,7 @@
         }
       });
 
-      $(document).bind('touchstart click', function (event) {
+      $(document).on('touchstart click', '.ui-tooltip-content', function (event) {
         tooltip.tooltip('close');
       });
     }
