@@ -7402,11 +7402,6 @@ li.avatar.avatar--default img {
   padding: 1em;
 }
 
-.degree-programme-switcher .degree-programme-switcher__icon {
-  display: none;
-  margin-right: 0.5em;
-}
-
 .degree-programme-switcher .degree-programme-switcher__title {
   display: -ms-flexbox;
   display: flex;
@@ -7414,6 +7409,10 @@ li.avatar.avatar--default img {
       flex-wrap: wrap;
   -ms-flex: 0 0 80%;
       flex: 0 0 80%;
+  color: #0098d0;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1rem;
 }
 
 .degree-programme-switcher .degree-programme-switcher__toggle {
@@ -7572,10 +7571,6 @@ li.avatar.avatar--default img {
   .degree-programme-switcher {
     margin: 2em 0;
     display: block;
-  }
-  .degree-programme-switcher .degree-programme-switcher__icon {
-    display: -ms-flexbox;
-    display: flex;
   }
   .degree-programme-switcher .degree-programme-switcher__dropdown {
     display: none;

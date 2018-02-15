@@ -18,14 +18,13 @@
     align-items: center; 
     padding: 1em;
   }
-  .degree-programme-switcher__icon {
-    display: none;
-    margin-right: 0.5em;
-  }
   .degree-programme-switcher__title {
     display: flex;
     flex-wrap: wrap;
     flex: 0 0 80%;
+    color: $blue;
+    @include font-weight-medium;
+    @include font-size(16px);
   }
   .degree-programme-switcher__toggle {
     @include font-weight-medium;
@@ -130,9 +129,6 @@
   @include breakpoint($small) {
     margin: 2em 0;
     display: block;
-    .degree-programme-switcher__icon {
-      display: flex;
-    }
     .degree-programme-switcher__dropdown {
       display: none;
       position: absolute;
