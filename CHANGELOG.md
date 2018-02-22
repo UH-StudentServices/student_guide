@@ -10,6 +10,7 @@ Release date: ??.??.????
 * Top content placement and visual changes (HUB-270)
 * Filter news page by active degree programme (HUB-258)
 * Smaller theme boxes on front page (HUB-268)
+* Drupal-core update (8.4.5).
 
 ## 1.12
 Release date: 20.12.2017
