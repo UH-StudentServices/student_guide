@@ -1,7 +1,7 @@
 #Changelog
 
-## 1.13-dev
-Release date: ??.??.????
+## 1.13
+Release date: 23.02.2018
 
 * Support for marking instructions for new students (HUB-266)
 * More news items on front page (HUB-267)
