@@ -1,0 +1,37 @@
+uuid: 78951bee-6ab1-45fd-bd4e-014e3c068431
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.flat_box
+    - field.field.node.theme.body
+    - field.field.node.theme.field_theme_articles
+    - field.field.node.theme.field_theme_faq
+    - field.field.node.theme.field_theme_section
+    - field.field.node.theme.field_theme_teaser_image
+    - node.type.theme
+    - responsive_image.styles.theme_teaser_image
+  module:
+    - responsive_image
+    - user
+id: node.theme.flat_box
+targetEntityType: node
+bundle: theme
+mode: flat_box
+content:
+  field_theme_teaser_image:
+    type: responsive_image
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      responsive_image_style: theme_teaser_image
+      image_link: ''
+    third_party_settings: {  }
+hidden:
+  body: true
+  field_theme_articles: true
+  field_theme_faq: true
+  field_theme_section: true
+  langcode: true
+  links: true

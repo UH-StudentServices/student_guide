@@ -7,6 +7,7 @@ dependencies:
     - node.type.news
   module:
     - node
+    - taxonomy
     - user
 id: news
 label: News
@@ -28,13 +29,13 @@ display:
         options:
           perm: 'access content'
       cache:
-        type: tag
+        type: none
         options: {  }
       query:
         type: views_query
         options:
           disable_sql_rewrite: false
-          distinct: false
+          distinct: true
           replica: false
           query_comment: ''
           query_tags: {  }
@@ -204,8 +205,28 @@ display:
       title: News
       header: {  }
       footer: {  }
-      empty: {  }
-      relationships: {  }
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content: '<h3>No results</h3>'
+          plugin_id: text_custom
+      relationships:
+        field_news_degree_programme:
+          id: field_news_degree_programme
+          table: node__field_news_degree_programme
+          field: field_news_degree_programme
+          relationship: none
+          group_type: group
+          admin_label: 'field_news_degree_programme: Taxonomy term'
+          required: false
+          plugin_id: standard
       arguments: {  }
       display_extenders: {  }
     cache_metadata:

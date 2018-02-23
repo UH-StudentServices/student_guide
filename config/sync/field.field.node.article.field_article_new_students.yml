@@ -1,0 +1,23 @@
+uuid: a779570e-1333-424a-ba89-5a2e3a575dd0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_article_new_students
+    - node.type.article
+id: node.article.field_article_new_students
+field_name: field_article_new_students
+entity_type: node
+bundle: article
+label: 'For new students'
+description: 'New students study in the new degree programmes that started August 1, 2017. Students studying according to the old degree structure are referred to as old students.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

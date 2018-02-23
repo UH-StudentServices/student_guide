@@ -52,7 +52,7 @@ class TargetedNewsService {
    *
    * @return array
    */
-  public function getTargetedNewsNids($limit = 3) {
+  public function getTargetedNewsNids($limit = 4) {
     $query = \Drupal::entityQuery($this->targetEntityType)
       ->condition('status', NODE_PUBLISHED)
       ->condition('langcode', $this->languageManager->getCurrentLanguage()->getId())

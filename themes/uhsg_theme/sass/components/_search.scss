@@ -41,20 +41,6 @@
       margin-top: $vert-spacing-unit;
     }
   }
-  .view-header {
-    // this empty result can't be removed in the view or in pre_render?
-    .top-searches {
-      li:last-child {
-        display: none;
-      }
-      .list-of-links__link {
-        padding-left: 0;
-      }
-      .button--action-before.theme-transparent:after {
-        display: none;
-      }
-    }
-  }
   #my-searches {
     padding-top: 2em;
     .list-of-links__link {
@@ -85,7 +71,14 @@
   }
   #edit-search-api-fulltext {
     @include breakpoint($small) {
-      width: 60%;
+      width: 70%;
+    }
+    &::placeholder {
+      color: $silver;
+      font-size: smaller;
+      @include breakpoint($medium) {
+        @include font-size(14px);
+      }
     }
   }
   #edit-actions {

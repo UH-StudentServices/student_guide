@@ -1,5 +1,16 @@
 #Changelog
 
+## 1.13
+Release date: 23.02.2018
+
+* Support for marking instructions for new students (HUB-266)
+* More news items on front page (HUB-267)
+* Search field info placeholder (HUB-269)
+* Top content placement and visual changes (HUB-270)
+* Filter news page by active degree programme (HUB-258)
+* Smaller theme boxes on front page (HUB-268)
+* Drupal-core update (8.4.5).
+
 ## 1.12
 Release date: 20.12.2017
 

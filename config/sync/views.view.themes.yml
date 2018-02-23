@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.box
+    - core.entity_view_mode.node.flat_box
     - node.type.theme
   module:
     - draggableviews
@@ -63,7 +64,7 @@ display:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: box
+          view_mode: flat_box
       fields:
         title:
           id: title

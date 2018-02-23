@@ -78,31 +78,16 @@
 %}
 
 {%
-  set container_classes = [
-    'container',
-    'tube',
-    'article__content',
-    'col-container'
+  set title_classes = [
+    node.bundle|clean_class ~ '__title',
   ]
 %}
 
-<article {{ attributes.addClass(node_classes) }}>
-  <div{{ content_attributes.addClass(container_classes) }}>
-    <div class="col-main">
-      <h1> {{ label }} </h1>
-      {% if node.field_article_new_students is not empty and new_students_label is not empty and new_students_description is not empty  %}
-        <div class="box-story__label tooltip" title="{{ new_students_description }}">
-          {{ new_students_label }}
-          <span class="tooltip-toggle"/>
-        </div>
-      {% endif %}
-      {{ content|without('field_article_paragraph', 'field_article_new_students') }}
-    </div>
-    {% if themes %}
-      <div class="col-right">
-        {{ themes }}
-      </div>
-    {% endif %}
-  </div>
-  {{ content.field_article_paragraph }}
-</article>
+<div class="grid-item grid-item-flat-box" data-id="{{ node.id() }}">
+  <article {{ attributes.addClass(node_classes) }}>
+    <a href="{{ url }}" rel="bookmark" class="theme__link-wrapper">
+      <div {{ title_attributes.addClass(title_classes) }}> {{ label }} </div>
+      {{ content }}
+    </a>
+  </article>
+</div>

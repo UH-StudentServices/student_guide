@@ -129,3 +129,12 @@ msgstr "Koulutusohjelmakohtaiset vastaanottoajat"
 
 msgid "Language Centre teachers\' office hours"
 msgstr "Kielikeskuksen opettajien vastaanottoajat"
+
+msgid "New students"
+msgstr "Uudet opiskelijat"
+
+msgid "New students study in the new degree programmes that started August 1, 2017. Students studying according to the old degree structure are referred to as old students."
+msgstr "Uudet opiskelijat ovat 1.8.2107 aloittaneiden koulutusohjelmien opiskelijoita. Vanhoilla opiskelijoilla tarkoitetaan vanhan koulutusrakenteen mukaisesti opiskelevia."
+
+msgid "Search instructions by word (or beginning of a word)"
+msgstr "Hae ohjetta hakusanalla (tai sanan alkuosalla)"

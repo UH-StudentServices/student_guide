@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.article.body
     - field.field.node.article.field_article_degree_programme
+    - field.field.node.article.field_article_new_students
     - field.field.node.article.field_article_paragraph
     - node.type.article
   module:
@@ -19,11 +20,21 @@ content:
   body:
     label: hidden
     type: text_summary_or_trimmed
-    weight: 0
+    weight: 1
     settings:
       trim_length: 300
     third_party_settings: {  }
     region: content
+  field_article_new_students:
+    type: boolean
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      format: default
+      format_custom_true: 'New students'
+      format_custom_false: ''
+    third_party_settings: {  }
 hidden:
   field_article_degree_programme: true
   field_article_paragraph: true
