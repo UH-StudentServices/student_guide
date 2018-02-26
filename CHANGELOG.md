@@ -3,6 +3,7 @@
 ## 1.14-dev
 Release date: ??.??.????
 
+* Fixed new students label visibility rule (HUB-280)
 
 ## 1.13
 Release date: 23.02.2018
