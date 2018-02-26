@@ -1,7 +1,7 @@
 #Changelog
 
-## 1.14-dev
-Release date: ??.??.????
+## 1.14
+Release date: 26.02.2018
 
 * Fixed new students label visibility rule (HUB-280)
 
