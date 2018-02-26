@@ -92,7 +92,7 @@
       {% if type %}
         <div class="box-story__label"> {{ type }} </div>
       {% endif %}
-      {% if node.field_article_new_students is not empty and new_students_label is not empty and new_students_description is not empty  %}
+      {% if node.field_article_new_students is not empty and node.field_article_new_students.value == '1' and new_students_description is not empty  %}
         <div class="box-story__label tooltip" title="{{ new_students_description }}">
           {{ new_students_label }}
           <span class="tooltip-toggle"/>
