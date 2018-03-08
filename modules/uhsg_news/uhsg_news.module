@@ -5,7 +5,11 @@
  * Contains uhsg_news.module.
  */
 
+use Drupal\Core\Database\Query\Condition;
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\views\Plugin\views\query\QueryPluginBase;
+use Drupal\views\Plugin\views\query\Sql;
+use Drupal\views\ViewExecutable;
 
 /**
  * Implements hook_help().
@@ -123,5 +127,27 @@ function uhsg_news_mail($key, &$message, $params) {
     $message['from'] = \Drupal::config('system.site')->get('mail');
     $message['subject'] = $params['subject'];
     $message['body'][] = $params['message'];
+  }
+}
+
+/**
+ * Implements hook_views_query_alter().
+ *
+ * If no degree programme is selected, return news that do not have degree
+ * programme association. If degree programme is selected, include news matching
+ * the selected degree programme.
+ */
+function uhsg_news_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
+  if ($view->id() == 'news' && $query instanceof Sql) {
+    $active_degree_programme_tid = \Drupal::service('uhsg_active_degree_programme.active_degree_programme')->getId();
+
+    $condition = $active_degree_programme_tid ? (new Condition('OR')) : (new Condition('AND'));
+    $condition->condition('node__field_news_degree_programme.field_news_degree_programme_target_id', null, 'IS NULL');
+
+    if ($active_degree_programme_tid) {
+      $condition->condition('node__field_news_degree_programme.field_news_degree_programme_target_id', $active_degree_programme_tid);
+    }
+
+    $query->addWhere(0, $condition);
   }
 }

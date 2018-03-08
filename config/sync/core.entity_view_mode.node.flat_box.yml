@@ -1,0 +1,10 @@
+uuid: 09a20704-d8ca-447f-a965-1bf19965a58e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.flat_box
+label: 'Flat Box'
+targetEntityType: node
+cache: true
