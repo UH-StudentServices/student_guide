@@ -7959,6 +7959,11 @@ li.avatar.avatar--default img {
   padding: 2.8em 1.5em 1.5em 1.5em;
 }
 
+.box-story--constrained {
+  border-bottom: 1px solid #f8f8f8;
+  padding: 1em 0 .5em;
+}
+
 .cc_banner-wrapper {
   z-index: 9001;
   position: relative;
