@@ -3,6 +3,10 @@
 ## 1.15-dev
 Release date: ??.??.????
 
+* Styleguide update (HUB-281)
+  - Manual release steps:
+    - /en/admin/config/system/site-information
+    - Change <h4> to <div class="logo-block__sitename">
 
 ## 1.14
 Release date: 26.02.2018
