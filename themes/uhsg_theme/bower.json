@@ -2,6 +2,6 @@
   "name": "uhsg_theme",
   "version": "1.0.0",
   "dependencies": {
-    "Styleguide": "https://github.com/UniversityofHelsinki/Styleguide.git#release-1.2.1"
+    "Styleguide": "https://github.com/UniversityofHelsinki/Styleguide.git#release-1.5.2"
   }
 }

@@ -3,6 +3,7 @@
 ## 1.15-dev
 Release date: ??.??.????
 
+* Styleguide update (HUB-281)
 
 ## 1.14
 Release date: 26.02.2018
