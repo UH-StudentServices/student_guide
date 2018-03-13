@@ -274,18 +274,6 @@ function uhsg_theme_preprocess_block(array &$variables) {
 }
 
 /**
- * Implements hook_preprocess_HOOK() for views exposed forms.
- */
-function uhsg_theme_preprocess_views_exposed_form(&$variables) {
-  switch ($variables['form']['#id']) {
-    case 'views-exposed-form-search-page-1':
-      $variables['form']['actions']['reset']['#suffix'] = '<i class="icon--remove"></i>';
-      $variables['form']['actions']['reset']['#attributes']['class'][] = 'button--reset';
-      break;
-  }
-}
-
-/**
  * Implements template_preprocess_page().
  * Add Node or term changed time as variable.
  */

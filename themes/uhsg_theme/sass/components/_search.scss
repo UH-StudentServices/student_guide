@@ -70,9 +70,6 @@
     margin-bottom: $vert-spacing-unit / 2;
   }
   #edit-search-api-fulltext {
-    @include breakpoint($small) {
-      width: 70%;
-    }
     &::placeholder {
       color: $silver;
       font-size: smaller;
@@ -82,21 +79,8 @@
     }
   }
   #edit-actions {
-    @include breakpoint($small) {
-      display: inline;
-      white-space: nowrap;
-    }
-  }
-  #edit-submit-search {
-    @include breakpoint($small) {
-      padding: 0.55em;
-    }
-  }
-  #edit-reset {
-    @include breakpoint($small) {
-      margin: 0;
-      padding-left: 0.5em;
-    }
+    display: inline;
+    white-space: nowrap;
   }
 }
 
