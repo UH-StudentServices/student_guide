@@ -9031,10 +9031,6 @@ h1, h2, h3, h4, legend, .logo-block__content .logo-block__sitename,
   display: inline;
 }
 
-.view-search .view-filters label {
-  display: none;
-}
-
 .view-search .view-filters .form-actions {
   margin-top: 30px;
 }
