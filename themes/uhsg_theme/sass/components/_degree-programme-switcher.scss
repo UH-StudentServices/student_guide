@@ -6,8 +6,13 @@
   display: flex;
   flex-direction: column;
   .degree-programme-switcher__header {
-    @include border;
-    background: $white;
+    border-radius: 0;
+    border: 1px solid $silver;
+    outline-color: rgba($blue, 0);
+    outline-offset: -2px;
+    outline-style: solid;
+    outline-width: 2px;
+    padding: 10px;
     z-index: 10;
     display: flex;
     cursor: pointer;
@@ -15,14 +20,15 @@
     margin: 0;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center; 
-    padding: 1em;
+    align-items: center;
+    height: 3rem;
   }
   .degree-programme-switcher__title {
     display: flex;
     flex-wrap: wrap;
     flex: 0 0 80%;
     color: $blue;
+    padding-top: 0.4em;
     @include font-weight-medium;
     @include font-size(16px);
   }
@@ -31,7 +37,7 @@
     color: $blue;
   }
   .degree-programme-switcher__dropdown {
-    @include border;
+    border: 1px solid $silver;
     transform: translateY(-100px);
     opacity: 0;
     transition: transform 0.3s, opacity 0.3s;
@@ -107,7 +113,11 @@
     .icon--search {
       background: $blue;
       color: $white;
-      padding: 0.5em;
+      padding: 0.5em 1em;
+    }
+
+    label {
+      display: none;
     }
   }
   &.collapsed {
@@ -123,6 +133,9 @@
       height: auto;
       opacity: 1;
       padding: 1em 1em 0 1em;
+    }
+    .degree-programme-switcher__header {
+      border-bottom: 0;
     }
   }
 
@@ -151,9 +164,5 @@
         padding: 2em;
       }
     }
-  }
-
-  label {
-    display: none;
   }
 }
