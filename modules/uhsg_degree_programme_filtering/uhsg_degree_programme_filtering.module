@@ -173,7 +173,7 @@ function uhsg_degree_programme_filtering_by_paragraph_article_degree_programme(a
           foreach ($article_references as $article_key => $article_reference) {
             $article_nid = $article_reference['target_id'];
             $article_node = \Drupal\node\Entity\Node::load($article_nid);
-            $degree_programme_references = $article_node->get($article_degree_programme_reference_field_name)->getValue();
+            $degree_programme_references = $article_node ? $article_node->get($article_degree_programme_reference_field_name)->getValue() : [];
 
             if (!empty($degree_programme_references)) {
               $valid_degree_programme_found = FALSE;
