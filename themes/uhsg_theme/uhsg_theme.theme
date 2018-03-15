@@ -433,6 +433,11 @@ function uhsg_theme_theme_suggestions_field_alter(&$suggestions, $vars, $hook) {
 
 function _uhsg_theme_get_degree_programme_switcher() {
   $degree_programme_switcher = \Drupal\block\Entity\Block::load('views_block__degree_programmes_block_1');
-
+  if (is_null($degree_programme_switcher)) {
+    // In case the block has gone missing, we don't fail completely but will
+    // alert in the logs.
+    \Drupal::logger('uhsg_theme')->alert('Degree programme switcher missing!');
+    return '';
+  }
   return \Drupal::entityTypeManager()->getViewBuilder('block')->view($degree_programme_switcher);
 }
