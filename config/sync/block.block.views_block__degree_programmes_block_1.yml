@@ -1,6 +1,6 @@
 uuid: 38d38652-0b39-4639-8d2f-d159d69a2424
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - views.view.degree_programmes
@@ -10,7 +10,7 @@ dependencies:
     - uhsg_theme
 id: views_block__degree_programmes_block_1
 theme: uhsg_theme
-region: before_content
+region: content
 weight: -9
 provider: null
 plugin: 'views_block:degree_programmes-block_1'

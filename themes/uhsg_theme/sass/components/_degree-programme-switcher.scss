@@ -1,10 +1,10 @@
 .degree-programme-switcher {
   position: relative;
   z-index: 100;
-  margin-top: 1em;
   background: $white;
   display: flex;
   flex-direction: column;
+  padding-bottom: 2em;
   .degree-programme-switcher__header {
     border-radius: 0;
     border: 1px solid $silver;
@@ -35,6 +35,7 @@
   .degree-programme-switcher__toggle {
     @include font-weight-medium;
     color: $blue;
+    padding-right: 0.4em;
   }
   .degree-programme-switcher__dropdown {
     border: 1px solid $silver;
@@ -113,7 +114,7 @@
     .icon--search {
       background: $blue;
       color: $white;
-      padding: 0.5em 1em;
+      padding: 0.7em 1em;
     }
 
     label {
@@ -140,7 +141,6 @@
   }
 
   @include breakpoint($small) {
-    margin: 2em 0;
     display: block;
     .degree-programme-switcher__dropdown {
       display: none;
@@ -157,7 +157,6 @@
     }
     &.collapsed {
       height: auto;
-      margin-top: 2em;
       position: relative;
       .degree-programme-switcher__dropdown {
         display: flex;
