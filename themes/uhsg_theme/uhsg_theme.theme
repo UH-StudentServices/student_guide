@@ -234,7 +234,7 @@ function uhsg_theme_preprocess_views_view(&$variables) {
       $variables['content_attributes']['class'][] = 'grid-container';
       break;
     case 'search':
-      // add front page text block
+      // Add front page text block.
       $block_entity = \Drupal\block_content\Entity\BlockContent::load(1);
       $block_view = \Drupal::entityTypeManager()->getViewBuilder('block_content')->view($block_entity);
       if ($block_view) {
@@ -242,9 +242,11 @@ function uhsg_theme_preprocess_views_view(&$variables) {
       }
       $variables['title'] = $variables['view']->getTitle();
       $variables['content_attributes']['class'][] = 'view-content';
+      $variables['degree_programme_switcher'] = _uhsg_theme_get_degree_programme_switcher();
       break;
     case 'news':
       $variables['attributes']['class'][] = 'tube';
+      $variables['degree_programme_switcher'] = _uhsg_theme_get_degree_programme_switcher();
       break;
   }
 }
@@ -274,20 +276,9 @@ function uhsg_theme_preprocess_block(array &$variables) {
 }
 
 /**
- * Implements hook_preprocess_HOOK() for views exposed forms.
- */
-function uhsg_theme_preprocess_views_exposed_form(&$variables) {
-  switch ($variables['form']['#id']) {
-    case 'views-exposed-form-search-page-1':
-      $variables['form']['actions']['reset']['#suffix'] = '<i class="icon--remove"></i>';
-      $variables['form']['actions']['reset']['#attributes']['class'][] = 'button--reset';
-      break;
-  }
-}
-
-/**
  * Implements template_preprocess_page().
- * Add Node or term changed time as variable.
+ *
+ * Add node changed time as a template variable.
  */
 function uhsg_theme_preprocess_page(&$variables) {
   if (isset($variables['node'])) {
@@ -331,6 +322,7 @@ function uhsg_theme_preprocess_file_link(&$variables) {
  * Add node type as label if current page is not a theme.
  * Add referencing themes view.
  * Add jQuery Tooltip when viewing instructions.
+ * Add degree programme switcher as a template variable.
  */
 function uhsg_theme_preprocess_node(&$variables) {
   if (in_array($variables['view_mode'], ['teaser', 'constrained'])) {
@@ -346,6 +338,9 @@ function uhsg_theme_preprocess_node(&$variables) {
     $variables['new_students_label'] = t('New students');
     $variables['new_students_description'] = t('New students study in the new degree programmes that started August 1, 2017. Students studying according to the old degree structure are referred to as old students.');
     $variables['#attached']['library'][] = 'uhsg_theme/tooltip';
+  }
+  if ($variables['page']) {
+    $variables['degree_programme_switcher'] = _uhsg_theme_get_degree_programme_switcher();
   }
 }
 
@@ -434,4 +429,15 @@ function uhsg_theme_theme_suggestions_field_alter(&$suggestions, $vars, $hook) {
   if (in_array($vars['element']['#field_name'], $tag_fields)) {
     $suggestions[] = 'field__tag_list_item';
   }
+}
+
+function _uhsg_theme_get_degree_programme_switcher() {
+  $degree_programme_switcher = \Drupal\block\Entity\Block::load('views_block__degree_programmes_block_1');
+  if (is_null($degree_programme_switcher)) {
+    // In case the block has gone missing, we don't fail completely but will
+    // alert in the logs.
+    \Drupal::logger('uhsg_theme')->alert('Degree programme switcher missing!');
+    return '';
+  }
+  return \Drupal::entityTypeManager()->getViewBuilder('block')->view($degree_programme_switcher);
 }

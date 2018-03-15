@@ -8,15 +8,16 @@
       var toggle = $('.degree-programme-switcher__toggle', degreeProgrammeSwitcher);
       var filterInput = $('.degree-programme-switcher__filter input', degreeProgrammeSwitcher);
       var toggleClass = 'collapsed';
-      var toggleTextClosed = Drupal.t('Change');
-      var toggleTextOpen = Drupal.t('Close');
+      var toggleIconClosed = 'icon--caret-down';
+      var toggleIconOpen = 'icon--caret-up';
       var breakpoints = settings.breakpoints;
 
       // toggle collapsed when clicking header
       header.once().on('click', function () {
         container.toggleClass(toggleClass);
         $('body').toggleClass('no-scroll-mobile');
-        toggle.text(container.hasClass(toggleClass) ? toggleTextOpen : toggleTextClosed);
+        toggle.toggleClass(toggleIconClosed);
+        toggle.toggleClass(toggleIconOpen);
 
         if (window.matchMedia(breakpoints['small']).matches) {
           filterInput.focus();
@@ -29,7 +30,8 @@
         if (container.hasClass(toggleClass) && clickedOutside) {
           container.removeClass(toggleClass);
           $('body').removeClass('no-scroll-mobile');
-          toggle.text(container.hasClass(toggleClass) ? toggleTextOpen : toggleTextClosed);
+          toggle.toggleClass(toggleIconClosed);
+          toggle.toggleClass(toggleIconOpen);
         }
       });
 

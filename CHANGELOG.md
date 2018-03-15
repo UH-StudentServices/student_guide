@@ -4,6 +4,7 @@
 Release date: ??.??.????
 
 * Styleguide update (HUB-281)
+* Degree programme switcher visual changes (HUB-271)
 
 ## 1.14
 Release date: 26.02.2018

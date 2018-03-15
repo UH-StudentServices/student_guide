@@ -7,7 +7,11 @@ function uhsg_search_form_views_exposed_form_alter(&$form, \Drupal\Core\Form\For
   if (\Drupal::service('path.matcher')->isFrontPage()) {
     $form['#attached']['library'][] = 'uhsg_search/uhsg-search';
     $form['#attached']['library'][] = 'uhsg_search/filter_search';
+    $form['#attributes']['class'][] = 'search-form';
     $form['search_api_fulltext']['#attributes']['placeholder'] = t('Search instructions by word (or beginning of a word)');
+    $form['search_api_fulltext']['#attributes']['class'][] = 'search-form__input';
+    $form['actions']['submit']['#attributes']['class'][] = 'search-form__submit';
+    $form['actions']['submit']['#value'] = "\u{EA35}";
   }
 }
 
