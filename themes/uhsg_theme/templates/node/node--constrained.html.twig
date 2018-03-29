@@ -74,6 +74,7 @@
   set node_classes = [
     node.bundle|clean_class,
     view_mode ? node.bundle|clean_class ~ '--' ~ view_mode|clean_class,
+    'box-story',
     'box-story--constrained'
   ]
 %}
@@ -83,13 +84,13 @@
 {% endset %}  
 
 <article {{ attributes.addClass(node_classes) }}>
-  <h4 class="box-story__title">
-    <a href="{{ url }}"> {{ label }} </a>
-  </h4>
-  <div class="box-story__topical">
-    <span class="box-story__date">{{ created }}</span>
-    <span class="box-story__tag">{{ type }}</span>
+  <div class="box-story__meta">
+    <div class="box-story__meta-item">{{ created }}</div>
+    <div class="box-story__meta-item">{{ type }}</div>
   </div>
+  <h3 class="box-story__title">
+    <a href="{{ url }}"> {{ label }} </a>
+  </h3>
   <div class="box-story__content">
     <a href="{{ url }}"> {{ body|striptags|raw }} </a>
   </div>

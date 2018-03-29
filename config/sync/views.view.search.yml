@@ -40,7 +40,7 @@ display:
         type: input_required
         options:
           submit_button: 'Show results'
-          reset_button: true
+          reset_button: false
           reset_button_label: Clear
           exposed_sorts_label: 'Sort by'
           expose_sort_order: false

@@ -1,13 +1,18 @@
 .degree-programme-switcher {
   position: relative;
   z-index: 100;
-  margin-top: 1em;
   background: $white;
   display: flex;
   flex-direction: column;
+  padding-bottom: 2em;
   .degree-programme-switcher__header {
-    @include border;
-    background: $white;
+    border-radius: 0;
+    border: 1px solid $silver;
+    outline-color: rgba($blue, 0);
+    outline-offset: -2px;
+    outline-style: solid;
+    outline-width: 2px;
+    padding: 0 10px 0 10px;
     z-index: 10;
     display: flex;
     cursor: pointer;
@@ -15,24 +20,26 @@
     margin: 0;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center; 
-    padding: 1em;
-  }
-  .degree-programme-switcher__icon {
-    display: none;
-    margin-right: 0.5em;
+    align-items: center;
+    height: 3rem;
+    box-sizing: content-box;
   }
   .degree-programme-switcher__title {
     display: flex;
     flex-wrap: wrap;
     flex: 0 0 80%;
+    color: $blue;
+    padding-top: 0.4em;
+    @include font-weight-medium;
+    @include font-size(16px);
   }
   .degree-programme-switcher__toggle {
     @include font-weight-medium;
     color: $blue;
+    padding-right: 0.4em;
   }
   .degree-programme-switcher__dropdown {
-    @include border;
+    border: 1px solid $silver;
     transform: translateY(-100px);
     opacity: 0;
     transition: transform 0.3s, opacity 0.3s;
@@ -108,7 +115,11 @@
     .icon--search {
       background: $blue;
       color: $white;
-      padding: 0.5em;
+      padding: 0.7em 1em;
+    }
+
+    label {
+      display: none;
     }
   }
   &.collapsed {
@@ -125,14 +136,13 @@
       opacity: 1;
       padding: 1em 1em 0 1em;
     }
+    .degree-programme-switcher__header {
+      border-bottom: 0;
+    }
   }
 
   @include breakpoint($small) {
-    margin: 2em 0;
     display: block;
-    .degree-programme-switcher__icon {
-      display: flex;
-    }
     .degree-programme-switcher__dropdown {
       display: none;
       position: absolute;
@@ -148,16 +158,11 @@
     }
     &.collapsed {
       height: auto;
-      margin-top: 2em;
       position: relative;
       .degree-programme-switcher__dropdown {
         display: flex;
         padding: 2em;
       }
     }
-  }
-
-  label {
-    display: none;
   }
 }

@@ -7,8 +7,8 @@ use Drupal\Core\Config\ImmutableConfig;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Logger\LoggerChannel;
-use Drupal\taxonomy\TermInterface;
 use Drupal\Tests\UnitTestCase;
+use Drupal\uhsg_active_degree_programme\ActiveDegreeProgrammeService;
 use Drupal\uhsg_office_hours\OfficeHoursService;
 use GuzzleHttp\Client;
 use Prophecy\Argument;
@@ -19,11 +19,15 @@ use Psr\Http\Message\ResponseInterface;
  */
 class OfficeHoursServiceTest extends UnitTestCase {
 
-  const CACHED_RESPONSE = ['cached response'];
+  const CACHED_RESPONSE = ['degree_programme' => []];
   const CONFIG_API_BASE_URL = 'http://www.example.com/';
   const CONFIG_API_PATH = 'example';
+  const EMPTY_RESPONSE = ['degree_programme' => []];
   const EXCEPTION_MESSAGE = 'Exception';
-  
+
+  /** @var ActiveDegreeProgrammeService */
+  private $activeDegreeProgrammeService;
+
   /** @var CacheBackendInterface */
   private $cache;
 
@@ -57,6 +61,8 @@ class OfficeHoursServiceTest extends UnitTestCase {
   public function setUp() {
     parent::setUp();
 
+    $this->activeDegreeProgrammeService = $this->prophesize(ActiveDegreeProgrammeService::class);
+
     $this->cache = $this->prophesize(CacheBackendInterface::class);
     $this->cache->get(Argument::any())->willReturn(FALSE);
 
@@ -85,9 +91,9 @@ class OfficeHoursServiceTest extends UnitTestCase {
       $this->cache->reveal(),
       $this->client->reveal(),
       $this->configFactory->reveal(),
-      $this->entityTypeManager->reveal(),
       $this->logger->reveal(),
-      $this->time->reveal()
+      $this->time->reveal(),
+      $this->activeDegreeProgrammeService->reveal()
     );
   }
 
@@ -121,7 +127,7 @@ class OfficeHoursServiceTest extends UnitTestCase {
   public function shouldReturnAnEmptyArrayWhenResponseCodeIsNot200() {
     $this->response->getStatusCode()->willReturn(404);
 
-    $this->assertEmpty($this->officeHoursService->getOfficeHours());
+    $this->assertEquals(self::EMPTY_RESPONSE, $this->officeHoursService->getOfficeHours());
   }
 
   /**
@@ -130,6 +136,6 @@ class OfficeHoursServiceTest extends UnitTestCase {
   public function shouldReturnAnEmptyArrayWhenTheResponseIsEmpty() {
     $this->response->getBody()->willReturn('[]');
 
-    $this->assertEmpty($this->officeHoursService->getOfficeHours());
+    $this->assertEquals(self::EMPTY_RESPONSE, $this->officeHoursService->getOfficeHours());
   }
 }

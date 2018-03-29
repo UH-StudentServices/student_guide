@@ -1,5 +1,14 @@
 #Changelog
 
+## 1.15
+Release date: 29.03.2018
+
+* Styleguide update (HUB-281)
+* Degree programme switcher visual changes (HUB-271)
+* Prevent technical error if a referred article was removed (HUB-296)
+* Typo fix in new students Finnish description (HUB-297)
+* Drupal core security update (HUB-298)
+
 ## 1.14
 Release date: 26.02.2018
 
