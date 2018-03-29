@@ -1,7 +1,7 @@
 #Changelog
 
-## 1.15-dev
-Release date: ??.??.????
+## 1.15
+Release date: 29.03.2018
 
 * Styleguide update (HUB-281)
 * Degree programme switcher visual changes (HUB-271)
