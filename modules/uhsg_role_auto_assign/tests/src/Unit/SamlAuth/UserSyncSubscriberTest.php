@@ -2,12 +2,13 @@
 
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Config\ImmutableConfig;
-use Drupal\Core\Entity\EntityManager;
 use Drupal\Core\Entity\EntityStorageInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Entity\EntityTypeRepositoryInterface;
 use Drupal\Core\Logger\LoggerChannelFactory;
-use Drupal\Tests\UnitTestCase;
 use Drupal\samlauth\Event\SamlAuthEvents;
 use Drupal\samlauth\Event\SamlAuthUserSyncEvent;
+use Drupal\Tests\UnitTestCase;
 use Drupal\uhsg_role_auto_assign\SamlAuth\UserSyncSubscriber;
 use Drupal\user\Entity\Role;
 use Drupal\user\UserInterface;
@@ -39,11 +40,14 @@ class UserSyncSubscriberTest extends UnitTestCase {
   /** @var ContainerInterface */
   private $container;
 
-  /** @var EntityManager */
-  private $entityManager;
-
   /** @var EntityStorageInterface */
   private $entityStorage;
+
+  /** @var EntityTypeManagerInterface */
+  private $entityTypeManager;
+
+  /** @var EntityTypeRepositoryInterface */
+  private $entityTypeRepository;
 
   /** @var SamlAuthUserSyncEvent */
   private $event;
@@ -79,10 +83,6 @@ class UserSyncSubscriberTest extends UnitTestCase {
     $this->entityStorage = $this->prophesize(EntityStorageInterface::class);
     $this->entityStorage->load(Argument::any())->willReturn($this->role);
 
-    $this->entityManager = $this->prophesize(EntityManager::class);
-    $this->entityManager->getEntityTypeFromClass(Argument::any())->willReturn('');
-    $this->entityManager->getStorage(Argument::any())->willReturn($this->entityStorage);
-
     $this->event = $this->prophesize(SamlAuthUserSyncEvent::class);
     $this->event->getAccount()->willReturn($this->account);
     $this->event->getAttributes()->willReturn(['urn:mace:funet.fi:helsinki.fi:hyGroupCn' => [self::GROUP_1_NAME]]);
@@ -92,9 +92,16 @@ class UserSyncSubscriberTest extends UnitTestCase {
     $this->loggerChannelFactory = $this->prophesize(LoggerChannelFactory::class);
     $this->loggerChannelFactory->get(Argument::any())->willReturn($this->logger);
 
+    $this->entityTypeManager = $this->prophesize(EntityTypeManagerInterface::class);
+    $this->entityTypeManager->getStorage(Argument::any())->willReturn($this->entityStorage);
+
+    $this->entityTypeRepository = $this->prophesize(EntityTypeRepositoryInterface::class);
+    $this->entityTypeRepository->getEntityTypeFromClass(Argument::any())->willReturnArgument(0);
+
     $this->container = $this->prophesize(ContainerInterface::class);
     $this->container->get('config.factory')->willReturn($this->configFactory);
-    $this->container->get('entity.manager')->willReturn($this->entityManager);
+    $this->container->get('entity_type.manager')->willReturn($this->entityTypeManager);
+    $this->container->get('entity_type.repository')->willReturn($this->entityTypeRepository);
     $this->container->get('logger.factory')->willReturn($this->loggerChannelFactory);
 
     \Drupal::setContainer($this->container->reveal());
