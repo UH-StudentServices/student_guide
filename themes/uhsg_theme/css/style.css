@@ -3831,7 +3831,7 @@ dl, ol, ul {
 input[type="submit"], .button--small, .accordion__title,
 .button--accordion,
 .button--action-before,
-.button--action, .button--anchor, .button--expand, .button--icon, .accordion--dark .accordion__title, .cc_btn,
+.button--action, .button--anchor, .button--expand, .button--icon, .button--outline, .accordion--dark .accordion__title, .cc_btn,
 .button {
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   font-size: 0.9375rem;
@@ -3852,10 +3852,10 @@ input[type="submit"], .button--small, .accordion__title,
 input[type="submit"]:focus, .button--small:focus, .accordion__title:focus,
 .button--accordion:focus,
 .button--action-before:focus,
-.button--action:focus, .button--anchor:focus, .button--expand:focus, .button--icon:focus, .cc_btn:focus, input[type="submit"]:hover, .button--small:hover, .accordion__title:hover,
+.button--action:focus, .button--anchor:focus, .button--expand:focus, .button--icon:focus, .button--outline:focus, .cc_btn:focus, input[type="submit"]:hover, .button--small:hover, .accordion__title:hover,
 .button--accordion:hover,
 .button--action-before:hover,
-.button--action:hover, .button--anchor:hover, .button--expand:hover, .button--icon:hover, .cc_btn:hover,
+.button--action:hover, .button--anchor:hover, .button--expand:hover, .button--icon:hover, .button--outline:hover, .cc_btn:hover,
 .button:focus,
 .button:hover {
   background-color: #005479;
@@ -3865,10 +3865,10 @@ input[type="submit"]:focus, .button--small:focus, .accordion__title:focus,
 input[type="submit"]:active, .button--small:active, .accordion__title:active,
 .button--accordion:active,
 .button--action-before:active,
-.button--action:active, .button--anchor:active, .button--expand:active, .button--icon:active, .cc_btn:active, input.is-active[type="submit"], .is-active.button--small, .is-active.accordion__title,
+.button--action:active, .button--anchor:active, .button--expand:active, .button--icon:active, .button--outline:active, .cc_btn:active, input.is-active[type="submit"], .is-active.button--small, .is-active.accordion__title,
 .is-active.button--accordion,
 .is-active.button--action-before,
-.is-active.button--action, .is-active.button--anchor, .is-active.button--expand, .is-active.button--icon, .is-active.cc_btn,
+.is-active.button--action, .is-active.button--anchor, .is-active.button--expand, .is-active.button--icon, .is-active.button--outline, .is-active.cc_btn,
 .button:active,
 .button.is-active {
   background-color: #003146;
@@ -3877,10 +3877,10 @@ input[type="submit"]:active, .button--small:active, .accordion__title:active,
 input[type="submit"]:before, .button--small:before, .accordion__title:before,
 .button--accordion:before,
 .button--action-before:before,
-.button--action:before, .button--anchor:before, .button--expand:before, .button--icon:before, .accordion--dark .accordion__title:before, .cc_btn:before, input[type="submit"]:after, .button--small:after, .accordion__title:after,
+.button--action:before, .button--anchor:before, .button--expand:before, .button--icon:before, .button--outline:before, .accordion--dark .accordion__title:before, .cc_btn:before, input[type="submit"]:after, .button--small:after, .accordion__title:after,
 .button--accordion:after,
 .button--action-before:after,
-.button--action:after, .button--anchor:after, .button--expand:after, .button--icon:after, .accordion--dark .accordion__title:after, .cc_btn:after,
+.button--action:after, .button--anchor:after, .button--expand:after, .button--icon:after, .button--outline:after, .accordion--dark .accordion__title:after, .cc_btn:after,
 .button:before,
 .button:after {
   transition-duration: 0.1s;
@@ -3890,10 +3890,10 @@ input[type="submit"]:before, .button--small:before, .accordion__title:before,
 input.theme-transparent[type="submit"], .theme-transparent.button--small, .theme-transparent.accordion__title,
 .theme-transparent.button--accordion,
 .theme-transparent.button--action-before,
-.theme-transparent.button--action, .theme-transparent.button--anchor, .theme-transparent.button--expand, .theme-transparent.button--icon, .theme-transparent.cc_btn, input.theme-transparent-alt[type="submit"], .theme-transparent-alt.button--small, .theme-transparent-alt.accordion__title,
+.theme-transparent.button--action, .theme-transparent.button--anchor, .theme-transparent.button--expand, .theme-transparent.button--icon, .theme-transparent.button--outline, .theme-transparent.cc_btn, input.theme-transparent-alt[type="submit"], .theme-transparent-alt.button--small, .theme-transparent-alt.accordion__title,
 .theme-transparent-alt.button--accordion,
 .theme-transparent-alt.button--action-before,
-.theme-transparent-alt.button--action, .theme-transparent-alt.button--anchor, .theme-transparent-alt.button--expand, .theme-transparent-alt.button--icon, .theme-transparent-alt.cc_btn,
+.theme-transparent-alt.button--action, .theme-transparent-alt.button--anchor, .theme-transparent-alt.button--expand, .theme-transparent-alt.button--icon, .theme-transparent-alt.button--outline, .theme-transparent-alt.cc_btn,
 .button.theme-transparent,
 .button.theme-transparent-alt {
   background-color: transparent;
@@ -3903,10 +3903,10 @@ input.theme-transparent[type="submit"], .theme-transparent.button--small, .theme
 input.theme-transparent[type="submit"]:hover, .theme-transparent.button--small:hover, .theme-transparent.accordion__title:hover,
 .theme-transparent.button--accordion:hover,
 .theme-transparent.button--action-before:hover,
-.theme-transparent.button--action:hover, .theme-transparent.button--anchor:hover, .theme-transparent.button--expand:hover, .theme-transparent.button--icon:hover, .theme-transparent.cc_btn:hover, input.theme-transparent-alt[type="submit"]:hover, .theme-transparent-alt.button--small:hover, .theme-transparent-alt.accordion__title:hover,
+.theme-transparent.button--action:hover, .theme-transparent.button--anchor:hover, .theme-transparent.button--expand:hover, .theme-transparent.button--icon:hover, .theme-transparent.button--outline:hover, .theme-transparent.cc_btn:hover, input.theme-transparent-alt[type="submit"]:hover, .theme-transparent-alt.button--small:hover, .theme-transparent-alt.accordion__title:hover,
 .theme-transparent-alt.button--accordion:hover,
 .theme-transparent-alt.button--action-before:hover,
-.theme-transparent-alt.button--action:hover, .theme-transparent-alt.button--anchor:hover, .theme-transparent-alt.button--expand:hover, .theme-transparent-alt.button--icon:hover, .theme-transparent-alt.cc_btn:hover,
+.theme-transparent-alt.button--action:hover, .theme-transparent-alt.button--anchor:hover, .theme-transparent-alt.button--expand:hover, .theme-transparent-alt.button--icon:hover, .theme-transparent-alt.button--outline:hover, .theme-transparent-alt.cc_btn:hover,
 .button.theme-transparent:hover,
 .button.theme-transparent-alt:hover {
   background-color: #0098d0;
@@ -3915,16 +3915,16 @@ input.theme-transparent[type="submit"]:hover, .theme-transparent.button--small:h
 input.theme-transparent[type="submit"] a:hover, .theme-transparent.button--small a:hover, .theme-transparent.accordion__title a:hover,
 .theme-transparent.button--accordion a:hover,
 .theme-transparent.button--action-before a:hover,
-.theme-transparent.button--action a:hover, .theme-transparent.button--anchor a:hover, .theme-transparent.button--expand a:hover, .theme-transparent.button--icon a:hover, .theme-transparent.cc_btn a:hover, input.theme-transparent[type="submit"]:hover, .theme-transparent.button--small:hover, .theme-transparent.accordion__title:hover,
+.theme-transparent.button--action a:hover, .theme-transparent.button--anchor a:hover, .theme-transparent.button--expand a:hover, .theme-transparent.button--icon a:hover, .theme-transparent.button--outline a:hover, .theme-transparent.cc_btn a:hover, input.theme-transparent[type="submit"]:hover, .theme-transparent.button--small:hover, .theme-transparent.accordion__title:hover,
 .theme-transparent.button--accordion:hover,
 .theme-transparent.button--action-before:hover,
-.theme-transparent.button--action:hover, .theme-transparent.button--anchor:hover, .theme-transparent.button--expand:hover, .theme-transparent.button--icon:hover, .theme-transparent.cc_btn:hover, input.theme-transparent-alt[type="submit"] a:hover, .theme-transparent-alt.button--small a:hover, .theme-transparent-alt.accordion__title a:hover,
+.theme-transparent.button--action:hover, .theme-transparent.button--anchor:hover, .theme-transparent.button--expand:hover, .theme-transparent.button--icon:hover, .theme-transparent.button--outline:hover, .theme-transparent.cc_btn:hover, input.theme-transparent-alt[type="submit"] a:hover, .theme-transparent-alt.button--small a:hover, .theme-transparent-alt.accordion__title a:hover,
 .theme-transparent-alt.button--accordion a:hover,
 .theme-transparent-alt.button--action-before a:hover,
-.theme-transparent-alt.button--action a:hover, .theme-transparent-alt.button--anchor a:hover, .theme-transparent-alt.button--expand a:hover, .theme-transparent-alt.button--icon a:hover, .theme-transparent-alt.cc_btn a:hover, input.theme-transparent-alt[type="submit"]:hover, .theme-transparent-alt.button--small:hover, .theme-transparent-alt.accordion__title:hover,
+.theme-transparent-alt.button--action a:hover, .theme-transparent-alt.button--anchor a:hover, .theme-transparent-alt.button--expand a:hover, .theme-transparent-alt.button--icon a:hover, .theme-transparent-alt.button--outline a:hover, .theme-transparent-alt.cc_btn a:hover, input.theme-transparent-alt[type="submit"]:hover, .theme-transparent-alt.button--small:hover, .theme-transparent-alt.accordion__title:hover,
 .theme-transparent-alt.button--accordion:hover,
 .theme-transparent-alt.button--action-before:hover,
-.theme-transparent-alt.button--action:hover, .theme-transparent-alt.button--anchor:hover, .theme-transparent-alt.button--expand:hover, .theme-transparent-alt.button--icon:hover, .theme-transparent-alt.cc_btn:hover,
+.theme-transparent-alt.button--action:hover, .theme-transparent-alt.button--anchor:hover, .theme-transparent-alt.button--expand:hover, .theme-transparent-alt.button--icon:hover, .theme-transparent-alt.button--outline:hover, .theme-transparent-alt.cc_btn:hover,
 .button.theme-transparent a:hover,
 .button.theme-transparent:hover,
 .button.theme-transparent-alt a:hover,
@@ -4297,6 +4297,29 @@ a:hover .accordion__title:before, .accordion__title:hover:before, a:hover
  template: 3_7_8-button-group--small
  description:
 */
+/*
+ section: 3.7.9
+ title: Button outline
+ template: 3_7_9-button-outline
+ description:
+*/
+.button--outline {
+  font-weight: 600;
+  font-style: normal;
+  background-color: transparent;
+  border: 2px solid #0098d0;
+  color: #0098d0;
+}
+
+.button--outline:after {
+  margin-left: 1em;
+  transition-property: none;
+}
+
+.button--outline:hover {
+  background-color: #0098d0;
+}
+
 .island {
   padding: 1em;
 }
@@ -4525,7 +4548,7 @@ a.label:hover {
  description: The footer.
 */
 .l-footer {
-  background-color: #222;
+  background-color: #000;
   overflow: hidden;
   padding-bottom: 10px;
   padding-top: 2em;
@@ -4622,7 +4645,7 @@ a.label:hover {
  description: The header bar with logo & navigation.
 */
 .l-header-bar {
-  background: #222;
+  background: #000;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -4717,7 +4740,7 @@ a.label:hover {
  description: Full screen overlay for menu, etc.
 */
 .l-overlay {
-  background-color: #222;
+  background-color: #000;
   display: none;
   -ms-flex-direction: column;
       flex-direction: column;
@@ -4939,14 +4962,14 @@ a.label:hover {
  description: The top bar small variant
 */
 .l-top-bar--small {
+  -ms-flex-align: center;
+      align-items: center;
+  background-color: #000;
   display: none;
 }
 
 @media (min-width: 62.5em) {
   .l-top-bar--small {
-    -ms-flex-align: center;
-        align-items: center;
-    background-color: #000;
     display: -ms-flexbox;
     display: flex;
   }
@@ -6511,19 +6534,10 @@ span.links__link.theme-language {
   color: #FFF;
   display: block;
   letter-spacing: 0.01em;
-  transition: color 0.2s;
 }
 
-.main-menu-v2 a:hover {
-  color: #D2D2D2;
-}
-
-.main-menu-v2 a.active {
-  color: #0098d0;
-}
-
-.main-menu-v2 a.active:hover {
-  color: #0882B3;
+.main-menu-v2 a:hover, .main-menu-v2 a.active {
+  text-decoration: underline;
 }
 
 .main-menu-v2 li.is-lvl1 {
@@ -6554,7 +6568,6 @@ span.links__link.theme-language {
   font-weight: 700;
   font-style: normal;
   text-transform: uppercase;
-  text-decoration: none;
 }
 
 .main-menu-v2 li.is-lvl1.is-open {
@@ -6603,9 +6616,6 @@ span.links__link.theme-language {
     font-weight: 600;
     font-style: normal;
     color: #979797;
-  }
-  .main-menu-v2 li.is-lvl2.theme-minor > a:hover {
-    color: #FFF;
   }
 }
 
@@ -7982,7 +7992,7 @@ input[type="text"].search-form-large__input {
 }
 
 .search-form--minimal {
-  background-color: #222;
+  background-color: #000;
   max-width: 100%;
   position: relative;
 }
