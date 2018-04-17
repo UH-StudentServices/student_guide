@@ -21,11 +21,11 @@ class UhsgContentLock extends ContentLock {
 
     if ($translation_lock) {
       $message = t('This content is being edited by the user @name (<a href="mailto:@email">@email</a>) and is therefore locked to prevent other users changes. This lock is in place since @date.', array(
-      '@name' => $user->getDisplayName(),
-      '@email' => $user->getEmail(),
-      '@date' => $date,
-    ));
-  }
+        '@name' => $user->getDisplayName(),
+        '@email' => $user->getEmail(),
+        '@date' => $date,
+      ));
+    }
     else {
       $message = t('This content is being edited by the user @name (<a href="mailto:@email">@email</a>) and is therefore locked to prevent other users changes. This lock is in place since @date.', array(
         '@name' => $user->getDisplayName(),

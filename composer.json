@@ -20,13 +20,14 @@
         "symfony/css-selector": "~2.8",
         "drupal/devel": "^1.0",
         "squizlabs/php_codesniffer": "2.*",
-        "se/selenium-server-standalone": "^2.53"
+        "se/selenium-server-standalone": "^2.53",
+        "behat/mink-selenium2-driver": "^1.3"
     },
     "require": {
         "cweagans/composer-patches": "^1.5.0",
         "composer/installers": "^1.0",
         "drupal/admin_toolbar": "^1.18",
-        "drupal/core": "8.4.6",
+        "drupal/core": "8.5.1",
         "drupal/paragraphs": "^1.0",
         "drupal/pathauto": "^1.0-beta2",
         "drupal/migrate_plus": "^3.0-beta1",
