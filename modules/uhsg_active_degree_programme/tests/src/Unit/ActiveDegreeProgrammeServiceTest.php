@@ -3,11 +3,11 @@
 use Drupal\Core\Cache\Context\CacheContextsManager;
 use Drupal\Core\Config\ConfigFactory;
 use Drupal\Core\Config\ImmutableConfig;
-use Drupal\Core\Entity\EntityManagerInterface;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityRepositoryInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Entity\EntityTypeRepositoryInterface;
 use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\TypedData\TypedDataInterface;
@@ -56,9 +56,6 @@ class ActiveDegreeProgrammeServiceTest extends UnitTestCase {
   /** @var ParameterBag */
   private $cookies;
 
-  /** @var EntityManagerInterface */
-  private $entityManager;
-
   /** @var EntityRepositoryInterface */
   private $entityRepository;
 
@@ -70,6 +67,9 @@ class ActiveDegreeProgrammeServiceTest extends UnitTestCase {
 
   /** @var EntityTypeManagerInterface */
   private $entityTypeManager;
+
+  /** @var EntityTypeRepositoryInterface */
+  private $entityTypeRepository;
 
   /** @var FieldItemListInterface */
   private $fieldItemList;
@@ -132,11 +132,8 @@ class ActiveDegreeProgrammeServiceTest extends UnitTestCase {
     $this->entityStorage = $this->prophesize(EntityStorageInterface::class);
     $this->entityStorage->load(Argument::any())->willReturn($this->term);
 
-    $this->entityManager = $this->prophesize(EntityManagerInterface::class);
-    $this->entityManager->getStorage(Argument::any())->willReturn($this->entityStorage->reveal());
-    $this->entityManager->getEntityTypeFromClass(Argument::any())->willReturn();
-
     $this->entityTypeManager = $this->prophesize(EntityTypeManagerInterface::class);
+    $this->entityTypeManager->getStorage(Argument::any())->willReturn($this->entityStorage);
 
     $this->cookies = $this->prophesize(ParameterBag::class);
     $this->headers = $this->prophesize(HeaderBag::class);
@@ -175,8 +172,12 @@ class ActiveDegreeProgrammeServiceTest extends UnitTestCase {
     $this->moduleHandler = $this->prophesize(ModuleHandlerInterface::class);
     $this->moduleHandler->invokeAll(Argument::any(), Argument::any())->willReturn([]);
 
+    $this->entityTypeRepository = $this->prophesize(EntityTypeRepositoryInterface::class);
+    $this->entityTypeRepository->getEntityTypeFromClass(Argument::any())->willReturnArgument(0);
+
     $this->container = $this->prophesize(ContainerInterface::class);
-    $this->container->get('entity.manager')->willReturn($this->entityManager->reveal());
+    $this->container->get('entity_type.manager')->willReturn($this->entityTypeManager);
+    $this->container->get('entity_type.repository')->willReturn($this->entityTypeRepository);
     $this->container->get('module_handler')->willReturn($this->moduleHandler);
     $this->container->get('cache_contexts_manager')->willReturn($this->cacheContextsManager->reveal());
 
