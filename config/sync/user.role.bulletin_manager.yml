@@ -16,5 +16,6 @@ permissions:
   - 'translate news node'
   - 'translate paragraph'
   - 'update content translations'
+  - 'use text format filtered_html'
   - 'view news revisions'
   - 'view the administration theme'
