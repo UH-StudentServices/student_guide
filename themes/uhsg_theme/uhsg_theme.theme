@@ -272,6 +272,11 @@ function uhsg_theme_preprocess_block(array &$variables) {
     case 'newsperdegreeprogramme':
     case 'newsperdegreeprogramme_2':
       $variables['content_attributes']['class'][] = 'grid-container';
+      $variables['#attached']['library'][] = 'uhsg_theme/truncateText';
+      $variables['#attached']['drupalSettings']['truncateText'] = [
+        'maxLength' => 100,
+        'selector' => '#block-newsperdegreeprogramme .field--name-title'
+      ];
       break;
   }
 }
