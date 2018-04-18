@@ -11,6 +11,3 @@ group_to_roles:
   -
     group_name: grp-guide-bulletin
     rid: bulletin_manager
-  -
-    group_name: grp-guide-bulletin-dev
-    rid: bulletin_manager
