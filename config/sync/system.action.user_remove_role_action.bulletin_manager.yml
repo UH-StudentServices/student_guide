@@ -1,0 +1,14 @@
+uuid: 6364e4c6-6370-4fe5-a8bb-fc8918f9140b
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.bulletin_manager
+  module:
+    - user
+id: user_remove_role_action.bulletin_manager
+label: 'Remove the Bulletin manager role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: bulletin_manager
