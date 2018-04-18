@@ -8,3 +8,6 @@ group_to_roles:
   -
     group_name: grp-guide-editor
     rid: content_editor
+  -
+    group_name: grp-guide-bulletin
+    rid: bulletin_manager

@@ -1,0 +1,14 @@
+uuid: e805c256-9deb-4129-83b4-763b1e69ff61
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.bulletin_manager
+  module:
+    - user
+id: user_add_role_action.bulletin_manager
+label: 'Add the Bulletin manager role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: bulletin_manager

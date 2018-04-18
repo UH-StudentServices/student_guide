@@ -7,6 +7,7 @@ Release date: ??.??.????
 * Styleguide update (HUB-299)
 * Display degree programme(s) in news archive (HUB-304)
 * Removed permissions for content editors to delete content (HUB-301)
+* Added bulletin manager role that can manage notices (HUB-302)
 
 ## 1.15
 Release date: 29.03.2018
