@@ -6,6 +6,7 @@ Release date: ??.??.????
 * Drupal core and contrib module updates (HUB-283)
 * Styleguide update (HUB-299)
 * Display degree programme(s) in news archive (HUB-304)
+* Removed permissions for content editors to delete content (HUB-301)
 
 ## 1.15
 Release date: 29.03.2018
