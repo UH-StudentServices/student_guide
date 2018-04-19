@@ -9,6 +9,7 @@ Release date: ??.??.????
 * Removed permissions for content editors to delete content (HUB-301)
 * Added bulletin manager role that can manage notices (HUB-302)
 * Drupal core security update (HUB-307)
+* Master's Programmes -> Master's and Licenciate's Programmes (HUB-273)
 
 ## 1.15
 Release date: 29.03.2018
