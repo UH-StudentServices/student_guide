@@ -1,0 +1,21 @@
+uuid: 1b1fc024-e835-4187-8816-75871ac06835
+langcode: en
+status: true
+dependencies: {  }
+id: bulletin_manager
+label: 'Bulletin manager'
+weight: 4
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'access toolbar'
+  - 'create content translations'
+  - 'create news content'
+  - 'edit any news content'
+  - 'edit own news content'
+  - 'translate news node'
+  - 'translate paragraph'
+  - 'update content translations'
+  - 'use text format filtered_html'
+  - 'view news revisions'
+  - 'view the administration theme'

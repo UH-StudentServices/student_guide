@@ -6,6 +6,9 @@ Release date: ??.??.????
 * Drupal core and contrib module updates (HUB-283)
 * Styleguide update (HUB-299)
 * Display degree programme(s) in news archive (HUB-304)
+* Removed permissions for content editors to delete content (HUB-301)
+* Added bulletin manager role that can manage notices (HUB-302)
+* Drupal core security update (HUB-307)
 * Truncate long news titles on front page (HUB-306)
 
 ## 1.15
