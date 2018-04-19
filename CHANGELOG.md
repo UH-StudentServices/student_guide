@@ -1,5 +1,14 @@
 #Changelog
 
+## 1.16
+Release date: 19.04.2018
+
+* Drupal core and contrib module updates (HUB-283)
+* Styleguide update (HUB-299)
+* Display degree programme(s) in news archive (HUB-304)
+* Added bulletin manager role that can manage notices (HUB-302)
+* Drupal core security update (HUB-307)
+
 ## 1.15
 Release date: 29.03.2018
 

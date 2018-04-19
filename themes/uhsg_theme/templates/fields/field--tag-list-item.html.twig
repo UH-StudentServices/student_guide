@@ -39,7 +39,7 @@
 
 {% block content %}
   <div{{ attributes.addClass('tag-list') }}>
-    {% if created %}
+    {% if created and view_mode == 'full' %}
       <div class="tag-list__item">
         {{ created|format_date('short') }}
       </div>
