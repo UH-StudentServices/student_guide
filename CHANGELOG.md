@@ -1,7 +1,7 @@
 #Changelog
 
-## 1.16-dev
-Release date: ??.??.????
+## 1.16
+Release date: 19.04.2018
 
 * Drupal core and contrib module updates (HUB-283)
 * Styleguide update (HUB-299)
