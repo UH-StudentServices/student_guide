@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "03e84fb10ea9a11dc16638c103febf0e",
+    "content-hash": "456ace00f549c3743498a58e2938312a",
     "packages": [
         {
             "name": "RubaXa/Sortable",
@@ -1282,16 +1282,16 @@
         },
         {
             "name": "drupal/core",
-            "version": "8.5.1",
+            "version": "8.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core.git",
-                "reference": "2aeca7dfa2661296602ac16bf9fd6085f0a121be"
+                "reference": "bc21760d4be4ad117851809183c8d18880ab275a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core/zipball/2aeca7dfa2661296602ac16bf9fd6085f0a121be",
-                "reference": "2aeca7dfa2661296602ac16bf9fd6085f0a121be",
+                "url": "https://api.github.com/repos/drupal/core/zipball/bc21760d4be4ad117851809183c8d18880ab275a",
+                "reference": "bc21760d4be4ad117851809183c8d18880ab275a",
                 "shasum": ""
             },
             "require": {
@@ -1513,7 +1513,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Drupal is an open source content management platform powering millions of websites and applications.",
-            "time": "2018-03-27T09:58:42+00:00"
+            "time": "2018-04-18T17:00:56+00:00"
         },
         {
             "name": "drupal/ctools",
@@ -2917,8 +2917,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.7+16-dev",
-                    "datestamp": "1523779384",
+                    "version": "8.x-1.8+1-dev",
+                    "datestamp": "1523870284",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
