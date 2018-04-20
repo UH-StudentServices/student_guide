@@ -1,4 +1,4 @@
-uuid: dbcd0ae6-2d09-4a1e-8684-a616e11d9427
+uuid: 7b1a7910-3b03-4228-ae5c-c2aa94c6b494
 langcode: en
 status: true
 dependencies:
@@ -7,15 +7,15 @@ dependencies:
     - uhsg_news
   theme:
     - uhsg_theme
-id: newsperdegreeprogramme
+id: generalnews
 theme: uhsg_theme
 region: after_content
-weight: -10
+weight: -9
 provider: null
-plugin: news_per_degree_programme
+plugin: general_news
 settings:
-  id: news_per_degree_programme
-  label: 'Notifications from your degree programme'
+  id: general_news
+  label: 'Current topics'
   provider: uhsg_news
   label_display: visible
 visibility:
