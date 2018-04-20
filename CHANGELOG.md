@@ -3,6 +3,7 @@
 ## 1.17-dev
 Release date: ??.??.????
 
+* Separate programme specific and general news on front page (HUB-303)
 
 ## 1.16
 Release date: 19.04.2018
