@@ -4,3 +4,5 @@ settings:
       label: Kandiohjelmat
     -
       label: Maisteriohjelmat
+    -
+      label: Tohtoriohjelmat
