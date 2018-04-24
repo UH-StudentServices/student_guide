@@ -269,6 +269,7 @@ function uhsg_theme_preprocess_block(array &$variables) {
       $variables['reset_link']['link'] =  \Drupal\Core\Url::fromRoute('uhsg_active_degree_programme.reset_active');
       $variables['reset_link']['classes'] = 'button--action icon--remove theme-transparent button--reset is-center-mobile';
       break;
+    case 'generalnews':
     case 'newsperdegreeprogramme':
     case 'newsperdegreeprogramme_2':
       $variables['content_attributes']['class'][] = 'grid-container';
@@ -398,6 +399,7 @@ function uhsg_theme_theme_suggestions_block_alter(&$suggestions, $vars, $hook) {
 
   $subregion_blocks = [
     'views_block__themes_block_1',
+    'generalnews',
     'newsperdegreeprogramme',
     'newsperdegreeprogramme_2',
     'views_block__google_analytics_summary_top_searches_block'
