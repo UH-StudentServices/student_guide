@@ -3,6 +3,8 @@
 ## 1.17-dev
 Release date: ??.??.????
 
+* Added support for doctoral programmes (HUB-305)
+
 
 ## 1.16
 Release date: 19.04.2018

@@ -17,6 +17,9 @@ settings:
     -
       value: master
       label: 'Master''s and Licentiate''s Programmes'
+    -
+      value: doctoral
+      label: 'Doctoral Programmes'
   allowed_values_function: ''
 module: options
 locked: false
