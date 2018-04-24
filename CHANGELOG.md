@@ -3,7 +3,11 @@
 ## 1.17-dev
 Release date: ??.??.????
 
+* Truncate long news titles on front page (HUB-306)
+* Master's Programmes -> Master's and Licenciate's Programmes (HUB-273)
+* Added support for doctoral programmes (HUB-305)
 * Separate programme specific and general news on front page (HUB-303)
+
 
 ## 1.16
 Release date: 19.04.2018

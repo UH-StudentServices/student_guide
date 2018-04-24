@@ -3,4 +3,6 @@ settings:
     -
       label: Kandidatprogrammen
     -
-      label: Magisterprogrammen
+      label: 'Magister- och licentiatprogrammen'
+    -
+      label: Doktorandprogrammen
