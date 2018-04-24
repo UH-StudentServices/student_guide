@@ -9103,6 +9103,11 @@ h1, h2, h3, h4, legend, .logo-block__content .logo-block__sitename,
   white-space: nowrap;
 }
 
+.view-search #edit-submit-search[disabled], .view-search #edit-submit-search[disabled]:active, .view-search #edit-submit-search[disabled]:focus, .view-search #edit-submit-search[disabled]:hover {
+  color: #979797;
+  background-color: transparent;
+}
+
 .view-search .degree-programme-switcher {
   padding-bottom: 0.5em;
 }

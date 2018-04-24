@@ -59,6 +59,15 @@
     display: inline;
     white-space: nowrap;
   }
+  #edit-submit-search {
+    &[disabled],
+    &[disabled]:active,
+    &[disabled]:focus,
+    &[disabled]:hover {
+      color: $silver;
+      background-color: transparent;
+    }
+  }
   .degree-programme-switcher {
     padding-bottom: 0.5em;
   }
