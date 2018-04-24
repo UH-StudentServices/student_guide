@@ -5,7 +5,7 @@ namespace Drupal\uhsg_news\Controller;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Url;
-use Drupal\uhsg_news\TargetedNewsService;
+use Drupal\uhsg_news\NewsService;
 use Drupal\views\Views;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Response;
@@ -14,9 +14,9 @@ use Zend\Feed\Writer\Feed;
 class NewsFeedController extends ControllerBase {
 
   /**
-   * @var \Drupal\uhsg_news\TargetedNewsService
+   * @var \Drupal\uhsg_news\NewsService
    */
-  protected $targetedNewsService;
+  protected $newsService;
 
   /**
    * @var \Drupal\Core\Entity\EntityTypeManagerInterface
@@ -26,11 +26,11 @@ class NewsFeedController extends ControllerBase {
   /**
    * NewsFeedController constructor.
    *
-   * @param TargetedNewsService $targetedNewsService
+   * @param NewsService $newsService
    * @param EntityTypeManagerInterface $entityTypeManager
    */
-  public function __construct(TargetedNewsService $targetedNewsService, EntityTypeManagerInterface $entityTypeManager) {
-    $this->targetedNewsService = $targetedNewsService;
+  public function __construct(NewsService $newsService, EntityTypeManagerInterface $entityTypeManager) {
+    $this->newsService = $newsService;
     $this->entityTypeManager = $entityTypeManager;
   }
 
@@ -39,7 +39,7 @@ class NewsFeedController extends ControllerBase {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('uhsg_news.targeted_news'),
+      $container->get('uhsg_news.news'),
       $container->get('entity_type.manager')
     );
   }
@@ -55,7 +55,7 @@ class NewsFeedController extends ControllerBase {
       'Content-Type' => 'application/rss+xml'
     ];
     // Get the nodes that we build RSS feed from
-    $nids = $this->targetedNewsService->getTargetedNewsNids(6);
+    $nids = $this->newsService->getNewsNids(6);
     $nodes = $this->entityTypeManager->getStorage('node')->loadMultiple($nids);
     return new Response($this->generateFeed($nodes), 200, $headers);
   }
