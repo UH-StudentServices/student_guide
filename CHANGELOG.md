@@ -13,6 +13,7 @@ Release date: 19.04.2018
 * Added bulletin manager role that can manage notices (HUB-302)
 * Drupal core security update (HUB-307)
 * Truncate long news titles on front page (HUB-306)
+* Master's Programmes -> Master's and Licenciate's Programmes (HUB-273)
 
 ## 1.15
 Release date: 29.03.2018
