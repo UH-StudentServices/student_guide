@@ -9022,31 +9022,6 @@ h1, h2, h3, h4, legend, .logo-block__content .logo-block__sitename,
   position: relative;
 }
 
-.view-search .view-filters input.form-autocomplete {
-  background: none;
-}
-
-.view-search .view-filters input.form-autocomplete + .icon-spin {
-  display: none;
-  color: #0098d0;
-  position: absolute;
-  right: 10px;
-  top: 26px;
-  vertical-align: middle;
-}
-
-@media (min-width: 48em) {
-  .view-search .view-filters input.form-autocomplete + .icon-spin {
-    position: relative;
-    top: 0;
-    right: 30px;
-  }
-}
-
-.view-search .view-filters input.form-autocomplete.ui-autocomplete-loading + .icon-spin {
-  display: inline-block;
-}
-
 .view-search .view-filters .form-item-search-api-fulltext {
   display: inline;
 }
@@ -9140,32 +9115,6 @@ h1, h2, h3, h4, legend, .logo-block__content .logo-block__sitename,
 .ui-autocomplete .ui-menu-item > a {
   display: block;
   cursor: pointer;
-}
-
-.search-api-autocomplete-suggestion {
-  padding: 0.5em;
-}
-
-.search-api-autocomplete-suggestion .autocomplete-suggestion-user-input {
-  font-weight: 600;
-  font-style: normal;
-  color: #555555;
-}
-
-.search-api-autocomplete-suggestion .autocomplete-suggestion-suggestion-suffix {
-  color: #979797;
-}
-
-.search-api-autocomplete-suggestion .autocomplete-suggestion-results {
-  font-size: 0.875rem;
-  right: 0.5em;
-  color: #979797;
-}
-
-@media (min-width: 48em) {
-  .search-api-autocomplete-suggestion {
-    font-size: 0.875rem;
-  }
 }
 
 .l-subregion__title {

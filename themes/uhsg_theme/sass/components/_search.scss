@@ -9,25 +9,6 @@
   }
   .view-filters {
     position: relative;
-    input.form-autocomplete {
-      background: none;
-      & + .icon-spin {
-        display: none;
-        color: $blue;
-        position: absolute;
-        right: 10px;
-        top: 26px;
-        vertical-align: middle;
-        @include breakpoint($small) {
-          position: relative;
-          top: 0;
-          right: 30px;
-        }
-      }
-      &.ui-autocomplete-loading + .icon-spin {
-        display: inline-block; 
-      }
-    }
 
     .form-item-search-api-fulltext {
       display: inline;
@@ -89,27 +70,5 @@
   .ui-menu-item > a {
     display: block;
     cursor: pointer;
-  }
-}
-
-.search-api-autocomplete-suggestion {
-  padding: 0.5em;
-  .autocomplete-suggestion-user-input {
-    @include font-weight-medium;
-    color: $lightgray;
-  }
-  .autocomplete-suggestion-suggestion-suffix {
-    color: $silver;
-  }
-  .autocomplete-suggestion-results {
-    @include font-size(14px);
-    right: 0.5em;
-    color: $silver;
-  }
-  @include breakpoint($small) {
-    @include font-size(14px);
-    .autocomplete-suggestion-results {
-      @include font-size(12px);
-    }
   }
 }
