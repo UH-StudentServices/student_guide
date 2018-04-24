@@ -16,7 +16,7 @@ settings:
       label: 'Bachelor''s Programmes'
     -
       value: master
-      label: 'Master''s Programmes'
+      label: 'Master''s and Licentiate''s Programmes'
     -
       value: doctoral
       label: 'Doctoral Programmes'
