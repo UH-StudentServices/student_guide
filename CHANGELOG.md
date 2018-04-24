@@ -3,6 +3,8 @@
 ## 1.17-dev
 Release date: ??.??.????
 
+* Truncate long news titles on front page (HUB-306)
+* Master's Programmes -> Master's and Licenciate's Programmes (HUB-273)
 * Added support for doctoral programmes (HUB-305)
 
 
@@ -14,8 +16,6 @@ Release date: 19.04.2018
 * Display degree programme(s) in news archive (HUB-304)
 * Added bulletin manager role that can manage notices (HUB-302)
 * Drupal core security update (HUB-307)
-* Truncate long news titles on front page (HUB-306)
-* Master's Programmes -> Master's and Licenciate's Programmes (HUB-273)
 
 ## 1.15
 Release date: 29.03.2018
