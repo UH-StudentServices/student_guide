@@ -2,6 +2,7 @@
   'use strict';
   Drupal.behaviors.requireSearchText = {
     attach: function (context, settings) {
+      var self = this;
       var searchField = $('#edit-search-api-fulltext');
       var searchButton = $('#edit-submit-search');
 
@@ -9,9 +10,21 @@
         searchButton.prop('disabled', true);
       }
 
-      searchField.keyup(function() {
-        searchButton.prop('disabled', !$(this).val());
+      searchField.keyup(function(e) {
+        self.handleKeyUp(e, searchField, searchButton);
       });
+    },
+
+    handleKeyUp(e, searchField, searchButton) {
+      var empty = !searchField.val();
+      searchButton.prop('disabled', empty);
+      if (empty && e.which == 13) {
+        var originalPlaceholder = searchField.prop('placeholder');
+        searchField.prop('placeholder', Drupal.t('Required field'));
+        setTimeout(function () {
+          searchField.prop('placeholder', originalPlaceholder);
+        }, 1000);
+      }
     }
   }
 }(jQuery));
