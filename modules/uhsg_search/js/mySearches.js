@@ -4,9 +4,9 @@
     attach: function (context, settings) {
 
       var cleanupString = this.cleanupString;
-      var searchInput = $('.view-search .views-exposed-form input[name="search_api_fulltext"]');
+      var searchForm = $('.view-search .views-exposed-form');
+      var searchInput = $('input[name="search_api_fulltext"]', searchForm);
       var searchString = cleanupString(searchInput.val());
-      var searchSubmit = $('.view-search .views-exposed-form .form-submit:not(".button--reset")');
       var mySearches = $.cookie('my_searches') ? JSON.parse($.cookie('my_searches')) : [];
       var empty = $('.view-empty', '.view-search').length;
       var maxLatestSearches = 4;
@@ -47,7 +47,7 @@
         $('#my-searches li').on('click', function () {
           searchInput.val(cleanupString($(this).text()));
           searchInput.trigger('keyup');
-          searchSubmit.click();
+          searchForm.submit();
         });
 
         // Empty my searches and delete the cookie.
