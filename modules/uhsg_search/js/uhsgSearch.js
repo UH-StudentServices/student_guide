@@ -1,15 +1,30 @@
 (function ($) {
   'use strict';
-  // Submit search when clicking suggestions.
-  var oldSelect = Drupal.autocomplete.options.select;
-  Drupal.autocomplete.options.select = function () {
-    oldSelect.call(this);
-    if ($(this).hasClass('ui-autocomplete-input')) {
-      $(this).siblings('.form-actions').children('#edit-submit-search').trigger('click');
+  Drupal.behaviors.requireSearchText = {
+    attach: function (context, settings) {
+      var self = this;
+      var searchField = $('#edit-search-api-fulltext');
+      var searchButton = $('#edit-submit-search');
+
+      if (!searchField.val()) {
+        searchButton.prop('disabled', true);
+      }
+
+      searchField.keyup(function(e) {
+        self.handleKeyUp(e, searchField, searchButton);
+      });
+    },
+
+    handleKeyUp(e, searchField, searchButton) {
+      var empty = !searchField.val();
+      searchButton.prop('disabled', empty);
+      if (empty && e.which == 13) {
+        var originalPlaceholder = searchField.prop('placeholder');
+        searchField.prop('placeholder', Drupal.t('Required field'));
+        setTimeout(function () {
+          searchField.prop('placeholder', originalPlaceholder);
+        }, 1000);
+      }
     }
-  };
-  // Autocomplete requires the user to click twice in iOS, fix that.
-  Drupal.autocomplete.options.open = function () {
-    $('.ui-autocomplete').off('menufocus hover mouseover');
-  };
+  }
 }(jQuery));

@@ -7,6 +7,7 @@ Release date: ??.??.????
 * Master's Programmes -> Master's and Licenciate's Programmes (HUB-273)
 * Added support for doctoral programmes (HUB-305)
 * Separate programme specific and general news on front page (HUB-303)
+* Require search text in order to improve performance (HUB-262)
 
 
 ## 1.16

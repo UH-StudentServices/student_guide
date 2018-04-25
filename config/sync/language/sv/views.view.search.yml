@@ -15,5 +15,5 @@ display:
       filters:
         search_api_fulltext:
           expose:
-            label: Sök
+            label: 'Sök <span class="is-required" title="Obligatoriskt fält">*</span>'
 label: Sök

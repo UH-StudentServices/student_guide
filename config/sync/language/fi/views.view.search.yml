@@ -15,5 +15,5 @@ display:
       filters:
         search_api_fulltext:
           expose:
-            label: Haku
+            label: 'Haku <span class="is-required" title="Pakollinen kenttä">*</span>'
 label: Haku
