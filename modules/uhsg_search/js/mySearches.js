@@ -46,6 +46,7 @@
         // Enable search when clicking one of my searches items.
         $('#my-searches li').on('click', function () {
           searchInput.val(cleanupString($(this).text()));
+          searchInput.trigger('keyup');
           searchSubmit.click();
         });
 
