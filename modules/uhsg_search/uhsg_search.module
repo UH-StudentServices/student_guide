@@ -10,6 +10,7 @@ function uhsg_search_form_views_exposed_form_alter(&$form, \Drupal\Core\Form\For
     $form['#attributes']['class'][] = 'search-form';
     $form['search_api_fulltext']['#attributes']['placeholder'] = t('Search instructions by word (or beginning of a word)');
     $form['search_api_fulltext']['#attributes']['class'][] = 'search-form__input';
+    $form['search_api_fulltext']['#attributes']['required'] = '';
     $form['actions']['submit']['#attributes']['class'][] = 'search-form__submit';
     $form['actions']['submit']['#value'] = "\u{EA35}";
   }

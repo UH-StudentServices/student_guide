@@ -527,7 +527,7 @@ display:
           exposed: true
           expose:
             operator_id: search_api_fulltext_op
-            label: Search
+            label: 'Search <span class="is-required" title="Required field">*</span>'
             description: ''
             use_operator: false
             operator: search_api_fulltext_op
@@ -539,6 +539,8 @@ display:
               anonymous: anonymous
               authenticated: authenticated
               content_editor: content_editor
+              administrator: '0'
+              bulletin_manager: '0'
           is_grouped: false
           group_info:
             label: ''
