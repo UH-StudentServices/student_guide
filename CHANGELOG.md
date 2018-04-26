@@ -3,6 +3,8 @@
 ## 1.18-dev
 Release date: ??.??.2018
 
+* Delete content permission removed for content editors (HUB-301)
+
 
 ## 1.17
 Release date: 26.04.2018
