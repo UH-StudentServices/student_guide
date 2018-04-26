@@ -2,7 +2,7 @@ name: User Sync
 description: Synchronises user fields from SAML2 attributes
 type: module
 core: 8.x
-version: 1.16
+version: 1.17
 package: Student Guide
 dependencies:
   - flag

@@ -3,7 +3,7 @@ uhsg-search:
   js:
     js/uhsgSearch.js: {}
   dependencies:
-    - core/drupal.autocomplete
+    - core/jquery
 
 my-searches:
   version: 1.x

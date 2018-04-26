@@ -1,4 +1,4 @@
 services:
-  uhsg_news.targeted_news:
-    class: Drupal\uhsg_news\TargetedNewsService
+  uhsg_news.news:
+    class: Drupal\uhsg_news\NewsService
     arguments: ['@entity_type.manager', '@language_manager', '@uhsg_active_degree_programme.active_degree_programme']

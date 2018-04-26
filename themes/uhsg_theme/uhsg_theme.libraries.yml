@@ -54,3 +54,11 @@ tooltip:
     js/tooltip.js: {}
   dependencies:
     - core/jquery.ui.tooltip
+
+truncateText:
+  version: 1.x
+  js:
+    js/truncateText.js: {}
+  dependencies:
+    - core/jquery
+
