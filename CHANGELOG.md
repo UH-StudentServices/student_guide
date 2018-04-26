@@ -1,7 +1,7 @@
 #Changelog
 
-## 1.17-dev
-Release date: ??.??.????
+## 1.17
+Release date: 26.04.2018
 
 * Truncate long news titles on front page (HUB-306)
 * Master's Programmes -> Master's and Licenciate's Programmes (HUB-273)
