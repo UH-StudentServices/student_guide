@@ -2,7 +2,9 @@
 
 namespace Drupal\uhsg_active_degree_programme\Plugin\Block;
 
+use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 
 /**
@@ -17,6 +19,16 @@ class ActiveDegreeProgrammeUrl extends BlockBase {
 
   use StringTranslationTrait;
 
+  /**
+   * {@inheritdoc}
+   */
+  protected function blockAccess(AccountInterface $account) {
+    return AccessResult::allowedIfHasPermission($account, 'access content overview');
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function build() {
     return [
       'content' => [
