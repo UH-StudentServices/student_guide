@@ -138,3 +138,6 @@ msgstr "Uudet opiskelijat ovat 1.8.2017 aloittaneiden koulutusohjelmien opiskeli
 
 msgid "Search instructions by word (or beginning of a word)"
 msgstr "Hae ohjetta hakusanalla (tai sanan alkuosalla)"
+
+msgid "Copy URL to clipboard"
+msgstr "Kopioi URL leikepöydälle"
