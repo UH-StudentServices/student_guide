@@ -34,7 +34,7 @@ class ActiveDegreeProgrammeUrl extends BlockBase {
       'content' => [
         'button' => [
           '#type' => 'button',
-          '#value' => $this->t('Copy URL to clipboard'),
+          '#value' => $this->t('Copy URL'),
           '#attributes' => [
             'id' => 'copy-url'
           ],

@@ -8350,7 +8350,7 @@ li.avatar.avatar--default img {
   position: relative;
   z-index: 1000;
   margin-right: 2em;
-  min-width: 13em;
+  min-width: 10em;
 }
 
 .degree-programme-switcher {
