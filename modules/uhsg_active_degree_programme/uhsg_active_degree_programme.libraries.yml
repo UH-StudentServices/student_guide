@@ -1,0 +1,6 @@
+copy_url:
+  version: 1.x
+  js:
+    js/copyUrl.js: {}
+  dependencies:
+    - core/jquery
