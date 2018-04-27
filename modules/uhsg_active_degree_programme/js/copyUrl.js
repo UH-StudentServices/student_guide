@@ -3,23 +3,32 @@
   Drupal.behaviors.copyUrl = {
     attach: function (context, settings) {
       var self = this;
+      var copyElement = $('#copy-url');
 
-      $('#copy-url').click(function () {
+      copyElement.click(function () {
         var url = $(settings.uhsg_active_degree_programme.selector).attr('href');
 
         if (url) {
-          self.copyToClipboard(url);
+          self.copyToClipboard(url, copyElement);
         }
       });
     },
 
-    copyToClipboard: function (string) {
+    copyToClipboard: function (string, copyElement) {
       var textarea = document.createElement('textarea');
       textarea.value = string;
       document.body.appendChild(textarea);
       textarea.select();
-      document.execCommand('copy');
+      var result = document.execCommand('copy');
       document.body.removeChild(textarea);
+
+      if (result) {
+        var originalText = copyElement.val();
+        copyElement.val('OK!');
+        setTimeout(function () {
+          copyElement.val(originalText)
+        }, 1000);
+      }
     }
   };
 }(jQuery));

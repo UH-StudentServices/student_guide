@@ -8349,6 +8349,8 @@ li.avatar.avatar--default img {
   float: right;
   position: relative;
   z-index: 1000;
+  margin-right: 2em;
+  min-width: 13em;
 }
 
 .degree-programme-switcher {
