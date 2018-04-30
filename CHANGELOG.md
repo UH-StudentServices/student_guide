@@ -1,7 +1,7 @@
 #Changelog
 
-## 1.18-dev
-Release date: ??.??.2018
+## 1.18
+Release date: 30.04.2018
 
 * Delete content permission removed for content editors (HUB-301)
 * URL copy button for content editors (HUB-310)

@@ -2,7 +2,7 @@ name: Redirect to login
 type: module
 description: Redirects to login when visitors has cookie indicating that it should be logged in.
 core: 8.x
-version: VERSION
+version: 1.18
 package: Student Guide
 dependencies:
   - samlauth
