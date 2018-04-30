@@ -9,6 +9,7 @@ is_admin: null
 permissions:
   - 'access content overview'
   - 'access toolbar'
+  - 'copy active degree programme url'
   - 'create content translations'
   - 'create news content'
   - 'edit any news content'

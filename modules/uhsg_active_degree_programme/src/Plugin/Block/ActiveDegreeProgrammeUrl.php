@@ -23,7 +23,7 @@ class ActiveDegreeProgrammeUrl extends BlockBase {
    * {@inheritdoc}
    */
   protected function blockAccess(AccountInterface $account) {
-    return AccessResult::allowedIfHasPermission($account, 'access content overview');
+    return AccessResult::allowedIfHasPermission($account, 'copy active degree programme url');
   }
 
   /**
