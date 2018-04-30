@@ -135,3 +135,6 @@ msgstr "Nya studerandena studerar i de nya utbildningsprogrammen som startade de
 
 msgid "Search instructions by word (or beginning of a word)"
 msgstr "Sök anvisningar efter ord (eller första delen av ordet)"
+
+msgid "Copy URL"
+msgstr "Kopiera URL"

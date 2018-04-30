@@ -8345,6 +8345,14 @@ li.avatar.avatar--default img {
   font-style: normal;
 }
 
+#copy-url {
+  float: right;
+  position: relative;
+  z-index: 1000;
+  margin-right: 2em;
+  min-width: 10em;
+}
+
 .degree-programme-switcher {
   position: relative;
   z-index: 100;

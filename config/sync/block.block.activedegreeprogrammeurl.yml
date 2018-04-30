@@ -1,0 +1,20 @@
+uuid: 1169b08d-78d1-4fb3-a009-297859f30e23
+langcode: en
+status: true
+dependencies:
+  module:
+    - uhsg_active_degree_programme
+  theme:
+    - uhsg_theme
+id: activedegreeprogrammeurl
+theme: uhsg_theme
+region: content
+weight: 0
+provider: null
+plugin: active_degree_programme_url
+settings:
+  id: active_degree_programme_url
+  label: 'Active degree programme URL'
+  provider: uhsg_active_degree_programme
+  label_display: '0'
+visibility: {  }

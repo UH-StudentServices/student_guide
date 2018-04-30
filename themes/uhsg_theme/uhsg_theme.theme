@@ -1,9 +1,8 @@
 <?php
 
-use Drupal\Core\Language\LanguageInterface;
 use Drupal\Component\Render\FormattableMarkup;
 use Drupal\node\Entity\Node;
-use Drupal\views\Views;
+use Drupal\uhsg_active_degree_programme\ActiveDegreeProgrammeService;
 
 /**
  * @file
@@ -263,7 +262,11 @@ function uhsg_theme_preprocess_block(array &$variables) {
       $variables['attributes']['class'][] = 'main-menu';
       break;
     case 'views_block__degree_programmes_block_1':
-      $degree_programme_name = \Drupal::service('uhsg_active_degree_programme.active_degree_programme')->getName();
+      /** @var ActiveDegreeProgrammeService $activeDegreeProgrammeService */
+      $activeDegreeProgrammeService = \Drupal::service('uhsg_active_degree_programme.active_degree_programme');
+      $degree_programme_code = $activeDegreeProgrammeService->getCode();
+      $degree_programme_name = $activeDegreeProgrammeService->getName();
+      $variables['code'] = $degree_programme_code;
       $variables['label'] = $degree_programme_name ? $degree_programme_name : t('Select degree programme');
       $variables['#cache']['contexts'][] = 'active_degree_programme';
       $variables['reset_link']['link'] =  \Drupal\Core\Url::fromRoute('uhsg_active_degree_programme.reset_active');
