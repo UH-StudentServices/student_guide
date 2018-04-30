@@ -135,6 +135,16 @@ class ActiveDegreeProgrammeService {
   }
 
   /**
+   * Return the code of the active degree programme.
+   * @return string|null
+   */
+  public function getCode() {
+    $term = $this->getTerm();
+
+    return $term ? $term->get('field_code')->getString() : NULL;
+  }
+
+  /**
    * Tries to get term ID from request.
    * @return string|null
    *   Returns an term ID or NULL, when not found.

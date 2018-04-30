@@ -1,0 +1,30 @@
+<?php
+
+/**
+ * @file
+ * Contains uhsg_active_degree_programme.module.
+ */
+
+/**
+ * Implements hook_page_attachments().
+ *
+ * Adds a shortlink to current page with degree programme to HTML head section.
+ * If no degree programme is selected, omit the degree programme parameter, but
+ * still provide the full short URL.
+ */
+function uhsg_active_degree_programme_page_attachments(array &$page) {
+  $activeDegreeProgrammeService = \Drupal::service('uhsg_active_degree_programme.active_degree_programme');
+  $degreeProgrammeCode = $activeDegreeProgrammeService->getCode();
+  $baseUrl = \Drupal\Core\Url::fromRoute('<front>', [], ['absolute' => TRUE])->toString();
+  $path = \Drupal\Core\Url::fromRoute('<current>')->getInternalPath();
+  $href = $degreeProgrammeCode ? "$baseUrl/$path?degree_programme_code=$degreeProgrammeCode" : "$baseUrl/$path";
+
+  $shortlinkTag = [
+    '#tag' => 'link',
+    '#attributes' => [
+      'rel' => 'shortlink-with-degree-programme',
+      'href' => $href,
+    ],
+  ];
+  $page['#attached']['html_head'][] = [$shortlinkTag, 'description'];
+}

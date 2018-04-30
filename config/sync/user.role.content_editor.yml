@@ -14,6 +14,7 @@ permissions:
   - 'access site-wide contact form'
   - 'access toolbar'
   - 'administer nodes'
+  - 'copy active degree programme url'
   - 'create article content'
   - 'create content translations'
   - 'create news content'
