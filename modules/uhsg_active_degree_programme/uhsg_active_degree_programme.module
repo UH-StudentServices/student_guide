@@ -27,4 +27,5 @@ function uhsg_active_degree_programme_page_attachments(array &$page) {
     ],
   ];
   $page['#attached']['html_head'][] = [$shortlinkTag, 'description'];
+  $page['#cache']['contexts'][] = 'active_degree_programme';
 }

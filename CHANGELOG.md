@@ -3,6 +3,8 @@
 ## 1.19-dev
 Release date: ??.??.????
 
+* Minor tweaking to caching (HUB-310)
+
 
 ## 1.18
 Release date: 30.04.2018
