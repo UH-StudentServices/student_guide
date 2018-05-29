@@ -30,12 +30,17 @@ class ThemesPerUserGroup extends BlockBase {
   }
 
   private function renderContent() {
-    $view = Views::getView('themes');
-
     return [
-      'degree_students' => $view->render('degree_students'),
-      'doctoral_candidates' => $view->render('doctoral_candidates'),
-      'specialist_training' => $view->render('specialist_training')
+      'degree_students' => $this->renderDisplay('degree_students'),
+      'doctoral_candidates' => $this->renderDisplay('doctoral_candidates'),
+      'specialist_training' => $this->renderDisplay('specialist_training'),
     ];
+  }
+
+  private function renderDisplay($displayId) {
+    $view = Views::getView('themes');
+    $view->setDisplay($displayId);
+
+    return $view->buildRenderable();
   }
 }
