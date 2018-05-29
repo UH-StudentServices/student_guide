@@ -1,27 +1,23 @@
-uuid: eece1cd4-af28-4ce6-8a9f-683006607bf1
+uuid: fef1fad6-a572-4edf-85c2-85a66d4fa32d
 langcode: en
 status: true
 dependencies:
-  config:
-    - views.view.themes
   module:
     - system
-    - views
+    - uhsg_themes
   theme:
     - uhsg_theme
-id: views_block__themes_block_1
+id: themesperusergroup
 theme: uhsg_theme
 region: after_content
 weight: -7
 provider: null
-plugin: 'views_block:themes-block_1'
+plugin: themes_per_user_group
 settings:
-  id: 'views_block:themes-block_1'
-  label: ''
-  provider: views
+  id: themes_per_user_group
+  label: 'Themes per user group'
+  provider: uhsg_themes
   label_display: visible
-  views_label: ''
-  items_per_page: none
 visibility:
   request_path:
     id: request_path
