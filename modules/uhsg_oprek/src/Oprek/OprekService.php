@@ -72,7 +72,7 @@ class OprekService implements OprekServiceInterface {
       $uri = str_replace($key, $value, $uri);
     }
 
-    $response = $this->client->get($this->config->get('base_url') . $uri);
+    $response = $this->client->get($this->config->get('base_url') . $uri, ['cert' => $this->config->get('cert_filepath'), 'ssl_key' => $this->config->get('cert_key_filepath')]);
     if ($response->getStatusCode() == 200) {
       $body = Json::decode($response->getBody()->getContents());
       if ($this->getStatusFromBody($body) == 200) {
