@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.article.field_article_degree_programme
     - field.field.node.article.field_article_new_students
     - field.field.node.article.field_article_paragraph
+    - field.field.node.article.field_user_group
     - node.type.article
   module:
     - entity_reference_revisions
@@ -48,4 +49,5 @@ content:
     third_party_settings: {  }
 hidden:
   field_article_new_students: true
+  field_user_group: true
   langcode: true
