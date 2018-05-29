@@ -15,7 +15,7 @@ provider: null
 plugin: themes_per_user_group
 settings:
   id: themes_per_user_group
-  label: 'Themes per user group'
+  label: Themes
   provider: uhsg_themes
   label_display: visible
 visibility:
