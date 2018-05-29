@@ -9274,6 +9274,10 @@ h1, h2, h3, h4, legend, .logo-block__content .logo-block__sitename,
   margin: 0 auto;
 }
 
+.ui-tabs .ui-tabs-nav li {
+  margin: 0;
+}
+
 .tag-list {
   -webkit-hyphens: auto;
   -ms-hyphens: auto;
