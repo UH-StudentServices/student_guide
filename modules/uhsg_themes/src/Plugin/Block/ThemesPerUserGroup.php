@@ -19,17 +19,10 @@ class ThemesPerUserGroup extends BlockBase {
    * {@inheritdoc}
    */
   public function build() {
-    return $this->render();
+    return ['content' => $this->render()];
   }
 
   private function render() {
-    $renderableArray = [];
-    $renderableArray['content'] = $this->renderContent();
-
-    return $renderableArray;
-  }
-
-  private function renderContent() {
     return [
       'degree_students' => $this->renderDisplay('degree_students'),
       'doctoral_candidates' => $this->renderDisplay('doctoral_candidates'),
