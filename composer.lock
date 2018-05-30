@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ae9983310a5a508490a25d61f16cbc76",
+    "content-hash": "1f52ef3034e2a09826f5576ccb484c10",
     "packages": [
         {
             "name": "RubaXa/Sortable",
@@ -16,6 +16,17 @@
                 "shasum": null
             },
             "type": "drupal-library"
+        },
+        {
+            "name": "UH-StudentServices/uh_courses_embed",
+            "version": "dev-drupal8",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/UH-StudentServices/uh_courses_embed/archive/drupal8.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "type": "drupal-module"
         },
         {
             "name": "UH-StudentServices/video_embed_unitube",
@@ -999,7 +1010,7 @@
                 "source": "https://github.com/larowlan/block_access/tree/8.x-1.x",
                 "issues": "https://github.com/larowlan/block_access/issues"
             },
-            "time": "2017-01-12 08:55:41"
+            "time": "2017-01-12T08:55:41+00:00"
         },
         {
             "name": "drupal/config_filter",
@@ -1719,7 +1730,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/edit_own_user_account_permission"
             },
-            "time": "2017-05-06 20:17:50"
+            "time": "2017-05-06T20:17:50+00:00"
         },
         {
             "name": "drupal/editor_file",
@@ -2068,7 +2079,7 @@
                 "source": "http://git.drupal.org/project/google_analytics.git",
                 "issues": "https://www.drupal.org/project/issues/google_analytics"
             },
-            "time": "2016-09-03 15:20:18"
+            "time": "2016-09-03T15:20:18+00:00"
         },
         {
             "name": "drupal/google_analytics_reports",
@@ -2487,7 +2498,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/noreqnewpass"
             },
-            "time": "2016-10-07 15:16:43"
+            "time": "2016-10-07T15:16:43+00:00"
         },
         {
             "name": "drupal/paragraphs",
@@ -3272,7 +3283,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/view_unpublished"
             },
-            "time": "2017-02-12 20:42:52"
+            "time": "2017-02-12T20:42:52+00:00"
         },
         {
             "name": "drush/drush",
@@ -8207,7 +8218,8 @@
         "drupal/content_lock": 15,
         "drupal/facets": 15,
         "drupal/edit_own_user_account_permission": 20,
-        "drupal/view_unpublished": 20
+        "drupal/view_unpublished": 20,
+        "uh-studentservices/uh_courses_embed": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
