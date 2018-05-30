@@ -9287,7 +9287,14 @@ h1, h2, h3, h4, legend, .logo-block__content .logo-block__sitename,
 }
 
 .ui-tabs .ui-tabs-nav li {
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+      hyphens: auto;
+  word-break: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-word;
   margin: 0;
+  white-space: normal;
 }
 
 .ui-tabs .ui-tabs-panel {
