@@ -8362,6 +8362,14 @@ input[type="text"].search-form-large__input {
   }
 }
 
+.path-frontpage .l-subregion-wrapper {
+  padding-top: 0;
+}
+
+.path-frontpage .l-subregion-wrapper:nth-of-type(odd) {
+  background-color: transparent;
+}
+
 .accordion__accordion-body {
   margin-bottom: 1em;
 }
