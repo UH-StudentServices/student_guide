@@ -69,19 +69,23 @@
             </a>
           </li>
         </ul>
-        {{ news_per_degree_programme }}
-        {{ title_prefix }}
-        {% if label %}
-          <h2{{ title_attributes.addClass(title_classes) }}>{{ label }}</h2>
-        {% endif %}
-        {{ title_suffix }}
         <div id="degree_students">
+          {{ news_per_degree_programme }}
+          {% block title_block %}
+            {{ title_prefix }}
+            {% if label %}
+              <h2{{ title_attributes.addClass(title_classes) }}>{{ label }}</h2>
+            {% endif %}
+            {{ title_suffix }}
+          {% endblock %}
           {{ content['content']['degree_students'] }}
         </div>
         <div id="doctoral_candidates">
+          {{ block('title_block') }}
           {{ content['content']['doctoral_candidates'] }}
         </div>
         <div id="specialist_training">
+          {{ block('title_block') }}
           {{ content['content']['specialist_training'] }}
         </div>
       </div>
