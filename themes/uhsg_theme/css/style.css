@@ -8362,6 +8362,10 @@ input[type="text"].search-form-large__input {
   }
 }
 
+.l-subregion {
+  padding: 0;
+}
+
 .path-frontpage .l-subregion-wrapper {
   padding-top: 0;
 }
@@ -9284,6 +9288,10 @@ h1, h2, h3, h4, legend, .logo-block__content .logo-block__sitename,
 
 .ui-tabs .ui-tabs-nav li {
   margin: 0;
+}
+
+.ui-tabs .ui-tabs-panel {
+  padding: 0;
 }
 
 .tag-list {
