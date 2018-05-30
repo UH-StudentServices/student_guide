@@ -5,6 +5,7 @@ Release date: ??.??.????
 
 * Minor tweaking to caching (HUB-310)
 * Use certificate for oprek integration requests (HUB-319)
+* User groups for themes and instructions (HUB-318)
 
 
 ## 1.18
