@@ -1,8 +1,27 @@
-label: Innehåll
-description: 'Hitta och hantera innehåll.'
 display:
   default:
     display_options:
+      filters:
+        status:
+          group_info:
+            group_items:
+              1:
+                value: '1'
+                title: Publicerad
+              2:
+                title: 'Ej publicerad'
+            label: 'Status för publicering'
+          expose:
+            label: Status
+        title:
+          expose:
+            label: Titel
+        type:
+          expose:
+            label: Innehållstyp
+        langcode:
+          expose:
+            label: Språk
       exposed_form:
         options:
           submit_button: Filtrera
@@ -27,29 +46,11 @@ display:
           label: Författare
         status:
           label: Status
+          settings:
+            format_custom_true: Publicerad
+            format_custom_false: 'Ej publicerad'
         operations:
           label: Funktioner
-      filters:
-        status:
-          expose:
-            label: Status
-          group_info:
-            label: 'Status för publicering'
-            group_items:
-              1:
-                title: Publicerad
-                value: '1'
-              2:
-                title: 'Ej publicerad'
-        type:
-          expose:
-            label: Innehållstyp
-        title:
-          expose:
-            label: Titel
-        langcode:
-          expose:
-            label: Språk
       title: Innehåll
       empty:
         area_text_custom:
@@ -63,3 +64,5 @@ display:
         title: Innehåll
         description: 'Hitta och hantera innehåll'
     display_title: Sida
+label: Innehåll
+description: 'Hitta och hantera innehåll.'
