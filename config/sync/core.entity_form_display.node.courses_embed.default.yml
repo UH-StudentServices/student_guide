@@ -3,10 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.courses_embed.body
     - field.field.node.courses_embed.field_organisation_code
     - node.type.courses_embed
   module:
     - path
+    - text
 _core:
   default_config_hash: duqvqeIrGJqcsvep4lqi2t_Nldh6023yVCfPdyNGQ5Y
 id: node.courses_embed.default
@@ -14,6 +16,15 @@ targetEntityType: node
 bundle: courses_embed
 mode: default
 content:
+  body:
+    weight: 122
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+    region: content
   created:
     type: datetime_timestamp
     weight: 10

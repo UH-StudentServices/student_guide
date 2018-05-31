@@ -1,0 +1,18 @@
+uuid: 39b74bcc-527c-4749-a234-f29d08b975a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.office_hours
+id: paragraph.office_hours.created
+field_name: created
+entity_type: paragraph
+bundle: office_hours
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

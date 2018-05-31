@@ -1,0 +1,20 @@
+uuid: d2d80e39-4845-4053-8a4b-6c5f72504d17
+langcode: en
+status: true
+dependencies:
+  module:
+    - uhsg_some_links
+id: some_links.some_links.user_id
+field_name: user_id
+entity_type: some_links
+bundle: some_links
+label: 'Authored by'
+description: 'The user ID of author of the Some links entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

@@ -3,9 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.courses_embed.body
     - field.field.node.courses_embed.field_organisation_code
     - node.type.courses_embed
   module:
+    - text
     - uh_courses_embed
     - user
 _core:
@@ -15,17 +17,25 @@ targetEntityType: node
 bundle: courses_embed
 mode: default
 content:
+  body:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
   field_organisation_code:
-    weight: 101
+    weight: 2
     label: hidden
     settings:
-      link_to_entity: false
       language_attribute: current
     third_party_settings: {  }
     type: uh_courses_embed
     region: content
   links:
-    weight: 100
+    weight: 1
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   langcode: true

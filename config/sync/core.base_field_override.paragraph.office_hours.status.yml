@@ -1,0 +1,22 @@
+uuid: db6b9be4-6c83-4b6d-8f92-69d2c319d17b
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.office_hours
+id: paragraph.office_hours.status
+field_name: status
+entity_type: paragraph
+bundle: office_hours
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
