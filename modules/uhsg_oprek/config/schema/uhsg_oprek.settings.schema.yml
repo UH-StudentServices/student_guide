@@ -7,9 +7,9 @@ uhsg_oprek.settings:
     base_url:
       type: string
       label: 'Endpoint base URL where all REST requests are sent to without trailing slash.'
-    cert_filepath: ''
+    cert_filepath:
       type: string
       label: 'Filepath to certificate file (PEM format).'
-    cert_key_filepath: ''
+    cert_key_filepath:
       type: string
-      label: 'Filepath to certificate\'s key file.'
+      label: 'Filepath to certificate''s key file.'
