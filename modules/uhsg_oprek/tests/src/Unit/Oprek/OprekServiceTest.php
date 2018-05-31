@@ -5,6 +5,7 @@ use Drupal\Core\Config\ImmutableConfig;
 use Drupal\Tests\UnitTestCase;
 use Drupal\uhsg_oprek\Oprek\OprekService;
 use GuzzleHttp\Client;
+use Prophecy\Argument;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamInterface;
 
@@ -82,6 +83,17 @@ class OprekServiceTest extends UnitTestCase {
       self::BASE_URL . '/students/' . self::STUDENT_NUMBER . '/studyrights',
       ['cert' => self::CERT_FILEPATH, 'ssl_key' => self::CERT_KEY_FILEPATH]
     )->shouldBeCalled();
+
+    $this->oprekService->getStudyRights(self::STUDENT_NUMBER);
+  }
+
+  /**
+   * @test
+   */
+  public function getStudyRightsShouldThrowExceptionWhenAPIResponseCodeIsNot200() {
+    $this->response->getStatusCode()->willReturn(500);
+
+    $this->setExpectedException(\Exception::class);
 
     $this->oprekService->getStudyRights(self::STUDENT_NUMBER);
   }
