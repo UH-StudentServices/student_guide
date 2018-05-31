@@ -68,6 +68,7 @@ module:
   text: 0
   token: 0
   toolbar: 0
+  uh_courses_embed: 0
   uhsg_active_degree_programme: 0
   uhsg_article: 0
   uhsg_avatar: 0

@@ -1,0 +1,23 @@
+uuid: cd2b7510-a1b1-4f88-b753-73c796cf4b82
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.courses_embed.field_organisation_code
+    - node.type.courses_embed
+  module:
+    - user
+_core:
+  default_config_hash: 3rd7aTBfuVmsMorzCovgwZEompprrDUyfRKFkc0xjJM
+id: node.courses_embed.teaser
+targetEntityType: node
+bundle: courses_embed
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+hidden:
+  field_organisation_code: true
+  langcode: true
