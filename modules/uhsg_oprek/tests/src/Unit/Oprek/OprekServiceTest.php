@@ -5,7 +5,6 @@ use Drupal\Core\Config\ImmutableConfig;
 use Drupal\Tests\UnitTestCase;
 use Drupal\uhsg_oprek\Oprek\OprekService;
 use GuzzleHttp\Client;
-use Prophecy\Argument;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamInterface;
 
@@ -14,11 +13,13 @@ use Psr\Http\Message\StreamInterface;
  */
 class OprekServiceTest extends UnitTestCase {
 
-  const API_RESPONSE = '{"status": 200}';
   const BASE_URL = 'baseurl';
   const CERT_FILEPATH = 'certfilepath';
   const CERT_KEY_FILEPATH = 'certkeyfilepath';
   const STUDENT_NUMBER = '123';
+  const STUDY_RIGHTS_RESPONSE = '{"status": 200, "data": []}';
+  const VERSION = 123;
+  const VERSION_RESPONSE = '{"status": 200, "data": {"version": ' . self::VERSION . '}}';
 
   /** @var Client */
   private $client;
@@ -42,7 +43,7 @@ class OprekServiceTest extends UnitTestCase {
     parent::setUp();
 
     $this->stream = $this->prophesize(StreamInterface::class);
-    $this->stream->getContents()->willReturn(self::API_RESPONSE);
+    $this->stream->getContents()->willReturn(self::STUDY_RIGHTS_RESPONSE);
 
     $this->response = $this->prophesize(ResponseInterface::class);
     $this->response->getStatusCode()->willReturn(200);
@@ -52,6 +53,11 @@ class OprekServiceTest extends UnitTestCase {
 
     $this->client->get(
       self::BASE_URL . '/students/' . self::STUDENT_NUMBER . '/studyrights',
+      ['cert' => self::CERT_FILEPATH, 'ssl_key' => self::CERT_KEY_FILEPATH]
+    )->willReturn($this->response);
+
+    $this->client->get(
+      self::BASE_URL . '/version',
       ['cert' => self::CERT_FILEPATH, 'ssl_key' => self::CERT_KEY_FILEPATH]
     )->willReturn($this->response);
 
@@ -96,5 +102,14 @@ class OprekServiceTest extends UnitTestCase {
     $this->setExpectedException(\Exception::class);
 
     $this->oprekService->getStudyRights(self::STUDENT_NUMBER);
+  }
+
+  /**
+   * @test
+   */
+  public function getVersionShouldReturnVersion() {
+    $this->stream->getContents()->willReturn(self::VERSION_RESPONSE);
+
+    $this->assertEquals(self::VERSION, $this->oprekService->getVersion());
   }
 }
