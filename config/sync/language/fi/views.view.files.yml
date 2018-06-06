@@ -8,8 +8,8 @@ display:
           submit_button: Suodatin
           reset_button_label: 'Palauta oletusarvoihin'
           exposed_sorts_label: Lajittele
-          sort_asc_label: Asc
-          sort_desc_label: Desc
+          sort_asc_label: Nouseva
+          sort_desc_label: Laskeva
       pager:
         options:
           tags:
@@ -28,6 +28,9 @@ display:
           label: Koko
         status:
           label: Tila
+          settings:
+            format_custom_false: Tilapäinen
+            format_custom_true: Pysyvä
         created:
           label: Latauspäivämäärä
         count:

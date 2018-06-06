@@ -4,8 +4,6 @@ display:
   default:
     display_options:
       empty:
-        area_text_custom:
-          content: 'Inget innehåll för startsidan har skapats ännu.'
         title:
           title: 'Välkommen till [site:name]'
       exposed_form:

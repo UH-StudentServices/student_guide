@@ -138,3 +138,12 @@ msgstr "Sök anvisningar efter ord (eller första delen av ordet)"
 
 msgid "Copy URL"
 msgstr "Kopiera URL"
+
+msgid "Degree Students"
+msgstr "Grundexamensstuderande"
+
+msgid "Doctoral Candidates"
+msgstr "Doktorander"
+
+msgid "Specialist Training"
+msgstr "Yrkesinriktad påbyggnadsutbildning"

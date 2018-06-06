@@ -1,9 +1,25 @@
-label: Personer
-description: 'Hitta och hantera personer som använder din webbplats.'
 display:
   default:
-    display_title: Huvud
     display_options:
+      filters:
+        status:
+          group_info:
+            group_items:
+              1:
+                value: '1'
+                title: Aktiv
+              2:
+                title: Spärrad
+            label: Status
+        combine:
+          expose:
+            label: 'Namn eller e-post innehåller'
+        roles_target_id:
+          expose:
+            label: Roll
+        permission:
+          expose:
+            label: Behörighet
       exposed_form:
         options:
           submit_button: Filtrera
@@ -29,6 +45,9 @@ display:
           label: Användarnamn
         status:
           label: Status
+          settings:
+            format_custom_true: Aktiv
+            format_custom_false: Spärrad
         roles_target_id:
           label: Roller
         created:
@@ -39,30 +58,12 @@ display:
           label: Funktioner
         mail:
           separator: ', '
-      filters:
-        combine:
-          expose:
-            label: 'Namn eller e-post innehåller'
-        roles_target_id:
-          expose:
-            label: Roll
-        permission:
-          expose:
-            label: Behörighet
-        status:
-          group_info:
-            label: Status
-            group_items:
-              1:
-                title: Aktiv
-                value: '1'
-              2:
-                title: Spärrad
       title: Personer
       empty:
         area_text_custom:
           content: 'Inga personer tillgängliga.'
       use_more_text: mer
+    display_title: Huvud
   page_1:
     display_title: Sida
     display_options:
@@ -72,3 +73,5 @@ display:
       tab_options:
         title: Personer
         description: 'Hantera användarkonton, roller och behörigheter.'
+label: Personer
+description: 'Hitta och hantera personer som använder din webbplats.'
