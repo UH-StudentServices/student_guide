@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "1f52ef3034e2a09826f5576ccb484c10",
+    "content-hash": "08adcfb41f7c72ae28db04c931103a2e",
     "packages": [
         {
             "name": "RubaXa/Sortable",
@@ -20,13 +20,27 @@
         {
             "name": "UH-StudentServices/uh_courses_embed",
             "version": "dev-drupal8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/UH-StudentServices/uh_courses_embed.git",
+                "reference": "af738078abebb19534fd87bb7669e4bd1ae66e5b"
+            },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/UH-StudentServices/uh_courses_embed/archive/drupal8.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://api.github.com/repos/UH-StudentServices/uh_courses_embed/zipball/af738078abebb19534fd87bb7669e4bd1ae66e5b",
+                "reference": "af738078abebb19534fd87bb7669e4bd1ae66e5b",
+                "shasum": ""
             },
-            "type": "drupal-module"
+            "type": "drupal-module",
+            "license": [
+                "GPL-3.0+"
+            ],
+            "description": "Allows privileged users to add content that will embed courses for given organisation code.",
+            "support": {
+                "source": "https://github.com/UH-StudentServices/uh_courses_embed/tree/drupal8",
+                "issues": "https://github.com/UH-StudentServices/uh_courses_embed/issues"
+            },
+            "time": "2018-06-06 11:43:02"
         },
         {
             "name": "UH-StudentServices/video_embed_unitube",
@@ -1010,7 +1024,7 @@
                 "source": "https://github.com/larowlan/block_access/tree/8.x-1.x",
                 "issues": "https://github.com/larowlan/block_access/issues"
             },
-            "time": "2017-01-12T08:55:41+00:00"
+            "time": "2017-01-12 08:55:41"
         },
         {
             "name": "drupal/config_filter",
@@ -1730,7 +1744,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/edit_own_user_account_permission"
             },
-            "time": "2017-05-06T20:17:50+00:00"
+            "time": "2017-05-06 20:17:50"
         },
         {
             "name": "drupal/editor_file",
@@ -2079,7 +2093,7 @@
                 "source": "http://git.drupal.org/project/google_analytics.git",
                 "issues": "https://www.drupal.org/project/issues/google_analytics"
             },
-            "time": "2016-09-03T15:20:18+00:00"
+            "time": "2016-09-03 15:20:18"
         },
         {
             "name": "drupal/google_analytics_reports",
@@ -2498,7 +2512,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/noreqnewpass"
             },
-            "time": "2016-10-07T15:16:43+00:00"
+            "time": "2016-10-07 15:16:43"
         },
         {
             "name": "drupal/paragraphs",
@@ -3283,7 +3297,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/view_unpublished"
             },
-            "time": "2017-02-12T20:42:52+00:00"
+            "time": "2017-02-12 20:42:52"
         },
         {
             "name": "drush/drush",
