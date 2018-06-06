@@ -1,0 +1,95 @@
+{#
+/**
+ * @file
+ * Theme override to display a block.
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - content: The content of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_block()
+ */
+#}
+
+{{ attach_library('uhsg_theme/tabs') }}
+
+{%
+  set classes = [
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'block-' ~ plugin_id|clean_class,
+    'l-subregion-wrapper'
+  ]
+%}
+
+{%
+  set title_classes = [
+    'l-subregion__title',
+    'is-center-mobile'
+  ]
+%}
+
+<div{{ attributes.addClass(classes) }}>
+  <div class="l-subregion">
+    <div{{ content_attributes }}>
+      <div id="tabs" class="horizontal-tabs clearfix">
+        <ul class="horizontal-tabs-list">
+          <li class="horizontal-tab-button horizontal-tab-button-0 first" tabindex="-1">
+            <a href="#degree_students">
+              <strong>{{ 'Degree Students'|trans }}</strong>
+              <span class="summary"></span>
+              <span id="active-horizontal-tab" class="element-invisible">(active tab)</span>
+            </a>
+          </li>
+          <li class="horizontal-tab-button horizontal-tab-button-1" tabindex="-1">
+            <a href="#doctoral_candidates">
+              <strong>{{ 'Doctoral Candidates'|trans }}</strong>
+              <span class="summary"></span>
+            </a>
+          </li>
+          <li class="horizontal-tab-button horizontal-tab-button-2 last" tabindex="-1">
+            <a href="#specialist_training">
+              <strong>{{ 'Specialist Training'|trans }}</strong>
+              <span class="summary"></span>
+            </a>
+          </li>
+        </ul>
+        <div id="degree_students">
+          {{ news_per_degree_programme }}
+          {% block title_block %}
+            {{ title_prefix }}
+            {% if label %}
+              <h2{{ title_attributes.addClass(title_classes) }}>{{ label }}</h2>
+            {% endif %}
+            {{ title_suffix }}
+          {% endblock %}
+          {{ content['content']['degree_students'] }}
+        </div>
+        <div id="doctoral_candidates">
+          {{ block('title_block') }}
+          {{ content['content']['doctoral_candidates'] }}
+        </div>
+        <div id="specialist_training">
+          {{ block('title_block') }}
+          {{ content['content']['specialist_training'] }}
+        </div>
+      </div>
+    </div>
+    {{ content['#suffix'] }}
+  </div>
+</div>

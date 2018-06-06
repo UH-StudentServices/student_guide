@@ -15,7 +15,7 @@
       });
     },
 
-    handleKeyUp(e, searchField, searchButton) {
+    handleKeyUp: function(e, searchField, searchButton) {
       var empty = !searchField.val();
       searchButton.prop('disabled', empty);
       if (empty && e.which == 13) {

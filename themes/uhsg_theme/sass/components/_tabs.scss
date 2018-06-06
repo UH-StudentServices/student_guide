@@ -1,0 +1,11 @@
+.ui-tabs {
+  .ui-tabs-nav li {
+    @include hyphenate;
+    margin: 0;
+    white-space: normal;
+  }
+
+  .ui-tabs-panel {
+    padding: 0;
+  }
+}

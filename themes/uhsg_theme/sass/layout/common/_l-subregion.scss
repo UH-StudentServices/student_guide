@@ -1,0 +1,12 @@
+.l-subregion {
+  padding: 0;
+}
+
+.path-frontpage .l-subregion-wrapper {
+  padding-top: 0;
+
+  &:nth-of-type(odd) {
+    background-color: transparent;
+  }
+}
+

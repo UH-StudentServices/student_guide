@@ -141,3 +141,12 @@ msgstr "Hae ohjetta hakusanalla (tai sanan alkuosalla)"
 
 msgid "Copy URL"
 msgstr "Kopioi URL"
+
+msgid "Degree Students"
+msgstr "Perustutkinto-opiskelijat"
+
+msgid "Doctoral Candidates"
+msgstr "Tohtorikoulutettavat"
+
+msgid "Specialist Training"
+msgstr "Ammatillinen jatkokoulutus"

@@ -3,16 +3,13 @@ description: 'Kaikki etusivulle nostettu sisältö.'
 display:
   default:
     display_options:
-      empty:
-        area_text_custom:
-          content: 'Etusivun sisältöä ei ole vielä luotu.'
       exposed_form:
         options:
           submit_button: Käytä
           reset_button_label: 'Palauta oletusarvoihin'
           exposed_sorts_label: Lajittele
-          sort_asc_label: Asc
-          sort_desc_label: Desc
+          sort_asc_label: Nouseva
+          sort_desc_label: Laskeva
       pager:
         options:
           expose:

@@ -1,8 +1,51 @@
-label: Sisältö
-description: 'Etsi ja ylläpidä sisältöä.'
 display:
   default:
     display_options:
+      fields:
+        field_article_degree_programme:
+          label: 'Koulutusohjelma (ohje)'
+        title:
+          label: Otsikko
+        type:
+          label: Sisältötyyppi
+        name:
+          label: Tekijä
+        status:
+          label: Tila
+          settings:
+            format_custom_true: Julkaistu
+            format_custom_false: Julkaisematon
+        changed:
+          label: Päivitetty
+        operations:
+          label: Toimenpiteet
+      filters:
+        status:
+          group_info:
+            group_items:
+              1:
+                value: '1'
+                title: Julkaistu
+              2:
+                title: Julkaisematon
+            label: Julkaisutila
+          expose:
+            label: Tila
+        field_article_degree_programme_target_id:
+          expose:
+            label: 'Koulutusohjelma (ohje)'
+        uid:
+          expose:
+            label: Tekijä
+        title:
+          expose:
+            label: Otsikko
+        type:
+          expose:
+            label: Sisältötyyppi
+        langcode:
+          expose:
+            label: Kieli
       exposed_form:
         options:
           submit_button: Suodatin
@@ -17,48 +60,6 @@ display:
             next: 'Seuraava ›'
             first: '« Ensimmäinen'
             last: 'Viimeinen »'
-      fields:
-        title:
-          label: Otsikko
-        type:
-          label: Sisältötyyppi
-        name:
-          label: Tekijä
-        status:
-          label: Tila
-        changed:
-          label: Päivitetty
-        operations:
-          label: Toimenpiteet
-        field_article_degree_programme:
-          label: 'Koulutusohjelma (ohje)'
-      filters:
-        status:
-          expose:
-            label: Tila
-          group_info:
-            label: Julkaisutila
-            group_items:
-              1:
-                title: Julkaistu
-                value: '1'
-              2:
-                title: Julkaisematon
-        type:
-          expose:
-            label: Sisältötyyppi
-        title:
-          expose:
-            label: Otsikko
-        langcode:
-          expose:
-            label: Kieli
-        field_article_degree_programme_target_id:
-          expose:
-            label: 'Koulutusohjelma (ohje)'
-        uid:
-          expose:
-            label: Tekijä
       title: Sisältö
       empty:
         area_text_custom:
@@ -71,3 +72,5 @@ display:
       tab_options:
         title: Sisältö
     display_title: Sivu
+label: Sisältö
+description: 'Etsi ja ylläpidä sisältöä.'
