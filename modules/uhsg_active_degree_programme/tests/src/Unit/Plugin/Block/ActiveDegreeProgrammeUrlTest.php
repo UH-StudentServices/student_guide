@@ -1,8 +1,11 @@
 <?php
 
+use Drupal\Core\Cache\Context\CacheContextsManager;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Tests\UnitTestCase;
 use Drupal\uhsg_active_degree_programme\Plugin\Block\ActiveDegreeProgrammeUrl;
+use Prophecy\Argument;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * @group uhsg
@@ -17,11 +20,25 @@ class ActiveDegreeProgrammeUrlTest extends UnitTestCase {
   /** @var ActiveDegreeProgrammeUrl */
   private $activeDegreeProgrammeUrl;
 
+  /** @var CacheContextsManager */
+  private $cacheContextsManager;
+
+  /** @var ContainerInterface */
+  private $container;
+
   public function setUp() {
     parent::setUp();
 
     $this->account = $this->prophesize(AccountInterface::class);
     $this->activeDegreeProgrammeUrl = new ActiveDegreeProgrammeUrlTestDouble();
+
+    $this->cacheContextsManager = $this->prophesize(CacheContextsManager::class);
+    $this->cacheContextsManager->assertValidTokens(Argument::any())->willReturn(TRUE);
+
+    $this->container = $this->prophesize(ContainerInterface::class);
+    $this->container->get('cache_contexts_manager')->willReturn($this->cacheContextsManager->reveal());
+
+    Drupal::setContainer($this->container->reveal());
   }
 
   /**
