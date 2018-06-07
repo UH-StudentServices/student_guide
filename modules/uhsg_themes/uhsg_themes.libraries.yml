@@ -11,3 +11,10 @@ theme_sort:
     - core/jquery
     - core/jquery.once
     - core/modernizr
+
+autoselect_user_group_tab:
+  version: 1.x
+  js:
+    js/autoselectUserGroupTab.js: {}
+  dependencies:
+    - core/jquery
