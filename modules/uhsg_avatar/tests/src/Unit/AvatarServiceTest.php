@@ -22,6 +22,7 @@ class AvatarServiceTest extends UnitTestCase {
 
   const ADMIN_UID = 1;
   const AVATAR_IMAGE_URL = 'http://www.example.com';
+  const EXCEPTION_MESSAGE = 'Exception message';
   const NORMAL_USER_UID = 2;
   const RESPONSE_BODY = '{"avatarImageUrl": "http:\/\/www.example.com"}';
   
@@ -134,6 +135,19 @@ class AvatarServiceTest extends UnitTestCase {
     $this->client->get(Argument::any())->shouldNotBeCalled();
 
     $this->assertEquals(self::AVATAR_IMAGE_URL, $this->avatarService->getAvatar());
+  }
+
+  /**
+   * @test
+   */
+  public function shouldLogAPIException() {
+    $this->currentUser->isAuthenticated()->willReturn(TRUE);
+    $this->currentUser->id()->willReturn(self::NORMAL_USER_UID);
+    $this->client->get(Argument::any())->willThrow(new Exception(self::EXCEPTION_MESSAGE));
+
+    $this->logger->error(self::EXCEPTION_MESSAGE)->shouldBeCalled();
+
+    $this->avatarService->getAvatar();
   }
 }
 
