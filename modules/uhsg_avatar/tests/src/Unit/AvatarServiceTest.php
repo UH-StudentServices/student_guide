@@ -31,6 +31,9 @@ class AvatarServiceTest extends UnitTestCase {
   /** @var CacheBackendInterface */
   private $cache;
 
+  /** @var object */
+  private $cachedUrl;
+
   /** @var Client */
   private $client;
 
@@ -74,6 +77,9 @@ class AvatarServiceTest extends UnitTestCase {
     $this->logger = $this->prophesize(LoggerChannel::class);
     $this->cache = $this->prophesize(CacheBackendInterface::class);
 
+    $this->cachedUrl = new stdClass();
+    $this->cachedUrl->data = self::AVATAR_IMAGE_URL;
+
     $this->container = $this->prophesize(ContainerInterface::class);
 
     Drupal::setContainer($this->container->reveal());
@@ -112,6 +118,20 @@ class AvatarServiceTest extends UnitTestCase {
   public function shouldReturnAvatarImageURLFromAPIWhenURLNotInCache() {
     $this->currentUser->isAuthenticated()->willReturn(TRUE);
     $this->currentUser->id()->willReturn(self::NORMAL_USER_UID);
+
+    $this->assertEquals(self::AVATAR_IMAGE_URL, $this->avatarService->getAvatar());
+  }
+
+  /**
+   * @test
+   */
+  public function shouldReturnAvatarImageURLFromCacheWhenURLInCache() {
+    $this->currentUser->isAuthenticated()->willReturn(TRUE);
+    $this->currentUser->id()->willReturn(self::NORMAL_USER_UID);
+    $this->cache->get(Argument::any())->willReturn($this->cachedUrl);
+
+    $this->cache->get(Argument::any())->shouldBeCalled();
+    $this->client->get(Argument::any())->shouldNotBeCalled();
 
     $this->assertEquals(self::AVATAR_IMAGE_URL, $this->avatarService->getAvatar());
   }
