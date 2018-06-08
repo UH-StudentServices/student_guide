@@ -3,11 +3,17 @@
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Config\ConfigFactory;
 use Drupal\Core\Config\ImmutableConfig;
+use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Logger\LoggerChannel;
 use Drupal\Core\Session\AccountProxyInterface;
 use Drupal\Tests\UnitTestCase;
 use Drupal\uhsg_avatar\AvatarService;
+use Drupal\user\Entity\User;
 use GuzzleHttp\Client;
+use Prophecy\Argument;
+use Prophecy\Prophet;
+use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * @group uhsg
@@ -15,6 +21,9 @@ use GuzzleHttp\Client;
 class AvatarServiceTest extends UnitTestCase {
 
   const ADMIN_UID = 1;
+  const AVATAR_IMAGE_URL = 'http://www.example.com';
+  const NORMAL_USER_UID = 2;
+  const RESPONSE_BODY = '{"avatarImageUrl": "http:\/\/www.example.com"}';
   
   /** @var AvatarService */
   private $avatarService;
@@ -31,23 +40,45 @@ class AvatarServiceTest extends UnitTestCase {
   /** @var ConfigFactory */
   private $configFactory;
 
+  /** @var ContainerInterface */
+  private $container;
+
   /** @var AccountProxyInterface */
   private $currentUser;
 
   /** @var LoggerChannel */
   private $logger;
 
+  /** @var ResponseInterface */
+  private $response;
+
   public function setUp() {
     parent::setUp();
 
     $this->config = $this->prophesize(ImmutableConfig::class);
+    $this->config->get('api_base_url')->willReturn('');
+    $this->config->get('api_path')->willReturn('');
+
     $this->configFactory = $this->prophesize(ConfigFactory::class);
+    $this->configFactory->get('uhsg_avatar.config')->willReturn($this->config);
+
     $this->currentUser = $this->prophesize(AccountProxyInterface::class);
+
+    $this->response = $this->prophesize(ResponseInterface::class);
+    $this->response->getStatusCode()->willReturn(200);
+    $this->response->getBody()->willReturn(self::RESPONSE_BODY);
+
     $this->client = $this->prophesize(Client::class);
+    $this->client->get(Argument::any())->willReturn($this->response);
+
     $this->logger = $this->prophesize(LoggerChannel::class);
     $this->cache = $this->prophesize(CacheBackendInterface::class);
+
+    $this->container = $this->prophesize(ContainerInterface::class);
+
+    Drupal::setContainer($this->container->reveal());
     
-    $this->avatarService = new AvatarService(
+    $this->avatarService = new AvatarServiceTestDouble(
       $this->configFactory->reveal(),
       $this->currentUser->reveal(),
       $this->client->reveal(),
@@ -73,5 +104,33 @@ class AvatarServiceTest extends UnitTestCase {
     $this->currentUser->id()->willReturn(self::ADMIN_UID);
 
     $this->assertNull($this->avatarService->getAvatar());
+  }
+
+  /**
+   * @test
+   */
+  public function shouldReturnAvatarImageURLFromAPIWhenURLNotInCache() {
+    $this->currentUser->isAuthenticated()->willReturn(TRUE);
+    $this->currentUser->id()->willReturn(self::NORMAL_USER_UID);
+
+    $this->assertEquals(self::AVATAR_IMAGE_URL, $this->avatarService->getAvatar());
+  }
+}
+
+/**
+ * Test double for overriding difficult to test methods.
+ */
+class AvatarServiceTestDouble extends AvatarService {
+
+  protected function loadUser($id) {
+    $prophet = new Prophet();
+
+    $fieldItemList = $prophet->prophesize(FieldItemListInterface::class);
+    $fieldItemList->getString()->willReturn('123');
+
+    $user = $prophet->prophesize(User::class);
+    $user->get('field_oodi_uid')->willReturn($fieldItemList->reveal());
+
+    return $user->reveal();
   }
 }
