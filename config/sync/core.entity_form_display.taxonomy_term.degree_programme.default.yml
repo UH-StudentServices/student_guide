@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.taxonomy_term.degree_programme.field_code
     - field.field.taxonomy_term.degree_programme.field_degree_programme_type
+    - field.field.taxonomy_term.degree_programme.field_user_group
     - taxonomy.vocabulary.degree_programme
   module:
     - path
@@ -32,6 +33,12 @@ content:
     region: content
   field_degree_programme_type:
     weight: 31
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_user_group:
+    weight: 33
     settings: {  }
     third_party_settings: {  }
     type: options_select

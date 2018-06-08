@@ -1,0 +1,21 @@
+uuid: e39a41d8-1f6b-48bd-ae8e-3ad76092e25e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_user_group
+    - taxonomy.vocabulary.degree_programme
+  module:
+    - options
+id: taxonomy_term.degree_programme.field_user_group
+field_name: field_user_group
+entity_type: taxonomy_term
+bundle: degree_programme
+label: 'User group'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

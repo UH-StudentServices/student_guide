@@ -1,0 +1,30 @@
+uuid: 48ebec8d-0d45-4dc2-91c5-b9bd1e2a1b89
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - taxonomy
+id: taxonomy_term.field_user_group
+field_name: field_user_group
+entity_type: taxonomy_term
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: degree_students
+      label: 'Degree Students'
+    -
+      value: doctoral_candidates
+      label: 'Doctoral Candidates'
+    -
+      value: specialist_training
+      label: 'Specialist Training'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

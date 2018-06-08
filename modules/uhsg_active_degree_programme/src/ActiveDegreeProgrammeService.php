@@ -145,6 +145,16 @@ class ActiveDegreeProgrammeService {
   }
 
   /**
+   * Return the user group of the active degree programme.
+   * @return string|null
+   */
+  public function getUserGroup() {
+    $term = $this->getTerm();
+
+    return $term ? $term->get('field_user_group')->getString() : NULL;
+  }
+
+  /**
    * Tries to get term ID from request.
    * @return string|null
    *   Returns an term ID or NULL, when not found.
