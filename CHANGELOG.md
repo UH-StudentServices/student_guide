@@ -7,6 +7,7 @@ Release date: ??.??.????
 * Use certificate for oprek integration requests (HUB-319)
 * IE11: Fixed degree programme selector (HUB-324)
 * User groups for themes and instructions (HUB-318)
+* Autoselect user group tab (HUB-320)
 * Course embedding support (HUB-315)
 
 
