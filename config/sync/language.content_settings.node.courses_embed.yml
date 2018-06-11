@@ -1,9 +1,9 @@
-uuid: 087d9891-e155-48b8-8ee6-de245074b6a9
+uuid: 7775f428-5582-465b-baca-65442886d5b6
 langcode: en
 status: true
 dependencies:
   config:
-    - block_content.type.content_block
+    - node.type.courses_embed
   module:
     - content_translation
 third_party_settings:
@@ -11,8 +11,8 @@ third_party_settings:
     enabled: true
     bundle_settings:
       untranslatable_fields_hide: '0'
-id: block_content.content_block
-target_entity_type_id: block_content
-target_bundle: content_block
+id: node.courses_embed
+target_entity_type_id: node
+target_bundle: courses_embed
 default_langcode: site_default
 language_alterable: true
