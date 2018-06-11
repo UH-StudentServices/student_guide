@@ -149,6 +149,17 @@ class AvatarServiceTest extends UnitTestCase {
 
     $this->avatarService->getAvatar();
   }
+
+  /**
+   * @test
+   */
+  public function shouldReturnNullURLWhenAPIStatusOtherThan200() {
+    $this->currentUser->isAuthenticated()->willReturn(TRUE);
+    $this->currentUser->id()->willReturn(self::NORMAL_USER_UID);
+    $this->response->getStatusCode()->willReturn(404);
+
+    $this->assertNull($this->avatarService->getAvatar());
+  }
 }
 
 /**
