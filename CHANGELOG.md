@@ -1,5 +1,9 @@
 #Changelog
 
+## 1.20-dev
+Release date: ??.??.????
+
+
 ## 1.19
 Release date: 12.06.2018
 
