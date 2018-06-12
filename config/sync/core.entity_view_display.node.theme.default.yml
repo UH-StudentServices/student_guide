@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.theme.field_theme_faq
     - field.field.node.theme.field_theme_section
     - field.field.node.theme.field_theme_teaser_image
+    - field.field.node.theme.field_user_group
     - node.type.theme
   module:
     - entity_reference_revisions
@@ -59,4 +60,5 @@ content:
     third_party_settings: {  }
 hidden:
   field_theme_teaser_image: true
+  field_user_group: true
   langcode: true

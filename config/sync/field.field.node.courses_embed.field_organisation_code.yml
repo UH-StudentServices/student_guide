@@ -1,0 +1,21 @@
+uuid: 5082b82f-d4bf-4216-948a-ccc1ec4f4a76
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_organisation_code
+    - node.type.courses_embed
+_core:
+  default_config_hash: 6FHqDKu_UEb7YFKlcQuFQS2KRwRIvY18YrfHqgiIPuU
+id: node.courses_embed.field_organisation_code
+field_name: field_organisation_code
+entity_type: node
+bundle: courses_embed
+label: 'Organisation code'
+description: 'Embed courses of given organisation code.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -5,16 +5,22 @@
  * Contains uhsg_active_degree_programme.module.
  */
 
+use Drupal\uhsg_active_degree_programme\ActiveDegreeProgrammeService;
+
 /**
  * Implements hook_page_attachments().
  *
  * Adds a shortlink to current page with degree programme to HTML head section.
  * If no degree programme is selected, omit the degree programme parameter, but
  * still provide the full short URL.
+ *
+ * Adds degree programme user group to Drupal settings.
  */
 function uhsg_active_degree_programme_page_attachments(array &$page) {
+  /** @var $activeDegreeProgrammeService ActiveDegreeProgrammeService */
   $activeDegreeProgrammeService = \Drupal::service('uhsg_active_degree_programme.active_degree_programme');
   $degreeProgrammeCode = $activeDegreeProgrammeService->getCode();
+  $degreeProgrammeUserGroup = $activeDegreeProgrammeService->getUserGroup();
   $baseUrl = \Drupal\Core\Url::fromRoute('<front>', [], ['absolute' => TRUE])->toString();
   $path = \Drupal\Core\Url::fromRoute('<current>')->getInternalPath();
   $href = $degreeProgrammeCode ? "$baseUrl/$path?degree_programme_code=$degreeProgrammeCode" : "$baseUrl/$path";
@@ -27,4 +33,6 @@ function uhsg_active_degree_programme_page_attachments(array &$page) {
     ],
   ];
   $page['#attached']['html_head'][] = [$shortlinkTag, 'description'];
+  $page['#attached']['drupalSettings']['uhsg_active_degree_programme']['userGroup'] = $degreeProgrammeUserGroup;
+  $page['#cache']['contexts'][] = 'active_degree_programme';
 }

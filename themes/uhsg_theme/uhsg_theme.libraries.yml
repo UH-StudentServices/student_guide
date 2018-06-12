@@ -62,3 +62,10 @@ truncateText:
   dependencies:
     - core/jquery
 
+tabs:
+  version: 1.x
+  js:
+    js/tabs.js: {}
+  dependencies:
+    - core/jquery.once
+    - core/jquery.ui.tabs

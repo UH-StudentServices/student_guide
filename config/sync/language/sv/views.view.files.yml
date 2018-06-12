@@ -32,6 +32,9 @@ display:
           label: Storlek
         status:
           label: Status
+          settings:
+            format_custom_false: Temporär
+            format_custom_true: Permanent
         created:
           label: 'Datum för uppladdning'
         changed:

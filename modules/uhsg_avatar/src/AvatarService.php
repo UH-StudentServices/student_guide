@@ -81,6 +81,14 @@ class AvatarService {
     return $avatarUrl;
   }
 
+  /**
+   * @param int $id
+   * @return User
+   */
+  protected function loadUser($id) {
+    return User::load($id);
+  }
+
   private function getAvatarUrlFromCache($oodiUid) {
     $cacheKey = $this->getCacheKey($oodiUid);
     $avatarUrl = $cacheKey ? $this->cache->get($cacheKey) : NULL;
@@ -92,9 +100,7 @@ class AvatarService {
     $oodiUid = NULL;
 
     if ($this->currentUser->isAuthenticated() && $this->currentUser->id() != 1) {
-
-      /** @var $user User */
-      $user = User::load($this->currentUser->id());
+      $user = $this->loadUser($this->currentUser->id());
       $oodiUid = $user->get('field_oodi_uid')->getString();
     }
 

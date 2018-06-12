@@ -1,0 +1,21 @@
+uuid: 1f1adfeb-e7f2-4f31-ab4b-c7b6329d32ff
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_user_group
+    - node.type.theme
+  module:
+    - options
+id: node.theme.field_user_group
+field_name: field_user_group
+entity_type: node
+bundle: theme
+label: 'User group'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

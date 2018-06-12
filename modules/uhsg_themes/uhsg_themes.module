@@ -13,6 +13,7 @@ function uhsg_themes_preprocess_views_view(&$variables) {
   if ($variables['view']->id() == 'themes') {
     $variables['#attached']['library'][] = 'uhsg_themes/sortable';
     $variables['#attached']['library'][] = 'uhsg_themes/theme_sort';
+    $variables['#attached']['library'][] = 'uhsg_themes/autoselect_user_group_tab';
   }
 }
 

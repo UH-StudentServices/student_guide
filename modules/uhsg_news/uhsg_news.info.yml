@@ -2,7 +2,7 @@ name: News
 type: module
 description: Provides advanced properties for news like filtered listings and emailing.
 core: 8.x
-version: 1.18
+version: 1.19
 package: Student Guide
 dependencies:
   - uhsg_active_degree_programme
