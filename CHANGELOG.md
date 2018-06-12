@@ -1,7 +1,7 @@
 #Changelog
 
-## 1.19-dev
-Release date: ??.??.????
+## 1.19
+Release date: 12.06.2018
 
 * Minor tweaking to caching (HUB-310)
 * Use certificate for oprek integration requests (HUB-319)
