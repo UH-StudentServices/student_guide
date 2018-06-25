@@ -3,6 +3,8 @@
 ## 1.20-dev
 Release date: ??.??.????
 
+* News email content order: fi, sv, en (HUB-308)
+
 
 ## 1.19
 Release date: 12.06.2018
