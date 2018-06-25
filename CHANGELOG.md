@@ -4,6 +4,7 @@
 Release date: ??.??.????
 
 * News email content order: fi, sv, en (HUB-308)
+* WYSIWYG undo/redo buttons (HUB-322)
 
 
 ## 1.19
