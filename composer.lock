@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "08adcfb41f7c72ae28db04c931103a2e",
+    "content-hash": "4281330c9f2caf8d5fe3896e6e4b26e4",
     "packages": [
         {
             "name": "RubaXa/Sortable",
@@ -40,7 +40,7 @@
                 "source": "https://github.com/UH-StudentServices/uh_courses_embed/tree/drupal8",
                 "issues": "https://github.com/UH-StudentServices/uh_courses_embed/issues"
             },
-            "time": "2018-06-06 11:43:02"
+            "time": "2018-06-06T11:43:02+00:00"
         },
         {
             "name": "UH-StudentServices/video_embed_unitube",
@@ -413,16 +413,16 @@
         },
         {
             "name": "cweagans/composer-patches",
-            "version": "1.6.4",
+            "version": "1.6.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cweagans/composer-patches.git",
-                "reference": "462e65061606dc6149349535d4322241515d1b16"
+                "reference": "2ec4f00ff5fb64de584c8c4aea53bf9053ecb0b3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cweagans/composer-patches/zipball/462e65061606dc6149349535d4322241515d1b16",
-                "reference": "462e65061606dc6149349535d4322241515d1b16",
+                "url": "https://api.github.com/repos/cweagans/composer-patches/zipball/2ec4f00ff5fb64de584c8c4aea53bf9053ecb0b3",
+                "reference": "2ec4f00ff5fb64de584c8c4aea53bf9053ecb0b3",
                 "shasum": ""
             },
             "require": {
@@ -444,7 +444,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "BSD-2-Clause"
+                "BSD-3-Clause"
             ],
             "authors": [
                 {
@@ -453,7 +453,7 @@
                 }
             ],
             "description": "Provides a way to patch Composer packages.",
-            "time": "2017-12-07T16:16:31+00:00"
+            "time": "2018-05-11T18:00:16+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1024,7 +1024,7 @@
                 "source": "https://github.com/larowlan/block_access/tree/8.x-1.x",
                 "issues": "https://github.com/larowlan/block_access/issues"
             },
-            "time": "2017-01-12 08:55:41"
+            "time": "2017-01-12T08:55:41+00:00"
         },
         {
             "name": "drupal/config_filter",
@@ -1744,7 +1744,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/edit_own_user_account_permission"
             },
-            "time": "2017-05-06 20:17:50"
+            "time": "2017-05-06T20:17:50+00:00"
         },
         {
             "name": "drupal/editor_file",
@@ -2093,7 +2093,7 @@
                 "source": "http://git.drupal.org/project/google_analytics.git",
                 "issues": "https://www.drupal.org/project/issues/google_analytics"
             },
-            "time": "2016-09-03 15:20:18"
+            "time": "2016-09-03T15:20:18+00:00"
         },
         {
             "name": "drupal/google_analytics_reports",
@@ -2512,7 +2512,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/noreqnewpass"
             },
-            "time": "2016-10-07 15:16:43"
+            "time": "2016-10-07T15:16:43+00:00"
         },
         {
             "name": "drupal/paragraphs",
@@ -3297,7 +3297,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/view_unpublished"
             },
-            "time": "2017-02-12 20:42:52"
+            "time": "2017-02-12T20:42:52+00:00"
         },
         {
             "name": "drush/drush",
