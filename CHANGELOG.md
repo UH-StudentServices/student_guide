@@ -3,6 +3,8 @@
 ## 1.20-dev
 Release date: ??.??.????
 
+* WYSIWYG undo/redo buttons (HUB-322)
+
 
 ## 1.19
 Release date: 12.06.2018
