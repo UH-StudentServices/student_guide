@@ -24,7 +24,7 @@
         "behat/mink-selenium2-driver": "^1.3"
     },
     "require": {
-        "cweagans/composer-patches": "^1.5.0",
+        "cweagans/composer-patches": "1.6.5",
         "composer/installers": "^1.0",
         "drupal/admin_toolbar": "^1.18",
         "drupal/core": "8.5.3",
