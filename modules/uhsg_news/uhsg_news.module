@@ -82,9 +82,9 @@ function uhsg_news_send_news_by_email(\Drupal\node\Entity\Node $node) {
 
   if (!empty($emails)) {
     $emails = implode(', ', array_column($emails, 'value'));
-    $message = uhsg_news_get_title_and_body_formatted($node, 'en');
-    $message .= uhsg_news_get_title_and_body_formatted($node, 'fi');
+    $message = uhsg_news_get_title_and_body_formatted($node, 'fi');
     $message .= uhsg_news_get_title_and_body_formatted($node, 'sv');
+    $message .= uhsg_news_get_title_and_body_formatted($node, 'en');
     $message .= $node->toUrl('canonical', ['absolute' => TRUE])->toString();
 
     $params['subject'] = t('Notice') . ': ' . $node->label();
