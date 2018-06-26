@@ -63,6 +63,10 @@ class MyDegreeProgrammeFlagType extends EntityFlagType {
    * {@inheritdoc}
    */
   public function actionAccess($action, FlagInterface $flag, AccountInterface $account, EntityInterface $flaggable = NULL) {
+    if ($account->isAnonymous()) {
+      return new AccessResultForbidden();
+    }
+
     $access = parent::actionAccess($action, $flag, $account, $flaggable);
 
     // When specified flag type, then introduce some additional access logic

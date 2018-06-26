@@ -12,6 +12,7 @@ use Drupal\Core\Entity\EntityRepositoryInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\flag\FlaggingInterface;
+use Drupal\flag\FlagInterface;
 use Drupal\flag\FlagServiceInterface;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\taxonomy\TermAccessControlHandler;
@@ -251,7 +252,7 @@ class ActiveDegreeProgrammeService {
     if ($this->user->isAuthenticated()) {
       $flag = $this->flagService->getFlagById('my_degree_programmes');
       /** @var FlaggingInterface[] $flaggings */
-      $flaggings = $this->flagService->getFlagFlaggings($flag, $this->user);
+      $flaggings = $this->getFlagFlaggings($flag, $this->user);
       $primary_field_name = $this->config->get('primary_field_name');
       foreach ($flaggings as $flagging) {
         if ($flagging->hasField($primary_field_name) && !$flagging->get($primary_field_name)->isEmpty()) {
@@ -278,6 +279,29 @@ class ActiveDegreeProgrammeService {
     }
 
     return $this->resolvedTerm;
+  }
+
+  protected function getFlagFlaggings(FlagInterface $flag, AccountInterface $account = NULL, $session_id = NULL) {
+    $flaggingStorage = $this->entityTypeManager->getStorage('flagging');
+    $query = $flaggingStorage->getQuery();
+
+    $query->condition('flag_id', $flag->id());
+
+    if (!empty($account) && !$flag->isGlobal()) {
+      $query->condition('uid', $account->id());
+
+      if ($account->isAnonymous()) {
+        if (empty($session_id)) {
+          throw new \LogicException('An anonymous user must be identified by session ID.');
+        }
+
+        $query->condition('session_id', $session_id);
+      }
+    }
+
+    $ids = $query->execute();
+
+    return $flaggingStorage->loadMultiple($ids);
   }
 
   /**

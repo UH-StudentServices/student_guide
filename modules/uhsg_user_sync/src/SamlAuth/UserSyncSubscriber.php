@@ -6,9 +6,11 @@ use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Config\ImmutableConfig;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Logger\LoggerChannel;
+use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\flag\Entity\Flagging;
 use Drupal\flag\FlaggingInterface;
+use Drupal\flag\FlagInterface;
 use Drupal\flag\FlagServiceInterface;
 use Drupal\samlauth\Event\SamlAuthEvents;
 use Drupal\samlauth\Event\SamlAuthUserSyncEvent;
@@ -180,13 +182,13 @@ class UserSyncSubscriber implements EventSubscriberInterface {
    * @return bool
    */
   protected function clearTechnicalDegreeProgrammes(SamlAuthUserSyncEvent $event) {
-    $flags = $this->flagService->getUsersFlags($event->getAccount());
+    $flags = $this->getUsersFlags($event->getAccount(), 'taxonomy_term', 'degree_programme');
     $cleared = 0;
     $technical_condition_field_name = $this->config->get('technical_condition_field_name');
 
     foreach ($flags as $flag) {
       if ($flag->bundle() == 'my_degree_programmes') {
-        $flaggings = $this->flagService->getFlagFlaggings($flag, $event->getAccount());
+        $flaggings = $this->getFlagFlaggings($flag, $event->getAccount());
         foreach ($flaggings as $flagging) {
           /** @var FlaggingInterface $flagging */
           if ($flagging->hasField($technical_condition_field_name)) {
@@ -206,6 +208,46 @@ class UserSyncSubscriber implements EventSubscriberInterface {
 
     // Return TRUE if any technical degree programmes were cleared.
     return $cleared > 0;
+  }
+  
+  protected function getUsersFlags(AccountInterface $account, $entity_type = NULL, $bundle = NULL) {
+    $filtered_flags = [];
+
+    if ($account->isAuthenticated()) {
+      $flags = $this->getAllFlags($entity_type, $bundle);
+
+      foreach ($flags as $flag_id => $flag) {
+        if ($flag->actionAccess('flag', $account)->isAllowed() ||
+            $flag->actionAccess('unflag', $account)->isAllowed()) {
+          $filtered_flags[$flag_id] = $flag;
+        }
+      }
+    }
+
+    return $filtered_flags;
+  }
+  
+  public function getFlagFlaggings(FlagInterface $flag, AccountInterface $account = NULL, $session_id = NULL) {
+    $flaggingStorage = $this->entityTypeManager->getStorage('flagging');
+    $query = $flaggingStorage->getQuery();
+
+    $query->condition('flag_id', $flag->id());
+
+    if (!empty($account) && !$flag->isGlobal()) {
+      $query->condition('uid', $account->id());
+
+      if ($account->isAnonymous()) {
+        if (empty($session_id)) {
+          throw new \LogicException('An anonymous user must be identifed by session ID.');
+        }
+
+        $query->condition('session_id', $session_id);
+      }
+    }
+
+    $ids = $query->execute();
+
+    return $flaggingStorage->loadMultiple($ids);
   }
 
   /**

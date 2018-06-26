@@ -49,7 +49,7 @@
         "drupal/noreqnewpass": "1.x-dev#f0d42e42fbac538dcf47d3ff8f5b14000fa19ffd",
         "drupal/block_access": "dev-8.x-1.x#1cd59ba6856c897afae2551feaa8e6b7f312489c",
         "drupal/content_lock": "^1.0@alpha",
-        "drupal/flag": "4.0.0-alpha1",
+        "drupal/flag": "4.0.0-alpha3",
         "RubaXa/Sortable": "1.4.0",
         "drupal/facets": "^1.0@alpha",
         "drupal/config_ignore": "2.1",
@@ -129,9 +129,6 @@
             "drupal/google_analytics_reports": {
                 "2795115-6-and-2860399-1": "patches/google_analytics_reports.patch",
                 "2850463-2": "https://www.drupal.org/files/issues/error_when_saving-2850463-2.patch"
-            },
-            "drupal/flag": {
-                "2846111-4": "https://www.drupal.org/files/issues/broken_ajax_link_views-2846111-4.patch"
             }
         }
     }
