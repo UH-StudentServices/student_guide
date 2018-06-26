@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "0d2f273c1b23c2a090c7f59f4fec6ef8",
+    "content-hash": "02ea1cfe938cee33162f7c5a429f3e00",
     "packages": [
         {
             "name": "RubaXa/Sortable",
