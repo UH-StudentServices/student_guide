@@ -6,6 +6,7 @@ Release date: ??.??.????
 * News email content order: fi, sv, en (HUB-308)
 * WYSIWYG undo/redo buttons (HUB-322)
 * Technical updates (HUB-329, HUB-330)
+* IE11: Table of contents visual fix (HUB-328)
 
 
 ## 1.19
