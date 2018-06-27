@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "0d2f273c1b23c2a090c7f59f4fec6ef8",
+    "content-hash": "44473e1df45d559dc6d903361d35f6fd",
     "packages": [
         {
             "name": "RubaXa/Sortable",
@@ -2467,11 +2467,17 @@
         },
         {
             "name": "drupal/noreqnewpass",
-            "version": "dev-1.x",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/noreqnewpass",
-                "reference": "f0d42e42fbac538dcf47d3ff8f5b14000fa19ffd"
+                "reference": "8.x-1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/noreqnewpass-8.x-1.1.zip",
+                "reference": "8.x-1.1",
+                "shasum": "1f3dbf2a9dfdb2706f068fd67cac10ce9a0a78fe"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -2482,11 +2488,11 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.1+2-dev",
-                    "datestamp": "1503131644",
+                    "version": "8.x-1.1",
+                    "datestamp": "1487593983",
                     "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Dev releases are not covered by Drupal security advisories."
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
                     }
                 }
             },
@@ -2520,8 +2526,7 @@
             "homepage": "https://www.drupal.org/project/noreqnewpass",
             "support": {
                 "source": "http://cgit.drupalcode.org/noreqnewpass"
-            },
-            "time": "2016-10-07T15:16:43+00:00"
+            }
         },
         {
             "name": "drupal/paragraphs",
@@ -8236,7 +8241,6 @@
         "drupal/purge_purger_http": 10,
         "drupal/contact_ajax": 10,
         "drupal/google_analytics": 20,
-        "drupal/noreqnewpass": 20,
         "drupal/block_access": 20,
         "drupal/content_lock": 15,
         "drupal/facets": 15,
