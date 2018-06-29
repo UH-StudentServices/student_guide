@@ -74,19 +74,24 @@
             @include border-bottom;
             transition: none;
           }
+          div {
+            width: auto;
+          }
           .flag {
-            font-size: 0;
-            position: absolute;
-            right: 0;
-            color: $silver;
-            &.action-unflag {
-              color: $orange;
+            a {
+              font-size: 0;
+              position: absolute;
+              right: 0;
+              &:before {
+                color: $silver;
+                @include icon($icon-favorites);
+                @include font-size(16px);
+                display: block;
+                margin-right: 1em;
+              }
             }
-            &:before {
-              @include icon($icon-favorites);
-              @include font-size(16px);
-              display: block;
-              margin-right: 1em;
+            &.action-unflag a:before {
+              color: $orange;
             }
           }
           .ajax-progress {
