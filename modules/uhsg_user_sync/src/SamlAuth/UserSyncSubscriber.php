@@ -214,7 +214,7 @@ class UserSyncSubscriber implements EventSubscriberInterface {
     $filtered_flags = [];
 
     if ($account->isAuthenticated()) {
-      $flags = $this->getAllFlags($entity_type, $bundle);
+      $flags = $this->flagService->getAllFlags($entity_type, $bundle);
 
       foreach ($flags as $flag_id => $flag) {
         if ($flag->actionAccess('flag', $account)->isAllowed() ||
