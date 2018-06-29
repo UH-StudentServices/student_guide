@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "604d028ee65d0dc8cde2b48eaa23133e",
+    "content-hash": "c02846c20ad61b65985772fa325e550b",
     "packages": [
         {
             "name": "RubaXa/Sortable",
@@ -2007,8 +2007,7 @@
                         "status": "not-covered",
                         "message": "Alpha releases are not covered by Drupal security advisories."
                     }
-                },
-                "patches_applied": []
+                }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
@@ -2075,8 +2074,8 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.2+9-dev",
-                    "datestamp": "1520542080",
+                    "version": "8.x-2.2+15-dev",
+                    "datestamp": "1528578180",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
