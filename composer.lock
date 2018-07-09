@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "67778f684127eb7c04d4322b6e9044f2",
+    "content-hash": "c02846c20ad61b65985772fa325e550b",
     "packages": [
         {
             "name": "RubaXa/Sortable",
@@ -1977,20 +1977,23 @@
         },
         {
             "name": "drupal/flag",
-            "version": "4.0.0-alpha1",
+            "version": "4.0.0-alpha3",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/flag",
-                "reference": "8.x-4.0-alpha1"
+                "reference": "8.x-4.0-alpha3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/flag-8.x-4.0-alpha1.zip",
-                "reference": "8.x-4.0-alpha1",
-                "shasum": "a5612adca2e82104bf0d4d7eae7250c5e0defdca"
+                "url": "https://ftp.drupal.org/files/projects/flag-8.x-4.0-alpha3.zip",
+                "reference": "8.x-4.0-alpha3",
+                "shasum": "cb55277b79ff66871f0e1bd9a417b2490cae3a84"
             },
             "require": {
                 "drupal/core": "~8.0"
+            },
+            "require-dev": {
+                "drupal/rules": "*"
             },
             "type": "drupal-module",
             "extra": {
@@ -1998,15 +2001,12 @@
                     "dev-4.x": "4.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-4.0-alpha1",
-                    "datestamp": "1494517385",
+                    "version": "8.x-4.0-alpha3",
+                    "datestamp": "1521598850",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Alpha releases are not covered by Drupal security advisories."
                     }
-                },
-                "patches_applied": {
-                    "2846111-4": "https://www.drupal.org/files/issues/broken_ajax_link_views-2846111-4.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2074,8 +2074,8 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.2+9-dev",
-                    "datestamp": "1520542080",
+                    "version": "8.x-2.2+15-dev",
+                    "datestamp": "1528578180",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
