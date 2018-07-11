@@ -116,22 +116,13 @@ datasource_settings:
 processor_settings:
   add_url: {  }
   aggregated_field: {  }
-  highlight:
-    highlight: always
-    highlight_partial: false
-    excerpt: true
-    excerpt_length: 256
-    exclude_fields: {  }
-    prefix: '<strong>'
-    suffix: '</strong>'
-    weights:
-      postprocess_query: 0
   html_filter:
+    all_fields: false
     fields:
       - body
       - field_paragraph_body
-    title: true
-    alt: true
+    title: false
+    alt: false
     tags:
       h1: 5
       h2: 3
@@ -141,31 +132,10 @@ processor_settings:
     weights:
       preprocess_index: -10
       preprocess_query: -10
-  ignorecase:
-    fields:
-      - title
-      - body
-      - type
-      - field_paragraph_title
-      - field_paragraph_body
-    weights:
-      preprocess_index: -10
-      preprocess_query: -10
-  node_status: {  }
   rendered_item: {  }
-  tokenizer:
-    fields:
-      - title
-      - body
-      - field_paragraph_body
-    spaces: ''
-    overlap_cjk: 1
-    minimum_word_size: '3'
-    weights:
-      preprocess_index: -6
-      preprocess_query: -6
 tracker_settings:
-  default: {  }
+  default:
+    indexing_order: fifo
 options:
   index_directly: true
   cron_limit: 50
