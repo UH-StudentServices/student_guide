@@ -19,5 +19,6 @@ content:
     weight: 100
     region: content
 hidden:
+  body: true
   field_organisation_code: true
   langcode: true

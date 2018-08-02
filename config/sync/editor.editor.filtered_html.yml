@@ -44,6 +44,8 @@ settings:
             - Source
             - DrupalFile
             - DrupalImage
+            - Undo
+            - Redo
         -
           name: Table
           items:
