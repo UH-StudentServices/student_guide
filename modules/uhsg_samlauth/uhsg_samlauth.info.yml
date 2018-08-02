@@ -2,7 +2,7 @@ name: SAML2 Authentication for Guide
 type: module
 description: Adds additional logic on top of the original SAML2 Authentication module.
 core: 8.x
-version: 1.20
+version: VERSION
 package: Student Guide
 dependencies:
   - samlauth
