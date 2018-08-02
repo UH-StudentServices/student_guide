@@ -5,6 +5,8 @@ Release date: ??.??.????
 
 * News email content order: fi, sv, en (HUB-308)
 * WYSIWYG undo/redo buttons (HUB-322)
+* Technical updates (HUB-329, HUB-330, HUB-331, HUB-332, HUB-333, HUB-335)
+* Drupal core update (HUB-339)
 * Technical updates (HUB-329, HUB-330)
 * IE11: Table of contents visual fix (HUB-328)
 

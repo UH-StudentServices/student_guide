@@ -8,6 +8,7 @@ use Drupal\Core\Entity\EntityRepositoryInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Entity\EntityTypeRepositoryInterface;
+use Drupal\Core\Entity\Query\QueryInterface;
 use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\TypedData\TypedDataInterface;
@@ -31,6 +32,7 @@ use Symfony\Component\HttpFoundation\RequestStack;
  */
 class ActiveDegreeProgrammeServiceTest extends UnitTestCase {
 
+  const ACCOUNT_ID = 123;
   const ACTIVE_DEGREE_PROGRAMME_ID = 123;
   const DEGREE_PROGRAMME_BUNDLE = 'degree_programme';
   const PRIMARY_FIELD_NAME = 'Primary field name';
@@ -92,6 +94,9 @@ class ActiveDegreeProgrammeServiceTest extends UnitTestCase {
   /** @var ModuleHandlerInterface */
   private $moduleHandler;
 
+  /** @var QueryInterface */
+  private $query;
+
   /** @var Request */
   private $request;
 
@@ -108,6 +113,8 @@ class ActiveDegreeProgrammeServiceTest extends UnitTestCase {
     parent::setUp();
 
     $this->account = $this->prophesize(AccountInterface::class);
+    $this->account->id()->willReturn(self::ACCOUNT_ID);
+    $this->account->isAnonymous()->willReturn(FALSE);
     $this->account->isAuthenticated()->willReturn(TRUE);
 
     $this->cacheContextsManager = $this->prophesize(CacheContextsManager::class);
@@ -129,8 +136,24 @@ class ActiveDegreeProgrammeServiceTest extends UnitTestCase {
     $this->term->getEntityTypeId()->willReturn('taxonomy_term');
     $this->term->getVocabularyId()->willReturn(self::DEGREE_PROGRAMME_BUNDLE);
 
+    $this->query = $this->prophesize(QueryInterface::class);
+
+    $this->typedData = $this->prophesize(TypedDataInterface::class);
+    $this->typedData->getValue()->willReturn(['value' => 'value']);
+
+    $this->fieldItemList = $this->prophesize(FieldItemListInterface::class);
+    $this->fieldItemList->first()->willReturn($this->typedData);
+    $this->fieldItemList->isEmpty()->willReturn(FALSE);
+
+    $this->flagging = $this->prophesize(FlaggingInterface::class);
+    $this->flagging->hasField(self::PRIMARY_FIELD_NAME)->willReturn(TRUE);
+    $this->flagging->get(self::PRIMARY_FIELD_NAME)->willReturn($this->fieldItemList);
+    $this->flagging->getFlaggable()->willReturn($this->term);
+
     $this->entityStorage = $this->prophesize(EntityStorageInterface::class);
     $this->entityStorage->load(Argument::any())->willReturn($this->term);
+    $this->entityStorage->loadMultiple(Argument::any())->willReturn([$this->flagging]);
+    $this->entityStorage->getQuery(Argument::any())->willReturn($this->query);
 
     $this->entityTypeManager = $this->prophesize(EntityTypeManagerInterface::class);
     $this->entityTypeManager->getStorage(Argument::any())->willReturn($this->entityStorage);
@@ -150,21 +173,8 @@ class ActiveDegreeProgrammeServiceTest extends UnitTestCase {
 
     $this->flag = $this->prophesize(FlagInterface::class);
 
-    $this->typedData = $this->prophesize(TypedDataInterface::class);
-    $this->typedData->getValue()->willReturn(['value' => 'value']);
-
-    $this->fieldItemList = $this->prophesize(FieldItemListInterface::class);
-    $this->fieldItemList->first()->willReturn($this->typedData);
-    $this->fieldItemList->isEmpty()->willReturn(FALSE);
-
-    $this->flagging = $this->prophesize(FlaggingInterface::class);
-    $this->flagging->hasField(self::PRIMARY_FIELD_NAME)->willReturn(TRUE);
-    $this->flagging->get(self::PRIMARY_FIELD_NAME)->willReturn($this->fieldItemList);
-    $this->flagging->getFlaggable()->willReturn($this->term);
-
     $this->flagService = $this->prophesize(FlagService::class);
     $this->flagService->getFlagById(Argument::any())->willReturn($this->flag);
-    $this->flagService->getFlagFlaggings(Argument::any(), Argument::any())->willReturn([$this->flagging]);
 
     $this->requestStack = $this->prophesize(RequestStack::class);
     $this->requestStack->getCurrentRequest()->willReturn($this->request->reveal());

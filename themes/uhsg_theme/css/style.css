@@ -8617,18 +8617,18 @@ li.avatar.avatar--default img {
   transition: none;
 }
 
-.degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content li .flag {
+.degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content li div {
+  width: auto;
+}
+
+.degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content li .flag a {
   font-size: 0;
   position: absolute;
   right: 0;
+}
+
+.degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content li .flag a:before {
   color: #979797;
-}
-
-.degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content li .flag.action-unflag {
-  color: #fca311;
-}
-
-.degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content li .flag:before {
   display: inline-block;
   font-family: "hy-icons";
   font-style: normal;
@@ -8640,6 +8640,10 @@ li.avatar.avatar--default img {
   font-size: 1rem;
   display: block;
   margin-right: 1em;
+}
+
+.degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content li .flag.action-unflag a:before {
+  color: #fca311;
 }
 
 .degree-programme-switcher .degree-programme-switcher__dropdown .view-degree-programmes .view-content li .ajax-progress {
