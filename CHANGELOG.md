@@ -1,7 +1,7 @@
 #Changelog
 
-## 1.20-dev
-Release date: ??.??.????
+## 1.20
+Release date: 02.08.2018
 
 * News email content order: fi, sv, en (HUB-308)
 * WYSIWYG undo/redo buttons (HUB-322)
