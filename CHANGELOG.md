@@ -3,6 +3,8 @@
 ## 1.21-dev
 Release date: ??.??.????
 
+* IE11: Table of contents visual fix (HUB-328)
+
 
 ## 1.20
 Release date: 02.08.2018
