@@ -2,6 +2,7 @@
 
 namespace Drupal\uhsg_news\Controller;
 
+use Drupal\Component\Datetime\TimeInterface;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Url;
@@ -13,15 +14,14 @@ use Zend\Feed\Writer\Feed;
 
 class NewsFeedController extends ControllerBase {
 
-  /**
-   * @var \Drupal\uhsg_news\NewsService
-   */
+  /** @var \Drupal\Core\Entity\EntityTypeManagerInterface */
+  protected $entityTypeManager;
+
+  /** @var \Drupal\uhsg_news\NewsService */
   protected $newsService;
 
-  /**
-   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
-   */
-  protected $entityTypeManager;
+  /** @var TimeInterface */
+  protected $time;
 
   /**
    * NewsFeedController constructor.
@@ -29,9 +29,10 @@ class NewsFeedController extends ControllerBase {
    * @param NewsService $newsService
    * @param EntityTypeManagerInterface $entityTypeManager
    */
-  public function __construct(NewsService $newsService, EntityTypeManagerInterface $entityTypeManager) {
+  public function __construct(NewsService $newsService, EntityTypeManagerInterface $entityTypeManager, TimeInterface $time) {
     $this->newsService = $newsService;
     $this->entityTypeManager = $entityTypeManager;
+    $this->time = $time;
   }
 
   /**
@@ -40,7 +41,8 @@ class NewsFeedController extends ControllerBase {
   public static function create(ContainerInterface $container) {
     return new static(
       $container->get('uhsg_news.news'),
-      $container->get('entity_type.manager')
+      $container->get('entity_type.manager'),
+      $container->get('datetime.time')
     );
   }
 
@@ -101,7 +103,7 @@ class NewsFeedController extends ControllerBase {
     }
 
     if (empty($modified)) {
-      $modified[] = REQUEST_TIME;
+      $modified[] = $this->time->getRequestTime();
     }
     $feed->setDateModified(new \DateTime('@' . max($modified)));
     $feed->setFeedLink(Url::fromRoute('<current>', [], ['absolute' => TRUE])->toString(), 'atom');

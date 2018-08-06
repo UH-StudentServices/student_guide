@@ -1,5 +1,6 @@
 <?php
 
+use Drupal\Component\Datetime\TimeInterface;
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Config\ConfigFactory;
 use Drupal\Core\Config\ImmutableConfig;
@@ -56,6 +57,9 @@ class AvatarServiceTest extends UnitTestCase {
   /** @var ResponseInterface */
   private $response;
 
+  /** @var TimeInterface */
+  private $time;
+
   public function setUp() {
     parent::setUp();
 
@@ -81,6 +85,8 @@ class AvatarServiceTest extends UnitTestCase {
     $this->cachedUrl = new stdClass();
     $this->cachedUrl->data = self::AVATAR_IMAGE_URL;
 
+    $this->time = $this->prophesize(TimeInterface::class);
+
     $this->container = $this->prophesize(ContainerInterface::class);
 
     Drupal::setContainer($this->container->reveal());
@@ -90,7 +96,8 @@ class AvatarServiceTest extends UnitTestCase {
       $this->currentUser->reveal(),
       $this->client->reveal(),
       $this->logger->reveal(),
-      $this->cache->reveal()
+      $this->cache->reveal(),
+      $this->time->reveal()
     );
   }
 
