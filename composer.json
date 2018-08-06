@@ -129,6 +129,9 @@
             "drupal/google_analytics_reports": {
                 "2795115-6-and-2860399-1": "patches/google_analytics_reports.patch",
                 "2850463-2": "https://www.drupal.org/files/issues/error_when_saving-2850463-2.patch"
+            },
+            "drupal/core": {
+                "2921661": "https://www.drupal.org/files/issues/2018-07-04/2921661-86-8.6.x.patch"
             }
         }
     }
