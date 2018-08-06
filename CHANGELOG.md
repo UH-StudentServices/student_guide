@@ -3,6 +3,8 @@
 ## 1.21-dev
 Release date: ??.??.????
 
+* Sort degree programmes in a pre-defined order (HUB-336)
+
 
 ## 1.20
 Release date: 02.08.2018
@@ -11,7 +13,6 @@ Release date: 02.08.2018
 * WYSIWYG undo/redo buttons (HUB-322)
 * Technical updates (HUB-329, HUB-330, HUB-331, HUB-332, HUB-333, HUB-335)
 * Drupal core update (HUB-339)
-* Sort degree programmes in a pre-defined order (HUB-336)
 
 
 ## 1.19
