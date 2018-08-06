@@ -3,6 +3,8 @@
 ## 1.21-dev
 Release date: ??.??.????
 
+* IE11: Table of contents visual fix (HUB-328)
+* Deprecated code cleanup (HUB-337)
 * Sort degree programmes in a pre-defined order (HUB-336)
 
 

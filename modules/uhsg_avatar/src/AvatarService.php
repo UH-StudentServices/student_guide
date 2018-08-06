@@ -2,6 +2,7 @@
 
 namespace Drupal\uhsg_avatar;
 
+use Drupal\Component\Datetime\TimeInterface;
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Config\ConfigFactory;
 use Drupal\Core\Config\ImmutableConfig;
@@ -33,12 +34,16 @@ class AvatarService {
   /** @var LoggerChannel */
   protected $logger;
 
-  public function __construct(ConfigFactory $configFactory, AccountProxyInterface $currentUser, Client $client, LoggerChannel $logger, CacheBackendInterface $cache) {
+  /** @var TimeInterface */
+  protected $time;
+
+  public function __construct(ConfigFactory $configFactory, AccountProxyInterface $currentUser, Client $client, LoggerChannel $logger, CacheBackendInterface $cache, TimeInterface $time) {
     $this->config = $configFactory->get('uhsg_avatar.config');
     $this->currentUser = $currentUser;
     $this->client = $client;
     $this->logger = $logger;
     $this->cache = $cache;
+    $this->time = $time;
   }
 
   /**
@@ -123,6 +128,6 @@ class AvatarService {
   }
 
   private function getCacheExpireTimestamp() {
-    return REQUEST_TIME + self::CACHE_EXPIRE_SECONDS;
+    return $this->time->getRequestTime() + self::CACHE_EXPIRE_SECONDS;
   }
 }
