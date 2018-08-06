@@ -9,3 +9,19 @@
     margin-bottom: $vert-spacing-unit;
   }
 }
+
+// IE11: Fix for table of contents (index): The item arrow and text ended up in
+// separate columns in some cases when the text of one item did not fit on one
+// line.
+.index {
+  .index__row {
+    %button--action,
+    .button--action {
+      &.theme-transparent {
+        &:after {
+          line-height: normal; /* IE11 */
+        }
+      }
+    }
+  }
+}

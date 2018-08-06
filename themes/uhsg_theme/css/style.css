@@ -9143,6 +9143,13 @@ h1, h2, h3, h4, legend, .logo-block__content .logo-block__sitename,
   }
 }
 
+.index .index__row
+.theme-transparent.button--action-before:after,
+.index .index__row .button--action.theme-transparent:after {
+  line-height: normal;
+  /* IE11 */
+}
+
 .main-menu > ul.menu {
   display: none;
 }
