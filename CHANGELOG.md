@@ -3,6 +3,8 @@
 ## 1.21-dev
 Release date: ??.??.????
 
+* IE11: Table of contents visual fix (HUB-328)
+
 
 ## 1.20
 Release date: 02.08.2018
@@ -12,7 +14,6 @@ Release date: 02.08.2018
 * Technical updates (HUB-329, HUB-330, HUB-331, HUB-332, HUB-333, HUB-335)
 * Drupal core update (HUB-339)
 * Technical updates (HUB-329, HUB-330)
-* IE11: Table of contents visual fix (HUB-328)
 
 
 ## 1.19
