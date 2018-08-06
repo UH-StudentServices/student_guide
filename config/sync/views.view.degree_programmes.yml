@@ -10,6 +10,7 @@ dependencies:
     - flag
     - options
     - taxonomy
+    - uhsg_degree_programme
     - user
 id: degree_programmes
 label: 'Degree programmes'
@@ -441,10 +442,10 @@ display:
             label: ''
           entity_type: flagging
           plugin_id: flag_sort
-        field_degree_programme_type_value:
-          id: field_degree_programme_type_value
+        degree_programme_type:
+          id: degree_programme_type
           table: taxonomy_term__field_degree_programme_type
-          field: field_degree_programme_type_value
+          field: degree_programme_type
           relationship: none
           group_type: group
           admin_label: ''
@@ -452,7 +453,7 @@ display:
           exposed: false
           expose:
             label: ''
-          plugin_id: standard
+          plugin_id: degree_programme_type
         name:
           id: name
           table: taxonomy_term_field_data
