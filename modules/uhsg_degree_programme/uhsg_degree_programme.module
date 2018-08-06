@@ -71,11 +71,12 @@ function uhsg_degree_programme_alter_degree_programmes_query(ViewExecutable $vie
 
 
 /**
- * Implements hook_views_data_alter().
+ * Implements hook_views_data().
  *
  * Provides a way to use the custom degree programme type sorting in views.
  */
-function uhsg_degree_programme_views_data_alter(array &$data) {
+function uhsg_degree_programme_views_data() {
+  $data = [];
   $data['taxonomy_term__field_degree_programme_type']['degree_programme_type'] = array(
     'title' => t('Custom degree programme type sort'),
     'group' => t('Taxonomy term'),
@@ -85,4 +86,5 @@ function uhsg_degree_programme_views_data_alter(array &$data) {
       'id' => 'degree_programme_type',
     ),
   );
+  return $data;
 }
