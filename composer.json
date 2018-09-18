@@ -21,7 +21,8 @@
         "drupal/devel": "^1.0",
         "squizlabs/php_codesniffer": "2.*",
         "se/selenium-server-standalone": "^2.53",
-        "behat/mink-selenium2-driver": "^1.3"
+        "behat/mink-selenium2-driver": "^1.3",
+        "symfony/phpunit-bridge": "^4.1"
     },
     "require": {
         "cweagans/composer-patches": "1.6.5",
