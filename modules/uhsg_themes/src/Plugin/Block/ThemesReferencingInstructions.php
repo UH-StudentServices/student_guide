@@ -3,7 +3,7 @@
 namespace Drupal\uhsg_themes\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
-use Drupal\Core\Entity\EntityManagerInterface;
+use Drupal\Core\Entity\EntityRepositoryInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Link;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
@@ -21,8 +21,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  */
 class ThemesReferencingInstructions extends BlockBase implements ContainerFactoryPluginInterface {
 
-  /** @var EntityManagerInterface */
-  protected $entityManager;
+  /** @var EntityRepositoryInterface */
+  protected $entityRepository;
 
   /** @var LanguageManagerInterface */
   protected $languageManager;
@@ -30,8 +30,8 @@ class ThemesReferencingInstructions extends BlockBase implements ContainerFactor
   /** @var RouteMatchInterface */
   protected $routeMatch;
 
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityManagerInterface $entityManager, LanguageManagerInterface $languageManager, RouteMatchInterface $routeMatch) {
-    $this->entityManager = $entityManager;
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityRepositoryInterface $entityRepository, LanguageManagerInterface $languageManager, RouteMatchInterface $routeMatch) {
+    $this->entityRepository = $entityRepository;
     $this->languageManager = $languageManager;
     $this->routeMatch = $routeMatch;
 
@@ -46,7 +46,7 @@ class ThemesReferencingInstructions extends BlockBase implements ContainerFactor
       $configuration,
       $plugin_id,
       $plugin_definition,
-      $container->get('entity.manager'),
+      $container->get('entity.repository'),
       $container->get('language_manager'),
       $container->get('current_route_match')
     );
@@ -141,7 +141,7 @@ class ThemesReferencingInstructions extends BlockBase implements ContainerFactor
       $nodes = Node::loadMultiple($themes);
 
       foreach ($nodes as $node) {
-        $translation = $this->entityManager->getTranslationFromContext($node);
+        $translation = $this->entityRepository->getTranslationFromContext($node);
 
         $links[] = Link::createFromRoute(
           $translation->getTitle(),

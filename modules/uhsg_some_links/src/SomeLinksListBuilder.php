@@ -4,7 +4,7 @@ namespace Drupal\uhsg_some_links;
 
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityListBuilder;
-use Drupal\Core\Routing\LinkGeneratorTrait;
+use Drupal\Core\Link;
 use Drupal\Core\Url;
 
 /**
@@ -13,8 +13,6 @@ use Drupal\Core\Url;
  * @ingroup uhsg_some_links
  */
 class SomeLinksListBuilder extends EntityListBuilder {
-
-  use LinkGeneratorTrait;
 
   /**
    * {@inheritdoc}
@@ -31,7 +29,7 @@ class SomeLinksListBuilder extends EntityListBuilder {
   public function buildRow(EntityInterface $entity) {
     /* @var $entity \Drupal\uhsg_some_links\Entity\SomeLinks */
     $row['id'] = $entity->id();
-    $row['name'] = $this->l(
+    $row['name'] = new Link(
       $entity->label(),
       new Url(
         'entity.some_links.edit_form', array(

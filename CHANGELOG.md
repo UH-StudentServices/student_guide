@@ -1,5 +1,14 @@
 #Changelog
 
+## 1.21
+Release date: 18.09.2018
+
+* IE11: Table of contents visual fix (HUB-328)
+* Deprecated code cleanup (HUB-337)
+* Better search results (HUB-260)
+* Sort degree programmes in a pre-defined order (HUB-336)
+
+
 ## 1.20
 Release date: 02.08.2018
 

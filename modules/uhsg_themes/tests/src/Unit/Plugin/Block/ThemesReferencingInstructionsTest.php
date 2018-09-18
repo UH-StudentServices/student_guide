@@ -1,6 +1,6 @@
 <?php
 
-use Drupal\Core\Entity\EntityManagerInterface;
+use Drupal\Core\Entity\EntityRepositoryInterface;
 use Drupal\Core\Language\LanguageInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Routing\CurrentRouteMatch;
@@ -18,8 +18,8 @@ class ThemesReferencingInstructionsTest extends UnitTestCase {
   /** @var CurrentRouteMatch */
   private $currentRouteMatch;
 
-  /** @var EntityManagerInterface */
-  private $entityManager;
+  /** @var EntityRepositoryInterface */
+  private $entityRepository;
 
   /** @var LanguageInterface */
   private $language;
@@ -42,7 +42,7 @@ class ThemesReferencingInstructionsTest extends UnitTestCase {
     $this->currentRouteMatch = $this->prophesize(CurrentRouteMatch::class);
     $this->currentRouteMatch->getParameter('node')->willReturn($this->node);
 
-    $this->entityManager = $this->prophesize(EntityManagerInterface::class);
+    $this->entityRepository = $this->prophesize(EntityRepositoryInterface::class);
 
     $this->language = $this->prophesize(LanguageInterface::class);
     $this->language->getId()->willReturn(self::LANGUAGE_ID);
@@ -51,7 +51,7 @@ class ThemesReferencingInstructionsTest extends UnitTestCase {
     $this->languageManager->getCurrentLanguage()->willReturn($this->language);
 
     $this->themesReferencingInstructions = new ThemesReferencingInstructions(
-      [], NULL, NULL, $this->entityManager->reveal(), $this->languageManager->reveal(), $this->currentRouteMatch->reveal()
+      [], NULL, NULL, $this->entityRepository->reveal(), $this->languageManager->reveal(), $this->currentRouteMatch->reveal()
     );
   }
 

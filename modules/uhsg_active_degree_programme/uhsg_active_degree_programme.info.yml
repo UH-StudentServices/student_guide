@@ -2,7 +2,7 @@ name: Active degree programme
 type: module
 description: Keeps track of the active degree programme.
 core: 8.x
-version: 1.20
+version: 1.21
 package: Student Guide
 dependencies:
   - taxonomy
