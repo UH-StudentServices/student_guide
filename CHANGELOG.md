@@ -1,5 +1,8 @@
 #Changelog
 
+## 1.22-dev
+Release date: ??.??.????
+
 ## 1.21
 Release date: 18.09.2018
 
