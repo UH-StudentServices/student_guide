@@ -5,6 +5,8 @@ Release date: ??.??.????
 
 * Drupal core update (HUB-348)
 * Degree programme specific news first on the news page (HUB-344)
+* Removed paragraph file attachment support (HUB-263)
+
 
 ## 1.21
 Release date: 18.09.2018
