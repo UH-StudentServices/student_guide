@@ -53,7 +53,9 @@
   {% endif %}
   {{ title_suffix }}
 
-  {{ degree_programme_switcher }}
+  {% if display_id != 'attachment_1' %}
+    {{ degree_programme_switcher }}
+  {% endif %}
 
   {% if exposed %}
     <div class="view-filters">
