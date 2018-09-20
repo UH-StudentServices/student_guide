@@ -3,6 +3,9 @@
 ## 1.22-dev
 Release date: ??.??.????
 
+* Degree programme specific news first on the news page (HUB-344)
+
+
 ## 1.21
 Release date: 18.09.2018
 
