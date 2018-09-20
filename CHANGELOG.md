@@ -3,6 +3,8 @@
 ## 1.22-dev
 Release date: ??.??.????
 
+* Drupal core update (HUB-348)
+
 ## 1.21
 Release date: 18.09.2018
 
@@ -10,7 +12,6 @@ Release date: 18.09.2018
 * Deprecated code cleanup (HUB-337)
 * Better search results (HUB-260)
 * Sort degree programmes in a pre-defined order (HUB-336)
-* Drupal core update (HUB-348)
 
 
 ## 1.20
