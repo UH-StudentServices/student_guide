@@ -6,7 +6,6 @@ dependencies:
     - core.entity_view_mode.paragraph.preview
     - field.field.paragraph.paragraph.field_paragraph_body
     - field.field.paragraph.paragraph.field_paragraph_degree_programme
-    - field.field.paragraph.paragraph.field_paragraph_file
     - field.field.paragraph.paragraph.field_paragraph_image
     - field.field.paragraph.paragraph.field_paragraph_links
     - field.field.paragraph.paragraph.field_paragraph_title
@@ -36,7 +35,6 @@ content:
 hidden:
   created: true
   field_paragraph_body: true
-  field_paragraph_file: true
   field_paragraph_image: true
   field_paragraph_links: true
   field_paragraph_video: true
