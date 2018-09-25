@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.field.paragraph.paragraph.field_paragraph_body
     - field.field.paragraph.paragraph.field_paragraph_degree_programme
-    - field.field.paragraph.paragraph.field_paragraph_file
     - field.field.paragraph.paragraph.field_paragraph_image
     - field.field.paragraph.paragraph.field_paragraph_links
     - field.field.paragraph.paragraph.field_paragraph_title
@@ -13,7 +12,6 @@ dependencies:
     - image.style.paragraph_image
     - paragraphs.paragraphs_type.paragraph
   module:
-    - file
     - image
     - link
     - text
@@ -37,13 +35,6 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    region: content
-  field_paragraph_file:
-    weight: 5
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: file_default
     region: content
   field_paragraph_image:
     weight: 4
