@@ -1,7 +1,7 @@
 #Changelog
 
-## 1.22-dev
-Release date: ??.??.????
+## 1.22
+Release date: 25.09.2018
 
 * Drupal core update (HUB-348)
 * Degree programme specific news first on the news page (HUB-344)
