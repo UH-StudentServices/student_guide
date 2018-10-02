@@ -38,7 +38,7 @@
 #}
 
 {% if eduviewer is not empty %}
-  <script type="text/javascript" src="{{ eduviewer['#script_src'] }}" async></script>
+  <script type="text/javascript" src="{{ eduviewer['#script_src'] }}" defer></script>
   <div {{ attributes.addClass('l-subregion-wrapper') }}>
     <div class="l-subregion col-container">
       <div class="col-left"></div>
