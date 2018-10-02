@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_article_paragraph
     - node.type.article
+    - paragraphs.paragraphs_type.eduviewer
     - paragraphs.paragraphs_type.office_hours
     - paragraphs.paragraphs_type.paragraph
   module:
@@ -22,9 +23,11 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
+    negate: 0
     target_bundles:
       paragraph: paragraph
       office_hours: office_hours
+      eduviewer: eduviewer
     target_bundles_drag_drop:
       accordion:
         weight: 3
@@ -35,6 +38,9 @@ settings:
       office_hours:
         enabled: true
         weight: 5
+      eduviewer:
+        enabled: true
+        weight: 7
       theme_section:
         weight: 8
         enabled: false
