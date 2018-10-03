@@ -36,7 +36,7 @@ msgstr "Anna palautetta palvelusta..."
 msgid "News"
 msgstr "Uutinen"
 
-msgid "Notice"
+msgid "Bulletin"
 msgstr "Tiedote"
 
 msgid "This news has been sent to the following email addresses:"
@@ -98,7 +98,7 @@ msgid "News"
 msgstr "Uutiset"
 
 msgctxt "Search Filters"
-msgid "Notice"
+msgid "Bulletin"
 msgstr "Tiedote"
 
 msgctxt "Search Filters"
