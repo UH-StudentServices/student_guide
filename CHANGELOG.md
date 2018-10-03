@@ -3,6 +3,8 @@
 ## 1.23-dev
 Release date: ??.??.????
 
+* Excluded courses embed content from the search (HUB-354)
+
 
 ## 1.22
 Release date: 25.09.2018
