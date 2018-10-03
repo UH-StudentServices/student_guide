@@ -4,6 +4,7 @@
 Release date: ??.??.????
 
 * Excluded courses embed content from the search (HUB-354)
+* Notice -> Bulletin (HUB-352)
 
 
 ## 1.22
