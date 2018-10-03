@@ -108,8 +108,11 @@ field_settings:
 datasource_settings:
   'entity:node':
     bundles:
-      default: true
-      selected: {  }
+      default: false
+      selected:
+        - article
+        - news
+        - theme
     languages:
       default: true
       selected: {  }
