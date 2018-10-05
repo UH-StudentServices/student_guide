@@ -240,6 +240,12 @@ function uhsg_theme_preprocess_views_view(&$variables) {
       if ($block_view) {
         $variables['frontpagetextblock'] = $block_view;
       }
+      // Add front page additional text block.
+      $additional_text_block_entity = \Drupal::service('entity.repository')->loadEntityByUuid('block_content', 'ecd71681-cd04-4ee0-b9b2-015cc2a19ff0');
+      $additional_text_block = \Drupal::entityTypeManager()->getViewBuilder('block_content')->view($additional_text_block_entity);
+      if ($additional_text_block) {
+        $variables['frontpageadditionaltextblock'] = $additional_text_block;
+      }
       $variables['title'] = $variables['view']->getTitle();
       $variables['content_attributes']['class'][] = 'view-content';
       $variables['degree_programme_switcher'] = _uhsg_theme_get_degree_programme_switcher();
