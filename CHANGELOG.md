@@ -3,6 +3,8 @@
 ## 1.24-dev
 Release date: ??.??.????
 
+* Added an optional info text field for front page (HUB-315)
+
 
 ## 1.23
 Release date: 08.10.2018
