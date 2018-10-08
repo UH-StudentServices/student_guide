@@ -9511,6 +9511,25 @@ h1, h2, h3, h4, legend, .logo-block__content .logo-block__sitename,
   border-radius: 10px;
 }
 
+.path-frontpage h1 {
+  display: inline-block;
+}
+
+@media (max-width: 48em) {
+  .path-frontpage h1 {
+    display: initial;
+  }
+}
+
+.path-frontpage .tooltip {
+  vertical-align: top;
+}
+
+.path-frontpage .tooltip-toggle {
+  vertical-align: top;
+  margin-top: 0.2em;
+}
+
 .top-content li:last-child {
   display: none;
 }
