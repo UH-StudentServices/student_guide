@@ -62,6 +62,9 @@ function student_guide_update_8002(&$sandbox) {
   }
 }
 
+/**
+ * Create front page additional text block.
+ */
 function student_guide_update_8003(&$sandbox) {
   student_guide_create_front_page_additional_text_block();
 }
