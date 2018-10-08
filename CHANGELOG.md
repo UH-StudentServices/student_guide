@@ -1,5 +1,12 @@
 #Changelog
 
+## 1.23
+Release date: 08.10.2018
+
+* Excluded courses embed content from the search (HUB-354)
+* Notice -> Bulletin (HUB-352)
+
+
 ## 1.22
 Release date: 25.09.2018
 
