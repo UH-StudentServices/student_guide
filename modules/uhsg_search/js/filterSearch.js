@@ -12,7 +12,7 @@
           article_general: Drupal.t('General instructions', {}, {context: 'Search Filters'}),
           article_degree_programme_specific: Drupal.t('Degree programme specific instructions', {}, {context: 'Search Filters'}),
           theme: Drupal.t('Theme', {}, {context: 'Search Filters'}),
-          news: Drupal.t('Notice', {}, {context: 'Search Filters'})
+          news: Drupal.t('Bulletin', {}, {context: 'Search Filters'})
         };
 
         // create buttons for available filter types if more than one type of result

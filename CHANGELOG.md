@@ -1,9 +1,17 @@
 #Changelog
 
-## 1.23-dev
+## 1.24-dev
 Release date: ??.??.????
 
+* Added an optional info text field for front page (HUB-315)
 * Eduviewer embed support (HUB-342)
+
+
+## 1.23
+Release date: 08.10.2018
+
+* Excluded courses embed content from the search (HUB-354)
+* Notice -> Bulletin (HUB-352)
 
 
 ## 1.22

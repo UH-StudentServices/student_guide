@@ -340,3 +340,20 @@ function student_guide_create_front_page_text_block() {
   $block->addTranslation('en', ['field_content_block_text' => $text_en]);
   $block->save();
 }
+
+/**
+ * Create content block for front page additional text.
+ */
+function student_guide_create_front_page_additional_text_block() {
+  $block = BlockContent::create([
+    'info' => 'Front page additional text block',
+    'type' => 'content_block',
+    'langcode' => 'fi',
+    'uuid' => 'ecd71681-cd04-4ee0-b9b2-015cc2a19ff0'
+  ]);
+
+  $block->set('field_content_block_text', '');
+  $block->addTranslation('sv', ['field_content_block_text' => '']);
+  $block->addTranslation('en', ['field_content_block_text' => '']);
+  $block->save();
+}

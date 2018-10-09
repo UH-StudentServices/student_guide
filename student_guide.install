@@ -26,6 +26,7 @@ function student_guide_install() {
   // see https://www.drupal.org/node/2599228
   \Drupal::service('entity.definition_update_manager')->applyUpdates();
   student_guide_create_front_page_text_block();
+  student_guide_create_front_page_additional_text_block();
 }
 
 /**
@@ -59,4 +60,11 @@ function student_guide_update_8002(&$sandbox) {
       $link->save();
     }
   }
+}
+
+/**
+ * Create front page additional text block.
+ */
+function student_guide_update_8003(&$sandbox) {
+  student_guide_create_front_page_additional_text_block();
 }

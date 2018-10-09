@@ -49,3 +49,22 @@
   padding: 1em;
   border-radius: 10px;
 }
+
+// Front page: Display tooltip after the main heading.
+.path-frontpage {
+  h1 {
+    display: inline-block;
+    @include breakpoint($mobile-only) {
+      display: initial;
+    }
+  }
+
+  .tooltip {
+    vertical-align: top;
+  }
+
+  .tooltip-toggle {
+    vertical-align: top;
+    margin-top: 0.2em;
+  }
+}
