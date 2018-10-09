@@ -15,7 +15,10 @@ function uhsg_eduviewer_preprocess_paragraph(&$variables) {
     $active_degree_programme_service = \Drupal::service('uhsg_active_degree_programme.active_degree_programme');
     $active_degree_programme_code = $active_degree_programme_service->getCode();
 
-    if (!empty($active_degree_programme_code)) {
+    // Display Eduviewer if the code is not empty and is not 'KH20_001' or 'MH30_003' (see HUB-342).
+    $display_eduviewer = !empty($active_degree_programme_code) && !in_array($active_degree_programme_code, ['KH20_001', 'MH30_003']);
+
+    if ($display_eduviewer) {
       $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
       $eduviewer_markup = "<div id=\"eduviewer-root\" degree-program-id=\"$active_degree_programme_code\" lang=\"$language\"></div>";
 
