@@ -3,25 +3,17 @@
 /**
  * Implements hook_preprocess_HOOK().
  *
- * Add an id attribute to each paragraph for linking to it from the table of
- * contents. Handle Eduviewer paragraph type.
+ * Handle Eduviewer paragraph type. Renders Eduviewer markup and attaches
+ * required external scripts. Sets cache contexts.
  */
 function uhsg_eduviewer_preprocess_paragraph(&$variables) {
-  $variables['attributes']['id'] = 'paragraph-' . $variables['paragraph']->id();
-
   if ($variables['paragraph']->getType() == 'eduviewer') {
 
-    /** @var $active_degree_programme_service \Drupal\uhsg_active_degree_programme\ActiveDegreeProgrammeService */
-    $active_degree_programme_service = \Drupal::service('uhsg_active_degree_programme.active_degree_programme');
-    $active_degree_programme_code = $active_degree_programme_service->getCode();
+    /** @var $eduviewer \Drupal\uhsg_eduviewer\Eduviewer */
+    $eduviewer = \Drupal::service('uhsg_eduviewer.eduviewer');
+    $eduviewer_markup = $eduviewer->getMarkup();
 
-    // Display Eduviewer if the code is not empty and is not 'KH20_001' or 'MH30_003' (see HUB-342).
-    $display_eduviewer = !empty($active_degree_programme_code) && !in_array($active_degree_programme_code, ['KH20_001', 'MH30_003']);
-
-    if ($display_eduviewer) {
-      $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
-      $eduviewer_markup = "<div id=\"eduviewer-root\" degree-program-id=\"$active_degree_programme_code\" lang=\"$language\"></div>";
-
+    if ($eduviewer_markup) {
       $variables['eduviewer'] = ['#markup' => $eduviewer_markup];
       $variables['eduviewer']['#attached']['library'][] = 'uhsg_eduviewer/eduviewer';
       $variables['attributes']['class'][] = 'eduviewer';
