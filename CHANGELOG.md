@@ -1,7 +1,7 @@
 #Changelog
 
-## 1.xx-dev
-Release date: ??.??.????
+## 1.24
+Release date: 18.10.2018
 
 * Added an optional info text field for front page (HUB-315)
 
