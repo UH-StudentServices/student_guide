@@ -2,5 +2,5 @@ name: Theme
 type: module
 description: Provides functionality for theme content type.
 core: 8.x
-version: 1.24
+version: VERSION
 package: Student Guide

@@ -2,5 +2,5 @@ name: Article
 type: module
 description: Provides article paragraphs.
 core: 8.x
-version: 1.24
+version: VERSION
 package: Student Guide
