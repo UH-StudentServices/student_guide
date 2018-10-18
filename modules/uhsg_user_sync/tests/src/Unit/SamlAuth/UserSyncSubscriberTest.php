@@ -15,6 +15,7 @@ use Drupal\uhsg_user_sync\SamlAuth\UserSyncSubscriber;
 use Drupal\user\UserInterface;
 use Prophecy\Argument;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\Core\Messenger\MessengerInterface;
 
 /**
  * @group uhsg
@@ -55,6 +56,9 @@ class UserSynscSubscriberTest extends UnitTestCase {
   /** @var \Drupal\Core\Logger\LoggerChannel*/
   private $logger;
 
+  /** @var \Drupal\Core\Messenger\MessengerInterface */
+  private $messenger;
+
   /** @var \Drupal\uhsg_oprek\Oprek\OprekServiceInterface*/
   private $oprekService;
 
@@ -93,6 +97,7 @@ class UserSynscSubscriberTest extends UnitTestCase {
 
     $this->flagService = $this->prophesize(FlagServiceInterface::class);
     $this->logger = $this->prophesize(LoggerChannel::class);
+    $this->messenger = $this->prophesize(MessengerInterface::class);
     $this->oprekService = $this->prophesize(OprekServiceInterface::class);
 
     $this->container = $this->prophesize(ContainerInterface::class);
@@ -104,7 +109,8 @@ class UserSynscSubscriberTest extends UnitTestCase {
       $this->oprekService->reveal(),
       $this->flagService->reveal(),
       $this->entityTypeManager->reveal(),
-      $this->logger->reveal()
+      $this->logger->reveal(),
+      $this->messenger->reveal()
     );
   }
 

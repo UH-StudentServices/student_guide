@@ -16,6 +16,7 @@ use Drupal\uhsg_oprek\Oprek\StudyRight\StudyRight;
 use Drupal\uhsg_samlauth\AttributeParser;
 use Drupal\uhsg_samlauth\AttributeParserInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Drupal\Core\Messenger\MessengerInterface;
 
 /**
  * Synchronise relevant user attributes given by SAML authentication during SAML
@@ -50,12 +51,18 @@ class UserSyncSubscriber implements EventSubscriberInterface {
    */
   protected $logger;
 
-  public function __construct(ConfigFactoryInterface $configFactory, OprekServiceInterface $oprekService, FlagServiceInterface $flagService, EntityTypeManagerInterface $entityTypeManager, LoggerChannel $logger) {
+  /**
+   * @var \Drupal\Core\Messenger\MessengerInterface
+   */
+  protected $messenger;
+
+  public function __construct(ConfigFactoryInterface $configFactory, OprekServiceInterface $oprekService, FlagServiceInterface $flagService, EntityTypeManagerInterface $entityTypeManager, LoggerChannel $logger, MessengerInterface $messenger) {
     $this->config = $configFactory->get('uhsg_user_sync.settings');
     $this->oprekService = $oprekService;
     $this->flagService = $flagService;
     $this->entityTypeManager = $entityTypeManager;
     $this->logger = $logger;
+    $this->messenger = $messenger;
   }
 
   /**
@@ -76,7 +83,7 @@ class UserSyncSubscriber implements EventSubscriberInterface {
     }
     catch (\Exception $e) {
       $this->logger->error($this->t('Could not get degree programmes. Error: @error (code @code)', ['@error' => $e->getMessage(), '@code' => $e->getCode()]));
-      drupal_set_message($this->t('There is a problem with the connection to Oodi and your degree programmes cannot be shown.'), 'warning');
+      $this->messenger->addMessage($this->t('There is a problem with the connection to Oodi and your degree programmes cannot be shown.'), 'warning');
     }
   }
 
