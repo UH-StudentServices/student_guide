@@ -7,6 +7,9 @@ use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\uhsg_oprek\Oprek\StudyRight\StudyRight;
 use GuzzleHttp\Client;
 
+/**
+ * Service for interacting with backend integration service "Oprek".
+ */
 class OprekService implements OprekServiceInterface {
 
   /**
@@ -15,14 +18,14 @@ class OprekService implements OprekServiceInterface {
   protected $config;
 
   /**
-   * @var Client
+   * @var \GuzzleHttp\Client
    */
   protected $client;
 
   /**
    * OprekService constructor.
-   * @param ConfigFactoryInterface $config
-   * @param Client $client
+   * @param \Drupal\Core\Config\ConfigFactoryInterface $config
+   * @param \GuzzleHttp\Client $client
    */
   public function __construct(ConfigFactoryInterface $config, Client $client) {
     $this->config = $config->get('uhsg_oprek.settings');
@@ -79,11 +82,11 @@ class OprekService implements OprekServiceInterface {
         return $this->getDataFromBody($body);
       }
       else {
-        throw new \Exception('Oprek service responded, but body status is not OK', ($response->getStatusCode()*1000)+$this->getStatusFromBody($body));
+        throw new \Exception('Oprek service responded, but body status is not OK', ($response->getStatusCode() * 1000) + $this->getStatusFromBody($body));
       }
     }
     else {
-      throw new \Exception('Oprek service did not responded OK', $response->getStatusCode()*1000);
+      throw new \Exception('Oprek service did not responded OK', $response->getStatusCode() * 1000);
     }
 
   }

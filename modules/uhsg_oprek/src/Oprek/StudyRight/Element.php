@@ -2,6 +2,9 @@
 
 namespace Drupal\uhsg_oprek\Oprek\StudyRight;
 
+/**
+ *
+ */
 class Element implements ElementInterface {
 
   /**

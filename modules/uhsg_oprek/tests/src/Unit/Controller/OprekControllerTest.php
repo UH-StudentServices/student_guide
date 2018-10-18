@@ -15,19 +15,19 @@ class OprekControllerTest extends UnitTestCase {
   const FIELD_STUDENT_NUMBER = 'field_student_number';
   const STUDENT_NUMBER = 111;
 
-  /** @var FieldItemListInterface */
+  /** @var \Drupal\Core\Field\FieldItemListInterface*/
   private $fieldItemList;
 
-  /** @var OprekController */
+  /** @var \Drupal\uhsg_oprek\Controller\OprekController*/
   private $oprekController;
 
-  /** @var OprekServiceInterface */
+  /** @var \Drupal\uhsg_oprek\Oprek\OprekServiceInterface*/
   private $oprekService;
 
-  /** @var TypedDataInterface */
+  /** @var \Drupal\Core\TypedData\TypedDataInterface*/
   private $typedData;
 
-  /** @var UserInterface */
+  /** @var \Drupal\user\UserInterface*/
   private $user;
 
   public function setUp() {
@@ -58,4 +58,5 @@ class OprekControllerTest extends UnitTestCase {
 
     $this->oprekController->infoPage($this->user->reveal());
   }
+
 }

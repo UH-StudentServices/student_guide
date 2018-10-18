@@ -2,6 +2,9 @@
 
 namespace Drupal\uhsg_oprek\Oprek\StudyRight;
 
+/**
+ *
+ */
 interface StudyRightInterface {
 
   const STATE_PRIMARY = 'primary';

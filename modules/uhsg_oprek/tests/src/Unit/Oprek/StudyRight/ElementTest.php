@@ -11,7 +11,7 @@ class ElementTest extends UnitTestCase {
   const CODE_KEY = 'code';
   const CODE_VALUE = 'code value';
 
-  /** @var Element */
+  /** @var \Drupal\uhsg_oprek\Oprek\StudyRight\Element*/
   private $element;
 
   /**
@@ -40,4 +40,5 @@ class ElementTest extends UnitTestCase {
 
     $this->assertEmpty($this->element->getCode());
   }
+
 }
