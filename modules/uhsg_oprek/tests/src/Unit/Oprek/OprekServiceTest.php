@@ -17,7 +17,6 @@ class OprekServiceTest extends UnitTestCase {
   const CERT_FILEPATH = 'certfilepath';
   const CERT_KEY_FILEPATH = 'certkeyfilepath';
   const STUDENT_NUMBER = '123';
-  const STUDY_RIGHTS_RESPONSE = '{"status": 200, "data": []}';
   const VERSION = 123;
   const VERSION_RESPONSE = '{"status": 200, "data": {"version": ' . self::VERSION . '}}';
 
@@ -39,11 +38,16 @@ class OprekServiceTest extends UnitTestCase {
   /** @var \Psr\Http\Message\StreamInterface*/
   private $stream;
 
+  /** @var string */
+  private $studyRightResponse;
+
   public function setUp() {
     parent::setUp();
 
+    $this->studyRightResponse = file_get_contents(__DIR__ . '/study_rights_response.json');
+
     $this->stream = $this->prophesize(StreamInterface::class);
-    $this->stream->getContents()->willReturn(self::STUDY_RIGHTS_RESPONSE);
+    $this->stream->getContents()->willReturn($this->studyRightResponse);
 
     $this->response = $this->prophesize(ResponseInterface::class);
     $this->response->getStatusCode()->willReturn(200);
