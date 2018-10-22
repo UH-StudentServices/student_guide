@@ -20,6 +20,24 @@ class StudyRight implements StudyRightInterface {
   protected $knownStates = ['Optio' => self::STATE_OPTION, 'Ensisijainen' => self::STATE_PRIMARY];
 
   /**
+   * Holds the single element list of TargetedCodes for static caching.
+   * @var []TargetedCode
+   */
+  protected $targetedCodesSingles;
+
+  /**
+   * Holds the concatonated element list of TargetedCodes for static caching.
+   * @var []TargetedCode
+   */
+  protected $targetedCodesConcatonated;
+
+  /**
+   * Holds the assembled list of TargetedCodes for static caching.
+   * @var []TargetedCode
+   */
+  protected $targetedCodes;
+
+  /**
    * StudyRight constructor.
    * @param array $properties
    *   List of the properties of study rights given by the response of Oprek
@@ -27,6 +45,8 @@ class StudyRight implements StudyRightInterface {
    */
   public function __construct(array $properties) {
     $this->properties = $properties;
+    $this->targetedCodesSingles = [];
+    $this->targetedCodesConcatonated = [];
   }
 
   /**
@@ -77,6 +97,76 @@ class StudyRight implements StudyRightInterface {
       }
     }
     return $return;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getTargetedCodes() {
+    if (is_null($this->targetedCodes)) {
+      $this->targetedCodes = [];
+      $this->assembleSingularTargetedCodes();
+      $this->assembleConcatenatedTargetedCodes();
+      $this->assembleTargetedCodes();
+    }
+    return $this->targetedCodes;
+  }
+
+  /**
+   * Assembles each element as single targeted codes.
+   * @return void
+   */
+  private function assembleSingularTargetedCodes() {
+    foreach ($this->getElements() as $element) {
+      if ($element->isTargetable()) {
+        $targetedCode = new TargetedCode();
+        $targetedCode->setElements([$element]);
+        $this->targetedCodesSingles[] = $targetedCode;
+      }
+    }
+  }
+
+  /**
+   * Assembles elements as concatonated targeted code.
+   * @return void
+   */
+  private function assembleConcatenatedTargetedCodes() {
+    $concatenatedElements = [];
+    foreach ($this->getElements() as $element) {
+      if ($element->isTargetable()) {
+        $concatenatedElements[] = $element;
+      }
+    }
+    if (count($concatenatedElements) > 1) {
+      $targetedCode = new TargetedCode();
+      $targetedCode->setElements($concatenatedElements);
+      $this->targetedCodesConcatonated[] = $targetedCode;
+    }
+  }
+
+  /**
+   * Assigns an primary targeted code if there should be one.
+   */
+  private function assembleTargetedCodes() {
+    if ($this->getState() == self::STATE_PRIMARY) {
+      if (empty($this->targetedCodesConcatonated) && !empty($this->targetedCodesSingles)) {
+        // When no concatonated codes, then we simply tag first code
+        foreach ($this->targetedCodesSingles as $index => $targetedCodesSingle) {
+          $this->targetedCodesSingles[$index]->setPrimary(TRUE);
+          break;
+        }
+      }
+      elseif (!empty($this->targetedCodesConcatonated)) {
+        // When concatonated codes, then we simply tag first code primary
+        foreach ($this->targetedCodesConcatonated as $index => $targetedCodeConcatonated) {
+          $this->targetedCodesConcatonated[$index]->setPrimary(TRUE);
+          break;
+        }
+      }
+    }
+
+    // Finally merge both assembled into one array of targeted codes
+    $this->targetedCodes = array_merge($this->targetedCodesSingles, $this->targetedCodesConcatonated);
   }
 
 }

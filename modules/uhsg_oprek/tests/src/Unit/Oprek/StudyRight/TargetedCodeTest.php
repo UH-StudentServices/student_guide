@@ -37,18 +37,18 @@ class TargetedCodeTest extends UnitTestCase {
       ],
       3 => [
         'primary' => FALSE,
-        'elements' => [new Element(['code' => 'Z', 'element_id' => 20])],
+        'elements' => [new Element(['code' => 'A', 'element_id' => 20])],
       ],
       4 => [
         'primary' => FALSE,
         'elements' => [
-          new Element(['code' => 'Z', 'element_id' => 20]),
-          new Element(['code' => 'XY', 'element_id' => 30]),
+          new Element(['code' => 'A', 'element_id' => 20]),
+          new Element(['code' => 'SD', 'element_id' => 30]),
         ],
       ],
       5 => [
         'primary' => FALSE,
-        'elements' => [new Element(['code' => 'XY', 'element_id' => 30])],
+        'elements' => [new Element(['code' => 'SD', 'element_id' => 30])],
       ],
     ];
   }
@@ -69,16 +69,16 @@ class TargetedCodeTest extends UnitTestCase {
       $targetedCode = new TargetedCode();
 
       // isPrimary() should return FALSE, because it hasn't been set
-      $this->assertEquals($targetedCode->isPrimary(), FALSE);
+      $this->assertEquals(FALSE, $targetedCode->isPrimary());
 
       // isPrimary() should return expected primary boolean, because it has been
       // set with setPrimary()
       $targetedCode->setPrimary($this->input[$index]['primary']);
-      $this->assertEquals($targetedCode->isPrimary(), $expectedPrimary);
+      $this->assertEquals($expectedPrimary, $targetedCode->isPrimary());
 
       // Setting elements should not affect isPrimary()
       $targetedCode->setElements($this->input[$index]['elements']);
-      $this->assertEquals($targetedCode->isPrimary(), $expectedPrimary);
+      $this->assertEquals($expectedPrimary, $targetedCode->isPrimary());
     }
   }
 
@@ -90,24 +90,24 @@ class TargetedCodeTest extends UnitTestCase {
       0 => 'Z',
       1 => 'ZXY',
       2 => 'XY',
-      3 => 'Z',
-      4 => 'ZXY',
-      5 => 'XY',
+      3 => 'A',
+      4 => 'ASD',
+      5 => 'SD',
     ];
     foreach ($expectedCodes as $index => $expectedCode) {
       $targetedCode = new TargetedCode();
 
       // getCode should return NULL, because it hasn't been set
-      $this->assertEquals($targetedCode->getCode(), NULL);
+      $this->assertEquals(NULL, $targetedCode->getCode());
 
-      // getCode() should return exepcted codes, because they've been set with
+      // getCode() should return expeced codes, because they've been set with
       // setElements()
       $targetedCode->setElements($this->input[$index]['elements']);
-      $this->assertEquals($targetedCode->getCode(), $expectedCode);
+      $this->assertEquals($expectedCode, $targetedCode->getCode());
 
       // Setting primary should not effect on getCode()
       $targetedCode->setPrimary($this->input[$index]['primary']);
-      $this->assertEquals($targetedCode->getCode(), $expectedCode);
+      $this->assertEquals($expectedCode, $targetedCode->getCode());
     }
   }
 

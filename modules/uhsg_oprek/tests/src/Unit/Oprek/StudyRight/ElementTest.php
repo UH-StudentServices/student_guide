@@ -58,10 +58,9 @@ class ElementTest extends UnitTestCase {
       0 => [
         0 => '00850',
         1 => 'A2004',
-        2 => '620009',
-        3 => 'KH60_001',
-        4 => 'SH60_039',
-        5 => '03417',
+        2 => 'KH60_001',
+        3 => 'SH60_039',
+        4 => '03417',
       ],
       1 => [
         0 => '00337',
@@ -74,7 +73,7 @@ class ElementTest extends UnitTestCase {
     foreach ($expectedCodes as $study_right_index => $elements) {
       foreach ($elements as $element_index => $expectedCode) {
         $element = new Element($this->studyRightDecodedResponse['data'][$study_right_index]['elements'][$element_index]);
-        $this->assertEquals($element->getCode(), $expectedCode);
+        $this->assertEquals($expectedCode, $element->getCode());
       }
     }
   }
@@ -88,9 +87,8 @@ class ElementTest extends UnitTestCase {
         0 => 10,
         1 => 15,
         2 => 20,
-        3 => 20,
-        4 => 30,
-        5 => 40,
+        3 => 30,
+        4 => 40,
       ],
       1 => [
         0 => 10,
@@ -103,7 +101,7 @@ class ElementTest extends UnitTestCase {
     foreach ($expectedIds as $study_right_index => $elements) {
       foreach ($elements as $element_index => $expectedId) {
         $element = new Element($this->studyRightDecodedResponse['data'][$study_right_index]['elements'][$element_index]);
-        $this->assertEquals($element->getId(), $expectedId);
+        $this->assertEquals($expectedId, $element->getId());
       }
     }
   }

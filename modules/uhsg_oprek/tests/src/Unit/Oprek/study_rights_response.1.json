@@ -48,26 +48,6 @@
                   "start_date": "2014-07-31T21:00:00.000Z"
               },
               {
-                  "code": "620009",
-                  "element_id": 20,
-                  "end_date": "2018-09-14T21:00:00.000Z",
-                  "name": [
-                      {
-                          "langcode": "fi",
-                          "text": "Luokanopettajan koulutus"
-                      },
-                      {
-                          "langcode": "sv",
-                          "text": "Utbildning f\u00f6r klassl\u00e4rare"
-                      },
-                      {
-                          "langcode": "en",
-                          "text": "Degree Programme in Class Teacher Education"
-                      }
-                  ],
-                  "start_date": "2014-07-31T21:00:00.000Z"
-              },
-              {
                   "code": "KH60_001",
                   "element_id": 20,
                   "end_date": "2021-07-30T21:00:00.000Z",

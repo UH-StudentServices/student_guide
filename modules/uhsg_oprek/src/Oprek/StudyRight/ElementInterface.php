@@ -21,4 +21,11 @@ interface ElementInterface {
    */
   public function getId();
 
+  /**
+   * Tells if given Element is "targetable", meaning that this element's code
+   * should be part of the StudyRight's targeted code.
+   * @return bool
+   */
+  public function isTargetable();
+
 }
