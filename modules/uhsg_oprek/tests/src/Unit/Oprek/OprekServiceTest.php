@@ -38,13 +38,13 @@ class OprekServiceTest extends UnitTestCase {
   /** @var \Psr\Http\Message\StreamInterface*/
   private $stream;
 
-  /** @var string */
+  /** @var string*/
   private $studyRightResponse;
 
   public function setUp() {
     parent::setUp();
 
-    $this->studyRightResponse = file_get_contents(__DIR__ . '/study_rights_response.json');
+    $this->studyRightResponse = file_get_contents(__DIR__ . '/study_rights_response.0.json');
 
     $this->stream = $this->prophesize(StreamInterface::class);
     $this->stream->getContents()->willReturn($this->studyRightResponse);
