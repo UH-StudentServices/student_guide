@@ -123,7 +123,7 @@ class AvatarServiceTest extends UnitTestCase {
   /**
    * @test
    */
-  public function shouldReturnAvatarImageURLFromAPIWhenURLNotInCache() {
+  public function shouldReturnAvatarImageUrlFromApiWhenUrlNotInCache() {
     $this->currentUser->isAuthenticated()->willReturn(TRUE);
     $this->currentUser->id()->willReturn(self::NORMAL_USER_UID);
 
@@ -133,7 +133,7 @@ class AvatarServiceTest extends UnitTestCase {
   /**
    * @test
    */
-  public function shouldReturnAvatarImageURLFromCacheWhenURLInCache() {
+  public function shouldReturnAvatarImageUrlFromCacheWhenUrlInCache() {
     $this->currentUser->isAuthenticated()->willReturn(TRUE);
     $this->currentUser->id()->willReturn(self::NORMAL_USER_UID);
     $this->cache->get(Argument::any())->willReturn($this->cachedUrl);
@@ -147,7 +147,7 @@ class AvatarServiceTest extends UnitTestCase {
   /**
    * @test
    */
-  public function shouldLogAPIException() {
+  public function shouldLogApiException() {
     $this->currentUser->isAuthenticated()->willReturn(TRUE);
     $this->currentUser->id()->willReturn(self::NORMAL_USER_UID);
     $this->client->get(Argument::any())->willThrow(new Exception(self::EXCEPTION_MESSAGE));
@@ -160,7 +160,7 @@ class AvatarServiceTest extends UnitTestCase {
   /**
    * @test
    */
-  public function shouldReturnNullURLWhenAPIStatusOtherThan200() {
+  public function shouldReturnNullUrlWhenApiStatusOtherThan200() {
     $this->currentUser->isAuthenticated()->willReturn(TRUE);
     $this->currentUser->id()->willReturn(self::NORMAL_USER_UID);
     $this->response->getStatusCode()->willReturn(404);

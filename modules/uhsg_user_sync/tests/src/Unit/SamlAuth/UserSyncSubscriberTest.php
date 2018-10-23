@@ -132,7 +132,7 @@ class UserSynscSubscriberTest extends UnitTestCase {
   /**
    * @test
    */
-  public function onUserSyncShouldSyncOodiUIDWhenItHasChanged() {
+  public function onUserSyncShouldSyncOodiUidWhenItHasChanged() {
     $this->fieldItemList->setValue(Argument::any())->shouldBeCalled();
     $this->event->markAccountChanged()->shouldBeCalled();
 
