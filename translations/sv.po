@@ -39,6 +39,9 @@ msgstr "Nyhet"
 msgid "Bulletin"
 msgstr "Meddelande"
 
+msgid "Bulletin: @label"
+msgstr "Meddelande: @label"
+
 msgid "This news has been sent to the following email addresses:"
 msgstr ""
 

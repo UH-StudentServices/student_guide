@@ -42,6 +42,7 @@ function uhsg_news_add_email_tab(&$form, $form_state, $form_id) {
     $email = &$form['field_news_email'];
     $email['#type'] = 'details';
     $email['#group'] = 'advanced';
+    // Field label translation doesn't seem to work, so translate workaround
     // phpcs:ignore
     $email['#title'] = t($email['widget']['#title']);
     $email['#open'] = FALSE;
@@ -88,7 +89,7 @@ function uhsg_news_send_news_by_email(Node $node) {
     $message .= uhsg_news_get_title_and_body_formatted($node, 'en');
     $message .= $node->toUrl('canonical', ['absolute' => TRUE])->toString();
 
-    $params['subject'] = t('Bulletin') . ': ' . $node->label();
+    $params['subject'] = t('Bulletin: @label', ['@label' => $node->label()]);
     $params['message'] = $message;
     $langcode = \Drupal::currentUser()->getPreferredLangcode();
 

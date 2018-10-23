@@ -39,6 +39,9 @@ msgstr "Uutinen"
 msgid "Bulletin"
 msgstr "Tiedote"
 
+msgid "Bulletin: @label"
+msgstr "Tiedote: @label"
+
 msgid "This news has been sent to the following email addresses:"
 msgstr "Tämä uutinen on lähetty seuraaviin sähköpostiosoitteisiin:"
 
