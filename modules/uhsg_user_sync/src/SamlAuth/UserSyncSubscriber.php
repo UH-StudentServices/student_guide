@@ -64,8 +64,8 @@ class UserSyncSubscriber implements EventSubscriberInterface {
 
   public function onUserSync(SamlAuthUserSyncEvent $event) {
     $attributes = new AttributeParser($event->getAttributes());
-    $this->syncOodiUID($event, $attributes);
-    $this->syncStudentID($event, $attributes);
+    $this->syncOodiUid()($event, $attributes);
+    $this->syncStudentId($event, $attributes);
 
     try {
       $this->syncMyDegreeProgrammes($event);
@@ -81,7 +81,7 @@ class UserSyncSubscriber implements EventSubscriberInterface {
    * @param \Drupal\samlauth\Event\SamlAuthUserSyncEvent $event
    * @param \Drupal\uhsg_samlauth\AttributeParserInterface $attributes
    */
-  protected function syncOodiUID(SamlAuthUserSyncEvent $event, AttributeParserInterface $attributes) {
+  protected function syncOodiUid(SamlAuthUserSyncEvent $event, AttributeParserInterface $attributes) {
 
     // Specify what is the name of the field we want to set Oodi UID to?
     $field_name = $this->config->get('oodiUID_field_name');
@@ -113,7 +113,7 @@ class UserSyncSubscriber implements EventSubscriberInterface {
    * @param \Drupal\samlauth\Event\SamlAuthUserSyncEvent $event
    * @param \Drupal\uhsg_samlauth\AttributeParserInterface $attributes
    */
-  protected function syncStudentID(SamlAuthUserSyncEvent $event, AttributeParserInterface $attributes) {
+  protected function syncStudentId(SamlAuthUserSyncEvent $event, AttributeParserInterface $attributes) {
 
     // Specify what is the name of the field we want to set student ID to?
     $field_name = $this->config->get('studentID_field_name');
