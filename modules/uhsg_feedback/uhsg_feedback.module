@@ -43,7 +43,7 @@ function uhsg_feedback_mail_alter(&$message) {
 
     // I would like to get a response to my feedback.
     if ($contact_message->get('field_feedback_respond')->value) {
-      $message['body'][] = t('I would like to get a response to my feedback') . ': ' . $replyTo;
+      $message['body'][] = t('I would like to get a response to my feedback: @replyTo', ['@replyto' => $replyTo]);
     }
 
     // Current page URL.
