@@ -14,7 +14,7 @@ class AttributeParser implements AttributeParserInterface {
    * Contains attribute mapping array.
    * @var array
    */
-  protected $alias_mapping = [
+  protected $aliasMapping = [
     'commonName' => 'urn:oid:2.5.4.3',
     'oodiUid' => '1.3.6.1.4.1.18869.1.1.1.32',
     'studentId' => 'urn:oid:1.3.6.1.4.1.25178.1.2.14',
@@ -47,10 +47,10 @@ class AttributeParser implements AttributeParserInterface {
   protected function getAttributeValueFromAlias($alias) {
 
     // Resolve alias key
-    if (empty($this->alias_mapping[$alias])) {
+    if (empty($this->aliasMapping[$alias])) {
       return NULL;
     }
-    $key = $this->alias_mapping[$alias];
+    $key = $this->aliasMapping[$alias];
 
     // Get value
     if (!empty($this->attributes[$key])) {
