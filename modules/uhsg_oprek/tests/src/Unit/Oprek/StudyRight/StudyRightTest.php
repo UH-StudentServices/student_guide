@@ -18,6 +18,7 @@ class StudyRightTest extends UnitTestCase {
       Json::decode(file_get_contents(__DIR__ . '/../study_rights_response.0.json')),
       Json::decode(file_get_contents(__DIR__ . '/../study_rights_response.1.json')),
       Json::decode(file_get_contents(__DIR__ . '/../study_rights_response.2.json')),
+      Json::decode(file_get_contents(__DIR__ . '/../study_rights_response.3.json')),
     ];
   }
 
@@ -59,6 +60,11 @@ class StudyRightTest extends UnitTestCase {
       ],
       2 => [
         ['primary' => TRUE, 'code' => 'SH60_039'],
+      ],
+      3 => [
+        ['primary' => FALSE, 'code' => 'KH60_001'],
+        ['primary' => FALSE, 'code' => 'SH60_039'],
+        ['primary' => TRUE, 'code' => 'KH60_001SH60_039'],
       ],
     ];
     foreach ($expectedTargetedCodes as $study_right_index => $expected_study_right) {
