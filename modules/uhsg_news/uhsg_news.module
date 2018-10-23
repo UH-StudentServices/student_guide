@@ -42,6 +42,7 @@ function uhsg_news_add_email_tab(&$form, $form_state, $form_id) {
     $email = &$form['field_news_email'];
     $email['#type'] = 'details';
     $email['#group'] = 'advanced';
+    // phpcs:ignore
     $email['#title'] = t($email['widget']['#title']);
     $email['#open'] = FALSE;
     $email['#disabled'] = $form_id == 'node_news_form' || uhsg_news_email_has_been_sent($node);
