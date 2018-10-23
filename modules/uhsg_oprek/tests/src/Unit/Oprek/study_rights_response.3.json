@@ -48,6 +48,26 @@
                 "start_date": "2018-09-15T21:00:00.000Z"
             },
             {
+                "code": "KH60_001",
+                "element_id": 20,
+                "end_date": "2021-07-30T21:00:00.000Z",
+                "name": [
+                    {
+                        "langcode": "fi",
+                        "text": "Kasvatustieteiden kandiohjelma"
+                    },
+                    {
+                        "langcode": "sv",
+                        "text": "Kandidatprogrammet i pedagogik"
+                    },
+                    {
+                        "langcode": "en",
+                        "text": "Bachelor's Programme in Education"
+                    }
+                ],
+                "start_date": "2018-09-15T21:00:00.000Z"
+            },
+            {
                 "code": "A2004",
                 "element_id": 15,
                 "end_date": "2021-07-30T21:00:00.000Z",
