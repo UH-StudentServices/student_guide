@@ -76,7 +76,7 @@ class AttributeParserTest extends UnitTestCase {
    * @test
    */
   public function getStudentIdShouldReturnStudentId() {
-    $this->assertEquals(self::STUDENT_ID, $this->attributeParser->getStudentID());
+    $this->assertEquals(self::STUDENT_ID, $this->attributeParser->getStudentId());
   }
 
   /**

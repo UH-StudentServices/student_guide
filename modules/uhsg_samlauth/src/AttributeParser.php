@@ -86,7 +86,7 @@ class AttributeParser implements AttributeParserInterface {
   /**
    * {@inheritdoc}
    */
-  public function getStudentID() {
+  public function getStudentId() {
     $value = $this->getAttributeValueFromAlias('studentId');
     if (is_null($value)) {
       return '';
