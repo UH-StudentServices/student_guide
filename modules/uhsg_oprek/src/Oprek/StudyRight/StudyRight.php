@@ -57,7 +57,6 @@ class StudyRight implements StudyRightInterface {
       foreach ($this->properties['state'] as $state) {
         if (!empty($this->knownStates[$state['text']])) {
           return $this->knownStates[$state['text']];
-          break;
         }
       }
     }
