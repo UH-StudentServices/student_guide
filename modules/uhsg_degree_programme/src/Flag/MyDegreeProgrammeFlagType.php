@@ -23,7 +23,7 @@ class MyDegreeProgrammeFlagType extends EntityFlagType {
    * Specify the flag id where we want to apply this specific business logic.
    * @var string
    */
-  protected $apply_custom_access_logic_id = 'my_degree_programmes';
+  protected $applyCustomAccessLogicId = 'my_degree_programmes';
 
   /**
    * @var \Drupal\flag\FlagServiceInterface
@@ -70,7 +70,7 @@ class MyDegreeProgrammeFlagType extends EntityFlagType {
     $access = parent::actionAccess($action, $flag, $account, $flaggable);
 
     // When specified flag type, then introduce some additional access logic
-    if ($flag->id() == $this->apply_custom_access_logic_id && !is_null($flaggable)) {
+    if ($flag->id() == $this->applyCustomAccessLogicId && !is_null($flaggable)) {
       // Get the flagging and deny access if the flagging has been created
       // programmatically.
       if ($flagging = $this->flagService->getFlagging($flag, $flaggable, $account)) {
