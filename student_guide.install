@@ -46,7 +46,12 @@ function student_guide_update_8001(&$sandbox) {
 function student_guide_update_8002(&$sandbox) {
   $links = \Drupal::entityTypeManager()->getStorage('menu_link_content')->loadMultiple();
 
-  $titles_to_delete = ['Kirjaudu sisään', 'Kirjaudu ulos', 'Logga in', 'Logga ut'];
+  $titles_to_delete = [
+    'Kirjaudu sisään',
+    'Kirjaudu ulos',
+    'Logga in',
+    'Logga ut',
+  ];
   $titles_to_move = ['Login', 'Logout'];
 
   foreach ($links as $link) {

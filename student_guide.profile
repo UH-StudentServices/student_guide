@@ -105,7 +105,10 @@ function config_install_batch() {
       'file' => drupal_get_path('module', 'config') . '/config.admin.inc',
     ];
     foreach ($sync_steps as $sync_step) {
-      $batch['operations'][] = ['config_install_batch_process', [$config_importer, $sync_step]];
+      $batch['operations'][] = [
+        'config_install_batch_process',
+        [$config_importer, $sync_step],
+      ];
     }
 
     return $batch;

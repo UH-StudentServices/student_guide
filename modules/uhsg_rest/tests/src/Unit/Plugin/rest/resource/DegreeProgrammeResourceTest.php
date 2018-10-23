@@ -85,7 +85,11 @@ class DegreeProgrammeResourceTest extends UnitTestCase {
     $this->languageSV->getId()->willReturn(self::LANGUAGE_SV);
 
     $this->languageManager = $this->prophesize(LanguageManagerInterface::class);
-    $this->languageManager->getLanguages()->willReturn([$this->languageEN, $this->languageFI, $this->languageSV]);
+    $this->languageManager->getLanguages()->willReturn([
+      $this->languageEN,
+      $this->languageFI,
+      $this->languageSV,
+    ]);
 
     $this->logger = $this->prophesize(LoggerInterface::class);
 
