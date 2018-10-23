@@ -6,6 +6,7 @@ use Drupal\taxonomy\Entity\Term;
 
 /**
  * Implements hook_preprocess_field().
+ *
  * Show articles only if they are translated to the active language, and if
  * they have the active degree programme or no degree programme.
  */

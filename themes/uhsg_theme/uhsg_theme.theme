@@ -13,6 +13,7 @@ use Drupal\node\Entity\Node;
 
 /**
  * Implements hook_page_attachments_alter().
+ *
  * Add breakpoints to javascript
  */
 function uhsg_theme_page_attachments_alter(array &$page) {
@@ -153,6 +154,7 @@ function uhsg_theme_preprocess_menu(&$variables) {
 
 /**
  * Implements hook_preprocess_field().
+ *
  * Add classes needed by styleguide.
  */
 function uhsg_theme_preprocess_field(array &$variables, $hook) {
@@ -429,6 +431,7 @@ function uhsg_theme_preprocess_views_view_grouping(&$variables) {
 
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
+ *
  * add subregion template for blocks
  */
 function uhsg_theme_theme_suggestions_block_alter(&$suggestions, $vars, $hook) {
@@ -448,6 +451,7 @@ function uhsg_theme_theme_suggestions_block_alter(&$suggestions, $vars, $hook) {
 
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
+ *
  * add template for main menus
  */
 function uhsg_theme_theme_suggestions_menu_alter(&$suggestions, $vars, $hook) {
@@ -465,6 +469,7 @@ function uhsg_theme_theme_suggestions_menu_alter(&$suggestions, $vars, $hook) {
 
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
+ *
  * add template for tag lists.
  */
 function uhsg_theme_theme_suggestions_field_alter(&$suggestions, $vars, $hook) {

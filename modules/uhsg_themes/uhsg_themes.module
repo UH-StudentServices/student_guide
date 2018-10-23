@@ -20,6 +20,7 @@ function uhsg_themes_preprocess_views_view(&$variables) {
 
 /**
  * Implements hook_form_alter().
+ *
  * We would like to change the one paragraph field help text from 'No Paragraphs
  * added yet.' to something more helpful. See HUB-222.
  */
