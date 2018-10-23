@@ -4,6 +4,8 @@ namespace Drupal\uhsg_oprek\Oprek\StudyRight;
 
 class TargetedCode implements TargetedCodeInterface {
 
+  use SortByElementIdTrait;
+
   /** @var bool*/
   protected $primary;
 
@@ -43,7 +45,7 @@ class TargetedCode implements TargetedCodeInterface {
    *   Count of elements.
    */
   public function setElements(array $elements) {
-    $this->elements = $elements;
+    $this->elements = $this->sortByElementIdAsc($elements);
     return count($this->elements);
   }
 

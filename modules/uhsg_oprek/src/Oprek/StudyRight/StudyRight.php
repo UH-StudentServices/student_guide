@@ -7,6 +7,8 @@ namespace Drupal\uhsg_oprek\Oprek\StudyRight;
  */
 class StudyRight implements StudyRightInterface {
 
+  use SortByElementIdTrait;
+
   /**
    * @var array
    */
@@ -96,7 +98,7 @@ class StudyRight implements StudyRightInterface {
         $return[] = new Element($element);
       }
     }
-    return $return;
+    return $this->sortByElementIdAsc($return);
   }
 
   /**
