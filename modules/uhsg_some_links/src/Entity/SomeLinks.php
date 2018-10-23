@@ -218,7 +218,7 @@ class SomeLinks extends ContentEntityBase implements SomeLinksInterface {
 
     $fields['icon_class'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Icon class'))
-      ->setDescription(t('Icon Class. Find available options here: http://universityofhelsinki.github.io/Styleguide/#section-2-1 '))
+      ->setDescription(t('Icon Class. Find available options here: http://universityofhelsinki.github.io/Styleguide/#section-2-1'))
       ->setSettings([
         'default_value' => '',
         'max_length' => 255,
