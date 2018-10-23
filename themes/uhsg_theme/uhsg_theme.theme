@@ -445,7 +445,7 @@ function uhsg_theme_theme_suggestions_block_alter(&$suggestions, $vars, $hook) {
   ];
 
   if (in_array($vars['elements']['#id'], $subregion_blocks)) {
-    $suggestions[] = 'block' . '__' . 'subregion';
+    $suggestions[] = 'block__subregion';
   }
 }
 
