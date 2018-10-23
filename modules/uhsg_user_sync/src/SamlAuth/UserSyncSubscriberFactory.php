@@ -9,7 +9,9 @@ use Drupal\flag\FlagServiceInterface;
 use Drupal\uhsg_oprek\Oprek\OprekServiceInterface;
 
 class UserSyncSubscriberFactory {
+
   public static function create(ConfigFactoryInterface $configFactory, OprekServiceInterface $oprekService, FlagServiceInterface $flagService, EntityTypeManagerInterface $entityTypeManager, LoggerChannel $logger) {
     return new UserSyncSubscriber($configFactory, $oprekService, $flagService, $entityTypeManager, $logger);
   }
+
 }

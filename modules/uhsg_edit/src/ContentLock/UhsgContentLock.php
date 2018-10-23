@@ -20,20 +20,21 @@ class UhsgContentLock extends ContentLock {
     $date = $this->dateFormatter->formatInterval(\Drupal::time()->getRequestTime() - $lock->timestamp);
 
     if ($translation_lock) {
-      $message = t('This translation is being edited by the user @name (<a href="mailto:@email">@email</a>) and is therefore locked to prevent other users changes. This lock is in place since @date.', array(
+      $message = t('This translation is being edited by the user @name (<a href="mailto:@email">@email</a>) and is therefore locked to prevent other users changes. This lock is in place since @date.', [
         '@name' => $user->getDisplayName(),
         '@email' => $user->getEmail(),
         '@date' => $date,
-      ));
+      ]);
     }
     else {
-      $message = t('This content is being edited by the user @name (<a href="mailto:@email">@email</a>) and is therefore locked to prevent other users changes. This lock is in place since @date.', array(
+      $message = t('This content is being edited by the user @name (<a href="mailto:@email">@email</a>) and is therefore locked to prevent other users changes. This lock is in place since @date.', [
         '@name' => $user->getDisplayName(),
         '@email' => $user->getEmail(),
         '@date' => $date,
-      ));
+      ]);
     }
 
     return $message;
   }
+
 }

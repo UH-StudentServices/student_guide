@@ -1,9 +1,11 @@
 <?php
+
 /**
  * @file
  * Enables modules and site configuration for a minimal site installation.
  */
 
+use Drupal\Core\Extension\ExtensionDiscovery;
 use Drupal\Core\Config\StorageComparer;
 use Drupal\Core\Config\ConfigImporter;
 use Drupal\Core\Config\ConfigImporterException;
@@ -31,7 +33,7 @@ function student_guide_install_tasks_alter(&$tasks, $install_state) {
     'student_guide_upload' => [
       'display_name' => t('Upload config'),
       'type' => 'form',
-      'function' => 'Drupal\student_guide\Form\SyncConfigureForm'
+      'function' => 'Drupal\student_guide\Form\SyncConfigureForm',
     ],
     'config_install_batch' => [
       'display_name' => t('Install configuration'),
@@ -39,9 +41,9 @@ function student_guide_install_tasks_alter(&$tasks, $install_state) {
     ],
     'student_guide_fix_profile' => [],
   ];
-  $tasks = array_slice($tasks, 0, $key, true) +
+  $tasks = array_slice($tasks, 0, $key, TRUE) +
     $config_tasks +
-    array_slice($tasks, $key, NULL , true);
+    array_slice($tasks, $key, NULL, TRUE);
   $tasks['install_configure_form']['function'] = 'Drupal\student_guide\Form\SiteConfigureForm';
 }
 
@@ -57,7 +59,7 @@ function config_install_batch() {
   install_core_entity_type_definitions();
 
   // Create a source storage that reads from sync.
-  $listing = new \Drupal\Core\Extension\ExtensionDiscovery(\Drupal::root());
+  $listing = new ExtensionDiscovery(\Drupal::root());
   $listing->setProfileDirectories([]);
   $sync = new SourceStorage(\Drupal::service('config.storage.sync'), $listing->scan('profile'));
 
@@ -170,7 +172,7 @@ function config_install_batch_finish($success, $results, $operations) {
     $message = \Drupal::translation()
       ->translate('An error occurred while processing %error_operation with arguments: @arguments', [
         '%error_operation' => $error_operation[0],
-        '@arguments' => print_r($error_operation[1], TRUE)
+        '@arguments' => print_r($error_operation[1], TRUE),
       ]);
     drupal_set_message($message, 'error');
   }
@@ -301,7 +303,7 @@ function _student_guide_get_original_install_profile() {
   // Profiles need to be extracted from the install list if they are there.
   // This is because profiles need to be installed after all the configuration
   // has been processed.
-  $listing = new \Drupal\Core\Extension\ExtensionDiscovery(\Drupal::root());
+  $listing = new ExtensionDiscovery(\Drupal::root());
   $listing->setProfileDirectories([]);
   // Read directly from disk since the source storage in the config importer is
   // being altered to exclude profiles.
@@ -332,7 +334,7 @@ function student_guide_create_front_page_text_block() {
     'info' => 'Front page text block',
     'type' => 'content_block',
     'langcode' => 'fi',
-    'uuid' => $uuid
+    'uuid' => $uuid,
   ]);
 
   $block->set('field_content_block_text', $text_fi);
@@ -349,7 +351,7 @@ function student_guide_create_front_page_additional_text_block() {
     'info' => 'Front page additional text block',
     'type' => 'content_block',
     'langcode' => 'fi',
-    'uuid' => 'ecd71681-cd04-4ee0-b9b2-015cc2a19ff0'
+    'uuid' => 'ecd71681-cd04-4ee0-b9b2-015cc2a19ff0',
   ]);
 
   $block->set('field_content_block_text', '');

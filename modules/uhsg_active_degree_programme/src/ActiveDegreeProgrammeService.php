@@ -4,14 +4,13 @@
  * @file
  * Contains \Drupal\uhsg_active_degree_programme\ActiveDegreeProgrammeService.
  */
- 
+
 namespace Drupal\uhsg_active_degree_programme;
 
 use Drupal\Core\Config\ConfigFactory;
 use Drupal\Core\Entity\EntityRepositoryInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Session\AccountInterface;
-use Drupal\flag\FlaggingInterface;
 use Drupal\flag\FlagInterface;
 use Drupal\flag\FlagServiceInterface;
 use Drupal\taxonomy\Entity\Term;
@@ -49,7 +48,7 @@ class ActiveDegreeProgrammeService {
   protected $user;
 
   /**
-   * @var FlagServiceInterface
+   * @var \Drupal\flag\FlagServiceInterface
    */
   protected $flagService;
 
@@ -74,12 +73,12 @@ class ActiveDegreeProgrammeService {
 
   /**
    * ActiveDegreeProgrammeService constructor.
-   * @param ConfigFactory $configFactory
-   * @param RequestStack $requestStack
-   * @param EntityRepositoryInterface $entityRepository
-   * @param EntityTypeManagerInterface $entityTypeManager
-   * @param AccountInterface $user
-   * @param FlagServiceInterface $flagService
+   * @param \Drupal\Core\Config\ConfigFactory $configFactory
+   * @param \Symfony\Component\HttpFoundation\RequestStack $requestStack
+   * @param \Drupal\Core\Entity\EntityRepositoryInterface $entityRepository
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
+   * @param \Drupal\Core\Session\AccountInterface $user
+   * @param \Drupal\flag\FlagServiceInterface $flagService
    */
   public function __construct(
     ConfigFactory $configFactory,
@@ -100,7 +99,7 @@ class ActiveDegreeProgrammeService {
 
   /**
    * Set active degree programme.
-   * @param Term $term
+   * @param \Drupal\taxonomy\Entity\Term $term
    */
   public function set(Term $term) {
     $tid = $term->id();
@@ -251,7 +250,7 @@ class ActiveDegreeProgrammeService {
     // Check from flaggings.
     if ($this->user->isAuthenticated()) {
       $flag = $this->flagService->getFlagById('my_degree_programmes');
-      /** @var FlaggingInterface[] $flaggings */
+      /** @var \Drupal\flag\FlaggingInterface[] $flaggings */
       $flaggings = $this->getFlagFlaggings($flag, $this->user);
       $primary_field_name = $this->config->get('primary_field_name');
       foreach ($flaggings as $flagging) {
@@ -306,7 +305,7 @@ class ActiveDegreeProgrammeService {
 
   /**
    * Checks whether user has access to view given term.
-   * @param Term $term
+   * @param \Drupal\taxonomy\Entity\Term $term
    * @return bool
    */
   protected function access(Term $term) {
@@ -325,4 +324,5 @@ class ActiveDegreeProgrammeService {
   protected function debug($message) {
     \Drupal::logger('uhsg_active_degree_programme')->debug($message);
   }
+
 }

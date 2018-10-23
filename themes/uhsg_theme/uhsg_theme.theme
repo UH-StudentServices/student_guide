@@ -1,8 +1,10 @@
 <?php
 
+use Drupal\block\Entity\Block;
+use Drupal\Core\Url;
+use Drupal\block_content\Entity\BlockContent;
 use Drupal\Component\Render\FormattableMarkup;
 use Drupal\node\Entity\Node;
-use Drupal\uhsg_active_degree_programme\ActiveDegreeProgrammeService;
 
 /**
  * @file
@@ -33,12 +35,14 @@ function uhsg_theme_preprocess_region(&$variables) {
       $variables['logo_path'] = \Drupal::config('uhsg_service_provider_details.settings')->get('logo_path');
       $variables['logo_text'] = \Drupal::config('uhsg_service_provider_details.settings')->get('logo_text');
       break;
+
     case 'footer':
       $variables['logo_path'] = \Drupal::config('uhsg_service_provider_details.settings')->get('logo_path');
       $variables['logo_text'] = \Drupal::config('uhsg_service_provider_details.settings')->get('logo_text');
       $variables['copyright_text'] = \Drupal::config('uhsg_service_provider_details.settings')->get('copyright_text');
       $variables['contact_info'] = \Drupal::config('uhsg_service_provider_details.settings')->get('contact_info');
       break;
+
     case 'before_content':
       $variables['attributes']['class'][] = 'container';
       break;
@@ -52,7 +56,7 @@ function uhsg_theme_preprocess_links__language_block(&$variables) {
   foreach ($variables['links'] as $langcode => &$link) {
     // add classes for theming
     $link['link']['#options']['attributes']['class'][] = 'links__link theme-language';
-    $link['link']['#title'] = new FormattableMarkup('<abbr title="@title">@langcode</abbr>', array('@title' => $link['link']['#title'], '@langcode' => $langcode ));
+    $link['link']['#title'] = new FormattableMarkup('<abbr title="@title">@langcode</abbr>', ['@title' => $link['link']['#title'], '@langcode' => $langcode]);
     // hide active language
     $active_language = Drupal::languageManager()->getCurrentLanguage()->getId();
     if ($active_language == $langcode) {
@@ -76,12 +80,14 @@ function uhsg_theme_preprocess_menu(&$variables) {
       $link_classes = 'links__link';
       $menu_classes = 'links';
       break;
+
     case 'footer-links-en':
     case 'footer-links-fi':
     case 'footer-links-sv':
       $link_classes = 'list-of-links__link button--action icon--arrow-right theme-transparent-alt';
       $menu_classes = 'list-of-links--condensed theme-footer';
       break;
+
     case 'main-menu-en':
     case 'main-menu-fi':
     case 'main-menu-sv':
@@ -105,6 +111,7 @@ function uhsg_theme_preprocess_menu(&$variables) {
             case 'samlauth.saml_controller_login':
               $item['attributes']->addClass('main-menu__right');
               break;
+
             case 'samlauth.saml_controller_logout':
               $item['attributes']->addClass(['main-menu__right', 'main-menu__logout']);
               break;
@@ -157,6 +164,7 @@ function uhsg_theme_preprocess_field(array &$variables, $hook) {
         $item['content']['#options']['attributes']['class'][] = 'list-of-links__link button--action icon--arrow-right';
       }
       break;
+
     case 'field_accordion_links':
       uhsg_theme_process_link_titles($variables);
       $variables['attributes']['class'][] = 'list-of-links__compact';
@@ -164,31 +172,39 @@ function uhsg_theme_preprocess_field(array &$variables, $hook) {
         $item['content']['#options']['attributes']['class'][] = 'list-of-links__link icon--arrow-right button--action theme-transparent';
       }
       break;
+
     case 'field_theme_articles':
       $variables['attributes']['class'][] = 'grid-container tube--large';
       break;
+
     case 'body':
     case 'field_paragraph_body':
       $variables['attributes']['class'][] = 'textarea';
       break;
+
     case 'field_accordion_title':
       $variables['attributes']['class'][] = 'accordion__title button--accordion';
       break;
+
     case 'field_content_block_text':
       $variables['attributes']['class'][] = 'box-subtitle__ingress is-center-mobile';
 
-      $variables['attributes']['class'][] = 'is-center-mobile';      break;
+      $variables['attributes']['class'][] = 'is-center-mobile';
+      break;
+
     case 'field_news_degree_programme':
       $variables['created'] = $variables['element']['#object']->getCreatedTime();
       $variables['view_mode'] = $variables['element']['#view_mode'];
     case 'field_theme_section_title':
       $variables['attributes']['class'][] = 'is-center-mobile';
       break;
+
     case 'field_theme_section_instructions':
       $variables['attributes']['class'][] = 'grid-container tube';
       break;
+
     case 'field_article_paragraph':
-        uhsg_theme_collect_table_of_contents($variables);
+      uhsg_theme_collect_table_of_contents($variables);
       break;
   }
 }
@@ -233,9 +249,10 @@ function uhsg_theme_preprocess_views_view(&$variables) {
     case 'themes':
       $variables['content_attributes']['class'][] = 'grid-container';
       break;
+
     case 'search':
       // Add front page text block.
-      $block_entity = \Drupal\block_content\Entity\BlockContent::load(1);
+      $block_entity = BlockContent::load(1);
       $block_view = \Drupal::entityTypeManager()->getViewBuilder('block_content')->view($block_entity);
       if ($block_view) {
         $variables['frontpagetextblock'] = $block_view;
@@ -253,6 +270,7 @@ function uhsg_theme_preprocess_views_view(&$variables) {
       $variables['content_attributes']['class'][] = 'view-content';
       $variables['degree_programme_switcher'] = _uhsg_theme_get_degree_programme_switcher();
       break;
+
     case 'news':
       $variables['attributes']['class'][] = 'tube';
       $variables['degree_programme_switcher'] = _uhsg_theme_get_degree_programme_switcher();
@@ -270,17 +288,19 @@ function uhsg_theme_preprocess_block(array &$variables) {
     case 'mainmenusv':
       $variables['attributes']['class'][] = 'main-menu';
       break;
+
     case 'views_block__degree_programmes_block_1':
-      /** @var ActiveDegreeProgrammeService $activeDegreeProgrammeService */
+      /** @var \Drupal\uhsg_active_degree_programme\ActiveDegreeProgrammeService $activeDegreeProgrammeService */
       $activeDegreeProgrammeService = \Drupal::service('uhsg_active_degree_programme.active_degree_programme');
       $degree_programme_code = $activeDegreeProgrammeService->getCode();
       $degree_programme_name = $activeDegreeProgrammeService->getName();
       $variables['code'] = $degree_programme_code;
       $variables['label'] = $degree_programme_name ? $degree_programme_name : t('Select degree programme');
       $variables['#cache']['contexts'][] = 'active_degree_programme';
-      $variables['reset_link']['link'] =  \Drupal\Core\Url::fromRoute('uhsg_active_degree_programme.reset_active');
+      $variables['reset_link']['link'] = Url::fromRoute('uhsg_active_degree_programme.reset_active');
       $variables['reset_link']['classes'] = 'button--action icon--remove theme-transparent button--reset is-center-mobile';
       break;
+
     case 'generalnews':
     case 'newsperdegreeprogramme':
     case 'newsperdegreeprogramme_2':
@@ -291,10 +311,11 @@ function uhsg_theme_preprocess_block(array &$variables) {
       $variables['#attached']['library'][] = 'uhsg_theme/truncateText';
       $variables['#attached']['drupalSettings']['truncateText'] = [
         'maxLength' => 100,
-        'selector' => '.block-uhsg-news .field--name-title'
+        'selector' => '.block-uhsg-news .field--name-title',
       ];
 
       break;
+
     case 'themesperusergroup':
       $variables['news_per_degree_programme'] = _uhsg_theme_get_news_per_degree_programme();
       break;
@@ -327,7 +348,7 @@ function uhsg_theme_collect_table_of_contents(array &$variables) {
     if ($item['content']['#paragraph']->hasField('field_paragraph_title')) {
       $variables['table_of_contents'][] = [
         'id' => $item['content']['#paragraph']->id(),
-        'title' => $item['content']['#paragraph']->get('field_paragraph_title')
+        'title' => $item['content']['#paragraph']->get('field_paragraph_title'),
       ];
     }
   }
@@ -382,10 +403,10 @@ function uhsg_theme_preprocess_html(&$variables) {
     $icon = [
       '#tag' => 'link',
       '#attributes' => [
-        'rel' => preg_match('/(apple-touch-icon)/',$file->name) ? 'apple-touch-icon' : 'icon',
+        'rel' => preg_match('/(apple-touch-icon)/', $file->name) ? 'apple-touch-icon' : 'icon',
         'href' => file_create_url($file->uri),
-        'type' => preg_match('/(apple-touch-icon)/',$file->name) ? NULL : 'image/png',
-        'sizes' => preg_match('/[0-9]\w+/',$file->name, $matches) ? $matches[0] : NULL
+        'type' => preg_match('/(apple-touch-icon)/', $file->name) ? NULL : 'image/png',
+        'sizes' => preg_match('/[0-9]\w+/', $file->name, $matches) ? $matches[0] : NULL,
       ],
     ];
     $variables['page']['#attached']['html_head'][] = [$icon, $file->name];
@@ -417,7 +438,7 @@ function uhsg_theme_theme_suggestions_block_alter(&$suggestions, $vars, $hook) {
     'generalnews',
     'newsperdegreeprogramme',
     'newsperdegreeprogramme_2',
-    'views_block__google_analytics_summary_top_searches_block'
+    'views_block__google_analytics_summary_top_searches_block',
   ];
 
   if (in_array($vars['elements']['#id'], $subregion_blocks)) {
@@ -459,7 +480,7 @@ function uhsg_theme_theme_suggestions_field_alter(&$suggestions, $vars, $hook) {
 }
 
 function _uhsg_theme_get_degree_programme_switcher() {
-  $degree_programme_switcher = \Drupal\block\Entity\Block::load('views_block__degree_programmes_block_1');
+  $degree_programme_switcher = Block::load('views_block__degree_programmes_block_1');
   if (is_null($degree_programme_switcher)) {
     // In case the block has gone missing, we don't fail completely but will
     // alert in the logs.
@@ -470,7 +491,7 @@ function _uhsg_theme_get_degree_programme_switcher() {
 }
 
 function _uhsg_theme_get_news_per_degree_programme() {
-  $news_per_degree_programme = \Drupal\block\Entity\Block::load('newsperdegreeprogramme');
+  $news_per_degree_programme = Block::load('newsperdegreeprogramme');
 
   return $news_per_degree_programme
     ? \Drupal::entityTypeManager()->getViewBuilder('block')->view($news_per_degree_programme)

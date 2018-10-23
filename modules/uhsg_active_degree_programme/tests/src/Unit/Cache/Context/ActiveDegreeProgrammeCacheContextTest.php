@@ -11,10 +11,10 @@ class ActiveDegreeProgrammeCacheContextTest extends PHPUnit_Framework_TestCase {
 
   const ACTIVE_DEGREE_PROGRAMME = 123;
 
-  /** @var ActiveDegreeProgrammeCacheContext */
+  /** @var \Drupal\uhsg_active_degree_programme\Cache\Context\ActiveDegreeProgrammeCacheContext*/
   private $activeDegreeProgrammeCacheContext;
 
-  /** @var ActiveDegreeProgrammeService */
+  /** @var \Drupal\uhsg_active_degree_programme\ActiveDegreeProgrammeService*/
   private $activeDegreeProgrammeService;
 
   public function setUp() {
@@ -49,4 +49,5 @@ class ActiveDegreeProgrammeCacheContextTest extends PHPUnit_Framework_TestCase {
   public function shouldAllowCacheOptimizationByReturningEmptyCacheableMetadata() {
     $this->assertEquals(new CacheableMetadata(), $this->activeDegreeProgrammeCacheContext->getCacheableMetadata());
   }
+
 }

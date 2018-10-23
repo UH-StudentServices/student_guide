@@ -14,20 +14,20 @@ use Zend\Feed\Writer\Feed;
 
 class NewsFeedController extends ControllerBase {
 
-  /** @var \Drupal\Core\Entity\EntityTypeManagerInterface */
+  /** @var \Drupal\Core\Entity\EntityTypeManagerInterface*/
   protected $entityTypeManager;
 
-  /** @var \Drupal\uhsg_news\NewsService */
+  /** @var \Drupal\uhsg_news\NewsService*/
   protected $newsService;
 
-  /** @var TimeInterface */
+  /** @var \Drupal\Component\Datetime\TimeInterface*/
   protected $time;
 
   /**
    * NewsFeedController constructor.
    *
-   * @param NewsService $newsService
-   * @param EntityTypeManagerInterface $entityTypeManager
+   * @param \Drupal\uhsg_news\NewsService $newsService
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
    */
   public function __construct(NewsService $newsService, EntityTypeManagerInterface $entityTypeManager, TimeInterface $time) {
     $this->newsService = $newsService;
@@ -49,12 +49,12 @@ class NewsFeedController extends ControllerBase {
   /**
    * Returns an RSS feed response using targeted news service.
    *
-   * @return Response
+   * @return \Symfony\Component\HttpFoundation\Response
    */
   public function feed() {
     $degree_programme = NULL;
     $headers = [
-      'Content-Type' => 'application/rss+xml'
+      'Content-Type' => 'application/rss+xml',
     ];
     // Get the nodes that we build RSS feed from
     $nids = $this->newsService->getNewsNids(6);
@@ -78,7 +78,7 @@ class NewsFeedController extends ControllerBase {
 
     // Add items
     /** @var \Drupal\node\Entity\Node $node */
-    $modified = array();
+    $modified = [];
     foreach ($nodes as $node) {
       // List nodes that we have access to.
       if ($node->access()) {
@@ -112,4 +112,5 @@ class NewsFeedController extends ControllerBase {
     // Return the feed formatted as ATOM feed
     return $feed->export('atom');
   }
+
 }

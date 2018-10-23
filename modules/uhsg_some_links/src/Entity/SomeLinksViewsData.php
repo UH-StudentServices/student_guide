@@ -16,11 +16,11 @@ class SomeLinksViewsData extends EntityViewsData implements EntityViewsDataInter
   public function getViewsData() {
     $data = parent::getViewsData();
 
-    $data['some_links']['table']['base'] = array(
+    $data['some_links']['table']['base'] = [
       'field' => 'id',
       'title' => $this->t('Some links'),
       'help' => $this->t('The Some links ID.'),
-    );
+    ];
 
     return $data;
   }

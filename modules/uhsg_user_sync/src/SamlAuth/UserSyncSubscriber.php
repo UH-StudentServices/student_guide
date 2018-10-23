@@ -3,18 +3,14 @@
 namespace Drupal\uhsg_user_sync\SamlAuth;
 
 use Drupal\Core\Config\ConfigFactoryInterface;
-use Drupal\Core\Config\ImmutableConfig;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Logger\LoggerChannel;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
-use Drupal\flag\Entity\Flagging;
-use Drupal\flag\FlaggingInterface;
 use Drupal\flag\FlagInterface;
 use Drupal\flag\FlagServiceInterface;
 use Drupal\samlauth\Event\SamlAuthEvents;
 use Drupal\samlauth\Event\SamlAuthUserSyncEvent;
-use Drupal\taxonomy\Entity\Term;
 use Drupal\uhsg_oprek\Oprek\OprekServiceInterface;
 use Drupal\uhsg_oprek\Oprek\StudyRight\StudyRight;
 use Drupal\uhsg_samlauth\AttributeParser;
@@ -26,27 +22,27 @@ class UserSyncSubscriber implements EventSubscriberInterface {
   use StringTranslationTrait;
 
   /**
-   * @var ImmutableConfig
+   * @var \Drupal\Core\Config\ImmutableConfig
    */
   protected $config;
 
   /**
-   * @var OprekServiceInterface
+   * @var \Drupal\uhsg_oprek\Oprek\OprekServiceInterface
    */
   protected $oprekService;
 
   /**
-   * @var FlagServiceInterface
+   * @var \Drupal\flag\FlagServiceInterface
    */
   protected $flagService;
 
   /**
-   * @var EntityTypeManagerInterface
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
    */
   protected $entityTypeManager;
 
   /**
-   * @var LoggerChannel
+   * @var \Drupal\Core\Logger\LoggerChannel
    */
   protected $logger;
 
@@ -73,7 +69,8 @@ class UserSyncSubscriber implements EventSubscriberInterface {
 
     try {
       $this->syncMyDegreeProgrammes($event);
-    } catch (\Exception $e) {
+    }
+    catch (\Exception $e) {
       $this->logger->error($this->t('Could not get degree programmes. Error: @error (code @code)', ['@error' => $e->getMessage(), '@code' => $e->getCode()]));
       drupal_set_message($this->t('There is a problem with the connection to Oodi and your degree programmes cannot be shown.'), 'warning');
     }
@@ -81,8 +78,8 @@ class UserSyncSubscriber implements EventSubscriberInterface {
 
   /**
    * Synchronises Oodi UID field.
-   * @param SamlAuthUserSyncEvent $event
-   * @param AttributeParserInterface $attributes
+   * @param \Drupal\samlauth\Event\SamlAuthUserSyncEvent $event
+   * @param \Drupal\uhsg_samlauth\AttributeParserInterface $attributes
    */
   protected function syncOodiUID(SamlAuthUserSyncEvent $event, AttributeParserInterface $attributes) {
 
@@ -113,8 +110,8 @@ class UserSyncSubscriber implements EventSubscriberInterface {
 
   /**
    * Synchronises student ID field.
-   * @param SamlAuthUserSyncEvent $event
-   * @param AttributeParserInterface $attributes
+   * @param \Drupal\samlauth\Event\SamlAuthUserSyncEvent $event
+   * @param \Drupal\uhsg_samlauth\AttributeParserInterface $attributes
    */
   protected function syncStudentID(SamlAuthUserSyncEvent $event, AttributeParserInterface $attributes) {
 
@@ -145,7 +142,7 @@ class UserSyncSubscriber implements EventSubscriberInterface {
 
   /**
    * Synchronises my degree programmes.
-   * @param SamlAuthUserSyncEvent $event
+   * @param \Drupal\samlauth\Event\SamlAuthUserSyncEvent $event
    */
   protected function syncMyDegreeProgrammes(SamlAuthUserSyncEvent $event) {
 
@@ -178,7 +175,7 @@ class UserSyncSubscriber implements EventSubscriberInterface {
 
   /**
    * Clears my degree programmes that were managed programmatically.
-   * @param SamlAuthUserSyncEvent $event
+   * @param \Drupal\samlauth\Event\SamlAuthUserSyncEvent $event
    * @return bool
    */
   protected function clearTechnicalDegreeProgrammes(SamlAuthUserSyncEvent $event) {
@@ -190,7 +187,7 @@ class UserSyncSubscriber implements EventSubscriberInterface {
       if ($flag->bundle() == 'my_degree_programmes') {
         $flaggings = $this->getFlagFlaggings($flag, $event->getAccount());
         foreach ($flaggings as $flagging) {
-          /** @var FlaggingInterface $flagging */
+          /** @var \Drupal\flag\Entity\FlaggingInterface $flagging */
           if ($flagging->hasField($technical_condition_field_name)) {
             if ($flagging->get($technical_condition_field_name)->first()->getValue()) {
               // Deletes user´s flaggings that was programmatically created,
@@ -209,7 +206,7 @@ class UserSyncSubscriber implements EventSubscriberInterface {
     // Return TRUE if any technical degree programmes were cleared.
     return $cleared > 0;
   }
-  
+
   protected function getUsersFlags(AccountInterface $account, $entity_type = NULL, $bundle = NULL) {
     $filtered_flags = [];
 
@@ -226,7 +223,7 @@ class UserSyncSubscriber implements EventSubscriberInterface {
 
     return $filtered_flags;
   }
-  
+
   public function getFlagFlaggings(FlagInterface $flag, AccountInterface $account = NULL, $session_id = NULL) {
     $flaggingStorage = $this->entityTypeManager->getStorage('flagging');
     $query = $flaggingStorage->getQuery();
@@ -252,7 +249,7 @@ class UserSyncSubscriber implements EventSubscriberInterface {
 
   /**
    * Sets technical degree programmes based on student number.
-   * @param SamlAuthUserSyncEvent $event
+   * @param \Drupal\samlauth\Event\SamlAuthUserSyncEvent $event
    * @param $student_number
    * @return bool
    */
@@ -278,7 +275,7 @@ class UserSyncSubscriber implements EventSubscriberInterface {
             $flag = $this->flagService->getFlagById('my_degree_programmes');
 
             // Get potentially existing flagging, if not exist, then create.
-            /** @var Flagging $flagging */
+            /** @var \Drupal\flag\Entity\Flagging $flagging */
             $flagging = $this->flagService->getFlagging($flag, $known_degree_programmes[$element->getCode()], $event->getAccount());
             if (!$flagging) {
               $flagging = $this->flagService->flag($flag, $known_degree_programmes[$element->getCode()], $event->getAccount());
@@ -311,14 +308,14 @@ class UserSyncSubscriber implements EventSubscriberInterface {
 
   /**
    * Gets list of degree programmes as taxonomy terms.
-   * @return Term[]
+   * @return \Drupal\taxonomy\Entity\Term[]
    */
   protected function getAllKnownDegreeProgrammes() {
     $known_degree_programmes = [];
     $code_field_name = $this->config->get('code_field_name');
 
     foreach ($this->entityTypeManager->getStorage('taxonomy_term')->loadMultiple() as $term) {
-      /** @var Term $term */
+      /** @var \Drupal\taxonomy\Entity\Term $term */
       if ($term->hasField($code_field_name) && !$term->get($code_field_name)->isEmpty()) {
         $code = $term->get($code_field_name)->first()->getString();
         $known_degree_programmes[$code] = $term;

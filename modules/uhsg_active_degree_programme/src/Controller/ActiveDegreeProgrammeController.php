@@ -14,7 +14,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
  */
 class ActiveDegreeProgrammeController extends ControllerBase {
 
-  /** @var ActiveDegreeProgrammeService */
+  /** @var \Drupal\uhsg_active_degree_programme\ActiveDegreeProgrammeService*/
   protected $activeDegreeProgrammeService;
 
   public function __construct(ActiveDegreeProgrammeService $activeDegreeProgrammeService) {
@@ -51,14 +51,14 @@ class ActiveDegreeProgrammeController extends ControllerBase {
 
   /**
    * @param int $tid
-   * @return Term
+   * @return \Drupal\taxonomy\Entity\Term
    */
   protected function loadTerm($tid) {
     return Term::load($tid);
   }
 
   /**
-   * @return RedirectResponse
+   * @return \Symfony\Component\HttpFoundation\RedirectResponse
    */
   protected function doRedirect() {
     $httpReferer = $this->getHttpReferer()->toString();
@@ -68,4 +68,5 @@ class ActiveDegreeProgrammeController extends ControllerBase {
 
     return $internal ? new RedirectResponse($httpReferer) : new RedirectResponse($frontPageUrl);
   }
+
 }

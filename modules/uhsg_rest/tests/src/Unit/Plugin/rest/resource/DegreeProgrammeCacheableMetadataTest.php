@@ -7,7 +7,7 @@ use Drupal\uhsg_rest\Plugin\rest\resource\DegreeProgrammeCacheableMetadata;
  */
 class DegreeProgrammeCacheableMetadataTest extends PHPUnit_Framework_TestCase {
 
-  /** @var DegreeProgrammeCacheableMetadata */
+  /** @var \Drupal\uhsg_rest\Plugin\rest\resource\DegreeProgrammeCacheableMetadata*/
   private $degreeProgrammeCacheableMetadata;
 
   public function setUp() {
@@ -22,4 +22,5 @@ class DegreeProgrammeCacheableMetadataTest extends PHPUnit_Framework_TestCase {
   public function cacheTagsShouldReturnTaxonomyTermList() {
     $this->assertEquals(['taxonomy_term_list'], $this->degreeProgrammeCacheableMetadata->getCacheTags());
   }
+
 }

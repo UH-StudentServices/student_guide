@@ -1,7 +1,5 @@
 <?php
 
-use Drupal\Core\Entity;
-
 /**
  * @file
  * Install, update and uninstall functions for the student guide installation
@@ -55,7 +53,7 @@ function student_guide_update_8002(&$sandbox) {
     if (in_array($link->getTitle(), $titles_to_delete)) {
       $link->delete();
     }
-    if (in_array($link->getTitle(),  $titles_to_move)) {
+    if (in_array($link->getTitle(), $titles_to_move)) {
       $link->set('menu_name', 'main');
       $link->save();
     }

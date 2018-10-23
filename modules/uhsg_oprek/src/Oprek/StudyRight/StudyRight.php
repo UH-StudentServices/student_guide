@@ -5,7 +5,7 @@ namespace Drupal\uhsg_oprek\Oprek\StudyRight;
 class StudyRight implements StudyRightInterface {
 
   /**
-   * @var array $properties
+   * @var array
    */
   protected $properties;
 

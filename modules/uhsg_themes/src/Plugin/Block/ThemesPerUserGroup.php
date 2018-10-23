@@ -36,4 +36,5 @@ class ThemesPerUserGroup extends BlockBase {
 
     return $view->buildRenderable();
   }
+
 }

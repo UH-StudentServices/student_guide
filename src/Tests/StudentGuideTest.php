@@ -16,7 +16,7 @@ class StudentGuideTest extends WebTestBase {
   /**
    * Tests Student Guide installation profile.
    */
-  function testStudentGuide() {
+  public function testStudentGuide() {
     $this->drupalGet('');
     // Check the login block is present.
     $this->assertLink(t('Create new account'));
@@ -24,7 +24,7 @@ class StudentGuideTest extends WebTestBase {
 
     // Create a user to test tools and navigation blocks for logged in users
     // with appropriate permissions.
-    $user = $this->drupalCreateUser(array('access administration pages', 'administer content types'));
+    $user = $this->drupalCreateUser(['access administration pages', 'administer content types']);
     $this->drupalLogin($user);
     $this->drupalGet('');
     $this->assertText(t('Tools'));

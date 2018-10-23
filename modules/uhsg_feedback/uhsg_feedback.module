@@ -3,7 +3,7 @@
 /**
  * @file
  * Contains uhsg_feedback.module.
- */
+ */use Drupal\Core\Url;
 
 /**
  * Implements hook_mail_alter().
@@ -47,7 +47,7 @@ function uhsg_feedback_mail_alter(&$message) {
     }
 
     // Current page URL.
-    $message['body'][] = \Drupal\Core\Url::fromRoute('<current>', [], ['absolute' => TRUE])->toString();
+    $message['body'][] = Url::fromRoute('<current>', [], ['absolute' => TRUE])->toString();
 
     // User agent info.
     $message['body'][] = $_SERVER['HTTP_USER_AGENT'];
@@ -82,10 +82,10 @@ function uhsg_feedback_preprocess_form(&$variables) {
  * Implements hook_theme().
  */
 function uhsg_feedback_theme($existing, $type, $theme, $path) {
-  return array(
-    'block__contact_block' => array(
+  return [
+    'block__contact_block' => [
       'template' => 'block--contact-block',
       'base hook' => 'block',
-    )
-  );
+    ],
+  ];
 }

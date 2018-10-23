@@ -26,7 +26,7 @@ class MyDegreeProgrammeFlagType extends EntityFlagType {
   protected $apply_custom_access_logic_id = 'my_degree_programmes';
 
   /**
-   * @var FlagServiceInterface
+   * @var \Drupal\flag\FlagServiceInterface
    */
   protected $flagService;
 
@@ -85,4 +85,5 @@ class MyDegreeProgrammeFlagType extends EntityFlagType {
 
     return $access;
   }
+
 }

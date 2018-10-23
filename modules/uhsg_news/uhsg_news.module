@@ -5,11 +5,10 @@
  * Contains uhsg_news.module.
  */
 
-use Drupal\Core\Database\Query\Condition;
+use Drupal\Core\Mail\MailFormatHelper;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\node\Entity\Node;
 use Drupal\Core\Routing\RouteMatchInterface;
-use Drupal\views\Plugin\views\query\QueryPluginBase;
-use Drupal\views\Plugin\views\query\Sql;
-use Drupal\views\ViewExecutable;
 
 /**
  * Implements hook_help().
@@ -49,7 +48,8 @@ function uhsg_news_add_email_tab(&$form, $form_state, $form_id) {
 
     if (uhsg_news_email_has_been_sent($node)) {
       $email['#description'] = t('This news has been sent to the following email addresses:');
-    } else {
+    }
+    else {
       $email['#description'] = t('Send the news to the given email addresses. The email can be sent just once.');
     }
   }
@@ -59,14 +59,14 @@ function uhsg_news_add_email_tab(&$form, $form_state, $form_id) {
  * @param \Drupal\node\Entity\Node $node
  * @return bool Has the news email been sent?
  */
-function uhsg_news_email_has_been_sent(\Drupal\node\Entity\Node $node) {
+function uhsg_news_email_has_been_sent(Node $node) {
   return (bool) $node->get('field_news_email_sent')->value;
 }
 
 /**
  * Implements hook_ENTITY_TYPE_presave().
  */
-function uhsg_news_node_presave(Drupal\Core\Entity\EntityInterface $entity) {
+function uhsg_news_node_presave(EntityInterface $entity) {
   if ($entity->bundle() == 'news' && !$entity->isNew() && !uhsg_news_email_has_been_sent($entity)) {
     uhsg_news_send_news_by_email($entity);
   }
@@ -77,7 +77,7 @@ function uhsg_news_node_presave(Drupal\Core\Entity\EntityInterface $entity) {
  *
  * @param $node \Drupal\node\Entity\Node
  */
-function uhsg_news_send_news_by_email(\Drupal\node\Entity\Node $node) {
+function uhsg_news_send_news_by_email(Node $node) {
   $emails = $node->get('field_news_email')->getValue();
 
   if (!empty($emails)) {
@@ -108,12 +108,12 @@ function uhsg_news_send_news_by_email(\Drupal\node\Entity\Node $node) {
  * @param string $langcode
  * @return string Title and body formatted.
  */
-function uhsg_news_get_title_and_body_formatted(\Drupal\node\Entity\Node $node, $langcode) {
+function uhsg_news_get_title_and_body_formatted(Node $node, $langcode) {
   $formatted_text = '';
 
   if ($node->hasTranslation($langcode)) {
     $translation = $node->getTranslation($langcode);
-    $formatted_text = $translation->label() . "\n\n" . Drupal\Core\Mail\MailFormatHelper::htmlToText($translation->body->value) . "\n----------\n\n";
+    $formatted_text = $translation->label() . "\n\n" . MailFormatHelper::htmlToText($translation->body->value) . "\n----------\n\n";
   }
 
   return $formatted_text;

@@ -32,9 +32,9 @@ class SomeLinksListBuilder extends EntityListBuilder {
     $row['name'] = new Link(
       $entity->label(),
       new Url(
-        'entity.some_links.edit_form', array(
+        'entity.some_links.edit_form', [
           'some_links' => $entity->id(),
-        )
+        ]
       )
     );
     return $row + parent::buildRow($entity);

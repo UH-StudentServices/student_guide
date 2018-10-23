@@ -2,7 +2,6 @@
 
 use Drupal\Core\Entity\EntityRepositoryInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Language\LanguageInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\taxonomy\TermInterface;
@@ -23,37 +22,37 @@ class DegreeProgrammeResourceTest extends UnitTestCase {
   const LANGUAGE_FI = 'fi';
   const LANGUAGE_SV = 'sv';
 
-  /** @var DegreeProgrammeResource */
+  /** @var \Drupal\uhsg_rest\Plugin\rest\resource\DegreeProgrammeResource*/
   private $degreeProgrammeResource;
 
-  /** @var EntityRepositoryInterface */
+  /** @var \Drupal\Core\Entity\EntityRepositoryInterface*/
   private $entityRepository;
 
-  /** @var EntityTypeManagerInterface */
+  /** @var \Drupal\Core\Entity\EntityTypeManagerInterface*/
   private $entityTypeManager;
 
-  /** @var FieldItemListInterface */
+  /** @var \Drupal\Core\Field\FieldItemListInterface*/
   private $fieldItemList;
 
-  /** @var LanguageInterface */
+  /** @var \Drupal\Core\Language\LanguageInterface*/
   private $languageEN;
 
-  /** @var LanguageInterface */
+  /** @var \Drupal\Core\Language\LanguageInterface*/
   private $languageFI;
 
-  /** @var LanguageInterface */
+  /** @var \Drupal\Core\Language\LanguageInterface*/
   private $languageSV;
 
-  /** @var LanguageManagerInterface */
+  /** @var \Drupal\Core\Language\LanguageManagerInterface*/
   private $languageManager;
 
-  /** @var LoggerInterface */
+  /** @var \Psr\Log\LoggerInterface*/
   private $logger;
 
-  /** @var TermInterface */
+  /** @var \Drupal\taxonomy\TermInterface*/
   private $term;
 
-  /** @var TermStorageInterface */
+  /** @var \Drupal\taxonomy\TermStorageInterface*/
   private $termStorage;
 
   public function setUp() {
@@ -113,10 +112,11 @@ class DegreeProgrammeResourceTest extends UnitTestCase {
       'name' => [
         'en' => self::DEGREE_PROGRAMME_LABEL,
         'fi' => self::DEGREE_PROGRAMME_LABEL,
-        'sv' => self::DEGREE_PROGRAMME_LABEL
-      ]
+        'sv' => self::DEGREE_PROGRAMME_LABEL,
+      ],
     ];
 
     $this->assertEquals($expectedResponseData, $degreeProgrammeResponseData);
   }
+
 }

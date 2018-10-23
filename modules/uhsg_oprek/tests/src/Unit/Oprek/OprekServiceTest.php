@@ -21,22 +21,22 @@ class OprekServiceTest extends UnitTestCase {
   const VERSION = 123;
   const VERSION_RESPONSE = '{"status": 200, "data": {"version": ' . self::VERSION . '}}';
 
-  /** @var Client */
+  /** @var \GuzzleHttp\Client*/
   private $client;
 
-  /** @var ImmutableConfig */
+  /** @var \Drupal\Core\Config\ImmutableConfig*/
   private $config;
 
-  /** @var ConfigFactoryInterface */
+  /** @var \Drupal\Core\Config\ConfigFactoryInterface*/
   private $configFactory;
 
-  /** @var OprekService */
+  /** @var \Drupal\uhsg_oprek\Oprek\OprekService*/
   private $oprekService;
 
-  /** @var ResponseInterface */
+  /** @var \Psr\Http\Message\ResponseInterface*/
   private $response;
 
-  /** @var StreamInterface */
+  /** @var \Psr\Http\Message\StreamInterface*/
   private $stream;
 
   public function setUp() {
@@ -112,4 +112,5 @@ class OprekServiceTest extends UnitTestCase {
 
     $this->assertEquals(self::VERSION, $this->oprekService->getVersion());
   }
+
 }
