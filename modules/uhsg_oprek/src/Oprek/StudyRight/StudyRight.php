@@ -42,7 +42,7 @@ class StudyRight implements StudyRightInterface {
   /**
    * Specifies the date/time which is used to filter out irrelevant parts of
    * information while determining study rights.
-   * @param \DateTime $date
+   * @var \DateTime
    */
   protected $date;
 
