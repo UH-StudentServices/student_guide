@@ -40,6 +40,13 @@ class StudyRight implements StudyRightInterface {
   protected $targetedCodes;
 
   /**
+   * Specifies the date/time which is used to filter out irrelevant parts of
+   * information while determining study rights.
+   * @param \DateTime $date
+   */
+  protected $date;
+
+  /**
    * StudyRight constructor.
    * @param array $properties
    *   List of the properties of study rights given by the response of Oprek
@@ -49,6 +56,16 @@ class StudyRight implements StudyRightInterface {
     $this->properties = $properties;
     $this->targetedCodesSingles = [];
     $this->targetedCodesConcatonated = [];
+    $this->date = new \DateTime();
+  }
+
+  /**
+   * Set the date that is used for filtering our irrelevant information.
+   *
+   * @param \DateTime $date
+   */
+  public function setDate(\DateTime $date) {
+    $this->date = $date;
   }
 
   /**
@@ -94,8 +111,12 @@ class StudyRight implements StudyRightInterface {
   public function getElements() {
     $return = [];
     if (!empty($this->properties['elements']) && is_array($this->properties['elements'])) {
-      foreach ($this->properties['elements'] as $element) {
-        $return[] = new Element($element);
+      foreach ($this->properties['elements'] as $element_raw) {
+        $element = new Element($element_raw);
+        $element->setDate($this->date);
+        if ($element->isActive()) {
+          $return[] = $element;
+        }
       }
     }
     return $this->sortByElementIdAsc($return);
