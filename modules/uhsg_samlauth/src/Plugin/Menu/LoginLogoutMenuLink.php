@@ -20,4 +20,5 @@ class LoginLogoutMenuLink extends DrupalLoginLogoutMenuLink {
       return $this->t('Login');
     }
   }
+
 }

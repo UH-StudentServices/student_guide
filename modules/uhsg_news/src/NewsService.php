@@ -3,7 +3,6 @@
 namespace Drupal\uhsg_news;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\Entity\Query\QueryInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\node\NodeInterface;
 use Drupal\uhsg_active_degree_programme\ActiveDegreeProgrammeService;
@@ -36,9 +35,9 @@ class NewsService {
   protected $referenceField = 'field_news_degree_programme';
 
   /**
-   * @param EntityTypeManagerInterface $entityTypeManager
-   * @param LanguageManagerInterface $languageManager
-   * @param ActiveDegreeProgrammeService $activeDegreeProgrammeService
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
+   * @param \Drupal\Core\Language\LanguageManagerInterface $languageManager
+   * @param \Drupal\uhsg_active_degree_programme\ActiveDegreeProgrammeService $activeDegreeProgrammeService
    */
   public function __construct(EntityTypeManagerInterface $entityTypeManager, LanguageManagerInterface $languageManager, ActiveDegreeProgrammeService $activeDegreeProgrammeService) {
     $this->entityTypeManager = $entityTypeManager;
@@ -102,7 +101,7 @@ class NewsService {
 
   /**
    * @param int $limit
-   * @return QueryInterface
+   * @return \Drupal\Core\Entity\Query\QueryInterface
    */
   private function getBaseQuery($limit) {
     return \Drupal::entityQuery($this->targetEntityType)
@@ -112,4 +111,5 @@ class NewsService {
       ->sort('created', 'DESC')
       ->range(0, $limit);
   }
+
 }

@@ -27,10 +27,10 @@ function uhsg_some_links_help($route_name, RouteMatchInterface $route_match) {
  * Implements hook_theme().
  */
 function uhsg_some_links_theme($existing, $type, $theme, $path) {
-  return array(
-    'block__uhsg_some_links' => array(
+  return [
+    'block__uhsg_some_links' => [
       'template' => 'block--uhsg-some-links',
       'base hook' => 'block',
-    )
-  );
+    ],
+  ];
 }

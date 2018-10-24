@@ -2,8 +2,11 @@
 
 /**
  * Implements hook_form_FORM_ID_alter().
- */
-function uhsg_search_form_views_exposed_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+ */use Drupal\search_api\Query\QueryInterface;
+use Solarium\QueryType\Select\Query\Query;
+use Drupal\Core\Form\FormStateInterface;
+
+function uhsg_search_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   if (\Drupal::service('path.matcher')->isFrontPage()) {
     $form['#attached']['library'][] = 'uhsg_search/uhsg-search';
     $form['#attached']['library'][] = 'uhsg_search/filter_search';
@@ -18,6 +21,7 @@ function uhsg_search_form_views_exposed_form_alter(&$form, \Drupal\Core\Form\For
 
 /**
  * Implements hook_preprocess_node().
+ *
  * Add content type as data attribute for search filtering.
  */
 function uhsg_search_preprocess_node(&$variables) {
@@ -55,7 +59,7 @@ function uhsg_search_article_is_degree_programme_specific($node) {
 /**
  * Implements hook_search_api_solr_query_alter().
  */
-function uhsg_search_search_api_solr_query_alter(\Solarium\QueryType\Select\Query\Query $solarium_query, \Drupal\search_api\Query\QueryInterface $query) {
+function uhsg_search_search_api_solr_query_alter(Query $solarium_query, QueryInterface $query) {
   uhsg_search_wildcard_query($solarium_query);
 }
 
@@ -69,7 +73,7 @@ function uhsg_search_search_api_solr_query_alter(\Solarium\QueryType\Select\Quer
  *
  * @param \Solarium\QueryType\Select\Query\Query $solarium_query
  */
-function uhsg_search_wildcard_query(\Solarium\QueryType\Select\Query\Query $solarium_query) {
+function uhsg_search_wildcard_query(Query $solarium_query) {
   $query = $solarium_query->getQuery();
   $single_word_query = !empty($query) && strpos($query, '+') === FALSE;
 

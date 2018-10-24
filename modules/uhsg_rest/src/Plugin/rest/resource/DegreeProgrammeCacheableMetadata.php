@@ -17,4 +17,5 @@ class DegreeProgrammeCacheableMetadata implements CacheableDependencyInterface {
   public function getCacheMaxAge() {
     return 0;
   }
+
 }

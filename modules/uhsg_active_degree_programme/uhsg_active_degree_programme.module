@@ -3,9 +3,7 @@
 /**
  * @file
  * Contains uhsg_active_degree_programme.module.
- */
-
-use Drupal\uhsg_active_degree_programme\ActiveDegreeProgrammeService;
+ */use Drupal\Core\Url;
 
 /**
  * Implements hook_page_attachments().
@@ -21,8 +19,8 @@ function uhsg_active_degree_programme_page_attachments(array &$page) {
   $activeDegreeProgrammeService = \Drupal::service('uhsg_active_degree_programme.active_degree_programme');
   $degreeProgrammeCode = $activeDegreeProgrammeService->getCode();
   $degreeProgrammeUserGroup = $activeDegreeProgrammeService->getUserGroup();
-  $baseUrl = \Drupal\Core\Url::fromRoute('<front>', [], ['absolute' => TRUE])->toString();
-  $path = \Drupal\Core\Url::fromRoute('<current>')->getInternalPath();
+  $baseUrl = Url::fromRoute('<front>', [], ['absolute' => TRUE])->toString();
+  $path = Url::fromRoute('<current>')->getInternalPath();
   $href = $degreeProgrammeCode ? "$baseUrl/$path?degree_programme_code=$degreeProgrammeCode" : "$baseUrl/$path";
 
   $shortlinkTag = [

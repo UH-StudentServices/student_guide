@@ -12,13 +12,13 @@ class ActiveLanguageTest extends UnitTestCase {
 
   const LANGUAGE_ID = 'fi';
 
-  /** @var ActiveLanguage */
+  /** @var \Drupal\uhsg_top_content\Plugin\views\argument_default\ActiveLanguage*/
   private $activeLanguage;
 
-  /** @var LanguageInterface */
+  /** @var \Drupal\Core\Language\LanguageInterface*/
   private $language;
 
-  /** @var LanguageManagerInterface */
+  /** @var \Drupal\Core\Language\LanguageManagerInterface*/
   private $languageManager;
 
   public function setUp() {
@@ -51,4 +51,5 @@ class ActiveLanguageTest extends UnitTestCase {
   public function shouldReturnCurrentLanguageIdAsDefaultArgument() {
     $this->assertEquals(self::LANGUAGE_ID, $this->activeLanguage->getArgument());
   }
+
 }

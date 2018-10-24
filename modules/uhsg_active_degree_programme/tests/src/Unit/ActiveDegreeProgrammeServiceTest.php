@@ -37,76 +37,76 @@ class ActiveDegreeProgrammeServiceTest extends UnitTestCase {
   const DEGREE_PROGRAMME_BUNDLE = 'degree_programme';
   const PRIMARY_FIELD_NAME = 'Primary field name';
 
-  /** @var AccountInterface */
+  /** @var \Drupal\Core\Session\AccountInterface*/
   private $account;
 
-  /** @var ActiveDegreeProgrammeService */
+  /** @var \Drupal\uhsg_active_degree_programme\ActiveDegreeProgrammeService*/
   private $activeDegreeProgrammeService;
 
-  /** @var ConfigFactory */
+  /** @var \Drupal\Core\Config\ConfigFactory*/
   private $configFactory;
 
-  /** @var ContainerInterface */
+  /** @var \Symfony\Component\DependencyInjection\ContainerInterface*/
   private $container;
 
-  /** @var CacheContextsManager */
+  /** @var \Drupal\Core\Cache\Context\CacheContextsManager*/
   private $cacheContextsManager;
 
-  /** @var ImmutableConfig */
+  /** @var \Drupal\Core\Config\ImmutableConfig*/
   private $config;
 
-  /** @var ParameterBag */
+  /** @var \Symfony\Component\HttpFoundation\ParameterBag*/
   private $cookies;
 
-  /** @var EntityRepositoryInterface */
+  /** @var \Drupal\Core\Entity\EntityRepositoryInterface*/
   private $entityRepository;
 
-  /** @var EntityStorageInterface */
+  /** @var \Drupal\Core\Entity\EntityStorageInterface*/
   private $entityStorage;
 
-  /** @var EntityTypeInterface */
+  /** @var \Drupal\Core\Entity\EntityTypeInterface*/
   private $entityType;
 
-  /** @var EntityTypeManagerInterface */
+  /** @var \Drupal\Core\Entity\EntityTypeManagerInterface*/
   private $entityTypeManager;
 
-  /** @var EntityTypeRepositoryInterface */
+  /** @var \Drupal\Core\Entity\EntityTypeRepositoryInterface*/
   private $entityTypeRepository;
 
-  /** @var FieldItemListInterface */
+  /** @var \Drupal\Core\Field\FieldItemListInterface*/
   private $fieldItemList;
 
-  /** @var FlagInterface */
+  /** @var \Drupal\flag\FlagInterface*/
   private $flag;
 
-  /** @var FlaggingInterface */
+  /** @var \Drupal\flag\FlaggingInterface*/
   private $flagging;
 
-  /** @var FlagService */
+  /** @var \Drupal\flag\FlagService*/
   private $flagService;
 
-  /** @var HeaderBag */
+  /** @var \Symfony\Component\HttpFoundation\HeaderBag*/
   private $headers;
 
-  /** @var LanguageInterface */
+  /** @var \Drupal\Core\Language\LanguageInterface*/
   private $language;
 
-  /** @var ModuleHandlerInterface */
+  /** @var \Drupal\Core\Extension\ModuleHandlerInterface*/
   private $moduleHandler;
 
-  /** @var QueryInterface */
+  /** @var \Drupal\Core\Entity\Query\QueryInterface*/
   private $query;
 
-  /** @var Request */
+  /** @var \Symfony\Component\HttpFoundation\Request*/
   private $request;
 
-  /** @var RequestStack */
+  /** @var \Symfony\Component\HttpFoundation\RequestStack*/
   private $requestStack;
 
-  /** @var Term */
+  /** @var \Drupal\taxonomy\Entity\Term*/
   private $term;
 
-  /** @var TypedDataInterface */
+  /** @var \Drupal\Core\TypedData\TypedDataInterface*/
   private $typedData;
 
   public function setUp() {
@@ -248,6 +248,7 @@ class ActiveDegreeProgrammeServiceTest extends UnitTestCase {
 
     $this->assertEquals(self::ACTIVE_DEGREE_PROGRAMME_ID, $this->activeDegreeProgrammeService->getId());
   }
+
 }
 
 /**
@@ -270,4 +271,5 @@ class ActiveDegreeProgrammeServiceTestDouble extends ActiveDegreeProgrammeServic
   protected function saveCookie($cookie) {
     // Do nothing.
   }
+
 }

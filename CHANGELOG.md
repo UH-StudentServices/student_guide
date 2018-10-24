@@ -3,6 +3,7 @@
 ## 1.xx-dev
 ??.??.????
 
+* Fixed coding standards (HUB-359)
 
 
 ## 1.24

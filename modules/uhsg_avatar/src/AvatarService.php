@@ -5,7 +5,6 @@ namespace Drupal\uhsg_avatar;
 use Drupal\Component\Datetime\TimeInterface;
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Config\ConfigFactory;
-use Drupal\Core\Config\ImmutableConfig;
 use Drupal\Core\Logger\LoggerChannel;
 use Drupal\Core\Session\AccountProxyInterface;
 use Drupal\user\Entity\User;
@@ -13,28 +12,29 @@ use GuzzleHttp\Client;
 
 class AvatarService {
 
-  const CACHE_EXPIRE_SECONDS = 21600; // 6 hours.
+  // 6 hours.
+  const CACHE_EXPIRE_SECONDS = 21600;
   const CACHE_KEY_PREFIX = 'avatar-';
 
-  /** @var CacheBackendInterface */
+  /** @var \Drupal\Core\Cache\CacheBackendInterface*/
   protected $cache;
 
-  /** @var Client */
+  /** @var \GuzzleHttp\Client*/
   protected $client;
 
-  /** @var ImmutableConfig */
+  /** @var \Drupal\Core\Config\ImmutableConfig*/
   protected $config;
 
-  /** @var ConfigFactory */
+  /** @var \Drupal\Core\Config\ConfigFactory*/
   protected $configFactory;
 
-  /** @var AccountProxyInterface */
+  /** @var \Drupal\Core\Session\AccountProxyInterface*/
   protected $currentUser;
 
-  /** @var LoggerChannel */
+  /** @var \Drupal\Core\Logger\LoggerChannel*/
   protected $logger;
 
-  /** @var TimeInterface */
+  /** @var \Drupal\Component\Datetime\TimeInterface*/
   protected $time;
 
   public function __construct(ConfigFactory $configFactory, AccountProxyInterface $currentUser, Client $client, LoggerChannel $logger, CacheBackendInterface $cache, TimeInterface $time) {
@@ -77,7 +77,8 @@ class AvatarService {
             $avatarUrl = $decodedBody->avatarImageUrl;
             $this->setAvatarUrlToCache($oodiUid, $avatarUrl);
           }
-        } catch (\Exception $e) {
+        }
+        catch (\Exception $e) {
           $this->logger->error($e->getMessage());
         }
       }
@@ -88,7 +89,7 @@ class AvatarService {
 
   /**
    * @param int $id
-   * @return User
+   * @return \Drupal\user\Entity\User
    */
   protected function loadUser($id) {
     return User::load($id);
@@ -130,4 +131,5 @@ class AvatarService {
   private function getCacheExpireTimestamp() {
     return $this->time->getRequestTime() + self::CACHE_EXPIRE_SECONDS;
   }
+
 }

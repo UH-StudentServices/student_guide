@@ -33,7 +33,7 @@ class UserSyncForm extends ConfigFormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
     $available_roles = array_keys(user_roles(TRUE));
 
-    $available_roles = array_filter($available_roles, function($role) {
+    $available_roles = array_filter($available_roles, function ($role) {
       return $role != 'authenticated';
     });
 
@@ -44,7 +44,7 @@ class UserSyncForm extends ConfigFormBase {
 
     $form['description'] = [
       '#type' => 'item',
-      '#description' => $formDescription
+      '#description' => $formDescription,
     ];
 
     $mappingFormatDescription = $this->t(
@@ -144,4 +144,5 @@ class UserSyncForm extends ConfigFormBase {
 
     return $groupToRoleMapping;
   }
+
 }

@@ -4,7 +4,6 @@ use Drupal\Tests\UnitTestCase;
 use Drupal\uhsg_redirect_to_login\StackMiddleware\RedirectToLogin;
 use Prophecy\Argument;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
-use Symfony\Component\HttpFoundation\Cookie;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
@@ -14,16 +13,16 @@ use Symfony\Component\HttpKernel\HttpKernelInterface;
  */
 class RedirectToLoginTest extends UnitTestCase {
 
-  /** @var HttpKernelInterface */
+  /** @var \Symfony\Component\HttpKernel\HttpKernelInterface*/
   private $httpKernel;
 
-  /** @var ParameterBag */
+  /** @var \Symfony\Component\DependencyInjection\ParameterBag\ParameterBag*/
   private $cookies;
 
-  /** @var RedirectToLogin */
+  /** @var \Drupal\uhsg_redirect_to_login\StackMiddleware\RedirectToLogin*/
   private $redirectToLogin;
 
-  /** @var Request */
+  /** @var \Symfony\Component\HttpFoundation\Request*/
   private $request;
 
   public function setUp() {
@@ -97,9 +96,10 @@ class RedirectToLoginTest extends UnitTestCase {
 
     $response = $this->redirectToLogin->handle($this->request->reveal());
 
-    /** @var Cookie[] $cookies */
+    /** @var \Symfony\Component\HttpFoundation\Cookie[] $cookies */
     $cookies = $response->headers->getCookies();
 
     $this->assertEquals(RedirectToLogin::COOKIE_NAME_TRIGGERED, $cookies[0]->getName());
   }
+
 }

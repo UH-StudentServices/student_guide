@@ -1,11 +1,10 @@
 <?php
- 
+
 namespace Drupal\uhsg_office_hours;
 
 use Drupal\Component\Datetime\TimeInterface;
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Config\ConfigFactory;
-use Drupal\Core\Config\ImmutableConfig;
 use Drupal\Core\Logger\LoggerChannel;
 use Drupal\uhsg_active_degree_programme\ActiveDegreeProgrammeService;
 use GuzzleHttp\Client;
@@ -14,7 +13,8 @@ use Psr\Http\Message\ResponseInterface;
 
 class OfficeHoursService {
 
-  const CACHE_EXPIRE_SECONDS = 60; // 1 minute.
+  // 1 minute.
+  const CACHE_EXPIRE_SECONDS = 60;
   const CACHE_KEY = 'uhsg-office-hours';
   const CONFIG_NAME = 'uhsg_office_hours.config';
   const CONFIG_API_BASE_URL = 'api_base_url';
@@ -22,28 +22,28 @@ class OfficeHoursService {
   const CONNECT_TIMEOUT_SECONDS = 2;
   const REQUEST_TIMEOUT_SECONDS = 2;
 
-  /** @var CacheBackendInterface */
+  /** @var \Drupal\Core\Cache\CacheBackendInterface*/
   protected $cache;
 
-  /** @var Client */
+  /** @var \GuzzleHttp\Client*/
   protected $client;
 
-  /** @var ImmutableConfig */
+  /** @var \Drupal\Core\Config\ImmutableConfig*/
   protected $config;
 
-  /** @var ConfigFactory */
+  /** @var \Drupal\Core\Config\ConfigFactory*/
   protected $configFactory;
 
-  /** @var LoggerChannel */
+  /** @var \Drupal\Core\Logger\LoggerChannel*/
   protected $logger;
 
-  /** @var TimeInterface */
+  /** @var \Drupal\Component\Datetime\TimeInterface*/
   protected $time;
 
-  /** @var ActiveDegreeProgrammeService */
+  /** @var \Drupal\uhsg_active_degree_programme\ActiveDegreeProgrammeService*/
   protected $activeDegreeProgrammeService;
 
-  /** @var array */
+  /** @var array*/
   private $officeHourProperties = ['description', 'additionalInfo', 'location'];
 
   public function __construct(
@@ -80,7 +80,8 @@ class OfficeHoursService {
           if (!empty($officeHoursResponse)) {
             $this->setOfficeHoursToCache($officeHoursResponse);
           }
-        } catch (\Exception $e) {
+        }
+        catch (\Exception $e) {
           $this->logger->error($e->getMessage());
         }
       }
@@ -117,12 +118,12 @@ class OfficeHoursService {
   private function getRequestOptions() {
     return [
       RequestOptions::CONNECT_TIMEOUT => self::CONNECT_TIMEOUT_SECONDS,
-      RequestOptions::TIMEOUT => self::REQUEST_TIMEOUT_SECONDS
+      RequestOptions::TIMEOUT => self::REQUEST_TIMEOUT_SECONDS,
     ];
   }
 
   /**
-   * @param ResponseInterface $apiResponse
+   * @param \Psr\Http\Message\ResponseInterface $apiResponse
    * @return array
    */
   private function handleResponse(ResponseInterface $apiResponse) {
@@ -232,4 +233,5 @@ class OfficeHoursService {
   private function getCacheExpireTimestamp() {
     return $this->time->getRequestTime() + self::CACHE_EXPIRE_SECONDS;
   }
+
 }
