@@ -279,17 +279,17 @@ class UserSyncSubscriber implements EventSubscriberInterface {
       $primary_field_name = $this->config->get('primary_field_name');
 
       foreach ($study_rights as $study_right) {
-        foreach ($study_right->getElements() as $element) {
-          if (isset($known_degree_programmes[$element->getCode()])) {
+        foreach ($study_right->getTargetedCodes() as $targeted_code) {
+          if (isset($known_degree_programmes[$targeted_code->getCode()])) {
 
             // Flag the degree programme
             $flag = $this->flagService->getFlagById('my_degree_programmes');
 
             // Get potentially existing flagging, if not exist, then create.
             /** @var \Drupal\flag\Entity\Flagging $flagging */
-            $flagging = $this->flagService->getFlagging($flag, $known_degree_programmes[$element->getCode()], $event->getAccount());
+            $flagging = $this->flagService->getFlagging($flag, $known_degree_programmes[$targeted_code->getCode()], $event->getAccount());
             if (!$flagging) {
-              $flagging = $this->flagService->flag($flag, $known_degree_programmes[$element->getCode()], $event->getAccount());
+              $flagging = $this->flagService->flag($flag, $known_degree_programmes[$targeted_code->getCode()], $event->getAccount());
             }
 
             // Load the flagging, so we can set some field values
@@ -297,9 +297,9 @@ class UserSyncSubscriber implements EventSubscriberInterface {
             if ($flagging->hasField($technical_condition_field_name)) {
               $flagging->set($technical_condition_field_name, TRUE);
 
-              // If study right is in 'primary' state and primary field
-              // exists, then set the priary to TRUE.
-              if ($study_right->getState() == StudyRight::STATE_PRIMARY && $flagging->hasField($primary_field_name)) {
+              // If targeted code is 'primary' and primary field exists, then
+              // set the primary to TRUE.
+              if ($targeted_code->isPrimary() && $flagging->hasField($primary_field_name)) {
                 $flagging->set($primary_field_name, TRUE);
               }
 
