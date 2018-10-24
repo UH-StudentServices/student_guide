@@ -3,6 +3,8 @@
 ## 1.xx-dev
 ??.??.????
 
+* Fixed coding standards (HUB-359)
+* Eduviewer embed support (HUB-342)
 
 
 ## 1.24

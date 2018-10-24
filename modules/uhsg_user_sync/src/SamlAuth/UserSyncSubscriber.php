@@ -135,7 +135,7 @@ class UserSyncSubscriber implements EventSubscriberInterface {
     // If specified field definition has been found
     if ($event->getAccount()->getFieldDefinition($field_name)) {
       $previous_value = $event->getAccount()->get($field_name)->getString();
-      $new_value = $attributes->getStudentID();
+      $new_value = $attributes->getStudentId();
       if ($new_value && $new_value != $previous_value) {
         // When we have new value and it's different from previous value, it
         // means that we need to update it to the account.

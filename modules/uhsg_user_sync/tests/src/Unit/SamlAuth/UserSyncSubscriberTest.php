@@ -56,7 +56,7 @@ class UserSynscSubscriberTest extends UnitTestCase {
   /** @var \Drupal\Core\Logger\LoggerChannel*/
   private $logger;
 
-  /** @var \Drupal\Core\Messenger\MessengerInterface */
+  /** @var \Drupal\Core\Messenger\MessengerInterface*/
   private $messenger;
 
   /** @var \Drupal\uhsg_oprek\Oprek\OprekServiceInterface*/

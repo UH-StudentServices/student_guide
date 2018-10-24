@@ -26,38 +26,38 @@ class AvatarServiceTest extends UnitTestCase {
   const EXCEPTION_MESSAGE = 'Exception message';
   const NORMAL_USER_UID = 2;
   const RESPONSE_BODY = '{"avatarImageUrl": "http:\/\/www.example.com"}';
-  
-  /** @var AvatarService */
+
+  /** @var \Drupal\uhsg_avatar\AvatarService*/
   private $avatarService;
-  
-  /** @var CacheBackendInterface */
+
+  /** @var \Drupal\Core\Cache\CacheBackendInterface*/
   private $cache;
 
-  /** @var object */
+  /** @var object*/
   private $cachedUrl;
 
-  /** @var Client */
+  /** @var \GuzzleHttp\Client*/
   private $client;
 
-  /** @var ImmutableConfig */
+  /** @var \Drupal\Core\Config\ImmutableConfig*/
   private $config;
 
-  /** @var ConfigFactory */
+  /** @var \Drupal\Core\Config\ConfigFactory*/
   private $configFactory;
 
-  /** @var ContainerInterface */
+  /** @var \Symfony\Component\DependencyInjection\ContainerInterface*/
   private $container;
 
-  /** @var AccountProxyInterface */
+  /** @var \Drupal\Core\Session\AccountProxyInterface*/
   private $currentUser;
 
-  /** @var LoggerChannel */
+  /** @var \Drupal\Core\Logger\LoggerChannel*/
   private $logger;
 
-  /** @var ResponseInterface */
+  /** @var \Psr\Http\Message\ResponseInterface*/
   private $response;
 
-  /** @var TimeInterface */
+  /** @var \Drupal\Component\Datetime\TimeInterface*/
   private $time;
 
   public function setUp() {
@@ -90,7 +90,7 @@ class AvatarServiceTest extends UnitTestCase {
     $this->container = $this->prophesize(ContainerInterface::class);
 
     Drupal::setContainer($this->container->reveal());
-    
+
     $this->avatarService = new AvatarServiceTestDouble(
       $this->configFactory->reveal(),
       $this->currentUser->reveal(),
@@ -123,7 +123,7 @@ class AvatarServiceTest extends UnitTestCase {
   /**
    * @test
    */
-  public function shouldReturnAvatarImageURLFromAPIWhenURLNotInCache() {
+  public function shouldReturnAvatarImageUrlFromApiWhenUrlNotInCache() {
     $this->currentUser->isAuthenticated()->willReturn(TRUE);
     $this->currentUser->id()->willReturn(self::NORMAL_USER_UID);
 
@@ -133,7 +133,7 @@ class AvatarServiceTest extends UnitTestCase {
   /**
    * @test
    */
-  public function shouldReturnAvatarImageURLFromCacheWhenURLInCache() {
+  public function shouldReturnAvatarImageUrlFromCacheWhenUrlInCache() {
     $this->currentUser->isAuthenticated()->willReturn(TRUE);
     $this->currentUser->id()->willReturn(self::NORMAL_USER_UID);
     $this->cache->get(Argument::any())->willReturn($this->cachedUrl);
@@ -147,7 +147,7 @@ class AvatarServiceTest extends UnitTestCase {
   /**
    * @test
    */
-  public function shouldLogAPIException() {
+  public function shouldLogApiException() {
     $this->currentUser->isAuthenticated()->willReturn(TRUE);
     $this->currentUser->id()->willReturn(self::NORMAL_USER_UID);
     $this->client->get(Argument::any())->willThrow(new Exception(self::EXCEPTION_MESSAGE));
@@ -160,13 +160,14 @@ class AvatarServiceTest extends UnitTestCase {
   /**
    * @test
    */
-  public function shouldReturnNullURLWhenAPIStatusOtherThan200() {
+  public function shouldReturnNullUrlWhenApiStatusOtherThan200() {
     $this->currentUser->isAuthenticated()->willReturn(TRUE);
     $this->currentUser->id()->willReturn(self::NORMAL_USER_UID);
     $this->response->getStatusCode()->willReturn(404);
 
     $this->assertNull($this->avatarService->getAvatar());
   }
+
 }
 
 /**
@@ -185,4 +186,5 @@ class AvatarServiceTestDouble extends AvatarService {
 
     return $user->reveal();
   }
+
 }

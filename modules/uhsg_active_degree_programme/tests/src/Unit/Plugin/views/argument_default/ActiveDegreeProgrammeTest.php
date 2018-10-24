@@ -11,10 +11,10 @@ class ActiveDegreeProgrammeTest extends UnitTestCase {
 
   const ACTIVE_DEGREE_PROGRAMME_ID = 123;
 
-  /** @var ActiveDegreeProgramme */
+  /** @var \Drupal\uhsg_active_degree_programme\Plugin\views\argument_default\ActiveDegreeProgramme*/
   private $activeDegreeProgramme;
 
-  /** @var ActiveDegreeProgrammeService */
+  /** @var \Drupal\uhsg_active_degree_programme\ActiveDegreeProgrammeService*/
   private $activeDegreeProgrammeService;
 
   public function setUp() {
@@ -44,4 +44,5 @@ class ActiveDegreeProgrammeTest extends UnitTestCase {
   public function shouldReturnActiveDegreeProgrammeIdAsDefaultArgument() {
     $this->assertEquals(self::ACTIVE_DEGREE_PROGRAMME_ID, $this->activeDegreeProgramme->getArgument());
   }
+
 }

@@ -20,7 +20,7 @@ interface AttributeParserInterface {
    * Returns an student ID from the attributes.
    * @return string
    */
-  public function getStudentID();
+  public function getStudentId();
 
   /**
    * Returns an Oodi UID from the attributes.

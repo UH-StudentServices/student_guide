@@ -36,20 +36,21 @@ class ActiveDegreeProgrammeUrl extends BlockBase {
           '#type' => 'button',
           '#value' => $this->t('Copy URL'),
           '#attributes' => [
-            'id' => 'copy-url'
+            'id' => 'copy-url',
           ],
           '#attached' => [
             'library' => [
-              'uhsg_active_degree_programme/copy_url'
+              'uhsg_active_degree_programme/copy_url',
             ],
             'drupalSettings' => [
               'uhsg_active_degree_programme' => [
-                'selector' => '[rel="shortlink-with-degree-programme"]'
-              ]
-            ]
-          ]
-        ]
-      ]
+                'selector' => '[rel="shortlink-with-degree-programme"]',
+              ],
+            ],
+          ],
+        ],
+      ],
     ];
   }
+
 }

@@ -10,13 +10,13 @@ use Symfony\Component\DependencyInjection\Definition;
  */
 class UhsgEditServiceProviderTest extends UnitTestCase {
 
-  /** @var ContainerBuilder */
+  /** @var \Drupal\Core\DependencyInjection\ContainerBuilder*/
   private $container;
 
-  /** @var Definition */
+  /** @var \Symfony\Component\DependencyInjection\Definition*/
   private $definition;
 
-  /** @var UhsgEditServiceProvider */
+  /** @var \Drupal\uhsg_edit\UhsgEditServiceProvider*/
   private $uhsgEditServiceProvider;
 
   public function setUp() {
@@ -39,4 +39,5 @@ class UhsgEditServiceProviderTest extends UnitTestCase {
 
     $this->uhsgEditServiceProvider->alter($this->container->reveal());
   }
+
 }

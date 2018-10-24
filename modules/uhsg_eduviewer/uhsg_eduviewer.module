@@ -1,0 +1,25 @@
+<?php
+
+/**
+ * Implements hook_preprocess_HOOK().
+ *
+ * Handle Eduviewer paragraph type. Renders Eduviewer markup and attaches
+ * required external scripts. Sets cache contexts.
+ */
+function uhsg_eduviewer_preprocess_paragraph(&$variables) {
+  if ($variables['paragraph']->getType() == 'eduviewer') {
+
+    /** @var $eduviewer \Drupal\uhsg_eduviewer\Eduviewer */
+    $eduviewer = \Drupal::service('uhsg_eduviewer.eduviewer');
+    $eduviewer_markup = $eduviewer->getMarkup();
+
+    if ($eduviewer_markup) {
+      $variables['eduviewer'] = ['#markup' => $eduviewer_markup];
+      $variables['eduviewer']['#attached']['library'][] = 'uhsg_eduviewer/eduviewer';
+      $variables['attributes']['class'][] = 'eduviewer';
+      $variables['#cache']['max-age'] = 0;
+      $variables['#cache']['contexts'][] = 'active_degree_programme';
+      $variables['#cache']['contexts'][] = 'languages:language_interface';
+    }
+  }
+}

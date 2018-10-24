@@ -18,4 +18,5 @@ class GeneralNews extends NewsBlockBase {
   public function build() {
     return $this->render(\Drupal::service('uhsg_news.news')->getGeneralNewsNids());
   }
+
 }

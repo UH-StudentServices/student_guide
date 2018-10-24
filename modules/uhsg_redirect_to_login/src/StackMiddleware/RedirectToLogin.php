@@ -40,7 +40,7 @@ class RedirectToLogin implements HttpKernelInterface {
    * Determine from the request, whether client has been logged in
    * Opetukseni/Opintoni service.
    *
-   * @param Request $request
+   * @param \Symfony\Component\HttpFoundation\Request $request
    * @return bool
    */
   protected function hasLoggedin(Request $request) {
@@ -51,7 +51,7 @@ class RedirectToLogin implements HttpKernelInterface {
    * Determine from the request, whether client has triggered login redirect
    * before.
    *
-   * @param Request $request
+   * @param \Symfony\Component\HttpFoundation\Request $request
    * @return bool
    */
   protected function hasTriggered(Request $request) {
@@ -61,7 +61,7 @@ class RedirectToLogin implements HttpKernelInterface {
   /**
    * Returns an redirect response to login.
    *
-   * @param Request $request
+   * @param \Symfony\Component\HttpFoundation\Request $request
    * @return \Symfony\Component\HttpFoundation\Response
    */
   protected function redirectToLoginResponse(Request $request) {
@@ -76,4 +76,5 @@ class RedirectToLogin implements HttpKernelInterface {
     return $response;
 
   }
+
 }

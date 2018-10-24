@@ -19,4 +19,5 @@ class UhsgEditServiceProvider extends ServiceProviderBase {
       $definition->setClass('Drupal\uhsg_edit\ContentLock\UhsgContentLock');
     }
   }
+
 }

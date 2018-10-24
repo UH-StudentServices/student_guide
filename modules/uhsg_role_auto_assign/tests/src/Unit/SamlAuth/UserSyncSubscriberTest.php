@@ -28,40 +28,40 @@ class UserSyncSubscriberTest extends UnitTestCase {
   const ROLE_2_ID = 2;
   const USER_NAME = 'User name';
 
-  /** @var UserInterface */
+  /** @var \Drupal\user\UserInterface*/
   private $account;
 
-  /** @var ConfigFactoryInterface */
+  /** @var \Drupal\Core\Config\ConfigFactoryInterface*/
   private $configFactory;
 
-  /** @var ImmutableConfig */
+  /** @var \Drupal\Core\Config\ImmutableConfig*/
   private $config;
 
-  /** @var ContainerInterface */
+  /** @var \Symfony\Component\DependencyInjection\ContainerInterface*/
   private $container;
 
-  /** @var EntityStorageInterface */
+  /** @var \Drupal\Core\Entity\EntityStorageInterface*/
   private $entityStorage;
 
-  /** @var EntityTypeManagerInterface */
+  /** @var \Drupal\Core\Entity\EntityTypeManagerInterface*/
   private $entityTypeManager;
 
-  /** @var EntityTypeRepositoryInterface */
+  /** @var \Drupal\Core\Entity\EntityTypeRepositoryInterface*/
   private $entityTypeRepository;
 
-  /** @var SamlAuthUserSyncEvent */
+  /** @var \Drupal\samlauth\Event\SamlAuthUserSyncEvent*/
   private $event;
 
-  /** @var LoggerInterface */
+  /** @var \Psr\Log\LoggerInterface*/
   private $logger;
 
-  /** @var LoggerChannelFactory */
+  /** @var \Drupal\Core\Logger\LoggerChannelFactory*/
   private $loggerChannelFactory;
 
-  /** @var Role */
+  /** @var \Drupal\user\Entity\Role*/
   private $role;
 
-  /** @var UserSyncSubscriber */
+  /** @var \Drupal\uhsg_role_auto_assign\SamlAuth\UserSyncSubscriber*/
   private $userSyncSubscriber;
 
   public function setUp() {
@@ -176,4 +176,5 @@ class UserSyncSubscriberTest extends UnitTestCase {
 
     $this->userSyncSubscriber->onUserSync($this->event->reveal());
   }
+
 }
