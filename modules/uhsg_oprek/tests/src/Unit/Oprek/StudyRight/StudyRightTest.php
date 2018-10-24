@@ -38,9 +38,10 @@ class StudyRightTest extends UnitTestCase {
    * @test
    */
   public function getElementsProperties() {
-    $expectedElementCounts = [0 => 5, 1 => 5];
+    $expectedElementCounts = [0 => 4, 1 => 2];
     foreach ($expectedElementCounts as $index => $expectedElementCount) {
       $study_right = new StudyRight($this->studyRightDecodedResponses[0]['data'][$index]);
+      $study_right->setDate(new \DateTime('2018-10-24T11:00:00.000Z'));
       $this->assertEquals($expectedElementCount, count($study_right->getElements()));
     }
   }

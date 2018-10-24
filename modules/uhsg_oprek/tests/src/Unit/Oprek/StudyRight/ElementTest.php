@@ -16,11 +16,14 @@ class ElementTest extends UnitTestCase {
   private $element;
 
   /** @var object*/
-  private $studyRightDecodedResponse;
+  private $studyRightDecodedResponses;
 
   public function setUp() {
     parent::setUp();
-    $this->studyRightDecodedResponse = Json::decode(file_get_contents(__DIR__ . '/../study_rights_response.0.json'));
+    $this->studyRightDecodedResponses = [
+      0 => Json::decode(file_get_contents(__DIR__ . '/../study_rights_response.0.json')),
+      4 => Json::decode(file_get_contents(__DIR__ . '/../study_rights_response.4.json')),
+    ];
   }
 
   /**
@@ -72,7 +75,7 @@ class ElementTest extends UnitTestCase {
     ];
     foreach ($expectedCodes as $study_right_index => $elements) {
       foreach ($elements as $element_index => $expectedCode) {
-        $element = new Element($this->studyRightDecodedResponse['data'][$study_right_index]['elements'][$element_index]);
+        $element = new Element($this->studyRightDecodedResponses[0]['data'][$study_right_index]['elements'][$element_index]);
         $this->assertEquals($expectedCode, $element->getCode());
       }
     }
@@ -100,8 +103,49 @@ class ElementTest extends UnitTestCase {
     ];
     foreach ($expectedIds as $study_right_index => $elements) {
       foreach ($elements as $element_index => $expectedId) {
-        $element = new Element($this->studyRightDecodedResponse['data'][$study_right_index]['elements'][$element_index]);
+        $element = new Element($this->studyRightDecodedResponses[0]['data'][$study_right_index]['elements'][$element_index]);
         $this->assertEquals($expectedId, $element->getId());
+      }
+    }
+  }
+
+  /**
+   * @test
+   */
+  public function isActiveShouldReturnCorrectBoolean() {
+    $expectedBooleans = [
+      0 => [
+        0 => [
+          '2018-10-24T11:00:00.000Z' => [TRUE, TRUE, TRUE, TRUE, FALSE],
+          '1990-10-10T10:00:00.000Z' => [FALSE, FALSE, FALSE, FALSE, FALSE],
+        ],
+        1 => [
+          '2018-10-24T11:00:00.000Z' => [FALSE, TRUE, TRUE, FALSE, FALSE],
+          '1990-10-10T10:00:00.000Z' => [FALSE, FALSE, FALSE, FALSE, FALSE],
+        ],
+      ],
+      4 => [
+        0 => [
+          '2018-10-24T11:00:00.000Z' => [TRUE, TRUE, FALSE, TRUE, TRUE, FALSE],
+          '2018-08-24T11:00:00.000Z' => [TRUE, TRUE, TRUE, FALSE, FALSE, TRUE],
+          '1990-10-10T10:00:00.000Z' => [FALSE, FALSE, FALSE, FALSE, FALSE],
+        ],
+        1 => [
+          '2018-10-24T11:00:00.000Z' => [FALSE, TRUE, TRUE, FALSE, FALSE],
+          '2018-08-24T11:00:00.000Z' => [TRUE, TRUE, TRUE, TRUE, TRUE],
+          '1990-10-10T10:00:00.000Z' => [FALSE, FALSE, FALSE, FALSE, FALSE],
+        ],
+      ],
+    ];
+    foreach ($expectedBooleans as $response_index => $study_rights) {
+      foreach ($study_rights as $study_right_index => $study_right) {
+        foreach ($study_right as $date => $elements) {
+          foreach ($elements as $element_index => $expectedBooleanResponse) {
+            $element = new Element($this->studyRightDecodedResponses[$response_index]['data'][$study_right_index]['elements'][$element_index]);
+            $element->setDate(new DateTime($date));
+            $this->assertEquals($expectedBooleanResponse, $element->isActive());
+          }
+        }
       }
     }
   }
