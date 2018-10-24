@@ -1,0 +1,4 @@
+services:
+  uhsg_eduviewer.eduviewer:
+    class: Drupal\uhsg_eduviewer\Eduviewer
+    arguments: ['@uhsg_active_degree_programme.active_degree_programme', '@language_manager']

@@ -1,0 +1,3 @@
+eduviewer:
+  js:
+    https://eduviewer.it.helsinki.fi/eduviewer.var.js: {type: external, minified: true, attributes: {defer: true}}
