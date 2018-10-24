@@ -13,13 +13,13 @@ class LoginLogoutMenuLinkTest extends UnitTestCase {
   const LOGIN = 'Login';
   const LOGOUT = 'Logout';
 
-  /** @var AccountInterface */
+  /** @var \Drupal\Core\Session\AccountInterface*/
   private $currentUser;
 
-  /** @var LoginLogoutMenuLink */
+  /** @var \Drupal\uhsg_samlauth\Plugin\Menu\LoginLogoutMenuLink*/
   private $loginLogoutMenuLink;
 
-  /** @var StaticMenuLinkOverridesInterface */
+  /** @var \Drupal\Core\Menu\StaticMenuLinkOverridesInterface*/
   private $staticMenuLinkOverrides;
 
   public function setUp() {
@@ -48,6 +48,7 @@ class LoginLogoutMenuLinkTest extends UnitTestCase {
 
     $this->assertEquals(self::LOGOUT, $this->loginLogoutMenuLink->getTitle());
   }
+
 }
 
 /**
@@ -58,4 +59,5 @@ class LoginLogoutMenuLinkTestDouble extends LoginLogoutMenuLink {
   public function t($string, array $args = [], array $options = []) {
     return $string;
   }
+
 }

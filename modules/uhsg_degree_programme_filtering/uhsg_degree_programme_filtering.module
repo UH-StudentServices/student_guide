@@ -1,10 +1,12 @@
 <?php
 
+use Drupal\node\Entity\Node;
 use Drupal\taxonomy\TermInterface;
 use Drupal\taxonomy\Entity\Term;
 
 /**
  * Implements hook_preprocess_field().
+ *
  * Show articles only if they are translated to the active language, and if
  * they have the active degree programme or no degree programme.
  */
@@ -21,11 +23,13 @@ function uhsg_degree_programme_filtering_preprocess_field(array &$variables, $ho
       $target_entity_type = 'node';
       $filter_untranslated_targets = TRUE;
       break;
+
     case 'field_article_paragraph':
       $reference_field = 'field_paragraph_degree_programme';
       $target_entity_type = 'paragraph';
       $filter_untranslated_targets = FALSE;
       break;
+
     case 'field_theme_section':
       $reference_field = 'field_paragraph_degree_programme';
       $target_entity_type = 'paragraph';
@@ -94,7 +98,7 @@ function uhsg_degree_programme_filtering_by_active_language(array &$variables, $
  * Filter articles by active degree programme.
  *
  * @param array $variables
- * @param TermInterface $degree_programme
+ * @param \Drupal\taxonomy\TermInterface $degree_programme
  * @param $reference_field_name
  * @param $target_entity_type
  */
@@ -155,7 +159,7 @@ function uhsg_degree_programme_filtering_with_degree_programme(array &$variables
  * Filter articles referenced from paragraphs by active degree programme.
  *
  * @param array $variables
- * @param TermInterface|null $degree_programme
+ * @param \Drupal\taxonomy\TermInterface|null $degree_programme
  * @param $field_name
  * @param $article_reference_field_name
  * @param $article_degree_programme_reference_field_name
@@ -172,7 +176,7 @@ function uhsg_degree_programme_filtering_by_paragraph_article_degree_programme(a
 
           foreach ($article_references as $article_key => $article_reference) {
             $article_nid = $article_reference['target_id'];
-            $article_node = \Drupal\node\Entity\Node::load($article_nid);
+            $article_node = Node::load($article_nid);
             $degree_programme_references = $article_node ? $article_node->get($article_degree_programme_reference_field_name)->getValue() : [];
 
             if (!empty($degree_programme_references)) {

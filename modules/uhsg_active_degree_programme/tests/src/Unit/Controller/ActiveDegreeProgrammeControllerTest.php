@@ -22,28 +22,28 @@ class ActiveDegreeProgrammeControllerTest extends UnitTestCase {
   const HTTP_REFERER = 'http:://www.example.com';
   const TID = 123;
 
-  /** @var ActiveDegreeProgrammeController */
+  /** @var \Drupal\uhsg_active_degree_programme\Controller\ActiveDegreeProgrammeController*/
   private $activeDegreeProgrammeController;
 
-  /** @var ActiveDegreeProgrammeService */
+  /** @var \Drupal\uhsg_active_degree_programme\ActiveDegreeProgrammeService*/
   private $activeDegreeProgrammeService;
 
-  /** @var ContainerInterface */
+  /** @var \Symfony\Component\DependencyInjection\ContainerInterface*/
   private $container;
 
-  /** @var PathValidator */
+  /** @var \Drupal\Core\Path\PathValidator*/
   private $pathValidator;
 
-  /** @var Request */
+  /** @var \Symfony\Component\HttpFoundation\Request*/
   private $request;
 
-  /** @var RequestStack */
+  /** @var \Symfony\Component\HttpFoundation\RequestStack*/
   private $requestStack;
 
-  /** @var ServerBag */
+  /** @var \Symfony\Component\HttpFoundation\ServerBag*/
   private $server;
 
-  /** @var UnroutedUrlAssembler */
+  /** @var \Drupal\Core\Utility\UnroutedUrlAssembler*/
   private $unroutedUrlAssembler;
 
   public function setUp() {
@@ -95,6 +95,7 @@ class ActiveDegreeProgrammeControllerTest extends UnitTestCase {
 
     $this->activeDegreeProgrammeController->resetActiveDegreeProgramme();
   }
+
 }
 
 class ActiveDegreeProgrammeControllerTestDouble extends ActiveDegreeProgrammeController {
@@ -104,4 +105,5 @@ class ActiveDegreeProgrammeControllerTestDouble extends ActiveDegreeProgrammeCon
 
     return $prophet->prophesize(Term::class)->reveal();
   }
+
 }

@@ -19,17 +19,17 @@ class SamlService extends OriginalSamlService {
   const SESS_VALUE_KEY = 'postLoginLogoutDestination';
 
   /**
-   * @var RequestStack
+   * @var \Symfony\Component\HttpFoundation\RequestStack
    */
   protected $requestStack;
 
   /**
-   * @var Session
+   * @var \Symfony\Component\HttpFoundation\Session\Session
    */
   protected $session;
 
   /**
-   * @var PathValidator
+   * @var \Drupal\Core\Path\PathValidator
    */
   protected $pathValidator;
 
@@ -61,21 +61,21 @@ class SamlService extends OriginalSamlService {
   }
 
   /**
-   * @param RequestStack $requestStack
+   * @param \Symfony\Component\HttpFoundation\RequestStack $requestStack
    */
   public function setRequestStack(RequestStack $requestStack) {
     $this->requestStack = $requestStack;
   }
 
   /**
-   * @param Session $session
+   * @param \Symfony\Component\HttpFoundation\Session\Session $session
    */
   public function setSession(Session $session) {
     $this->session = $session;
   }
 
   /**
-   * @param PathValidator $pathValidator
+   * @param \Drupal\Core\Path\PathValidator $pathValidator
    */
   public function setPathValidator(PathValidator $pathValidator) {
     $this->pathValidator = $pathValidator;
@@ -119,7 +119,7 @@ class SamlService extends OriginalSamlService {
   /**
    * Get login and logout destinations in user´s session.
    *
-   * @return Url|null
+   * @return \Drupal\Core\Url|null
    */
   public function getPostLoginLogoutDestination() {
     if (!empty($this->session->get(self::SESS_VALUE_KEY))) {
@@ -160,7 +160,7 @@ class SamlService extends OriginalSamlService {
   /**
    * {@inheritdoc}
    */
-  public function logout($return_to = null) {
+  public function logout($return_to = NULL) {
     if (!$return_to) {
       $sp_config = $this->samlAuth->getSettings()->getSPData();
       $return_to = $sp_config['singleLogoutService']['url'];

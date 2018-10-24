@@ -24,4 +24,5 @@ class NewsPerDegreeProgramme extends NewsBlockBase {
 
     return $this->render(\Drupal::service('uhsg_news.news')->getProgrammeNewsNids());
   }
+
 }

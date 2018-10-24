@@ -17,10 +17,10 @@ class AttributeParserTest extends UnitTestCase {
   const STUDENT_ID_PREFIX = 'urn:schac:personalUniqueCode:int:studentID:helsinki.fi:';
   const USER_ID = 'user id';
 
-  /** @var AttributeParser */
+  /** @var \Drupal\uhsg_samlauth\AttributeParser*/
   private $attributeParser;
 
-  /** @var array */
+  /** @var array*/
   private $attributes = [
     'urn:oid:2.5.4.3' => [self::COMMON_NAME],
     '1.3.6.1.4.1.18869.1.1.1.32' => [self::OODI_UID],
@@ -76,7 +76,7 @@ class AttributeParserTest extends UnitTestCase {
    * @test
    */
   public function getStudentIdShouldReturnStudentId() {
-    $this->assertEquals(self::STUDENT_ID, $this->attributeParser->getStudentID());
+    $this->assertEquals(self::STUDENT_ID, $this->attributeParser->getStudentId());
   }
 
   /**
@@ -85,4 +85,5 @@ class AttributeParserTest extends UnitTestCase {
   public function getUserIdShouldReturnUserId() {
     $this->assertEquals(self::USER_ID, $this->attributeParser->getUserId());
   }
+
 }

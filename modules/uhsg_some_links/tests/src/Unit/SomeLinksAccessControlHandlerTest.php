@@ -16,28 +16,28 @@ use Prophecy\Argument;
  */
 class SomeLinksAccessControlHandlerTest extends UnitTestCase {
 
-  /** @var AccountInterface */
+  /** @var \Drupal\Core\Session\AccountInterface*/
   private $account;
 
-  /** @var CacheContextsManager */
+  /** @var \Drupal\Core\Cache\Context\CacheContextsManager*/
   private $cacheContextsManager;
 
-  /** @var ContainerInterface */
+  /** @var \Symfony\Component\DependencyInjection\ContainerInterface*/
   private $container;
 
-  /** @var EntityInterface */
+  /** @var \Drupal\Core\Entity\EntityInterface*/
   private $entity;
 
-  /** @var EntityTypeInterface */
+  /** @var \Drupal\Core\Entity\EntityTypeInterface*/
   private $entityType;
 
-  /** @var LanguageInterface */
+  /** @var \Drupal\Core\Language\LanguageInterface*/
   private $language;
 
-  /** @var ModuleHandlerInterface */
+  /** @var \Drupal\Core\Extension\ModuleHandlerInterface*/
   private $moduleHandler;
 
-  /** @var SomeLinksAccessControlHandler */
+  /** @var \Drupal\uhsg_some_links\SomeLinksAccessControlHandler*/
   private $someLinksAccessControlHandler;
 
   public function setUp() {
@@ -89,4 +89,5 @@ class SomeLinksAccessControlHandlerTest extends UnitTestCase {
 
     $this->assertTrue($accessResult);
   }
+
 }

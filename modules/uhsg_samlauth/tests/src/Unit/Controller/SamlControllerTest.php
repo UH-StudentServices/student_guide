@@ -10,10 +10,10 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
  */
 class SamlControllerTest extends UnitTestCase {
 
-  /** @var SamlController */
+  /** @var \Drupal\uhsg_samlauth\Controller\SamlController*/
   private $samlController;
 
-  /** @var SamlService */
+  /** @var \Drupal\uhsg_samlauth\SamlService*/
   private $samlService;
 
   public function setUp() {
@@ -32,4 +32,5 @@ class SamlControllerTest extends UnitTestCase {
 
     $this->assertEquals(new RedirectResponse('/'), $this->samlController->acs());
   }
+
 }

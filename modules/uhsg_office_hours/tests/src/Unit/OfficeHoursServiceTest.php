@@ -25,39 +25,39 @@ class OfficeHoursServiceTest extends UnitTestCase {
   const EMPTY_RESPONSE = ['degree_programme' => []];
   const EXCEPTION_MESSAGE = 'Exception';
 
-  /** @var ActiveDegreeProgrammeService */
+  /** @var \Drupal\uhsg_active_degree_programme\ActiveDegreeProgrammeService*/
   private $activeDegreeProgrammeService;
 
-  /** @var CacheBackendInterface */
+  /** @var \Drupal\Core\Cache\CacheBackendInterface*/
   private $cache;
 
-  /** @var Client */
+  /** @var \GuzzleHttp\Client*/
   private $client;
 
-  /** @var ImmutableConfig */
+  /** @var \Drupal\Core\Config\ImmutableConfig*/
   protected $config;
 
-  /** @var ConfigFactory */
+  /** @var \Drupal\Core\Config\ConfigFactory*/
   protected $configFactory;
 
-  /** @var EntityStorageInterface */
+  /** @var \Drupal\Core\Entity\EntityStorageInterface*/
   private $entityStorage;
 
-  /** @var EntityTypeManagerInterface */
+  /** @var \Drupal\Core\Entity\EntityTypeManagerInterface*/
   private $entityTypeManager;
 
-  /** @var LoggerChannel */
+  /** @var \Drupal\Core\Logger\LoggerChannel*/
   private $logger;
 
-  /** @var OfficeHoursService */
+  /** @var \Drupal\uhsg_office_hours\OfficeHoursService*/
   private $officeHoursService;
 
-  /** @var ResponseInterface */
+  /** @var \Psr\Http\Message\ResponseInterface*/
   private $response;
 
-  /** @var TimeInterface */
+  /** @var \Drupal\Component\Datetime\TimeInterface*/
   private $time;
-  
+
   public function setUp() {
     parent::setUp();
 
@@ -86,7 +86,7 @@ class OfficeHoursServiceTest extends UnitTestCase {
 
     $this->logger = $this->prophesize(LoggerChannel::class);
     $this->time = $this->prophesize(TimeInterface::class);
-    
+
     $this->officeHoursService = new OfficeHoursService(
       $this->cache->reveal(),
       $this->client->reveal(),
@@ -138,4 +138,5 @@ class OfficeHoursServiceTest extends UnitTestCase {
 
     $this->assertEquals(self::EMPTY_RESPONSE, $this->officeHoursService->getOfficeHours());
   }
+
 }

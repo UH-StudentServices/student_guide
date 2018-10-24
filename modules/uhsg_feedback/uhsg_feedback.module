@@ -3,7 +3,7 @@
 /**
  * @file
  * Contains uhsg_feedback.module.
- */
+ */use Drupal\Core\Url;
 
 /**
  * Implements hook_mail_alter().
@@ -43,11 +43,11 @@ function uhsg_feedback_mail_alter(&$message) {
 
     // I would like to get a response to my feedback.
     if ($contact_message->get('field_feedback_respond')->value) {
-      $message['body'][] = t('I would like to get a response to my feedback') . ': ' . $replyTo;
+      $message['body'][] = t('I would like to get a response to my feedback: @replyTo', ['@replyto' => $replyTo]);
     }
 
     // Current page URL.
-    $message['body'][] = \Drupal\Core\Url::fromRoute('<current>', [], ['absolute' => TRUE])->toString();
+    $message['body'][] = Url::fromRoute('<current>', [], ['absolute' => TRUE])->toString();
 
     // User agent info.
     $message['body'][] = $_SERVER['HTTP_USER_AGENT'];
@@ -56,6 +56,7 @@ function uhsg_feedback_mail_alter(&$message) {
 
 /**
  * Implements hook_form_alter().
+ *
  * Hide preview and message field label from feedback form.
  */
 function uhsg_feedback_form_alter(&$form, $form_state, $form_id) {
@@ -70,6 +71,7 @@ function uhsg_feedback_form_alter(&$form, $form_state, $form_id) {
 
 /**
  * Implements hook_preprocess_HOOK().
+ *
  * Feedback form hidden by default.
  */
 function uhsg_feedback_preprocess_form(&$variables) {
@@ -82,10 +84,10 @@ function uhsg_feedback_preprocess_form(&$variables) {
  * Implements hook_theme().
  */
 function uhsg_feedback_theme($existing, $type, $theme, $path) {
-  return array(
-    'block__contact_block' => array(
+  return [
+    'block__contact_block' => [
       'template' => 'block--contact-block',
       'base hook' => 'block',
-    )
-  );
+    ],
+  ];
 }

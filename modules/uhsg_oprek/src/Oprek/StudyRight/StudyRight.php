@@ -5,7 +5,7 @@ namespace Drupal\uhsg_oprek\Oprek\StudyRight;
 class StudyRight implements StudyRightInterface {
 
   /**
-   * @var array $properties
+   * @var array
    */
   protected $properties;
 
@@ -57,7 +57,6 @@ class StudyRight implements StudyRightInterface {
       foreach ($this->properties['state'] as $state) {
         if (!empty($this->knownStates[$state['text']])) {
           return $this->knownStates[$state['text']];
-          break;
         }
       }
     }

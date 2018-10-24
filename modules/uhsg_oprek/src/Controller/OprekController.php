@@ -10,7 +10,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class OprekController extends ControllerBase {
 
   /**
-   * @var OprekServiceInterface
+   * @var \Drupal\uhsg_oprek\Oprek\OprekServiceInterface
    */
   protected $service;
 
@@ -43,7 +43,7 @@ class OprekController extends ControllerBase {
       $student_id = $user->get('field_student_number')->first()->getString();
       try {
         $study_rights = $this->service->getStudyRights($student_id);
-        $markup .= '<br/><pre>' . print_r($study_rights,1) . '</pre>';
+        $markup .= '<br/><pre>' . print_r($study_rights, 1) . '</pre>';
       }
       catch (\Exception $e) {
         $markup .= '<br/><pre>Error: ' . $e->getMessage() . '</pre>';

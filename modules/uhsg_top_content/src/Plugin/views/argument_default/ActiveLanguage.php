@@ -19,7 +19,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  */
 class ActiveLanguage extends ArgumentDefaultPluginBase implements CacheableDependencyInterface {
 
-  /** @var LanguageManagerInterface */
+  /** @var \Drupal\Core\Language\LanguageManagerInterface*/
   protected $languageManager;
 
   /**
@@ -64,4 +64,5 @@ class ActiveLanguage extends ArgumentDefaultPluginBase implements CacheableDepen
   public function getCacheContexts() {
     return ['languages:language_interface'];
   }
+
 }

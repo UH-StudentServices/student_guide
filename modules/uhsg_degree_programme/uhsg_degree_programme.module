@@ -69,7 +69,6 @@ function uhsg_degree_programme_alter_degree_programmes_query(ViewExecutable $vie
   }
 }
 
-
 /**
  * Implements hook_views_data().
  *

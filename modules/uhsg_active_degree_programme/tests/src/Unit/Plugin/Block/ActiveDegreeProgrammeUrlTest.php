@@ -14,16 +14,16 @@ class ActiveDegreeProgrammeUrlTest extends UnitTestCase {
 
   const COPY_ACTIVE_DEGREE_PROGRAMME_URL = 'copy active degree programme url';
 
-  /** @var AccountInterface */
+  /** @var \Drupal\Core\Session\AccountInterface*/
   private $account;
 
-  /** @var ActiveDegreeProgrammeUrl */
+  /** @var \Drupal\uhsg_active_degree_programme\Plugin\Block\ActiveDegreeProgrammeUrl*/
   private $activeDegreeProgrammeUrl;
 
-  /** @var CacheContextsManager */
+  /** @var \Drupal\Core\Cache\Context\CacheContextsManager*/
   private $cacheContextsManager;
 
-  /** @var ContainerInterface */
+  /** @var \Symfony\Component\DependencyInjection\ContainerInterface*/
   private $container;
 
   public function setUp() {
@@ -69,24 +69,25 @@ class ActiveDegreeProgrammeUrlTest extends UnitTestCase {
           '#type' => 'button',
           '#value' => 'Copy URL',
           '#attributes' => [
-            'id' => 'copy-url'
+            'id' => 'copy-url',
           ],
           '#attached' => [
             'library' => [
-              'uhsg_active_degree_programme/copy_url'
+              'uhsg_active_degree_programme/copy_url',
             ],
             'drupalSettings' => [
               'uhsg_active_degree_programme' => [
-                'selector' => '[rel="shortlink-with-degree-programme"]'
-              ]
-            ]
-          ]
-        ]
-      ]
+                'selector' => '[rel="shortlink-with-degree-programme"]',
+              ],
+            ],
+          ],
+        ],
+      ],
     ];
 
     $this->assertEquals($expectedRenderableOutput, $this->activeDegreeProgrammeUrl->build());
   }
+
 }
 
 /**
@@ -101,4 +102,5 @@ class ActiveDegreeProgrammeUrlTestDouble extends ActiveDegreeProgrammeUrl {
   public function t($string, array $args = [], array $options = []) {
     return $string;
   }
+
 }

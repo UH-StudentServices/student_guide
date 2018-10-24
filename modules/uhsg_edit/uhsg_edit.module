@@ -3,10 +3,11 @@
 /**
  * @file
  * Contains uhsg_edit.module.
- */
+ */use Drupal\Core\Entity\EntityInterface;
 
 /**
- * Implements hook_form_BASE_FORM_ID_alter():
+ * Implements hook_form_BASE_FORM_ID_alter().
+ *
  * Add css to node edit form.
  */
 function uhsg_edit_form_node_form_alter(&$form, &$form_state, $form_id) {
@@ -15,9 +16,10 @@ function uhsg_edit_form_node_form_alter(&$form, &$form_state, $form_id) {
 
 /**
  * Implements hook_ENTITY_TYPE_presave().
+ *
  * Remove soft hyphens from node title that might come from copy/pasting.
  */
-function uhsg_edit_node_presave(Drupal\Core\Entity\EntityInterface $entity) {
+function uhsg_edit_node_presave(EntityInterface $entity) {
   if (in_array($entity->bundle(), ['article', 'theme', 'news'])) {
     $entity->title->value = str_replace('­', '', $entity->title->value);
   }

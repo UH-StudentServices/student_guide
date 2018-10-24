@@ -21,22 +21,22 @@ class OprekServiceTest extends UnitTestCase {
   const VERSION = 123;
   const VERSION_RESPONSE = '{"status": 200, "data": {"version": ' . self::VERSION . '}}';
 
-  /** @var Client */
+  /** @var \GuzzleHttp\Client*/
   private $client;
 
-  /** @var ImmutableConfig */
+  /** @var \Drupal\Core\Config\ImmutableConfig*/
   private $config;
 
-  /** @var ConfigFactoryInterface */
+  /** @var \Drupal\Core\Config\ConfigFactoryInterface*/
   private $configFactory;
 
-  /** @var OprekService */
+  /** @var \Drupal\uhsg_oprek\Oprek\OprekService*/
   private $oprekService;
 
-  /** @var ResponseInterface */
+  /** @var \Psr\Http\Message\ResponseInterface*/
   private $response;
 
-  /** @var StreamInterface */
+  /** @var \Psr\Http\Message\StreamInterface*/
   private $stream;
 
   public function setUp() {
@@ -84,7 +84,7 @@ class OprekServiceTest extends UnitTestCase {
   /**
    * @test
    */
-  public function getStudyRightsShouldCallAPIUsingClientCertificate() {
+  public function getStudyRightsShouldCallApiUsingClientCertificate() {
     $this->client->get(
       self::BASE_URL . '/students/' . self::STUDENT_NUMBER . '/studyrights',
       ['cert' => self::CERT_FILEPATH, 'ssl_key' => self::CERT_KEY_FILEPATH]
@@ -96,7 +96,7 @@ class OprekServiceTest extends UnitTestCase {
   /**
    * @test
    */
-  public function getStudyRightsShouldThrowExceptionWhenAPIResponseCodeIsNot200() {
+  public function getStudyRightsShouldThrowExceptionWhenApiResponseCodeIsNot200() {
     $this->response->getStatusCode()->willReturn(500);
 
     $this->setExpectedException(\Exception::class);
@@ -112,4 +112,5 @@ class OprekServiceTest extends UnitTestCase {
 
     $this->assertEquals(self::VERSION, $this->oprekService->getVersion());
   }
+
 }
