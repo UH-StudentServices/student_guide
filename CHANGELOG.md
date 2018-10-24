@@ -4,13 +4,13 @@
 ??.??.????
 
 * Fixed coding standards (HUB-359)
+* Eduviewer embed support (HUB-342)
 
 
 ## 1.24
 Release date: 18.10.2018
 
 * Added an optional info text field for front page (HUB-315)
-* Eduviewer embed support (HUB-342)
 
 
 ## 1.23
