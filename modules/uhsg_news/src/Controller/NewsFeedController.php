@@ -88,10 +88,19 @@ class NewsFeedController extends ControllerBase {
    * @return array
    */
   protected function getMultipleDegreeProgrammeTids() {
+
+    // For backwards compatibility, we support single code -way
+    $query_param_code = $this->requestStack->getCurrentRequest()->get('degree_programme_code');
+    if (!empty($query_param_code) && !is_array($query_param_code)) {
+      return $this->degreeProgrammeCodeResolver->resolveTidFromCode($query_param_code);
+    }
+
+    // Allow using multiple codes
     $query_param_codes = $this->requestStack->getCurrentRequest()->get('degree_programme_codes');
     if (!empty($query_param_codes) && is_array($query_param_codes)) {
       return $this->degreeProgrammeCodeResolver->resolveTidFromCodes($query_param_codes);
     }
+
     return [];
   }
 
