@@ -9,10 +9,10 @@ class Eduviewer {
 
   const INVALID_DEGREE_PROGRAMME_CODES = ['KH20_001', 'MH30_003'];
 
-  /** @var ActiveDegreeProgrammeService */
+  /** @var \Drupal\uhsg_active_degree_programme\ActiveDegreeProgrammeService*/
   private $activeDegreeProgrammeService;
 
-  /** @var LanguageManager */
+  /** @var \Drupal\Core\Language\LanguageManager*/
   private $languageManager;
 
   public function __construct(ActiveDegreeProgrammeService $activeDegreeProgrammeService, LanguageManager $languageManager) {
@@ -50,4 +50,5 @@ class Eduviewer {
   private function isValidDegreeProgrammeCode($degreeProgrammeCode) {
     return !empty($degreeProgrammeCode) && !in_array($degreeProgrammeCode, self::INVALID_DEGREE_PROGRAMME_CODES);
   }
+
 }

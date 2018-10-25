@@ -14,16 +14,16 @@ class EduviewerTest extends UnitTestCase {
   const ACTIVE_DEGREE_PROGRAMME_CODE = 'CODE_123';
   const LANGUAGE = 'fi';
 
-  /** @var ActiveDegreeProgrammeService */
+  /** @var \Drupal\uhsg_active_degree_programme\ActiveDegreeProgrammeService*/
   private $activeDegreeProgrammeService;
 
-  /** @var Eduviewer */
+  /** @var \Drupal\uhsg_eduviewer\Eduviewer*/
   private $eduviewer;
 
-  /** @var LanguageInterface */
+  /** @var \Drupal\Core\Language\LanguageInterface*/
   private $language;
 
-  /** @var LanguageManager */
+  /** @var \Drupal\Core\Language\LanguageManager*/
   private $languageManager;
 
   public function setUp() {
@@ -73,4 +73,5 @@ class EduviewerTest extends UnitTestCase {
 
     $this->assertEquals($expectedMarkup, $this->eduviewer->getMarkup());
   }
+
 }
