@@ -72,6 +72,12 @@ class ActiveDegreeProgrammeService {
   protected $degreeProgrammeBundle = 'degree_programme';
 
   /**
+   * Service for resolving degree programme codes into term IDs.
+   * @var DegreeProgrammeCodeResolverService
+   */
+  protected $degreeProgrammeCodeResolver;
+
+  /**
    * ActiveDegreeProgrammeService constructor.
    * @param \Drupal\Core\Config\ConfigFactory $configFactory
    * @param \Symfony\Component\HttpFoundation\RequestStack $requestStack
@@ -86,7 +92,8 @@ class ActiveDegreeProgrammeService {
     EntityRepositoryInterface $entityRepository,
     EntityTypeManagerInterface $entityTypeManager,
     AccountInterface $user,
-    FlagServiceInterface $flagService) {
+    FlagServiceInterface $flagService,
+    DegreeProgrammeCodeResolverService $degreeProgrammeCodeResolver) {
 
     $this->config = $configFactory->get('uhsg_active_degree_programme.settings');
     $this->requestStack = $requestStack;
@@ -95,6 +102,7 @@ class ActiveDegreeProgrammeService {
     $this->user = $user;
     $this->flagService = $flagService;
     $this->resolvedTerm = NULL;
+    $this->degreeProgrammeCodeResolver = $degreeProgrammeCodeResolver;
   }
 
   /**
@@ -170,26 +178,9 @@ class ActiveDegreeProgrammeService {
     // If code is given, resolve its term ID first
     $query_param_code = $this->requestStack->getCurrentRequest()->get('degree_programme_code');
     if ($query_param_code) {
-      return $this->resolveTidFromCode($query_param_code);
+      return $this->degreeProgrammeCodeResolver->resolveTidFromCode($query_param_code);
     }
 
-    return NULL;
-  }
-
-  /**
-   * @param $code string
-   *
-   * @return int|null
-   *   Returns ID of taxonomy term or NULL if not found.
-   */
-  protected function resolveTidFromCode($code) {
-    $entity_query = $this->entityTypeManager->getStorage($this->degreeProgrammeEntityType)->getQuery('AND');
-    $entity_query->condition('field_code', $code);
-    $entity_ids = $entity_query->execute();
-    if (!empty($entity_ids)) {
-      $ids = array_keys($entity_ids);
-      return $ids[0];
-    }
     return NULL;
   }
 
