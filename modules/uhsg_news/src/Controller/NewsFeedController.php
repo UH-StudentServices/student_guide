@@ -6,13 +6,13 @@ use Drupal\Component\Datetime\TimeInterface;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Url;
+use Drupal\uhsg_active_degree_programme\DegreeProgrammeCodeResolverService;
 use Drupal\uhsg_news\NewsService;
 use Drupal\views\Views;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
 use Zend\Feed\Writer\Feed;
-use Symfony\Component\HttpFoundation\RequestStack;
-use Drupal\uhsg_active_degree_programme\DegreeProgrammeCodeResolverService;
 
 class NewsFeedController extends ControllerBase {
 
