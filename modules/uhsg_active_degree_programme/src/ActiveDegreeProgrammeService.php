@@ -85,6 +85,7 @@ class ActiveDegreeProgrammeService {
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
    * @param \Drupal\Core\Session\AccountInterface $user
    * @param \Drupal\flag\FlagServiceInterface $flagService
+   * @param DegreeProgrammeCodeResolverService degreeProgrammeCodeResolver
    */
   public function __construct(
     ConfigFactory $configFactory,
