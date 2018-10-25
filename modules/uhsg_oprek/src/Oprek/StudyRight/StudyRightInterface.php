@@ -25,9 +25,9 @@ interface StudyRightInterface {
   public function getElements();
 
   /**
-   * Returns an list of logial targeted codes assembled internally using
+   * Returns an list of logical targeted codes assembled internally using
    * elements.
-   * @return []TargetedCodeInterface
+   * @return TargetedCodeInterface[]
    */
   public function getTargetedCodes();
 

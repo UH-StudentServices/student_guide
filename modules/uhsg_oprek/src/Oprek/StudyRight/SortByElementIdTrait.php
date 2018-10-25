@@ -7,6 +7,8 @@ trait SortByElementIdTrait {
   /**
    * Takes in collection of elements and returns them sorted by element ID from
    * lowest number to highest (ascending).
+   * @param array $elements
+   * @return array
    */
   protected function sortByElementIdAsc(array $elements) {
     if (!empty($elements)) {
@@ -19,6 +21,7 @@ trait SortByElementIdTrait {
    * Sorting callback which will sort by element ID ascending.
    * @param Element $elementA
    * @param Element $elementB
+   * @return int
    */
   public static function compareElementId(Element $elementA, Element $elementB) {
     if (!empty($elementA->getId()) && !empty($elementB->getId())) {

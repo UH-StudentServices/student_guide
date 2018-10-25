@@ -3,6 +3,7 @@
 use Drupal\Tests\UnitTestCase;
 use Drupal\uhsg_oprek\Oprek\StudyRight\StudyRight;
 use Drupal\Component\Serialization\Json;
+use Drupal\uhsg_oprek\Oprek\StudyRight\StudyRightInterface;
 
 /**
  * @group uhsg
@@ -27,7 +28,7 @@ class StudyRightTest extends UnitTestCase {
    * @test
    */
   public function getStateProperties() {
-    $expectedStates = [0 => StudyRight::STATE_PRIMARY, 1 => StudyRight::STATE_OPTION];
+    $expectedStates = [0 => StudyRightInterface::STATE_PRIMARY, 1 => StudyRightInterface::STATE_OPTION];
     foreach ($expectedStates as $index => $expectedState) {
       $study_right = new StudyRight($this->studyRightDecodedResponses[0]['data'][$index]);
       $this->assertEquals($expectedState, $study_right->getState());

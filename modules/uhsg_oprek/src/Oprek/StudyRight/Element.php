@@ -53,7 +53,7 @@ class Element implements ElementInterface {
   }
 
   /**
-   * @param DateTime $date
+   * @param \DateTime $date
    * @return void
    */
   public function setDate(\DateTime $date) {

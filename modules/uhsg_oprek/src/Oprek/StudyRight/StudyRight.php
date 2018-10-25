@@ -19,7 +19,7 @@ class StudyRight implements StudyRightInterface {
    * look from the text values (might be in any language).
    * @var array
    */
-  protected $knownStates = ['Optio' => self::STATE_OPTION, 'Ensisijainen' => self::STATE_PRIMARY];
+  protected $knownStates = ['Optio' => StudyRightInterface::STATE_OPTION, 'Ensisijainen' => StudyRightInterface::STATE_PRIMARY];
 
   /**
    * Holds the single element list of TargetedCodes for static caching.
@@ -171,7 +171,7 @@ class StudyRight implements StudyRightInterface {
    * Assigns an primary targeted code if there should be one.
    */
   private function assembleTargetedCodes() {
-    if ($this->getState() == self::STATE_PRIMARY) {
+    if ($this->getState() == StudyRightInterface::STATE_PRIMARY) {
       if (empty($this->targetedCodesConcatonated) && !empty($this->targetedCodesSingles)) {
         // When no concatonated codes, then we simply tag first code
         foreach ($this->targetedCodesSingles as $index => $targetedCodesSingle) {

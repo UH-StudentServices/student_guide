@@ -39,7 +39,7 @@ class TargetedCode implements TargetedCodeInterface {
 
   /**
    * Set elements, which TargetedCode will use for delivering the code.
-   * @param []ElementInterface $elements
+   * @param ElementInterface[] $elements
    *   List of ElementInterface elements.
    * @return int
    *   Count of elements.
