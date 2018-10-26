@@ -31,14 +31,14 @@ class TargetedCode implements TargetedCodeInterface {
 
   /**
    * @return bool
-   *   TRUE if TargetedCode is primary. FALSE otherwise.
+   *   TRUE if TargetedCode is primary. Otherwise FALSE.
    */
   public function isPrimary() {
     return $this->primary;
   }
 
   /**
-   * Set elements, which TargetedCode will use for delivering the code.
+   * Set elements that TargetedCode will use for delivering the code.
    * @param ElementInterface[] $elements
    *   List of ElementInterface elements.
    * @return int

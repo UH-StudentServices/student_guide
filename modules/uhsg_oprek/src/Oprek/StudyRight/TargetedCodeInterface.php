@@ -3,7 +3,7 @@
 namespace Drupal\uhsg_oprek\Oprek\StudyRight;
 
 /**
- * TargetedCode represents an logical code of StudyRight that is assembled using
+ * TargetedCode represents a logical code of StudyRight that is assembled using
  * StudyRight elements.
  */
 interface TargetedCodeInterface {

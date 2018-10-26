@@ -100,12 +100,12 @@ class TargetedCodeTest extends UnitTestCase {
       // getCode should return NULL, because it hasn't been set
       $this->assertEquals(NULL, $targetedCode->getCode());
 
-      // getCode() should return expeced codes, because they've been set with
+      // getCode() should return expected codes, because they've been set with
       // setElements()
       $targetedCode->setElements($this->input[$index]['elements']);
       $this->assertEquals($expectedCode, $targetedCode->getCode());
 
-      // Setting primary should not effect on getCode()
+      // Setting primary should not affect getCode()
       $targetedCode->setPrimary($this->input[$index]['primary']);
       $this->assertEquals($expectedCode, $targetedCode->getCode());
     }

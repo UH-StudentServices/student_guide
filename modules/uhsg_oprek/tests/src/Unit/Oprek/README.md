@@ -9,4 +9,4 @@
 - `study_rights_response.3.json`
   Based on 0 file, but has elements reversed (element ids descending).
 - `study_rights_response.4.json`
-  Based on 0 file, but has duplicat elements by different validity dates.
+  Based on 0 file, but has duplicate elements by different validity dates.

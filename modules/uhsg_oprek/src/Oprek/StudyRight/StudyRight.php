@@ -3,7 +3,7 @@
 namespace Drupal\uhsg_oprek\Oprek\StudyRight;
 
 /**
- * Represent StudyRight object.
+ * Represents StudyRight object.
  */
 class StudyRight implements StudyRightInterface {
 
@@ -15,32 +15,32 @@ class StudyRight implements StudyRightInterface {
   protected $properties;
 
   /**
-   * Contains list of known possible states and their identified strings that we
-   * look from the text values (might be in any language).
+   * Contains a list of known states and their identifier strings that we look
+   * from the text values (might be in any language).
    * @var array
    */
   protected $knownStates = ['Optio' => StudyRightInterface::STATE_OPTION, 'Ensisijainen' => StudyRightInterface::STATE_PRIMARY];
 
   /**
    * Holds the single element list of TargetedCodes for static caching.
-   * @var []TargetedCode
+   * @var TargetedCode[]
    */
   protected $targetedCodesSingles;
 
   /**
-   * Holds the concatonated element list of TargetedCodes for static caching.
-   * @var []TargetedCode
+   * Holds the concatenated element list of TargetedCodes for static caching.
+   * @var TargetedCode[]
    */
   protected $targetedCodesConcatonated;
 
   /**
    * Holds the assembled list of TargetedCodes for static caching.
-   * @var []TargetedCode
+   * @var TargetedCode[]
    */
   protected $targetedCodes;
 
   /**
-   * Specifies the date/time which is used to filter out irrelevant parts of
+   * Specifies the date/time that is used to filter out irrelevant parts of
    * information while determining study rights.
    * @var \DateTime
    */
@@ -49,8 +49,7 @@ class StudyRight implements StudyRightInterface {
   /**
    * StudyRight constructor.
    * @param array $properties
-   *   List of the properties of study rights given by the response of Oprek
-   *   service.
+   *   List of the properties of study rights from the Oprek service response.
    */
   public function __construct(array $properties) {
     $this->properties = $properties;
@@ -60,7 +59,7 @@ class StudyRight implements StudyRightInterface {
   }
 
   /**
-   * Set the date that is used for filtering our irrelevant information.
+   * Set the date that is used for filtering out irrelevant information.
    *
    * @param \DateTime $date
    */
@@ -150,7 +149,7 @@ class StudyRight implements StudyRightInterface {
   }
 
   /**
-   * Assembles elements as concatonated targeted code.
+   * Assembles elements as concatenated targeted code.
    * @return void
    */
   private function assembleConcatenatedTargetedCodes() {
@@ -168,19 +167,19 @@ class StudyRight implements StudyRightInterface {
   }
 
   /**
-   * Assigns an primary targeted code if there should be one.
+   * Assigns a primary targeted code if there should be one.
    */
   private function assembleTargetedCodes() {
     if ($this->getState() == StudyRightInterface::STATE_PRIMARY) {
       if (empty($this->targetedCodesConcatonated) && !empty($this->targetedCodesSingles)) {
-        // When no concatonated codes, then we simply tag first code
+        // When no concatenated codes, then we simply tag first code
         foreach ($this->targetedCodesSingles as $index => $targetedCodesSingle) {
           $this->targetedCodesSingles[$index]->setPrimary(TRUE);
           break;
         }
       }
       elseif (!empty($this->targetedCodesConcatonated)) {
-        // When concatonated codes, then we simply tag first code primary
+        // When concatenated codes, then we simply tag first code primary
         foreach ($this->targetedCodesConcatonated as $index => $targetedCodeConcatonated) {
           $this->targetedCodesConcatonated[$index]->setPrimary(TRUE);
           break;

@@ -3,20 +3,19 @@
 namespace Drupal\uhsg_oprek\Oprek\StudyRight;
 
 /**
- * Element describes the structure inheritence of StudyRight. With different set
- * of elements, a StudyRight can be presented either extensively or with very
- * specificly.
+ * Element describes the structure inheritance of StudyRight. With different set
+ * of elements, a StudyRight can be broad or specific.
  */
 interface ElementInterface {
 
   /**
-   * Returns the code of the Study Right element.
+   * Returns the code of the StudyRight element.
    * @return string
    */
   public function getCode();
 
   /**
-   * Returns the ID of the Study Right element.
+   * Returns the ID of the StudyRight element.
    * @return int
    */
   public function getId();

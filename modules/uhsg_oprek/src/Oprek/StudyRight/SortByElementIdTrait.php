@@ -5,7 +5,7 @@ namespace Drupal\uhsg_oprek\Oprek\StudyRight;
 trait SortByElementIdTrait {
 
   /**
-   * Takes in collection of elements and returns them sorted by element ID from
+   * Takes collection of elements and returns them sorted by element ID from
    * lowest number to highest (ascending).
    * @param array $elements
    * @return array

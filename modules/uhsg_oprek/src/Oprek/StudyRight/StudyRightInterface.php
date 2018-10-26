@@ -4,7 +4,7 @@ namespace Drupal\uhsg_oprek\Oprek\StudyRight;
 
 /**
  * StudyRight represents what associated person can study. StudyRights can be
- * represented with elements that includes codes separately or with targeted
+ * represented with elements that include codes separately or with targeted
  * codes that are used for content targeting.
  */
 interface StudyRightInterface {
@@ -25,8 +25,7 @@ interface StudyRightInterface {
   public function getElements();
 
   /**
-   * Returns an list of logical targeted codes assembled internally using
-   * elements.
+   * Returns a list of targeted codes assembled internally using elements.
    * @return TargetedCodeInterface[]
    */
   public function getTargetedCodes();
