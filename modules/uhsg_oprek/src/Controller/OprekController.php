@@ -7,6 +7,9 @@ use Drupal\uhsg_oprek\Oprek\OprekServiceInterface;
 use Drupal\user\UserInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
+/**
+ * Control pages that have an accosiation with Oprek service.
+ */
 class OprekController extends ControllerBase {
 
   /**

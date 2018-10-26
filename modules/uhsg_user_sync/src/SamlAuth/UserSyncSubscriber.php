@@ -12,11 +12,15 @@ use Drupal\flag\FlagServiceInterface;
 use Drupal\samlauth\Event\SamlAuthEvents;
 use Drupal\samlauth\Event\SamlAuthUserSyncEvent;
 use Drupal\uhsg_oprek\Oprek\OprekServiceInterface;
-use Drupal\uhsg_oprek\Oprek\StudyRight\StudyRight;
 use Drupal\uhsg_samlauth\AttributeParser;
 use Drupal\uhsg_samlauth\AttributeParserInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Drupal\Core\Messenger\MessengerInterface;
 
+/**
+ * Synchronise relevant user attributes given by SAML authentication during SAML
+ * authentication login.
+ */
 class UserSyncSubscriber implements EventSubscriberInterface {
 
   use StringTranslationTrait;
@@ -46,12 +50,18 @@ class UserSyncSubscriber implements EventSubscriberInterface {
    */
   protected $logger;
 
-  public function __construct(ConfigFactoryInterface $configFactory, OprekServiceInterface $oprekService, FlagServiceInterface $flagService, EntityTypeManagerInterface $entityTypeManager, LoggerChannel $logger) {
+  /**
+   * @var \Drupal\Core\Messenger\MessengerInterface
+   */
+  protected $messenger;
+
+  public function __construct(ConfigFactoryInterface $configFactory, OprekServiceInterface $oprekService, FlagServiceInterface $flagService, EntityTypeManagerInterface $entityTypeManager, LoggerChannel $logger, MessengerInterface $messenger) {
     $this->config = $configFactory->get('uhsg_user_sync.settings');
     $this->oprekService = $oprekService;
     $this->flagService = $flagService;
     $this->entityTypeManager = $entityTypeManager;
     $this->logger = $logger;
+    $this->messenger = $messenger;
   }
 
   /**
@@ -72,7 +82,7 @@ class UserSyncSubscriber implements EventSubscriberInterface {
     }
     catch (\Exception $e) {
       $this->logger->error($this->t('Could not get degree programmes. Error: @error (code @code)', ['@error' => $e->getMessage(), '@code' => $e->getCode()]));
-      drupal_set_message($this->t('There is a problem with the connection to Oodi and your degree programmes cannot be shown.'), 'warning');
+      $this->messenger->addMessage($this->t('There is a problem with the connection to Oodi and your degree programmes cannot be shown.'), 'warning');
     }
   }
 
@@ -268,17 +278,17 @@ class UserSyncSubscriber implements EventSubscriberInterface {
       $primary_field_name = $this->config->get('primary_field_name');
 
       foreach ($study_rights as $study_right) {
-        foreach ($study_right->getElements() as $element) {
-          if (isset($known_degree_programmes[$element->getCode()])) {
+        foreach ($study_right->getTargetedCodes() as $targeted_code) {
+          if (isset($known_degree_programmes[$targeted_code->getCode()])) {
 
             // Flag the degree programme
             $flag = $this->flagService->getFlagById('my_degree_programmes');
 
             // Get potentially existing flagging, if not exist, then create.
             /** @var \Drupal\flag\Entity\Flagging $flagging */
-            $flagging = $this->flagService->getFlagging($flag, $known_degree_programmes[$element->getCode()], $event->getAccount());
+            $flagging = $this->flagService->getFlagging($flag, $known_degree_programmes[$targeted_code->getCode()], $event->getAccount());
             if (!$flagging) {
-              $flagging = $this->flagService->flag($flag, $known_degree_programmes[$element->getCode()], $event->getAccount());
+              $flagging = $this->flagService->flag($flag, $known_degree_programmes[$targeted_code->getCode()], $event->getAccount());
             }
 
             // Load the flagging, so we can set some field values
@@ -286,9 +296,9 @@ class UserSyncSubscriber implements EventSubscriberInterface {
             if ($flagging->hasField($technical_condition_field_name)) {
               $flagging->set($technical_condition_field_name, TRUE);
 
-              // If study right is in 'primary' state and primary field
-              // exists, then set the priary to TRUE.
-              if ($study_right->getState() == StudyRight::STATE_PRIMARY && $flagging->hasField($primary_field_name)) {
+              // If targeted code is 'primary' and primary field exists, then
+              // set the primary to TRUE.
+              if ($targeted_code->isPrimary() && $flagging->hasField($primary_field_name)) {
                 $flagging->set($primary_field_name, TRUE);
               }
 

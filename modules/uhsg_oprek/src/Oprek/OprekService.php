@@ -7,6 +7,9 @@ use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\uhsg_oprek\Oprek\StudyRight\StudyRight;
 use GuzzleHttp\Client;
 
+/**
+ * Service for interacting with backend integration service "Oprek".
+ */
 class OprekService implements OprekServiceInterface {
 
   /**

@@ -8,6 +8,9 @@ use Drupal\Core\Logger\LoggerChannel;
 use Drupal\flag\FlagServiceInterface;
 use Drupal\uhsg_oprek\Oprek\OprekServiceInterface;
 
+/**
+ * Create an instance for UserSyncSubscriber.
+ */
 class UserSyncSubscriberFactory {
 
   public static function create(ConfigFactoryInterface $configFactory, OprekServiceInterface $oprekService, FlagServiceInterface $flagService, EntityTypeManagerInterface $entityTypeManager, LoggerChannel $logger) {

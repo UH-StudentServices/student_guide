@@ -49,19 +49,17 @@ class NewsService {
    * Get News node IDs for the given amount of news (both general and programme
    * specific).
    *
+   * @param array $tids List of degree programme term IDs to filter in.
    * @param int $limit Number of maximum items to fetch.
    *
    * @return array
    */
-  public function getNewsNids($limit = 4) {
+  public function getNewsNidsHavingTids($tids, $limit = 4) {
     $query = $this->getBaseQuery($limit);
     $group = $query->orConditionGroup()->condition($this->referenceField, NULL, 'IS NULL');
 
-    // If active degree programme is present, add term ID to condition group.
-    $tid = $this->activeDegreeProgrammeService->getId();
-
-    if ($tid) {
-      $group->condition($this->referenceField, $tid);
+    if (!empty($tids)) {
+      $group->condition($this->referenceField, $tids, 'IN');
     }
 
     $nids = $query->condition($group)->execute();
