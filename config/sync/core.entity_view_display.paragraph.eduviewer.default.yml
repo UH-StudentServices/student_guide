@@ -1,0 +1,21 @@
+uuid: f58c6d38-778e-464d-946d-628a6702f66d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.eduviewer.field_paragraph_title
+    - paragraphs.paragraphs_type.eduviewer
+id: paragraph.eduviewer.default
+targetEntityType: paragraph
+bundle: eduviewer
+mode: default
+content:
+  field_paragraph_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

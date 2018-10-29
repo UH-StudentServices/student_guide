@@ -5,6 +5,7 @@
 
 * Fixed coding standards (HUB-359)
 * Eduviewer embed support (HUB-342)
+* Eduviewer title support (HUB-360)
 * Added support for study tracks (HUB-347)
 
 
