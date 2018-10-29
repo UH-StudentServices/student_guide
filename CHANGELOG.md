@@ -1,6 +1,6 @@
 #Changelog
 
-## 1.25-dev
+## 1.xx-dev
 ??.??.????
 
 * Fixed coding standards (HUB-359)
