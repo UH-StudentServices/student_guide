@@ -1,7 +1,7 @@
 #Changelog
 
-## 1.xx-dev
-Release date: ??.??.????
+## 1.25
+Release date: 31.10.2018
 
 * Fixed coding standards (HUB-359)
 * Eduviewer embed support (HUB-342)
