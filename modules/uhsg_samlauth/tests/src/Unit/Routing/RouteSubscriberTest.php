@@ -9,10 +9,10 @@ use Symfony\Component\Routing\RouteCollection;
  */
 class SamlRouteSubscriberTest extends UnitTestCase {
 
-  /** @var RouteCollection */
+  /** @var \Symfony\Component\Routing\RouteCollection*/
   private $routeCollection;
 
-  /** @var RouteSubscriber */
+  /** @var \Drupal\uhsg_samlauth\Routing\RouteSubscriber*/
   private $routeSubscriber;
 
   public function setUp() {
@@ -33,4 +33,5 @@ class SamlRouteSubscriberTest extends UnitTestCase {
 
     $this->routeSubscriber->alterRoutes($this->routeCollection->reveal());
   }
+
 }

@@ -1,5 +1,14 @@
 #Changelog
 
+## 1.25
+Release date: 31.10.2018
+
+* Fixed coding standards (HUB-359)
+* Eduviewer embed support (HUB-342)
+* Eduviewer title support (HUB-360)
+* Added support for study tracks (HUB-347)
+
+
 ## 1.24
 Release date: 18.10.2018
 

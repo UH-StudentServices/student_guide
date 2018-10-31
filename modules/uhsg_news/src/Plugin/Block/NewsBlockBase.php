@@ -44,7 +44,7 @@ class NewsBlockBase extends BlockBase {
         'tags' => ['node_list'],
         'contexts' => ['active_degree_programme'],
       ],
-      'content' => ['#markup' => '<div class="view-empty"><h3>' . $this->t('No results') . '</h3></div>']
+      'content' => ['#markup' => '<div class="view-empty"><h3>' . $this->t('No results') . '</h3></div>'],
     ];
   }
 
@@ -72,11 +72,12 @@ class NewsBlockBase extends BlockBase {
           'button--action',
           'icon--arrow-right',
           'theme-transparent',
-          'is-center-mobile'
+          'is-center-mobile',
         ],
       ],
     ]);
 
     return Link::fromTextAndUrl($this->t('More current topics'), $url)->toString();
   }
+
 }

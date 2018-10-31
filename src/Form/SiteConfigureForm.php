@@ -49,7 +49,7 @@ class SiteConfigureForm extends FormBase {
   /**
    * The module handler.
    *
-   * @var ModuleHandlerInterface
+   * @var \Drupal\Core\Extension\ModuleHandlerInterface
    */
   protected $moduleHandler;
 

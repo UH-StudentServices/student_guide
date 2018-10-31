@@ -3,8 +3,10 @@
 /**
  * Implements hook_views_pre_render().
  * Top content view has sitename in each result because of GA, remove that.
- */
-function uhsg_top_content_views_pre_render(\Drupal\views\ViewExecutable $view) {
+ */use Drupal\views\Plugin\views\query\QueryPluginBase;
+use Drupal\views\ViewExecutable;
+
+function uhsg_top_content_views_pre_render(ViewExecutable $view) {
   if ($view->id() == 'google_analytics_summary' && $view->current_display == 'top_searches_block') {
     foreach ($view->result as &$result) {
       $pageTitleParts = explode('|', $result->pageTitle);
@@ -19,7 +21,7 @@ function uhsg_top_content_views_pre_render(\Drupal\views\ViewExecutable $view) {
  * Alter the Google Analytics Reports query for the by using the overridden profile ID
  * defined in settings.php
  */
-function uhsg_top_content_views_query_alter(\Drupal\views\ViewExecutable $view, Drupal\views\Plugin\views\query\QueryPluginBase $query) {
+function uhsg_top_content_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
   if ($view->id() == 'google_analytics_summary' && $view->current_display == 'top_searches_block') {
     $config = \Drupal::configFactory()->get('google_analytics_reports_api.settings');
     $query->options['profile_id'] = $config->get('profile_id');

@@ -21,13 +21,13 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  */
 class ThemesReferencingInstructions extends BlockBase implements ContainerFactoryPluginInterface {
 
-  /** @var EntityRepositoryInterface */
+  /** @var \Drupal\Core\Entity\EntityRepositoryInterface*/
   protected $entityRepository;
 
-  /** @var LanguageManagerInterface */
+  /** @var \Drupal\Core\Language\LanguageManagerInterface*/
   protected $languageManager;
 
-  /** @var RouteMatchInterface */
+  /** @var \Drupal\Core\Routing\RouteMatchInterface*/
   protected $routeMatch;
 
   public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityRepositoryInterface $entityRepository, LanguageManagerInterface $languageManager, RouteMatchInterface $routeMatch) {
@@ -167,4 +167,5 @@ class ThemesReferencingInstructions extends BlockBase implements ContainerFactor
 
     return $renderableArray;
   }
+
 }

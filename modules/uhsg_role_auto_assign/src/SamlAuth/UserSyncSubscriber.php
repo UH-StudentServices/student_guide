@@ -2,24 +2,22 @@
 
 namespace Drupal\uhsg_role_auto_assign\SamlAuth;
 
-use Drupal\Core\Config\ImmutableConfig;
 use Drupal\samlauth\Event\SamlAuthEvents;
 use Drupal\samlauth\Event\SamlAuthUserSyncEvent;
 use Drupal\uhsg_samlauth\AttributeParser;
 use Drupal\uhsg_samlauth\AttributeParserInterface;
 use Drupal\user\Entity\Role;
-use Psr\Log\LoggerInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class UserSyncSubscriber implements EventSubscriberInterface {
 
   /**
-   * @var ImmutableConfig
+   * @var \Drupal\Core\Config\ImmutableConfig
    */
   protected $config;
 
   /**
-   * @var LoggerInterface
+   * @var \Psr\Log\LoggerInterface
    */
   protected $logger;
 
@@ -40,7 +38,7 @@ class UserSyncSubscriber implements EventSubscriberInterface {
    * During user synchronization add/remove roles to/from the account according
    * to auto assignable roles.
    *
-   * @param SamlAuthUserSyncEvent $event
+   * @param \Drupal\samlauth\Event\SamlAuthUserSyncEvent $event
    */
   public function onUserSync(SamlAuthUserSyncEvent $event) {
     $account = $event->getAccount();
@@ -49,12 +47,12 @@ class UserSyncSubscriber implements EventSubscriberInterface {
       if (!$account->hasRole($rid) && $this->hasGroupsInAttributes($groups, $attributes)) {
         $account->addRole($rid);
         $event->markAccountChanged();
-        $this->logger->debug('Assigned role @role for user @user', array('@role' => $rid, $account->label()));
+        $this->logger->debug('Assigned role @role for user @user', ['@role' => $rid, $account->label()]);
       }
       elseif ($account->hasRole($rid) && !$this->hasGroupsInAttributes($groups, $attributes)) {
         $account->removeRole($rid);
         $event->markAccountChanged();
-        $this->logger->debug('Unassigned role @role from user @user', array('@role' => $rid, $account->label()));
+        $this->logger->debug('Unassigned role @role from user @user', ['@role' => $rid, $account->label()]);
       }
     }
   }
@@ -79,7 +77,7 @@ class UserSyncSubscriber implements EventSubscriberInterface {
   /**
    * Checks whether one of the groups exists in given attributes.
    * @param array $groups
-   * @param AttributeParserInterface $attributes
+   * @param \Drupal\uhsg_samlauth\AttributeParserInterface $attributes
    * @return bool
    */
   protected function hasGroupsInAttributes(array $groups, AttributeParserInterface $attributes) {

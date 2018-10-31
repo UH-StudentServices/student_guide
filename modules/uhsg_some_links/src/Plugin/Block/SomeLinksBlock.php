@@ -7,7 +7,6 @@ use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Cache\Cache;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Session\AccountInterface;
-use Drupal\uhsg_some_links\Entity\SomeLinks;
 
 /**
  * Provides a 'SomeLinksBlock' block.
@@ -30,9 +29,9 @@ class SomeLinksBlock extends BlockBase {
    * {@inheritdoc}
    */
   public function build() {
-    return array(
+    return [
       'entities' => $this->getEntities(),
-    );
+    ];
   }
 
   /**
@@ -41,7 +40,7 @@ class SomeLinksBlock extends BlockBase {
   protected function getEntities() {
     $entities = array_filter(
       \Drupal::entityTypeManager()->getStorage('some_links')->loadMultiple(),
-      function(EntityInterface $entity){
+      function (EntityInterface $entity) {
         return $entity->access('view');
       }
     );

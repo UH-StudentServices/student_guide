@@ -15,22 +15,22 @@ class ThemesReferencingInstructionsTest extends UnitTestCase {
 
   const LANGUAGE_ID = 'fi';
 
-  /** @var CurrentRouteMatch */
+  /** @var \Drupal\Core\Routing\CurrentRouteMatch*/
   private $currentRouteMatch;
 
-  /** @var EntityRepositoryInterface */
+  /** @var \Drupal\Core\Entity\EntityRepositoryInterface*/
   private $entityRepository;
 
-  /** @var LanguageInterface */
+  /** @var \Drupal\Core\Language\LanguageInterface*/
   private $language;
 
-  /** @var LanguageManagerInterface */
+  /** @var \Drupal\Core\Language\LanguageManagerInterface*/
   private $languageManager;
 
-  /** @var Node */
+  /** @var \Drupal\node\Entity\Node*/
   private $node;
 
-  /** @var ThemesReferencingInstructions */
+  /** @var \Drupal\uhsg_themes\Plugin\Block\ThemesReferencingInstructions*/
   private $themesReferencingInstructions;
 
   public function setUp() {
@@ -63,4 +63,5 @@ class ThemesReferencingInstructionsTest extends UnitTestCase {
 
     $this->assertEmpty($this->themesReferencingInstructions->build());
   }
+
 }

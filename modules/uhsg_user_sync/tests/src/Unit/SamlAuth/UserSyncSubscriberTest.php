@@ -15,6 +15,7 @@ use Drupal\uhsg_user_sync\SamlAuth\UserSyncSubscriber;
 use Drupal\user\UserInterface;
 use Prophecy\Argument;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\Core\Messenger\MessengerInterface;
 
 /**
  * @group uhsg
@@ -28,40 +29,43 @@ class UserSynscSubscriberTest extends UnitTestCase {
   const STUDENT_ID_FIELD_CONFIG_KEY = 'studentID_field_name';
   const STUDENT_ID_FIELD_CONFIG_VALUE = 'field_student_id';
 
-  /** @var ConfigFactoryInterface */
+  /** @var \Drupal\Core\Config\ConfigFactoryInterface*/
   private $configFactory;
 
-  /** @var ImmutableConfig */
+  /** @var \Drupal\Core\Config\ImmutableConfig*/
   private $config;
 
-  /** @var ContainerInterface */
+  /** @var \Symfony\Component\DependencyInjection\ContainerInterface*/
   private $container;
 
-  /** @var EntityTypeManagerInterface */
+  /** @var \Drupal\Core\Entity\EntityTypeManagerInterface*/
   private $entityTypeManager;
 
-  /** @var SamlAuthUserSyncEvent */
+  /** @var \Drupal\samlauth\Event\SamlAuthUserSyncEvent*/
   private $event;
 
-  /** @var FieldDefinitionInterface */
+  /** @var \Drupal\Core\Field\FieldDefinitionInterface*/
   private $fieldDefinition;
 
-  /** @var FieldItemListInterface */
+  /** @var \Drupal\Core\Field\FieldItemListInterface*/
   private $fieldItemList;
 
-  /** @var FlagServiceInterface */
+  /** @var \Drupal\flag\FlagServiceInterface*/
   private $flagService;
 
-  /** @var LoggerChannel */
+  /** @var \Drupal\Core\Logger\LoggerChannel*/
   private $logger;
 
-  /** @var OprekServiceInterface */
+  /** @var \Drupal\Core\Messenger\MessengerInterface*/
+  private $messenger;
+
+  /** @var \Drupal\uhsg_oprek\Oprek\OprekServiceInterface*/
   private $oprekService;
 
-  /** @var UserInterface */
+  /** @var \Drupal\user\UserInterface*/
   private $user;
 
-  /** @var UserSyncSubscriber */
+  /** @var \Drupal\uhsg_user_sync\SamlAuth\UserSyncSubscriber*/
   private $userSyncSubscriber;
 
   public function setUp() {
@@ -93,6 +97,7 @@ class UserSynscSubscriberTest extends UnitTestCase {
 
     $this->flagService = $this->prophesize(FlagServiceInterface::class);
     $this->logger = $this->prophesize(LoggerChannel::class);
+    $this->messenger = $this->prophesize(MessengerInterface::class);
     $this->oprekService = $this->prophesize(OprekServiceInterface::class);
 
     $this->container = $this->prophesize(ContainerInterface::class);
@@ -104,7 +109,8 @@ class UserSynscSubscriberTest extends UnitTestCase {
       $this->oprekService->reveal(),
       $this->flagService->reveal(),
       $this->entityTypeManager->reveal(),
-      $this->logger->reveal()
+      $this->logger->reveal(),
+      $this->messenger->reveal()
     );
   }
 
@@ -132,7 +138,7 @@ class UserSynscSubscriberTest extends UnitTestCase {
   /**
    * @test
    */
-  public function onUserSyncShouldSyncOodiUIDWhenItHasChanged() {
+  public function onUserSyncShouldSyncOodiUidWhenItHasChanged() {
     $this->fieldItemList->setValue(Argument::any())->shouldBeCalled();
     $this->event->markAccountChanged()->shouldBeCalled();
 
@@ -148,4 +154,5 @@ class UserSynscSubscriberTest extends UnitTestCase {
 
     $this->userSyncSubscriber->onUserSync($this->event->reveal());
   }
+
 }

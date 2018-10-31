@@ -1,0 +1,9 @@
+uuid: 1407bbf6-630a-42e1-bb54-a165ab111fbb
+langcode: en
+status: true
+dependencies: {  }
+id: eduviewer
+label: Eduviewer
+icon_uuid: null
+description: 'Eduviewer embed paragraph.'
+behavior_plugins: {  }

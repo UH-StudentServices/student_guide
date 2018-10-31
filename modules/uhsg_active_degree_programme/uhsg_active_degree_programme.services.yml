@@ -6,4 +6,7 @@ services:
       - { name: cache.context }
   uhsg_active_degree_programme.active_degree_programme:
     class: Drupal\uhsg_active_degree_programme\ActiveDegreeProgrammeService
-    arguments: ['@config.factory', '@request_stack', '@entity.repository', '@entity_type.manager', '@current_user', '@flag']
+    arguments: ['@config.factory', '@request_stack', '@entity.repository', '@entity_type.manager', '@current_user', '@flag', '@uhsg_active_degree_programme.degree_programme_code_resolver']
+  uhsg_active_degree_programme.degree_programme_code_resolver:
+    class: Drupal\uhsg_active_degree_programme\DegreeProgrammeCodeResolverService
+    arguments: ['@entity_type.manager']

@@ -18,4 +18,5 @@ class DegreeProgrammeType extends SortPluginBase {
 
     $this->query->addOrderBy(NULL, $formula, $this->options['order'], 'degree_programme_type_sort_weight');
   }
+
 }

@@ -19,7 +19,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  */
 class ActiveDegreeProgramme extends ArgumentDefaultPluginBase implements CacheableDependencyInterface {
 
-  /** @var ActiveDegreeProgrammeService */
+  /** @var \Drupal\uhsg_active_degree_programme\ActiveDegreeProgrammeService*/
   protected $activeDegreeProgrammeService;
 
   /**

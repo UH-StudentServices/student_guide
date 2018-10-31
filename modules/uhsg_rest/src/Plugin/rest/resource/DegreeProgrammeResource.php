@@ -4,7 +4,6 @@ namespace Drupal\uhsg_rest\Plugin\rest\resource;
 
 use Drupal\Core\Entity\EntityRepositoryInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\Language\LanguageInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\rest\Plugin\ResourceBase;
 use Drupal\rest\ResourceResponse;
@@ -25,13 +24,13 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  */
 class DegreeProgrammeResource extends ResourceBase {
 
-  /** @var EntityRepositoryInterface */
+  /** @var \Drupal\Core\Entity\EntityRepositoryInterface*/
   protected $entityRepository;
 
-  /** @var EntityTypeManagerInterface */
+  /** @var \Drupal\Core\Entity\EntityTypeManagerInterface*/
   protected $entityTypeManager;
 
-  /** @var LanguageManagerInterface */
+  /** @var \Drupal\Core\Language\LanguageManagerInterface*/
   protected $languageManager;
 
   public function __construct(
@@ -83,14 +82,14 @@ class DegreeProgrammeResource extends ResourceBase {
   }
 
   /**
-   * @return TermInterface[]
+   * @return \Drupal\taxonomy\TermInterface[]
    */
   private function loadAllDegreeProgrammeTerms() {
     return $this->entityTypeManager->getStorage('taxonomy_term')->loadTree('degree_programme', 0, NULL, TRUE);
   }
 
   /**
-   * @param TermInterface[] $degreeProgrammeTerms
+   * @param \Drupal\taxonomy\TermInterface[] $degreeProgrammeTerms
    * @return array
    */
   private function formatDegreeProgrammeTermsForResponse($degreeProgrammeTerms) {
@@ -104,7 +103,7 @@ class DegreeProgrammeResource extends ResourceBase {
   }
 
   /**
-   * @param TermInterface $term
+   * @param \Drupal\taxonomy\TermInterface $term
    * @return string[]
    */
   private function getNameTranslations(TermInterface $term) {

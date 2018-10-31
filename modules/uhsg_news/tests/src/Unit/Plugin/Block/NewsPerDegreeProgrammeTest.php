@@ -12,16 +12,16 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  */
 class NewsPerDegreeProgrammeTest extends UnitTestCase {
 
-  /** @var ActiveDegreeProgrammeService */
+  /** @var \Drupal\uhsg_active_degree_programme\ActiveDegreeProgrammeService*/
   private $activeDegreeProgrammeService;
 
-  /** @var CacheContextsManager */
+  /** @var \Drupal\Core\Cache\Context\CacheContextsManager*/
   private $cacheContextsManager;
 
-  /** @var ContainerInterface */
+  /** @var \Symfony\Component\DependencyInjection\ContainerInterface*/
   private $container;
 
-  /** @var NewsPerDegreeProgramme */
+  /** @var \Drupal\uhsg_news\Plugin\Block\NewsPerDegreeProgramme*/
   private $newsPerDegreeProgramme;
 
   public function setUp() {
@@ -56,6 +56,7 @@ class NewsPerDegreeProgrammeTest extends UnitTestCase {
 
     $this->assertEquals([], $this->newsPerDegreeProgramme->build());
   }
+
 }
 
 /**
@@ -66,4 +67,5 @@ class NewsPerDegreeProgrammeTestDouble extends NewsPerDegreeProgramme {
   public function __construct(array $configuration = [], $plugin_id = NULL, $plugin_definition = NULL) {
     // Do nothing.
   }
+
 }
