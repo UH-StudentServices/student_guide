@@ -3,6 +3,7 @@
 ## 1.xx-dev
 ??.??.????
 
+* Paragraphs module security update (HUB-365)
 
 
 ## 1.25
