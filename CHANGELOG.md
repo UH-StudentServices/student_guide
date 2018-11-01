@@ -1,5 +1,11 @@
 #Changelog
 
+## 1.26
+Release date: 01.11.2018
+
+* Paragraphs module security update (HUB-365)
+
+
 ## 1.25
 Release date: 31.10.2018
 
