@@ -1,0 +1,9 @@
+uuid: 90777325-8f74-4307-9269-ea8897779582
+langcode: en
+status: true
+dependencies: {  }
+id: local_guide_student_helsinki_fi
+domain_id: guide_student_helsinki_fi
+pattern: local.guide.student.helsinki.fi
+redirect: 0
+environment: local
