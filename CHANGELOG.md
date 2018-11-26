@@ -3,6 +3,7 @@
 ## 1.xx-dev
 Release date: ??.??.????
 
+* Added a user group: Teachers (HUB-371)
 
 
 ## 1.26
