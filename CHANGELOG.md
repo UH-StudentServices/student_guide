@@ -3,6 +3,7 @@
 ## 1.xx-dev
 Release date: ??.??.????
 
+* Breadcrumb (HUB-388)
 
 
 ## 1.26
