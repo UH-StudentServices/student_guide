@@ -6,3 +6,5 @@ settings:
       label: Tohtorikoulutettavat
     -
       label: 'Ammatillinen jatkokoulutus'
+    -
+      label: Opettajat
