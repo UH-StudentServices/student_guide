@@ -1,0 +1,8010 @@
+[
+  {
+    "name": "Susanna Aaltonen",
+    "officeHours": [
+      {
+        "description": "tiistaisin 9-10, torstaisin 13-15",
+        "additionalInfo": "HUOM: to 1.11. vastaanotto peruttu opetuksen takia",
+        "location": "Päärakennus, Unioninkatu 34, ylin krs., h. 4062",
+        "degreeProgrammes": [
+          "MH40_010",
+          "KH40_005"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Liisa Abreu",
+    "officeHours": [
+      {
+        "description": "to 13-14",
+        "additionalInfo": "liisa.abreu@helsinki.fi",
+        "location": "Unioninkatu 40 B526",
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Atefeh Aghaee",
+    "officeHours": [
+      {
+        "description": "ENGLANTI: Tuntiopettaja. Vastaanotto sopimuksen mukaan",
+        "additionalInfo": "atefeh.aghaee(@)helsinki.fi",
+        "location": "Kielikeskus, Vuorikatu 5, huone 518",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Pertti Ahonen",
+    "officeHours": [
+      {
+        "description": "Tiistaisin 13.00-13.45",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH70_003",
+          "MH70_002",
+          "KH70_001",
+          "T920107"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Terhi Ainiala",
+    "officeHours": [
+      {
+        "description": "keskiviikko 10-11\n\nPäärakennus (Fabianinkatu 33), 4. kerros, huone 4032",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_004",
+          "MH40_007"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Tiina Airaksinen",
+    "officeHours": [
+      {
+        "description": "ti klo 10-11,  (lukuvuoden aikana) / Tue 10-11 am, (during academic year) ei vastaanottoa/ no office hour Tue 20.11.2018. Viim. syyslukukauden vastaanotto/ last office hour in the autumn 11.12.2018",
+        "additionalInfo": null,
+        "location": "Unioninkatu 38, A130 /room A130",
+        "degreeProgrammes": [
+          "MH40_011",
+          "MH40_012",
+          "KH40_005"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Rigina Ajanki",
+    "officeHours": [
+      {
+        "description": "keskiviikko 13-14",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_004"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sylvia Akar",
+    "officeHours": [
+      {
+        "description": "maanantai 14-16",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH40_002",
+          "KH40_005",
+          "KH40_003",
+          "MH40_012"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Laura Alakukku",
+    "officeHours": [
+      {
+        "description": "Sovi aika sähköpostitse\nAgree time by e-mail",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH80_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Kaisa Alanen",
+    "officeHours": [
+      {
+        "description": "RUOTSI. Vastaanottoaika tiistaisin 15.15-16.00",
+        "additionalInfo": "kaisa.alanen(at)helsinki.fi",
+        "location": "Kielikeskus, Vuorikatu 5, 4. krs, huone 417",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Anette Alen",
+    "officeHours": [
+      {
+        "description": "sopimuksen mukaan",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Marjatta Alestalo",
+    "officeHours": [
+      {
+        "description": "VENÄJÄ: Opintokokonaisuuksien vastuuopettaja. Vastaanottoaika ma 15-16. Venäjän opettajatuutori. Tuutorointiaika ke 15-16.",
+        "additionalInfo": null,
+        "location": "Kielikeskus, Vuorikatu 5C, huone 236, marjatta.alestalo@helsinki.fi",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Sandro John Amendolara",
+    "officeHours": [
+      {
+        "description": "English, Office hour: Tuesday 11.00-12.00",
+        "additionalInfo": "sandro.amendolara@helsinki.fi",
+        "location": "Vuorikatu 5, 5th floor, Room 517",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Marjo-Riitta Antikainen",
+    "officeHours": [
+      {
+        "description": "tiistaisin kl 12-13\n\nOpettajablogi http://blogs.helsinki.fi/mrantika/",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH10_001",
+          "MH10_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Pedro Aphalo",
+    "officeHours": [
+      {
+        "description": "By appointment only. Please send e-mail, text-message or call to my work phone (during working hours).",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH57_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mika Aromäki",
+    "officeHours": [
+      {
+        "description": "ENGLANTI: Yliopisto-opettaja. Vastaanottoaika ma 10:30-11:30.",
+        "additionalInfo": null,
+        "location": "Kielikeskus, Vuorikatu 5, huone 514. Sähköposti: mika.aromaki@helsinki.fi",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Tanja Asikainen",
+    "officeHours": [
+      {
+        "description": "keskiviikkoisin klo 11-12",
+        "additionalInfo": null,
+        "location": "Fabianinkatu 33, 5. krs, huone 5028",
+        "degreeProgrammes": [
+          "KH40_004",
+          "MH40_007"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Reijo Aulanko",
+    "officeHours": [
+      {
+        "description": "ma 13-14",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_005"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Lotta Aunio",
+    "officeHours": [
+      {
+        "description": "syyslukukauden tutkimusvapaalla, tavoitettavissa sähköpostitse",
+        "additionalInfo": "",
+        "location": "",
+        "degreeProgrammes": [
+          "KH40_003",
+          "KH40_005",
+          "MH40_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Henry Bacon",
+    "officeHours": [
+      {
+        "description": "Periodilla 2018 IV olen sairaslomalla ja ETVT-asioita hoitaa Jaakko Seppälä",
+        "additionalInfo": null,
+        "location": "Topelia E-113",
+        "degreeProgrammes": [
+          "KH40_002",
+          "MH40_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Laimute Balode",
+    "officeHours": [
+      {
+        "description": "Keskiviikko, 11-12, Metsātalo B436",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Marjatta Banna",
+    "officeHours": [
+      {
+        "description": "RUOTSI   maanantaisin 11-12",
+        "additionalInfo": null,
+        "location": "Vuorikatu 5, huone 422",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Gwenaelle Bauvois",
+    "officeHours": [
+      {
+        "description": "Monday 12-15 (by appointment)",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH70_007"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Alexandra Bergholm",
+    "officeHours": [
+      {
+        "description": "Sopimuksen mukaan; varaa aika kalenterista: https://doodle.com/A.Bergholm",
+        "additionalInfo": null,
+        "location": "Unioninkatu 38 (Topelia), E324",
+        "degreeProgrammes": [
+          "KH10_001",
+          "MH10_001",
+          "MH40_010",
+          "KH40_005",
+          "MH40_011"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Elina Billhardt",
+    "officeHours": [
+      {
+        "description": "torstaisin 10-11",
+        "additionalInfo": null,
+        "location": "C521",
+        "degreeProgrammes": [
+          "MH40_006"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jaanika Blomster",
+    "officeHours": [
+      {
+        "description": "sopimuksen mukaan, ole yhteydessä sähköpostilla",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH57_003"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Satu von Boehm",
+    "officeHours": [
+      {
+        "description": "ENGLISH: Faculty coordinator for Pharmacy. Office hour: Mondays, 9:15-10. E-mail: satu.vonboehm(a)helsinki.fi",
+        "additionalInfo": null,
+        "location": "Vuorikatu 5, floor C4, room C435.",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Francesco Boldizzoni",
+    "officeHours": [
+      {
+        "description": "Each week, by appointment. Please email francesco.boldizzoni@helsinki.fi",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH70_001",
+          "MH70_003",
+          "MH70_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Fergal Bradley",
+    "officeHours": [
+      {
+        "description": "ENGLANTI/ENGLISH: Vastaanottoaika to 13.15-14 / Office hour Thursday 13.15-14",
+        "additionalInfo": "fergal.bradley(at)helsinki.fi",
+        "location": "Kielikeskus: Vuorikatu 5, Kerros/Floor C4, huone/room C438",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Klaus A-J Brax",
+    "officeHours": [
+      {
+        "description": "Maanantaisin 12.00-14.00",
+        "additionalInfo": null,
+        "location": "U38 (Topelia) E110",
+        "degreeProgrammes": [
+          "MH40_009",
+          "KH40_002",
+          "MH40_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Micheal Briody",
+    "officeHours": [
+      {
+        "description": "englanti: periodi I, ti, klo 10.15-11.00; periodi II, ti, klo 13.15-14.00; periodi III,  ti, klo 10.15-11.00",
+        "additionalInfo": null,
+        "location": "Vuorikatu 5, h. 519",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Sarah Butcher",
+    "officeHours": [
+      {
+        "description": "Mondays 08-09 during term time in room 5404 Biocenter 3. Sign up list on the notice board next to the corridor entrance for office 2312 Biocenter 3",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH57_001",
+          "KH57_002",
+          "MH80_007"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Johan Bärlund",
+    "officeHours": [
+      {
+        "description": "Tavattavissa sopimuksen mukaan / Anträffbar enligt överenskommelse",
+        "additionalInfo": "Från 1.8.2018 rektor för Svenska social- och kommunalhögskolan vid Helsingfors universitet.",
+        "location": null,
+        "degreeProgrammes": [
+          "KH20_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "John Calton",
+    "officeHours": [
+      {
+        "description": "Consultation by arrangement.",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_003"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Lauri Carlson",
+    "officeHours": [
+      {
+        "description": "torstaisin 13-14",
+        "additionalInfo": "lauri.carlson@helsinki.fi",
+        "location": "Metsätalo C 321",
+        "degreeProgrammes": [
+          "MH40_006"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mari Carlson",
+    "officeHours": [
+      {
+        "description": "Sopimuksen mukaan",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH80_004",
+          "MH80_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Julie Yu-Wen Chen",
+    "officeHours": [
+      {
+        "description": "Tuesday 14-15",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH40_012",
+          "KH40_005",
+          "MH40_011"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Deborah Clarke",
+    "officeHours": [
+      {
+        "description": "ENGLISH Monday 13:00-14:00",
+        "additionalInfo": "deborah.clarke@helsinki.fi",
+        "location": "Vuorikatu 5, C4 krs, huone C435",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Jesse Collin",
+    "officeHours": [
+      {
+        "description": "Sopimuksen mukaan.",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH20_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mathias Creutz",
+    "officeHours": [
+      {
+        "description": "Sovi tapaamisesta sähköpostitse. / Kom överens om en tid per epost. / Agree on a time by email.",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_005"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mirkka Danielsbacka",
+    "officeHours": [
+      {
+        "description": "Sopimuksen mukaan",
+        "additionalInfo": null,
+        "location": "h. 241",
+        "degreeProgrammes": [
+          "MH40_015",
+          "KH40_006"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Martin Darling",
+    "officeHours": [
+      {
+        "description": "ENGLISH; office hours: Mon 11:00 - 12:00",
+        "additionalInfo": "martin.darling@helsinki.fi",
+        "location": "Language Centre, Vuorikatu 5, room C520",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Juliette Day",
+    "officeHours": [
+      {
+        "description": "By appointement. Please email juliette.day@helsinki.fi to arrange a time.",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH10_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ellen Eftestöl-Wilhelmsson",
+    "officeHours": [
+      {
+        "description": "Tisdagar/Tuesdays/Tiistaisin 13-14, P439",
+        "additionalInfo": "",
+        "location": "",
+        "degreeProgrammes": [
+          "KH20_001",
+          "MH20_001",
+          "MH20_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Reynir Eggertsson",
+    "officeHours": [
+      {
+        "description": "Tis 12-13",
+        "additionalInfo": "eller efter avtal",
+        "location": "Forsthuset, C422",
+        "degreeProgrammes": [
+          "KH40_004"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Martin Ehala",
+    "officeHours": [
+      {
+        "description": "Tiistai 11.00-12.10",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH40_007"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mikael Ehn",
+    "officeHours": [
+      {
+        "description": "Please email me to schedule a meeting",
+        "additionalInfo": "",
+        "location": "C405",
+        "degreeProgrammes": [
+          "KH50_002",
+          "MH50_006"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Julia Ekman",
+    "officeHours": [
+      {
+        "description": "ke 16-17",
+        "additionalInfo": null,
+        "location": "Metsätalo, A419",
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_002",
+          "MH40_006"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Erik Elfving",
+    "officeHours": [
+      {
+        "description": "maanantai klo 12-13, perjantai klo 9.30-10.30",
+        "additionalInfo": null,
+        "location": "Exactum, D324",
+        "degreeProgrammes": [
+          "MH50_001",
+          "KH50_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ainur Elmgren",
+    "officeHours": [
+      {
+        "description": "Mån 12-14 (utom 22.10 - 29.10)",
+        "additionalInfo": "Obs: 17.9. kl 10-12 (el. enl. överenskommelse)",
+        "location": "U38 Topelia A140",
+        "degreeProgrammes": [
+          "MH40_013"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Kari Tapani Elo",
+    "officeHours": [
+      {
+        "description": "Sopimuksen mukaan",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH80_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Kimmo Elo",
+    "officeHours": [
+      {
+        "description": "Vastaanotto ma 12-13. POIKKEUKSET: Vko 11 - ti 13.3. klo 11-12, Vko 12 - to 22.3. klo 14-15",
+        "additionalInfo": null,
+        "location": "D104",
+        "degreeProgrammes": [
+          "KH70_002",
+          "MH70_004"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Paula Elomaa",
+    "officeHours": [
+      {
+        "description": "Agreed by email: paula.elomaa@helsinki.fi",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH80_001",
+          "KH80_001",
+          "MH57_002",
+          "KH57_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Johannes Enroth",
+    "officeHours": [
+      {
+        "description": "Mon 12-13",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH57_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sirkka-Liisa Eriksson",
+    "officeHours": [
+      {
+        "description": "Tiistai klo 13-14",
+        "additionalInfo": null,
+        "location": "Exactum B328",
+        "degreeProgrammes": [
+          "MH50_001",
+          "KH50_001",
+          "KH50_004",
+          "MH50_008"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Tero Erkkilä",
+    "officeHours": [
+      {
+        "description": "Sopimuksen mukaan\nUpon agreement",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH70_001",
+          "MH70_002",
+          "MH70_003"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Juha Eskelinen",
+    "officeHours": [
+      {
+        "description": "torstai klo 11 - 12, Metsätalo huone C626",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH40_006",
+          "KH40_003"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Giuseppe Feroldi",
+    "officeHours": [
+      {
+        "description": "keskiviikkoisin 12-13",
+        "additionalInfo": null,
+        "location": "423",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Derek Fewster",
+    "officeHours": [
+      {
+        "description": "Fredagar 12-14, Topelia U38 A224\nDock 15.9, 22.9 & 6.10 kl 10-12\nEj 29.9\nArbetstelefonen sönder, använd e-post!",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_006",
+          "MH40_015",
+          "MH40_013"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Massimo Fichera",
+    "officeHours": [
+      {
+        "description": "P556, Friday 2-3pm (on leave until 31.12.2017)",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH20_002",
+          "KH20_001",
+          "MH20_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Joseph Flanagan",
+    "officeHours": [
+      {
+        "description": "By appointment",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH40_003",
+          "KH40_003"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Axel Fleisch",
+    "officeHours": [
+      {
+        "description": "Tue 13-14",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH40_005",
+          "KH40_003",
+          "MH40_012"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Patrik Floreen",
+    "officeHours": [
+      {
+        "description": "Meetings agreed by email",
+        "additionalInfo": "patrik.floreen (a) helsinki.fi",
+        "location": "Exactum A316",
+        "degreeProgrammes": [
+          "MH50_010",
+          "KH50_005"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mona Forsskåhl",
+    "officeHours": [
+      {
+        "description": "Tisdagar kl. 13-14\nU40, rum C429",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH40_008",
+          "KH40_004"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jordina Frago",
+    "officeHours": [
+      {
+        "description": "Wednesdays, 13h-14h. Unioninkatu 40, office B526",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_003"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Johan Franzon",
+    "officeHours": [
+      {
+        "description": "mottagning måndag kl 14-15, C428",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_004",
+          "MH40_006"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Rie Fuse",
+    "officeHours": [
+      {
+        "description": "Keskiviikko 13-14, Wednesday 13-14",
+        "additionalInfo": "rie.fuse@helsinki.fi; 0505560391; 02941 23291",
+        "location": "Unioninkatu 38B, 110",
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Szabolcs Galambosi",
+    "officeHours": [
+      {
+        "description": "I periodi: pe 14-15\nII periodi: pe 13-14",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH50_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Enrico Garavelli",
+    "officeHours": [
+      {
+        "description": "pe. 10.00-11.00",
+        "additionalInfo": "enrico.garavelli@helsinki.fi",
+        "location": "B511 (Unioninkatu 40 B)",
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Elise Garritzen",
+    "officeHours": [
+      {
+        "description": "Keskiviikkoisin 13-15",
+        "additionalInfo": null,
+        "location": "U38 A228",
+        "degreeProgrammes": [
+          "KH40_006"
+        ]
+      },
+      {
+        "description": "Keskiviikkoisin 13-15",
+        "additionalInfo": null,
+        "location": "U38 A228",
+        "degreeProgrammes": [
+          "MH40_015"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sonja Gehring",
+    "officeHours": [
+      {
+        "description": "SAKSA: Vastaanottoaika ke 13.00-13.45, sonja.gehring(at)helsinki.fi",
+        "additionalInfo": null,
+        "location": "Kielikeskus: Vuorikatu 5, kerros C2, huone C238",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Sebastian Godenhjelm",
+    "officeHours": [
+      {
+        "description": "Torsdagar 13-15",
+        "additionalInfo": "Ingen mottagning torsdagen den 18.10.18",
+        "location": "SSKH, rum 231",
+        "degreeProgrammes": [
+          "KH74_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Camilla Granholm",
+    "officeHours": [
+      {
+        "description": "Jag har mottagning enligt överenskommelse. Ta kontakt via e-post och boka tid.",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH74_001",
+          "MH70_007"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Paul Graves",
+    "officeHours": [
+      {
+        "description": "ENGLISH: faculty coordinator for the Faculty of Social Sciences and the Swedish School of Social Sciences. Office Hour: in Period I, Thursdays, 1230-1330; in Period II, Thursdays, 1315-1415; in Period III, Mondays 14-1445; and in Period IV, Fridays, 1115-1215. paul.graves@helsinki.fi",
+        "additionalInfo": null,
+        "location": "Language Centre, Vuorikatu 5, Room C439",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Anna-Maria deCesare Greenwald",
+    "officeHours": [
+      {
+        "description": "Tuesday, 13.00-14.00",
+        "additionalInfo": "anna-maria.decesare@helsinki.fi",
+        "location": "Unioninkatu 40, Metsätalo, Office B532",
+        "degreeProgrammes": [
+          "MH40_002"
+        ]
+      },
+      {
+        "description": "Tuesday, 13.00-14.00",
+        "additionalInfo": "anna-maria.decesare@helsinki.fi",
+        "location": "Unioninkatu 40, Metsätalo, Office B532",
+        "degreeProgrammes": [
+          "KH40_003"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Riho Grunthal",
+    "officeHours": [
+      {
+        "description": "Tiistai 14–15",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_004",
+          "MH40_007",
+          "MH40_005"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ekaterina Gruzdeva",
+    "officeHours": [
+      {
+        "description": "Vastaanotto maanantaisin 11-12 Consultation hours on Mondays 11-12",
+        "additionalInfo": "ekaterina.gruzdeva@helsinki.fi",
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_003"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Halil Gurhanli",
+    "officeHours": [
+      {
+        "description": "Thursdays at 13:00-15:00",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH70_001",
+          "MH70_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Markku Haakana",
+    "officeHours": [
+      {
+        "description": "torstaisin 13-14",
+        "additionalInfo": null,
+        "location": "Päärakennuksen 4. krs., huone 4024",
+        "degreeProgrammes": [
+          "KH40_004",
+          "MH40_007"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Vesa Haapala",
+    "officeHours": [
+      {
+        "description": "Vastaanottoni maanantaisin klo 12-13 huoneessa 4025 (yliopiston päärakennus, 4. krs.)",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH40_009",
+          "KH40_004"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Heikki Haara",
+    "officeHours": [
+      {
+        "description": "maanantaisin 10-11",
+        "additionalInfo": null,
+        "location": "Snellmaninkatu 14 A, huone D104",
+        "degreeProgrammes": [
+          "KH70_002",
+          "MH70_004"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Camilla Haavisto",
+    "officeHours": [
+      {
+        "description": "Ingen mottagningstid hösten 2017. Kontakta mig vid behov.",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH70_007"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Anne Haila",
+    "officeHours": [
+      {
+        "description": "sopimuksen mukaan",
+        "additionalInfo": "anne.haila@helsinki.fi",
+        "location": "U37, room 1003",
+        "degreeProgrammes": [
+          "KH70_003",
+          "MH70_008"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ville Hakanen",
+    "officeHours": [
+      {
+        "description": "Ke klo 11-13.30\nPe klo 12-13.30\nja sovittaessa muulloinkin",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_005"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Heikki Halila",
+    "officeHours": [
+      {
+        "description": "Maanantaisin 14.00 - 15.00",
+        "additionalInfo": "puh. 0405454535",
+        "location": "Porthania huone 472",
+        "degreeProgrammes": [
+          "MH20_001",
+          "KH20_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Leena Halila",
+    "officeHours": [
+      {
+        "description": "Keskiviikkoisin klo 16-17",
+        "additionalInfo": null,
+        "location": "P 642",
+        "degreeProgrammes": [
+          "KH20_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Marja-Liisa Halko",
+    "officeHours": [
+      {
+        "description": "Torstaisin klo 13-14, ECO A316",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH70_004"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jaana Hallamaa",
+    "officeHours": [
+      {
+        "description": "Sopimuksen mukaan",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH10_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Nelli Hankonen",
+    "officeHours": [
+      {
+        "description": "Sopimuksen mukaan: nelli.hankonen@helsinki.fi",
+        "additionalInfo": "blogs.helsinki.fi/nhankone",
+        "location": null,
+        "degreeProgrammes": [
+          "MH70_008",
+          "T920106"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Asko Hannukkala",
+    "officeHours": [
+      {
+        "description": "Sopimuksen mukaan, sovi aika sähköpostilla (asko.hannukkala@helsinki.fi)",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH80_001",
+          "MH80_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ritva Hartama-Heinonen",
+    "officeHours": [
+      {
+        "description": "to klo 11 - 12 / tors. kl. 11-12",
+        "additionalInfo": null,
+        "location": "Metsätalo, Unioninkatu 40, C409 / Forsthuset, Unionsgatan 40, C409",
+        "degreeProgrammes": [
+          "KH40_004",
+          "MH40_006",
+          "MH40_008"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Eva Havu",
+    "officeHours": [
+      {
+        "description": "ti 9:00 - 10:00",
+        "additionalInfo": "eva.havu@helsinki.fi",
+        "location": "Metsätalo 5. krs B533",
+        "degreeProgrammes": [
+          "MH40_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Katri Havu",
+    "officeHours": [
+      {
+        "description": "Currently no meeting hours due to maternity leave / Ei vastaanottoa: äitiysvapaalla",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH20_002",
+          "KH20_001",
+          "MH20_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Chen He",
+    "officeHours": [
+      {
+        "description": "Fri 14-16",
+        "additionalInfo": "chen.he@helsinki.fi",
+        "location": "Exactum c213",
+        "degreeProgrammes": [
+          "MH50_010"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Visa Heinonen",
+    "officeHours": [
+      {
+        "description": "Maanantaisin klo 9.30-11 lukukausien aikana",
+        "additionalInfo": "visa.heinonen@helsinki.fi",
+        "location": "Taloustieteen laitos, Latokartanonkaari 5, 3. krs. (huone 311)",
+        "degreeProgrammes": [
+          "MH80_006",
+          "KH80_004",
+          "MH70_008"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Juha Helenius",
+    "officeHours": [
+      {
+        "description": "Tuesday, Wednesday, and Thursday 1 pm to 2 pm (one hour), Viikki Campus, Latokartanonkaari 5, room 211.\n(Notice: Cancellation due to other duty or vacation is possible.)",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH80_001",
+          "KH57_003",
+          "MH80_001",
+          "MH57_005"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mervi Helkkula",
+    "officeHours": [
+      {
+        "description": "tiistaisin klo 10-11 (vuoden 2018 loppuun asti) ; 14.1.2019 alkaen: tiistaisin klo 13-14",
+        "additionalInfo": "mervi.helkkula@helsinki.fi, p. 0294123121",
+        "location": "Metsätalo B531",
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_009",
+          "MH40_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Arto Hellas",
+    "officeHours": [
+      {
+        "description": "Randomly available. Please make appointments by email or come talk in class.",
+        "additionalInfo": null,
+        "location": "Exactum C333",
+        "degreeProgrammes": [
+          "MH50_010",
+          "KH50_005"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ari Helo",
+    "officeHours": [
+      {
+        "description": "Unioninkatu 38 A121 (Topelia). Vast.otto sopimuksen mukaan / Office hour by appointment,  email: ari.helo[at]helsinki.fi",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_005"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Otto Helve",
+    "officeHours": [
+      {
+        "description": "Maanantaisin klo 10-11 Biomedicum 2U E104B\nPoissa 9. ja 16.10.",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH30_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mika Hemmo",
+    "officeHours": [
+      {
+        "description": "keskiviikkoisin 15-16",
+        "additionalInfo": null,
+        "location": "P471",
+        "degreeProgrammes": [
+          "KH20_001",
+          "MH20_001",
+          "T920102"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Liban Ali Hersi",
+    "officeHours": [
+      {
+        "description": "Tiistaisin 13-14",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_003"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Pirjo Hiidenmaa",
+    "officeHours": [
+      {
+        "description": "Ti 15-16",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH40_007"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Antti Hilmola",
+    "officeHours": [
+      {
+        "description": "Tiistai klo 16.00-17.00 (sopimuksen mukaan sovittava etukäteen)\nantti.hilmola@helsinki.fi\n050-3183999",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "SH60_041",
+          "SH60_039"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Turo Hiltunen",
+    "officeHours": [
+      {
+        "description": "by appointment",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH40_003"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Maija Hirvonen",
+    "officeHours": [
+      {
+        "description": "Sopimuksen mukaan (työhuone: C514)",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH40_006"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Åsa Hirvonen",
+    "officeHours": [
+      {
+        "description": "ke 9-10",
+        "additionalInfo": null,
+        "location": "Exactum, D318",
+        "degreeProgrammes": [
+          "MH50_001",
+          "KH50_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Katariina Hollanti",
+    "officeHours": [
+      {
+        "description": "PUHEVIESTINTÄ: Kasvatustieteellisen tiedekuntakoordinaattori. Vastaanotto opetuksen yhteydessä tai sopimuksen mukaan. katariina.hollanti(a)helsinki.fi",
+        "additionalInfo": null,
+        "location": "Kielikeskus, Vuorikatu 5, C5 krs. huone C523.",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Anna Hollsten",
+    "officeHours": [
+      {
+        "description": "Keskiviikkoisin 10-11 tai sopimuksen mukaan. Vastaanotto 21.11. peruttu.",
+        "additionalInfo": null,
+        "location": "Päärakennus, uusi puoli (Fabianinkatu 33), 4. krs., huone 4022.",
+        "degreeProgrammes": [
+          "MH40_009",
+          "KH40_004"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Elisabeth Holmqvist",
+    "officeHours": [
+      {
+        "description": "Torstaisin klo 12-14.",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_005"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ilkka Holopainen",
+    "officeHours": [
+      {
+        "description": "Tiistaisin klo 11-12 (12.9.2017 alkaen)",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH50_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Suvi-T Honkanen",
+    "officeHours": [
+      {
+        "description": "Vastaanotto to klo 14 - 15 (ilmoittautuminen ke klo 10 mennessä)",
+        "additionalInfo": null,
+        "location": "PR huone 5025",
+        "degreeProgrammes": [
+          "KH40_004",
+          "MH40_007"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Antti Honkela",
+    "officeHours": [
+      {
+        "description": "Make an appointment by email",
+        "additionalInfo": "antti.honkela@helsinki.fi",
+        "location": null,
+        "degreeProgrammes": [
+          "MH50_001",
+          "MH50_010"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mohammad Hoque",
+    "officeHours": [
+      {
+        "description": "If you cannot find me in office, please email me.",
+        "additionalInfo": "mohammad.a.hoque@helsinki.fi",
+        "location": "D-230, Exactum",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Elvi Huhtala",
+    "officeHours": [
+      {
+        "description": "Vastaanottoaika ma 10-11",
+        "additionalInfo": null,
+        "location": "RUOTSI: kasvatustieteellisen tiedekuntakoordinaattori. Kielikeskus, Vuorikatu 5, 4. krs, huone 419",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Pan Hui",
+    "officeHours": [
+      {
+        "description": "by email pan.hui@helsinki.fi",
+        "additionalInfo": "https://www.cs.helsinki.fi/u/panhui/",
+        "location": "Room D243, Exactum",
+        "degreeProgrammes": [
+          "MH50_010",
+          "MH50_009"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Janne Ilmari Hukkinen",
+    "officeHours": [
+      {
+        "description": "Sopimuksen mukaan",
+        "additionalInfo": "janne.i.hukkinen@helsinki.fi; 050 367 1375; https://blogs.helsinki.fi/jahukkin/",
+        "location": "Unioninkatu 37, huone 1104",
+        "degreeProgrammes": [
+          "KH57_003",
+          "MH57_005",
+          "KH70_003",
+          "MH70_008",
+          "T920106",
+          "T922103"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sini Hulmi",
+    "officeHours": [
+      {
+        "description": "Vastaanotto sopimuksen mukaan. (Sovi sähköpostitse!)",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH10_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Tomi Huttunen",
+    "officeHours": [
+      {
+        "description": "Torstai klo 10-12  Graduvastaanotto erikseen sovittavissa",
+        "additionalInfo": null,
+        "location": "U40 B419",
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_009",
+          "MH40_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Niina Hynninen",
+    "officeHours": [
+      {
+        "description": "Tiistaisin 14-15 tai sopimuksen mukaan / Tuesdays 14-15 or by appointment",
+        "additionalInfo": "Huom: Vastaanotto 13.11. klo 14.45-15.45 / NB: appointment on 13 Nov at 14.45-15.45",
+        "location": "U40: C611",
+        "degreeProgrammes": [
+          "MH40_003",
+          "KH40_003"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Antti Hyttinen",
+    "officeHours": [
+      {
+        "description": "after lectures, email: antti.hyttinen@helsinki.fi, meetings arranged by email",
+        "additionalInfo": null,
+        "location": "A323",
+        "degreeProgrammes": [
+          "MH50_010",
+          "MH50_009"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Salla Hyvönen",
+    "officeHours": [
+      {
+        "description": "Ma 14–15 (P468)",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH20_001",
+          "KH20_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Nina Hyytiä",
+    "officeHours": [
+      {
+        "description": "Tiistaisin 13-15",
+        "additionalInfo": null,
+        "location": "Latokartanonkaari 5, huone 321b",
+        "degreeProgrammes": [
+          "KH80_004",
+          "KH80_001",
+          "MH80_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Henrik Hägglund",
+    "officeHours": [
+      {
+        "description": "Mån 13-15",
+        "additionalInfo": "tel. 0504488553, e-post: henrik.hagglund@helsinki.fi",
+        "location": "Soc&kom, rum 220",
+        "degreeProgrammes": [
+          "KH74_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jokke Häsä",
+    "officeHours": [
+      {
+        "description": "Tavattavissa 3. kerroksen ohjauksessa tai työhuoneella sopimuksen mukaan.",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH50_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Natalia Iho",
+    "officeHours": [
+      {
+        "description": "VENÄJÄ, Natalia Iho, Venäjän jatkokurssi 1, vastaanotto opetuksen yhteydessä ti 12.15-13.45 ja to 8.15-9.45, natalia.iho@helsinki.fi",
+        "additionalInfo": null,
+        "location": "Kielikeskus, Fabianinkatu 26 SH 405",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Tiina Ikonen",
+    "officeHours": [
+      {
+        "description": "1. periodissa tiistaisin klo 11-12\n2. periodissa maanantaisin klo 11-12",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH10_001",
+          "MH10_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Liisa Ilvonen",
+    "officeHours": [
+      {
+        "description": "Contact by email liisa.ilvonen@helsinki.fi or come to office Exactum B316.",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH50_010"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Visa Immonen",
+    "officeHours": [
+      {
+        "description": "Vastaanottoni opetusperiodien aikana on keskiviikkoisin klo 12–13. Paikka on huone D217, Topelian D-rappu.\n\nDuring teaching periods, my consultation hours are on Wednesdays at 12pm–1pm. My office is D217, and it is located in staircase D in Topelia.",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH40_010"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ciro Imperato",
+    "officeHours": [
+      {
+        "description": "ITALIA: tuutorointi, pe 15.00-16.00; vastaanotto, pe 14.00-15.00.",
+        "additionalInfo": null,
+        "location": "Kielikeskus, Vuorikatu 5, C4 krs., huone C423, ciro.imperato(a)helsinki.fi",
+        "degreeProgrammes": []
+      },
+      {
+        "description": "ti 11.00 -12.00",
+        "additionalInfo": null,
+        "location": "Kielten osasto, PB 24 (Unioninkatu 40 B), ciro.imperato(a)helsinki.fi",
+        "degreeProgrammes": [
+          "KH40_003"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "David Inglis",
+    "officeHours": [
+      {
+        "description": "Mondays, 12 to 13",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH70_002",
+          "MH70_008",
+          "MH70_004",
+          "KH74_001"
+        ]
+      },
+      {
+        "description": "Tuesdays, 14.00 - 15.00",
+        "additionalInfo": "david.inglis@helsinki.fi",
+        "location": "Unioninkatu, Room 325",
+        "degreeProgrammes": [
+          "KH74_001",
+          "MH70_005"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Marianne Inkinen-Järvi",
+    "officeHours": [
+      {
+        "description": "Periodi I tiistaisin klo 11-12, periodi II maanantaisin klo 14-15, periodi III ja IV torstaisin klo 13-14",
+        "additionalInfo": null,
+        "location": "Vuorikatu 5, huone 420",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Tapani Innanen",
+    "officeHours": [
+      {
+        "description": "Syyslukukaudella 2018 olen tutkimusperiodillani enkä anna opetusta tai ohjausta. Uskontokasvatusta koskevasta opetuksesta voit tiedustella Aino-Elina Kilpeläiseltä, os. aino-elina.kilpelainen@helsinki.fi",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH10_001",
+          "MH10_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Minna Intke-Hernandez",
+    "officeHours": [
+      {
+        "description": "Torstaisin klo 12-13",
+        "additionalInfo": "minna.intke@helsinki.fi",
+        "location": "Kielikeskus, Vuorikatu 5, huone 337.",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Kuura Irni",
+    "officeHours": [
+      {
+        "description": "Vastaanotto opetusperiodien aikana tiistaisin klo 12.30-13.30, paitsi EI 2.10. ja 9.10. Luethan huolella opiskelijan ohjeet aina ennen yhteydenottoa!",
+        "additionalInfo": null,
+        "location": "Topelia E216",
+        "degreeProgrammes": [
+          "MH40_014"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Seija Liisa Jaakkola",
+    "officeHours": [
+      {
+        "description": "Sopimuksen mukaan. Agreed by e-mail. (seija.jaakkola@helsinki.fi)",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH80_001",
+          "KH80_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Minna Jaakola",
+    "officeHours": [
+      {
+        "description": "maanantaisin 14–15",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_004"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Giulio Jacucci",
+    "officeHours": [
+      {
+        "description": "by email giulio.jacucci@helsinki.fi",
+        "additionalInfo": "https://www-db2.helsinki.fi/tto/puhelin.henkilo.henkilotiedot?id=35021192&kieli=3",
+        "location": "Kumpula, Exactum , D231",
+        "degreeProgrammes": [
+          "MH50_010",
+          "MH50_009"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Izabela Jakubek",
+    "officeHours": [
+      {
+        "description": "Friday 11-12",
+        "additionalInfo": null,
+        "location": "",
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Juha Janhunen",
+    "officeHours": [
+      {
+        "description": "Fri 10:15-11:45 U38 B122",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH40_005"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Inga Jasinskaja",
+    "officeHours": [
+      {
+        "description": "ti 10-11.30\nTue 10-11.30 am",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH70_008"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Niklas Jensen-Eriksen",
+    "officeHours": [
+      {
+        "description": "Sopimuksen mukaan. Ota yhteyttä: niklas.jensen-eriksen@helsinki.fi",
+        "additionalInfo": null,
+        "location": "",
+        "degreeProgrammes": [
+          "MH40_015",
+          "KH40_006"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Markus Jokela",
+    "officeHours": [
+      {
+        "description": "http://markusjokela.youcanbook.me/",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH30_001",
+          "MH30_004"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jaana Jokinen",
+    "officeHours": [
+      {
+        "description": "Maanantaisin klo 10-11 (ei 22.10.)",
+        "additionalInfo": null,
+        "location": "Kielikeskus, Vuorikatu 5, huone 417",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Jarmo Juga",
+    "officeHours": [
+      {
+        "description": "Sopimuksen mukaan. Ota yhteyttä jarmo.juga@helsinki.fi",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH80_001",
+          "MH80_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ilse Julkunen",
+    "officeHours": [
+      {
+        "description": "Enligt överenskommelse",
+        "additionalInfo": null,
+        "location": "",
+        "degreeProgrammes": [
+          "MH70_007"
+        ]
+      },
+      {
+        "description": "Onsdagar 15-16 och enligt överenskommelse",
+        "additionalInfo": "",
+        "location": "Unionsgatan 37, 2 våningen, rum 2020",
+        "degreeProgrammes": [
+          "MH70_007",
+          "T920106"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hannu Juusola",
+    "officeHours": [
+      {
+        "description": "ke 14-15",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH40_012",
+          "KH40_005",
+          "KH40_003",
+          "MH40_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mika Juhani Juvela",
+    "officeHours": [
+      {
+        "description": "Thursdays 14-15",
+        "additionalInfo": null,
+        "location": "(Physicum D331A)",
+        "degreeProgrammes": [
+          "MH50_004"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Maija Jäppinen",
+    "officeHours": [
+      {
+        "description": "Keskiviikkoisin 14.00-15.30 (lukukausien aikana) HUOM! Tutkimusvapaan vuoksi syyslukukaudella 2018 ei vastaanottoja.",
+        "additionalInfo": null,
+        "location": "Unioninkatu 37, 2. krs, huone 2027",
+        "degreeProgrammes": [
+          "KH70_003",
+          "MH70_008"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ulla-Riikka Järvelä",
+    "officeHours": [
+      {
+        "description": "PUHEVIESTINTÄ: yliopisto-opettaja. Vastaanotto sopimuksen mukaan. riikka.jarvela(@)helsinki.fi",
+        "additionalInfo": "",
+        "location": "Kielikeskus, Vuorikatu 5, huone 523",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Matti Järvisalo",
+    "officeHours": [
+      {
+        "description": "Make appointment by email (matti.jarvisalo@helsinki.fi) or ask in class",
+        "additionalInfo": "",
+        "location": "Office: Exactum A312",
+        "degreeProgrammes": [
+          "MH50_010",
+          "MH50_009",
+          "KH50_005"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Johanna Jääsaari",
+    "officeHours": [
+      {
+        "description": "ti 10-11 t. sopimuksen mukaan",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH70_001",
+          "MH70_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Minna Kaarakainen",
+    "officeHours": [
+      {
+        "description": "Soita tai lähetä postia ajan varaamiseksi.",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH70_008"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Timo Kaartinen",
+    "officeHours": [
+      {
+        "description": "Tiistaisin 10-11 U35 huone 321",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH70_004",
+          "KH70_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hannah Kaihovirta",
+    "officeHours": [
+      {
+        "description": "3.9 -14.12 2018",
+        "additionalInfo": "Nås bäst per epost. Anträffbar enligt överenskommelse.",
+        "location": "Minerva 342",
+        "degreeProgrammes": [
+          "KH60_001SH60_035"
+        ]
+      },
+      {
+        "description": "3.9-14.12 2018",
+        "additionalInfo": "Nås bäst per epost. Anträffbar enligt överenskommelse.",
+        "location": "Minerva 342",
+        "degreeProgrammes": [
+          "KH60_001SH60_034"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Samuli Kaislaniemi",
+    "officeHours": [
+      {
+        "description": "By appointment.",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_003"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mika Kajava",
+    "officeHours": [
+      {
+        "description": "ti 12-13 (Metsätalo, 2. krs., \nA 218)",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Timo Kallinen",
+    "officeHours": [
+      {
+        "description": "Ei vastaanottoa 1.1.2018 alkaen",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH70_002",
+          "MH70_004"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jyrki Kalliokoski",
+    "officeHours": [
+      {
+        "description": "keskiviikkoisin 10-12",
+        "additionalInfo": null,
+        "location": "Fabianinkatu 33, 4. krs (päärakennus, uusi puoli), huone 4031",
+        "degreeProgrammes": [
+          "KH40_004",
+          "MH40_007"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Kalle Kananoja",
+    "officeHours": [
+      {
+        "description": "torstaisin 13-14",
+        "additionalInfo": null,
+        "location": "Unioninkatu 38B",
+        "degreeProgrammes": [
+          "MH40_012",
+          "KH40_005"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sanna Kanerva",
+    "officeHours": [
+      {
+        "description": "Vastaanottoajat sopimuksen mukaan.",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH80_001",
+          "KH57_003",
+          "MH80_001",
+          "MH57_005"
+        ]
+      },
+      {
+        "description": "Sopimuksen mukaan. Sovi aika sähköpostitse (sanna.kanerva@helsinki.fi).",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH80_001",
+          "KH57_003",
+          "MH80_001",
+          "MH57_005"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jussi Kangasharju",
+    "officeHours": [
+      {
+        "description": "Appointments via email or ask at lectures. Also available on Twitter @kangasharju",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH50_010",
+          "MH50_009"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Marja Kankaanrinta",
+    "officeHours": [
+      {
+        "description": "By appointment",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH50_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Suvi Kansikas",
+    "officeHours": [
+      {
+        "description": "Consultation by appointment: suvi.kansikas@helsinki.fi",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH70_006"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Leena Karlsson",
+    "officeHours": [
+      {
+        "description": "ENGLANTI. Tuutori ja opintokokonaisuuden vastuuopettaja, kasvatustieteellisen tiedekuntakoordinaattori.  Yhdistetty vastaanotto- ja tuutorointiaika torstaisin klo 12-14. Email leena.karlsson@helsinki.fi",
+        "additionalInfo": null,
+        "location": "Fabianinkatu 26, huone 110",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Kari Karppinen",
+    "officeHours": [
+      {
+        "description": "Tuesdays 2-3 pm",
+        "additionalInfo": "kari.karppinen@helsinki.fi",
+        "location": "U37 room 1067",
+        "degreeProgrammes": [
+          "MH70_003"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Aurelija Kaskeleviciene",
+    "officeHours": [
+      {
+        "description": "Torstaisin 11-12",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Anu Katainen",
+    "officeHours": [
+      {
+        "description": "Tiistaisin 14-15. Ei vastaanottoa 18.9. ja 9.10.",
+        "additionalInfo": null,
+        "location": "Unioninkatu 37, huone 1062",
+        "degreeProgrammes": [
+          "KH70_003",
+          "MH70_008"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hisayo Katsui",
+    "officeHours": [
+      {
+        "description": "maanantaisin klo.13-14, sopimuksen mukaan / Mondays between 13-14 o'clock, upon request agreed time also.",
+        "additionalInfo": "hisayo.katsui@helsinki.fi",
+        "location": "Unioninkatu 37 (Room 1064)",
+        "degreeProgrammes": [
+          "MH70_008"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Heli Keinonen",
+    "officeHours": [
+      {
+        "description": "ARABIA: Vastaanotto opetuksen yhteydessä, heli.keinonen(a)helsinki.fi",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Nely Keinänen",
+    "officeHours": [
+      {
+        "description": "Tuesdays, 13-14, or by appointment",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_003"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Juliette Kennedy",
+    "officeHours": [
+      {
+        "description": "Wednesday 14-15:00",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH50_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Marjukka Kenttälä",
+    "officeHours": [
+      {
+        "description": "Äidinkielen (suomi) yliopisto-opettaja. Vastaanotosta sovitaan sähköpostitse.",
+        "additionalInfo": "marjukka.kenttala@helsinki.fi",
+        "location": "Vuorikatu 5, huone 522",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Pauli Kettunen",
+    "officeHours": [
+      {
+        "description": "keskiviikkoisin klo 16.30-18.00",
+        "additionalInfo": null,
+        "location": "Snellmaninkatu 14 A, D111",
+        "degreeProgrammes": [
+          "KH70_002",
+          "MH70_004",
+          "T920107",
+          "T920105"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Kenneth Kidd",
+    "officeHours": [
+      {
+        "description": "ENGLISH: Office hour: Period II: Thurs 13-14",
+        "additionalInfo": "kenneth.kidd@helsinki.fi",
+        "location": "Vuorikatu 5, room C437",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Aino-Elina Kilpeläinen",
+    "officeHours": [
+      {
+        "description": "Syyslukukaudella keskiviikkoisin 10-11. HUOM. 7.11. vain puhelinvastaanotto. (poikkeus: 10.10., 17.10. ja 28.11. klo 12-13). Vastaan uskontokasvatuksen opetukseen liittyviin kysymyksiin.",
+        "additionalInfo": "",
+        "location": "Huone 334 (Innasen huone), Vuorikatu 3",
+        "degreeProgrammes": [
+          "KH10_001",
+          "MH10_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jeong-Young Kim",
+    "officeHours": [
+      {
+        "description": "Wednesday, 15-16",
+        "additionalInfo": "jeong-young.kim@helsinki.fi +358504482439",
+        "location": "Unioninkatu 38B, 112",
+        "degreeProgrammes": [
+          "KH40_003"
+        ]
+      },
+      {
+        "description": "Thursday, 15-16",
+        "additionalInfo": "jeong-young.kim@helsinki.fi  +358504482439",
+        "location": "Unioninkatu 38B, 112",
+        "degreeProgrammes": [
+          "MH40_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Tuija Kinnunen",
+    "officeHours": [
+      {
+        "description": "Syyslukukaudella 2018 keskiviikkona 14 - 15 paitsi 5.12. ja 12.12. opetuksen vuoksi vasta klo 16 - 17. Sovi sähköpostitse tapaamisaika! 21.11. EI VASTAANOTTOA TYÖMATKAN vuoksi",
+        "additionalInfo": "",
+        "location": "Metsätalo, 5. krs, C-siipi, huone C513",
+        "degreeProgrammes": [
+          "MH40_006"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Arja Kirvesmäki",
+    "officeHours": [
+      {
+        "description": "ma klo 12.05-13.00",
+        "additionalInfo": null,
+        "location": "huone B428 (Metsätalo)",
+        "degreeProgrammes": [
+          "KH40_003"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Eva Kisdi",
+    "officeHours": [
+      {
+        "description": "Consultation by appointment, eva.kisdi@helsinki.fi",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH50_001",
+          "MH50_002",
+          "MH57_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Seppo Kittilä",
+    "officeHours": [
+      {
+        "description": "Tiistai 12-13",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jyrki Kivinen",
+    "officeHours": [
+      {
+        "description": "Available on most weekdays, please make an appointment by e-mail",
+        "additionalInfo": null,
+        "location": "Exactum B229a",
+        "degreeProgrammes": [
+          "MH50_010",
+          "MH50_009",
+          "KH50_005"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jan Klabbers",
+    "officeHours": [
+      {
+        "description": "Thu 12.00-13.00",
+        "additionalInfo": null,
+        "location": "P651",
+        "degreeProgrammes": [
+          "KH20_001"
+        ]
+      },
+      {
+        "description": "Thu 12.00-13.00",
+        "additionalInfo": null,
+        "location": "P651",
+        "degreeProgrammes": [
+          "MH20_001"
+        ]
+      },
+      {
+        "description": "Thu 12.00-13.00",
+        "additionalInfo": null,
+        "location": "P651",
+        "degreeProgrammes": [
+          "T920102"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Arto Klami",
+    "officeHours": [
+      {
+        "description": "Make appointment by email (arto.klami@helsinki.fi) or ask in class",
+        "additionalInfo": null,
+        "location": "Exactum A344",
+        "degreeProgrammes": [
+          "MH50_010",
+          "MH50_009"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Tintti Klapuri",
+    "officeHours": [
+      {
+        "description": "Periodit I-II: ke klo 14-15, periodi III: ma 14-15, periodi IV: ma klo 12-13",
+        "additionalInfo": null,
+        "location": "Metsätalo, B430",
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_009",
+          "MH40_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Kristian Klockars",
+    "officeHours": [
+      {
+        "description": "Tiistaisin klo 14-15. Tisdagar kl 14-15. Tuesdays at 14-15.",
+        "additionalInfo": null,
+        "location": "Huone, rum room: U40A, A506",
+        "degreeProgrammes": [
+          "KH40_001",
+          "MH70_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jyrki Knuutila",
+    "officeHours": [
+      {
+        "description": "Sopimuksen mukaan",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH10_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Katri Koistinen",
+    "officeHours": [
+      {
+        "description": "Soita tai lähetä sähköpostia ajan varaamiseksi.",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH70_008"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mikko Koivisto",
+    "officeHours": [
+      {
+        "description": "Mon - Fri 9 - 17",
+        "additionalInfo": "Contact by email: mikko.koivisto@helsinki.fi",
+        "location": "To be agreed by email",
+        "degreeProgrammes": [
+          "MH50_010",
+          "MH50_009"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Miia Koivu",
+    "officeHours": [
+      {
+        "description": "Vastaanotto keskiviikkoisin klo 13-14",
+        "additionalInfo": "miia.koivu@helsinki.fi",
+        "location": "Unioninkatu 38 B, huone 219",
+        "degreeProgrammes": [
+          "KH40_003"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Anna-Leena Koivusalo",
+    "officeHours": [
+      {
+        "description": "RUOTSI: Oikeustieteellisen tiedekuntakoordinaattori; ke klo 16-17 ( ei 31.10.), anna-leena.koivusalo [at]helsinki.fi",
+        "additionalInfo": null,
+        "location": "Vuorikatu 5, 4. kerros, huone 419",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Tiina Kojonen-Kyllönen",
+    "officeHours": [
+      {
+        "description": "Vastaanotto opetuksen yhteydessä",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Kai Kokko",
+    "officeHours": [
+      {
+        "description": "Vastaanotto lukukausien aikana maanantaisin klo 14-15.Vastaanotto peruttu 16.4.2018.",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH20_001",
+          "KH20_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Tuomo Kokkonen",
+    "officeHours": [
+      {
+        "description": "Sopimuksen mukaan. Sovi aika sähköpostilla (tuomo.kokkonen@helsinki.fi)",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH80_001",
+          "KH80_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Laura Kolbe",
+    "officeHours": [
+      {
+        "description": "Torstaisin klo 10-12",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH40_015",
+          "KH40_006"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Johanna Kolehmainen",
+    "officeHours": [
+      {
+        "description": "Sopimuksen mukaan. Aika sovitaan sähköpostilla (johanna.kolehmainen(at)helsinki.fi).",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH80_001",
+          "MH80_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Johanna Komppa",
+    "officeHours": [
+      {
+        "description": "torstaisin klo 14 - 15 (ilmoittaudu sähköpostitse). Ei vastaanottoa 15.11. ja 22.11.18.",
+        "additionalInfo": null,
+        "location": "Päärakennus, 4. kerros, huone 4043",
+        "degreeProgrammes": [
+          "KH40_004",
+          "MH40_007"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Johanna Konttori",
+    "officeHours": [
+      {
+        "description": "Sopimuksen mukaan / By appointment",
+        "additionalInfo": null,
+        "location": "U38 E316",
+        "degreeProgrammes": [
+          "MH10_001",
+          "MH40_010",
+          "MH40_011"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mihail Kopotev",
+    "officeHours": [
+      {
+        "description": "KE, 12-13",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_003"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Anu Korhonen",
+    "officeHours": [
+      {
+        "description": "tiistaisin klo 13-14 / Tuesdays 13-14",
+        "additionalInfo": "",
+        "location": "Topelia A129 (Unioninkatu 38 A)",
+        "degreeProgrammes": [
+          "MH40_012",
+          "KH40_005"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Helena Korpelainen",
+    "officeHours": [
+      {
+        "description": "Sopimuksen mukaan (helena.korpelainen@helsinki.fi)",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH80_001",
+          "MH80_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Antti Korpisaari",
+    "officeHours": [
+      {
+        "description": "Tiistaisin klo 11-13 Unioninkatu 38 A131",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_005",
+          "MH40_012"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Päivi Korpisaari",
+    "officeHours": [
+      {
+        "description": "Vastaanotto keskiviikkoisin klo 13-14 huoneessa P465. Kannattaa kuitenkin varmistaa sähköpostitse, että olen paikalla.",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH20_001",
+          "MH20_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hanna Korsberg",
+    "officeHours": [
+      {
+        "description": "Keskiviikkoisin klo 10-11 sekä ajanvarauksella (sähköpostitse) klo 11-12",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_002",
+          "MH40_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Kaisa Kortekallio",
+    "officeHours": [
+      {
+        "description": "sovittaessa / by appointment",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH40_009"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Saila Korvenranta",
+    "officeHours": [
+      {
+        "description": "RUOTSI: lääketieteellisen tiedekuntakoordinaattori. Vastaanottoaika to 13-14.",
+        "additionalInfo": null,
+        "location": "Kielikeskus, Vuorikatu 5, 4. krs, huone 421",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Anna-Kaisa Kosenius",
+    "officeHours": [
+      {
+        "description": "By appointment / Sopimuksen mukaan. Please contact / Otathan yhteyttä \nanna-kaisa.kosenius@helsinki.fi",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH80_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mika Koskenoja",
+    "officeHours": [
+      {
+        "description": "keskiviikko klo 9-10",
+        "additionalInfo": null,
+        "location": "Exactum D311",
+        "degreeProgrammes": [
+          "MH50_001",
+          "KH50_001",
+          "KH50_004",
+          "MH50_008"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hanna Kosonen",
+    "officeHours": [
+      {
+        "description": "Äidinkielen (suomi) yliopisto-opettaja. Tavattavissa opetuksen yhteydessä tai sovitusti: hanna.kosonen[at]helsinki.fi",
+        "additionalInfo": null,
+        "location": "Kielikeskus, Vuorikatu 5, huone 521",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Sonja Kosunen",
+    "officeHours": [
+      {
+        "description": "Ons/Ke/Wed 10-11",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "SH60_033",
+          "SH60_035",
+          "SH60_042",
+          "MH60_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Suvi Kotkavuori",
+    "officeHours": [
+      {
+        "description": "RANSKA: opettajatuutori. Vastaanottoaika: to 11-12, tuutorointi ti 14-15. Kielikeskus, Vuorikatu 5, 3 krs, huone C335. suvi.kotkavuori@helsinki.fi",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Anne Kouvonen",
+    "officeHours": [
+      {
+        "description": "Sopimuksen mukaan/ By email appointment (anne.kouvonen@helsinki.fi)",
+        "additionalInfo": null,
+        "location": "U37 h1063",
+        "degreeProgrammes": [
+          "KH70_003",
+          "MH70_008",
+          "MH70_005"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Magdolna Kovacs",
+    "officeHours": [
+      {
+        "description": "Vastaanotto ma klo 12-13",
+        "additionalInfo": "",
+        "location": "Metsätalo (Unioninkatu 40) A-siipi, huone A405",
+        "degreeProgrammes": [
+          "KH40_004",
+          "MH40_007",
+          "MH40_006"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sabine Kraenker",
+    "officeHours": [
+      {
+        "description": "Thursday 4PM",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_003"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Irina Kudasheva",
+    "officeHours": [
+      {
+        "description": "To klo 14:00-15:00",
+        "additionalInfo": null,
+        "location": "Huone A419",
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_006",
+          "MH40_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Oiva Kuisma",
+    "officeHours": [
+      {
+        "description": "Keskiviikko klo 13-14 syyskuun alusta toukokuun loppuun",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Salla Kurhila",
+    "officeHours": [
+      {
+        "description": "ma 13-14",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_004",
+          "MH40_007"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hannu Kurki-Suonio",
+    "officeHours": [
+      {
+        "description": "Monday 10-11",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH50_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Antti Kuronen",
+    "officeHours": [
+      {
+        "description": "Contact me by email antti.kuronen@helsinki.fi",
+        "additionalInfo": null,
+        "location": "Accelerator laboratory",
+        "degreeProgrammes": [
+          "MH50_010",
+          "MH50_005",
+          "KH50_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Anta Kursisa",
+    "officeHours": [
+      {
+        "description": "Sprechstunde mittwochs 16.00-17.00 Uhr, Metsätalo, Raum C512",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Lea Kutvonen",
+    "officeHours": [
+      {
+        "description": "Spring 2018 Monday 11.00-11.30, Thursday 14.00-14.30",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH50_009",
+          "KH50_005"
+        ]
+      },
+      {
+        "description": "Ei vastaanottoa / No office hour 15.11-30.11.2018.",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH50_009",
+          "KH50_005"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hanna Kuusi",
+    "officeHours": [
+      {
+        "description": "Torstai 12-13 (ei 25.10.)",
+        "additionalInfo": "https://blogs.helsinki.fi/kuusi/",
+        "location": "Snellmaninkatu 14 A, 2. krs (D204)",
+        "degreeProgrammes": [
+          "KH70_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Päivi Kuusi",
+    "officeHours": [
+      {
+        "description": "Torstaisin klo 13 - 14",
+        "additionalInfo": "",
+        "location": "Metsätalo (Unioninkatu 40), A322",
+        "degreeProgrammes": [
+          "MH40_006"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Riikka Kuusisto",
+    "officeHours": [
+      {
+        "description": "ti 10-11",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH70_001",
+          "MH70_002",
+          "MH70_003"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Eliisa Kylkilahti",
+    "officeHours": [
+      {
+        "description": "Sopimuksen mukaan",
+        "additionalInfo": "eliisa.kylkilahti@helsinki.fi",
+        "location": "Viikki, C-talo (Latokartanonkaari 5), 321c",
+        "degreeProgrammes": [
+          "MH80_006",
+          "KH80_004"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hanna-Riitta Kymäläinen",
+    "officeHours": [
+      {
+        "description": "Vastaanotto sopimuksen mukaan. Sovi aika sähköpostitse: hanna-riitta.kymalainen@helsinki.fi",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH80_001",
+          "MH80_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Antti Käenmäki",
+    "officeHours": [
+      {
+        "description": "Monday 14-16",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH50_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jari Käkelä",
+    "officeHours": [
+      {
+        "description": "By appointment.",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_003"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Pekka Kärkkäinen",
+    "officeHours": [
+      {
+        "description": "Keskiviikko 14.30-15.00",
+        "additionalInfo": "",
+        "location": "Huone 414 (Vuorikatu 3, 4. krs.)",
+        "degreeProgrammes": [
+          "KH10_001",
+          "MH10_001",
+          "T920101"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jaana Kärnä-Behm",
+    "officeHours": [
+      {
+        "description": "Vastaanotto sopimuksen mukaan.",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "SH60_038"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Aino Kääriäinen",
+    "officeHours": [
+      {
+        "description": "Ke klo 14-15.30 tai sopimuksen mukaan",
+        "additionalInfo": "aino.kaariainen@helsinki.fi (tutkimassa 1.1.-30.6.2019)",
+        "location": "U37, huone 2029",
+        "degreeProgrammes": [
+          "KH70_003",
+          "MH70_008"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Johanna Laakkonen",
+    "officeHours": [
+      {
+        "description": "Ke klo 10 - 11. Ajanvarauksella (opinnäytteet ja pidemmät asiat) klo 11-12. Ei vastaanottoa 14.11.",
+        "additionalInfo": null,
+        "location": "U40 A632",
+        "degreeProgrammes": [
+          "KH40_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Anu Lahtinen",
+    "officeHours": [
+      {
+        "description": "torstaisin klo 12-13 (ei 25.10. eikä 8.11.) tai sopimuksen mukaan",
+        "additionalInfo": null,
+        "location": "Topelia A 226, Unioninkatu 38",
+        "degreeProgrammes": [
+          "MH40_015",
+          "KH40_006"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Markus Lammenranta",
+    "officeHours": [
+      {
+        "description": "Ti 12-13",
+        "additionalInfo": null,
+        "location": "U40, h. A629",
+        "degreeProgrammes": [
+          "KH40_001",
+          "MH70_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Markku Lanne",
+    "officeHours": [
+      {
+        "description": "Vastaanotto tiistaisin klo 14 - 15\nConsultation hour on Tuesdays  2 - 3 p.m.",
+        "additionalInfo": "",
+        "location": "",
+        "degreeProgrammes": [
+          "MH70_009"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hanna Lappalainen",
+    "officeHours": [
+      {
+        "description": "tiistaina klo 14-16 (ilm. etukäteen sähköpostitse)\nhuone 5017 (päärakennuksen 5. krs)",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH40_007",
+          "KH40_004"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mirkka Lappalainen",
+    "officeHours": [
+      {
+        "description": "Torstaisin klo 14-16",
+        "additionalInfo": null,
+        "location": "Topelia, A221",
+        "degreeProgrammes": [
+          "MH40_015",
+          "KH40_006",
+          "T920103"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Otto Lappi",
+    "officeHours": [
+      {
+        "description": "Annan Kommunikaatio & Kognitio ja Kognitiotieteen opintoneuvontaa; aika sovitaan sähköpostilla; I advise on Communication & Cognition module and Cognitive Science studies, please e-mail me to ask a question or arrange an appointmet",
+        "additionalInfo": "otto.lappi@helsinki.fi",
+        "location": "Siltavuorenpenger 1A 1. krs h134",
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_005"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Kai Lassfolk",
+    "officeHours": [
+      {
+        "description": "Torstaisin klo 13-14, U38 C119a. Sovi vastaanotosta etukäteen sähköpostitse.",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_002",
+          "MH40_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jannika Lassus",
+    "officeHours": [
+      {
+        "description": "Tisdagar 10–11",
+        "additionalInfo": "Mottagning under undervisningsperioderna, du når mig också per e-post.",
+        "location": "Forsthuset (U40) rum C428",
+        "degreeProgrammes": [
+          "KH40_004",
+          "MH40_013",
+          "MH40_008"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Kaisa Launonen",
+    "officeHours": [
+      {
+        "description": "maanantai 13-14",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH30_002",
+          "MH30_005"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Yrjö Lauranto",
+    "officeHours": [
+      {
+        "description": "torstaisin 9–11 ja perjantaisin 14–15 (kannattaa ilmoittautua sähköpostitse viimeistään keskiviikkona, mutta paikalle voi tulla ilmoittautumattakin)",
+        "additionalInfo": null,
+        "location": "Päärakennus, Fabianinkatu 33, 5. krs, huone 5031",
+        "degreeProgrammes": [
+          "KH40_004",
+          "MH40_007"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Olli-Philippe Lautenbacher",
+    "officeHours": [
+      {
+        "description": "keskiviikkona klo 9-10 / mercredi de 9h à 10h\n\nMetsätalo - B 513",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH40_006",
+          "KH40_003",
+          "MH40_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Helena Leheckova",
+    "officeHours": [
+      {
+        "description": "tiistaisin 13-14",
+        "additionalInfo": null,
+        "location": "B435",
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hanna Lehti-Eklund",
+    "officeHours": [
+      {
+        "description": "Enligt överenskommelse",
+        "additionalInfo": "Ta kontakt med e-post",
+        "location": "U40 C405",
+        "degreeProgrammes": [
+          "KH40_004",
+          "MH40_007",
+          "T920104"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Lotta Lehti",
+    "officeHours": [
+      {
+        "description": "7.9. alkaen perjantaisin klo 12.45-13.45",
+        "additionalInfo": null,
+        "location": "Metsätalo B530",
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_002",
+          "MH40_006"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Grainne Lehtipuu",
+    "officeHours": [
+      {
+        "description": "ENGLISH, University teacher, Wed 11.15 - 12",
+        "additionalInfo": "grainne.lehtipuu@helsinki.fi",
+        "location": "Vuorikatu 5, 5th floor, Room 517",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Katja Lehtisaari",
+    "officeHours": [
+      {
+        "description": "Sopimuksen mukaan",
+        "additionalInfo": null,
+        "location": "Huone 1081",
+        "degreeProgrammes": [
+          "KH70_001"
+        ]
+      },
+      {
+        "description": "Sopimuksen mukaan",
+        "additionalInfo": null,
+        "location": "Huone 1081",
+        "degreeProgrammes": [
+          "MH70_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Heini Lehtonen",
+    "officeHours": [
+      {
+        "description": "pedagoginen yliopistonlehtori torstai 10 - 11.30",
+        "additionalInfo": "heini.lehtonen@helsinki.fi",
+        "location": "Kielikeskus, Fabianinkatu 26, huone 108",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Tuula Lehtonen",
+    "officeHours": [
+      {
+        "description": "ENGLISH: Co-head of the English Unit, Coordinator for the Faculty of Theology, Tuesday 11:15-12:00, tuula.lehtonen(at)helsinki.fi",
+        "additionalInfo": null,
+        "location": "Language Centre, Vuorikatu 5 C4, room C436",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Jaakko Leino",
+    "officeHours": [
+      {
+        "description": "Ti klo 14-16 \npäärakennus, huone 4029 (4. krs)\nilmoittautuminen sähköpostitse ed. päivään klo 12 mennessä",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_004",
+          "MH40_007"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Martti Leiwo",
+    "officeHours": [
+      {
+        "description": "Keskiviikko 10-12 A210",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Alina Leminen",
+    "officeHours": [
+      {
+        "description": "Please make an appointment by email: alina.leminen@helsinki.fi",
+        "additionalInfo": null,
+        "location": "Siltavuorenpenger 1 A",
+        "degreeProgrammes": [
+          "MH40_005"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Kjell Lemström",
+    "officeHours": [
+      {
+        "description": "Sopimuksen mukaan; by appointment",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH50_005"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hartmut Lenk",
+    "officeHours": [
+      {
+        "description": "ke. 9-10",
+        "additionalInfo": "Saksan kieli ja saksankielisten maiden kulttuuri, germaaninen filologia; http://www.helsinki.fi/~lenk",
+        "location": "Metsätalo, C509",
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_002",
+          "T920104"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mietta Lennes",
+    "officeHours": [
+      {
+        "description": "sopimuksen mukaan - by appointment, mietta.lennes@helsinki.fi",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_005"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sara Leppänen",
+    "officeHours": [
+      {
+        "description": "SVENSKA/RUOTSI/SWEDISH tis./ti/Tues. 13-14",
+        "additionalInfo": null,
+        "location": "Vuorikatu/Berggatan 5, huone/rum/room 418",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Anna-Liisa Lepäsmaa",
+    "officeHours": [
+      {
+        "description": "tiistaisin 15 -16",
+        "additionalInfo": null,
+        "location": "Päärakennus huone 5029",
+        "degreeProgrammes": [
+          "KH40_004",
+          "MH40_007"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Elina Liikanen",
+    "officeHours": [
+      {
+        "description": "Keskiviikkoisin klo 15-16 / Los miércoles de 15 a 16 horas",
+        "additionalInfo": "espanja",
+        "location": "Unioninkatu 40 B 520",
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Esa Lilja",
+    "officeHours": [
+      {
+        "description": "Maanantaisin klo 14-15, U38 C116.\nSovi vastaanotosta etukäteen sähköpostitse.",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_002",
+          "MH40_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Leena Linden",
+    "officeHours": [
+      {
+        "description": "Vastaanotto sopimuksen mukaan.",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH80_001",
+          "MH80_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Heidi Lindfors",
+    "officeHours": [
+      {
+        "description": "to klo 13-14 P584",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH20_001",
+          "KH20_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Camilla Lindholm",
+    "officeHours": [
+      {
+        "description": "Mottagning enligt överenskommelse.",
+        "additionalInfo": null,
+        "location": "C429, Forsthuset (4:e våningen)",
+        "degreeProgrammes": [
+          "KH40_004",
+          "MH40_008"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Susanna Lindroos-Hovinheimo",
+    "officeHours": [
+      {
+        "description": "Torsdagar / torstaisin / Thursdays 11-12, P636",
+        "additionalInfo": "https://tuhat.halvi.helsinki.fi/portal/fi/person/sulindro",
+        "location": null,
+        "degreeProgrammes": [
+          "MH20_001",
+          "KH20_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jouko Lindstedt",
+    "officeHours": [
+      {
+        "description": "keskiviikkoisin klo 10–11",
+        "additionalInfo": null,
+        "location": "Metsätalo B434",
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_002",
+          "MH40_005",
+          "T920104"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jan Lindström",
+    "officeHours": [
+      {
+        "description": "Mån 13-14",
+        "additionalInfo": null,
+        "location": "C406, Fortshuset (Unionsgatan 40)",
+        "degreeProgrammes": [
+          "KH40_004",
+          "MH40_008"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Kristina Lindström",
+    "officeHours": [
+      {
+        "description": "Fre 12-14",
+        "additionalInfo": "Kontrollera alltid per e-post att jag är tillgänglig",
+        "location": "Biocenter 3, rum 4412",
+        "degreeProgrammes": [
+          "KH57_003"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Tuula Linna",
+    "officeHours": [
+      {
+        "description": "Vastaanotoista ilmoitetaan prosessioikeuden tenttiä koskevan jyvitystaulukon julkistamisen yhteydessä. Muutoin sopimuksen mukaan. Huone 581, Porthania",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH20_001",
+          "KH20_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jukka Lipponen",
+    "officeHours": [
+      {
+        "description": "Tiistaisin 10-11",
+        "additionalInfo": null,
+        "location": "Unioninkatu 37 2. kerros, huone 2053",
+        "degreeProgrammes": [
+          "KH70_003"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jari Lipsanen",
+    "officeHours": [
+      {
+        "description": "Päivystysajat ovat maanantaisin klo 16-18 ja keskiviikkoisin klo 8-10. Ajanvaraus sähköisen ajanvarausjärjestelmän kautta",
+        "additionalInfo": "www.mv.helsinki.fi/home/jlipsane/",
+        "location": "Haartmaninkatu 3, huone E250",
+        "degreeProgrammes": [
+          "KH30_001",
+          "MH30_004"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ulla Liukkunen",
+    "officeHours": [
+      {
+        "description": "Vastaanotto sopimuksen mukaan",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH20_001",
+          "KH20_001",
+          "T920102"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Andrew Logie",
+    "officeHours": [
+      {
+        "description": "Friday 10:30-12:00\nTopelia (Unioninkatu 38) B120",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH40_012"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Chiara Lombardini",
+    "officeHours": [
+      {
+        "description": "Chiara Lombardini: sopimuksen mukaan",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH80_004"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Kirsti Lonka",
+    "officeHours": [
+      {
+        "description": "Keskiviikkoisin 16-17 (19.9.-7.11.; keväällä alkaen16.1.2019)",
+        "additionalInfo": "14.11.-15.12. Taipeissa! Sinä aikana Skype kirstilonka",
+        "location": "Huone K142 (EWE-yhteistila K1)",
+        "degreeProgrammes": [
+          "MH60_001",
+          "KH60_001SH60_041",
+          "MH60_001SH60_041",
+          "T920110",
+          "T920109"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Olli Loukola",
+    "officeHours": [
+      {
+        "description": "Ma klo 13-14 Metsätalo, Unioninkatu 40,  h. 510.",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_001",
+          "MH70_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Anneli Luhtala",
+    "officeHours": [
+      {
+        "description": "ma 13-14\nMetsätalo A221",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jiaheng Lu",
+    "officeHours": [
+      {
+        "description": "By appointment by email",
+        "additionalInfo": "Email: jiaheng.lu@helsinki.fi",
+        "location": "Office: Exactum C211",
+        "degreeProgrammes": [
+          "MH50_010"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jani Lukkarinen",
+    "officeHours": [
+      {
+        "description": "Tuesdays 14-15 and by e-mail appointment",
+        "additionalInfo": "https://wiki.helsinki.fi/display/mathstatHenkilokunta/Lukkarinen,+Jani",
+        "location": "Exactum D335",
+        "degreeProgrammes": [
+          "MH50_001",
+          "MH50_003"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ville Lukkarinen",
+    "officeHours": [
+      {
+        "description": "Tiistai klo 14-16\nUnioninkatu 34, h. 4077",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH40_010",
+          "KH40_005"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Petri Luomanen",
+    "officeHours": [
+      {
+        "description": "Sopimuksen mukaan",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH10_001",
+          "MH10_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Arto Luukkanen",
+    "officeHours": [
+      {
+        "description": "Wed 14-16",
+        "additionalInfo": null,
+        "location": "Unioninkatu 38 A, A 123",
+        "degreeProgrammes": [
+          "MH40_012"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Pirjo Lyytikäinen",
+    "officeHours": [
+      {
+        "description": "Vastaanotto sopimuksen mukaan. Ota yhteyttä sähköpostitse",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH40_009",
+          "KH40_004"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Riikka Länsisalmi",
+    "officeHours": [
+      {
+        "description": "Torstai klo 12-13 alkaen 30.8.2018. Huom! Ei vastaanottoa 6.12. (itsenäisyyspäivä) ja 13.12.",
+        "additionalInfo": "Puh. 02941 23290",
+        "location": "Unioninkatu 38 B106",
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Claus Madsen",
+    "officeHours": [
+      {
+        "description": "Onsdag 10-11.30",
+        "additionalInfo": null,
+        "location": "C422",
+        "degreeProgrammes": [
+          "KH40_004"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Henry Maina",
+    "officeHours": [
+      {
+        "description": "Monday 09.00-11.00",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH80_003",
+          "MH80_004"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Leena Malkki",
+    "officeHours": [
+      {
+        "description": "No office hours in 2018, please send an e-mail to schedule a meeting",
+        "additionalInfo": null,
+        "location": "Siltavuorenpenger 1A",
+        "degreeProgrammes": [
+          "MH70_006"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Kristina Malmio",
+    "officeHours": [
+      {
+        "description": "Torsdagar 14-15, Forsthuset, 4. våningen, rum C413",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_004"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Johanna Manner-Kivipuro",
+    "officeHours": [
+      {
+        "description": "RUOTSI: bio- ja ympäristötieteellisen tiedekuntakoordinaattori. Vastaanotto maanantaisin 13-14",
+        "additionalInfo": null,
+        "location": "Vuorikatu 5, 4. krs, huone 418",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Juli Mansnerus",
+    "officeHours": [
+      {
+        "description": "Enligt överenskommelse / Sopimuksen mukaan / Appointment as agreed",
+        "additionalInfo": "juli.mansnerus@helsinki.fi",
+        "location": "P590",
+        "degreeProgrammes": [
+          "KH20_001",
+          "MH20_001",
+          "MH20_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Caterina Marchionni",
+    "officeHours": [
+      {
+        "description": "Wednesdays 10.30-12.00",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH70_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Risto Marjomaa",
+    "officeHours": [
+      {
+        "description": "Torstaisin 14-16",
+        "additionalInfo": "risto.marjomaa@helsinki.fi",
+        "location": "Topelia A 217",
+        "degreeProgrammes": [
+          "MH40_015",
+          "KH40_006"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jonathon Martin",
+    "officeHours": [
+      {
+        "description": "ENGLISH: Coordinator for the Faculty of Law, consultation time Tue 10-11 Kumpula, Exactum D126, jonathon.martin@helsinki.fi",
+        "additionalInfo": null,
+        "location": "",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Michael Mathioudakis",
+    "officeHours": [
+      {
+        "description": "By appointment (send me email first) or before/after class.",
+        "additionalInfo": "https://www.michalis.co // https://workgroups.helsinki.fi/display/TGCSDS",
+        "location": "Exactum, A346",
+        "degreeProgrammes": [
+          "MH50_010"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Janne Matikainen",
+    "officeHours": [
+      {
+        "description": "tiistai klo 13-14",
+        "additionalInfo": "https://jannematikainen.wordpress.com/",
+        "location": "h. 1065",
+        "degreeProgrammes": [
+          "MH70_002",
+          "KH70_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mirjami Matilainen",
+    "officeHours": [
+      {
+        "description": "ESPANJA/RANSKA: Esimies, vastaanotto maanantaisin klo 16-17, mirjami.matilainen@helsinki.fi",
+        "additionalInfo": null,
+        "location": "Kielikeskus, Vuorikatu 5, C3. krs, huone C332",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Pia Matilainen",
+    "officeHours": [
+      {
+        "description": "JAPANI maanantai 14.1.2019 klo 12.00-13.00 pia.matilainen@helsinki.fi",
+        "additionalInfo": null,
+        "location": "411 \"Tornihuone\", Kielikeskus, Fabianinkatu 26, 4. krs.",
+        "degreeProgrammes": []
+      },
+      {
+        "description": "JAPANI perjantai 10.5.2019 klo 13.00-14.00 pia.matilainen@helsinki.fi",
+        "additionalInfo": null,
+        "location": "411 \"Tornihuone\", Kielikeskus, Fabianinkatu 26, 4. krs.",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Mikko Mattila",
+    "officeHours": [
+      {
+        "description": "ke 14-16",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH70_002",
+          "KH70_001",
+          "MH70_003",
+          "MH70_006"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mikael Mattlin",
+    "officeHours": [
+      {
+        "description": "Tis 12-13",
+        "additionalInfo": null,
+        "location": "Unionsgatan 38 A 110",
+        "degreeProgrammes": [
+          "MH40_012",
+          "KH40_005",
+          "MH40_011"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Alisdair McLean",
+    "officeHours": [
+      {
+        "description": "Friday 13.00-14.00",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH55_001"
+        ]
+      },
+      {
+        "description": "Wed 14:00-15:00",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH30_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Miro Metsämuuronen",
+    "officeHours": [
+      {
+        "description": "Mottagning enligt överenskommelse",
+        "additionalInfo": null,
+        "location": "Forsthuset, C410.",
+        "degreeProgrammes": [
+          "MH40_008"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sari Johanna Meurman",
+    "officeHours": [
+      {
+        "description": "ITALIA: vastaanottoaika maanantaisin klo14-15.",
+        "additionalInfo": null,
+        "location": "Kielikeskus, Vuorikatu 5, huone 423. sari.meurman@helsinki.fi",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Matti Miestamo",
+    "officeHours": [
+      {
+        "description": "Sopimuksen mukaan / By appointment",
+        "additionalInfo": "matti.miestamo@helsinki.fi",
+        "location": "Metsätalo A325",
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_005"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Samuli Miettinen",
+    "officeHours": [
+      {
+        "description": "Tavattavissa opetustuntien jälkeen tai vastaanotto sop. mukaan sähköpostitse.",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH20_001",
+          "KH20_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Tarja Elise Miettinen",
+    "officeHours": [
+      {
+        "description": "RUOTSI: Matemaattis-luonnontieteellisen tiedekuntakoordinaatoori. Vastaanottoaika to 12.00-12.45",
+        "additionalInfo": null,
+        "location": "Exactum D126",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Pia Mikander",
+    "officeHours": [
+      {
+        "description": "måndag 9-10 eller enligt överenskommelse",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "SH60_035",
+          "SH60_034"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Heikki Mikkeli",
+    "officeHours": [
+      {
+        "description": "Vastaanotto torstaisin klo 15 -16 \n\nPaikka: U 38 (Topelia) A-siipi, 2. kerros, huone A 208",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH40_015",
+          "KH40_006"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Kai Mikkonen",
+    "officeHours": [
+      {
+        "description": "Maanantaisin 10-11.30 (E116)",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH40_009",
+          "KH40_002",
+          "MH40_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Panu Minkkinen",
+    "officeHours": [
+      {
+        "description": "To klo 11-12",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH20_001",
+          "MH20_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Paola Minoia",
+    "officeHours": [
+      {
+        "description": "Consultation time on Thursdays 11-12",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH70_004",
+          "KH70_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Pirjo Moen",
+    "officeHours": [
+      {
+        "description": "Make an appointment by e-mail, or ask in the class.",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH50_010"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Pirkko Moisala",
+    "officeHours": [
+      {
+        "description": "1.11. alkaen ke 13-14 (ei 22.11.), sitä ennen sähköpostitse sopimuksen mukaan",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH40_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Robert Moncrief",
+    "officeHours": [
+      {
+        "description": "ENGLANTI-Maatalous-Metsätieteelli­nen Tiedekun­ta Koordinaatoori. Vastaanottoaika: Period I KE 12-13, Period II KE 9-10 (Viikki, Biokeskus: room 324), Period III & IV KE 15-16 (Centre, Vuorikatu 5, room 519)",
+        "additionalInfo": "robert.moncrief@helsinki.fi",
+        "location": "Vuorikatu 5 Room 519",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Jari Murto",
+    "officeHours": [
+      {
+        "description": "Sopimuksen mukaan",
+        "additionalInfo": null,
+        "location": "462",
+        "degreeProgrammes": [
+          "MH20_001",
+          "KH20_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Suvi-Tuuli Murumäki",
+    "officeHours": [
+      {
+        "description": "Olen työstävapaalla 1.11.2018-7.7.2019. Sijaisenani toimii Maiju Ranta.",
+        "additionalInfo": null,
+        "location": "Päärakennus (Fabianinkatu 33), 5 krs, huone 5023",
+        "degreeProgrammes": [
+          "KH40_004",
+          "MH40_007"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Risten Mustonen",
+    "officeHours": [
+      {
+        "description": "Duorastaga 13–14/torstaisin 13–14\nUnioninkatu 40\nMetsätalo A407",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_004"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Anna Mutanen",
+    "officeHours": [
+      {
+        "description": "RUOTSI: vastaanottoaika to klo 12-13, anna.mutanen@helsinki.fi",
+        "additionalInfo": null,
+        "location": "Kielikeskus, Vuorikatu 5, huone 417",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Olli Mäenpää",
+    "officeHours": [
+      {
+        "description": "Keskiviikko klo 15-16, P 634",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH20_001",
+          "MH20_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Tiina Maria Mäenpää",
+    "officeHours": [
+      {
+        "description": "vastaanotto: I: ke 8-9, II: pe 8-9, III: to 9-10, IV: to 12-13, Vuorikatu 5, huone 422, tiina.maenpaa@helsinki.fi",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Hanna Mäkelä",
+    "officeHours": [
+      {
+        "description": "torstaisin klo 9.30-11.30, alkaen 7.9. 2017",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Pirjo Mäkelä",
+    "officeHours": [
+      {
+        "description": "Sovitaan sähköpostilla",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH80_001",
+          "MH80_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Pekka Mäkinen",
+    "officeHours": [
+      {
+        "description": "keskiviikkoisin 15-16, ennakkoilmoittautuminen",
+        "additionalInfo": null,
+        "location": "C-talo, kolmas kerros, huone 308",
+        "degreeProgrammes": [
+          "MH80_006",
+          "KH80_004",
+          "MH80_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Veli Mäkinen",
+    "officeHours": [
+      {
+        "description": "Email, knock on the door",
+        "additionalInfo": "https://www.cs.helsinki.fi/u/vmakinen",
+        "location": "Exactum, A240",
+        "degreeProgrammes": [
+          "MH50_010",
+          "MH50_009",
+          "MH50_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Heidi Mäkäläinen",
+    "officeHours": [
+      {
+        "description": "VENÄJÄ/RUSSIAN: ma 13-14 / Mon 13-14",
+        "additionalInfo": null,
+        "location": "Vuorikatu 5, huone / room C235",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Pia Mänttäri",
+    "officeHours": [
+      {
+        "description": "torstaisin klo 12.15-13.00",
+        "additionalInfo": null,
+        "location": "Metsätalo 5. krs., huone B512",
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Anne Mäntynen",
+    "officeHours": [
+      {
+        "description": "Tiistaisin ja keskiviikkoisin klo 10–11 (syyskuun alusta alkaen). Ilmoittautuminen viimeistään edeltävänä maanantaina sähköpostitse.",
+        "additionalInfo": null,
+        "location": "Huone 4007, päärakennuksen 4. krs (Fabianinkatu 33)",
+        "degreeProgrammes": [
+          "KH40_004",
+          "MH40_007"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Simo Määttä",
+    "officeHours": [
+      {
+        "description": "Opettajalla ei ole säännöllistä vastaanottoaikaa. \n\nSovi vastaanotosta kontaktiopetuksen yhteydessä tai lähettämällä opettajalle sähköpostia.",
+        "additionalInfo": "Sähköpostiosoite: simo.maatta@helsinki.fi",
+        "location": "Työhuone: C510",
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_006",
+          "MH40_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Laurits Möller",
+    "officeHours": [
+      {
+        "description": "Tis 12–14",
+        "additionalInfo": null,
+        "location": "Soc&kom rum 352",
+        "degreeProgrammes": [
+          "KH74_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Tuomo Mörä",
+    "officeHours": [
+      {
+        "description": "Ti 14-15",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH70_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Terttu Nevalainen",
+    "officeHours": [
+      {
+        "description": "Mon 12-13, and by appointment",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH40_003"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Christian Niedling",
+    "officeHours": [
+      {
+        "description": "SAKSA: KIELITODISTUKSET (language certificates), TUUTOROINTI; tiistaisin/ Tuesdays 12-13",
+        "additionalInfo": "",
+        "location": "Vuorikatu 5, huone/ room C233 (christian.niedling[at]helsinki.fi, 0503078789)",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Pekka Niemelä",
+    "officeHours": [
+      {
+        "description": "Thursdays 14-16",
+        "additionalInfo": null,
+        "location": "P 657 (Porthania 6. floor)",
+        "degreeProgrammes": [
+          "KH20_001",
+          "MH20_001",
+          "MH20_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Liisa Nieminen",
+    "officeHours": [
+      {
+        "description": "kuukauden 1. ja 3. tiistai klo 13-14",
+        "additionalInfo": null,
+        "location": "P 637",
+        "degreeProgrammes": [
+          "MH20_001",
+          "KH20_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Rogier Nieuweboer",
+    "officeHours": [
+      {
+        "description": "Vastaanotto (huone C511, Metsätalo): luentoviikkoina: ke 14-16 ja sopimuksen mukaan (rogier.nieuweboer[at]helsinki.fi); muina aikoina: sopimuksen mukaan",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_003"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Tiina Niklander",
+    "officeHours": [
+      {
+        "description": "by appointment via email, sovi tapaamisesta sähköpostilla",
+        "additionalInfo": null,
+        "location": "Exactum, D225",
+        "degreeProgrammes": [
+          "MH50_009",
+          "KH50_005"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ahti Nikunlassi",
+    "officeHours": [
+      {
+        "description": "ti 10.15–12.00 (tutkielmien ja seminaaritöiden ohjaus; ennakkoilmoittautuminen sähköpostitse viimeistään edeltävänä sunnuntaina)\n\nke 10.00–11.00 (muut opintoasiat; ei ennakkoilmoittautumista). \n\nSähköpostitse voi sopia myös muista vastaanottoajoista.",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Lauri Niskanen",
+    "officeHours": [
+      {
+        "description": "Opetuksen yhteydessä.",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_002",
+          "MH40_009"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Samu Niskanen",
+    "officeHours": [
+      {
+        "description": "sopimuksen mukaan",
+        "additionalInfo": null,
+        "location": "Topelia 2. krs, huone A 242",
+        "degreeProgrammes": [
+          "MH40_015",
+          "KH40_006",
+          "T920103"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Martti Nissinen",
+    "officeHours": [
+      {
+        "description": "tiistaisin 9–11 seuraavina päivinä: 4.9., 18,9, 25.9., 9.10., 23.10., 30.10., 13.11., 27.11., 4.12., 11.12.",
+        "additionalInfo": null,
+        "location": "Vuorikatu 3, huone 408",
+        "degreeProgrammes": [
+          "KH10_001",
+          "T920101"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Taru Nordlund",
+    "officeHours": [
+      {
+        "description": "tiistaisin klo 13-15",
+        "additionalInfo": "Ilmoittaudu sähköpostitse viimeistään edellisen viikon perjantaina klo 14.",
+        "location": "taru.nordlund@helsinki.fi, Fabianinkatu 33, 4. krs, huone 4042",
+        "degreeProgrammes": [
+          "KH40_004",
+          "MH40_007"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Lieselott Nordman",
+    "officeHours": [
+      {
+        "description": "Torsdagar kl. 13-14, Forsthuset / Metsätalo, 4 vån., Nordica, rum C411",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_004",
+          "MH40_007",
+          "MH40_006"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ritva Nordström",
+    "officeHours": [
+      {
+        "description": "RANSKA: Opintokokonaisuuksien vastuuopettaja. Vastaanottoaika to 13.00-13.45,  ritva.nordstrom(at)helsinki.fi",
+        "additionalInfo": "Kielikeskus: Vuorikatu 5, kerros C3, huone C336",
+        "location": "",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Jaana Norio-Timonen",
+    "officeHours": [
+      {
+        "description": "Tiistaisin/Tisdagar/Tuesdays 12-13",
+        "additionalInfo": "",
+        "location": "P467",
+        "degreeProgrammes": [
+          "MH20_001",
+          "KH20_001",
+          "MH20_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Olli Norros",
+    "officeHours": [
+      {
+        "description": "Perjantaisin 14:30-15:30",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH20_001",
+          "MH20_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Aura Nortomaa",
+    "officeHours": [
+      {
+        "description": "Vastaanotto sopimuksen mukaan / Consultation hours by agreement.",
+        "additionalInfo": null,
+        "location": "Huone/Room 337, Vuorikatu 3.",
+        "degreeProgrammes": [
+          "KH10_001",
+          "MH10_001",
+          "MH40_011"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Frédéric Nozais",
+    "officeHours": [
+      {
+        "description": "Keskiviikko 12-13",
+        "additionalInfo": null,
+        "location": "Fabianinkatu 26/Vuorikatu 5, huone C336",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Lena Näre",
+    "officeHours": [
+      {
+        "description": "Wednesdays 11-12",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH70_003",
+          "MH70_008",
+          "KH70_002",
+          "MH70_004",
+          "MH70_007"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Gennadi Obatnin",
+    "officeHours": [
+      {
+        "description": "Metsätalo, room 412, Friday 12.30 - 14.00",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_002"
+        ]
+      },
+      {
+        "description": "Thursday 13.00. - 14.00",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Rainer Oesch",
+    "officeHours": [
+      {
+        "description": "Ma 13-14 P 422",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH20_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Juha Oikkonen",
+    "officeHours": [
+      {
+        "description": "Keskiviikko 13-14 ja torstai 13-14 opetusperiodien aikana.",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH50_001",
+          "KH50_004",
+          "MH50_008"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Markus Ojala",
+    "officeHours": [
+      {
+        "description": "tiistaisin klo 16-17, U37 huone 1080",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH70_001",
+          "MH70_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Petri Ola",
+    "officeHours": [
+      {
+        "description": "Maanantai 12-13",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH50_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Petri Lauri Ollila",
+    "officeHours": [
+      {
+        "description": "Torstaisin klo 11-12. Ennakkoilmoittautuminen",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH80_006"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sari Ollila",
+    "officeHours": [
+      {
+        "description": "sopimuksen mukaan (vuorotteluvapaalla 3.9.2018-28.2.2019)",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH80_004"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Pia Olsson",
+    "officeHours": [
+      {
+        "description": "Keskiviikkoisin klo 12-13, Topelia, huone D214",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_005",
+          "MH40_010"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Tiina Onikki",
+    "officeHours": [
+      {
+        "description": "tiistaisin klo 10-12",
+        "additionalInfo": "ilmoittautuminen sähköpostitse",
+        "location": "Päärakennuksen uusi puoli 4. krs, huone 4030",
+        "degreeProgrammes": [
+          "KH40_004",
+          "MH40_007"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sami Outinen",
+    "officeHours": [
+      {
+        "description": "sopimuksen mukaan/sähköpostitse\naccording to agreement/by e-mail",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH70_004",
+          "KH70_002",
+          "MH70_006"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Olli Pakarinen",
+    "officeHours": [
+      {
+        "description": "Mondays 13-14",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH50_005",
+          "MH50_006"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mari Pakkala-Weckström",
+    "officeHours": [
+      {
+        "description": "torstai 12-13",
+        "additionalInfo": null,
+        "location": "",
+        "degreeProgrammes": [
+          "MH40_006"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jussi Pakkasvirta",
+    "officeHours": [
+      {
+        "description": "Pe 11-12, Unioninkatu 38, A 108",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH40_012",
+          "KH40_005",
+          "MH40_011"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Minna Palander-Collin",
+    "officeHours": [
+      {
+        "description": "By appointment",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH40_003"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ritva Pallaskallio",
+    "officeHours": [
+      {
+        "description": "Perjantaisin klo 14–15 (opetusperiodien aikana, muina aikoina sopimuksen mukaan)",
+        "additionalInfo": null,
+        "location": "päärakennus, Fabianinkatu 33, 5. krs, huone 5021",
+        "degreeProgrammes": [
+          "KH40_004"
+        ]
+      },
+      {
+        "description": "PE 14–15",
+        "additionalInfo": null,
+        "location": "Päärakennus, Fabianinkatu 33, 5. krs, huone 5021",
+        "degreeProgrammes": [
+          "MH40_007"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sofia Palma",
+    "officeHours": [
+      {
+        "description": "Maanantaisin 12-13, Segunda-feira 12-13",
+        "additionalInfo": "sofia.palma@helsinki.fi",
+        "location": "Metsätalo, B 526",
+        "degreeProgrammes": [
+          "KH40_003"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Natalie Palmen",
+    "officeHours": [
+      {
+        "description": "English: Monday 11-12, natalie.palmen@helsinki.fi, Language Centre,",
+        "additionalInfo": null,
+        "location": "Vuorikatu 5, 514",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Marjatta Palo",
+    "officeHours": [
+      {
+        "description": "Sopimuksen mukaan",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH40_006"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Emilia Palonen",
+    "officeHours": [
+      {
+        "description": "Vastaanotto/Office Hours Ti 14-15 / Tue 2-3pm, (paitsi/excl. 6.9., 18.10., 25.10.).",
+        "additionalInfo": "blogs.helsinki.fi/epalonen",
+        "location": "U37, 1037",
+        "degreeProgrammes": [
+          "MH70_003",
+          "MH70_002",
+          "KH70_001",
+          "MH70_006"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Pauliina Palonen",
+    "officeHours": [
+      {
+        "description": "Sopimuksen mukaan.",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH80_001",
+          "MH80_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Päivi Paloposki",
+    "officeHours": [
+      {
+        "description": "torstaisin 13-14",
+        "additionalInfo": "Metsätalo, huone B433",
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_002"
+        ]
+      },
+      {
+        "description": "opetuksen yhteydessä (tiistaisin 14-16)",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_003"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mervi Pantti",
+    "officeHours": [
+      {
+        "description": "Tiistaisin 13-14\nTuesday 1-2 pm\n\nEi vastaanottoa 8.11. Out of office 8.11.",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH70_003",
+          "MH70_002",
+          "KH70_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Juha Partanen",
+    "officeHours": [
+      {
+        "description": "Ke 14.00-16.00",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH57_003"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Päivi Pasanen",
+    "officeHours": [
+      {
+        "description": "Keskiviikko klo 13 - 14 (matkoilla 1.10. - 26.10.)",
+        "additionalInfo": null,
+        "location": "U40, B429",
+        "degreeProgrammes": [
+          "MH40_006"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Tia Pirjetta Patenge",
+    "officeHours": [
+      {
+        "description": "SAKSA/VENÄJÄ: esimies, saksan opintokokonaisuuksien vastuuopettaja, vastaanotto keskiviikkoisin klo 13-14",
+        "additionalInfo": "",
+        "location": "Vuorikatu 5, C2, C237",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Heikki Patomäki",
+    "officeHours": [
+      {
+        "description": "Torstai klo 10-11",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH70_003",
+          "MH70_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Anna-M Peltomäki",
+    "officeHours": [
+      {
+        "description": "SUOMI (FINSKA JA ÄIDINKIELI): vastaanotto sopimuksen mukaan, anna-maria.peltomaki(at)helsinki.fi, Vuorikatu 5, 5. kerros, huone 508",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Maija Penttilä",
+    "officeHours": [
+      {
+        "description": "Sopimuksen mukaan",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH10_001",
+          "MH10_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Elina Penttinen",
+    "officeHours": [
+      {
+        "description": "tiistai 10:30-11:30 (18.9. ei vastaanottoa)",
+        "additionalInfo": null,
+        "location": "Unioninkatu 38 E 215",
+        "degreeProgrammes": [
+          "MH40_014"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Tarja-L Peromaa",
+    "officeHours": [
+      {
+        "description": "Sovitaan sähköpostitse",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH30_001",
+          "MH30_004"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Anu-Katriina Pesonen",
+    "officeHours": [
+      {
+        "description": "Ota yhteyttä sähköpostitse anukatriina.pesonen@helsinki.fi niin sovitaan tapaaminen",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH30_001"
+        ]
+      },
+      {
+        "description": "Ota yhteyttä anukatriina.pesonen@helsinki.fi niin sovitaan tapaaminen",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH30_004"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Heikki Pesonen",
+    "officeHours": [
+      {
+        "description": "tiistaisin klo 14-15",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH10_001",
+          "MH10_001",
+          "KH40_005",
+          "MH40_010"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jaana Pesonen",
+    "officeHours": [
+      {
+        "description": "18.10.2017 klo 12.00-14.00",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "SH60_039",
+          "SH60_040"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Anne Pessi",
+    "officeHours": [
+      {
+        "description": "Sähköpostitse sovittaessa tapaaminen kasvotuksin / sl 2017",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH10_001",
+          "KH10_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Elizabeth Peterson",
+    "officeHours": [
+      {
+        "description": "by appointment",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH40_003",
+          "KH40_003"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Bo Pettersson",
+    "officeHours": [
+      {
+        "description": "Consultation                                                Period 1  Monday 11-12                         Period 2  Monday 14-15                                 Periods 3-4  Wednesday 16-17",
+        "additionalInfo": null,
+        "location": "Metsätalo, 6th floor, C622",
+        "degreeProgrammes": [
+          "MH40_003"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Leena Pietilä-Castren",
+    "officeHours": [
+      {
+        "description": "ti 10-11",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Sampo Pihlainen",
+    "officeHours": [
+      {
+        "description": "Sopimuksen mukaan",
+        "additionalInfo": null,
+        "location": "C333",
+        "degreeProgrammes": [
+          "KH80_004"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jarna Piippo",
+    "officeHours": [
+      {
+        "description": "Ma klo 12-13",
+        "additionalInfo": null,
+        "location": "Metsätalo, U40 B516",
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Minna Pirhonen",
+    "officeHours": [
+      {
+        "description": "Sovitaan sähköpostilla / agreed by email  minna.pirhonen@helsinki.fi",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH80_001",
+          "MH50_012"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Anna-Mai Pirttilä-Backman",
+    "officeHours": [
+      {
+        "description": "Sopimuksen mukaan.",
+        "additionalInfo": "Anna.Maija.Pirttila-Backman@Helsinki.Fi",
+        "location": "Unioninkatu 37, II krs",
+        "degreeProgrammes": [
+          "KH70_003",
+          "MH70_008"
+        ]
+      },
+      {
+        "description": "Sopimuksen mukaan.",
+        "additionalInfo": "Anna-Maija.Pirttila-Backman@Helsinki.fi",
+        "location": null,
+        "degreeProgrammes": [
+          "T920106"
+        ]
+      },
+      {
+        "description": "By email appointment",
+        "additionalInfo": "Anna-Maija.Pirttila-Backman@Helsinki.fi",
+        "location": "Unioninkatu 37, second floor",
+        "degreeProgrammes": [
+          "MH70_005"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Kaarina Pitkänen-Heikkilä",
+    "officeHours": [
+      {
+        "description": "ke 11-12 (ilmoittaudu sähköpostitse)",
+        "additionalInfo": null,
+        "location": "Fabianinkatu 33, huone 4043",
+        "degreeProgrammes": [
+          "KH40_004",
+          "MH40_007",
+          "MH40_006"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Kari Pitkänen",
+    "officeHours": [
+      {
+        "description": "Thursdays 13-14 (Coordinator of the English language courses for the Faculty of Medicine)",
+        "additionalInfo": "kari.k.pitkanen(at)helsinki.fi",
+        "location": "Vuorikatu 5, Room 518.",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Helen Plado",
+    "officeHours": [
+      {
+        "description": "maanantaisin 14-15",
+        "additionalInfo": null,
+        "location": "Metsätalo A423",
+        "degreeProgrammes": [
+          "KH40_004",
+          "MH40_007"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Emmi Pollari",
+    "officeHours": [
+      {
+        "description": "torstaisin 14-15 - Thursdays from 2:00 p.m. to 3:00 p.m.",
+        "additionalInfo": null,
+        "location": "Fabianinkatu 33, 5. krs, huone 5028 - Fabianinkatu 33, 5th floor, room 5028",
+        "degreeProgrammes": [
+          "KH40_004",
+          "MH40_007"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Merja Polvinen",
+    "officeHours": [
+      {
+        "description": "Ma / Mon 14-15",
+        "additionalInfo": "https://tuhat.helsinki.fi/portal/en/person/mpolvine",
+        "location": "Metsätalo C609",
+        "degreeProgrammes": [
+          "MH40_003",
+          "KH40_003",
+          "MH40_009"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Marja Portin",
+    "officeHours": [
+      {
+        "description": "RUOTSI: Eläinlääketieteellisen tiedekuntakoordinaattori. Tavattavissa I periodissa tiistaisin Viikissä klo 12-13 (h329), II periodissa tiistaisin Kumpulassa klo 9-10 (h126), III periodissa keskiviikkoisin keskustakampuksella klo 12-13 (h420), IV periodissa tiistaisin Kumpulassa klo 9-10 (h126).",
+        "additionalInfo": "",
+        "location": "",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Kristiina Praakli",
+    "officeHours": [
+      {
+        "description": "ti 13-14 Metsätalo A423",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_004",
+          "MH40_006",
+          "MH40_007"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sergei Prozorov",
+    "officeHours": [
+      {
+        "description": "Wed 13-14, U37, 1040",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH70_003",
+          "MH70_002",
+          "KH70_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Aili Pyhälä",
+    "officeHours": [
+      {
+        "description": "torstai 16-17:00",
+        "additionalInfo": null,
+        "location": "Unioninkatu 35, Room 315",
+        "degreeProgrammes": [
+          "KH70_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sari Johanna Päivärinne",
+    "officeHours": [
+      {
+        "description": "Maanantaisin 10-11 (opetusperiodien aikana ja toukokuussa). Päärakennus, Fabianinkatu 33, 5. kerros, huone 5032",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_004"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Martti Pärssinen",
+    "officeHours": [
+      {
+        "description": "tiistaisin klo 12-14, syyskuusta alkaen",
+        "additionalInfo": null,
+        "location": "Unioninkatu 38 A",
+        "degreeProgrammes": [
+          "MH40_011"
+        ]
+      },
+      {
+        "description": "tiistaisin klo 12-14 syyskuusta alkaen",
+        "additionalInfo": null,
+        "location": "Unioninkatu 38A",
+        "degreeProgrammes": [
+          "MH40_012"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Toini Rahtu",
+    "officeHours": [
+      {
+        "description": "ti 13 - 14 päärak. 5. krs",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_003",
+          "KH40_004",
+          "MH40_006"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Anna Rainio",
+    "officeHours": [
+      {
+        "description": "Maanantaisin klo 15-16 (lukuunottamatta 1.10.-22.10., jolloin vastaanottoa ei ole)",
+        "additionalInfo": "Sovi käynti aina etukäteen: anna.rainio@helsinki.fi",
+        "location": "Minerva, EWE-tila, K142",
+        "degreeProgrammes": [
+          "MH60_001",
+          "KH60_001SH60_041",
+          "MH60_001SH60_041"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Juha Raitio",
+    "officeHours": [
+      {
+        "description": "Prof. Raition vastaanottoaika tiistaisin klo. 12-13, P 521",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH20_001",
+          "MH20_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Marketta Rajavaara",
+    "officeHours": [
+      {
+        "description": "keskiviikkoisin klo 15-16",
+        "additionalInfo": null,
+        "location": "Unioninkatu 37 2.krs, huone 2024",
+        "degreeProgrammes": [
+          "MH70_008",
+          "T920106"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jukka Rantala",
+    "officeHours": [
+      {
+        "description": "Vastaanotto sopimuksen mukaan. Ota yhteyttä sähköpostitse jukka.rantala@helsinki.fi",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "SH60_040",
+          "SH60_041",
+          "MH60_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Marjo Rantala",
+    "officeHours": [
+      {
+        "description": "Tavattavissa sopimuksen mukaan.\n\nContact before appointment.",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH40_014",
+          "KH20_001",
+          "MH20_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Maiju Ranta",
+    "officeHours": [
+      {
+        "description": "tiistai 20.11.2018 klo 14.00-15.00",
+        "additionalInfo": null,
+        "location": "Päärakennus, huone 5023",
+        "degreeProgrammes": [
+          "KH40_004"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Leena Rantamäki-Lahtinen",
+    "officeHours": [
+      {
+        "description": "Sovi aika vastaanotolle etukäteen sähköpostitse.\n\nPlease, agree consulting time beforehand via e-mail.",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH80_004",
+          "KH80_001",
+          "MH80_002",
+          "MH80_006"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Maura Ratia",
+    "officeHours": [
+      {
+        "description": "by appointment (please email me)",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH40_003",
+          "KH40_003",
+          "MH40_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Carola Rewell",
+    "officeHours": [
+      {
+        "description": "RUOTSI: Opettajatuutori, valtiotieteellisen tiedekuntakoordinaattori. Tuutorointi ti klo 10-11 (alkaen 21.8). Vastaanottoaika ti 11-12 (alkaen 4.9). Tuutorointi muina aikoina myös s-postitse (carola.rewell@helsinki.fi).",
+        "additionalInfo": "",
+        "location": "Kielikeskus, Vuorikatu 5, huone 421",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Gonzalo Hernandez Reyes",
+    "officeHours": [
+      {
+        "description": "Tiistaisin 15 -16",
+        "additionalInfo": "gonzalo.hernandezreyes@helsinki.fi",
+        "location": "Kielikeskus, Vuorikatu 5, huone 337",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Ulrike Richter-Vapaatalo",
+    "officeHours": [
+      {
+        "description": "ti 10-11\ntai sähköpostitse sovittu aika\nDi 10-11\noder nach Vereinbarung",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Anne Riippa",
+    "officeHours": [
+      {
+        "description": "RANSKA: Vastaanottoaika sopimuksen mukaan: anne.riippa@helsinki.fi",
+        "additionalInfo": null,
+        "location": "Vuorikatu 5, 3. kerros, huone CC5",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Christian Rink",
+    "officeHours": [
+      {
+        "description": "torstaisin 9-10, donnerstags 9-10 \nC524, Metsätalo (Unioninkatu 40)",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_002",
+          "MH40_009"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jenni Rinne",
+    "officeHours": [
+      {
+        "description": "ti 10:00 -12:00 Huone: D215Puh/ 050 3175818",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_005"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Antti Ripatti",
+    "officeHours": [
+      {
+        "description": "Keskiviikkoisin klo 14-15. Sovi käynti etukäteen runsaiden poikkeuksien vuoksi.\n\nOn Wednesdays at 14-15. Please, book in advance!",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH70_009",
+          "KH70_004"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Teemu Roos",
+    "officeHours": [
+      {
+        "description": "By appointment.",
+        "additionalInfo": "teemu.roos@cs.helsinki.fi",
+        "location": null,
+        "degreeProgrammes": [
+          "MH50_010",
+          "MH50_009"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jouni Rostila",
+    "officeHours": [
+      {
+        "description": "Tiistai 15-16",
+        "additionalInfo": null,
+        "location": "Metsätalo, C525",
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_002"
+        ]
+      },
+      {
+        "description": "Ti 15-16",
+        "additionalInfo": null,
+        "location": "Metsätalo, C525",
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Inkeri A-M Ruokonen",
+    "officeHours": [
+      {
+        "description": "Inkeri Ruokonen\nKasvatustieteiden maisteriohjelman johtaja\nTavattavissa opetuksen yhteydessä ja sopimuksen mukaan\ninkeri.ruokonen@helsinki.fi",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH60_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Tuukka Ruotsalo",
+    "officeHours": [
+      {
+        "description": "Appointement by email: tuukka.ruotsalo@helsinki.fi",
+        "additionalInfo": null,
+        "location": "A311",
+        "degreeProgrammes": [
+          "MH50_010",
+          "MH50_009"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Anna-Mari Rusanen",
+    "officeHours": [
+      {
+        "description": "sähköposti",
+        "additionalInfo": "anna-mari.rusanen@helsinki.fi",
+        "location": "anna-mari.rusanen@helsinki.fi",
+        "degreeProgrammes": [
+          "MH50_010",
+          "MH40_005"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sini Räihä",
+    "officeHours": [
+      {
+        "description": "KOREA: Vastaanotto opetuksen yhteydessä. Lisäksi pe 23.11. klo 11-12 (Kielikeskus, Fabianinkatu 26, Tornihuone 411). sini.raiha(a)helsinki.fi",
+        "additionalInfo": null,
+        "location": "",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Jouni Räisänen",
+    "officeHours": [
+      {
+        "description": "Useimmiten muttei aina. Lähetä sähköpostia etukäteen, jos haluat pelata varman päälle.\n\nUsually but not always. Please send me email if you want to be sure that I am availble.",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH50_002",
+          "MH50_006"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Elina Räsänen",
+    "officeHours": [
+      {
+        "description": "Ti klo 13-14, alk. 11.9.",
+        "additionalInfo": "Vastaanottoa ei ole 25.9., 9.10., 30.10., 11.12.",
+        "location": "Yliopiston päärakennuksen vanha puoli, ylin kerros (Unioninkatu 34), huone 4066",
+        "degreeProgrammes": [
+          "MH40_010",
+          "KH40_005"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Tauno Saarela",
+    "officeHours": [
+      {
+        "description": "maanantai, kello 15-16",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH70_002",
+          "MH70_004"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Kirsi Saarikangas",
+    "officeHours": [
+      {
+        "description": "Tavattavissa lukukausien aikaan sopimuksen mukaan. Ole yhteydessä sähköpostitse ja sovi tapaaminen. Ei kiinteää vastaanottoaikaa.",
+        "additionalInfo": null,
+        "location": "Yliopiston päärakennuksen vanha puoli, 4. (ylin) krs., huone 4075.",
+        "degreeProgrammes": [
+          "MH40_010",
+          "KH40_005"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sakari Saaritsa",
+    "officeHours": [
+      {
+        "description": "Vastaanotto / Office hours:Ma / Mon 14-15, Snellmaninkatu 14 A 2. krs, huone D210",
+        "additionalInfo": "https://tuhat.helsinki.fi/portal/fi/person/ssaarits",
+        "location": null,
+        "degreeProgrammes": [
+          "KH70_002",
+          "MH70_004"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "L-Mikko Saikku",
+    "officeHours": [
+      {
+        "description": "Keskiviikkoisin / Wednesdays / 14-15 (5.9.->)",
+        "additionalInfo": null,
+        "location": "U38 A124",
+        "degreeProgrammes": [
+          "MH40_012",
+          "KH40_005"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Seppo Sainio",
+    "officeHours": [
+      {
+        "description": "SAKSA: vastaanottoaika tiistaisin klo 13–14",
+        "additionalInfo": "",
+        "location": "Vuorikatu 5, C232",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Anni Sairio",
+    "officeHours": [
+      {
+        "description": "By appointment.",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_003"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Tuula Sakaranaho",
+    "officeHours": [
+      {
+        "description": "Vastaanotto sopimuksen mukaan",
+        "additionalInfo": null,
+        "location": "Topelia, Unioninkatu 38 E, 3 krs.",
+        "degreeProgrammes": [
+          "KH10_001",
+          "MH10_001",
+          "MH40_010",
+          "KH40_005"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Eero Saksman",
+    "officeHours": [
+      {
+        "description": "To 9-10 tai sopimuksen mukaan",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH50_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Maria Salenius",
+    "officeHours": [
+      {
+        "description": "Wednesday 14-15",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH40_003",
+          "KH40_003"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Kirsti Salmi-Niklander",
+    "officeHours": [
+      {
+        "description": "Tiistaisin 13-14; HUOM: Ennakkoilmoittautuminen sähköpostitse: kirsti.salmi-niklander@helsinki.fi",
+        "additionalInfo": null,
+        "location": "Topelia C, 2 krs.",
+        "degreeProgrammes": [
+          "MH40_010",
+          "KH40_005"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jari Salo",
+    "officeHours": [
+      {
+        "description": "Sovittavissa sähköpostilla, ks alla.",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH80_006",
+          "KH80_004"
+        ]
+      },
+      {
+        "description": "Keskiviikkoisin 13.00 - 14.00. Sovi tapaaminen s-postilla.",
+        "additionalInfo": "https://drjarisalo.com",
+        "location": "Latokartanonkaari 5, 3 krs, huone 306",
+        "degreeProgrammes": [
+          "MH80_006"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Olli Salomies",
+    "officeHours": [
+      {
+        "description": "Torstaisin 15-6",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH40_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Anna Salonen",
+    "officeHours": [
+      {
+        "description": "Sopimuksen mukaan",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH10_001",
+          "MH10_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Antti Salonen",
+    "officeHours": [
+      {
+        "description": "Tiistai klo 13-14 / Tuesday 1-2 pm",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH20_001",
+          "MH20_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Klarika Sander-Komulainen",
+    "officeHours": [
+      {
+        "description": "VIRO: vastaanotto opetuksen yhteydessä.",
+        "additionalInfo": "klarika.sander-komulainen@helsinki.fi",
+        "location": "Opetuspaikka",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Gabriel Sandu",
+    "officeHours": [
+      {
+        "description": "Mo 14-15",
+        "additionalInfo": null,
+        "location": "Metsätalo A631",
+        "degreeProgrammes": [
+          "KH40_001"
+        ]
+      },
+      {
+        "description": "Mo 13-14",
+        "additionalInfo": null,
+        "location": "Metsätalo A631",
+        "degreeProgrammes": [
+          "MH70_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Raija Sarasti-Wilenius",
+    "officeHours": [
+      {
+        "description": "ma 13-14, Metsätalo A213",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mirja Satka",
+    "officeHours": [
+      {
+        "description": "Keskiviikkoisin kello 14-15\n\nTutkimuksen ohjausajat voivat poiketa tästä, ja ne sovitaan etukäteen s-postilla.",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH70_008"
+        ]
+      },
+      {
+        "description": "Keskiviikkoisin 14-15 tai sopimuksen mukaan",
+        "additionalInfo": "Varaa aika s-postilla erityisesti tutkimusohjausta varten",
+        "location": "Unioninkatu 37 h. 2030",
+        "degreeProgrammes": [
+          "KH70_003",
+          "MH70_008"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Päivi Saurio",
+    "officeHours": [
+      {
+        "description": "I ja II periodi: keskiviikko klo 13-14",
+        "additionalInfo": null,
+        "location": "Metsätalo 4. krs  huone B428",
+        "degreeProgrammes": [
+          "KH40_003"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sauli Savolainen",
+    "officeHours": [
+      {
+        "description": "Luentojen yhteydessä & pe klo 9-10 (etukäteen sovittava s-postilla)",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH50_005"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Petra Schirrmann",
+    "officeHours": [
+      {
+        "description": "saksa, opetuksen yhteydessä",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Sakari Sedbom",
+    "officeHours": [
+      {
+        "description": "Porthania P445, vastaanotto maanantaisin klo 12-13 vuoden 2017 loppuun asti",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH20_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Beata Segercrantz",
+    "officeHours": [
+      {
+        "description": "Tisdag kl. 14.30-15.30",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH74_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mikael Segerstråle",
+    "officeHours": [
+      {
+        "description": "12-14 måndagar och onsdagar",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH57_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jaakko Seppälä",
+    "officeHours": [
+      {
+        "description": "Keskiviikkoisin opetusviikoilla, kello 14-15 (poikkeuksellisesti ei vastaanottoa 3.10.2018)",
+        "additionalInfo": null,
+        "location": "Topelia, E113 (elokuva- ja televisiotutkimus)",
+        "degreeProgrammes": [
+          "KH40_002",
+          "MH40_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ullamaija Seppälä",
+    "officeHours": [
+      {
+        "description": "Sopimuksen mukaan , U37, huone 1106.",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH70_003",
+          "MH70_008"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Marjaana Seppänen",
+    "officeHours": [
+      {
+        "description": "keskiviikko klo 14-15",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH70_003",
+          "MH70_008"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mervi Seppänen",
+    "officeHours": [
+      {
+        "description": "Agree by email/sovi sähköpostilla",
+        "additionalInfo": "mervi.seppanen@helsinki.fi",
+        "location": "C209",
+        "degreeProgrammes": [
+          "MH80_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Elina Seye",
+    "officeHours": [
+      {
+        "description": "keskiviikkoisin 10-11 tai sopimuksen mukaan",
+        "additionalInfo": null,
+        "location": "Topelia C111",
+        "degreeProgrammes": [
+          "KH40_002"
+        ]
+      },
+      {
+        "description": "keskiviikkoisin 10-11 tai sopimuksen mukaan",
+        "additionalInfo": null,
+        "location": "Topelia C111",
+        "degreeProgrammes": [
+          "MH40_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mark Shackleton",
+    "officeHours": [
+      {
+        "description": "Tuesday 12.00-13.00\nC609",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_003"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ksenia Shagal",
+    "officeHours": [
+      {
+        "description": "Tuesday 12-14",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH40_005",
+          "KH40_003"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Roy Siddall",
+    "officeHours": [
+      {
+        "description": "ENGLISH: Co-head of English unit, co-ordinator for the Faculties of Biological & Environmental Sciences, Veterinary Medicine & Theology, office hour Thursdays 13-14, roy.siddall(a)helsinki.fi",
+        "additionalInfo": "",
+        "location": "Kielikeskus, Vuorikatu 5, room C432",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Päivi Sihvonen",
+    "officeHours": [
+      {
+        "description": "Tapaamiset sovittavissa sähköpostitse",
+        "additionalInfo": null,
+        "location": "Työhuone: Metsätalo B518",
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Santeri Siimes",
+    "officeHours": [
+      {
+        "description": "portugali & espanja, vastaanotto to klo 13-14 sl. 6.9., 4.10., 1.11. ja 13.12. sekä kl. 17.1., 14.2., 4.4. ja 2.5., sähköposti santeri.siimes@helsinki.fi",
+        "additionalInfo": null,
+        "location": "Kielikeskus, Vuorikatu 5, huone C333",
+        "degreeProgrammes": []
+      },
+      {
+        "description": "galicialainen filologia/galegon kieli, tavattavissa Kielten osastolla opetuksen yhteydessä ja sopimuksen mukaan, sähköposti santeri.siimes@helsinki.fi",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_003"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Beatrice Silen",
+    "officeHours": [
+      {
+        "description": "Tis 13-14",
+        "additionalInfo": null,
+        "location": "Forsthuset, C427",
+        "degreeProgrammes": [
+          "KH40_004",
+          "MH40_008"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mia Silfver-Kuhalampi",
+    "officeHours": [
+      {
+        "description": "Sopimuksen mukaan, ota yhteyttä mia.silfver@helsinki.fi",
+        "additionalInfo": null,
+        "location": "Unioninkatu 37, huone 2054",
+        "degreeProgrammes": [
+          "MH70_008"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Juha Siltala",
+    "officeHours": [
+      {
+        "description": "toukokuun viimeinen vastaanotto to 31.5. 15-16",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH40_015",
+          "KH40_006"
+        ]
+      },
+      {
+        "description": "syyskuun alusta toukokuun loppuun opetusperiodien aikana ke 15-16, ellei toisin ilmoiteta",
+        "additionalInfo": null,
+        "location": "Unionink. 38 A, 2 krs., huone nimellä",
+        "degreeProgrammes": [
+          "MH40_015",
+          "KH40_006"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Michele Simeon",
+    "officeHours": [
+      {
+        "description": "ENGLISH, Science Faculty Coordinator. Office hours: Thursdays 9-10. Email: michele.simeon (at) helsinki.fi",
+        "additionalInfo": null,
+        "location": "Room 518, Vuorikatu 5",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Juraj Simko",
+    "officeHours": [
+      {
+        "description": "Wednesday 13:00-14:00",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH40_005",
+          "KH40_003"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Aino Sinnemäki",
+    "officeHours": [
+      {
+        "description": "tiistai 10-12\nUnioninkatu 35, huone 323\nTervetuloa!",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH70_003",
+          "MH70_008"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Kaius T-K Sinnemäki",
+    "officeHours": [
+      {
+        "description": "Vastaanotto sopimuksen mukaan. Meeting by appoitment. kaius.sinnemaki@helsinki.fi",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_005"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Timo Sipiläinen",
+    "officeHours": [
+      {
+        "description": "Vastaanotto sopimuksen mukaan Reception by agreement",
+        "additionalInfo": "timo.sipilainen@helsinki.fi 0294158932",
+        "location": "Latokartanonkaari 5, 3rd floor, room 305",
+        "degreeProgrammes": [
+          "KH80_004",
+          "KH80_001",
+          "MH80_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Juhani Sipilä",
+    "officeHours": [
+      {
+        "description": "Tiistaisin klo 10–11",
+        "additionalInfo": null,
+        "location": "Päärakennus, Fabianinkadun puoli, 4. kerros, huone 4023",
+        "degreeProgrammes": [
+          "MH40_009",
+          "KH40_004"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Eeva Sippola",
+    "officeHours": [
+      {
+        "description": "Tiistaisin 13-14",
+        "additionalInfo": "https://eevasippola.wordpress.com/, eeva.sippola@helsinki.fi",
+        "location": "Metsätalo, B517",
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Erkki Sironen",
+    "officeHours": [
+      {
+        "description": "ma 14-15",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_003"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mats Sjöberg",
+    "officeHours": [
+      {
+        "description": "Meetings after the lecture, or by email appointment: mats.sjoberg@aalto.fi.",
+        "additionalInfo": "https://users.aalto.fi/~mvsjober/",
+        "location": null,
+        "degreeProgrammes": [
+          "MH50_010"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sami Sjöberg",
+    "officeHours": [
+      {
+        "description": "ke 14-16, huone Topelia E116",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Stefan Sjöblom",
+    "officeHours": [
+      {
+        "description": "Måndagar 12-14",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH74_001",
+          "MH70_007"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Howard Sklar",
+    "officeHours": [
+      {
+        "description": "When: Monday, 15:00-16:00, or by appointment",
+        "additionalInfo": "",
+        "location": "Where: Metsätalo C611",
+        "degreeProgrammes": [
+          "MH40_003",
+          "KH40_003",
+          "MH40_009"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Anna Solin",
+    "officeHours": [
+      {
+        "description": "Consultation by appointment",
+        "additionalInfo": null,
+        "location": "C610",
+        "degreeProgrammes": [
+          "MH40_003"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Marja-Leena Sorjonen",
+    "officeHours": [
+      {
+        "description": "Keskiviikkoisin 14-16",
+        "additionalInfo": "Päärakennuksen uusi puoli, Fabianinkatu 33, 4. krs huone 4034",
+        "location": "Puh. 050 318 5264",
+        "degreeProgrammes": [
+          "MH40_007",
+          "MH40_008",
+          "T920104"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Peter Stadius",
+    "officeHours": [
+      {
+        "description": "Onsdag 14-15",
+        "additionalInfo": null,
+        "location": "Topelia A129",
+        "degreeProgrammes": [
+          "MH40_013",
+          "MH70_006"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Melisa Stevanovic",
+    "officeHours": [
+      {
+        "description": "Sopimuksen mukaan / By appointment",
+        "additionalInfo": null,
+        "location": "Huone 203 / Room 203",
+        "degreeProgrammes": [
+          "KH70_003",
+          "MH70_008",
+          "MH70_005"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Frederick Stoddard",
+    "officeHours": [
+      {
+        "description": "My schedule is very variable so it is best to agree a time by email",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH80_001",
+          "KH80_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Johan Strang",
+    "officeHours": [
+      {
+        "description": "Wed at 13-14 (note, however, that I am on part-time research leave, and quite frequently at Oslo University. Please contact me at johan.strang@helsinki.fi and we'll make an appointment).",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH70_006",
+          "KH40_005",
+          "MH40_013",
+          "MH40_012"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Heikki Suhonen",
+    "officeHours": [
+      {
+        "description": "Mondays 11-12",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH50_005",
+          "KH50_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Carla Suhr",
+    "officeHours": [
+      {
+        "description": "Wednesday 14-15 or by appointment",
+        "additionalInfo": null,
+        "location": "U40 C609",
+        "degreeProgrammes": [
+          "MH40_003",
+          "KH40_003"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "John Sumelius",
+    "officeHours": [
+      {
+        "description": "Måndagar, maanantaisin, Mondays 13-14\nOnsdagar, keskiviikkoisin, Wednesdays 13-14\neller enligt överenskommelse per e-post\ntai sopimuksen mukaan sähköpostitse\nor according to agreement per email",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH80_004",
+          "MH80_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Johanna Sumiala",
+    "officeHours": [
+      {
+        "description": "Wednesday 2-3 pm.",
+        "additionalInfo": null,
+        "location": "U37, room 1067",
+        "degreeProgrammes": [
+          "MH70_003",
+          "MH70_002",
+          "KH70_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Inkeri Sundqvist",
+    "officeHours": [
+      {
+        "description": "Nykäise hihasta tai varaa aika: kumpula-student@helsinki.fi",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH50_004",
+          "MH50_008"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Marja Suojala",
+    "officeHours": [
+      {
+        "description": "Äidinkielen (suomi) yliopisto-opettaja. Vastaanottoaika sovitaan sähköpostitse (marja.suojala(at)helsinki.fi).",
+        "additionalInfo": null,
+        "location": "Vuorikatu 5C, huone 522",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Renja Suominen-Kokkonen",
+    "officeHours": [
+      {
+        "description": "maanantai klo 14-16Yliopiston päärakennus, vanha puoli, ylin kerros, huone 4062. Poikkeus maanantaina 14.5. EI vastaanottoa. Viimeinen vastaaotto on 21.5.",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH40_010",
+          "KH40_005"
+        ]
+      },
+      {
+        "description": "maanantai klo 14-16, paitsi 26.3. 14-15",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_005"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Kimmo Svinhufvud",
+    "officeHours": [
+      {
+        "description": "Äidinkielen (suomi) yliopisto-opettaja. Vastaanotto sopimuksen mukaan: kimmo.svinhufvud@helsinki.fi. Vuorikatu 5, h. 521.",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Saana Svärd",
+    "officeHours": [
+      {
+        "description": "Vanhempainvapaalla 03/2019 asti. Assyriologiaan, egyptologiaan ja muinaiseen Lähi-itään liittyvää opintoneuvontaa antaa siihen asti Patricia Berg.",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Väinö Syrjälä",
+    "officeHours": [
+      {
+        "description": "tisdagar 10-12",
+        "additionalInfo": null,
+        "location": "Nordica (Forsthuset, 4e vån.), rum C424",
+        "degreeProgrammes": [
+          "KH40_004"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Riikka Taavetti",
+    "officeHours": [
+      {
+        "description": "Sopimuksen mukaan / consultation by appointment",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH70_002",
+          "MH70_004",
+          "MH70_006"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Teemu Taira",
+    "officeHours": [
+      {
+        "description": "Tiistai 14–15",
+        "additionalInfo": null,
+        "location": "Topelia, Unioninkatu 38E E315",
+        "degreeProgrammes": [
+          "KH10_001",
+          "MH10_001",
+          "MH40_010",
+          "KH40_005",
+          "MH40_011",
+          "T920103",
+          "T920101"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Immi Tallgren",
+    "officeHours": [
+      {
+        "description": "Maanantai 16-17",
+        "additionalInfo": null,
+        "location": "P655",
+        "degreeProgrammes": [
+          "KH20_001",
+          "MH20_001",
+          "MH20_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Henrika Tandefelt",
+    "officeHours": [
+      {
+        "description": "torsdagar kl. 13-14plats: Topelia (Unionsgatan 38) A-byggnaden, 2:a våningen rum A214.",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH40_015",
+          "KH40_006",
+          "MH40_013"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Antti Tanskanen",
+    "officeHours": [
+      {
+        "description": "Sopimuksen mukaan",
+        "additionalInfo": "https://blogs.helsinki.fi/aotanska/",
+        "location": "U35 huone 330",
+        "degreeProgrammes": [
+          "KH70_003",
+          "MH70_008"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sanna-Kaisa Tanskanen",
+    "officeHours": [
+      {
+        "description": "Consultation by appointment.",
+        "additionalInfo": null,
+        "location": "Metsätalo C623",
+        "degreeProgrammes": [
+          "MH40_003"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Maria Tapola-Haapala",
+    "officeHours": [
+      {
+        "description": "Keskiviikkoisin klo 14.00-15.00. Poikkeuksista ilmoitetaan Stydin sähköpostilistalla.",
+        "additionalInfo": null,
+        "location": "Unioninkatu 37, 2. kerros, huone 2015",
+        "degreeProgrammes": [
+          "KH70_003",
+          "MH70_008"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Lotte Tarkka",
+    "officeHours": [
+      {
+        "description": "Vastaanotot vain sopimuksen mukaan",
+        "additionalInfo": null,
+        "location": "ei pysyvää sijaintia",
+        "degreeProgrammes": [
+          "MH40_010",
+          "KH40_005"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jari Taskinen",
+    "officeHours": [
+      {
+        "description": "Sopimuksen mukaan  / By appointment",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH50_001",
+          "KH50_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Teivo Teivainen",
+    "officeHours": [
+      {
+        "description": "Vastaanotot yksilöllisesti sopimuksen mukaan // For appointment, send an e-mail",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH70_001",
+          "MH70_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Erja Tenhonen-Lightfoot",
+    "officeHours": [
+      {
+        "description": "ke klo 14-15",
+        "additionalInfo": "0405227527 tai 0504882301 sekä Facebookin Messenger",
+        "location": "TULKKAAMO (B216 Metsätalo) vinosti vastapäätä salia 2 kierroporrastasanteella",
+        "degreeProgrammes": [
+          "MH40_006"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sirpa Tenhunen",
+    "officeHours": [
+      {
+        "description": "Torstaisin 14 - 16, U35, huone 318 (tutkimusvapaalla 1.11.-9.1., jolloin ei vastaanottoa)",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH70_002",
+          "MH70_004"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Tuomas Tepora",
+    "officeHours": [
+      {
+        "description": "keskiviikkoisin 13-14",
+        "additionalInfo": "tuomas.tepora@helsinki.fi, p. 0294123745",
+        "location": "Topelia A227",
+        "degreeProgrammes": [
+          "MH40_015",
+          "KH40_006",
+          "T920103"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Juha Tervala",
+    "officeHours": [
+      {
+        "description": "Maanantai 13-14",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH70_004"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Suzie Thomas",
+    "officeHours": [
+      {
+        "description": "I will be in the USA from 1 September until 30 October 2018. During this time I will have email access and it will be possible to arrange Skype meetings if needed.",
+        "additionalInfo": "suzie.e.thomas@helsinki.fi",
+        "location": "TBA",
+        "degreeProgrammes": [
+          "MH40_010"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Julia Tidigs",
+    "officeHours": [
+      {
+        "description": "Mottagning enligt överenskommelse. Plats: Forsthuset, Unionsgatan 40 C, 4 vån, rum 414.",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_004",
+          "MH40_013",
+          "MH40_008"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Therese Lindström Tiedemann",
+    "officeHours": [
+      {
+        "description": "enligt överenskommelse (skicka epost)",
+        "additionalInfo": null,
+        "location": "C428 (U40)",
+        "degreeProgrammes": [
+          "KH40_004"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Liisa Tiittula",
+    "officeHours": [
+      {
+        "description": "ke 16-17 Metsätalo C510",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH40_006"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Pertti Tikkanen",
+    "officeHours": [
+      {
+        "description": "Luentojen yhteydessä",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH50_005"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Arho Toikka",
+    "officeHours": [
+      {
+        "description": "Ke 11-12. Ei vastaanotto 31.10. eikä 6.11.",
+        "additionalInfo": null,
+        "location": "U37, h. 1060",
+        "degreeProgrammes": [
+          "MH57_005",
+          "KH70_003",
+          "MH70_008"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Reetta Toivanen",
+    "officeHours": [
+      {
+        "description": "Keskiviikko 13-14",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH70_002",
+          "MH70_004"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hannu Toivonen",
+    "officeHours": [
+      {
+        "description": "Mondays 12:30-13:00 during semesters",
+        "additionalInfo": "Cancelled: 8 Oct 2018, 26 Nov 2018",
+        "location": "Exactum B232",
+        "degreeProgrammes": [
+          "MH50_010"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Johanna Toivonen",
+    "officeHours": [
+      {
+        "description": "TANSKA: Vastaanotto opetuksen yhteydessä (ja tarvittaessa sopimuksen mukaan). johanna.toivonen(at)helsinki.fi",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Virve-Maria Toivonen",
+    "officeHours": [
+      {
+        "description": "Sopimuksen mukaan",
+        "additionalInfo": "virve-maria.toivonen@helsinki.fi/044 575 2235",
+        "location": null,
+        "degreeProgrammes": [
+          "KH70_003",
+          "KH70_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mikko Tolonen",
+    "officeHours": [
+      {
+        "description": "tiistai 8-10",
+        "additionalInfo": null,
+        "location": "Metsätalo, 1. kerros, A128",
+        "degreeProgrammes": [
+          "MH40_005",
+          "MH40_015",
+          "MH50_010",
+          "T920103"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sanne Tschirpke",
+    "officeHours": [
+      {
+        "description": "Keskiviikkoisin 14.30 - 15.30",
+        "additionalInfo": null,
+        "location": "Metsätalo C524",
+        "degreeProgrammes": [
+          "MH40_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Riikka Tuori",
+    "officeHours": [
+      {
+        "description": "keskiviikkoisin klo 14-15 / Wednesdays 2-3 pm (U38 B221)",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_002",
+          "KH40_005",
+          "MH40_012"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Antti-Pekka Tuovinen",
+    "officeHours": [
+      {
+        "description": "Make an appointment via email or ask in class",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH50_009"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jacqueline Chavez Turro",
+    "officeHours": [
+      {
+        "description": "ESPANJA: Vastaanottoaika ti 13.00-13:45, jacqueline.chavez-turro@helsinki.fi, Kielikeskus: Vuorikatu 5, kerros C3, huone C338",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Outi Tánczos",
+    "officeHours": [
+      {
+        "description": "keskiviikko 14-15 (ilmoita tulostasi etukäteen)",
+        "additionalInfo": null,
+        "location": "Metsätalo, A410",
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_007"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Maritta Törrönen",
+    "officeHours": [
+      {
+        "description": "Keskiviikko 14-15.30",
+        "additionalInfo": "maritta.l.torronen@helsinki.fi",
+        "location": "Unioninkatu 37, 2. krs., huone 2011",
+        "degreeProgrammes": [
+          "KH70_003",
+          "MH70_008"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Taija Udd",
+    "officeHours": [
+      {
+        "description": "tiistaisin klo 14-15 / Tuesdays 2-3 p.m.",
+        "additionalInfo": null,
+        "location": "Yliopiston päärakennus / University Main Building (Fabianinkatu 33), huone/room 5032",
+        "degreeProgrammes": [
+          "KH40_004",
+          "MH40_007"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Antti Ukkonen",
+    "officeHours": [
+      {
+        "description": "By appointment (send me email first) or before/after class.",
+        "additionalInfo": null,
+        "location": "Exactum, A341",
+        "degreeProgrammes": [
+          "MH50_010",
+          "MH50_009"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Risto Uro",
+    "officeHours": [
+      {
+        "description": "Sopimuksen mukaan",
+        "additionalInfo": "https://blogs.helsinki.fi/uro-opettaja/",
+        "location": null,
+        "degreeProgrammes": [
+          "KH10_001",
+          "MH10_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Terhi Utriainen",
+    "officeHours": [
+      {
+        "description": "tiistaisin klo 14-15, paitsi 19.9.\nOsoite: Topelia (Unioninkatu 38), F 324",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_005",
+          "MH40_010",
+          "KH10_001",
+          "MH10_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Riina Uusikulku",
+    "officeHours": [
+      {
+        "description": "RUOTSI: Yksikön esimies, farmasian tiedekuntakoordinaattori. Vastaanottoaika to 12.00-13.00.",
+        "additionalInfo": null,
+        "location": "Kielikeskus, Vuorikatu 5C, 4. krs. huone C409. riina.uusikulku(a)helsinki.fi",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Jouni Vaahtera",
+    "officeHours": [
+      {
+        "description": "ti 10–11",
+        "additionalInfo": null,
+        "location": "Metsätalo B431",
+        "degreeProgrammes": [
+          "KH40_003"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hanna Vainionpää",
+    "officeHours": [
+      {
+        "description": "PUHEVIESTINTÄ: yliopisto-opettaja. Vastaanotto opetuksen yhteydessä tai sovitusti. hanna.vainionpaa@helsinki.fi",
+        "additionalInfo": null,
+        "location": "Kielikeskus, Vuorikatu 5, huone 522",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Jarmo Valaja",
+    "officeHours": [
+      {
+        "description": "Sopimukseen mukaan. Ota yhteyttä sähköpostilla (jarmo.valaja@helsinki.fi)",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH80_001",
+          "MH80_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Kirsi Valkama",
+    "officeHours": [
+      {
+        "description": "Ma klo 10.30-11.30 (Vuorikatu 3, huone 443)",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH10_001",
+          "MH10_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jari Valkonen",
+    "officeHours": [
+      {
+        "description": "Wednesday 10-11 am",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH80_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Tero Vanhanen",
+    "officeHours": [
+      {
+        "description": "Keskiviikkoisin 10-12",
+        "additionalInfo": "",
+        "location": "Topelia E110",
+        "degreeProgrammes": [
+          "MH40_009",
+          "KH40_002",
+          "MH40_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jarno Vanhatalo",
+    "officeHours": [
+      {
+        "description": "With appointment requested by email",
+        "additionalInfo": "http://www.helsinki.fi/~jpvanhat/",
+        "location": "In Kumpula: Exactum building, room B420. In Viikki: Biocenter 3, room 5717",
+        "degreeProgrammes": [
+          "MH50_001",
+          "MH50_010",
+          "MH50_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ildikó Vecsernyes",
+    "officeHours": [
+      {
+        "description": "tiistaisin klo 13.00-14.00, ei vastaanottoa 9.1.2018",
+        "additionalInfo": null,
+        "location": "Metsätalo, A siipi, huone 406",
+        "degreeProgrammes": [
+          "KH40_004",
+          "MH40_007"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Kari Mikko Vesala",
+    "officeHours": [
+      {
+        "description": "Tiistai 11-12",
+        "additionalInfo": null,
+        "location": "Unioninkatu 37 huone 2063",
+        "degreeProgrammes": [
+          "KH70_003",
+          "MH70_008",
+          "MH70_005",
+          "T920106"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Marja Vierros",
+    "officeHours": [
+      {
+        "description": "keskiviikkoisin klo 12-13",
+        "additionalInfo": null,
+        "location": "Metsätalo, A232",
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_002",
+          "T920104"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Johanna Viimaranta",
+    "officeHours": [
+      {
+        "description": "maanantaisin 12-14",
+        "additionalInfo": "Vastaanotolle ei tarvitse ilmoittautua ennakkoon",
+        "location": "Metsätalo B432",
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mikko Viitamäki",
+    "officeHours": [
+      {
+        "description": "Tiistaisin 13-14",
+        "additionalInfo": null,
+        "location": "U38 B, huone 210",
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Klaus Viitanen",
+    "officeHours": [
+      {
+        "description": "Mon 3-4 PM room P 491",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH20_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Begona Sanroman Vilas",
+    "officeHours": [
+      {
+        "description": "Miércoles, de 12 h a 13 h",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Seppo Villa",
+    "officeHours": [
+      {
+        "description": "Sopimuksen mukaan. Ota yhteyttä sähköpotitse: seppo.villa@helsinki.fi",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH20_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Kirby Vincent",
+    "officeHours": [
+      {
+        "description": "ENGLISH: Tuesdays 14-15",
+        "additionalInfo": "Faculty of Arts co-ordinator. Email: kvincent@helsinki.fi",
+        "location": "Vuorikatu/Berggatan 5, room C437",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Laszlo Vincze",
+    "officeHours": [
+      {
+        "description": "Måndag: 10-12",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH74_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Johanna Virkkula",
+    "officeHours": [
+      {
+        "description": "Periodeissa I ja II ke 13-14, periodeissa III ja IV ti 9-10.",
+        "additionalInfo": "Vastaanotto on peruttu ke 3.10.",
+        "location": "Metsätalo B411",
+        "degreeProgrammes": [
+          "KH40_003",
+          "MH40_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Elina Virokannas",
+    "officeHours": [
+      {
+        "description": "Keskiviikko klo 15-16",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH70_003",
+          "MH70_008"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Marko Petri Virta",
+    "officeHours": [
+      {
+        "description": "perjantaisin 9.30-10.30, Fridays 9.30-10.30",
+        "additionalInfo": "Ei vastaanottoa 7.12. ja 28.12. Cancelled on 7.12. and 28.12",
+        "location": "Biokeskus 1, h. 3214; Biocenter 1, r. 3214",
+        "degreeProgrammes": [
+          "MH80_007",
+          "KH57_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mikko Virtanen",
+    "officeHours": [
+      {
+        "description": "maanantaisin klo 15 - 16",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_004",
+          "MH40_007"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Pirjo Virtanen",
+    "officeHours": [
+      {
+        "description": "Mondays at 14–15 \nMetsätalo, Unioninkatu 40, Room A408.",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH40_007"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Tuija Virtanen",
+    "officeHours": [
+      {
+        "description": "Vastaanotto sopimuksen mukaan",
+        "additionalInfo": "tuija.virtanen@helsinki.fi",
+        "location": null,
+        "degreeProgrammes": [
+          "KH80_004"
+        ]
+      },
+      {
+        "description": "Vastaanotto sopimuksen mukaan",
+        "additionalInfo": "tuija.virtanen@helsinki.fi",
+        "location": null,
+        "degreeProgrammes": [
+          "MH80_006"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Turo Virtanen",
+    "officeHours": [
+      {
+        "description": "Sopimuksen mukaan (sähköpostitse) - As agreed (by e-mail)",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH70_001",
+          "MH70_002"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Aleksi Vuorinen",
+    "officeHours": [
+      {
+        "description": "Maanantaisin klo 15-16",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH50_002",
+          "MH50_004",
+          "MH50_003"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hanna Vänskä",
+    "officeHours": [
+      {
+        "description": "SUOMI (FINSKA JA ÄIDINKIELI), finskan opettajatuutori, vastaanotto ja tuutorointi sopimuksen mukaan (hanna.vanska@helsinki.fi)",
+        "additionalInfo": null,
+        "location": "Vuorikatu 5, 5. kerros, huone 508",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Östen Wahlbeck",
+    "officeHours": [
+      {
+        "description": "Torsdag 14-15",
+        "additionalInfo": null,
+        "location": "rum 206",
+        "degreeProgrammes": [
+          "KH74_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Max Wahlström",
+    "officeHours": [
+      {
+        "description": "Sovi vastaanotosta sähköpostitse.",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_003"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Nina Wallden",
+    "officeHours": [
+      {
+        "description": "ENGLANTI: ke 13-14, nina.wallden@helsinki.fi",
+        "additionalInfo": null,
+        "location": "Kielikeskus, Vuorikatu 5, huone 514",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Kirsi Marjaana Wallinheimo",
+    "officeHours": [
+      {
+        "description": "tisdagar 10.15-11.00",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "SH60_040"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Harri Waltari",
+    "officeHours": [
+      {
+        "description": "Ma 11-12 tai erikseen sovitusti/ Mon 11-12 or by appointment",
+        "additionalInfo": null,
+        "location": "Physicum A325",
+        "degreeProgrammes": [
+          "MH50_004"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Joseph Warnes",
+    "officeHours": [
+      {
+        "description": "ENGLISH (Office Hour Tue 13:00)",
+        "additionalInfo": "joseph.warnes@helsinki.fi (050 448 0609)",
+        "location": "Vuorikatu 5, room 520",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Cai Weaver",
+    "officeHours": [
+      {
+        "description": "Office Hour Upon Agreement",
+        "additionalInfo": null,
+        "location": "Room K025, Unioninkatu 37",
+        "degreeProgrammes": [
+          "MH70_003",
+          "KH70_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Merle Wessel",
+    "officeHours": [
+      {
+        "description": "Wednesday, 10-11, U 38 A 128 (no office during the autumn term, please contact via email merle.wessel@helsinki.fi)",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH40_005",
+          "MH70_006",
+          "MH40_012"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Irene Wichmann",
+    "officeHours": [
+      {
+        "description": "Tiistaisin 14-15",
+        "additionalInfo": null,
+        "location": "Fabianinkatu 33, 5. kerros, huone 5004",
+        "degreeProgrammes": [
+          "KH40_004",
+          "MH40_007"
+        ]
+      },
+      {
+        "description": "tiistaisin 14-15",
+        "additionalInfo": null,
+        "location": "Fabianinkatu 33, 5. kerros, huone 5004",
+        "degreeProgrammes": [
+          "KH40_004",
+          "MH40_007"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Graham Wood",
+    "officeHours": [
+      {
+        "description": "ENGLISH: Lecturer, Vastaanottoaika: 15-16 Periods 2 and 3 only",
+        "additionalInfo": "Graham.Wood@Helsinki.Fi",
+        "location": "Language Centre Vuorikatu 5,  519.",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Matilda Wrede-Jäntti",
+    "officeHours": [
+      {
+        "description": "Onsdagar kl. 14-15",
+        "additionalInfo": "Beställ gärna tid",
+        "location": "Unionsgatan 37, II vån, rum 2019",
+        "degreeProgrammes": [
+          "MH70_008"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sirpa Wrede",
+    "officeHours": [
+      {
+        "description": "Periodissa 4 vastaanottoaika tiistaisin 14-15. Siihen saakka sovi tapaamisesta sähköpostitse.  (Periodissa 3 tapaamisia vain jo ohjaussuhteisille.)",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH70_008"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Maiju Wuokko",
+    "officeHours": [
+      {
+        "description": "Sopimuksen mukaan (ja aina kun ovi on auki!)",
+        "additionalInfo": "maiju.wuokko@helsinki.fi",
+        "location": null,
+        "degreeProgrammes": [
+          "MH40_015",
+          "KH40_006",
+          "T920103"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Roman Yangarber",
+    "officeHours": [
+      {
+        "description": "On weekdays, make appointment in advance by email: firstname.lastname@cs.helsinki.fi",
+        "additionalInfo": null,
+        "location": "Exactum room B218",
+        "degreeProgrammes": [
+          "MH50_010",
+          "MH50_009"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Emilie Yliheljo",
+    "officeHours": [
+      {
+        "description": "Tisdagar/Tiistaisin/Tuesdays 14.00-15.00.",
+        "additionalInfo": "Ingen mottagning 30.10 eller 18.12.2018",
+        "location": "P441",
+        "degreeProgrammes": [
+          "MH20_001",
+          "KH20_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Petri Ylikoski",
+    "officeHours": [
+      {
+        "description": "tiistai 14-15",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "MH70_008",
+          "KH70_003"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Tuomas Ylä-Anttila",
+    "officeHours": [
+      {
+        "description": "Torstaisin 14-15",
+        "additionalInfo": "tuomas.yla-anttila@helsinki.fi",
+        "location": "U 37, huone 1015",
+        "degreeProgrammes": [
+          "MH70_002",
+          "KH70_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Yousri Youssef",
+    "officeHours": [
+      {
+        "description": "torstaisin kello 11-12",
+        "additionalInfo": null,
+        "location": "Unioninkatu 38 B, huone 212",
+        "degreeProgrammes": [
+          "KH40_003"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Xenia Zeiler",
+    "officeHours": [
+      {
+        "description": "Wed 16:30-18",
+        "additionalInfo": null,
+        "location": "Topelia B 204",
+        "degreeProgrammes": [
+          "MH40_012",
+          "KH40_005",
+          "MH40_011"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Henrika Zilliacus",
+    "officeHours": [
+      {
+        "description": "Enligt överenskommelse per epost",
+        "additionalInfo": null,
+        "location": null,
+        "degreeProgrammes": [
+          "KH74_001"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Indre Zliobaite",
+    "officeHours": [
+      {
+        "description": "Office hour on Tuesdays 15-16, or please e-mail for an appointment",
+        "additionalInfo": "",
+        "location": "Exactum D232",
+        "degreeProgrammes": [
+          "MH50_010",
+          "MH50_002",
+          "MH50_011"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Leena-Maija Åberg-Reinke",
+    "officeHours": [
+      {
+        "description": "Ruotsin yksikön esimies, M-M tiedekunnan tiedekuntakoordinaattori, Viikin KaTu/TvEx-koordinaattori. Vastaanotot syksy 2018 ke 13-14 , kevät 2019 to 13-14. KaTu/TvEx-opiskelijoiden kielituki sopimuksen mukaan.",
+        "additionalInfo": null,
+        "location": "Viikin Infokeskus, huone 327.",
+        "degreeProgrammes": []
+      }
+    ]
+  },
+  {
+    "name": "Uluhan Özalan",
+    "officeHours": [
+      {
+        "description": "Tuesday 14-16",
+        "additionalInfo": null,
+        "location": "Topelia, B111",
+        "degreeProgrammes": [
+          "KH40_003"
+        ]
+      }
+    ]
+  }
+]

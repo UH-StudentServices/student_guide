@@ -55,6 +55,9 @@ class OfficeHoursServiceTest extends UnitTestCase {
   /** @var \Psr\Http\Message\ResponseInterface*/
   private $response;
 
+  /** @var string */
+  private $responseJson;
+
   /** @var \Drupal\Component\Datetime\TimeInterface*/
   private $time;
 
@@ -75,6 +78,8 @@ class OfficeHoursServiceTest extends UnitTestCase {
 
     $this->response = $this->prophesize(ResponseInterface::class);
     $this->response->getStatusCode()->willReturn(200);
+
+    $this->responseJson = file_get_contents(__DIR__ . '/office-hours.json');
 
     $this->client = $this->prophesize(Client::class);
     $this->client->get(Argument::any(), Argument::any())->willReturn($this->response);
@@ -137,6 +142,32 @@ class OfficeHoursServiceTest extends UnitTestCase {
     $this->response->getBody()->willReturn('[]');
 
     $this->assertEquals(self::EMPTY_RESPONSE, $this->officeHoursService->getOfficeHours());
+  }
+
+  /**
+   * @test
+   */
+  public function shouldGroupOfficeHoursByDegreeProgrammeAndGeneral() {
+    $this->response->getBody()->willReturn($this->responseJson);
+
+    $officeHours = $this->officeHoursService->getOfficeHours();
+
+    $this->assertArrayHasKey('degree_programme', $officeHours);
+    $this->assertArrayHasKey('general', $officeHours);
+    $this->assertEquals(2, count(array_keys($officeHours)));
+  }
+
+  /**
+   * @test
+   */
+  public function shouldReturnOnlyGeneralOfficeHoursWhenThereIsNoActiveDegreeProgramme() {
+    $this->response->getBody()->willReturn($this->responseJson);
+    $this->activeDegreeProgrammeService->getTerm()->willReturn(NULL);
+
+    $officeHours = $this->officeHoursService->getOfficeHours();
+
+    $this->assertEmpty($officeHours['degree_programme']);
+    $this->assertNotEmpty($officeHours['general']);
   }
 
 }
