@@ -11,6 +11,9 @@ display:
               2:
                 title: Suljettu
             label: Tila
+        combine:
+          expose:
+            label: 'Nimi tai sähköposti sisältää'
         roles_target_id:
           expose:
             label: Rooli
@@ -53,6 +56,8 @@ display:
           label: 'Viimeksi paikalla'
         operations:
           label: Toimenpiteet
+        mail:
+          separator: ', '
       title: Käyttäjät
       empty:
         area_text_custom:
