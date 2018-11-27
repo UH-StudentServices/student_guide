@@ -4,6 +4,8 @@ display:
   default:
     display_options:
       empty:
+        area_text_custom:
+          content: 'No front page content has been created yet.'
         title:
           title: 'Välkommen till [site:name]'
       exposed_form:

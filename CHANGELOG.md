@@ -3,6 +3,7 @@
 ## 1.xx-dev
 Release date: ??.??.????
 
+* Support for new guide.teacher.helsinki.fi domain (HUB-381)
 
 
 ## 1.26
