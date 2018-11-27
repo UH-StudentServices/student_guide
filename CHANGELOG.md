@@ -4,6 +4,7 @@
 Release date: ??.??.????
 
 * Support for new guide.teacher.helsinki.fi domain (HUB-381)
+* Added a user group: Teachers (HUB-371)
 
 
 ## 1.26
