@@ -3,6 +3,7 @@
 ## 1.xx-dev
 Release date: ??.??.????
 
+* Display general office hours grouped by language (HUB-362).
 
 
 ## 1.26
