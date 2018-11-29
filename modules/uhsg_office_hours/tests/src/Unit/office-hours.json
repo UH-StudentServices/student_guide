@@ -34,7 +34,25 @@
         "description": "ENGLANTI: Tuntiopettaja. Vastaanotto sopimuksen mukaan",
         "additionalInfo": "atefeh.aghaee(@)helsinki.fi",
         "location": "Kielikeskus, Vuorikatu 5, huone 518",
-        "degreeProgrammes": []
+        "degreeProgrammes": [],
+        "languages": [
+          {
+            "code": "ABC",
+            "name": {
+              "fi": "suomi toisena kotimaisena kielenä",
+              "sv": "finska som andra inhemska språk",
+              "en": "Finnish for native speakers of Swedish"
+            }
+          },
+          {
+            "code": "DEF",
+            "name": {
+              "fi": "ranska",
+              "sv": "franska",
+              "en": "French"
+            }
+          }
+        ]
       }
     ]
   },
@@ -64,7 +82,8 @@
         "degreeProgrammes": [
           "KH40_004",
           "MH40_007"
-        ]
+        ],
+        "languages": []
       }
     ]
   },
@@ -92,7 +111,8 @@
         "location": null,
         "degreeProgrammes": [
           "KH40_004"
-        ]
+        ],
+        "languages": null
       }
     ]
   },
@@ -143,7 +163,25 @@
         "description": "sopimuksen mukaan",
         "additionalInfo": null,
         "location": null,
-        "degreeProgrammes": []
+        "degreeProgrammes": [],
+        "languages": [
+          {
+            "code": "ABC",
+            "name": {
+              "fi": "suomi toisena kotimaisena kielenä",
+              "sv": "finska som andra inhemska språk",
+              "en": "Finnish for native speakers of Swedish"
+            }
+          },
+          {
+            "code": "DEF",
+            "name": {
+              "fi": "ranska",
+              "sv": "franska",
+              "en": "French"
+            }
+          }
+        ]
       }
     ]
   },
@@ -165,7 +203,25 @@
         "description": "English, Office hour: Tuesday 11.00-12.00",
         "additionalInfo": "sandro.amendolara@helsinki.fi",
         "location": "Vuorikatu 5, 5th floor, Room 517",
-        "degreeProgrammes": []
+        "degreeProgrammes": [],
+        "languages": [
+          {
+            "code": "ara",
+            "name": {
+              "fi": "arabia",
+              "sv": "arabiska",
+              "en": "Arabic"
+            }
+          },
+          {
+            "code": "jap",
+            "name": {
+              "fi": "japani",
+              "sv": "japanska",
+              "en": "Japanese"
+            }
+          }
+        ]
       }
     ]
   },
@@ -404,7 +460,17 @@
         "description": "englanti: periodi I, ti, klo 10.15-11.00; periodi II, ti, klo 13.15-14.00; periodi III,  ti, klo 10.15-11.00",
         "additionalInfo": null,
         "location": "Vuorikatu 5, h. 519",
-        "degreeProgrammes": []
+        "degreeProgrammes": [],
+        "languages": [
+          {
+            "code": "ara",
+            "name": {
+              "fi": "arabia",
+              "sv": "arabiska",
+              "en": "Arabic"
+            }
+          }
+        ]
       }
     ]
   },
@@ -959,7 +1025,17 @@
         "description": "SAKSA: Vastaanottoaika ke 13.00-13.45, sonja.gehring(at)helsinki.fi",
         "additionalInfo": null,
         "location": "Kielikeskus: Vuorikatu 5, kerros C2, huone C238",
-        "degreeProgrammes": []
+        "degreeProgrammes": [],
+        "languages": [
+          {
+            "code": "jap",
+            "name": {
+              "fi": "japani",
+              "sv": "japanska",
+              "en": "Japanese"
+            }
+          }
+        ]
       }
     ]
   },
@@ -997,7 +1073,33 @@
         "description": "ENGLISH: faculty coordinator for the Faculty of Social Sciences and the Swedish School of Social Sciences. Office Hour: in Period I, Thursdays, 1230-1330; in Period II, Thursdays, 1315-1415; in Period III, Mondays 14-1445; and in Period IV, Fridays, 1115-1215. paul.graves@helsinki.fi",
         "additionalInfo": null,
         "location": "Language Centre, Vuorikatu 5, Room C439",
-        "degreeProgrammes": []
+        "degreeProgrammes": [],
+        "languages": [
+          {
+            "code": "ara",
+            "name": {
+              "fi": "arabia",
+              "sv": "arabiska",
+              "en": "Arabic"
+            }
+          },
+          {
+            "code": "kii",
+            "name": {
+              "fi": "kiina",
+              "sv": "kinesiska",
+              "en": "Chinese"
+            }
+          },
+          {
+            "code": "kor",
+            "name": {
+              "fi": "korea",
+              "sv": "koreanska",
+              "en": "Korean"
+            }
+          }
+        ]
       }
     ]
   },
