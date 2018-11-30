@@ -92,7 +92,7 @@
   set related_content_classes = [
     'container',
     'tube',
-    'article-articles'
+    'article-related'
   ]
 %}
 
@@ -107,7 +107,7 @@
         </div>
       {% endif %}
       {{ degree_programme_switcher }}
-      {{ content|without('field_article_paragraph', 'field_article_new_students', 'field_article_articles') }}
+      {{ content|without('field_article_paragraph', 'field_article_new_students', 'field_article_related') }}
     </div>
     {% if themes %}
       <div class="col-right">
@@ -117,6 +117,6 @@
   </div>
   {{ content.field_article_paragraph }}
   <div{{ related_content.addClass(related_content_classes) }}>
-    {{ content.field_article_articles }}
+    {{ content.field_article_related }}
   </div>
 </article>

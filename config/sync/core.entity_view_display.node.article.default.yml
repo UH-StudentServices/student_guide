@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.article.body
-    - field.field.node.article.field_article_articles
+    - field.field.node.article.field_article_related
     - field.field.node.article.field_article_degree_programme
     - field.field.node.article.field_article_new_students
     - field.field.node.article.field_article_paragraph
@@ -26,15 +26,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
-  field_article_articles:
-    weight: 4
-    label: hidden
-    settings:
-      view_mode: teaser
-      link: false
-    third_party_settings: {  }
-    type: entity_reference_entity_view
-    region: content
   field_article_degree_programme:
     type: entity_reference_label
     weight: 1
@@ -51,6 +42,15 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    region: content
+  field_article_related:
+    weight: 4
+    label: hidden
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
     region: content
   links:
     weight: 0

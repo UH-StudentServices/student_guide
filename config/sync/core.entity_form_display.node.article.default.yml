@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.article.body
-    - field.field.node.article.field_article_articles
+    - field.field.node.article.field_article_related
     - field.field.node.article.field_article_degree_programme
     - field.field.node.article.field_article_new_students
     - field.field.node.article.field_article_paragraph
@@ -34,15 +34,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
-  field_article_articles:
-    weight: 11
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
   field_article_degree_programme:
     weight: 9
     settings:
@@ -70,6 +61,15 @@ content:
       form_display_mode: default
       default_paragraph_type: _none
     third_party_settings: {  }
+    region: content
+  field_article_related:
+    weight: 11
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
     region: content
   field_user_group:
     weight: 14
