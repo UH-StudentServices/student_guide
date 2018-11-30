@@ -86,6 +86,16 @@
   ]
 %}
 
+{% set referred_articles = create_attribute() %}
+
+{%
+  set referred_articles_classes = [
+    'container',
+    'tube',
+    'article-articles'
+  ]
+%}
+
 <article {{ attributes.addClass(node_classes) }}>
   <div{{ content_attributes.addClass(container_classes) }}>
     <div class="col-main">
@@ -106,5 +116,7 @@
     {% endif %}
   </div>
   {{ content.field_article_paragraph }}
-  {{ content.field_article_articles }}
+  <div{{ referred_articles.addClass(referred_articles_classes) }}>
+    {{ content.field_article_articles }}
+  </div>
 </article>
