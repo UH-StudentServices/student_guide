@@ -90,7 +90,7 @@
 <div class="grid-item grid-item-{{grid_items_per_row}}">
   <article {{ attributes.addClass(node_classes) }}>
     <a href="{{ url }}" rel="bookmark" class="box-story__link-wrapper">
-      {% if type and node.bundle != 'article' %}
+      {% if type %}
         <div class="box-story__label"> {{ type }} </div>
       {% endif %}
       {% if node.field_article_new_students is not empty and node.field_article_new_students.value == '1' and new_students_description is not empty  %}

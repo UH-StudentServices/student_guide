@@ -5,11 +5,12 @@ dependencies:
   config:
     - field.storage.node.field_article_articles
     - node.type.article
+    - node.type.theme
 id: node.article.field_article_articles
 field_name: field_article_articles
 entity_type: node
 bundle: article
-label: Instructions
+label: 'Related content'
 description: ''
 required: false
 translatable: true
@@ -20,8 +21,9 @@ settings:
   handler_settings:
     target_bundles:
       article: article
+      theme: theme
     sort:
       field: _none
     auto_create: false
-    auto_create_bundle: ''
+    auto_create_bundle: article
 field_type: entity_reference
