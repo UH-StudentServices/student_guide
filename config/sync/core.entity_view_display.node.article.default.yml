@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.article.body
+    - field.field.node.article.field_article_articles
     - field.field.node.article.field_article_degree_programme
     - field.field.node.article.field_article_new_students
     - field.field.node.article.field_article_paragraph
@@ -24,6 +25,15 @@ content:
     weight: 2
     settings: {  }
     third_party_settings: {  }
+    region: content
+  field_article_articles:
+    weight: 4
+    label: above
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
     region: content
   field_article_degree_programme:
     type: entity_reference_label

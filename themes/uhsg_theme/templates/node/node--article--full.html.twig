@@ -97,7 +97,7 @@
         </div>
       {% endif %}
       {{ degree_programme_switcher }}
-      {{ content|without('field_article_paragraph', 'field_article_new_students') }}
+      {{ content|without('field_article_paragraph', 'field_article_new_students', 'field_article_articles') }}
     </div>
     {% if themes %}
       <div class="col-right">
@@ -106,4 +106,5 @@
     {% endif %}
   </div>
   {{ content.field_article_paragraph }}
+  {{ content.field_article_articles }}
 </article>

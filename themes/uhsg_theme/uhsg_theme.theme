@@ -176,6 +176,7 @@ function uhsg_theme_preprocess_field(array &$variables, $hook) {
       break;
 
     case 'field_theme_articles':
+    case 'field_article_articles':
       $variables['attributes']['class'][] = 'grid-container tube--large';
       break;
 
