@@ -47,7 +47,7 @@
 
 {% block content %}
   {% if not label_hidden %}
-    <h4{{ title_attributes.addClass('tube') }}>{{ label }}</h4>
+    <h3{{ title_attributes.addClass('tube') }}>{{ label }}</h3>
   {% endif %}
   <div{{ attributes.addClass(classes) }}>
     {% for item in items %}
