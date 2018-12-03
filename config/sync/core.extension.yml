@@ -78,6 +78,7 @@ module:
   uhsg_cookie_consent: 0
   uhsg_degree_programme: 0
   uhsg_degree_programme_filtering: 0
+  uhsg_domain: 0
   uhsg_edit: 0
   uhsg_eduviewer: 0
   uhsg_feedback: 0
