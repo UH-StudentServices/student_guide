@@ -44,12 +44,6 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
-  field_article_domain:
-    weight: 26
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-    region: content
   field_article_new_students:
     weight: 13
     settings:
@@ -140,4 +134,5 @@ content:
       placeholder: ''
     third_party_settings: {  }
     region: content
-hidden: {  }
+hidden:
+  field_article_domain: true
