@@ -5,6 +5,7 @@
  * Contains uhsg_domain.module.
  */
 
+use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Routing\RouteMatchInterface;
 
 /**
@@ -21,4 +22,27 @@ function uhsg_domain_help($route_name, RouteMatchInterface $route_match) {
 
     default:
   }
+}
+
+/**
+ * Implements hook_entity_field_access().
+ */
+function uhsg_domain_entity_field_access($operation, \Drupal\Core\Field\FieldDefinitionInterface $field_definition, \Drupal\Core\Session\AccountInterface $account, \Drupal\Core\Field\FieldItemListInterface $items = NULL) {
+
+  // Related articles: Deny for other than Instructions for teachers.
+  return $field_definition->getName() == 'field_article_related' && !uhsg_domain_is_teacher_domain()
+    ? AccessResult::forbidden()
+    : AccessResult::neutral();
+}
+
+function uhsg_domain_active_domain_id() {
+  return \Drupal::service('domain.negotiator')->getActiveId();
+}
+
+function uhsg_domain_is_student_domain() {
+  return uhsg_domain_active_domain_id() == 'guide_student_helsinki_fi';
+}
+
+function uhsg_domain_is_teacher_domain() {
+  return uhsg_domain_active_domain_id() == 'guide_teacher_helsinki_fi';
 }
