@@ -116,7 +116,9 @@
     {% endif %}
   </div>
   {{ content.field_article_paragraph }}
-  <div{{ related_content.addClass(related_content_classes) }}>
-    {{ content.field_article_related }}
-  </div>
+  {% if content.field_article_related %}
+    <div{{ related_content.addClass(related_content_classes) }}>
+      {{ content.field_article_related }}
+    </div>
+  {% endif %}
 </article>
