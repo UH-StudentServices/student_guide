@@ -40,9 +40,34 @@ function uhsg_domain_active_domain_id() {
 }
 
 function uhsg_domain_is_student_domain() {
-  return uhsg_domain_active_domain_id() == 'guide_student_helsinki_fi';
+  return uhsg_domain_active_domain_id() == uhsg_domain_get_student_domain_id();
+}
+
+function uhsg_domain_get_student_domain_id() {
+  return 'guide_student_helsinki_fi';
 }
 
 function uhsg_domain_is_teacher_domain() {
-  return uhsg_domain_active_domain_id() == 'guide_teacher_helsinki_fi';
+  return uhsg_domain_active_domain_id() == uhsg_domain_get_teacher_domain_id();
+}
+
+function uhsg_domain_get_teacher_domain_id() {
+  return 'guide_teacher_helsinki_fi';
+}
+
+/**
+ * Implements hook_entity_presave().
+ *
+ * Saves article domain based on the selected user group. Teacher domain when
+ * the user group is teachers, student domain for other user groups.
+ */
+function uhsg_domain_entity_presave(Drupal\Core\Entity\EntityInterface $entity) {
+  if ($entity instanceof \Drupal\node\Entity\Node && $entity->getType() == 'article') {
+    if ($entity->field_user_group->value == 'teachers') {
+      $entity->field_article_domain = uhsg_domain_get_teacher_domain_id();
+    }
+    else {
+      $entity->field_article_domain = uhsg_domain_get_student_domain_id();
+    }
+  }
 }
