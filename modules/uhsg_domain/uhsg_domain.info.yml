@@ -1,0 +1,6 @@
+name: UHSG Domain
+type: module
+description: Provides domain functionality for other modules.
+core: 8.x
+version: VERSION
+package: Student Guide

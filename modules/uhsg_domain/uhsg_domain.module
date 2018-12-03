@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains uhsg_domain.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function uhsg_domain_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the uhsg_domain module.
+    case 'help.page.uhsg_article':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Provides domain functionality for other modules.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
