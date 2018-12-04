@@ -156,3 +156,6 @@ msgstr "Ammatillinen jatkokoulutus"
 
 msgid "I would like to get a response to my feedback: @replyTo"
 msgstr "Haluan vastauksen palautteeseeni: @replyTo"
+
+msgid "See also Instructions for students."
+msgstr "Katso myös Opiskelijan ohjeet."
