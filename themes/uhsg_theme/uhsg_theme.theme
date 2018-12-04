@@ -181,7 +181,7 @@ function uhsg_theme_preprocess_field(array &$variables, $hook) {
 
     case 'field_article_related':
       $variables['attributes']['class'][] = 'grid-container tube--large';
-      $variables['description'] = t('See also Instructions for students.');
+      $variables['description'] = t('You will find related content for students on the Instructions for Students Service.');
       break;
 
     case 'body':
