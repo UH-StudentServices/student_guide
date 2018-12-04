@@ -8418,7 +8418,7 @@ input[type="text"].search-form-large__input {
 }
 
 .l-subregion {
-  padding: 0;
+  padding: 0 0 0 1em;
 }
 
 .path-frontpage .l-subregion-wrapper {
@@ -8459,10 +8459,6 @@ input[type="text"].search-form-large__input {
 
 .l-action-footer #up-anchor {
   padding-top: 35px;
-}
-
-.article-related {
-  padding-left: 0;
 }
 
 li.avatar {
