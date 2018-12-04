@@ -48,6 +48,9 @@
 {% block content %}
   {% if not label_hidden and items is not empty %}
     <h3{{ title_attributes.addClass('tube') }}>{{ label }}</h3>
+    {% if description %}
+      <p>{{ description }}</p>
+    {% endif %}
   {% endif %}
   <div{{ attributes.addClass(classes) }}>
     {% for item in items %}
