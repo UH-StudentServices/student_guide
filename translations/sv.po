@@ -153,3 +153,6 @@ msgstr "Yrkesinriktad påbyggnadsutbildning"
 
 msgid "I would like to get a response to my feedback: @replyTo"
 msgstr "Jag vill gärna ha svar på min feedback: @replyTo"
+
+msgid "See also Instructions for students."
+msgstr ""
