@@ -7,6 +7,7 @@
 
 use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\uhsg_domain\DomainService;
 
 /**
  * Implements hook_help().
@@ -30,30 +31,12 @@ function uhsg_domain_help($route_name, RouteMatchInterface $route_match) {
 function uhsg_domain_entity_field_access($operation, \Drupal\Core\Field\FieldDefinitionInterface $field_definition, \Drupal\Core\Session\AccountInterface $account, \Drupal\Core\Field\FieldItemListInterface $items = NULL) {
 
   // Related articles: Deny for other than Instructions for teachers.
-  return $field_definition->getName() == 'field_article_related' && !uhsg_domain_is_teacher_domain()
+  return $field_definition->getName() == 'field_article_related' && !uhsg_domain_get_service()->isTeacherDomain()
     ? AccessResult::forbidden()
     : AccessResult::neutral();
 }
 
-function uhsg_domain_active_domain_id() {
-  return \Drupal::service('domain.negotiator')->getActiveId();
-}
 
-function uhsg_domain_is_student_domain() {
-  return uhsg_domain_active_domain_id() == uhsg_domain_get_student_domain_id();
-}
-
-function uhsg_domain_get_student_domain_id() {
-  return 'guide_student_helsinki_fi';
-}
-
-function uhsg_domain_is_teacher_domain() {
-  return uhsg_domain_active_domain_id() == uhsg_domain_get_teacher_domain_id();
-}
-
-function uhsg_domain_get_teacher_domain_id() {
-  return 'guide_teacher_helsinki_fi';
-}
 
 /**
  * Implements hook_entity_presave().
@@ -64,10 +47,17 @@ function uhsg_domain_get_teacher_domain_id() {
 function uhsg_domain_entity_presave(Drupal\Core\Entity\EntityInterface $entity) {
   if ($entity instanceof \Drupal\node\Entity\Node && $entity->getType() == 'article') {
     if ($entity->field_user_group->value == 'teachers') {
-      $entity->field_article_domain = uhsg_domain_get_teacher_domain_id();
+      $entity->field_article_domain = DomainService::TEACHER_DOMAIN_ID;
     }
     else {
-      $entity->field_article_domain = uhsg_domain_get_student_domain_id();
+      $entity->field_article_domain = DomainService::STUDENT_DOMAIN_ID;
     }
   }
+}
+
+/**
+ * @return DomainService
+ */
+function uhsg_domain_get_service() {
+  return Drupal::service('uhsg_domain.domain');
 }
