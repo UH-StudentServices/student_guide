@@ -8209,6 +8209,61 @@ input[type="text"].search-form-large__input {
   color: #0098d0;
 }
 
+/*
+ section: 6.5
+ title: Breadcrumbs
+ template: 6_5_breadcumbs
+ description:
+*/
+.breadcrumbs {
+  font-size: 0.75rem;
+  margin: 0 0 0.3em;
+}
+
+@media (min-width: 48em) {
+  .breadcrumbs {
+    margin: 0;
+  }
+}
+
+.breadcrumbs.theme-hero .breadcrumbs__divider {
+  color: #FFF;
+}
+
+.breadcrumbs.theme-hero .breadcrumbs__item a {
+  color: #FFF;
+}
+
+.breadcrumbs.theme-hero .breadcrumbs__item a:hover {
+  color: #D2D2D2;
+}
+
+.breadcrumbs__item {
+  display: inline;
+  margin-right: 0.2em;
+}
+
+.breadcrumbs__item a {
+  font-weight: 600;
+  font-style: normal;
+  color: #0098d0;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.breadcrumbs__item a:hover {
+  color: #0882B3;
+}
+
+.breadcrumbs__divider {
+  font-weight: 600;
+  font-style: normal;
+  color: #0098d0;
+  display: inline;
+  margin-right: 0.5em;
+}
+
 /* STUDENT GUIDE THEMING */
 .container {
   margin: 0 auto;
@@ -8433,6 +8488,10 @@ li.avatar.avatar--default img {
 .box-story--constrained {
   border-bottom: 1px solid #f8f8f8;
   padding: 1em 0 .5em;
+}
+
+#block-breadcrumbs {
+  padding-top: 1.5em;
 }
 
 .cc_banner-wrapper {

@@ -430,6 +430,13 @@ function uhsg_theme_preprocess_views_view_grouping(&$variables) {
 }
 
 /**
+ * Breadcrumb: Override the text for the home page link.
+ */
+function uhsg_theme_preprocess_breadcrumb(&$variables) {
+  $variables['breadcrumb'][0]['text'] = \Drupal::config('system.site')->get('name');
+}
+
+/**
  * Implements hook_theme_suggestions_HOOK_alter().
  *
  * add subregion template for blocks

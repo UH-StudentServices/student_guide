@@ -1,0 +1,25 @@
+uuid: 8d9d9519-0123-49bc-9f07-828873b9c81a
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - uhsg_theme
+id: breadcrumbs
+theme: uhsg_theme
+region: before_content
+weight: -9
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: true
+    context_mapping: {  }

@@ -9,7 +9,7 @@ dependencies:
 id: activedegreeprogrammeurl
 theme: uhsg_theme
 region: content
-weight: 0
+weight: -11
 provider: null
 plugin: active_degree_programme_url
 settings:
