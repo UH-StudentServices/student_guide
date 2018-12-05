@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.article.field_article_new_students
     - field.field.node.article.field_article_paragraph
     - field.field.node.article.field_article_related
+    - field.field.node.article.field_domain_source
     - field.field.node.article.field_user_group
     - node.type.article
   module:
@@ -136,3 +137,4 @@ content:
     region: content
 hidden:
   field_article_domain: true
+  field_domain_source: true

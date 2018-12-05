@@ -56,8 +56,6 @@ display:
           label: 'Viimeksi paikalla'
         operations:
           label: Toimenpiteet
-        mail:
-          separator: ', '
       title: Käyttäjät
       empty:
         area_text_custom:

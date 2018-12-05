@@ -20,6 +20,7 @@ module:
   domain: 0
   domain_alias: 0
   domain_config: 0
+  domain_source: 0
   draggableviews: 0
   dynamic_page_cache: 0
   edit_own_user_account_permission: 0

@@ -1,0 +1,25 @@
+uuid: a3a7c20f-aec4-42b4-832f-44ff45afbc16
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - domain_source
+  module:
+    - domain
+    - node
+_core:
+  default_config_hash: JIYj5R0JuOltWKuyvtCxx0MJz5pqFUapUbkRgGLPano
+id: node.field_domain_source
+field_name: field_domain_source
+entity_type: node
+type: entity_reference
+settings:
+  target_type: domain
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
