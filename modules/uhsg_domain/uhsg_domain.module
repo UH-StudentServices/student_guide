@@ -15,10 +15,10 @@ use Drupal\uhsg_domain\DomainService;
 function uhsg_domain_help($route_name, RouteMatchInterface $route_match) {
   switch ($route_name) {
     // Main module help for the uhsg_domain module.
-    case 'help.page.uhsg_article':
+    case 'help.page.uhsg_domain':
       $output = '';
       $output .= '<h3>' . t('About') . '</h3>';
-      $output .= '<p>' . t('Provides domain functionality for other modules.') . '</p>';
+      $output .= '<p>' . t('Provides support for creating guide content for student and teacher domains.') . '</p>';
       return $output;
 
     default:
@@ -31,7 +31,7 @@ function uhsg_domain_help($route_name, RouteMatchInterface $route_match) {
 function uhsg_domain_entity_field_access($operation, \Drupal\Core\Field\FieldDefinitionInterface $field_definition, \Drupal\Core\Session\AccountInterface $account, \Drupal\Core\Field\FieldItemListInterface $items = NULL) {
 
   // Related articles: Deny for other than Instructions for teachers.
-  return $field_definition->getName() == 'field_article_related' && !uhsg_domain_get_service()->isTeacherDomain()
+  return $field_definition->getName() == 'field_article_related' && !\Drupal::service('uhsg_domain.domain')->isTeacherDomain()
     ? AccessResult::forbidden()
     : AccessResult::neutral();
 }
@@ -52,11 +52,4 @@ function uhsg_domain_entity_presave(Drupal\Core\Entity\EntityInterface $entity) 
     // work, since the links will be rewritten to point to one of the domains.
     //$entity->field_domain_source = $domain_id;
   }
-}
-
-/**
- * @return DomainService
- */
-function uhsg_domain_get_service() {
-  return Drupal::service('uhsg_domain.domain');
 }
