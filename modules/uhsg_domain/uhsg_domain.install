@@ -3,7 +3,7 @@
 /**
  * Load and save all article nodes to trigger the automatic domain assignment.
  */
-function uhsg_domain_update_8001(&$sandbox) {
+function uhsg_domain_install(&$sandbox) {
   $nids = \Drupal::entityQuery('node')->condition('type', 'article')->execute();
   $nodes = \Drupal\node\Entity\Node::loadMultiple($nids);
 
