@@ -9588,7 +9588,3 @@ h1, h2, h3, h4, legend, .logo-block__content .logo-block__sitename,
   vertical-align: top;
   margin-top: 0.2em;
 }
-
-.top-content li:last-child {
-  display: none;
-}
