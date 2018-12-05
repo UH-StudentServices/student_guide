@@ -33,7 +33,6 @@ module:
   filter: 0
   flag: 0
   google_analytics: 0
-  google_analytics_reports_api: 0
   honeypot: 0
   image: 0
   language: 0
