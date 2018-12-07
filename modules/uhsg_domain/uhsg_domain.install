@@ -1,10 +1,15 @@
 <?php
 
 /**
- * Load and save all article nodes to trigger the automatic domain assignment.
+ * Load and save all published article nodes to trigger the automatic domain
+ * assignment.
  */
 function uhsg_domain_install() {
-  $nids = \Drupal::entityQuery('node')->condition('type', 'article')->execute();
+  $nids = \Drupal::entityQuery('node')
+    ->condition('type', 'article')
+    ->condition('status', 1)
+    ->execute();
+
   $nodes = \Drupal\node\Entity\Node::loadMultiple($nids);
 
   foreach ($nodes as $node) {
