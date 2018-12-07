@@ -4,3 +4,5 @@ description: Provides support for creating guide content for student and teacher
 core: 8.x
 version: VERSION
 package: Student Guide
+dependencies:
+  - domain
