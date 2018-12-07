@@ -16,7 +16,6 @@ dependencies:
   - dblog
   - dynamic_page_cache
   - field_ui
-  - google_analytics_reports
   - honeypot
   - image
   - language
