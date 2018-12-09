@@ -7,6 +7,7 @@ Release date: ??.??.????
 * Added a user group: Teachers (HUB-371)
 * Breadcrumb (HUB-388)
 * Removed top content (HUB-384)
+* Support for referring to student articles from the teacher domain (HUB-374)
 
 
 ## 1.26

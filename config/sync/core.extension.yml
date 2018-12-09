@@ -20,6 +20,7 @@ module:
   domain: 0
   domain_alias: 0
   domain_config: 0
+  domain_source: 0
   draggableviews: 0
   dynamic_page_cache: 0
   edit_own_user_account_permission: 0
@@ -76,6 +77,7 @@ module:
   uhsg_cookie_consent: 0
   uhsg_degree_programme: 0
   uhsg_degree_programme_filtering: 0
+  uhsg_domain: 0
   uhsg_edit: 0
   uhsg_eduviewer: 0
   uhsg_feedback: 0

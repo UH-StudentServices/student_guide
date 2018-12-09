@@ -19,6 +19,7 @@ function uhsg_degree_programme_filtering_preprocess_field(array &$variables, $ho
   $filter_untranslated_targets = TRUE;
   switch ($variables['element']['#field_name']) {
     case 'field_theme_articles':
+    case 'field_article_related':
       $reference_field = 'field_article_degree_programme';
       $target_entity_type = 'node';
       $filter_untranslated_targets = TRUE;

@@ -22,7 +22,6 @@ display:
       fields:
         filename:
           label: Nimi
-          separator: ', '
         filemime:
           label: 'MIME tyyppi'
         filesize:
