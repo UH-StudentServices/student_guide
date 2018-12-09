@@ -127,6 +127,10 @@
                 "2816997-7": "https://www.drupal.org/files/issues/samlauth-allow_custom_cert_folder-2816997-7.patch",
                 "2817005-11": "https://www.drupal.org/files/issues/samlauth-add_event_to_map_attributes_to_user-2817005-11.patch",
                 "2860473-1": "https://www.drupal.org/files/issues/2860473-1.patch"
+            },
+            "drupal/google_analytics_reports": {
+                "2795115-6-and-2860399-1": "patches/google_analytics_reports.patch",
+                "2850463-2": "https://www.drupal.org/files/issues/error_when_saving-2850463-2.patch"
             }
         }
     }
