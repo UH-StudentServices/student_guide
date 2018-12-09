@@ -1,6 +1,4 @@
 ignored_config_entities:
-  0: uhsg_role_auto_assign.settings
-  2: google_analytics_reports.settings
-  4: google_analytics_reports_api.settings
+  - uhsg_role_auto_assign.settings
 _core:
   default_config_hash: UVH1aJ4b44UM-VdPVN7hNNuuVqfReJxwfVeDQH1Hvsk
