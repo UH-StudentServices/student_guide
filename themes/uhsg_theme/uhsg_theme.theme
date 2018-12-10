@@ -179,6 +179,11 @@ function uhsg_theme_preprocess_field(array &$variables, $hook) {
       $variables['attributes']['class'][] = 'grid-container tube--large';
       break;
 
+    case 'field_article_related':
+      $variables['attributes']['class'][] = 'grid-container tube--large';
+      $variables['description'] = t('You will find related content for students on the Instructions for Students Service.');
+      break;
+
     case 'body':
     case 'field_paragraph_body':
       $variables['attributes']['class'][] = 'textarea';
@@ -430,10 +435,13 @@ function uhsg_theme_preprocess_views_view_grouping(&$variables) {
 }
 
 /**
- * Breadcrumb: Override the text for the home page link.
+ * Breadcrumb: Use only the first level (homepage). Override the text for the
+ * home page link.
  */
 function uhsg_theme_preprocess_breadcrumb(&$variables) {
-  $variables['breadcrumb'][0]['text'] = \Drupal::config('system.site')->get('name');
+  $breadcrumb = $variables['breadcrumb'][0];
+  $breadcrumb['text'] = \Drupal::config('system.site')->get('name');
+  $variables['breadcrumb'] = [$breadcrumb];
 }
 
 /**

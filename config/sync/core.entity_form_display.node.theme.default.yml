@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.theme.body
+    - field.field.node.theme.field_domain_source
     - field.field.node.theme.field_theme_articles
     - field.field.node.theme.field_theme_faq
     - field.field.node.theme.field_theme_section
@@ -78,7 +79,7 @@ content:
     type: image_image
     region: content
   field_user_group:
-    weight: 121
+    weight: 14
     settings: {  }
     third_party_settings: {  }
     type: options_select
@@ -86,7 +87,8 @@ content:
   langcode:
     type: language_select
     weight: 1
-    settings: {  }
+    settings:
+      include_locked: true
     third_party_settings: {  }
     region: content
   path:
@@ -106,7 +108,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 120
+    weight: 13
     region: content
     third_party_settings: {  }
   sticky:
@@ -138,4 +140,5 @@ content:
       placeholder: ''
     third_party_settings: {  }
     region: content
-hidden: {  }
+hidden:
+  field_domain_source: true

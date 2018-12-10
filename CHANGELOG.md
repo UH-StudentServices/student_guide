@@ -6,6 +6,8 @@ Release date: ??.??.????
 * Support for new guide.teacher.helsinki.fi domain (HUB-381)
 * Added a user group: Teachers (HUB-371)
 * Breadcrumb (HUB-388)
+* Removed top content (HUB-384)
+* Support for referring to student articles from the teacher domain (HUB-374)
 * Display general office hours grouped by language (HUB-362).
 
 

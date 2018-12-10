@@ -21,6 +21,5 @@ display:
       fields:
         title:
           label: Otsikko
-          separator: ', '
   page_1:
     display_title: Sivu
