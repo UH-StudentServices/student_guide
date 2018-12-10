@@ -61,5 +61,6 @@ content:
 hidden:
   field_article_domain: true
   field_article_new_students: true
+  field_domain_source: true
   field_user_group: true
   langcode: true
