@@ -8,6 +8,7 @@ Release date: ??.??.????
 * Breadcrumb (HUB-388)
 * Removed top content (HUB-384)
 * Support for referring to student articles from the teacher domain (HUB-374)
+* Do not display news blocks on teacher domain frontpage (HUB-392)
 
 
 ## 1.26
