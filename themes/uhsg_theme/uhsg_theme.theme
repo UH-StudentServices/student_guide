@@ -385,8 +385,12 @@ function uhsg_theme_preprocess_node(&$variables) {
     $variables['type'] = !$current_page_is_theme ? $variables['node']->type->entity->label() : NULL;
   }
   if ($variables['node']->bundle() == 'article' && $variables['page']) {
-    $block = \Drupal::service('plugin.manager.block')->createInstance('themes_referencing_instructions', []);
-    $variables['themes'] = $block->build();
+    $themes_block = \Drupal::service('plugin.manager.block')->createInstance('themes_referencing_instructions', []);
+    $variables['themes'] = $themes_block->build();
+    $link_to_instructions_for_students_block = \Drupal::service('plugin.manager.block')->createInstance('link_to_instructions_for_students', []);
+    if ($link_to_instructions_for_students_block->access(\Drupal::currentUser()) instanceof \Drupal\Core\Access\AccessResultAllowed) {
+      $variables['link_to_instructions_for_students'] = $link_to_instructions_for_students_block->build();
+    }
   }
   if ($variables['node']->bundle() == 'article') {
     $variables['new_students_label'] = t('New students');
