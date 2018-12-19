@@ -1,6 +1,5 @@
 <?php
 
-use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Access\AccessResultAllowed;
 use Drupal\Core\Access\AccessResultForbidden;
 use Drupal\Core\Cache\Context\CacheContextsManager;
