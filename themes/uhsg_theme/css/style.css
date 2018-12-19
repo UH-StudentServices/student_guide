@@ -9086,6 +9086,18 @@ input[type="submit"].button--reset + i {
   }
 }
 
+body.guide-teacher-helsinki-fi .main-menu li {
+  display: none;
+}
+
+body.guide-teacher-helsinki-fi .main-menu li:last-child {
+  display: initial;
+}
+
+body.guide-teacher-helsinki-fi .main-menu li a {
+  font-size: initial;
+}
+
 .nav-toggle {
   -ms-flex-align: center;
       align-items: center;
