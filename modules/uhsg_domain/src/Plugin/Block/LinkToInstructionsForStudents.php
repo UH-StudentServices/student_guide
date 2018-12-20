@@ -23,7 +23,7 @@ class LinkToInstructionsForStudents extends BlockBase {
    * @inheritdoc
    */
   public function access(AccountInterface $account, $return_as_object = FALSE) {
-    return \Drupal::service('uhsg_domain.domain')->isTeacherDomain()
+    return \Drupal::service('uhsg_domain.domain')->isTeachingDomain()
       ? AccessResult::allowed()
       : AccessResult::forbidden();
   }
