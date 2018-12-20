@@ -384,15 +384,18 @@ function uhsg_theme_preprocess_node(&$variables) {
     $current_page_is_theme = $node_viewed && $node_viewed->bundle() == 'theme';
     $variables['type'] = !$current_page_is_theme ? $variables['node']->type->entity->label() : NULL;
   }
-  if ($variables['node']->bundle() == 'article' && $variables['page']) {
+  $bundle = $variables['node']->bundle();
+  if ($bundle == 'article' && $variables['page']) {
     $themes_block = \Drupal::service('plugin.manager.block')->createInstance('themes_referencing_instructions', []);
     $variables['themes'] = $themes_block->build();
+  }
+  if (in_array($bundle, ['article', 'theme']) && $variables['page']) {
     $link_to_instructions_for_students_block = \Drupal::service('plugin.manager.block')->createInstance('link_to_instructions_for_students', []);
     if ($link_to_instructions_for_students_block->access(\Drupal::currentUser()) instanceof \Drupal\Core\Access\AccessResultAllowed) {
       $variables['link_to_instructions_for_students'] = $link_to_instructions_for_students_block->build();
     }
   }
-  if ($variables['node']->bundle() == 'article') {
+  if ($bundle == 'article') {
     $variables['new_students_label'] = t('New students');
     $variables['new_students_description'] = t('New students study in the new degree programmes that started August 1, 2017. Students studying according to the old degree structure are referred to as old students.');
     $variables['#attached']['library'][] = 'uhsg_theme/tooltip';
