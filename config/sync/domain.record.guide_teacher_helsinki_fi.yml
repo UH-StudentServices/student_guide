@@ -5,7 +5,7 @@ dependencies: {  }
 id: guide_teacher_helsinki_fi
 domain_id: 15834470
 hostname: guide.teacher.helsinki.fi
-name: 'Instructions for teachers'
+name: 'Instructions for teaching'
 scheme: https
 weight: 2
 is_default: false

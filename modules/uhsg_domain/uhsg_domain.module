@@ -30,7 +30,7 @@ function uhsg_domain_help($route_name, RouteMatchInterface $route_match) {
  */
 function uhsg_domain_entity_field_access($operation, \Drupal\Core\Field\FieldDefinitionInterface $field_definition, \Drupal\Core\Session\AccountInterface $account, \Drupal\Core\Field\FieldItemListInterface $items = NULL) {
 
-  // Related articles: Deny for other than Instructions for teachers.
+  // Related articles: Deny for other than Instructions for teaching.
   return $field_definition->getName() == 'field_article_related' && !\Drupal::service('uhsg_domain.domain')->isTeacherDomain()
     ? AccessResult::forbidden()
     : AccessResult::neutral();
