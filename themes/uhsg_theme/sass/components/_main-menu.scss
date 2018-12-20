@@ -76,3 +76,18 @@
     }
   }
 }
+
+// Teacher domain: Hide most main menu items (all but login/logout).
+body.guide-teacher-helsinki-fi {
+  .main-menu {
+    li {
+      display: none;
+      &:last-child {
+        display: initial;
+      }
+      a {
+        font-size: initial;
+      }
+    }
+  }
+}

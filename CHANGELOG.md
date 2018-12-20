@@ -9,6 +9,7 @@ Release date: ??.??.????
 * Removed top content (HUB-384)
 * Support for referring to student articles from the teacher domain (HUB-374)
 * Copy URL button position change (HUB-394)
+* Display only the login/logout main menu item on teacher domain (HUB-397)
 
 
 ## 1.26
