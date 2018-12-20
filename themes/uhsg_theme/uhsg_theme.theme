@@ -276,6 +276,7 @@ function uhsg_theme_preprocess_views_view(&$variables) {
       $variables['title'] = $variables['view']->getTitle();
       $variables['content_attributes']['class'][] = 'view-content';
       $variables['degree_programme_switcher'] = _uhsg_theme_get_degree_programme_switcher();
+      _uhsg_theme_add_link_to_instructions_for_students($variables);
       break;
 
     case 'news':
@@ -390,10 +391,7 @@ function uhsg_theme_preprocess_node(&$variables) {
     $variables['themes'] = $themes_block->build();
   }
   if (in_array($bundle, ['article', 'theme']) && $variables['page']) {
-    $link_to_instructions_for_students_block = \Drupal::service('plugin.manager.block')->createInstance('link_to_instructions_for_students', []);
-    if ($link_to_instructions_for_students_block->access(\Drupal::currentUser()) instanceof \Drupal\Core\Access\AccessResultAllowed) {
-      $variables['link_to_instructions_for_students'] = $link_to_instructions_for_students_block->build();
-    }
+    _uhsg_theme_add_link_to_instructions_for_students($variables);
   }
   if ($bundle == 'article') {
     $variables['new_students_label'] = t('New students');
@@ -402,6 +400,13 @@ function uhsg_theme_preprocess_node(&$variables) {
   }
   if ($variables['page']) {
     $variables['degree_programme_switcher'] = _uhsg_theme_get_degree_programme_switcher();
+  }
+}
+
+function _uhsg_theme_add_link_to_instructions_for_students(&$variables) {
+  $link_to_instructions_for_students_block = \Drupal::service('plugin.manager.block')->createInstance('link_to_instructions_for_students', []);
+  if ($link_to_instructions_for_students_block->access(\Drupal::currentUser()) instanceof \Drupal\Core\Access\AccessResultAllowed) {
+    $variables['link_to_instructions_for_students'] = $link_to_instructions_for_students_block->build();
   }
 }
 
