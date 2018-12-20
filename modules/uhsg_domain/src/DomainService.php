@@ -10,7 +10,7 @@ use Drupal\domain\Entity\Domain;
 class DomainService {
 
   const STUDENT_DOMAIN_ID = 'guide_student_helsinki_fi';
-  const TEACHER_DOMAIN_ID = 'guide_teacher_helsinki_fi';
+  const TEACHING_DOMAIN_ID = 'guide_teacher_helsinki_fi';
 
   /** @var DomainNegotiatorInterface */
   private $domainNegotiator;
@@ -31,8 +31,8 @@ class DomainService {
     return $this->getActiveDomainId() == self::STUDENT_DOMAIN_ID;
   }
 
-  public function isTeacherDomain() {
-    return $this->getActiveDomainId() == self::TEACHER_DOMAIN_ID;
+  public function isTeachingDomain() {
+    return $this->getActiveDomainId() == self::TEACHING_DOMAIN_ID;
   }
 
   public function getStudentDomainUrl() {
@@ -43,12 +43,12 @@ class DomainService {
     return $this->loadDomain(self::STUDENT_DOMAIN_ID)->label();
   }
 
-  public function getTeacherDomainUrl() {
-    return $this->getDomainUrl(self::TEACHER_DOMAIN_ID);
+  public function getTeachingDomainUrl() {
+    return $this->getDomainUrl(self::TEACHING_DOMAIN_ID);
   }
 
-  public function getTeacherDomainLabel() {
-    return $this->loadDomain(self::TEACHER_DOMAIN_ID)->label();
+  public function getTeachingDomainLabel() {
+    return $this->loadDomain(self::TEACHING_DOMAIN_ID)->label();
   }
 
   private function getDomainUrl($domainId) {
