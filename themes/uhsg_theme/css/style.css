@@ -8545,8 +8545,8 @@ li.avatar.avatar--default img {
 #copy-url {
   float: right;
   position: relative;
-  z-index: 1000;
-  margin-right: 2em;
+  z-index: 500;
+  margin-right: 0;
   min-width: 10em;
 }
 
@@ -9084,6 +9084,18 @@ input[type="submit"].button--reset + i {
     transition: opacity 0.2s ease;
     padding-left: 1em;
   }
+}
+
+body.guide-teacher-helsinki-fi .main-menu li {
+  display: none;
+}
+
+body.guide-teacher-helsinki-fi .main-menu li:last-child {
+  display: initial;
+}
+
+body.guide-teacher-helsinki-fi .main-menu li a {
+  font-size: initial;
 }
 
 .nav-toggle {
