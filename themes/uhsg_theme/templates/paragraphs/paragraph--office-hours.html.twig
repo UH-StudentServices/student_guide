@@ -73,10 +73,15 @@
             <div {{ attributes.addClass('textarea') }}>
               <div class="col-container">
                 <div class="col-left">
-                  <h3>{{ item.name }}</h3>
+                {% if item[0]['language'] is not empty %}
+                  <h3>{{ attribute(item[0]['language'].name, language) }}</h3>
+                {% endif %}
                 </div>
                 <div class="col-main">
-                  <p>{{ item.hours|nl2br }}</p>
+                  {% for child_item in item %}
+                    <h4>{{ child_item.name }}</h4>
+                    <p>{{ child_item.hours|nl2br }}</p>
+                  {% endfor %}
                 </div>
               </div>
             </div>

@@ -7,5 +7,7 @@
 function uhsg_office_hours_update_8001() {
   /** @var \Drupal\Core\Cache\CacheBackendInterface $cache */
   $cache = \Drupal::service('cache.default');
-  $cache->delete(OfficeHoursService::CACHE_KEY);
+  $cache->delete(OfficeHoursService::CACHE_KEY_PREFIX . 'en');
+  $cache->delete(OfficeHoursService::CACHE_KEY_PREFIX . 'fi');
+  $cache->delete(OfficeHoursService::CACHE_KEY_PREFIX . 'sv');
 }
