@@ -429,6 +429,8 @@ function uhsg_theme_preprocess_html(&$variables) {
       ],
     ];
     $variables['page']['#attached']['html_head'][] = [$icon, $file->name];
+    $domain_id = \Drupal::service('uhsg_domain.domain')->getActiveDomainId();
+    $variables['attributes']['class'][] = \Drupal\Component\Utility\Html::getClass($domain_id);
   }
 }
 
