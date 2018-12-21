@@ -9221,6 +9221,10 @@ h1, h2, h3, h4, legend, .logo-block__content .logo-block__sitename,
   /* IE11 */
 }
 
+.office-hours .col-main {
+  padding-top: 0.2em;
+}
+
 .main-menu > ul.menu {
   display: none;
 }
