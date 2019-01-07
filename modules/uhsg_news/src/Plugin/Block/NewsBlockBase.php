@@ -2,9 +2,11 @@
 
 namespace Drupal\uhsg_news\Plugin\Block;
 
+use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Cache\Cache;
 use Drupal\Core\Link;
+use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\node\Entity\Node;
 use Drupal\views\Views;
@@ -13,6 +15,18 @@ class NewsBlockBase extends BlockBase {
 
   use StringTranslationTrait;
 
+  /**
+   * @inheritdoc
+   */
+  public function access(AccountInterface $account, $return_as_object = FALSE) {
+    return \Drupal::service('uhsg_domain.domain')->isStudentDomain()
+      ? AccessResult::allowed()
+      : AccessResult::forbidden();
+  }
+
+  /**
+   * @inheritdoc
+   */
   public function build() {
     // Implemented in subclasses.
   }

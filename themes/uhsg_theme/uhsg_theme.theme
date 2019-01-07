@@ -325,7 +325,9 @@ function uhsg_theme_preprocess_block(array &$variables) {
       break;
 
     case 'themesperusergroup':
-      $variables['news_per_degree_programme'] = _uhsg_theme_get_news_per_degree_programme();
+      if (\Drupal::service('uhsg_domain.domain')->isStudentDomain()) {
+        $variables['news_per_degree_programme'] = _uhsg_theme_get_news_per_degree_programme();
+      }
       break;
   }
 }

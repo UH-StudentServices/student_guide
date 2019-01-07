@@ -5,6 +5,7 @@ namespace Drupal\uhsg_office_hours;
 use Drupal\Component\Datetime\TimeInterface;
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Config\ConfigFactory;
+use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Logger\LoggerChannel;
 use Drupal\uhsg_active_degree_programme\ActiveDegreeProgrammeService;
 use GuzzleHttp\Client;
@@ -15,11 +16,12 @@ class OfficeHoursService {
 
   // 1 minute.
   const CACHE_EXPIRE_SECONDS = 60;
-  const CACHE_KEY = 'uhsg-office-hours';
+  const CACHE_KEY_PREFIX = 'uhsg-office-hours-';
   const CONFIG_NAME = 'uhsg_office_hours.config';
   const CONFIG_API_BASE_URL = 'api_base_url';
   const CONFIG_API_PATH = 'api_path';
   const CONNECT_TIMEOUT_SECONDS = 2;
+  const LANGUAGE_UNDEFINED = 'undefined';
   const REQUEST_TIMEOUT_SECONDS = 2;
 
   /** @var \Drupal\Core\Cache\CacheBackendInterface*/
@@ -33,6 +35,9 @@ class OfficeHoursService {
 
   /** @var \Drupal\Core\Config\ConfigFactory*/
   protected $configFactory;
+
+  /** @var \Drupal\Core\Language\LanguageManagerInterface */
+  protected $languageManager;
 
   /** @var \Drupal\Core\Logger\LoggerChannel*/
   protected $logger;
@@ -52,7 +57,8 @@ class OfficeHoursService {
     ConfigFactory $configFactory,
     LoggerChannel $logger,
     TimeInterface $time,
-    ActiveDegreeProgrammeService $activeDegreeProgrammeService) {
+    ActiveDegreeProgrammeService $activeDegreeProgrammeService,
+    LanguageManagerInterface $languageManager) {
 
     $this->cache = $cache;
     $this->client = $client;
@@ -60,6 +66,7 @@ class OfficeHoursService {
     $this->logger = $logger;
     $this->time = $time;
     $this->activeDegreeProgrammeService = $activeDegreeProgrammeService;
+    $this->languageManager = $languageManager;
   }
 
   /**
@@ -97,9 +104,23 @@ class OfficeHoursService {
    * @return null|array
    */
   private function getOfficeHoursFromCache() {
-    $officeHours = $this->cache->get(self::CACHE_KEY);
+    $officeHours = $this->cache->get($this->getCacheKey());
 
     return $officeHours ? $officeHours->data : NULL;
+  }
+
+  /**
+   * @return string
+   */
+  private function getCacheKey() {
+    return self::CACHE_KEY_PREFIX . $this->getCurrentLanguage();
+  }
+
+  /**
+   * @return string
+   */
+  private function getCurrentLanguage() {
+    return $this->languageManager->getCurrentLanguage()->getId();
   }
 
   /**
@@ -118,7 +139,7 @@ class OfficeHoursService {
   private function getRequestOptions() {
     return [
       RequestOptions::CONNECT_TIMEOUT => self::CONNECT_TIMEOUT_SECONDS,
-      RequestOptions::TIMEOUT => self::REQUEST_TIMEOUT_SECONDS,
+      RequestOptions::TIMEOUT => self::REQUEST_TIMEOUT_SECONDS
     ];
   }
 
@@ -132,6 +153,7 @@ class OfficeHoursService {
       $decodedBody = json_decode($responseBody);
       if (is_array($decodedBody)) {
         $restructuredOfficeHours = $this->restructureOfficeHours($decodedBody);
+        $this->sortGeneralOfficeHoursByLanguage($restructuredOfficeHours);
       }
       else {
         $this->logger->warning('Office hours API response was not in expected format (array).');
@@ -145,8 +167,9 @@ class OfficeHoursService {
    * @param array $decodedBody
    *
    * @return array
-   *   Return office hours grouped by degree programme specifics and general
-   *   ones. All persons' office hours are merged.
+   *   Return office hours grouped by degree programme specific hours and
+   *   general office hours. General office hours are further grouped by
+   *   language (if exists). All persons' office hours are merged.
    */
   private function restructureOfficeHours(array $decodedBody) {
     $officeHours = [];
@@ -157,10 +180,21 @@ class OfficeHoursService {
       foreach ($decodedBody as $person) {
         foreach ($person->officeHours as $personsOfficeHours) {
           if (empty($personsOfficeHours->degreeProgrammes)) {
-            $officeHours['general'][] = [
-              'name' => $person->name,
-              'hours' => $this->mergeContents($personsOfficeHours),
-            ];
+            if (empty($personsOfficeHours->languages)) {
+              $officeHours['general'][self::LANGUAGE_UNDEFINED][] = [
+                'name' => $person->name,
+                'hours' => $this->mergeContents($personsOfficeHours),
+              ];
+            }
+            else {
+              foreach ($personsOfficeHours->languages as $language) {
+                $officeHours['general'][$language->code][] = [
+                  'name' => $person->name,
+                  'hours' => $this->mergeContents($personsOfficeHours),
+                  'language' => $language
+                ];
+              }
+            }
           }
           else {
             $officeHours['degree_programme'][] = [
@@ -174,6 +208,28 @@ class OfficeHoursService {
     }
 
     return $officeHours;
+  }
+
+  /**
+   * Sorts general office hours by language name using the current UI language.
+   *
+   * @param array $officeHours
+   */
+  private function sortGeneralOfficeHoursByLanguage(&$officeHours) {
+    $generalHours = $officeHours['general'];
+
+    usort($generalHours, function ($a, $b) {
+      $languageA = isset($a[0]['language']) ? $a[0]['language']->name->{$this->getCurrentLanguage()} : '';
+      $languageB = isset($b[0]['language']) ? $b[0]['language']->name->{$this->getCurrentLanguage()} : '';
+
+      if ($languageA == $languageB) {
+        return 0;
+      }
+
+      return $languageA < $languageB ? -1 : 1;
+    });
+
+    $officeHours['general'] = $generalHours;
   }
 
   /**
@@ -224,7 +280,7 @@ class OfficeHoursService {
    * @param array $officeHours
    */
   private function setOfficeHoursToCache(array $officeHours) {
-    $this->cache->set(self::CACHE_KEY, $officeHours, $this->getCacheExpireTimestamp());
+    $this->cache->set($this->getCacheKey(), $officeHours, $this->getCacheExpireTimestamp());
   }
 
   /**

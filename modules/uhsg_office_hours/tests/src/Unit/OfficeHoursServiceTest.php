@@ -6,6 +6,8 @@ use Drupal\Core\Config\ConfigFactory;
 use Drupal\Core\Config\ImmutableConfig;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Language\LanguageInterface;
+use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Logger\LoggerChannel;
 use Drupal\Tests\UnitTestCase;
 use Drupal\uhsg_active_degree_programme\ActiveDegreeProgrammeService;
@@ -24,6 +26,7 @@ class OfficeHoursServiceTest extends UnitTestCase {
   const CONFIG_API_PATH = 'example';
   const EMPTY_RESPONSE = ['degree_programme' => []];
   const EXCEPTION_MESSAGE = 'Exception';
+  const LANGUAGE = 'fi';
 
   /** @var \Drupal\uhsg_active_degree_programme\ActiveDegreeProgrammeService*/
   private $activeDegreeProgrammeService;
@@ -46,6 +49,12 @@ class OfficeHoursServiceTest extends UnitTestCase {
   /** @var \Drupal\Core\Entity\EntityTypeManagerInterface*/
   private $entityTypeManager;
 
+  /** @var \Drupal\Core\Language\LanguageInterface */
+  protected $language;
+
+  /** @var \Drupal\Core\Language\LanguageManagerInterface */
+  protected $languageManager;
+
   /** @var \Drupal\Core\Logger\LoggerChannel*/
   private $logger;
 
@@ -54,6 +63,9 @@ class OfficeHoursServiceTest extends UnitTestCase {
 
   /** @var \Psr\Http\Message\ResponseInterface*/
   private $response;
+
+  /** @var string */
+  private $responseJson;
 
   /** @var \Drupal\Component\Datetime\TimeInterface*/
   private $time;
@@ -76,6 +88,8 @@ class OfficeHoursServiceTest extends UnitTestCase {
     $this->response = $this->prophesize(ResponseInterface::class);
     $this->response->getStatusCode()->willReturn(200);
 
+    $this->responseJson = file_get_contents(__DIR__ . '/office-hours.json');
+
     $this->client = $this->prophesize(Client::class);
     $this->client->get(Argument::any(), Argument::any())->willReturn($this->response);
 
@@ -83,6 +97,12 @@ class OfficeHoursServiceTest extends UnitTestCase {
 
     $this->entityTypeManager = $this->prophesize(EntityTypeManagerInterface::class);
     $this->entityTypeManager->getStorage('taxonomy_term')->willReturn($this->entityStorage);
+
+    $this->language = $this->prophesize(LanguageInterface::class);
+    $this->language->getId()->willReturn(self::LANGUAGE);
+
+    $this->languageManager = $this->prophesize(LanguageManagerInterface::class);
+    $this->languageManager->getCurrentLanguage()->willReturn($this->language);
 
     $this->logger = $this->prophesize(LoggerChannel::class);
     $this->time = $this->prophesize(TimeInterface::class);
@@ -93,7 +113,8 @@ class OfficeHoursServiceTest extends UnitTestCase {
       $this->configFactory->reveal(),
       $this->logger->reveal(),
       $this->time->reveal(),
-      $this->activeDegreeProgrammeService->reveal()
+      $this->activeDegreeProgrammeService->reveal(),
+      $this->languageManager->reveal()
     );
   }
 
@@ -103,7 +124,7 @@ class OfficeHoursServiceTest extends UnitTestCase {
   public function shouldReturnTheOfficeHoursFromCacheWhenCachedResponseExists() {
     $cacheEntry = new stdClass();
     $cacheEntry->data = self::CACHED_RESPONSE;
-    $this->cache->get(OfficeHoursService::CACHE_KEY)->willReturn($cacheEntry);
+    $this->cache->get(Argument::any())->willReturn($cacheEntry);
 
     $this->client->get(Argument::any(), Argument::any())->shouldNotBeCalled();
 
@@ -137,6 +158,32 @@ class OfficeHoursServiceTest extends UnitTestCase {
     $this->response->getBody()->willReturn('[]');
 
     $this->assertEquals(self::EMPTY_RESPONSE, $this->officeHoursService->getOfficeHours());
+  }
+
+  /**
+   * @test
+   */
+  public function shouldGroupOfficeHoursByDegreeProgrammeAndGeneral() {
+    $this->response->getBody()->willReturn($this->responseJson);
+
+    $officeHours = $this->officeHoursService->getOfficeHours();
+
+    $this->assertArrayHasKey('degree_programme', $officeHours);
+    $this->assertArrayHasKey('general', $officeHours);
+    $this->assertEquals(2, count(array_keys($officeHours)));
+  }
+
+  /**
+   * @test
+   */
+  public function shouldReturnOnlyGeneralOfficeHoursWhenThereIsNoActiveDegreeProgramme() {
+    $this->response->getBody()->willReturn($this->responseJson);
+    $this->activeDegreeProgrammeService->getTerm()->willReturn(NULL);
+
+    $officeHours = $this->officeHoursService->getOfficeHours();
+
+    $this->assertEmpty($officeHours['degree_programme']);
+    $this->assertNotEmpty($officeHours['general']);
   }
 
 }

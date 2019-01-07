@@ -1,7 +1,7 @@
 services:
   uhsg_office_hours.office_hours_service:
     class: Drupal\uhsg_office_hours\OfficeHoursService
-    arguments: ['@cache.default', '@http_client', '@config.factory', '@logger.channel.uhsg_office_hours', '@datetime.time', '@uhsg_active_degree_programme.active_degree_programme']
+    arguments: ['@cache.default', '@http_client', '@config.factory', '@logger.channel.uhsg_office_hours', '@datetime.time', '@uhsg_active_degree_programme.active_degree_programme', '@language_manager']
 
   logger.channel.uhsg_office_hours:
     parent: logger.channel_base
