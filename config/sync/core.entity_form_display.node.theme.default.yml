@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.theme.field_domain_source
     - field.field.node.theme.field_theme_articles
     - field.field.node.theme.field_theme_faq
+    - field.field.node.theme.field_theme_related
     - field.field.node.theme.field_theme_section
     - field.field.node.theme.field_theme_teaser_image
     - field.field.node.theme.field_user_group
@@ -57,6 +58,15 @@ content:
       form_display_mode: default
       default_paragraph_type: _none
     third_party_settings: {  }
+    region: content
+  field_theme_related:
+    weight: 26
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
     region: content
   field_theme_section:
     type: entity_reference_paragraphs

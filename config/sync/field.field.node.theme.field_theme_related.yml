@@ -1,0 +1,25 @@
+uuid: a195d478-c2e1-46b5-a3dc-ae21e3d01758
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_theme_related
+    - node.type.theme
+id: node.theme.field_theme_related
+field_name: field_theme_related
+entity_type: node
+bundle: theme
+label: 'See also the Instructions for Students'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: articles_from_instructions_for_students
+      display_name: entity_reference_1
+      arguments: {  }
+field_type: entity_reference
