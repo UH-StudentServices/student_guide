@@ -29,7 +29,7 @@ class LinkToInstructionsForStudents extends BlockBase {
   }
 
   public function build() {
-    $url = \Drupal::service('uhsg_domain.domain')->getStudentDomainUrl();
+    $url = $this->getUrl();
     $label = \Drupal::service('uhsg_domain.domain')->getStudentDomainLabel();
     $markup  = '<div class="item-list"><ul class="list-of-links"><li>';
     $markup .= '<a href="' . $url . '" class="list-of-links__link button--action icon--arrow-offsite">';
@@ -41,6 +41,13 @@ class LinkToInstructionsForStudents extends BlockBase {
         '#markup' => $markup
       ],
     ];
+  }
+
+  private function getUrl() {
+    $studentDomainUrl = \Drupal::service('uhsg_domain.domain')->getStudentDomainUrl();
+    $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+
+    return $studentDomainUrl . $language;
   }
 
 }
