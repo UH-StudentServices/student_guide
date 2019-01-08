@@ -45,9 +45,16 @@ function uhsg_domain_entity_field_access($operation, \Drupal\Core\Field\FieldDef
  * the user group is teachers, student domain for other user groups.
  */
 function uhsg_domain_entity_presave(Drupal\Core\Entity\EntityInterface $entity) {
-  if ($entity instanceof \Drupal\node\Entity\Node && $entity->getType() == 'article') {
+  if ($entity instanceof \Drupal\node\Entity\Node && in_array($entity->getType(), ['article', 'theme'])) {
     $domain_id = $entity->field_user_group->value == 'teachers' ? DomainService::TEACHING_DOMAIN_ID : DomainService::STUDENT_DOMAIN_ID;
-    $entity->field_article_domain = $domain_id;
+
+    if ($entity->getType() == 'article') {
+      $entity->field_article_domain = $domain_id;
+    }
+    else {
+      $entity->field_theme_domain = $domain_id;
+    }
+
     // TODO: Set domain source. Both domains need to be accessible for this to
     // work, since the links will be rewritten to point to one of the domains.
     //$entity->field_domain_source = $domain_id;

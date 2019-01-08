@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.theme.body
     - field.field.node.theme.field_domain_source
     - field.field.node.theme.field_theme_articles
+    - field.field.node.theme.field_theme_domain
     - field.field.node.theme.field_theme_faq
     - field.field.node.theme.field_theme_related
     - field.field.node.theme.field_theme_section
@@ -60,7 +61,7 @@ content:
     third_party_settings: {  }
     region: content
   field_theme_related:
-    weight: 26
+    weight: 15
     settings:
       match_operator: CONTAINS
       size: 60
@@ -152,3 +153,4 @@ content:
     region: content
 hidden:
   field_domain_source: true
+  field_theme_domain: true
