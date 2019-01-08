@@ -109,8 +109,9 @@
       {{ degree_programme_switcher }}
       {{ content|without('field_article_paragraph', 'field_article_new_students', 'field_article_related') }}
     </div>
-    {% if themes %}
+    {% if (link_to_instructions_for_students or themes) %}
       <div class="col-right">
+        {{ link_to_instructions_for_students }}
         {{ themes }}
       </div>
     {% endif %}

@@ -1,4 +1,4 @@
 services:
   uhsg_domain.domain:
     class: Drupal\uhsg_domain\DomainService
-    arguments: ['@domain.negotiator']
+    arguments: ['@domain.negotiator', '@entity_type.manager']

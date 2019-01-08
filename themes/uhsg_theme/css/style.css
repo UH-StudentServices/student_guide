@@ -9603,4 +9603,5 @@ h1, h2, h3, h4, legend, .logo-block__content .logo-block__sitename,
 .path-frontpage .tooltip-toggle {
   vertical-align: top;
   margin-top: 0.2em;
+  padding-left: initial;
 }
