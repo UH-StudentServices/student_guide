@@ -8490,6 +8490,17 @@ li.avatar.avatar--default img {
   padding: 1em 0 .5em;
 }
 
+.article-related .box-story--topical.theme-plain .box-story__link-wrapper:after {
+  display: inline-block;
+  font-family: "hy-icons";
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
+  content: "";
+}
+
 #block-breadcrumbs {
   padding-top: 1.5em;
 }

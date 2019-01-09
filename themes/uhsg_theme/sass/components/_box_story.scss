@@ -8,3 +8,11 @@
   border-bottom: 1px solid #f8f8f8;
   padding: 1em 0 .5em;
 }
+
+.article-related {
+  .box-story--topical.theme-plain {
+    .box-story__link-wrapper:after {
+      @include icon($icon-external-link);
+    }
+  }
+}
