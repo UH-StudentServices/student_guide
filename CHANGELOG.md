@@ -12,6 +12,7 @@ Release date: ??.??.????
 * Display only the login/logout main menu item on teacher domain (HUB-397)
 * Display general office hours grouped by language (HUB-362).
 * Do not display news blocks on teacher domain frontpage (HUB-392)
+* Support for referring to student articles and themes from the teacher domain (HUB-373)
 
 
 ## 1.26
