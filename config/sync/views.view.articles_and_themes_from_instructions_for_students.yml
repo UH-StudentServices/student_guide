@@ -1,14 +1,15 @@
-uuid: ca095a4d-8509-4cbc-984d-2e47656c69bf
+uuid: 9e0ea931-689f-4936-a1eb-7ee9a6feb2d8
 langcode: en
 status: true
 dependencies:
   config:
     - node.type.article
+    - node.type.theme
   module:
     - node
     - user
-id: articles_from_instructions_for_students
-label: 'Articles from Instructions for students'
+id: articles_and_themes_from_instructions_for_students
+label: 'Articles and themes from Instructions for students'
 module: views
 description: ''
 tag: ''
@@ -143,8 +144,40 @@ display:
           id: type
           table: node_field_data
           field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
           value:
             article: article
+            theme: theme
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
           entity_type: node
           entity_field: type
           plugin_id: bundle
@@ -197,7 +230,44 @@ display:
           admin_label: ''
           operator: '='
           value: guide_student_helsinki_fi
-          group: 1
+          group: 2
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: string
+        field_theme_domain_target_id:
+          id: field_theme_domain_target_id
+          table: node__field_theme_domain
+          field: field_theme_domain_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: guide_student_helsinki_fi
+          group: 2
           exposed: false
           expose:
             operator_id: ''
@@ -246,6 +316,11 @@ display:
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+          2: OR
     cache_metadata:
       max-age: -1
       contexts:

@@ -4,8 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.node.theme.body
+    - field.field.node.theme.field_domain_source
     - field.field.node.theme.field_theme_articles
+    - field.field.node.theme.field_theme_domain
     - field.field.node.theme.field_theme_faq
+    - field.field.node.theme.field_theme_related
     - field.field.node.theme.field_theme_section
     - field.field.node.theme.field_theme_teaser_image
     - field.field.node.theme.field_user_group
@@ -44,6 +47,15 @@ content:
       link: ''
     third_party_settings: {  }
     region: content
+  field_theme_related:
+    weight: 5
+    label: above
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
   field_theme_section:
     type: entity_reference_revisions_entity_view
     weight: 3
@@ -60,6 +72,7 @@ content:
     third_party_settings: {  }
 hidden:
   field_domain_source: true
+  field_theme_domain: true
   field_theme_teaser_image: true
   field_user_group: true
   langcode: true

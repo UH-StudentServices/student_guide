@@ -1,0 +1,25 @@
+uuid: 28314d9b-e2d3-4ad0-8a30-1c3561e65fa9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_theme_domain
+    - node.type.theme
+id: node.theme.field_theme_domain
+field_name: field_theme_domain
+entity_type: node
+bundle: theme
+label: Domain
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:domain'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: weight
+      direction: ASC
+field_type: entity_reference
