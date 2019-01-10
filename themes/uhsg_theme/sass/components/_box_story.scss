@@ -9,6 +9,12 @@
   padding: 1em 0 .5em;
 }
 
+// IE11: Define width to avoid overflowing titles.
+.box-story__title {
+  span {
+    width: 100%;
+  }
+}
 .article-related {
   .box-story--topical.theme-plain {
     .box-story__link-wrapper:after {
