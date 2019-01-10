@@ -8486,8 +8486,12 @@ li.avatar.avatar--default img {
 }
 
 .box-story--constrained {
-  border-bottom: 1px solid #f8f8f8;
+  border-bottom: 1px solid #979797;
   padding: 1em 0 .5em;
+}
+
+.box-story--constrained .tag-list {
+  margin-bottom: initial;
 }
 
 #block-breadcrumbs {
@@ -9401,6 +9405,7 @@ h1, h2, h3, h4, legend, .logo-block__content .logo-block__sitename,
   display: inline;
   padding-right: 0;
   margin-right: 1em;
+  vertical-align: initial;
 }
 
 .tag-list__item:after {
