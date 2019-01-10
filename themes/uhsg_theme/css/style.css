@@ -8490,6 +8490,10 @@ li.avatar.avatar--default img {
   padding: 1em 0 .5em;
 }
 
+.box-story__title span {
+  width: 100%;
+}
+
 #block-breadcrumbs {
   padding-top: 1.5em;
 }
@@ -9437,6 +9441,7 @@ h1, h2, h3, h4, legend, .logo-block__content .logo-block__sitename,
   letter-spacing: -0.05em;
   line-height: 1.2em;
   font-weight: 700;
+  width: 100%;
 }
 
 .theme--box .theme__link-wrapper {
@@ -9495,6 +9500,7 @@ h1, h2, h3, h4, legend, .logo-block__content .logo-block__sitename,
   text-transform: uppercase;
   line-height: 1.2em;
   font-weight: 700;
+  width: 100%;
 }
 
 .theme--flat-box .theme__link-wrapper {
