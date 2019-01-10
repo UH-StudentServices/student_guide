@@ -13,6 +13,7 @@ Release date: ??.??.????
 * Display general office hours grouped by language (HUB-362).
 * Do not display news blocks on teacher domain frontpage (HUB-392)
 * IE11: Fixed overflowing news and theme titles (HUB-400, HUB-404)
+* Support for referring to student articles and themes from the teacher domain (HUB-373)
 
 
 ## 1.26

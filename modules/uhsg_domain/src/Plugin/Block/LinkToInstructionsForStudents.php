@@ -32,7 +32,7 @@ class LinkToInstructionsForStudents extends BlockBase {
     $url = $this->getUrl();
     $label = \Drupal::service('uhsg_domain.domain')->getStudentDomainLabel();
     $markup  = '<div class="item-list"><ul class="list-of-links"><li>';
-    $markup .= '<a href="' . $url . '" class="list-of-links__link button--action icon--arrow-offsite">';
+    $markup .= '<a href="' . $url . '" class="list-of-links__link button--action icon--external-link">';
     $markup .= $label;
     $markup .= '</a></li></ul></div>';
 

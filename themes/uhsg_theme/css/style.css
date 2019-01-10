@@ -8494,6 +8494,17 @@ li.avatar.avatar--default img {
   width: 100%;
 }
 
+.article-related .box-story--topical.theme-plain .box-story__link-wrapper:after {
+  display: inline-block;
+  font-family: "hy-icons";
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
+  content: "";
+}
+
 #block-breadcrumbs {
   padding-top: 1.5em;
 }
