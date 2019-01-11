@@ -44,6 +44,7 @@ content:
     type: image
     region: content
 hidden:
+  field_domain_source: true
   field_news_email: true
   field_news_email_sent: true
   langcode: true
