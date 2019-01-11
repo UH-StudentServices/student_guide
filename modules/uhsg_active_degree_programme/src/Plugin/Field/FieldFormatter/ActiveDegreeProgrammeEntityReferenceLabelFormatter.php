@@ -88,8 +88,13 @@ class ActiveDegreeProgrammeEntityReferenceLabelFormatter extends EntityReference
    * matches the active degree programme. Otherwise use default implementation.
    */
   public function viewElements(FieldItemListInterface $items, $langcode) {
+
     if ($activeDegreeProgrammeId = $this->activeDegreeProgrammeService->getId()) {
-      return $this->viewCondensedElements($items, $langcode, $activeDegreeProgrammeId);
+      $entitiesToView = $this->getEntitiesToView($items, $langcode);
+
+      if (count($entitiesToView) > 1) {
+        return $this->viewCondensedElements($items, $langcode, $activeDegreeProgrammeId, $entitiesToView);
+      }
     }
 
     return parent::viewElements($items, $langcode);
@@ -98,10 +103,9 @@ class ActiveDegreeProgrammeEntityReferenceLabelFormatter extends EntityReference
   /**
    * @see viewElements
    */
-  protected function viewCondensedElements(FieldItemListInterface $items, $langcode, $activeDegreeProgrammeId) {
+  protected function viewCondensedElements(FieldItemListInterface $items, $langcode, $activeDegreeProgrammeId, $entitiesToView) {
     $elements = [];
     $output_as_link = $this->getSetting('link');
-    $entitiesToView = $this->getEntitiesToView($items, $langcode);
 
     foreach ($entitiesToView as $delta => $entity) {
       if ($entity->id() === $activeDegreeProgrammeId) {
@@ -141,6 +145,7 @@ class ActiveDegreeProgrammeEntityReferenceLabelFormatter extends EntityReference
           $elements[$delta] = ['#plain_text' => $label];
         }
         $elements[$delta]['#cache']['tags'] = $entity->getCacheTags();
+        $elements[$delta]['#cache']['contexts'][] = 'active_degree_programme';
       }
     }
 
