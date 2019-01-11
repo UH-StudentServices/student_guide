@@ -159,3 +159,6 @@ msgstr "Haluan vastauksen palautteeseeni: @replyTo"
 
 msgid "You will find related content for students on the Instructions for Students Service."
 msgstr "Aiheeseen liittyvät opiskelijoille suunnatut ohjeet löydät Opiskelijan ohjeet -palvelusta."
+
+msgid "Notifications for students"
+msgstr "Tiedotteet opiskelijoille"
