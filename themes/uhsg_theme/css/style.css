@@ -8490,6 +8490,10 @@ li.avatar.avatar--default img {
   padding: 1em 0 .5em;
 }
 
+.box-story--constrained .tag-list {
+  margin-bottom: initial;
+}
+
 .box-story__title span {
   width: 100%;
 }
@@ -8503,10 +8507,6 @@ li.avatar.avatar--default img {
   -moz-osx-font-smoothing: grayscale;
   vertical-align: bottom;
   content: "";
-}
-
-.box-story--constrained .tag-list {
-  margin-bottom: initial;
 }
 
 #block-breadcrumbs {
