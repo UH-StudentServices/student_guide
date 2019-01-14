@@ -12,6 +12,8 @@ dependencies:
     - field.storage.node.field_theme_faq
     - field.storage.paragraph.field_accordion_title
     - field.storage.paragraph.field_accordion_body
+    - field.storage.node.field_article_domain
+    - field.storage.node.field_theme_domain
     - search_api.server.student_guide
   module:
     - paragraphs
@@ -105,6 +107,22 @@ field_settings:
         - field.storage.paragraph.field_accordion_body
       module:
         - paragraphs
+  field_article_domain:
+    label: 'Article domain'
+    datasource_id: 'entity:node'
+    property_path: field_article_domain
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_article_domain
+  field_theme_domain:
+    label: 'Theme domain'
+    datasource_id: 'entity:node'
+    property_path: field_theme_domain
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_theme_domain
 datasource_settings:
   'entity:node':
     bundles:
