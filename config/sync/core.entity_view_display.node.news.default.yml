@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.news.body
+    - field.field.node.news.field_domain_source
     - field.field.node.news.field_news_degree_programme
     - field.field.node.news.field_news_email
     - field.field.node.news.field_news_email_sent
