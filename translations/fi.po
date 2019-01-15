@@ -162,3 +162,6 @@ msgstr "Aiheeseen liittyvät opiskelijoille suunnatut ohjeet löydät Opiskelija
 
 msgid "and @count others"
 msgstr "ja @count muuta"
+
+msgid "Notifications for students"
+msgstr "Tiedotteet opiskelijoille"

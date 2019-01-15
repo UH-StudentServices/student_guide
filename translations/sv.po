@@ -159,3 +159,6 @@ msgstr "Du hittar relaterat innehåll för studerande på Instruktioner för stu
 
 msgid "and @count others"
 msgstr "och @count andra"
+
+msgid "Notifications for students"
+msgstr "Meddelanden för studerande"
