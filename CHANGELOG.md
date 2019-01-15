@@ -14,6 +14,7 @@ Release date: ??.??.????
 * Do not display news blocks on teacher domain frontpage (HUB-392)
 * IE11: Fixed overflowing news and theme titles (HUB-400, HUB-404)
 * Support for referring to student articles and themes from the teacher domain (HUB-373)
+* News archive: Condensed degree programme list (HUB-405)
 
 
 ## 1.26
