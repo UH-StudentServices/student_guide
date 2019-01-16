@@ -263,10 +263,15 @@ function uhsg_theme_preprocess_views_view(&$variables) {
       break;
 
     case 'search':
-      $variables['title'] = $variables['view']->getTitle();
+      $is_student_domain = \Drupal::service('uhsg_domain.domain')->isStudentDomain();
+
+      $variables['title'] = $is_student_domain
+        ? $variables['view']->getTitle()
+        : \Drupal::config('uhsg_service_provider_details.settings')->get('logo_text') ;
+
       $variables['content_attributes']['class'][] = 'view-content';
       $variables['degree_programme_switcher'] = _uhsg_theme_get_degree_programme_switcher();
-      _uhsg_theme_add_front_page_text_blocks($variables);
+      _uhsg_theme_add_front_page_text_blocks($variables, $is_student_domain);
       _uhsg_theme_add_link_to_instructions_for_students($variables);
       break;
 
@@ -277,9 +282,7 @@ function uhsg_theme_preprocess_views_view(&$variables) {
   }
 }
 
-function _uhsg_theme_add_front_page_text_blocks(&$variables) {
-  $is_student_domain = \Drupal::service('uhsg_domain.domain')->isStudentDomain();
-
+function _uhsg_theme_add_front_page_text_blocks(&$variables, $is_student_domain) {
   $front_page_text_block = $is_student_domain
     ? \Drupal::entityTypeManager()->getViewBuilder('block_content')->view(BlockContent::load(1))
     : \Drupal::entityTypeManager()->getViewBuilder('block_content')->view(uhsg_theme_load_content_block_by_uuid('46c7c03f-88cb-42bd-ab54-e8ac5cce8bab'));
