@@ -16,6 +16,7 @@ Release date: ??.??.????
 * Support for referring to student articles and themes from the teacher domain (HUB-373)
 * News archive: Condensed degree programme list (HUB-405)
 * Link to student news (HUB-376)
+* Domain-specific front page title and text blocks (HUB-382)
 
 
 ## 1.26
