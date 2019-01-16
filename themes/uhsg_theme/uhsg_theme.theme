@@ -263,24 +263,10 @@ function uhsg_theme_preprocess_views_view(&$variables) {
       break;
 
     case 'search':
-      // Add front page text block.
-      $block_entity = BlockContent::load(1);
-      $block_view = \Drupal::entityTypeManager()->getViewBuilder('block_content')->view($block_entity);
-      if ($block_view) {
-        $variables['frontpagetextblock'] = $block_view;
-      }
-
-      // Add front page additional text block.
-      $additional_text_block = \Drupal::service('entity.repository')->loadEntityByUuid('block_content', 'ecd71681-cd04-4ee0-b9b2-015cc2a19ff0');
-      $additional_text_block_translation = \Drupal::entityManager()->getTranslationFromContext($additional_text_block);
-      if ($additional_text_block_translation) {
-        $variables['frontpageadditionaltextblock'] = $additional_text_block_translation->field_content_block_text->value;
-        $variables['#attached']['library'][] = 'uhsg_theme/tooltip';
-      }
-
       $variables['title'] = $variables['view']->getTitle();
       $variables['content_attributes']['class'][] = 'view-content';
       $variables['degree_programme_switcher'] = _uhsg_theme_get_degree_programme_switcher();
+      _uhsg_theme_add_front_page_text_blocks($variables);
       _uhsg_theme_add_link_to_instructions_for_students($variables);
       break;
 
@@ -289,6 +275,37 @@ function uhsg_theme_preprocess_views_view(&$variables) {
       $variables['degree_programme_switcher'] = _uhsg_theme_get_degree_programme_switcher();
       break;
   }
+}
+
+function _uhsg_theme_add_front_page_text_blocks(&$variables) {
+  $is_student_domain = \Drupal::service('uhsg_domain.domain')->isStudentDomain();
+
+  $front_page_text_block = $is_student_domain
+    ? \Drupal::entityTypeManager()->getViewBuilder('block_content')->view(BlockContent::load(1))
+    : \Drupal::entityTypeManager()->getViewBuilder('block_content')->view(uhsg_theme_load_content_block_by_uuid('46c7c03f-88cb-42bd-ab54-e8ac5cce8bab'));
+
+  $front_page_additional_text_block = $is_student_domain
+    ? uhsg_theme_load_content_block_value(uhsg_theme_load_content_block_by_uuid('ecd71681-cd04-4ee0-b9b2-015cc2a19ff0'))
+    : uhsg_theme_load_content_block_value(uhsg_theme_load_content_block_by_uuid('56a05a0a-10f0-4c28-bd26-63e5e2e82768'));
+
+  if ($front_page_text_block) {
+    $variables['frontpagetextblock'] = $front_page_text_block;
+  }
+
+  if ($front_page_additional_text_block) {
+    $variables['frontpageadditionaltextblock'] = $front_page_additional_text_block;
+    $variables['#attached']['library'][] = 'uhsg_theme/tooltip';
+  }
+}
+
+function uhsg_theme_load_content_block_by_uuid($uuid) {
+  $content_block = \Drupal::service('entity.repository')->loadEntityByUuid('block_content', $uuid);
+
+  return \Drupal::entityManager()->getTranslationFromContext($content_block);
+}
+
+function uhsg_theme_load_content_block_value($content_block) {
+  return $content_block ? $content_block->field_content_block_text->value : '';
 }
 
 /**
