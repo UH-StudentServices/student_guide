@@ -156,3 +156,9 @@ msgstr "Jag vill gärna ha svar på min feedback: @replyTo"
 
 msgid "You will find related content for students on the Instructions for Students Service."
 msgstr "Du hittar relaterat innehåll för studerande på Instruktioner för studerande -sidorna."
+
+msgid "and @count others"
+msgstr "och @count andra"
+
+msgid "Notifications for students"
+msgstr "Meddelanden för studerande"

@@ -5,8 +5,12 @@
 }
 
 .box-story--constrained {
-  border-bottom: 1px solid #f8f8f8;
+  border-bottom: 1px solid $silver;
   padding: 1em 0 .5em;
+
+  .tag-list {
+    margin-bottom: initial;
+  }
 }
 
 // IE11: Define width to avoid overflowing titles.
