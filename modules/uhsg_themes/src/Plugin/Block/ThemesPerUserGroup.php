@@ -23,6 +23,18 @@ class ThemesPerUserGroup extends BlockBase {
   }
 
   private function render() {
+    return \Drupal::service('uhsg_domain.domain')->isTeachingDomain()
+      ? $this->renderInstructionsForTeaching()
+      : $this->renderInstructionsForStudents();
+  }
+
+  private function renderInstructionsForTeaching() {
+    return [
+      'teaching' => $this->renderDisplay('teaching'),
+    ];
+  }
+
+  private function renderInstructionsForStudents() {
     return [
       'degree_students' => $this->renderDisplay('degree_students'),
       'doctoral_candidates' => $this->renderDisplay('doctoral_candidates'),
