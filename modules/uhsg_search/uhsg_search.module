@@ -3,6 +3,7 @@
 /**
  * Implements hook_form_FORM_ID_alter().
  */use Drupal\search_api\Query\QueryInterface;
+use Solarium\QueryType\Select\Query\FilterQuery;
 use Solarium\QueryType\Select\Query\Query;
 use Drupal\Core\Form\FormStateInterface;
 
@@ -33,6 +34,7 @@ function uhsg_search_preprocess_node(&$variables) {
     else {
       $variables['attributes']['data-type'] = $node->getType();
     }
+    $variables['#cache']['contexts'][] = 'active_degree_programme';
   }
 }
 
@@ -61,6 +63,7 @@ function uhsg_search_article_is_degree_programme_specific($node) {
  */
 function uhsg_search_search_api_solr_query_alter(Query $solarium_query, QueryInterface $query) {
   uhsg_search_wildcard_query($solarium_query);
+  uhsg_search_degree_programme_query($solarium_query);
 }
 
 /**
@@ -87,5 +90,31 @@ function uhsg_search_wildcard_query(Query $solarium_query) {
 
     // Override query.
     $solarium_query->setQuery($query);
+  }
+}
+
+/**
+ * Add active degree programme filtering to search query for articles and news.
+ * Exclude articles and themes that have a degree programme associated with them
+ * when it does not match the active degree programme. Include articles and news
+ * that do not have any degree programme associated with them. Include themes
+ * (themes do not have degree programme associated with them).
+ *
+ * @param \Solarium\QueryType\Select\Query\Query $solarium_query
+ */
+function uhsg_search_degree_programme_query(Query $solarium_query) {
+  $active_degree_programme = \Drupal::service('uhsg_active_degree_programme.active_degree_programme')->getId();
+
+  if ($active_degree_programme) {
+    $query = '(';
+    $query .= "(ss_type:article AND itm_article_degree_programme_tid:$active_degree_programme) ";
+    $query .= "OR (ss_type:news AND itm_news_degree_programme_tid:$active_degree_programme) ";
+    $query .= 'OR (ss_type:article AND *:* NOT itm_article_degree_programme_tid:*) ';
+    $query .= 'OR (ss_type:news AND *:* NOT itm_news_degree_programme_tid:*) ';
+    $query .= 'OR ss_type:theme';
+    $query .= ')';
+
+    $degree_programme_filter_query = (new FilterQuery())->setKey('degree_programme')->setQuery($query);
+    $solarium_query->addFilterQuery($degree_programme_filter_query);
   }
 }
