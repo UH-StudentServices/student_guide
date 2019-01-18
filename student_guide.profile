@@ -322,7 +322,7 @@ function _student_guide_get_original_install_profile() {
 }
 
 /**
- * Create content block for front page text.
+ * Create content block for front page text (Instructions for students).
  */
 function student_guide_create_front_page_text_block() {
   $text_fi = 'Opas antaa sinulle kaiken opinnoissa tarvitsemasi tiedon. Voit hakea tietoa joko vapaan haun tai valmiiksi koostettujen teemojen avulla.';
@@ -347,7 +347,8 @@ function student_guide_create_front_page_text_block() {
 }
 
 /**
- * Create content block for front page additional text.
+ * Create content block for front page additional text (Instructions for
+ * students).
  */
 function student_guide_create_front_page_additional_text_block() {
   $block = BlockContent::create([
@@ -355,6 +356,42 @@ function student_guide_create_front_page_additional_text_block() {
     'type' => 'content_block',
     'langcode' => 'fi',
     'uuid' => 'ecd71681-cd04-4ee0-b9b2-015cc2a19ff0',
+  ]);
+
+  $block->set('field_content_block_text', '');
+  $block->addTranslation('sv', ['field_content_block_text' => '']);
+  $block->addTranslation('en', ['field_content_block_text' => '']);
+  $block->save();
+}
+
+/**
+ * Create content block for front page text (Instructions for teaching).
+ */
+function student_guide_create_teaching_front_page_text_block() {
+  $block = BlockContent::create([
+    'info' => 'Front page text block: Teaching',
+    'type' => 'content_block',
+    'langcode' => 'fi',
+    'uuid' => '46c7c03f-88cb-42bd-ab54-e8ac5cce8bab',
+  ]);
+
+  $block->set('field_content_block_text', '');
+  $block->addTranslation('sv', ['field_content_block_text' => '']);
+  $block->addTranslation('en', ['field_content_block_text' => '']);
+  $block->save();
+}
+
+
+/**
+ * Create content block for front page additional text (Instructions for
+ * teaching).
+ */
+function student_guide_create_teaching_front_page_additional_text_block() {
+  $block = BlockContent::create([
+    'info' => 'Front page additional text block: Teaching',
+    'type' => 'content_block',
+    'langcode' => 'fi',
+    'uuid' => '56a05a0a-10f0-4c28-bd26-63e5e2e82768',
   ]);
 
   $block->set('field_content_block_text', '');
