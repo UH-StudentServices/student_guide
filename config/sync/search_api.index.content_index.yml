@@ -154,6 +154,7 @@ processor_settings:
       preprocess_index: -10
       preprocess_query: -10
   rendered_item: {  }
+  entity_status: {  }
 tracker_settings:
   default:
     indexing_order: fifo
