@@ -17,6 +17,7 @@ Release date: ??.??.????
 * News archive: Condensed degree programme list (HUB-405)
 * Link to student news (HUB-376)
 * Front page: Teaching themes listing (HUB-383)
+* Domain-specific search results (HUB-375)
 
 
 ## 1.26
