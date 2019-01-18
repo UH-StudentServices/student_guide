@@ -267,7 +267,7 @@ function uhsg_theme_preprocess_views_view(&$variables) {
 
       $variables['title'] = $is_student_domain
         ? $variables['view']->getTitle()
-        : \Drupal::config('uhsg_service_provider_details.settings')->get('logo_text') ;
+        : \Drupal::config('uhsg_service_provider_details.settings')->get('logo_text');
 
       $variables['content_attributes']['class'][] = 'view-content';
       $variables['degree_programme_switcher'] = _uhsg_theme_get_degree_programme_switcher();
@@ -303,7 +303,6 @@ function _uhsg_theme_add_front_page_text_blocks(&$variables, $is_student_domain)
 
 function uhsg_theme_load_content_block_by_uuid($uuid) {
   $content_block = \Drupal::service('entity.repository')->loadEntityByUuid('block_content', $uuid);
-
   return \Drupal::entityManager()->getTranslationFromContext($content_block);
 }
 
