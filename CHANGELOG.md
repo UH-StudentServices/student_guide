@@ -19,6 +19,7 @@ Release date: ??.??.????
 * Front page: Teaching themes listing (HUB-383)
 * Domain-specific search results (HUB-375)
 * Domain-specific front page title and text blocks (HUB-382)
+* Search performance improvements (HUB-387)
 
 
 ## 1.26
