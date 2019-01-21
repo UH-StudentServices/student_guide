@@ -458,6 +458,11 @@ function uhsg_theme_preprocess_html(&$variables) {
     $domain_id = \Drupal::service('uhsg_domain.domain')->getActiveDomainId();
     $variables['attributes']['class'][] = \Drupal\Component\Utility\Html::getClass($domain_id);
   }
+
+  // Front page head title: Just the site name.
+  if (\Drupal::service('path.matcher')->isFrontPage()) {
+    $variables['head_title'] = ['name' => \Drupal::config('system.site')->get('name')];
+  }
 }
 
 /**
