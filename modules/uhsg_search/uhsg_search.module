@@ -97,16 +97,22 @@ function uhsg_search_wildcard_query(Query $solarium_query) {
 
 /**
  * Add active domain filtering to search query for articles and themes. News do
- * not have domain associated with them. Allow them in the results by adding a
- * type filter as the last OR filter.
+ * not have domain associated with them. Allow news results on student domain.
+ * Exclude all news when on teaching domain.
  *
  * @param \Solarium\QueryType\Select\Query\Query $solarium_query
  */
 function uhsg_search_domain_filter(Query $solarium_query) {
   $active_domain_id = \Drupal::service('uhsg_domain.domain')->getActiveDomainId();
-  $domain_filter_query = (new FilterQuery())
-    ->setKey('domain')
-    ->setQuery("(ss_field_theme_domain:$active_domain_id OR ss_field_article_domain:$active_domain_id OR ss_type:news)");
+
+  $query = '(';
+  $query .= "ss_field_theme_domain:$active_domain_id OR ss_field_article_domain:$active_domain_id";
+  if (\Drupal::service('uhsg_domain.domain')->isStudentDomain()) {
+    $query .= ' OR ss_type:news';
+  }
+  $query .= ')';
+
+  $domain_filter_query = (new FilterQuery())->setKey('domain')->setQuery($query);
   $solarium_query->addFilterQuery($domain_filter_query);
 }
 
