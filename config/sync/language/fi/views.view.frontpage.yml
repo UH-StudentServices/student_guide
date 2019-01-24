@@ -3,6 +3,9 @@ description: 'Kaikki etusivulle nostettu sisältö.'
 display:
   default:
     display_options:
+      empty:
+        area_text_custom:
+          content: 'No front page content has been created yet.'
       exposed_form:
         options:
           submit_button: Käytä

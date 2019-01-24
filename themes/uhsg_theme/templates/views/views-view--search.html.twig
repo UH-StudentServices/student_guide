@@ -64,6 +64,11 @@
       <div id="my-searches">
       </div>
     </div>
+    {% if link_to_instructions_for_students %}
+      <div class="col-right">
+        {{ link_to_instructions_for_students }}
+      </div>
+    {% endif %}
   </div>
 
   {% if header.result %}

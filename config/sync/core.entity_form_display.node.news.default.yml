@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.news.body
+    - field.field.node.news.field_domain_source
     - field.field.node.news.field_news_degree_programme
     - field.field.node.news.field_news_email
     - field.field.node.news.field_news_email_sent
@@ -62,7 +63,8 @@ content:
   langcode:
     type: language_select
     weight: 1
-    settings: {  }
+    settings:
+      include_locked: true
     third_party_settings: {  }
     region: content
   path:
@@ -82,7 +84,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 120
+    weight: 12
     region: content
     third_party_settings: {  }
   sticky:
@@ -102,9 +104,9 @@ content:
     region: content
   translation:
     weight: 4
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
   uid:
     type: entity_reference_autocomplete
     weight: 2
@@ -115,4 +117,5 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_domain_source: true
   field_news_email_sent: true

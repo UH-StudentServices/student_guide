@@ -20,6 +20,9 @@ settings:
     -
       value: specialist_training
       label: 'Specialist Training'
+    -
+      value: teachers
+      label: Teachers
   allowed_values_function: ''
 module: options
 locked: false

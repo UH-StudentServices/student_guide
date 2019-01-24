@@ -1,0 +1,11 @@
+uuid: c4fa2b68-6b27-40d1-86de-c79ab834f683
+langcode: en
+status: true
+dependencies: {  }
+id: guide_teacher_helsinki_fi
+domain_id: 15834470
+hostname: guide.teacher.helsinki.fi
+name: 'Instructions for teaching'
+scheme: https
+weight: 2
+is_default: false

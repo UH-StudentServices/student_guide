@@ -1,0 +1,62 @@
+<?php
+
+/**
+ * @file
+ * Contains uhsg_domain.module.
+ */
+
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\uhsg_domain\DomainService;
+
+/**
+ * Implements hook_help().
+ */
+function uhsg_domain_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the uhsg_domain module.
+    case 'help.page.uhsg_domain':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Provides support for creating guide content for student and teaching domains.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_entity_field_access().
+ */
+function uhsg_domain_entity_field_access($operation, \Drupal\Core\Field\FieldDefinitionInterface $field_definition, \Drupal\Core\Session\AccountInterface $account, \Drupal\Core\Field\FieldItemListInterface $items = NULL) {
+
+  // Related content: Deny for other than Instructions for teaching.
+  return in_array($field_definition->getName(), ['field_article_related', 'field_theme_related']) && !\Drupal::service('uhsg_domain.domain')->isTeachingDomain()
+    ? AccessResult::forbidden()
+    : AccessResult::neutral();
+}
+
+
+
+/**
+ * Implements hook_entity_presave().
+ *
+ * Sets article domain based on the selected user group. Teaching domain when
+ * the user group is teachers, student domain for other user groups.
+ */
+function uhsg_domain_entity_presave(Drupal\Core\Entity\EntityInterface $entity) {
+  if ($entity instanceof \Drupal\node\Entity\Node && in_array($entity->getType(), ['article', 'theme'])) {
+    $domain_id = $entity->field_user_group->value == 'teachers' ? DomainService::TEACHING_DOMAIN_ID : DomainService::STUDENT_DOMAIN_ID;
+
+    if ($entity->getType() == 'article') {
+      $entity->field_article_domain = $domain_id;
+    }
+    else {
+      $entity->field_theme_domain = $domain_id;
+    }
+
+    // TODO: Set domain source. Both domains need to be accessible for this to
+    // work, since the links will be rewritten to point to one of the domains.
+    //$entity->field_domain_source = $domain_id;
+  }
+}

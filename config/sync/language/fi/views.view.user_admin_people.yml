@@ -11,6 +11,9 @@ display:
               2:
                 title: Suljettu
             label: Tila
+        combine:
+          expose:
+            label: 'Nimi tai sähköposti sisältää'
         roles_target_id:
           expose:
             label: Rooli

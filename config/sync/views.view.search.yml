@@ -34,8 +34,8 @@ display:
       query:
         type: views_query
         options:
-          bypass_access: false
-          skip_access: false
+          skip_access: 1
+          bypass_access: 1
       exposed_form:
         type: input_required
         options:

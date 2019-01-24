@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e228af5594c6b363b329f8b2522bba9b",
+    "content-hash": "3e03f6f4e02dd7e1a80f2a3749a1b308",
     "packages": [
         {
             "name": "RubaXa/Sortable",
@@ -40,7 +40,7 @@
                 "source": "https://github.com/UH-StudentServices/uh_courses_embed/tree/drupal8",
                 "issues": "https://github.com/UH-StudentServices/uh_courses_embed/issues"
             },
-            "time": "2018-06-06T11:43:02+00:00"
+            "time": "2018-06-06 11:43:02"
         },
         {
             "name": "UH-StudentServices/video_embed_unitube",
@@ -953,7 +953,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.24",
-                    "datestamp": "1527523080",
+                    "datestamp": "1542915180",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -1033,7 +1033,7 @@
                 "source": "https://github.com/larowlan/block_access/tree/8.x-1.x",
                 "issues": "https://github.com/larowlan/block_access/issues"
             },
-            "time": "2017-01-12T08:55:41+00:00"
+            "time": "2017-01-12 08:55:41"
         },
         {
             "name": "drupal/config_filter",
@@ -1062,7 +1062,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.2",
-                    "datestamp": "1522943885",
+                    "datestamp": "1537978080",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -1185,7 +1185,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.4-beta4",
-                    "datestamp": "1480410480",
+                    "datestamp": "1530799424",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -1646,6 +1646,60 @@
             }
         },
         {
+            "name": "drupal/domain",
+            "version": "1.0.0-alpha14",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/domain",
+                "reference": "8.x-1.0-alpha14"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/domain-8.x-1.0-alpha14.zip",
+                "reference": "8.x-1.0-alpha14",
+                "shasum": "9889669ee19ae07fc44ab3bbe6fd7049e1317499"
+            },
+            "require": {
+                "drupal/core": "^8.5"
+            },
+            "require-dev": {
+                "drupal/domain_access": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-alpha14",
+                    "datestamp": "1539981780",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "agentrickard",
+                    "homepage": "https://www.drupal.org/user/20975"
+                },
+                {
+                    "name": "nonsie",
+                    "homepage": "https://www.drupal.org/user/29899"
+                }
+            ],
+            "description": "Creates domain records within a Drupal installation.",
+            "homepage": "https://www.drupal.org/project/domain",
+            "support": {
+                "source": "http://cgit.drupalcode.org/domain"
+            }
+        },
+        {
             "name": "drupal/draggableviews",
             "version": "1.0.0",
             "source": {
@@ -1669,7 +1723,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0",
-                    "datestamp": "1477076039",
+                    "datestamp": "1541510881",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -1688,6 +1742,10 @@
                 {
                     "name": "ginc",
                     "homepage": "https://www.drupal.org/user/332249"
+                },
+                {
+                    "name": "hanoii",
+                    "homepage": "https://www.drupal.org/user/23157"
                 },
                 {
                     "name": "iStryker",
@@ -1756,7 +1814,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/edit_own_user_account_permission"
             },
-            "time": "2017-05-06T20:17:50+00:00"
+            "time": "2017-05-06 20:17:50"
         },
         {
             "name": "drupal/editor_file",
@@ -1782,7 +1840,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.2",
-                    "datestamp": "1478115534",
+                    "datestamp": "1542624480",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -1832,7 +1890,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.4",
-                    "datestamp": "1515143885",
+                    "datestamp": "1527241084",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -1945,10 +2003,10 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0-beta2",
-                    "datestamp": "1516352268",
+                    "datestamp": "1530623921",
                     "security-coverage": {
                         "status": "not-covered",
-                        "message": "Project has not opted into security advisory coverage!"
+                        "message": "Beta releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -2077,8 +2135,8 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.2+9-dev",
-                    "datestamp": "1520542080",
+                    "version": "8.x-2.3+10-dev",
+                    "datestamp": "1541335080",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
@@ -2102,10 +2160,10 @@
             "description": "Allows your site to be tracked by Google Analytics by adding a Javascript tracking code to every page.",
             "homepage": "https://www.drupal.org/project/google_analytics",
             "support": {
-                "source": "http://git.drupal.org/project/google_analytics.git",
+                "source": "https://git.drupal.org/project/google_analytics.git",
                 "issues": "https://www.drupal.org/project/issues/google_analytics"
             },
-            "time": "2016-09-03T15:20:18+00:00"
+            "time": "2016-09-03 15:20:18"
         },
         {
             "name": "drupal/google_analytics_reports",
@@ -2260,7 +2318,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.27",
-                    "datestamp": "1499867343",
+                    "datestamp": "1533849180",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2382,7 +2440,7 @@
                 },
                 "drupal": {
                     "version": "8.x-2.1",
-                    "datestamp": "1521470284",
+                    "datestamp": "1527712680",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2637,7 +2695,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.2",
-                    "datestamp": "1524421084",
+                    "datestamp": "1536407884",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2848,7 +2906,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.15",
-                    "datestamp": "1496919842",
+                    "datestamp": "1541330284",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2973,7 +3031,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.8",
-                    "datestamp": "1523872384",
+                    "datestamp": "1531985581",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3096,7 +3154,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.2",
-                    "datestamp": "1523090287",
+                    "datestamp": "1529312013",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3165,7 +3223,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.1",
-                    "datestamp": "1513810384",
+                    "datestamp": "1527112080",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3321,7 +3379,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/view_unpublished"
             },
-            "time": "2017-02-12T20:42:52+00:00"
+            "time": "2017-02-12 20:42:52"
         },
         {
             "name": "drush/drush",

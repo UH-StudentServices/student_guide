@@ -84,11 +84,31 @@
   ]
 %}
 
+{% set related_content = create_attribute() %}
+
+{%
+  set related_content_classes = [
+    'container',
+    'tube',
+    'article-related'
+  ]
+%}
+
 <article {{ attributes.addClass(node_classes) }}>
   <div{{ content_attributes.addClass(container_classes) }}>
-    <h1> {{ label }} </h1>
-    {{ degree_programme_switcher }}
-    {{ content|without('field_theme_faq', 'field_theme_section') }}
+    <div class="col-container">
+      <div class="col-main">
+        <h1> {{ label }} </h1>
+        {{ degree_programme_switcher }}
+        {{ content|without('field_theme_articles', 'field_theme_faq', 'field_theme_section', 'field_theme_related') }}
+      </div>
+      {% if link_to_instructions_for_students %}
+        <div class="col-right">
+          {{ link_to_instructions_for_students }}
+        </div>
+      {% endif %}
+    </div>
+    {{ content.field_theme_articles }}
   </div>
   {{ content.field_theme_section }}
   <div{{ content_attributes.addClass(container_classes) }}>
@@ -100,4 +120,9 @@
       </div>
     {% endif %}
   </div>
+  {% if content.field_theme_related %}
+    <div{{ related_content.addClass(related_content_classes) }}>
+      {{ content.field_theme_related }}
+    </div>
+  {% endif %}
 </article>

@@ -179,6 +179,16 @@ function uhsg_theme_preprocess_field(array &$variables, $hook) {
       $variables['attributes']['class'][] = 'grid-container tube--large';
       break;
 
+    case 'field_article_related':
+      $variables['attributes']['class'][] = 'grid-container tube--large';
+      $variables['description'] = t('You will find related content for students on the Instructions for Students Service.');
+      break;
+
+    case 'field_theme_related':
+      $variables['attributes']['class'][] = 'grid-container tube--large';
+      $variables['description'] = t('You will find related content for students on the Instructions for Students Service.');
+      break;
+
     case 'body':
     case 'field_paragraph_body':
       $variables['attributes']['class'][] = 'textarea';
@@ -253,24 +263,16 @@ function uhsg_theme_preprocess_views_view(&$variables) {
       break;
 
     case 'search':
-      // Add front page text block.
-      $block_entity = BlockContent::load(1);
-      $block_view = \Drupal::entityTypeManager()->getViewBuilder('block_content')->view($block_entity);
-      if ($block_view) {
-        $variables['frontpagetextblock'] = $block_view;
-      }
+      $is_student_domain = \Drupal::service('uhsg_domain.domain')->isStudentDomain();
 
-      // Add front page additional text block.
-      $additional_text_block = \Drupal::service('entity.repository')->loadEntityByUuid('block_content', 'ecd71681-cd04-4ee0-b9b2-015cc2a19ff0');
-      $additional_text_block_translation = \Drupal::entityManager()->getTranslationFromContext($additional_text_block);
-      if ($additional_text_block_translation) {
-        $variables['frontpageadditionaltextblock'] = $additional_text_block_translation->field_content_block_text->value;
-        $variables['#attached']['library'][] = 'uhsg_theme/tooltip';
-      }
+      $variables['title'] = $is_student_domain
+        ? $variables['view']->getTitle()
+        : \Drupal::config('uhsg_service_provider_details.settings')->get('logo_text');
 
-      $variables['title'] = $variables['view']->getTitle();
       $variables['content_attributes']['class'][] = 'view-content';
       $variables['degree_programme_switcher'] = _uhsg_theme_get_degree_programme_switcher();
+      _uhsg_theme_add_front_page_text_blocks($variables, $is_student_domain);
+      _uhsg_theme_add_link_to_instructions_for_students($variables);
       break;
 
     case 'news':
@@ -278,6 +280,34 @@ function uhsg_theme_preprocess_views_view(&$variables) {
       $variables['degree_programme_switcher'] = _uhsg_theme_get_degree_programme_switcher();
       break;
   }
+}
+
+function _uhsg_theme_add_front_page_text_blocks(&$variables, $is_student_domain) {
+  $front_page_text_block = $is_student_domain
+    ? \Drupal::entityTypeManager()->getViewBuilder('block_content')->view(BlockContent::load(1))
+    : \Drupal::entityTypeManager()->getViewBuilder('block_content')->view(uhsg_theme_load_content_block_by_uuid('46c7c03f-88cb-42bd-ab54-e8ac5cce8bab'));
+
+  $front_page_additional_text_block = $is_student_domain
+    ? uhsg_theme_load_content_block_value(uhsg_theme_load_content_block_by_uuid('ecd71681-cd04-4ee0-b9b2-015cc2a19ff0'))
+    : uhsg_theme_load_content_block_value(uhsg_theme_load_content_block_by_uuid('56a05a0a-10f0-4c28-bd26-63e5e2e82768'));
+
+  if ($front_page_text_block) {
+    $variables['frontpagetextblock'] = $front_page_text_block;
+  }
+
+  if ($front_page_additional_text_block) {
+    $variables['frontpageadditionaltextblock'] = $front_page_additional_text_block;
+    $variables['#attached']['library'][] = 'uhsg_theme/tooltip';
+  }
+}
+
+function uhsg_theme_load_content_block_by_uuid($uuid) {
+  $content_block = \Drupal::service('entity.repository')->loadEntityByUuid('block_content', $uuid);
+  return \Drupal::entityManager()->getTranslationFromContext($content_block);
+}
+
+function uhsg_theme_load_content_block_value($content_block) {
+  return $content_block ? $content_block->field_content_block_text->value : '';
 }
 
 /**
@@ -319,7 +349,9 @@ function uhsg_theme_preprocess_block(array &$variables) {
       break;
 
     case 'themesperusergroup':
-      $variables['news_per_degree_programme'] = _uhsg_theme_get_news_per_degree_programme();
+      if (\Drupal::service('uhsg_domain.domain')->isStudentDomain()) {
+        $variables['news_per_degree_programme'] = _uhsg_theme_get_news_per_degree_programme();
+      }
       break;
   }
 }
@@ -379,17 +411,28 @@ function uhsg_theme_preprocess_node(&$variables) {
     $current_page_is_theme = $node_viewed && $node_viewed->bundle() == 'theme';
     $variables['type'] = !$current_page_is_theme ? $variables['node']->type->entity->label() : NULL;
   }
-  if ($variables['node']->bundle() == 'article' && $variables['page']) {
-    $block = \Drupal::service('plugin.manager.block')->createInstance('themes_referencing_instructions', []);
-    $variables['themes'] = $block->build();
+  $bundle = $variables['node']->bundle();
+  if ($bundle == 'article' && $variables['page']) {
+    $themes_block = \Drupal::service('plugin.manager.block')->createInstance('themes_referencing_instructions', []);
+    $variables['themes'] = $themes_block->build();
   }
-  if ($variables['node']->bundle() == 'article') {
+  if (in_array($bundle, ['article', 'theme']) && $variables['page']) {
+    _uhsg_theme_add_link_to_instructions_for_students($variables);
+  }
+  if ($bundle == 'article') {
     $variables['new_students_label'] = t('New students');
     $variables['new_students_description'] = t('New students study in the new degree programmes that started August 1, 2017. Students studying according to the old degree structure are referred to as old students.');
     $variables['#attached']['library'][] = 'uhsg_theme/tooltip';
   }
   if ($variables['page']) {
     $variables['degree_programme_switcher'] = _uhsg_theme_get_degree_programme_switcher();
+  }
+}
+
+function _uhsg_theme_add_link_to_instructions_for_students(&$variables) {
+  $link_to_instructions_for_students_block = \Drupal::service('plugin.manager.block')->createInstance('link_to_instructions_for_students', []);
+  if ($link_to_instructions_for_students_block->access(\Drupal::currentUser()) instanceof \Drupal\Core\Access\AccessResultAllowed) {
+    $variables['link_to_instructions_for_students'] = $link_to_instructions_for_students_block->build();
   }
 }
 
@@ -412,6 +455,13 @@ function uhsg_theme_preprocess_html(&$variables) {
       ],
     ];
     $variables['page']['#attached']['html_head'][] = [$icon, $file->name];
+    $domain_id = \Drupal::service('uhsg_domain.domain')->getActiveDomainId();
+    $variables['attributes']['class'][] = \Drupal\Component\Utility\Html::getClass($domain_id);
+  }
+
+  // Front page head title: Just the site name.
+  if (\Drupal::service('path.matcher')->isFrontPage()) {
+    $variables['head_title'] = ['name' => \Drupal::config('system.site')->get('name')];
   }
 }
 
@@ -427,6 +477,16 @@ function uhsg_theme_preprocess_views_view_grouping(&$variables) {
   else {
     unset($variables['title']);
   }
+}
+
+/**
+ * Breadcrumb: Use only the first level (homepage). Override the text for the
+ * home page link.
+ */
+function uhsg_theme_preprocess_breadcrumb(&$variables) {
+  $breadcrumb = $variables['breadcrumb'][0];
+  $breadcrumb['text'] = \Drupal::config('system.site')->get('name');
+  $variables['breadcrumb'] = [$breadcrumb];
 }
 
 /**

@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_domain_admin
     - field.field.user.user.field_oodi_uid
     - field.field.user.user.field_student_number
     - field.field.user.user.field_study_rights
@@ -21,6 +22,12 @@ content:
     region: content
   contact:
     weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_domain_admin:
+    type: options_buttons
+    weight: 50
     settings: {  }
     third_party_settings: {  }
     region: content

@@ -8,8 +8,8 @@ dependencies:
     - uhsg_theme
 id: activedegreeprogrammeurl
 theme: uhsg_theme
-region: content
-weight: 0
+region: before_content
+weight: -10
 provider: null
 plugin: active_degree_programme_url
 settings:

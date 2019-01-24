@@ -1,5 +1,27 @@
 #Changelog
 
+## 1.27
+Release date: 24.01.2019
+
+* Support for new guide.teacher.helsinki.fi domain (HUB-381)
+* Added a user group: Teachers (HUB-371)
+* Breadcrumb (HUB-388)
+* Removed top content (HUB-384)
+* Support for referring to student articles from the teacher domain (HUB-374)
+* Copy URL button position change (HUB-394)
+* Display only the login/logout main menu item on teacher domain (HUB-397)
+* Display general office hours grouped by language (HUB-362).
+* Do not display news blocks on teacher domain frontpage (HUB-392)
+* IE11: Fixed overflowing news and theme titles (HUB-400, HUB-404)
+* Support for referring to student articles and themes from the teacher domain (HUB-373)
+* News archive: Condensed degree programme list (HUB-405)
+* Link to student news (HUB-376)
+* Front page: Teaching themes listing (HUB-383)
+* Domain-specific search results (HUB-375)
+* Domain-specific front page title and text blocks (HUB-382)
+* Search performance improvements (HUB-387)
+
+
 ## 1.26
 Release date: 01.11.2018
 

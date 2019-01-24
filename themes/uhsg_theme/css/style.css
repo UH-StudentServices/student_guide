@@ -8209,6 +8209,61 @@ input[type="text"].search-form-large__input {
   color: #0098d0;
 }
 
+/*
+ section: 6.5
+ title: Breadcrumbs
+ template: 6_5_breadcumbs
+ description:
+*/
+.breadcrumbs {
+  font-size: 0.75rem;
+  margin: 0 0 0.3em;
+}
+
+@media (min-width: 48em) {
+  .breadcrumbs {
+    margin: 0;
+  }
+}
+
+.breadcrumbs.theme-hero .breadcrumbs__divider {
+  color: #FFF;
+}
+
+.breadcrumbs.theme-hero .breadcrumbs__item a {
+  color: #FFF;
+}
+
+.breadcrumbs.theme-hero .breadcrumbs__item a:hover {
+  color: #D2D2D2;
+}
+
+.breadcrumbs__item {
+  display: inline;
+  margin-right: 0.2em;
+}
+
+.breadcrumbs__item a {
+  font-weight: 600;
+  font-style: normal;
+  color: #0098d0;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.breadcrumbs__item a:hover {
+  color: #0882B3;
+}
+
+.breadcrumbs__divider {
+  font-weight: 600;
+  font-style: normal;
+  color: #0098d0;
+  display: inline;
+  margin-right: 0.5em;
+}
+
 /* STUDENT GUIDE THEMING */
 .container {
   margin: 0 auto;
@@ -8363,7 +8418,7 @@ input[type="text"].search-form-large__input {
 }
 
 .l-subregion {
-  padding: 0;
+  padding: 0 0 0 1em;
 }
 
 .path-frontpage .l-subregion-wrapper {
@@ -8431,8 +8486,31 @@ li.avatar.avatar--default img {
 }
 
 .box-story--constrained {
-  border-bottom: 1px solid #f8f8f8;
+  border-bottom: 1px solid #979797;
   padding: 1em 0 .5em;
+}
+
+.box-story--constrained .tag-list {
+  margin-bottom: initial;
+}
+
+.box-story__title span {
+  width: 100%;
+}
+
+.article-related .box-story--topical.theme-plain .box-story__link-wrapper:after {
+  display: inline-block;
+  font-family: "hy-icons";
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
+  content: "";
+}
+
+#block-breadcrumbs {
+  padding-top: 1.5em;
 }
 
 .cc_banner-wrapper {
@@ -8486,8 +8564,8 @@ li.avatar.avatar--default img {
 #copy-url {
   float: right;
   position: relative;
-  z-index: 1000;
-  margin-right: 2em;
+  z-index: 500;
+  margin-right: 0;
   min-width: 10em;
 }
 
@@ -9027,6 +9105,18 @@ input[type="submit"].button--reset + i {
   }
 }
 
+body.guide-teacher-helsinki-fi .main-menu li {
+  display: none;
+}
+
+body.guide-teacher-helsinki-fi .main-menu li:last-child {
+  display: initial;
+}
+
+body.guide-teacher-helsinki-fi .main-menu li a {
+  font-size: initial;
+}
+
 .nav-toggle {
   -ms-flex-align: center;
       align-items: center;
@@ -9148,6 +9238,10 @@ h1, h2, h3, h4, legend, .logo-block__content .logo-block__sitename,
 .index .index__row .button--action.theme-transparent:after {
   line-height: normal;
   /* IE11 */
+}
+
+.office-hours .col-main {
+  padding-top: 0.2em;
 }
 
 .main-menu > ul.menu {
@@ -9326,6 +9420,7 @@ h1, h2, h3, h4, legend, .logo-block__content .logo-block__sitename,
   display: inline;
   padding-right: 0;
   margin-right: 1em;
+  vertical-align: initial;
 }
 
 .tag-list__item:after {
@@ -9362,6 +9457,7 @@ h1, h2, h3, h4, legend, .logo-block__content .logo-block__sitename,
   letter-spacing: -0.05em;
   line-height: 1.2em;
   font-weight: 700;
+  width: 100%;
 }
 
 .theme--box .theme__link-wrapper {
@@ -9420,6 +9516,7 @@ h1, h2, h3, h4, legend, .logo-block__content .logo-block__sitename,
   text-transform: uppercase;
   line-height: 1.2em;
   font-weight: 700;
+  width: 100%;
 }
 
 .theme--flat-box .theme__link-wrapper {
@@ -9528,8 +9625,5 @@ h1, h2, h3, h4, legend, .logo-block__content .logo-block__sitename,
 .path-frontpage .tooltip-toggle {
   vertical-align: top;
   margin-top: 0.2em;
-}
-
-.top-content li:last-child {
-  display: none;
+  padding-left: initial;
 }
