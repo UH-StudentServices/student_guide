@@ -1,7 +1,7 @@
 #Changelog
 
-## 1.xx-dev
-Release date: ??.??.????
+## 1.27
+Release date: 24.01.2019
 
 * Support for new guide.teacher.helsinki.fi domain (HUB-381)
 * Added a user group: Teachers (HUB-371)
