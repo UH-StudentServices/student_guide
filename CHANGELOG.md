@@ -3,6 +3,7 @@
 ## 1.xx-dev
 Release date: ??.??.????
 
+* Updated Drupal core (HUB-408)
 
 
 ## 1.27
