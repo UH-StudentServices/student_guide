@@ -2,5 +2,5 @@ name: Some links
 type: module
 description: Provides Some links as entities, displayed as icons.
 core: 8.x
-version: 1.28
+version: VERSION
 package: Student Guide
