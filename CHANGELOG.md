@@ -1,5 +1,11 @@
 #Changelog
 
+## 1.28
+Release date: 28.01.2019
+
+* Updated Drupal core (HUB-408)
+
+
 ## 1.27
 Release date: 24.01.2019
 
