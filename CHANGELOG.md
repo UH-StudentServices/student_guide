@@ -3,6 +3,7 @@
 ## 1.xx-dev
 Release date: ??.??.????
 
+* Updated styleguide (1.7.0 -> 1.13.0) (HUB-412)
 
 
 ## 1.28
