@@ -3,6 +3,7 @@
 ## 1.xx-dev
 Release date: ??.??.????
 
+* Degree programme specific news feed (HUB-378)
 
 
 ## 1.28
