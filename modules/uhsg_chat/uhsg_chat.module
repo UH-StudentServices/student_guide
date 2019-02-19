@@ -1,0 +1,9 @@
+<?php
+
+/**
+ * Implements hook_page_attachments().
+ */
+function uhsg_chat_page_attachments(array &$attachments) {
+  $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  $attachments['#attached']['library'][] = "uhsg_chat/chat-$language";
+}
