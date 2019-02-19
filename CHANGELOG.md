@@ -3,6 +3,7 @@
 ## 1.xx-dev
 Release date: ??.??.????
 
+* Added a chat that can be displayed on specific pages (HUB-410)
 
 
 ## 1.28
