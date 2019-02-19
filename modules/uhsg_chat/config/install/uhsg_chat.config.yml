@@ -1,0 +1,2 @@
+# Display the chat on the following nodes (identified by nid):
+display_chat_on_nodes: []
