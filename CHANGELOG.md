@@ -3,6 +3,7 @@
 ## 1.xx-dev
 Release date: ??.??.????
 
+* Removed "For new students" checkbox from instructions (HUB-426)
 
 
 ## 1.28
