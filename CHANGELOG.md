@@ -3,6 +3,7 @@
 ## 1.xx-dev
 Release date: ??.??.????
 
+* Change news archive title from News to Current topics (HUB-390)
 
 
 ## 1.28
