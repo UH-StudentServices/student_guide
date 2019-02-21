@@ -4,6 +4,7 @@
 Release date: ??.??.????
 
 * Updated Drupal core (HUB-430)
+* Updated Paragraphs module (HUB-431)
 
 
 ## 1.28
