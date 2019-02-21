@@ -2,5 +2,5 @@ name: Search
 type: module
 description: Provides search functionality and customisations.
 core: 8.x
-version: VERSION
+version: 1.29
 package: Student Guide
