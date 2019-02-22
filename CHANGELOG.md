@@ -6,6 +6,13 @@ Release date: ??.??.????
 * Removed "For new students" checkbox from instructions (HUB-426)
 
 
+## 1.29
+Release date: 21.02.2019
+
+* Updated Drupal core (HUB-430)
+* Updated Paragraphs module (HUB-431)
+
+
 ## 1.28
 Release date: 28.01.2019
 
