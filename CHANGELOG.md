@@ -4,6 +4,7 @@
 Release date: ??.??.????
 
 * Updated styleguide (1.7.0 -> 1.13.0) (HUB-412)
+* Degree programme specific news feed (HUB-378)
 
 
 ## 1.29
