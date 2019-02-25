@@ -68,6 +68,25 @@ class NewsService {
   }
 
   /**
+   * Get News node IDs for the given amount of degree programme term IDs.
+   *
+   * @param array $tids List of degree programme term IDs to filter in.
+   * @param int $limit Number of maximum items to fetch.
+   *
+   * @return array
+   */
+  public function getNewsNidsHavingOnlyTids($tids, $limit = 10) {
+    if (!empty($tids)) {
+      $query = $this->getBaseQuery($limit)
+        ->condition($this->referenceField, NULL, 'IS NOT NULL')
+        ->condition($this->referenceField, $tids, 'IN');
+      $nids = $query->execute();
+    }
+
+    return empty($nids) ? [] : $nids;
+  }
+
+  /**
    * Get News node IDs for the given amount of general news.
    *
    * @param int $limit Number of maximum items to fetch.

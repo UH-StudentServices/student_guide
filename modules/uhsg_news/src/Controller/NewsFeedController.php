@@ -77,8 +77,20 @@ class NewsFeedController extends ControllerBase {
     $headers = [
       'Content-Type' => 'application/rss+xml',
     ];
-    // Get the nodes that we build RSS feed from
-    $nids = $this->newsService->getNewsNidsHavingTids($this->getMultipleDegreeProgrammeTids(), 6);
+
+    // Optional query parameter: Exlude generic news
+    $exclude_generic_news = $this->requestStack->getCurrentRequest()->query->has('exclude_generic_news');
+
+    if ($exclude_generic_news) {
+      // Exclude generic news. Return only degree programme specific news.
+      $nids = $this->newsService->getNewsNidsHavingOnlyTids($this->getMultipleDegreeProgrammeTids(), 10);
+    }
+    else {
+      // Return a mix of generic and degree programme specific news.
+      $nids = $this->newsService->getNewsNidsHavingTids($this->getMultipleDegreeProgrammeTids(), 6);
+    }
+
+    // Load the nodes for the RSS feed.
     $nodes = $this->entityTypeManager->getStorage('node')->loadMultiple($nids);
     return new Response($this->generateFeed($nodes), 200, $headers);
   }
