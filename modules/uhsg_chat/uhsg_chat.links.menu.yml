@@ -1,0 +1,6 @@
+uhsg_chat.config:
+  title: Chat
+  parent: system.admin_config_system
+  description: 'Configure chat assistant.'
+  route_name: uhsg_chat.config
+  weight: 30

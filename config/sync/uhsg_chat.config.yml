@@ -1,3 +1,10 @@
 display_chat_on_nodes: {  }
+src: 'https://www.smartsuppchat.com/loader.js'
+key: ''
+offsetX: 100
+agentNote: ''
+title: ''
+infoTitle: ''
+infoDesc: ''
 _core:
-  default_config_hash: dm4_A086qDrKcUgOaZ1asmdrOZzyuSlE5poGaBa4rZ4
+  default_config_hash: F7Sx8PQL9bdm3roaTGoo3uzSuTnrWDEJHFA7ksb1o-k
