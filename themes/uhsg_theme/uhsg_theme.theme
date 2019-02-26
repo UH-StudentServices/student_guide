@@ -419,11 +419,6 @@ function uhsg_theme_preprocess_node(&$variables) {
   if (in_array($bundle, ['article', 'theme']) && $variables['page']) {
     _uhsg_theme_add_link_to_instructions_for_students($variables);
   }
-  if ($bundle == 'article') {
-    $variables['new_students_label'] = t('New students');
-    $variables['new_students_description'] = t('New students study in the new degree programmes that started August 1, 2017. Students studying according to the old degree structure are referred to as old students.');
-    $variables['#attached']['library'][] = 'uhsg_theme/tooltip';
-  }
   if ($variables['page']) {
     $variables['degree_programme_switcher'] = _uhsg_theme_get_degree_programme_switcher();
   }
