@@ -5,6 +5,8 @@ Release date: ??.??.????
 
 * Updated styleguide (1.7.0 -> 1.13.0) (HUB-412)
 * Degree programme specific news feed (HUB-378)
+* Change news archive title from News to Current topics (HUB-390)
+* Removed "For new students" checkbox from instructions (HUB-426)
 * Added a chat that can be displayed on specific pages (HUB-410)
 
 

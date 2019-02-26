@@ -203,7 +203,7 @@ display:
           expose:
             label: ''
           granularity: second
-      title: News
+      title: 'Current topics'
       header: {  }
       footer: {  }
       empty:
