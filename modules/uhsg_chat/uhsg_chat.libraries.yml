@@ -1,14 +1,6 @@
-chat-en:
+chat:
   version: 1.x
   js:
-    js/en/chat.js: {}
-
-chat-fi:
-  version: 1.x
-  js:
-    js/fi/chat.js: {}
-
-chat-sv:
-  version: 1.x
-  js:
-    js/sv/chat.js: {}
+    js/chat.js: {}
+  dependencies:
+    - core/drupalSettings
