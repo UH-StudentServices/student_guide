@@ -6,7 +6,7 @@ uhsg_chat.config:
   mapping:
     display_chat_on_nodes:
       type: sequence
-      translatable: true
+      translatable: false
       label: 'List of node IDs where chat element should appear.'
       sequence:
         type: integer
@@ -14,14 +14,14 @@ uhsg_chat.config:
     src:
       type: string
       label: 'Javascript source URL.'
-      translatable: true
+      translatable: false
     key:
       type: string
-      translatable: true
+      translatable: false
       label: 'Key that identifies client and authorizes chat functionality.'
     offsetX:
       type: integer
-      translatable: true
+      translatable: false
       label: 'Specifies chat element offset in pixels.'
     agentNote:
       type: string
