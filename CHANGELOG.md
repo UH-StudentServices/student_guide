@@ -1,7 +1,7 @@
 #Changelog
 
-## 1.xx-dev
-Release date: ??.??.????
+## 1.30
+Release date: 27.02.2019
 
 * Updated styleguide (1.7.0 -> 1.13.0) (HUB-412)
 * Degree programme specific news feed (HUB-378)
