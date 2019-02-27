@@ -29,6 +29,6 @@ smartsupp('translate', {
 
 smartsupp('translate', {
   online: {
-    infoDesc: drupalSettings.uhsg_chat.infoDesc,
+    infoDesc: drupalSettings.uhsg_chat.infoDesc
   }
 }, drupalSettings.uhsg_chat.currentLanguage);
