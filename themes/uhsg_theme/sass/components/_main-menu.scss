@@ -71,6 +71,7 @@
           @include font-weight-light;
           @include transition-element(opacity, 0.2s);
           padding-left: 1em;
+          padding-right: 1em;
         }
       }
     }
