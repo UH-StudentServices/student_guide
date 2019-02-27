@@ -16,7 +16,7 @@ function uhsg_chat_page_attachments(array &$attachments) {
 
     // If the current node should display the chat, attach the chat library.
     if (!empty($nids) && in_array($nid, $nids)) {
-      $attachments['#attached']['library'][] = "uhsg_chat/chat";
+      $attachments['#attached']['library'][] = 'uhsg_chat/chat';
       $attachments['#attached']['drupalSettings']['uhsg_chat']['src'] = $config->get('src');
       $attachments['#attached']['drupalSettings']['uhsg_chat']['key'] = $config->get('key');
       $attachments['#attached']['drupalSettings']['uhsg_chat']['offsetX'] = $config->get('offsetX');
