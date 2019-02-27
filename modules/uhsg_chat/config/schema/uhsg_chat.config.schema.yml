@@ -13,7 +13,7 @@ uhsg_chat.config:
         label: 'Value'
     src:
       type: string
-      label: 'Javascript source URL.'
+      label: 'JavaScript source URL.'
       translatable: false
     key:
       type: string

@@ -30,7 +30,7 @@ class ChatConfigForm extends ConfigFormBase {
       $form['uhsg_chat'] = [
         '#type' => 'details',
         '#title' => t('Chat configuration'),
-        '#description' => t('Note: Node IDs are configured progammatically or through drush!'),
+        '#description' => t('Note: Node IDs are configured programmatically or using drush!'),
         '#open' => TRUE,
       ];
       $form['uhsg_chat']['src'] = [
