@@ -24,18 +24,18 @@ uhsg_chat.config:
       translatable: false
       label: 'Specifies chat element offset in pixels.'
     agentNote:
-      type: string
+      type: label
       translatable: true
       label: 'Note text of the agent element.'
     title:
-      type: string
+      type: label
       translatable: true
       label: 'Title of the chat element.'
     infoTitle:
-      type: string
+      type: label
       translatable: true
       label: 'Title text of the info element.'
     infoDesc:
-      type: string
+      type: label
       translatable: true
       label: 'Description text of the info element.'

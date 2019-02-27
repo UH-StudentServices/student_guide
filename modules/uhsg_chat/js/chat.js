@@ -8,31 +8,27 @@ window.smartsupp||(function(d) {
     c.src=drupalSettings.uhsg_chat.src+'?';s.parentNode.insertBefore(c,s);
 })(document);
 
-// Translation source is finnish
-if (drupalSettings.uhsg_chat.currentLanguage != 'fi') {
-    console.log(drupalSettings.uhsg_chat);
-    smartsupp('language', drupalSettings.uhsg_chat.currentLanguage);
+smartsupp('language', drupalSettings.uhsg_chat.currentLanguage);
 
-    // change agent name and note for all agents
-    smartsupp('on', 'agent.join', function(model, agent) {
-      agent.note = drupalSettings.uhsg_chat.agentNote;
-    });
-    
-    smartsupp('translate', {
-      online: {
-        title: drupalSettings.uhsg_chat.title
-      }
-    }, drupalSettings.uhsg_chat.currentLanguage);
-    
-    smartsupp('translate', {
-      online: {
-        infoTitle: drupalSettings.uhsg_chat.infoTitle
-      }
-    }, drupalSettings.uhsg_chat.currentLanguage);
-    
-    smartsupp('translate', {
-      online: {
-        infoDesc: drupalSettings.uhsg_chat.infoDesc,
-      }
-    }, drupalSettings.uhsg_chat.currentLanguage);
-}
+// change agent name and note for all agents
+smartsupp('on', 'agent.join', function(model, agent) {
+  agent.note = drupalSettings.uhsg_chat.agentNote;
+});
+
+smartsupp('translate', {
+  online: {
+    title: drupalSettings.uhsg_chat.title
+  }
+}, drupalSettings.uhsg_chat.currentLanguage);
+
+smartsupp('translate', {
+  online: {
+    infoTitle: drupalSettings.uhsg_chat.infoTitle
+  }
+}, drupalSettings.uhsg_chat.currentLanguage);
+
+smartsupp('translate', {
+  online: {
+    infoDesc: drupalSettings.uhsg_chat.infoDesc,
+  }
+}, drupalSettings.uhsg_chat.currentLanguage);
