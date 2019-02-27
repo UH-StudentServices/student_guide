@@ -1,0 +1,10 @@
+display_chat_on_nodes: {  }
+src: 'https://www.smartsuppchat.com/loader.js'
+key: settingsphp
+offsetX: 100
+agentNote: 'Student advisor'
+title: 'Student Services'
+infoTitle: 'University of Helsinki'
+infoDesc: 'How can I help you?'
+_core:
+  default_config_hash: F7Sx8PQL9bdm3roaTGoo3uzSuTnrWDEJHFA7ksb1o-k

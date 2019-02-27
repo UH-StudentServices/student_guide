@@ -1,0 +1,30 @@
+<?php
+
+/**
+ * Implements hook_page_attachments().
+ *
+ * Adds chat widget to specified nodes (configured in settings.local.php).
+ */
+function uhsg_chat_page_attachments(array &$attachments) {
+  $route_match = \Drupal::routeMatch();
+
+  // If viewing a node:
+  if ($route_match->getRouteName() == 'entity.node.canonical') {
+    $nid = $route_match->getParameter('node')->id();
+    $config = \Drupal::config('uhsg_chat.config');
+    $nids = $config ? $config->get('display_chat_on_nodes') : [];
+
+    // If the current node should display the chat, attach the chat library.
+    if (!empty($nids) && in_array($nid, $nids)) {
+      $attachments['#attached']['library'][] = 'uhsg_chat/chat';
+      $attachments['#attached']['drupalSettings']['uhsg_chat']['src'] = $config->get('src');
+      $attachments['#attached']['drupalSettings']['uhsg_chat']['key'] = $config->get('key');
+      $attachments['#attached']['drupalSettings']['uhsg_chat']['offsetX'] = $config->get('offsetX');
+      $attachments['#attached']['drupalSettings']['uhsg_chat']['agentNote'] = $config->get('agentNote');
+      $attachments['#attached']['drupalSettings']['uhsg_chat']['title'] = $config->get('title');
+      $attachments['#attached']['drupalSettings']['uhsg_chat']['infoTitle'] = $config->get('infoTitle');
+      $attachments['#attached']['drupalSettings']['uhsg_chat']['infoDesc'] = $config->get('infoDesc');
+      $attachments['#attached']['drupalSettings']['uhsg_chat']['currentLanguage'] = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    }
+  }
+}

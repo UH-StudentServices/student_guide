@@ -74,6 +74,7 @@ module:
   uhsg_active_degree_programme: 0
   uhsg_article: 0
   uhsg_avatar: 0
+  uhsg_chat: 0
   uhsg_cookie_consent: 0
   uhsg_degree_programme: 0
   uhsg_degree_programme_filtering: 0

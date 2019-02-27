@@ -2,5 +2,5 @@ name: Avatar
 type: module
 description: Fetches avatar.
 core: 8.x
-version: 1.29
+version: 1.30
 package: Student Guide

@@ -1,0 +1,41 @@
+# Schema for the configuration files of the chat module.
+
+uhsg_chat.config:
+  type: config_object
+  label: 'Chat configuration'
+  mapping:
+    display_chat_on_nodes:
+      type: sequence
+      translatable: false
+      label: 'List of node IDs where chat element should appear.'
+      sequence:
+        type: integer
+        label: 'Value'
+    src:
+      type: string
+      label: 'JavaScript source URL.'
+      translatable: false
+    key:
+      type: string
+      translatable: false
+      label: 'Key that identifies client and authorizes chat functionality.'
+    offsetX:
+      type: integer
+      translatable: false
+      label: 'Specifies chat element offset in pixels.'
+    agentNote:
+      type: label
+      translatable: true
+      label: 'Note text of the agent element.'
+    title:
+      type: label
+      translatable: true
+      label: 'Title of the chat element.'
+    infoTitle:
+      type: label
+      translatable: true
+      label: 'Title text of the info element.'
+    infoDesc:
+      type: label
+      translatable: true
+      label: 'Description text of the info element.'

@@ -93,12 +93,6 @@
       {% if type and node.bundle != 'article' %}
         <div class="box-story__label"> {{ type }} </div>
       {% endif %}
-      {% if node.field_article_new_students is not empty and node.field_article_new_students.value == '1' and new_students_description is not empty  %}
-        <div class="box-story__label tooltip" title="{{ new_students_description }}">
-          {{ new_students_label }}
-          <span class="tooltip-toggle"/>
-        </div>
-      {% endif %}
       {% if content.field_news_image|render %}
         <div class="box-story__image"> {{ content.field_news_image }} </div>
       {% endif %}
