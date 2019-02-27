@@ -7,6 +7,7 @@ Release date: ??.??.????
 * Degree programme specific news feed (HUB-378)
 * Change news archive title from News to Current topics (HUB-390)
 * Removed "For new students" checkbox from instructions (HUB-426)
+* Added a chat that can be displayed on specific pages (HUB-410)
 
 
 ## 1.29

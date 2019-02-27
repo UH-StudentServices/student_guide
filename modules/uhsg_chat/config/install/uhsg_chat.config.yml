@@ -1,0 +1,9 @@
+# Display the chat on the following nodes (identified by nid):
+display_chat_on_nodes: []
+src: 'https://www.smartsuppchat.com/loader.js'
+key: ''
+offsetX: 100
+agentNote: ''
+title: ''
+infoTitle: ''
+infoDesc: ''

@@ -1,0 +1,5 @@
+uhsg_chat.config:
+  title: 'Chat configuration'
+  base_route_name: uhsg_chat.config
+  names:
+    - uhsg_chat.config

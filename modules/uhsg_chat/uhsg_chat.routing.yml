@@ -1,0 +1,7 @@
+uhsg_chat.config:
+  path: '/admin/config/system/uhsg-chat'
+  defaults:
+    _form: 'Drupal\uhsg_chat\Form\ChatConfigForm'
+    _title: 'Chat configuration'
+  requirements:
+    _permission: 'administer uhsg chat configuration'
