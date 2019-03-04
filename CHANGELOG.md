@@ -3,6 +3,7 @@
 ## 1.xx-dev
 Release date: ??.??.????
 
+* Translate "User group" (HUB-393)
 
 
 ## 1.30
