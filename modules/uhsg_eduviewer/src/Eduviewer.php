@@ -36,7 +36,7 @@ class Eduviewer {
 
     if ($this->isValidDegreeProgrammeCode($activeDegreeProgrammeCode)) {
       $language = $this->languageManager->getCurrentLanguage()->getId();
-      $markup = "<div id=\"eduviewer-root\" degree-program-id=\"$activeDegreeProgrammeCode\" lang=\"$language\"></div>";
+      $markup = "<div id=\"eduviewer-root\" degree-program-id=\"$activeDegreeProgrammeCode\" lang=\"$language\" disable-global-style=\"true\"></div>";
     }
 
     return $markup;
