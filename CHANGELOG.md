@@ -3,6 +3,7 @@
 ## 1.xx-dev
 Release date: ??.??.????
 
+* Include only the titles and the link in news email (HUB-425)
 
 
 ## 1.30
