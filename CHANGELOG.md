@@ -3,6 +3,7 @@
 ## 1.xx-dev
 Release date: ??.??.????
 
+* Exclude study track code from the Eduviewer embed (HUB-433)
 
 
 ## 1.30
