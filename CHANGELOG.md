@@ -3,6 +3,7 @@
 ## 1.xx-dev
 Release date: ??.??.????
 
+* Fixed layout issues on pages that embed Eduviewer (HUB-428)
 
 
 ## 1.30
