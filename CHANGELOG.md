@@ -3,7 +3,7 @@
 ## 1.xx-dev
 Release date: ??.??.????
 
-* Increase the maximum waiting times for the office hours API (HUB-411)
+* Increase waiting times for the office hours API response, display error message on exception (HUB-411)
 
 
 ## 1.30
