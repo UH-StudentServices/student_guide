@@ -20,9 +20,9 @@ class OfficeHoursService {
   const CONFIG_NAME = 'uhsg_office_hours.config';
   const CONFIG_API_BASE_URL = 'api_base_url';
   const CONFIG_API_PATH = 'api_path';
-  const CONNECT_TIMEOUT_SECONDS = 2;
+  const CONNECT_TIMEOUT_SECONDS = 3;
   const LANGUAGE_UNDEFINED = 'undefined';
-  const REQUEST_TIMEOUT_SECONDS = 2;
+  const REQUEST_TIMEOUT_SECONDS = 3;
 
   /** @var \Drupal\Core\Cache\CacheBackendInterface*/
   protected $cache;
