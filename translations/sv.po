@@ -158,4 +158,4 @@ msgid "Notifications for students"
 msgstr "Meddelanden för studerande"
 
 msgid "Could not get office hours. Please try again later."
-msgstr ""
+msgstr "Ett fel uppstod. Försök igen senare."
