@@ -1,0 +1,9 @@
+uuid: 7e0d60a9-117a-47a6-ba95-216da863f506
+langcode: en
+status: true
+dependencies: {  }
+name: 'Other education provider'
+vid: other_education_provider
+description: ''
+hierarchy: 0
+weight: 0
