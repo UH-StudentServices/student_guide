@@ -7,12 +7,16 @@ use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Config\ConfigFactory;
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Logger\LoggerChannel;
+use Drupal\Core\Messenger\MessengerInterface;
+use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\uhsg_active_degree_programme\ActiveDegreeProgrammeService;
 use GuzzleHttp\Client;
 use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\ResponseInterface;
 
 class OfficeHoursService {
+
+  use StringTranslationTrait;
 
   // 1 minute.
   const CACHE_EXPIRE_SECONDS = 60;
@@ -36,11 +40,14 @@ class OfficeHoursService {
   /** @var \Drupal\Core\Config\ConfigFactory*/
   protected $configFactory;
 
-  /** @var \Drupal\Core\Language\LanguageManagerInterface */
+  /** @var \Drupal\Core\Language\LanguageManagerInterface*/
   protected $languageManager;
 
   /** @var \Drupal\Core\Logger\LoggerChannel*/
   protected $logger;
+
+  /** @var \Drupal\Core\Messenger\MessengerInterface*/
+  protected $messenger;
 
   /** @var \Drupal\Component\Datetime\TimeInterface*/
   protected $time;
@@ -58,7 +65,8 @@ class OfficeHoursService {
     LoggerChannel $logger,
     TimeInterface $time,
     ActiveDegreeProgrammeService $activeDegreeProgrammeService,
-    LanguageManagerInterface $languageManager) {
+    LanguageManagerInterface $languageManager,
+    MessengerInterface $messenger) {
 
     $this->cache = $cache;
     $this->client = $client;
@@ -67,6 +75,7 @@ class OfficeHoursService {
     $this->time = $time;
     $this->activeDegreeProgrammeService = $activeDegreeProgrammeService;
     $this->languageManager = $languageManager;
+    $this->messenger = $messenger;
   }
 
   /**
@@ -90,6 +99,7 @@ class OfficeHoursService {
         }
         catch (\Exception $e) {
           $this->logger->error($e->getMessage());
+          $this->messenger->addError($this->t('Could not get office hours. Please try again later.'));
         }
       }
     }
