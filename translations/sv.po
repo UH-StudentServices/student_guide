@@ -156,3 +156,6 @@ msgstr "och @count andra"
 
 msgid "Notifications for students"
 msgstr "Meddelanden för studerande"
+
+msgid "Could not get office hours. Please try again later."
+msgstr ""

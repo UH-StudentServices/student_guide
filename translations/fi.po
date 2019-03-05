@@ -159,3 +159,6 @@ msgstr "ja @count muuta"
 
 msgid "Notifications for students"
 msgstr "Tiedotteet opiskelijoille"
+
+msgid "Could not get office hours. Please try again later."
+msgstr "Vastaanottoaikoja ei saada haettua. Yritä myöhemmin uudelleen."
