@@ -276,8 +276,10 @@ function uhsg_theme_preprocess_views_view(&$variables) {
       break;
 
     case 'news':
-      $variables['attributes']['class'][] = 'tube';
-      $variables['degree_programme_switcher'] = _uhsg_theme_get_degree_programme_switcher();
+      if ($variables['view']->getDisplay()->display['id'] == 'block_1') {
+        $variables['attributes']['class'][] = 'tube';
+        $variables['degree_programme_switcher'] = _uhsg_theme_get_degree_programme_switcher();
+      }
       break;
   }
 }
