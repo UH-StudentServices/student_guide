@@ -271,6 +271,7 @@ function uhsg_theme_preprocess_views_view(&$variables) {
 
       $variables['content_attributes']['class'][] = 'view-content';
       $variables['degree_programme_switcher'] = _uhsg_theme_get_degree_programme_switcher();
+      $variables['other_education_provider_switcher'] = _uhsg_theme_get_other_education_provider_switcher();
       _uhsg_theme_add_front_page_text_blocks($variables, $is_student_domain);
       _uhsg_theme_add_link_to_instructions_for_students($variables);
       break;
@@ -330,6 +331,16 @@ function uhsg_theme_preprocess_block(array &$variables) {
       $variables['label'] = $degree_programme_name ? $degree_programme_name : t('Select degree programme');
       $variables['#cache']['contexts'][] = 'active_degree_programme';
       $variables['reset_link']['link'] = Url::fromRoute('uhsg_active_degree_programme.reset_active');
+      $variables['reset_link']['classes'] = 'button--action icon--remove theme-transparent button--reset is-center-mobile';
+      break;
+
+    case 'views_block__other_education_providers_block_1':
+      /** @var \Drupal\uhsg_other_education_provider\OtherEducationProviderService $otherEducationProviderService */
+      $otherEducationProviderService = \Drupal::service('uhsg_other_education_provider.other_education_provider');
+      $other_education_provider_name = $otherEducationProviderService->getName();
+      $variables['label'] = $other_education_provider_name ? $other_education_provider_name : t('Select other education provider');
+      $variables['#cache']['contexts'][] = 'active_degree_programme';
+      $variables['reset_link']['link'] = Url::fromRoute('uhsg_other_education_provider.reset_active');
       $variables['reset_link']['classes'] = 'button--action icon--remove theme-transparent button--reset is-center-mobile';
       break;
 
@@ -548,6 +559,17 @@ function _uhsg_theme_get_degree_programme_switcher() {
     return '';
   }
   return \Drupal::entityTypeManager()->getViewBuilder('block')->view($degree_programme_switcher);
+}
+
+function _uhsg_theme_get_other_education_provider_switcher() {
+  $other_education_provider_switcher = Block::load('views_block__other_education_providers_block_1');
+  if (is_null($other_education_provider_switcher)) {
+    // In case the block has gone missing, we don't fail completely but will
+    // alert in the logs.
+    \Drupal::logger('uhsg_theme')->alert('Other education provider switcher missing!');
+    return '';
+  }
+  return \Drupal::entityTypeManager()->getViewBuilder('block')->view($other_education_provider_switcher);
 }
 
 function _uhsg_theme_get_news_per_degree_programme() {

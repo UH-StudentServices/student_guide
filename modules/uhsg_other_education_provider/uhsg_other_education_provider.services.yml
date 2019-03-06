@@ -6,4 +6,4 @@ services:
       - { name: cache.context }
   uhsg_other_education_provider.other_education_provider:
     class: Drupal\uhsg_other_education_provider\OtherEducationProviderService
-    arguments: ['@config.factory', '@request_stack', '@entity.repository', '@entity_type.manager', '@current_user']
+    arguments: ['@request_stack', '@entity.repository', '@current_user']
