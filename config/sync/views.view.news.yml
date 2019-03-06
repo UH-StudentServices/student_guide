@@ -203,7 +203,7 @@ display:
           expose:
             label: ''
           granularity: second
-      title: 'Current topics'
+      title: Archive
       header: {  }
       footer: {  }
       empty:
@@ -239,15 +239,13 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
-  attachment_1:
-    display_plugin: attachment
-    id: attachment_1
-    display_title: Attachment
+  block_1:
+    display_plugin: block
+    id: block_1
+    display_title: Block
     position: 2
     display_options:
       display_extenders: {  }
-      displays:
-        page_1: page_1
       relationships:
         field_news_degree_programme:
           id: field_news_degree_programme
@@ -261,6 +259,7 @@ display:
       defaults:
         relationships: false
         arguments: false
+        title: false
       arguments:
         field_news_degree_programme_target_id:
           id: field_news_degree_programme_target_id
@@ -296,6 +295,8 @@ display:
           break_phrase: false
           not: false
           plugin_id: numeric
+      block_description: 'Testing block'
+      title: 'Notifications from your degree programme'
     cache_metadata:
       max-age: 0
       contexts:
@@ -303,6 +304,7 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
+        - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
@@ -422,10 +424,25 @@ display:
       defaults:
         filters: false
         filter_groups: false
+        header: false
       filter_groups:
         operator: AND
         groups:
           1: AND
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: '<h2>Current topics</h2>'
+            format: filtered_html
+          plugin_id: text
     cache_metadata:
       max-age: -1
       contexts:
