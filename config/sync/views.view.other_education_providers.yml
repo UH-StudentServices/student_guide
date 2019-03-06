@@ -53,6 +53,13 @@ display:
           offset: 0
       style:
         type: html_list
+        options:
+          grouping: {  }
+          row_class: 'list-of-links__link button--action theme-transparent'
+          default_row_class: true
+          type: ul
+          wrapper_class: item-list
+          class: list-of-links__compact
       row:
         type: fields
       fields:
