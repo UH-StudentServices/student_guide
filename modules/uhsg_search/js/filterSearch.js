@@ -11,6 +11,7 @@
           all: Drupal.t('All', {}, {context: 'Search Filters'}),
           article_general: Drupal.t('General instructions', {}, {context: 'Search Filters'}),
           article_degree_programme_specific: Drupal.t('Degree programme specific instructions', {}, {context: 'Search Filters'}),
+          article_other_education_provider_specific: Drupal.t('Other education provider specific instructions', {}, {context: 'Search Filters'}),
           theme: Drupal.t('Theme', {}, {context: 'Search Filters'}),
           news: Drupal.t('Bulletin', {}, {context: 'Search Filters'})
         };
@@ -55,15 +56,16 @@
     getAvailableTypes: function (results) {
       var availableTypes = [];
       results.each(function () {
-        var type = $(this).attr('data-type');
+        var types = $(this).attr('data-type').split(' ');
+        $.each(types, function (index, type) {
+          var dupe = availableTypes.find(function (item) {
+            return item === type;
+          });
 
-        var dupe = availableTypes.find(function (item) {
-          return item === type;
+          if (!dupe) {
+            availableTypes.push(type);
+          }
         });
-
-        if (!dupe) {
-          availableTypes.push(type);
-        }
       });
       return availableTypes;
     },
@@ -95,7 +97,8 @@
       button.parent().siblings().children().removeClass('is-active');
 
       results.each(function () {
-        if ($(this).attr('data-type') === filterType || filterType === 'all') {
+        var types = $(this).attr('data-type').split(' ');
+        if ($.inArray(filterType, types) !== -1 || filterType === 'all') {
           $(this)[0].style.display = 'flex';
         }
         else {

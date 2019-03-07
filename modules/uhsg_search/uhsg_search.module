@@ -30,12 +30,17 @@ function uhsg_search_preprocess_node(&$variables) {
   if ($variables['view_mode'] == 'constrained') {
     $node = $variables['node'];
     if ($node->getType() == 'article') {
-      $variables['attributes']['data-type'] = uhsg_search_article_is_degree_programme_specific($node) ? 'article_degree_programme_specific' : 'article_general';
+      $variables['attributes']['data-type'] = [];
+      $variables['attributes']['data-type'][] = uhsg_search_article_is_degree_programme_specific($node) ? 'article_degree_programme_specific' : 'article_general';
+      if (uhsg_search_article_is_other_education_provider_specific($node)) {
+        $variables['attributes']['data-type'][] = 'article_other_education_provider_specific';
+      }
     }
     else {
       $variables['attributes']['data-type'] = $node->getType();
     }
     $variables['#cache']['contexts'][] = 'active_degree_programme';
+    $variables['#cache']['contexts'][] = 'other_education_provider';
   }
 }
 
@@ -60,12 +65,35 @@ function uhsg_search_article_is_degree_programme_specific($node) {
 }
 
 /**
+ * Return TRUE if active other education provider is one of the terms in the
+ * node.
+ *
+ * @param $node
+ * @return bool TRUE if active other education provider is one of the terms in
+ *  the node.
+ */
+function uhsg_search_article_is_other_education_provider_specific($node) {
+  $other_education_provider = \Drupal::service('uhsg_other_education_provider.other_education_provider')->getId();
+  $terms = $node->get('field_other_education_provider')->getValue();
+  if ($terms && $other_education_provider) {
+    foreach ($terms as $term) {
+      // check if article has the other education provider as term.
+      if ($other_education_provider == $term['target_id']) {
+        return TRUE;
+      }
+    }
+  }
+  return FALSE;
+}
+
+/**
  * Implements hook_search_api_solr_query_alter().
  */
 function uhsg_search_search_api_solr_query_alter(Query $solarium_query, QueryInterface $query) {
   uhsg_search_wildcard_query($solarium_query);
   uhsg_search_domain_filter($solarium_query);
   uhsg_search_degree_programme_query($solarium_query);
+  uhsg_search_other_education_provider_query($solarium_query);
 }
 
 /**
@@ -139,5 +167,30 @@ function uhsg_search_degree_programme_query(Query $solarium_query) {
 
     $degree_programme_filter_query = (new FilterQuery())->setKey('degree_programme')->setQuery($query);
     $solarium_query->addFilterQuery($degree_programme_filter_query);
+  }
+}
+
+/**
+ * Add other education provider filtering to search query for articles. Exclude
+ * articles that have an other education provider associated with them when it
+ * does not match the active other education provider. Include articles that do
+ * not have any other education provider associated with them. Include news and
+ * themes.
+ *
+ * @param \Solarium\QueryType\Select\Query\Query $solarium_query
+ */
+function uhsg_search_other_education_provider_query(Query $solarium_query) {
+  $other_education_provider = \Drupal::service('uhsg_other_education_provider.other_education_provider')->getId();
+
+  if ($other_education_provider) {
+    $query = '(';
+    $query .= "(ss_type:article AND itm_other_education_provider_tid:$other_education_provider) ";
+    $query .= 'OR (ss_type:article AND *:* NOT itm_other_education_provider_tid:*) ';
+    $query .= 'OR ss_type:news ';
+    $query .= 'OR ss_type:theme';
+    $query .= ')';
+
+    $other_education_provider_filter_query = (new FilterQuery())->setKey('other_education_provider')->setQuery($query);
+    $solarium_query->addFilterQuery($other_education_provider_filter_query);
   }
 }
