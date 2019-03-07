@@ -203,7 +203,7 @@ display:
           expose:
             label: ''
           granularity: second
-      title: Archive
+      title: 'Bulletin archive'
       header:
         area:
           id: area
