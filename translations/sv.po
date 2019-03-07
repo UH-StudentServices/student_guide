@@ -86,6 +86,10 @@ msgid "Degree programme specific instructions"
 msgstr "Utbildningsprogramspecifika anvisningar"
 
 msgctxt "Search Filters"
+msgid "Other education provider specific instructions"
+msgstr "Annan undervisningsarrangörspecifika anvisningar"
+
+msgctxt "Search Filters"
 msgid "General instructions"
 msgstr "Allmänna anvisningar"
 
