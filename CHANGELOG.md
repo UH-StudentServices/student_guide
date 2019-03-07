@@ -4,6 +4,7 @@
 Release date: ??.??.????
 
 * Translate "User group" (HUB-393)
+* Include only the titles and the link in news email (HUB-425)
 
 
 ## 1.30
