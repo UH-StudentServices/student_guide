@@ -24,6 +24,9 @@ msgstr "Hae koulutusohjelmaa"
 msgid "Select degree programme"
 msgstr "Valitse koulutusohjelma"
 
+msgid "Select other education provider"
+msgstr "Valitse muu opetuksen järjestäjä"
+
 msgid "Feedback"
 msgstr "Palaute"
 

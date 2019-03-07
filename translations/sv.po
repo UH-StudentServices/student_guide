@@ -24,6 +24,9 @@ msgstr "Sök utbildningsprogram"
 msgid "Select degree programme"
 msgstr "Välj utbildningsprogram"
 
+msgid "Select other education provider"
+msgstr "Välj annan undervisningsarrangör"
+
 msgid "Feedback"
 msgstr "Feedback"
 
