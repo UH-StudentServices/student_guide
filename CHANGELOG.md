@@ -3,6 +3,7 @@
 ## 1.xx-dev
 Release date: ??.??.????
 
+* New taxonomy and related functionality: Other education provider (HUB-427)
 
 
 ## 1.30
