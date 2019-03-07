@@ -271,7 +271,11 @@ function uhsg_theme_preprocess_views_view(&$variables) {
 
       $variables['content_attributes']['class'][] = 'view-content';
       $variables['degree_programme_switcher'] = _uhsg_theme_get_degree_programme_switcher();
-      $variables['other_education_provider_switcher'] = _uhsg_theme_get_other_education_provider_switcher();
+
+      if (!$is_student_domain) {
+        $variables['other_education_provider_switcher'] = _uhsg_theme_get_other_education_provider_switcher();
+      }
+
       _uhsg_theme_add_front_page_text_blocks($variables, $is_student_domain);
       _uhsg_theme_add_link_to_instructions_for_students($variables);
       break;
