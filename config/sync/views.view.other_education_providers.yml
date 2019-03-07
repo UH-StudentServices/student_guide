@@ -56,9 +56,9 @@ display:
         options:
           grouping: {  }
           row_class: 'list-of-links__link button--action theme-transparent'
-          default_row_class: true
+          default_row_class: false
           type: ul
-          wrapper_class: item-list
+          wrapper_class: ''
           class: list-of-links__compact
       row:
         type: fields
