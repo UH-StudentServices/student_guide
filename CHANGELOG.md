@@ -3,6 +3,7 @@
 ## 1.xx-dev
 Release date: ??.??.????
 
+* Improve bulletin arhive page (HUB-406)
 
 
 ## 1.30
