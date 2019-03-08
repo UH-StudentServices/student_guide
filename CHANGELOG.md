@@ -3,6 +3,9 @@
 ## 1.xx-dev
 Release date: ??.??.????
 
+* Translate "User group" (HUB-393)
+* Include only the titles and the link in news email (HUB-425)
+* Exclude study track code from the Eduviewer embed (HUB-433)
 * Increase waiting times for the office hours API response, display error message on exception (HUB-411)
 
 
