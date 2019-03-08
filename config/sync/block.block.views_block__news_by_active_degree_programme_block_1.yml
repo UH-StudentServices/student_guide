@@ -1,0 +1,31 @@
+uuid: 9c36a1ea-5b75-488e-8d1b-12f0f724be5a
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.news_by_active_degree_programme
+  module:
+    - system
+    - views
+  theme:
+    - uhsg_theme
+id: views_block__news_by_active_degree_programme_block_1
+theme: uhsg_theme
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:news_by_active_degree_programme-block_1'
+settings:
+  id: 'views_block:news_by_active_degree_programme-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: /news
+    negate: false
+    context_mapping: {  }
