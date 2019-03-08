@@ -32,7 +32,7 @@ class Eduviewer {
    */
   public function getMarkup() {
     $markup = NULL;
-    $activeDegreeProgrammeCode = $this->activeDegreeProgrammeService->getCode();
+    $activeDegreeProgrammeCode = $this->getActiveDegreeProgrammeCode();
 
     if ($this->isValidDegreeProgrammeCode($activeDegreeProgrammeCode)) {
       $language = $this->languageManager->getCurrentLanguage()->getId();
@@ -43,6 +43,22 @@ class Eduviewer {
   }
 
   /**
+   * Returns the active degree programme code. For codes that combine the degree
+   * programme code and the study track code, return only the degree programme
+   * code (for example: "KH60_001SH60_039" -> "KH60_001"). All of the degree
+   * programme codes have a maximum of eight characters for the degree programme
+   * code part. Thus the algorithm simply returns the first eight characters of
+   * a given code.
+   *
+   * @return null|string
+   */
+  private function getActiveDegreeProgrammeCode() {
+    $activeDegreeProgrammeCode = $this->activeDegreeProgrammeService->getCode();
+
+    return $activeDegreeProgrammeCode ? mb_substr($activeDegreeProgrammeCode, 0, 8) : NULL;
+  }
+
+  /**
    * @param $degreeProgrammeCode
    * @return bool TRUE if the code is not empty and is not 'KH20_001' or
    * 'MH30_003', otherwise FALSE (see HUB-342).
@@ -50,5 +66,4 @@ class Eduviewer {
   private function isValidDegreeProgrammeCode($degreeProgrammeCode) {
     return !empty($degreeProgrammeCode) && !in_array($degreeProgrammeCode, self::INVALID_DEGREE_PROGRAMME_CODES);
   }
-
 }
