@@ -62,7 +62,8 @@
         "drush/drush": "8.1.15",
         "drupal/view_unpublished": "1.x-dev#aea97e837ea9b1b5522f710239cf7d1cc16f2306",
         "UH-StudentServices/uh_courses_embed": "dev-drupal8#af738078abebb19534fd87bb7669e4bd1ae66e5b[F",
-        "drupal/domain": "^1.0-alpha14"
+        "drupal/domain": "^1.0-alpha14",
+        "drupal/text_summary_options": "^1.0"
     },
     "repositories": {
         "0": {
