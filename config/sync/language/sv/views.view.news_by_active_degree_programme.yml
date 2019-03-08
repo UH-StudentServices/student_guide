@@ -1,0 +1,7 @@
+display:
+  default:
+    display_options:
+      title: 'Meddelanden från ditt utbildningsprogram'
+      empty:
+        area_text_custom:
+          content: '<h3>Inga meddelanden</h3>'
