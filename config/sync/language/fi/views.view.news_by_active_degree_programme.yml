@@ -1,0 +1,7 @@
+display:
+  default:
+    display_options:
+      title: 'Koulutusohjelmasi tiedotteet'
+      empty:
+        area_text_custom:
+          content: '<h3>Ei tiedotteita</h3>'

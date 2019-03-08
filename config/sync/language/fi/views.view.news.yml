@@ -1,7 +1,12 @@
 display:
   default:
     display_options:
-      title: Ajankohtaista
+      title: Tiedotearkisto
       empty:
         area_text_custom:
           content: '<h3>Ei tuloksia</h3>'
+      header:
+        area:
+          content:
+            value: "<h2>Ajankohtaista</h2>\r\n"
+            format: filtered_html
