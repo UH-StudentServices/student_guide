@@ -8,6 +8,7 @@ Release date: ??.??.????
 * Exclude study track code from the Eduviewer embed (HUB-433)
 * Improve bulletin archive page (HUB-406)
 * Show summary field always when maintaining bulletins (HUB-357)
+* Technical updates to npm dependencies (HUB-432)
 
 
 ## 1.30
