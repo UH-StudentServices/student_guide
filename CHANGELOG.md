@@ -7,6 +7,7 @@ Release date: ??.??.????
 * Include only the titles and the link in news email (HUB-425)
 * Exclude study track code from the Eduviewer embed (HUB-433)
 * Improve bulletin archive page (HUB-406)
+* Show summary field always when maintaining bulletins (HUB-357)
 
 
 ## 1.30

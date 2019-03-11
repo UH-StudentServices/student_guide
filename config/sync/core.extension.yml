@@ -68,6 +68,7 @@ module:
   system: 0
   taxonomy: 0
   text: 0
+  text_summary_options: 0
   token: 0
   toolbar: 0
   uh_courses_embed: 0
