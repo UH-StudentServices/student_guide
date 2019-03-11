@@ -157,5 +157,5 @@ msgstr "och @count andra"
 msgid "Notifications for students"
 msgstr "Meddelanden för studerande"
 
-msgid "Could not get office hours. Please try again later."
-msgstr "Ett fel uppstod. Försök igen senare."
+msgid "The office hours cannot be displayed. Please try again later."
+msgstr "Mottagningstiderna kan inte visas. Försök pånytt senare."

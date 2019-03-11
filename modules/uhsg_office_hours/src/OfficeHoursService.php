@@ -99,7 +99,7 @@ class OfficeHoursService {
         }
         catch (\Exception $e) {
           $this->logger->error($e->getMessage());
-          $this->messenger->addError($this->t('Could not get office hours. Please try again later.'));
+          $this->messenger->addError($this->t('The office hours cannot be displayed. Please try again later.'));
         }
       }
     }
