@@ -64,7 +64,7 @@
         "UH-StudentServices/uh_courses_embed": "dev-drupal8#af738078abebb19534fd87bb7669e4bd1ae66e5b[F",
         "drupal/domain": "^1.0-alpha14",
         "drupal/text_summary_options": "^1.0",
-        "drupal/maxlength": "^1.0@beta"
+        "drupal/maxlength": "1.x-dev#3235f5ca1a7532b29612b027f02f949bde2bbe5f"
     },
     "repositories": {
         "0": {

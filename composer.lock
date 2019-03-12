@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8ba2213e5429315a95dae6837948b6b3",
+    "content-hash": "8aefa846ea7b0dcf81ecb7fbf713f1f7",
     "packages": [
         {
             "name": "RubaXa/Sortable",
@@ -2591,17 +2591,11 @@
         },
         {
             "name": "drupal/maxlength",
-            "version": "1.0.0-beta2",
+            "version": "dev-1.x",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/maxlength",
-                "reference": "8.x-1.0-beta2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/maxlength-8.x-1.0-beta2.zip",
-                "reference": "8.x-1.0-beta2",
-                "shasum": "27f7374e55ebdcc696d22d98be8cf4cf9bf58204"
+                "reference": "3235f5ca1a7532b29612b027f02f949bde2bbe5f"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -2612,11 +2606,11 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-beta2",
-                    "datestamp": "1527856384",
+                    "version": "8.x-1.0-beta2+6-dev",
+                    "datestamp": "1535579880",
                     "security-coverage": {
                         "status": "not-covered",
-                        "message": "Beta releases are not covered by Drupal security advisories."
+                        "message": "Dev releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -2694,7 +2688,8 @@
             "homepage": "https://www.drupal.org/project/maxlength",
             "support": {
                 "source": "http://cgit.drupalcode.org/maxlength"
-            }
+            },
+            "time": "2018-08-29T21:58:44+00:00"
         },
         {
             "name": "drupal/migrate_plus",
@@ -9335,7 +9330,7 @@
         "drupal/edit_own_user_account_permission": 20,
         "drupal/view_unpublished": 20,
         "uh-studentservices/uh_courses_embed": 20,
-        "drupal/maxlength": 10
+        "drupal/maxlength": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
