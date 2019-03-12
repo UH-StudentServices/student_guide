@@ -63,7 +63,8 @@
         "drupal/view_unpublished": "1.x-dev#aea97e837ea9b1b5522f710239cf7d1cc16f2306",
         "UH-StudentServices/uh_courses_embed": "dev-drupal8#af738078abebb19534fd87bb7669e4bd1ae66e5b[F",
         "drupal/domain": "^1.0-alpha14",
-        "drupal/text_summary_options": "^1.0"
+        "drupal/text_summary_options": "^1.0",
+        "drupal/maxlength": "1.x-dev#3235f5ca1a7532b29612b027f02f949bde2bbe5f"
     },
     "repositories": {
         "0": {
@@ -132,6 +133,9 @@
             "drupal/google_analytics_reports": {
                 "2795115-6-and-2860399-1": "patches/google_analytics_reports.patch",
                 "2850463-2": "https://www.drupal.org/files/issues/error_when_saving-2850463-2.patch"
+            },
+            "drupal/maxlength": {
+                "2902083-2": "https://www.drupal.org/files/issues/translateable_help-2902083-2.patch"
             }
         }
     }
