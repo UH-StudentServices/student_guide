@@ -8,6 +8,7 @@ Release date: ??.??.????
 * Exclude study track code from the Eduviewer embed (HUB-433)
 * Improve bulletin archive page (HUB-406)
 * Show summary field always when maintaining bulletins (HUB-357)
+* Limit summary field to 190 characters (HUB-358)
 
 
 ## 1.30
