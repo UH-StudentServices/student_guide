@@ -7,6 +7,10 @@ Release date: ??.??.????
 * Include only the titles and the link in news email (HUB-425)
 * Exclude study track code from the Eduviewer embed (HUB-433)
 * Improve bulletin archive page (HUB-406)
+* Show summary field always when maintaining bulletins (HUB-357)
+* Fixed layout issues on pages that embed Eduviewer (HUB-428)
+* Limit summary field to 190 characters (HUB-358)
+* Add IE11 support to my searches (HUB-403)
 * New taxonomy and related functionality: Other education provider (HUB-427)
 
 
