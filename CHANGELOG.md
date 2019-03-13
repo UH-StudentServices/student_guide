@@ -10,6 +10,7 @@ Release date: ??.??.????
 * Show summary field always when maintaining bulletins (HUB-357)
 * Fixed layout issues on pages that embed Eduviewer (HUB-428)
 * Limit summary field to 190 characters (HUB-358)
+* Add IE11 support to my searches (HUB-403)
 
 
 ## 1.30
