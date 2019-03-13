@@ -7895,10 +7895,6 @@ input[type="text"].search-form--dark__input:focus {
   outline-color: #107EAB;
 }
 
-input[type="text"].search-form--dark__input::-webkit-input-placeholder {
-  color: #F8F8F8;
-}
-
 input[type="text"].search-form--dark__input:-ms-input-placeholder {
   color: #F8F8F8;
 }
@@ -8651,6 +8647,10 @@ li.avatar.avatar--default img {
   box-sizing: content-box;
 }
 
+.degree-programme-switcher .degree-programme-switcher__header:focus {
+  outline-color: #107EAB;
+}
+
 .degree-programme-switcher .degree-programme-switcher__title {
   display: -ms-flexbox;
   display: flex;
@@ -8680,8 +8680,7 @@ li.avatar.avatar--default img {
   transition: transform 0.3s, opacity 0.3s;
   height: 0;
   overflow: hidden;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   border-top: 0;
   width: 100%;
   -ms-flex-positive: 2;
@@ -8790,6 +8789,11 @@ li.avatar.avatar--default img {
       flex-direction: column;
   width: 100%;
   min-height: 1px;
+}
+
+.degree-programme-switcher.collapsed .degree-programme-switcher__dropdown {
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .degree-programme-switcher div.degree-programme-switcher__filter {
@@ -8966,11 +8970,6 @@ li.avatar.avatar--default img {
   background: #222;
   padding: 0;
   border: 0;
-}
-
-.feedback-form form textarea::-webkit-input-placeholder,
-.feedback-form form input[type="email"]::-webkit-input-placeholder {
-  color: #FFF;
 }
 
 .feedback-form form textarea:-ms-input-placeholder,
@@ -9369,11 +9368,6 @@ h1, h2, h3, h4, legend, .logo-block__content .logo-block__sitename,
   margin-bottom: 15px;
 }
 
-.view-search #edit-search-api-fulltext::-webkit-input-placeholder {
-  color: #979797;
-  font-size: smaller;
-}
-
 .view-search #edit-search-api-fulltext:-ms-input-placeholder {
   color: #979797;
   font-size: smaller;
@@ -9385,9 +9379,6 @@ h1, h2, h3, h4, legend, .logo-block__content .logo-block__sitename,
 }
 
 @media (min-width: 62.5em) {
-  .view-search #edit-search-api-fulltext::-webkit-input-placeholder {
-    font-size: 0.875rem;
-  }
   .view-search #edit-search-api-fulltext:-ms-input-placeholder {
     font-size: 0.875rem;
   }
