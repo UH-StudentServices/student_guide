@@ -7,7 +7,7 @@ use Drupal\uhsg_active_degree_programme\ActiveDegreeProgrammeService;
 
 class Eduviewer {
 
-  const INVALID_DEGREE_PROGRAMME_CODES = ['KH20_001', 'MH30_003'];
+  const INVALID_DEGREE_PROGRAMME_CODES = ['KH20_001', 'MH30_001', 'MH30_003'];
 
   /** @var \Drupal\uhsg_active_degree_programme\ActiveDegreeProgrammeService*/
   private $activeDegreeProgrammeService;

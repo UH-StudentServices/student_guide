@@ -11,6 +11,7 @@ Release date: ??.??.????
 * Fixed layout issues on pages that embed Eduviewer (HUB-428)
 * Limit summary field to 190 characters (HUB-358)
 * Add IE11 support to my searches (HUB-403)
+* Disable Eduviewer for degree programme MH30_001 (HUB-438)
 
 
 ## 1.30
