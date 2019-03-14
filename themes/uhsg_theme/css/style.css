@@ -7895,10 +7895,6 @@ input[type="text"].search-form--dark__input:focus {
   outline-color: #107EAB;
 }
 
-input[type="text"].search-form--dark__input::-webkit-input-placeholder {
-  color: #F8F8F8;
-}
-
 input[type="text"].search-form--dark__input:-ms-input-placeholder {
   color: #F8F8F8;
 }
@@ -8868,6 +8864,7 @@ li.avatar.avatar--default img {
   position: fixed;
   bottom: 1em;
   right: 1em;
+  /* Checkboxes from Styleguide are not accessible without these overrides */
 }
 
 .feedback-form .feedback-form__toggle {
@@ -8968,11 +8965,6 @@ li.avatar.avatar--default img {
   border: 0;
 }
 
-.feedback-form form textarea::-webkit-input-placeholder,
-.feedback-form form input[type="email"]::-webkit-input-placeholder {
-  color: #FFF;
-}
-
 .feedback-form form textarea:-ms-input-placeholder,
 .feedback-form form input[type="email"]:-ms-input-placeholder {
   color: #FFF;
@@ -9010,6 +9002,26 @@ li.avatar.avatar--default img {
 
 .feedback-form form .button:hover {
   background-color: transparent;
+}
+
+.feedback-form input[type="checkbox"] {
+  display: inline-block;
+  -moz-appearance: checkbox;
+  -webkit-appearance: checkbox;
+  opacity: 0;
+}
+
+.feedback-form input[type="checkbox"] + label {
+  display: inline-block;
+  left: -14px;
+}
+
+.feedback-form input[type="checkbox"]:focus + label::before {
+  outline: #3b99fc auto 2px;
+}
+
+.feedback-form .checkbox-container > label {
+  margin-right: 0.25em;
 }
 
 .button--reset {
@@ -9369,11 +9381,6 @@ h1, h2, h3, h4, legend, .logo-block__content .logo-block__sitename,
   margin-bottom: 15px;
 }
 
-.view-search #edit-search-api-fulltext::-webkit-input-placeholder {
-  color: #979797;
-  font-size: smaller;
-}
-
 .view-search #edit-search-api-fulltext:-ms-input-placeholder {
   color: #979797;
   font-size: smaller;
@@ -9385,9 +9392,6 @@ h1, h2, h3, h4, legend, .logo-block__content .logo-block__sitename,
 }
 
 @media (min-width: 62.5em) {
-  .view-search #edit-search-api-fulltext::-webkit-input-placeholder {
-    font-size: 0.875rem;
-  }
   .view-search #edit-search-api-fulltext:-ms-input-placeholder {
     font-size: 0.875rem;
   }
