@@ -7895,10 +7895,6 @@ input[type="text"].search-form--dark__input:focus {
   outline-color: #107EAB;
 }
 
-input[type="text"].search-form--dark__input::-webkit-input-placeholder {
-  color: #F8F8F8;
-}
-
 input[type="text"].search-form--dark__input:-ms-input-placeholder {
   color: #F8F8F8;
 }
@@ -8968,11 +8964,6 @@ li.avatar.avatar--default img {
   border: 0;
 }
 
-.feedback-form form textarea::-webkit-input-placeholder,
-.feedback-form form input[type="email"]::-webkit-input-placeholder {
-  color: #FFF;
-}
-
 .feedback-form form textarea:-ms-input-placeholder,
 .feedback-form form input[type="email"]:-ms-input-placeholder {
   color: #FFF;
@@ -9369,11 +9360,6 @@ h1, h2, h3, h4, legend, .logo-block__content .logo-block__sitename,
   margin-bottom: 15px;
 }
 
-.view-search #edit-search-api-fulltext::-webkit-input-placeholder {
-  color: #979797;
-  font-size: smaller;
-}
-
 .view-search #edit-search-api-fulltext:-ms-input-placeholder {
   color: #979797;
   font-size: smaller;
@@ -9385,9 +9371,6 @@ h1, h2, h3, h4, legend, .logo-block__content .logo-block__sitename,
 }
 
 @media (min-width: 62.5em) {
-  .view-search #edit-search-api-fulltext::-webkit-input-placeholder {
-    font-size: 0.875rem;
-  }
   .view-search #edit-search-api-fulltext:-ms-input-placeholder {
     font-size: 0.875rem;
   }
@@ -9673,4 +9656,8 @@ h1, h2, h3, h4, legend, .logo-block__content .logo-block__sitename,
   vertical-align: top;
   margin-top: 0.2em;
   padding-left: initial;
+}
+
+html {
+  font-size: 100%;
 }
