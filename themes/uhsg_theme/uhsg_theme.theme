@@ -263,7 +263,8 @@ function uhsg_theme_preprocess_views_view(&$variables) {
       break;
 
     case 'search':
-      $is_student_domain = \Drupal::service('uhsg_domain.domain')->isStudentDomain();
+      $domain_service = \Drupal::service('uhsg_domain.domain');
+      $is_student_domain = $domain_service->isStudentDomain();
 
       $variables['title'] = $is_student_domain
         ? $variables['view']->getTitle()
@@ -272,7 +273,7 @@ function uhsg_theme_preprocess_views_view(&$variables) {
       $variables['content_attributes']['class'][] = 'view-content';
       $variables['degree_programme_switcher'] = _uhsg_theme_get_degree_programme_switcher();
 
-      if (!$is_student_domain) {
+      if ($domain_service->isTeachingDomain()) {
         $variables['other_education_provider_switcher'] = _uhsg_theme_get_other_education_provider_switcher();
       }
 
