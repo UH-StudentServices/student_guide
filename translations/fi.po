@@ -24,6 +24,9 @@ msgstr "Hae koulutusohjelmaa"
 msgid "Select degree programme"
 msgstr "Valitse koulutusohjelma"
 
+msgid "Select other education provider"
+msgstr "Valitse muu opetuksen järjestäjä"
+
 msgid "Feedback"
 msgstr "Palaute"
 
@@ -87,6 +90,10 @@ msgstr "Yhteys Oodiin ei toimi eikä opinto-oikeuksiesi mukaisia koulutusohjelmi
 msgctxt "Search Filters"
 msgid "Degree programme specific instructions"
 msgstr "Koulutusohjelmakohtaiset ohjeet"
+
+msgctxt "Search Filters"
+msgid "Other education provider specific instructions"
+msgstr "Muu opetuksen järjestäjä -kohtaiset ohjeet"
 
 msgctxt "Search Filters"
 msgid "General instructions"

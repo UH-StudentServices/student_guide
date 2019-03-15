@@ -13,6 +13,7 @@ Release date: ??.??.????
 * Add IE11 support to my searches (HUB-403)
 * Disable Eduviewer for degree programme MH30_001 (HUB-438)
 * Increase waiting times for the office hours API response, display error message on exception (HUB-411)
+* New taxonomy and related functionality: Other education provider (HUB-427)
 
 
 ## 1.30
