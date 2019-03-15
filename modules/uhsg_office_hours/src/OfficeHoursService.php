@@ -18,15 +18,11 @@ class OfficeHoursService {
 
   use StringTranslationTrait;
 
-  // 1 minute.
-  const CACHE_EXPIRE_SECONDS = 60;
   const CACHE_KEY_PREFIX = 'uhsg-office-hours-';
   const CONFIG_NAME = 'uhsg_office_hours.config';
   const CONFIG_API_BASE_URL = 'api_base_url';
   const CONFIG_API_PATH = 'api_path';
-  const CONNECT_TIMEOUT_SECONDS = 3;
   const LANGUAGE_UNDEFINED = 'undefined';
-  const REQUEST_TIMEOUT_SECONDS = 3;
 
   /** @var \Drupal\Core\Cache\CacheBackendInterface*/
   protected $cache;
@@ -148,8 +144,8 @@ class OfficeHoursService {
    */
   private function getRequestOptions() {
     return [
-      RequestOptions::CONNECT_TIMEOUT => self::CONNECT_TIMEOUT_SECONDS,
-      RequestOptions::TIMEOUT => self::REQUEST_TIMEOUT_SECONDS
+      RequestOptions::CONNECT_TIMEOUT => $this->config->get('connect_timeout'),
+      RequestOptions::TIMEOUT => $this->config->get('request_timeout')
     ];
   }
 
@@ -297,7 +293,7 @@ class OfficeHoursService {
    * @return int
    */
   private function getCacheExpireTimestamp() {
-    return $this->time->getRequestTime() + self::CACHE_EXPIRE_SECONDS;
+    return $this->time->getRequestTime() + $this->config->get('cache_expire');
   }
 
 }
