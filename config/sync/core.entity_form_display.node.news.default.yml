@@ -13,6 +13,7 @@ dependencies:
     - node.type.news
   module:
     - image
+    - maxlength
     - path
     - text
 id: node.news.default
@@ -25,9 +26,16 @@ content:
     weight: 8
     settings:
       rows: 9
-      summary_rows: 3
       placeholder: ''
-    third_party_settings: {  }
+      summary_rows: 3
+    third_party_settings:
+      maxlength:
+        maxlength_js: null
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+        maxlength_js_summary: 190
+        maxlength_js_label_summary: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+        maxlength_js_enforce: false
+        maxlength_js_truncate_html: false
     region: content
   created:
     type: datetime_timestamp
