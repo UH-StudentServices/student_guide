@@ -8872,6 +8872,7 @@ li.avatar.avatar--default img {
   position: fixed;
   bottom: 1em;
   right: 1em;
+  /* Checkboxes from Styleguide are not accessible without these overrides */
 }
 
 .feedback-form .feedback-form__toggle {
@@ -9009,6 +9010,26 @@ li.avatar.avatar--default img {
 
 .feedback-form form .button:hover {
   background-color: transparent;
+}
+
+.feedback-form input[type="checkbox"] {
+  display: inline-block;
+  -moz-appearance: checkbox;
+  -webkit-appearance: checkbox;
+  opacity: 0;
+}
+
+.feedback-form input[type="checkbox"] + label {
+  display: inline-block;
+  left: -14px;
+}
+
+.feedback-form input[type="checkbox"]:focus + label::before {
+  outline: #3b99fc auto 2px;
+}
+
+.feedback-form .checkbox-container > label {
+  margin-right: 0.25em;
 }
 
 .button--reset {
