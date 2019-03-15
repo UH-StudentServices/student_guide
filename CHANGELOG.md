@@ -12,6 +12,7 @@ Release date: ??.??.????
 * Limit summary field to 190 characters (HUB-358)
 * Add IE11 support to my searches (HUB-403)
 * Disable Eduviewer for degree programme MH30_001 (HUB-438)
+* Increase waiting times for the office hours API response, display error message on exception (HUB-411)
 
 
 ## 1.30
