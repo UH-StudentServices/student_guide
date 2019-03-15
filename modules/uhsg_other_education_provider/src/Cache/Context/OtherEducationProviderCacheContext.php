@@ -31,8 +31,8 @@ class OtherEducationProviderCacheContext implements CacheContextInterface {
    * {@inheritdoc}
    */
   public function getContext() {
-    $active = $this->otherEducationProviderService->getId();
-    return $active ? $active : 0;
+    $activeId = $this->otherEducationProviderService->getId();
+    return $activeId ? $activeId : 0;
   }
 
   /**
