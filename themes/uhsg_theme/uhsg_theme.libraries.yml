@@ -22,6 +22,15 @@ degree_programme_switcher:
     - core/matchMedia
     - core/drupal
 
+other_education_provider_switcher:
+  version: 1.x
+  js:
+    js/otherEducationProviderSwitcher.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+
 degree_programme_filter:
   version: 1.x
   js:

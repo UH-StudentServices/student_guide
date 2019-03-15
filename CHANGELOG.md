@@ -11,6 +11,9 @@ Release date: ??.??.????
 * Fixed layout issues on pages that embed Eduviewer (HUB-428)
 * Limit summary field to 190 characters (HUB-358)
 * Add IE11 support to my searches (HUB-403)
+* Disable Eduviewer for degree programme MH30_001 (HUB-438)
+* Increase waiting times for the office hours API response, display error message on exception (HUB-411)
+* New taxonomy and related functionality: Other education provider (HUB-427)
 * Add keyboard navigation support to degree programme switcher (HUB-415)
 
 

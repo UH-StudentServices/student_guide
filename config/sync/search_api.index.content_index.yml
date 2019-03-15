@@ -14,6 +14,7 @@ dependencies:
     - field.storage.paragraph.field_accordion_body
     - field.storage.node.field_article_domain
     - field.storage.node.field_theme_domain
+    - field.storage.node.field_other_education_provider
     - search_api.server.student_guide
   module:
     - paragraphs
@@ -123,6 +124,16 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_theme_domain
+  other_education_provider_tid:
+    label: 'Other education provider » Taxonomy term » Term ID'
+    datasource_id: 'entity:node'
+    property_path: 'field_other_education_provider:entity:tid'
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_other_education_provider
+      module:
+        - taxonomy
 datasource_settings:
   'entity:node':
     bundles:
@@ -137,6 +148,7 @@ datasource_settings:
 processor_settings:
   add_url: {  }
   aggregated_field: {  }
+  entity_status: {  }
   html_filter:
     all_fields: false
     fields:
@@ -154,7 +166,6 @@ processor_settings:
       preprocess_index: -10
       preprocess_query: -10
   rendered_item: {  }
-  entity_status: {  }
 tracker_settings:
   default:
     indexing_order: fifo

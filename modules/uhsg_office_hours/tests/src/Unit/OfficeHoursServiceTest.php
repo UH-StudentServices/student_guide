@@ -9,12 +9,14 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Language\LanguageInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Logger\LoggerChannel;
+use Drupal\Core\Messenger\MessengerInterface;
 use Drupal\Tests\UnitTestCase;
 use Drupal\uhsg_active_degree_programme\ActiveDegreeProgrammeService;
 use Drupal\uhsg_office_hours\OfficeHoursService;
 use GuzzleHttp\Client;
 use Prophecy\Argument;
 use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * @group uhsg
@@ -43,20 +45,26 @@ class OfficeHoursServiceTest extends UnitTestCase {
   /** @var \Drupal\Core\Config\ConfigFactory*/
   protected $configFactory;
 
+  /** @var \Symfony\Component\DependencyInjection\ContainerInterface*/
+  private $container;
+
   /** @var \Drupal\Core\Entity\EntityStorageInterface*/
   private $entityStorage;
 
   /** @var \Drupal\Core\Entity\EntityTypeManagerInterface*/
   private $entityTypeManager;
 
-  /** @var \Drupal\Core\Language\LanguageInterface */
+  /** @var \Drupal\Core\Language\LanguageInterface*/
   protected $language;
 
-  /** @var \Drupal\Core\Language\LanguageManagerInterface */
+  /** @var \Drupal\Core\Language\LanguageManagerInterface*/
   protected $languageManager;
 
   /** @var \Drupal\Core\Logger\LoggerChannel*/
   private $logger;
+
+  /** @var MessengerInterface*/
+  private $messenger;
 
   /** @var \Drupal\uhsg_office_hours\OfficeHoursService*/
   private $officeHoursService;
@@ -105,16 +113,21 @@ class OfficeHoursServiceTest extends UnitTestCase {
     $this->languageManager->getCurrentLanguage()->willReturn($this->language);
 
     $this->logger = $this->prophesize(LoggerChannel::class);
+    $this->messenger = $this->prophesize(MessengerInterface::class);
     $this->time = $this->prophesize(TimeInterface::class);
 
-    $this->officeHoursService = new OfficeHoursService(
+    $this->container = $this->prophesize(ContainerInterface::class);
+    Drupal::setContainer($this->container->reveal());
+
+    $this->officeHoursService = new OfficeHoursServiceTestDouble(
       $this->cache->reveal(),
       $this->client->reveal(),
       $this->configFactory->reveal(),
       $this->logger->reveal(),
       $this->time->reveal(),
       $this->activeDegreeProgrammeService->reveal(),
-      $this->languageManager->reveal()
+      $this->languageManager->reveal(),
+      $this->messenger->reveal()
     );
   }
 
@@ -138,6 +151,17 @@ class OfficeHoursServiceTest extends UnitTestCase {
     $this->client->get(Argument::any(), Argument::any())->willThrow(new Exception(self::EXCEPTION_MESSAGE));
 
     $this->logger->error(self::EXCEPTION_MESSAGE)->shouldBeCalled();
+
+    $this->officeHoursService->getOfficeHours();
+  }
+
+  /**
+   * @test
+   */
+  public function shouldAddDisplayableErrorMessageOnApiRequestException() {
+    $this->client->get(Argument::any(), Argument::any())->willThrow(new Exception(self::EXCEPTION_MESSAGE));
+
+    $this->messenger->addError(Argument::any())->shouldBeCalled();
 
     $this->officeHoursService->getOfficeHours();
   }
@@ -184,6 +208,17 @@ class OfficeHoursServiceTest extends UnitTestCase {
 
     $this->assertEmpty($officeHours['degree_programme']);
     $this->assertNotEmpty($officeHours['general']);
+  }
+
+}
+
+/**
+ * Test double for overriding difficult to test methods.
+ */
+class OfficeHoursServiceTestDouble extends OfficeHoursService {
+
+  public function t($string, array $args = [], array $options = []) {
+    return $string;
   }
 
 }

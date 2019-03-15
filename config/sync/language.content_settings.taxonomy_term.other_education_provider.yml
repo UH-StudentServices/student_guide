@@ -1,0 +1,16 @@
+uuid: 5384a213-19fd-4d74-b702-6d082deef6e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.other_education_provider
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: taxonomy_term.other_education_provider
+target_entity_type_id: taxonomy_term
+target_bundle: other_education_provider
+default_langcode: site_default
+language_alterable: true
