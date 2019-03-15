@@ -7,6 +7,11 @@ Release date: ??.??.????
 * Include only the titles and the link in news email (HUB-425)
 * Exclude study track code from the Eduviewer embed (HUB-433)
 * Improve bulletin archive page (HUB-406)
+* Show summary field always when maintaining bulletins (HUB-357)
+* Fixed layout issues on pages that embed Eduviewer (HUB-428)
+* Limit summary field to 190 characters (HUB-358)
+* Add IE11 support to my searches (HUB-403)
+* Disable Eduviewer for degree programme MH30_001 (HUB-438)
 * Increase waiting times for the office hours API response, display error message on exception (HUB-411)
 
 
