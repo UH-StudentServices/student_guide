@@ -15,6 +15,7 @@ Release date: ??.??.????
 * Increase waiting times for the office hours API response, display error message on exception (HUB-411)
 * New taxonomy and related functionality: Other education provider (HUB-427)
 * Add keyboard navigation support to degree programme switcher (HUB-415)
+* Technical updates to npm dependencies (HUB-432)
 
 
 ## 1.30
