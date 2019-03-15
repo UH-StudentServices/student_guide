@@ -9299,6 +9299,10 @@ h1, h2, h3, h4, legend, .logo-block__content .logo-block__sitename,
   box-sizing: content-box;
 }
 
+.other-education-provider-switcher .other-education-provider-switcher__header:focus {
+  outline-color: #107EAB;
+}
+
 .other-education-provider-switcher .other-education-provider-switcher__title {
   display: -ms-flexbox;
   display: flex;
@@ -9328,8 +9332,7 @@ h1, h2, h3, h4, legend, .logo-block__content .logo-block__sitename,
   transition: transform 0.3s, opacity 0.3s;
   height: 0;
   overflow: hidden;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   border-top: 0;
   width: 100%;
   -ms-flex-positive: 2;
@@ -9405,6 +9408,11 @@ h1, h2, h3, h4, legend, .logo-block__content .logo-block__sitename,
       flex-direction: column;
   width: 100%;
   min-height: 1px;
+}
+
+.other-education-provider-switcher.collapsed .other-education-provider-switcher__dropdown {
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .other-education-provider-switcher.collapsed {
