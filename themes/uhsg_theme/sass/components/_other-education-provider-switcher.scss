@@ -23,6 +23,10 @@
     align-items: center;
     height: 3rem;
     box-sizing: content-box;
+
+    &:focus {
+      outline-color: $blue;
+    }
   }
   .other-education-provider-switcher__title {
     display: flex;
@@ -45,7 +49,9 @@
     transition: transform 0.3s, opacity 0.3s;
     height: 0;
     overflow: hidden;
-    display: flex;
+    // Do not display when closed to prevent keyboard navigation trying to
+    // traverse invisible elements.
+    display: none;
     border-top: 0;
     width: 100%;
     flex-grow: 2;
@@ -86,6 +92,12 @@
       flex-direction: column;
       width: 100%;
       min-height: 1px;
+    }
+  }
+  // Display when open.
+  &.collapsed {
+    .other-education-provider-switcher__dropdown {
+      display: flex;
     }
   }
   &.collapsed {

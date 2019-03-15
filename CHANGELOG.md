@@ -14,6 +14,7 @@ Release date: ??.??.????
 * Disable Eduviewer for degree programme MH30_001 (HUB-438)
 * Increase waiting times for the office hours API response, display error message on exception (HUB-411)
 * New taxonomy and related functionality: Other education provider (HUB-427)
+* Add keyboard navigation support to degree programme switcher (HUB-415)
 
 
 ## 1.30
