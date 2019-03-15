@@ -9889,3 +9889,7 @@ h1, h2, h3, h4, legend, .logo-block__content .logo-block__sitename,
   margin-top: 0.2em;
   padding-left: initial;
 }
+
+html {
+  font-size: 100%;
+}
