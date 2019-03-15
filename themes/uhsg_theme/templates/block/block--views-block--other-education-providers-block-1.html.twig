@@ -25,24 +25,17 @@
  * @see template_preprocess_block()
  */
 #}
-{{ attach_library('uhsg_theme/degree_programme_filter') }}
-{{ attach_library('uhsg_theme/degree_programme_switcher') }}
+{{ attach_library('uhsg_theme/other_education_provider_switcher') }}
 
-<div class="degree-programme-switcher search-form">
-  <label> {{ 'Select degree programme'|trans }} </label>
-  <div class="degree-programme-switcher__header" tabindex="0">
-    <h4 class="degree-programme-switcher__title" data-degree-programme-code="{{ code }}">
+<div class="other-education-provider-switcher search-form">
+  <label> {{ 'Select other education provider'|trans }} </label>
+  <div class="other-education-provider-switcher__header" tabindex="0">
+    <h4 class="other-education-provider-switcher__title">
       {{ label }}
     </h4>
-    <span class="degree-programme-switcher__toggle icon--caret-down" />
+    <span class="other-education-provider-switcher__toggle icon--caret-down" />
   </div>
-  <div class="degree-programme-switcher__dropdown">
-    <h4> {{ 'Search for degree programme'|trans }}</h4>
-    <div class="degree-programme-switcher__filter tube">
-      <label for="filter">{{ 'Name of degree programme'|trans }}</label>
-      <input type="text" name="filter" placeholder="{{ 'Name of degree programme'|trans }}" class="search-form__input">
-      <i class="icon--search"></i>
-    </div>
+  <div class="other-education-provider-switcher__dropdown">
     {% block content %}
       {{ content }}
     {% endblock %}

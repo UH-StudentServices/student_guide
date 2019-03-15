@@ -1,0 +1,18 @@
+uhsg_other_education_provider.set_active:
+  path: /other-education-provider/set/{tid}
+  defaults:
+    _controller: '\Drupal\uhsg_other_education_provider\Controller\OtherEducationProviderController::setOtherEducationProvider'
+  options:
+    no_cache: TRUE
+  requirements:
+    _permission: 'change other education provider'
+    tid: \d+
+
+uhsg_other_education_provider.reset_active:
+  path: /other-education-provider/reset
+  defaults:
+    _controller: '\Drupal\uhsg_other_education_provider\Controller\OtherEducationProviderController::resetOtherEducationProvider'
+  options:
+    no_cache: TRUE
+  requirements:
+    _permission: 'change other education provider'
