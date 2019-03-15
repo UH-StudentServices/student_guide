@@ -31,9 +31,16 @@ function uhsg_search_preprocess_node(&$variables) {
     $node = $variables['node'];
     if ($node->getType() == 'article') {
       $variables['attributes']['data-type'] = [];
-      $variables['attributes']['data-type'][] = uhsg_search_article_is_degree_programme_specific($node) ? 'article_degree_programme_specific' : 'article_general';
-      if (uhsg_search_article_is_other_education_provider_specific($node)) {
+      $is_degree_programme_specific = uhsg_search_article_is_degree_programme_specific($node);
+      if ($is_degree_programme_specific) {
+        $variables['attributes']['data-type'][] = 'article_degree_programme_specific';
+      }
+      $is_other_education_provider_specific = uhsg_search_article_is_other_education_provider_specific($node);
+      if ($is_other_education_provider_specific) {
         $variables['attributes']['data-type'][] = 'article_other_education_provider_specific';
+      }
+      if (!$is_degree_programme_specific && !$is_other_education_provider_specific) {
+        $variables['attributes']['data-type'][] = 'article_general';
       }
     }
     else {
