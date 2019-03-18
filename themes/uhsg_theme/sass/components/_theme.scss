@@ -30,6 +30,11 @@
     @include breakpoint($small) {
       position: absolute;
     }
+    &:focus {
+      background-color: $blue;
+      outline: solid black 5px;
+      outline-offset: -5px;
+    }
   }
 
   .theme__teaser-image {
@@ -78,6 +83,12 @@
     padding: 1em;
     @include breakpoint($small) {
       position: absolute;
+    }
+
+    &:focus {
+      background-color: $blue;
+      outline: solid black 5px;
+      outline-offset: -5px;
     }
   }
 

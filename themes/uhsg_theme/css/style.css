@@ -10170,6 +10170,12 @@ h1, h2, h3, h4, legend, .logo-block__content .logo-block__sitename,
   }
 }
 
+.theme--box .theme__link-wrapper:focus {
+  background-color: #107EAB;
+  outline: solid black 5px;
+  outline-offset: -5px;
+}
+
 .theme--box .theme__teaser-image {
   position: absolute;
   opacity: 0.4;
@@ -10231,6 +10237,12 @@ h1, h2, h3, h4, legend, .logo-block__content .logo-block__sitename,
   .theme--flat-box .theme__link-wrapper {
     position: absolute;
   }
+}
+
+.theme--flat-box .theme__link-wrapper:focus {
+  background-color: #107EAB;
+  outline: solid black 5px;
+  outline-offset: -5px;
 }
 
 .theme--flat-box .theme__teaser-image {
