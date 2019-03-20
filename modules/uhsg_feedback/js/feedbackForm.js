@@ -21,11 +21,14 @@
     },
 
     triggerToggle: function (event, element) {
-      event.preventDefault();
-      element.toggleClass('active').next('#feedback-form__content').children('form').toggleClass('visually-hidden');
-      element.hasClass('active') ? // eslint-disable-line no-unused-expressions
-        element.children('.feedback-form__icon').removeClass('icon--chat icon-2x').addClass('icon--remove') :
-        element.children('.feedback-form__icon').removeClass('icon--remove').addClass('icon--chat icon-2x');
+      // If key is not TAB (fix for Firefox 60.x.xesr).
+      if (event.keyCode != 9) {
+        event.preventDefault();
+        element.toggleClass('active').next('#feedback-form__content').children('form').toggleClass('visually-hidden');
+        element.hasClass('active') ? // eslint-disable-line no-unused-expressions
+          element.children('.feedback-form__icon').removeClass('icon--chat icon-2x').addClass('icon--remove') :
+          element.children('.feedback-form__icon').removeClass('icon--remove').addClass('icon--chat icon-2x');
+      }
     }
   };
 

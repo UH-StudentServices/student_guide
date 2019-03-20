@@ -55,14 +55,17 @@
     },
 
     triggerToggle: function (event, container, toggleClass, toggle, toggleIconClosed, toggleIconOpen, breakpoints, filterInput) {
-      event.preventDefault();
-      container.toggleClass(toggleClass);
-      $('body').toggleClass('no-scroll-mobile');
-      toggle.toggleClass(toggleIconClosed);
-      toggle.toggleClass(toggleIconOpen);
+      // If key is not TAB (fix for Firefox 60.x.xesr).
+      if (event.keyCode != 9) {
+        event.preventDefault();
+        container.toggleClass(toggleClass);
+        $('body').toggleClass('no-scroll-mobile');
+        toggle.toggleClass(toggleIconClosed);
+        toggle.toggleClass(toggleIconOpen);
 
-      if (window.matchMedia(breakpoints['small']).matches) {
-        filterInput.focus();
+        if (window.matchMedia(breakpoints['small']).matches) {
+          filterInput.focus();
+        }
       }
     }
   };
