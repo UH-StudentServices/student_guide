@@ -1,7 +1,7 @@
 #Changelog
 
-## 1.xx-dev
-Release date: ??.??.????
+## v1.31
+Release date: 21.03.2019
 
 * Translate "User group" (HUB-393)
 * Include only the titles and the link in news email (HUB-425)

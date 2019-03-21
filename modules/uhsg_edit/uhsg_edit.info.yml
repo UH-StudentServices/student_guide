@@ -2,7 +2,7 @@ name: Edit addons
 type: module
 description: Adds customizations to node edit view.
 core: 8.x
-version: VERSION
+version: v1.31
 package: Student Guide
 dependencies:
   - content_lock

@@ -2,5 +2,5 @@ name: REST
 type: module
 description: Exposes Guide entities as RESTful web API.
 core: 8.x
-version: VERSION
+version: v1.31
 package: Student Guide
