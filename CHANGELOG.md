@@ -1,6 +1,6 @@
 #Changelog
 
-## v1.31
+## 1.31
 Release date: 21.03.2019
 
 * Translate "User group" (HUB-393)
