@@ -9915,6 +9915,15 @@ h1, h2, h3, h4, legend, .logo-block__content .logo-block__sitename,
   }
 }
 
+ul.pager > li a:focus {
+  outline: currentColor thin dashed;
+  outline-offset: 3px;
+}
+
+ul.pager > li a:focus {
+  outline-offset: -2px;
+}
+
 .paragraph__title {
   margin-bottom: 15px;
 }
