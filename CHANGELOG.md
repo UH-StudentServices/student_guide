@@ -3,6 +3,11 @@
 ## 1.xx-dev
 Release date: ??.??.????
 
+
+
+## v1.31
+Release date: 21.03.2019
+
 * Translate "User group" (HUB-393)
 * Include only the titles and the link in news email (HUB-425)
 * Exclude study track code from the Eduviewer embed (HUB-433)
@@ -17,6 +22,7 @@ Release date: ??.??.????
 * Add keyboard navigation support to degree programme switcher (HUB-415)
 * Technical updates to npm dependencies (HUB-432)
 * Accessibility improvements (HUB-415, HUB-416, HUB-420)
+* Update Drupal core (HUB-441)
 
 
 ## 1.30
