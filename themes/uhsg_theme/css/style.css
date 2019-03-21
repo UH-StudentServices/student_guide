@@ -9385,6 +9385,11 @@ li.avatar.avatar--default img {
   padding: 0;
 }
 
+.feedback-form form .button:focus {
+  outline: currentColor thin dashed;
+  outline-offset: 3px;
+}
+
 .feedback-form form .button:hover {
   background-color: transparent;
 }

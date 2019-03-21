@@ -92,6 +92,7 @@
     .button {
       @include font-size(14px);
       @include font-weight-medium;
+      @include focus;
       background-color: transparent;
       padding: 0;
       &:hover {
