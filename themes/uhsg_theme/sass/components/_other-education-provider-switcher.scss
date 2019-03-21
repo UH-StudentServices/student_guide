@@ -1,0 +1,146 @@
+.other-education-provider-switcher {
+  position: relative;
+  z-index: 100;
+  background: $white;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 2em;
+  .other-education-provider-switcher__header {
+    border-radius: 0;
+    border: 1px solid $silver;
+    outline-color: rgba($blue, 0);
+    outline-offset: -2px;
+    outline-style: solid;
+    outline-width: 2px;
+    padding: 0 10px 0 10px;
+    z-index: 10;
+    display: flex;
+    cursor: pointer;
+    flex-shrink: 0;
+    margin: 0;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 3rem;
+    box-sizing: content-box;
+
+    &:focus {
+      outline-color: $blue;
+    }
+  }
+  .other-education-provider-switcher__title {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 0 80%;
+    color: $blue;
+    padding-top: 0.4em;
+    @include font-weight-medium;
+    @include font-size(16px);
+  }
+  .other-education-provider-switcher__toggle {
+    @include font-weight-medium;
+    color: $blue;
+    padding-right: 0.4em;
+  }
+  .other-education-provider-switcher__dropdown {
+    border: 1px solid $silver;
+    transform: translateY(-100px);
+    opacity: 0;
+    transition: transform 0.3s, opacity 0.3s;
+    height: 0;
+    overflow: hidden;
+    // Do not display when closed to prevent keyboard navigation trying to
+    // traverse invisible elements.
+    display: none;
+    border-top: 0;
+    width: 100%;
+    flex-grow: 2;
+    flex-direction: column;
+    min-height: 1px;
+    background: $white;
+    .view-other-education-providers {
+      .view-content {
+        @include scrollbar;
+        > div {
+          flex-shrink: 0;
+        }
+        ul {
+          margin-bottom: 0;
+        }
+        li {
+          @include border-bottom;
+          border-bottom-color: transparent;
+          padding-right: 2.5em;
+          &:hover {
+            @include border-bottom;
+            transition: none;
+          }
+          div {
+            width: auto;
+          }
+        }
+      }
+    }
+    .button--reset,
+    > h4 {
+      flex-shrink: 0;
+    }
+    // TODO: get rid of this silly container
+    // fix firefox & IE
+    div {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      min-height: 1px;
+    }
+  }
+  // Display when open.
+  &.collapsed {
+    .other-education-provider-switcher__dropdown {
+      display: flex;
+    }
+  }
+  &.collapsed {
+    position: fixed;
+    z-index: 102;
+    margin-top: 0;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    .other-education-provider-switcher__dropdown {
+      transform: none;
+      height: auto;
+      opacity: 1;
+      padding: 1em 1em 0 1em;
+    }
+    .other-education-provider-switcher__header {
+      border-bottom: 0;
+    }
+  }
+
+  @include breakpoint($small) {
+    display: block;
+    .other-education-provider-switcher__dropdown {
+      display: none;
+      position: absolute;
+      width: 100%;
+      .view-content {
+        max-height: 20em;
+        max-height: 50vh;
+      }
+      .button--reset {
+        align-self: flex-end;
+        margin-bottom: -2em;
+      }
+    }
+    &.collapsed {
+      height: auto;
+      position: relative;
+      .other-education-provider-switcher__dropdown {
+        display: flex;
+        padding: 0 2em 2em 2em;
+      }
+    }
+  }
+}

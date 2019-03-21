@@ -39,6 +39,7 @@ module:
   language: 0
   link: 0
   locale: 0
+  maxlength: 0
   menu_ui: 0
   migrate: 0
   migrate_plus: 0
@@ -68,6 +69,7 @@ module:
   system: 0
   taxonomy: 0
   text: 0
+  text_summary_options: 0
   token: 0
   toolbar: 0
   uh_courses_embed: 0
@@ -86,6 +88,7 @@ module:
   uhsg_news: 0
   uhsg_office_hours: 0
   uhsg_oprek: 0
+  uhsg_other_education_provider: 0
   uhsg_redirect_to_login: 0
   uhsg_rest: 0
   uhsg_role_auto_assign: 0

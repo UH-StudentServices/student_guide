@@ -2,6 +2,7 @@
   'use strict';
   Drupal.behaviors.degreeProgrammeSwitcher = {
     attach: function (context, settings) {
+      var triggerToggle = this.triggerToggle;
       var degreeProgrammeSwitcher = '.degree-programme-switcher';
       var container = $('.degree-programme-switcher');
       var header = $('.degree-programme-switcher__header', degreeProgrammeSwitcher);
@@ -12,19 +13,17 @@
       var toggleIconOpen = 'icon--caret-up';
       var breakpoints = settings.breakpoints;
 
-      // toggle collapsed when clicking header
-      header.once().on('click', function () {
-        container.toggleClass(toggleClass);
-        $('body').toggleClass('no-scroll-mobile');
-        toggle.toggleClass(toggleIconClosed);
-        toggle.toggleClass(toggleIconOpen);
-
-        if (window.matchMedia(breakpoints['small']).matches) {
-          filterInput.focus();
+      // Toggle collapsed when click or keypress on header
+      header.once().on({
+        click: function (event) {
+          triggerToggle(event, container, toggleClass, toggle, toggleIconClosed, toggleIconOpen, breakpoints, filterInput);
+        },
+        keypress: function (event) {
+          triggerToggle(event, container, toggleClass, toggle, toggleIconClosed, toggleIconOpen, breakpoints, filterInput);
         }
       });
 
-      // close when clicking outside
+      // Close when clicking outside
       $(document).once().on('click', function (e) {
         var clickedOutside = $(e.target).parents(degreeProgrammeSwitcher).length === 0;
         if (container.hasClass(toggleClass) && clickedOutside) {
@@ -35,7 +34,7 @@
         }
       });
 
-      // refresh view after adding to item to my degree programmes
+      // Refresh view after adding to item to my degree programmes
       $.each(Drupal.views.instances, function (index, element) {
         if (element.settings.view_name === 'degree_programmes') {
           $(document).ajaxSuccess(function (event, request, settings) {
@@ -53,6 +52,21 @@
         groupingTitle: '.view-subtitle'
       });
 
+    },
+
+    triggerToggle: function (event, container, toggleClass, toggle, toggleIconClosed, toggleIconOpen, breakpoints, filterInput) {
+      // If key is not TAB (fix for Firefox 60.x.xesr).
+      if (event.keyCode != 9) {
+        event.preventDefault();
+        container.toggleClass(toggleClass);
+        $('body').toggleClass('no-scroll-mobile');
+        toggle.toggleClass(toggleIconClosed);
+        toggle.toggleClass(toggleIconOpen);
+
+        if (window.matchMedia(breakpoints['small']).matches) {
+          filterInput.focus();
+        }
+      }
     }
   };
 }(jQuery));

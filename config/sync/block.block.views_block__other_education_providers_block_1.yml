@@ -1,0 +1,24 @@
+uuid: 91d9fd7d-4abc-4c55-9927-aee025823ef6
+langcode: en
+status: false
+dependencies:
+  config:
+    - views.view.other_education_providers
+  module:
+    - views
+  theme:
+    - uhsg_theme
+id: views_block__other_education_providers_block_1
+theme: uhsg_theme
+region: content
+weight: -10
+provider: null
+plugin: 'views_block:other_education_providers-block_1'
+settings:
+  id: 'views_block:other_education_providers-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility: {  }

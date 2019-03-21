@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.article.field_article_paragraph
     - field.field.node.article.field_article_related
     - field.field.node.article.field_domain_source
+    - field.field.node.article.field_other_education_provider
     - field.field.node.article.field_user_group
     - node.type.article
   module:
@@ -61,5 +62,6 @@ content:
 hidden:
   field_article_domain: true
   field_domain_source: true
+  field_other_education_provider: true
   field_user_group: true
   langcode: true

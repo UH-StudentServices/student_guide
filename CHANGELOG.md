@@ -1,5 +1,25 @@
 #Changelog
 
+## v1.31
+Release date: 21.03.2019
+
+* Translate "User group" (HUB-393)
+* Include only the titles and the link in news email (HUB-425)
+* Exclude study track code from the Eduviewer embed (HUB-433)
+* Improve bulletin archive page (HUB-406)
+* Show summary field always when maintaining bulletins (HUB-357)
+* Fixed layout issues on pages that embed Eduviewer (HUB-428)
+* Limit summary field to 190 characters (HUB-358)
+* Add IE11 support to my searches (HUB-403)
+* Disable Eduviewer for degree programme MH30_001 (HUB-438)
+* Increase waiting times for the office hours API response, display error message on exception (HUB-411)
+* New taxonomy and related functionality: Other education provider (HUB-427)
+* Add keyboard navigation support to degree programme switcher (HUB-415)
+* Technical updates to npm dependencies (HUB-432)
+* Accessibility improvements (HUB-415, HUB-416, HUB-420)
+* Update Drupal core (HUB-441)
+
+
 ## 1.30
 Release date: 27.02.2019
 

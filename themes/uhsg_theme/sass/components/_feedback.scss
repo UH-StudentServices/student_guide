@@ -102,4 +102,26 @@
       }
     }
   }
+
+  /* Checkboxes from Styleguide are not accessible without these overrides */
+
+  input[type="checkbox"] {
+    display: inline-block;
+    -moz-appearance: checkbox;
+    -webkit-appearance: checkbox;
+    opacity: 0;
+  }
+
+  input[type="checkbox"] + label {
+    display: inline-block;
+    left: -14px;
+  }
+
+  input[type="checkbox"]:focus + label::before {
+    outline: rgb(59, 153, 252) auto 2px;
+  }
+
+  .checkbox-container > label {
+    margin-right: 0.25em;
+  }
 }

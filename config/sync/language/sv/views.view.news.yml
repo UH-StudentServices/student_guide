@@ -1,7 +1,12 @@
 display:
   default:
     display_options:
-      title: Aktuellt
+      title: 'Meddelanden arkiv'
       empty:
         area_text_custom:
           content: '<h3>Inget resultat</h3>'
+      header:
+        area:
+          content:
+            value: "<h2>Aktuellt</h2>\r\n"
+            format: filtered_html

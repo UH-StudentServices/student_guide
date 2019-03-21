@@ -20,6 +20,7 @@ use Drupal\Core\Session\AccountInterface;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\Tests\UnitTestCase;
 use Drupal\uhsg_active_degree_programme\ActiveDegreeProgrammeService;
+use Drupal\uhsg_active_degree_programme\DegreeProgrammeCodeResolverService;
 use Prophecy\Argument;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\HeaderBag;
@@ -57,6 +58,9 @@ class ActiveDegreeProgrammeServiceTest extends UnitTestCase {
 
   /** @var \Symfony\Component\HttpFoundation\ParameterBag*/
   private $cookies;
+
+  /** @var Drupal\uhsg_active_degree_programme\DegreeProgrammeCodeResolverService*/
+  private $degreeProgrammeCodeResolverService;
 
   /** @var \Drupal\Core\Entity\EntityRepositoryInterface*/
   private $entityRepository;
@@ -119,6 +123,8 @@ class ActiveDegreeProgrammeServiceTest extends UnitTestCase {
 
     $this->cacheContextsManager = $this->prophesize(CacheContextsManager::class);
     $this->cacheContextsManager->assertValidTokens(Argument::any())->willReturn(TRUE);
+
+    $this->degreeProgrammeCodeResolverService = $this->prophesize(DegreeProgrammeCodeResolverService::class);
 
     $this->entityRepository = $this->prophesize(EntityRepositoryInterface::class);
 
@@ -199,7 +205,8 @@ class ActiveDegreeProgrammeServiceTest extends UnitTestCase {
       $this->entityRepository->reveal(),
       $this->entityTypeManager->reveal(),
       $this->account->reveal(),
-      $this->flagService->reveal()
+      $this->flagService->reveal(),
+      $this->degreeProgrammeCodeResolverService->reveal()
     );
   }
 

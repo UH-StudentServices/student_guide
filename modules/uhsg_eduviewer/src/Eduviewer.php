@@ -7,7 +7,7 @@ use Drupal\uhsg_active_degree_programme\ActiveDegreeProgrammeService;
 
 class Eduviewer {
 
-  const INVALID_DEGREE_PROGRAMME_CODES = ['KH20_001', 'MH30_003'];
+  const INVALID_DEGREE_PROGRAMME_CODES = ['KH20_001', 'MH30_001', 'MH30_003'];
 
   /** @var \Drupal\uhsg_active_degree_programme\ActiveDegreeProgrammeService*/
   private $activeDegreeProgrammeService;
@@ -32,14 +32,30 @@ class Eduviewer {
    */
   public function getMarkup() {
     $markup = NULL;
-    $activeDegreeProgrammeCode = $this->activeDegreeProgrammeService->getCode();
+    $activeDegreeProgrammeCode = $this->getActiveDegreeProgrammeCode();
 
     if ($this->isValidDegreeProgrammeCode($activeDegreeProgrammeCode)) {
       $language = $this->languageManager->getCurrentLanguage()->getId();
-      $markup = "<div id=\"eduviewer-root\" degree-program-id=\"$activeDegreeProgrammeCode\" lang=\"$language\"></div>";
+      $markup = "<div id=\"eduviewer-root\" degree-program-id=\"$activeDegreeProgrammeCode\" lang=\"$language\" disable-global-style=\"true\"></div>";
     }
 
     return $markup;
+  }
+
+  /**
+   * Returns the active degree programme code. For codes that combine the degree
+   * programme code and the study track code, return only the degree programme
+   * code (for example: "KH60_001SH60_039" -> "KH60_001"). All of the degree
+   * programme codes have a maximum of eight characters for the degree programme
+   * code part. Thus the algorithm simply returns the first eight characters of
+   * a given code.
+   *
+   * @return null|string
+   */
+  private function getActiveDegreeProgrammeCode() {
+    $activeDegreeProgrammeCode = $this->activeDegreeProgrammeService->getCode();
+
+    return $activeDegreeProgrammeCode ? mb_substr($activeDegreeProgrammeCode, 0, 8) : NULL;
   }
 
   /**
@@ -50,5 +66,4 @@ class Eduviewer {
   private function isValidDegreeProgrammeCode($degreeProgrammeCode) {
     return !empty($degreeProgrammeCode) && !in_array($degreeProgrammeCode, self::INVALID_DEGREE_PROGRAMME_CODES);
   }
-
 }
