@@ -34,3 +34,10 @@
   white-space: nowrap;
   overflow: hidden;
 }
+
+@mixin focus() {
+  &:focus {
+    outline: currentColor thin dashed;
+    outline-offset: 3px;
+  }
+}
