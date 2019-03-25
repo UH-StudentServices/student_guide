@@ -11,6 +11,16 @@
   .tag-list {
     margin-bottom: initial;
   }
+
+  a {
+    @include focus;
+  }
+}
+
+// Set title and content overflow to visible to avoid clipping focus styles.
+.box-story__title,
+.box-story__content{
+  overflow: visible;
 }
 
 // IE11: Define width to avoid overflowing titles.
@@ -25,4 +35,8 @@
       @include icon($icon-external-link);
     }
   }
+}
+
+.box-story__link-wrapper {
+  @include focus;
 }
