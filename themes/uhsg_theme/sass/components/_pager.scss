@@ -1,0 +1,15 @@
+// Focus with outline offset modification.
+@mixin pager-focus() {
+  @include focus;
+  &:focus {
+    outline-offset: -2px;
+  }
+}
+
+ul.pager {
+  > li {
+    a {
+      @include pager-focus;
+    }
+  }
+}
