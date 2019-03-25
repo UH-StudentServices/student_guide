@@ -8795,6 +8795,11 @@ input[type="text"].search-form-large__input {
   margin-bottom: 0;
 }
 
+.accordion__item:focus:focus {
+  outline: currentColor thin dashed;
+  outline-offset: 3px;
+}
+
 .l-action-footer {
   display: -webkit-box;
   display: -ms-flexbox;
