@@ -9,6 +9,7 @@ is_admin: null
 permissions:
   - 'access content overview'
   - 'access toolbar'
+  - 'administer nodes'
   - 'copy active degree programme url'
   - 'create content translations'
   - 'create news content'
@@ -19,6 +20,9 @@ permissions:
   - 'translate paragraph'
   - 'update content translations'
   - 'use text format filtered_html'
+  - 'view all revisions'
+  - 'view any unpublished news content'
   - 'view news revisions'
+  - 'view own unpublished content'
   - 'view scheduled content'
   - 'view the administration theme'
