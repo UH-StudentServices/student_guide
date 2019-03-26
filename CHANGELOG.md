@@ -3,6 +3,7 @@
 ## 1.xx-dev
 Release date: ??.??.????
 
+* Add keyboard navigation support to accordion elements (HUB-442)
 
 
 ## v1.31
