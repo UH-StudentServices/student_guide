@@ -1,9 +1,9 @@
 .main-menu {
-  overflow: visible;
+  overflow: visible !important;
   @include breakpoint($small) {
     > ul.menu {
-      padding-top: 0;
-      padding-bottom: 0;
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
     }
     li.is-lvl1 {
       > a, span[data-drupal-link-system-path] {
@@ -42,7 +42,7 @@
   li.is-lvl2 {
     > a {
       @include breakpoint($small) {
-        padding: 20px 30px;
+        padding: 20px 30px !important;
       }
     }
   }
