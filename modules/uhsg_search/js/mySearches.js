@@ -3,7 +3,9 @@
   Drupal.behaviors.mySearches = {
     attach: function (context, settings) {
 
+      var submitSearch = this.submitSearch;
       var cleanupString = this.cleanupString;
+      var resetSearch = this.resetSearch;
       var searchForm = $('.view-search .views-exposed-form');
       var searchInput = $('input[name="search_api_fulltext"]', searchForm);
       var searchString = cleanupString(searchInput.val());
@@ -35,31 +37,57 @@
       if (mySearches.length) {
         var content = '';
         mySearches.map(function (value) {
-          content += '<li class="list-of-links__link button--action-before theme-transparent">' + cleanupString(value) + '</li>';
+          content += '<li class="list-of-links__link button--action-before theme-transparent" tabindex="0">' + cleanupString(value) + '</li>';
         });
 
         var title = '<span>' + Drupal.t('My searches') + ':</span>';
-        var resetButton = '<a class="button--action icon--remove theme-transparent button--reset" title="' + Drupal.t('Remove') + '"></a>';
+        var resetButton = '<a class="button--action icon--remove theme-transparent button--reset" title="' + Drupal.t('Remove') + '" tabindex="0"></a>';
         $('#my-searches').empty();
         $('#my-searches').append(title + '<ul class="list-of-links__compact">' + content + resetButton + '</ul>');
 
         // Enable search when clicking one of my searches items.
-        $('#my-searches li').on('click', function () {
-          searchInput.val(cleanupString($(this).text()));
-          searchInput.trigger('keyup');
-          searchForm.submit();
+        $('#my-searches li').on({
+          click: function () {
+            var text = $(this).text();
+            submitSearch(text, cleanupString, searchInput, searchForm);
+          },
+          keypress: function (event) {
+            var text = $(this).text();
+            // If key is not TAB (fix for Firefox 60.x.xesr).
+            if (event.keyCode != 9) {
+              submitSearch(text, cleanupString, searchInput, searchForm);
+            }
+          }
         });
 
         // Empty my searches and delete the cookie.
-        $('.button--reset', '#my-searches').on('click', function () {
-          $.removeCookie('my_searches');
-          $('#my-searches').empty();
+        $('.button--reset', '#my-searches').on({
+          click: function () {
+            resetSearch();
+          },
+          keypress: function (event) {
+            // If key is not TAB (fix for Firefox 60.x.xesr).
+            if (event.keyCode != 9) {
+              resetSearch();
+            }
+          }
         });
       }
     },
 
+    submitSearch: function (text, cleanupString, searchInput, searchForm) {
+      searchInput.val(cleanupString(text));
+      searchInput.trigger('keyup');
+      searchForm.submit();
+    },
+
     cleanupString: function (text) {
       return text.replace(/[^A-Öa-ö0-9\s!?]/g, '');
+    },
+
+    resetSearch: function () {
+      $.removeCookie('my_searches');
+      $('#my-searches').empty();
     }
   };
 }(jQuery));
