@@ -3,6 +3,7 @@
 ## 1.xx-dev
 Release date: ??.??.????
 
+* HUB-403: Make the My searches cookie language neutral (HUB-403)
 
 
 ## v1.31
