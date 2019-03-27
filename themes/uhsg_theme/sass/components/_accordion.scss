@@ -5,3 +5,7 @@
 .accordion__accordion-links {
   margin-bottom: 0;
 }
+
+.accordion__item:focus {
+  @include focus;
+}

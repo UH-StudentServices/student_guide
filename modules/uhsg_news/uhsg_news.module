@@ -69,7 +69,7 @@ function uhsg_news_email_has_been_sent(Node $node) {
  * Implements hook_ENTITY_TYPE_presave().
  */
 function uhsg_news_node_presave(EntityInterface $entity) {
-  if ($entity->bundle() == 'news' && !$entity->isNew() && !uhsg_news_email_has_been_sent($entity)) {
+  if ($entity->bundle() == 'news' && !$entity->isNew() && $entity->isPublished() && !uhsg_news_email_has_been_sent($entity)) {
     uhsg_news_send_news_by_email($entity);
   }
 }

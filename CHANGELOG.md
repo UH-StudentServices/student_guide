@@ -3,6 +3,7 @@
 ## 1.xx-dev
 Release date: ??.??.????
 
+* Add keyboard navigation support to accordion elements (HUB-442)
 * HUB-403: Make the My searches cookie language neutral (HUB-403)
 
 
@@ -24,6 +25,7 @@ Release date: 21.03.2019
 * Technical updates to npm dependencies (HUB-432)
 * Accessibility improvements (HUB-415, HUB-416, HUB-420)
 * Update Drupal core (HUB-441)
+* Add scheduled publishing support for bulletins (HUB-248)
 
 
 ## 1.30
