@@ -4,6 +4,7 @@
 Release date: ??.??.????
 
 * Add keyboard navigation support to accordion elements (HUB-442)
+* Fix secondary menu not showing on course embed pages (HUB-423)
 
 
 ## v1.31
