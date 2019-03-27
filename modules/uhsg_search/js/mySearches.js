@@ -27,7 +27,7 @@
           }
 
           // Store my searches in a cookie.
-          $.cookie('my_searches', JSON.stringify(mySearches), {expires: 999});
+          $.cookie('my_searches', JSON.stringify(mySearches), {expires: 999, path: '/'});
         }
       }
 
@@ -52,7 +52,7 @@
 
         // Empty my searches and delete the cookie.
         $('.button--reset', '#my-searches').on('click', function () {
-          $.removeCookie('my_searches');
+          $.removeCookie('my_searches', { path: '/' });
           $('#my-searches').empty();
         });
       }
