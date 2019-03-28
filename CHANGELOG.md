@@ -4,6 +4,8 @@
 Release date: ??.??.????
 
 * Add keyboard navigation support to accordion elements (HUB-442)
+* HUB-403: Make the My searches cookie language neutral (HUB-403)
+* Fix secondary menu not showing on course embed pages (HUB-423)
 
 
 ## v1.31
