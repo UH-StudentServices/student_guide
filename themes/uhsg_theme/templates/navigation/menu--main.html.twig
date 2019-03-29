@@ -41,7 +41,7 @@
         <li{{ item.attributes.addClass(classes) }}>
           {{ link(item.title, item.url, { 'class':[ item.is_active ? 'active' ] }) }}
           {% if item.below %}
-            <span class="main-menu__expand"></span>
+            <span class="main-menu__expand" tabindex="0"></span>
             <nav role="navigation">
               <ul{{ attributes }}>
                 {% for child_item in item.below %}
