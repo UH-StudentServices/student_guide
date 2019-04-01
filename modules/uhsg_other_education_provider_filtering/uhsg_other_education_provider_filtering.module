@@ -1,0 +1,182 @@
+<?php
+
+use Drupal\node\Entity\Node;
+use Drupal\taxonomy\TermInterface;
+use Drupal\taxonomy\Entity\Term;
+
+/**
+ * Implements hook_preprocess_field().
+ *
+ * Show articles only if they have the active other education provider or no
+ * other education provider.
+ */
+function uhsg_other_education_provider_filtering_preprocess_field(array &$variables, $hook) {
+
+  // Resolve what is the reference field that contains the other education
+  // provider reference we filter by.
+  $reference_field = '';
+  $target_entity_type = '';
+  $filter_untranslated_targets = TRUE;
+  switch ($variables['element']['#field_name']) {
+    case 'field_theme_articles':
+    case 'field_article_related':
+      $reference_field = 'field_other_education_provider';
+      $target_entity_type = 'node';
+      $filter_untranslated_targets = TRUE;
+      break;
+
+    case 'field_article_paragraph':
+      $reference_field = 'field_paragraph_other_education';
+      $target_entity_type = 'paragraph';
+      $filter_untranslated_targets = FALSE;
+      break;
+
+    case 'field_theme_section':
+      $reference_field = 'field_paragraph_other_education';
+      $target_entity_type = 'paragraph';
+      $filter_untranslated_targets = TRUE;
+      break;
+  }
+
+  // If no reference field or target entity resolved, stop here.
+  if (empty($reference_field) || empty($target_entity_type)) {
+    return;
+  }
+
+  // Filter untranslated targets
+  if ($filter_untranslated_targets) {
+    uhsg_degree_programme_filtering_by_active_language($variables, $target_entity_type);
+  }
+
+  // If we have active other education provider, filter by that or else filter
+  // out all targets that has any other education provider chosen.
+  $other_education_provider_tid = \Drupal::service('uhsg_other_education_provider.other_education_provider')->getId();
+  $other_education_provider = NULL;
+
+  if ($other_education_provider_tid) {
+    $other_education_provider = Term::load($other_education_provider_tid);
+    uhsg_other_education_provider_filtering_by_other_education_provider($variables, $other_education_provider, $reference_field, $target_entity_type);
+  }
+  else {
+    uhsg_other_education_provider_filtering_with_other_education_provider($variables, $reference_field, $target_entity_type);
+  }
+
+  uhsg_other_education_provider_filtering_by_paragraph_other_education_provider($variables, $other_education_provider, 'field_theme_section', 'field_theme_section_instructions', 'field_other_education_provider');
+
+  // Because of these alterations, our result may vay depending on active
+  // other education provider.
+  $variables['#cache']['contexts'][] = 'other_education_provider';
+}
+
+/**
+ * Filter articles by active other education provider.
+ *
+ * @param array $variables
+ * @param \Drupal\taxonomy\TermInterface $other_education_provider
+ * @param $reference_field_name
+ * @param $target_entity_type
+ */
+function uhsg_other_education_provider_filtering_by_other_education_provider(array &$variables, TermInterface $other_education_provider, $reference_field_name, $target_entity_type) {
+
+  // Ensure we have correct target entity type
+  if (empty($variables['items'][0]['content']['#' . $target_entity_type])) {
+    return;
+  }
+
+  // Loop over each target to detect if other education provider matches.
+  foreach ($variables['items'] as $key => $item) {
+    if ($item['content']['#' . $target_entity_type]->hasField($reference_field_name)) {
+      // Filter only if none of the targets matches the given other education provider.
+      $terms = $item['content']['#' . $target_entity_type]->get($reference_field_name)->getValue();
+      if ($terms) {
+        $valid_term_found = FALSE;
+        foreach ($terms as $term) {
+          if ($other_education_provider->id() == $term['target_id']) {
+            $valid_term_found = TRUE;
+            break;
+          }
+        }
+        if (!$valid_term_found) {
+          unset($variables['items'][$key]);
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Filter articles if they have any other education provider defined.
+ *
+ * @param array $variables
+ * @param $reference_field_name
+ * @param $target_entity_type
+ */
+function uhsg_other_education_provider_filtering_with_other_education_provider(array &$variables, $reference_field_name, $target_entity_type) {
+
+  // Ensure we have correct target entity type
+  if (empty($variables['items'][0]['content']['#' . $target_entity_type])) {
+    return;
+  }
+
+  // Filter all targets that have any other education provider
+  foreach ($variables['items'] as $key => $item) {
+    if ($item['content']['#' . $target_entity_type]->hasField($reference_field_name)) {
+      $terms = $item['content']['#' . $target_entity_type]->get($reference_field_name)->getValue();
+      if ($terms) {
+        unset($variables['items'][$key]);
+      }
+    }
+  }
+}
+
+/**
+ * Filter articles referenced from paragraphs by active other education provider.
+ *
+ * @param array $variables
+ * @param \Drupal\taxonomy\TermInterface|null $other_education_provider
+ * @param $field_name
+ * @param $article_reference_field_name
+ * @param $article_other_education_provider_reference_field_name
+ */
+function uhsg_other_education_provider_filtering_by_paragraph_other_education_provider(array &$variables, $other_education_provider, $field_name, $article_reference_field_name, $article_other_education_provider_reference_field_name) {
+  if ($variables['element']['#field_name'] == $field_name) {
+
+    foreach ($variables['items'] as $key => $item) {
+
+      if ($item['content']['#paragraph']->hasField($article_reference_field_name)) {
+        $article_references = $item['content']['#paragraph']->get($article_reference_field_name)->getValue();
+
+        if ($article_references) {
+
+          foreach ($article_references as $article_key => $article_reference) {
+            $article_nid = $article_reference['target_id'];
+
+            if ($article_nid) {
+              $article_node = Node::load($article_nid);
+              $other_education_provider_references = $article_node ? $article_node->get($article_other_education_provider_reference_field_name)->getValue() : [];
+
+              if (!empty($other_education_provider_references)) {
+                $valid_other_education_provider_found = FALSE;
+
+                if (isset($other_education_provider)) {
+                  foreach ($other_education_provider_references as $other_education_provider_reference) {
+                    if ($other_education_provider->id() == $other_education_provider_reference['target_id']) {
+                      $valid_other_education_provider_found = TRUE;
+                      break;
+                    }
+                  }
+                }
+
+                if (!$valid_other_education_provider_found) {
+                  if (isset($variables['items'][$key]['content']['#paragraph']->{$article_reference_field_name}[$article_key])) {
+                    $variables['items'][$key]['content']['#paragraph']->{$article_reference_field_name}[$article_key]->target_id = NULL;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
