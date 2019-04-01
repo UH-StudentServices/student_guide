@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.theme_section.field_paragraph_degree_programme
+    - field.field.paragraph.theme_section.field_paragraph_other_education
     - field.field.paragraph.theme_section.field_theme_section_instructions
     - field.field.paragraph.theme_section.field_theme_section_title
     - paragraphs.paragraphs_type.theme_section
@@ -31,3 +32,4 @@ content:
     region: content
 hidden:
   field_paragraph_degree_programme: true
+  field_paragraph_other_education: true
