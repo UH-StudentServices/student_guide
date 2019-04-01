@@ -16,36 +16,27 @@ function uhsg_other_education_provider_filtering_preprocess_field(array &$variab
   // provider reference we filter by.
   $reference_field = '';
   $target_entity_type = '';
-  $filter_untranslated_targets = TRUE;
   switch ($variables['element']['#field_name']) {
     case 'field_theme_articles':
     case 'field_article_related':
       $reference_field = 'field_other_education_provider';
       $target_entity_type = 'node';
-      $filter_untranslated_targets = TRUE;
       break;
 
     case 'field_article_paragraph':
       $reference_field = 'field_paragraph_other_education';
       $target_entity_type = 'paragraph';
-      $filter_untranslated_targets = FALSE;
       break;
 
     case 'field_theme_section':
       $reference_field = 'field_paragraph_other_education';
       $target_entity_type = 'paragraph';
-      $filter_untranslated_targets = TRUE;
       break;
   }
 
   // If no reference field or target entity resolved, stop here.
   if (empty($reference_field) || empty($target_entity_type)) {
     return;
-  }
-
-  // Filter untranslated targets
-  if ($filter_untranslated_targets) {
-    uhsg_degree_programme_filtering_by_active_language($variables, $target_entity_type);
   }
 
   // If we have active other education provider, filter by that or else filter
