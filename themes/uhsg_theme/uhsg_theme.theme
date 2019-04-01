@@ -437,6 +437,10 @@ function uhsg_theme_preprocess_node(&$variables) {
   }
   if ($variables['page']) {
     $variables['degree_programme_switcher'] = _uhsg_theme_get_degree_programme_switcher();
+
+    if (\Drupal::service('uhsg_domain.domain')->isTeachingDomain()) {
+      $variables['other_education_provider_switcher'] = _uhsg_theme_get_other_education_provider_switcher();
+    }
   }
 }
 
