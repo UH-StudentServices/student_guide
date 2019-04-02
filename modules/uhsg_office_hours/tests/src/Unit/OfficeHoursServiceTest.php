@@ -26,6 +26,8 @@ class OfficeHoursServiceTest extends UnitTestCase {
   const CACHED_RESPONSE = ['degree_programme' => []];
   const CONFIG_API_BASE_URL = 'http://www.example.com/';
   const CONFIG_API_PATH = 'example';
+  const CONFIG_CONNECT_TIMEOUT = 3;
+  const CONFIG_REQUEST_TIMEOUT = 3;
   const EMPTY_RESPONSE = ['degree_programme' => []];
   const EXCEPTION_MESSAGE = 'Exception';
   const LANGUAGE = 'fi';
@@ -89,6 +91,8 @@ class OfficeHoursServiceTest extends UnitTestCase {
     $this->config = $this->prophesize(ImmutableConfig::class);
     $this->config->get(OfficeHoursService::CONFIG_API_BASE_URL)->willReturn(self::CONFIG_API_BASE_URL);
     $this->config->get(OfficeHoursService::CONFIG_API_PATH)->willReturn(self::CONFIG_API_PATH);
+    $this->config->get(OfficeHoursService::CONFIG_CONNECT_TIMEOUT)->willReturn(self::CONFIG_CONNECT_TIMEOUT);
+    $this->config->get(OfficeHoursService::CONFIG_REQUEST_TIMEOUT)->willReturn(self::CONFIG_REQUEST_TIMEOUT);
 
     $this->configFactory = $this->prophesize(ConfigFactory::class);
     $this->configFactory->get(OfficeHoursService::CONFIG_NAME)->willReturn($this->config);

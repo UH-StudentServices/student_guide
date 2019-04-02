@@ -9578,7 +9578,7 @@ body.guide-teacher-helsinki-fi .main-menu li {
 }
 
 body.guide-teacher-helsinki-fi .main-menu li:last-child {
-  display: initial;
+  display: block;
 }
 
 body.guide-teacher-helsinki-fi .main-menu li a {
