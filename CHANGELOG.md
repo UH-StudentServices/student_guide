@@ -7,6 +7,7 @@ Release date: ??.??.????
 * Make the My searches cookie language neutral (HUB-403)
 * Fix secondary menu not showing on course embed pages (HUB-423)
 * Improve keyboard navigation support (HUB-418)
+* Remove study rights debug tool (HUB-389)
 
 
 ## v1.31
