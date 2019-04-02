@@ -7,6 +7,7 @@ Release date: ??.??.????
 * Make the My searches cookie language neutral (HUB-403)
 * Fix secondary menu not showing on course embed pages (HUB-423)
 * Improve keyboard navigation support (HUB-418)
+* Fix teaching login link visibility on IE11 (HUB-407)
 
 
 ## v1.31
