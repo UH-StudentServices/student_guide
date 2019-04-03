@@ -8,6 +8,7 @@ Release date: ??.??.????
 * Fix secondary menu not showing on course embed pages (HUB-423)
 * Improve keyboard navigation support (HUB-418)
 * Fix teaching login link visibility on IE11 (HUB-407)
+* Remove study rights debug tool (HUB-389)
 
 
 ## v1.31

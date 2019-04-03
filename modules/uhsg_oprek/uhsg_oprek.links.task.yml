@@ -1,5 +1,0 @@
-entity.user.uhsg_oprek_info:
-  title: 'Oprek'
-  route_name: entity.user.uhsg_oprek_info
-  weight: 3
-  base_route: entity.user.canonical
