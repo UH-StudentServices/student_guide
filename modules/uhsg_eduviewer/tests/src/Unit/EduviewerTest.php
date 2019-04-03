@@ -69,7 +69,7 @@ class EduviewerTest extends UnitTestCase {
   public function getMarkupShouldReturnMarkupUsingActiveDegreeProgrammeCodeAndLanguage() {
     $expectedDegreeProgrammeCode = self::ACTIVE_DEGREE_PROGRAMME_CODE;
     $expectedLanguage = self::LANGUAGE;
-    $expectedMarkup = "<div id=\"eduviewer-root\" degree-program-id=\"$expectedDegreeProgrammeCode\" lang=\"$expectedLanguage\"></div>";
+    $expectedMarkup = "<div id=\"eduviewer-root\" degree-program-id=\"$expectedDegreeProgrammeCode\" lang=\"$expectedLanguage\" disable-global-style=\"true\"></div>";
 
     $this->assertEquals($expectedMarkup, $this->eduviewer->getMarkup());
   }

@@ -22,6 +22,8 @@ class OfficeHoursService {
   const CONFIG_NAME = 'uhsg_office_hours.config';
   const CONFIG_API_BASE_URL = 'api_base_url';
   const CONFIG_API_PATH = 'api_path';
+  const CONFIG_CONNECT_TIMEOUT = 'connect_timeout';
+  const CONFIG_REQUEST_TIMEOUT = 'request_timeout';
   const LANGUAGE_UNDEFINED = 'undefined';
 
   /** @var \Drupal\Core\Cache\CacheBackendInterface*/
@@ -144,8 +146,8 @@ class OfficeHoursService {
    */
   private function getRequestOptions() {
     return [
-      RequestOptions::CONNECT_TIMEOUT => $this->config->get('connect_timeout'),
-      RequestOptions::TIMEOUT => $this->config->get('request_timeout')
+      RequestOptions::CONNECT_TIMEOUT => $this->config->get(self::CONFIG_CONNECT_TIMEOUT),
+      RequestOptions::TIMEOUT => $this->config->get(self::CONFIG_REQUEST_TIMEOUT)
     ];
   }
 
