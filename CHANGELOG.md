@@ -9,6 +9,7 @@ Release date: ??.??.????
 * Improve keyboard navigation support (HUB-418)
 * Fix teaching login link visibility on IE11 (HUB-407)
 * Remove study rights debug tool (HUB-389)
+* Filter content by other education provider (HUB-427)
 
 
 ## v1.31

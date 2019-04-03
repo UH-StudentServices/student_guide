@@ -1,0 +1,20 @@
+uuid: f4531d81-d117-4836-8e06-b7e918d3f7d7
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - taxonomy
+id: paragraph.field_paragraph_other_education
+field_name: field_paragraph_other_education
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

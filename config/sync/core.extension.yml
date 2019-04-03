@@ -90,6 +90,7 @@ module:
   uhsg_office_hours: 0
   uhsg_oprek: 0
   uhsg_other_education_provider: 0
+  uhsg_other_education_provider_filtering: 0
   uhsg_redirect_to_login: 0
   uhsg_rest: 0
   uhsg_role_auto_assign: 0
