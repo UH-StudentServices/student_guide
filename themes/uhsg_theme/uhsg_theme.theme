@@ -552,6 +552,8 @@ function uhsg_theme_theme_suggestions_field_alter(&$suggestions, $vars, $hook) {
     'field_article_degree_programme',
     'field_news_degree_programme',
     'field_paragraph_degree_programme',
+    'field_paragraph_other_education',
+    'field_other_education_provider',
   ];
 
   if (in_array($vars['element']['#field_name'], $tag_fields)) {
