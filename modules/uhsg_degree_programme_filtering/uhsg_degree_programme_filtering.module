@@ -79,11 +79,6 @@ function uhsg_degree_programme_filtering_preprocess_field(array &$variables, $ho
  */
 function uhsg_degree_programme_filtering_by_active_language(array &$variables, $target_entity_type) {
 
-  // Ensure we have correct target entity type
-  if (empty($variables['items'][0]['content']['#' . $target_entity_type])) {
-    return;
-  }
-
   // Filter out if no translation for active language found from the target.
   $active_lang = Drupal::languageManager()->getCurrentLanguage()->getId();
   foreach ($variables['items'] as $key => $item) {
@@ -104,11 +99,6 @@ function uhsg_degree_programme_filtering_by_active_language(array &$variables, $
  * @param $target_entity_type
  */
 function uhsg_degree_programme_filtering_by_degree_programme(array &$variables, TermInterface $degree_programme, $reference_field_name, $target_entity_type) {
-
-  // Ensure we have correct target entity type
-  if (empty($variables['items'][0]['content']['#' . $target_entity_type])) {
-    return;
-  }
 
   // Loop over each target to detect if degree programme matches.
   foreach ($variables['items'] as $key => $item) {
@@ -139,11 +129,6 @@ function uhsg_degree_programme_filtering_by_degree_programme(array &$variables, 
  * @param $target_entity_type
  */
 function uhsg_degree_programme_filtering_with_degree_programme(array &$variables, $reference_field_name, $target_entity_type) {
-
-  // Ensure we have correct target entity type
-  if (empty($variables['items'][0]['content']['#' . $target_entity_type])) {
-    return;
-  }
 
   // Filter all targets that have any degree programme
   foreach ($variables['items'] as $key => $item) {

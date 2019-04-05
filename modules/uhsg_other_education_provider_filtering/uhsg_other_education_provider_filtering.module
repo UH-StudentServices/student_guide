@@ -69,11 +69,6 @@ function uhsg_other_education_provider_filtering_preprocess_field(array &$variab
  */
 function uhsg_other_education_provider_filtering_by_other_education_provider(array &$variables, TermInterface $other_education_provider, $reference_field_name, $target_entity_type) {
 
-  // Ensure we have correct target entity type
-  if (empty($variables['items'][0]['content']['#' . $target_entity_type])) {
-    return;
-  }
-
   // Loop over each target to detect if other education provider matches.
   foreach ($variables['items'] as $key => $item) {
     if ($item['content']['#' . $target_entity_type]->hasField($reference_field_name)) {
@@ -103,11 +98,6 @@ function uhsg_other_education_provider_filtering_by_other_education_provider(arr
  * @param $target_entity_type
  */
 function uhsg_other_education_provider_filtering_with_other_education_provider(array &$variables, $reference_field_name, $target_entity_type) {
-
-  // Ensure we have correct target entity type
-  if (empty($variables['items'][0]['content']['#' . $target_entity_type])) {
-    return;
-  }
 
   // Filter all targets that have any other education provider
   foreach ($variables['items'] as $key => $item) {
