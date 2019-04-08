@@ -55,8 +55,6 @@ function uhsg_domain_entity_presave(Drupal\Core\Entity\EntityInterface $entity) 
       $entity->field_theme_domain = $domain_id;
     }
 
-    // TODO: Set domain source. Both domains need to be accessible for this to
-    // work, since the links will be rewritten to point to one of the domains.
-    //$entity->field_domain_source = $domain_id;
+    $entity->field_domain_source = $domain_id;
   }
 }
