@@ -9470,13 +9470,13 @@ input[type="submit"].button--reset + i {
 }
 
 .main-menu {
-  overflow: visible;
+  overflow: visible !important;
 }
 
 @media (min-width: 48em) {
   .main-menu > ul.menu {
-    padding-top: 0;
-    padding-bottom: 0;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
   }
   .main-menu li.is-lvl1 > a, .main-menu li.is-lvl1 span[data-drupal-link-system-path] {
     padding-top: 1.2em;
@@ -9526,7 +9526,7 @@ input[type="submit"].button--reset + i {
 
 @media (min-width: 48em) {
   .main-menu li.is-lvl2 > a {
-    padding: 20px 30px;
+    padding: 20px 30px !important;
   }
 }
 
@@ -9578,7 +9578,7 @@ body.guide-teacher-helsinki-fi .main-menu li {
 }
 
 body.guide-teacher-helsinki-fi .main-menu li:last-child {
-  display: initial;
+  display: block;
 }
 
 body.guide-teacher-helsinki-fi .main-menu li a {

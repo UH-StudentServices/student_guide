@@ -1,0 +1,29 @@
+uuid: a0614c21-962d-4937-98ba-1b1b1a99ccf1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraph_other_education
+    - paragraphs.paragraphs_type.paragraph
+    - taxonomy.vocabulary.other_education_provider
+id: paragraph.paragraph.field_paragraph_other_education
+field_name: field_paragraph_other_education
+entity_type: paragraph
+bundle: paragraph
+label: 'Other education provider'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      other_education_provider: other_education_provider
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

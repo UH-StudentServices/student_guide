@@ -101,6 +101,7 @@
     <div class="col-main">
       <h1> {{ label }} </h1>
       {{ degree_programme_switcher }}
+      {{ other_education_provider_switcher }}
       {{ content|without('field_article_paragraph', 'field_article_related') }}
     </div>
     {% if (link_to_instructions_for_students or themes) %}

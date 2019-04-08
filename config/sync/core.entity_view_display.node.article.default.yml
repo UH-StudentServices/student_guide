@@ -24,7 +24,7 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 2
+    weight: 3
     settings: {  }
     third_party_settings: {  }
     region: content
@@ -38,7 +38,7 @@ content:
     region: content
   field_article_paragraph:
     type: entity_reference_revisions_entity_view
-    weight: 3
+    weight: 4
     label: hidden
     settings:
       view_mode: default
@@ -46,7 +46,7 @@ content:
     third_party_settings: {  }
     region: content
   field_article_related:
-    weight: 4
+    weight: 5
     label: above
     settings:
       view_mode: teaser
@@ -54,6 +54,14 @@ content:
     third_party_settings: {  }
     type: entity_reference_entity_view
     region: content
+  field_other_education_provider:
+    type: entity_reference_label
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
   links:
     weight: 0
     region: content
@@ -62,6 +70,5 @@ content:
 hidden:
   field_article_domain: true
   field_domain_source: true
-  field_other_education_provider: true
   field_user_group: true
   langcode: true

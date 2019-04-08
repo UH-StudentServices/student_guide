@@ -7,6 +7,7 @@ dependencies:
     - field.field.paragraph.paragraph.field_paragraph_degree_programme
     - field.field.paragraph.paragraph.field_paragraph_image
     - field.field.paragraph.paragraph.field_paragraph_links
+    - field.field.paragraph.paragraph.field_paragraph_other_education
     - field.field.paragraph.paragraph.field_paragraph_title
     - field.field.paragraph.paragraph.field_paragraph_video
     - image.style.thumbnail
@@ -30,7 +31,7 @@ content:
     type: text_textarea
     region: content
   field_paragraph_degree_programme:
-    weight: 11
+    weight: 5
     settings:
       match_operator: CONTAINS
       size: 60
@@ -54,6 +55,15 @@ content:
     third_party_settings: {  }
     type: link_default
     region: content
+  field_paragraph_other_education:
+    weight: 6
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_paragraph_title:
     weight: 0
     settings:
@@ -63,14 +73,16 @@ content:
     type: string_textfield
     region: content
   field_paragraph_video:
-    weight: 13
+    weight: 7
     settings: {  }
     third_party_settings: {  }
     type: video_embed_field_textfield
     region: content
   translation:
-    weight: 10
+    weight: 4
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   created: true
   status: true
