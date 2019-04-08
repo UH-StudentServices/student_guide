@@ -10,6 +10,7 @@ Release date: ??.??.????
 * Fix teaching login link visibility on IE11 (HUB-407)
 * Remove study rights debug tool (HUB-389)
 * Filter content by other education provider (HUB-427)
+* Update teache domain (HUB-434)
 
 
 ## v1.31
