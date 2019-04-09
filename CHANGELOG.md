@@ -1,5 +1,12 @@
 #Changelog
 
+## 1.33
+Release date: 09.04.2019
+
+* Update dependency lock file after Drupal gitlab migration
+* Minor CSS addition to identify proper link item in tests
+
+
 ## 1.32
 Release date: 09.04.2019
 

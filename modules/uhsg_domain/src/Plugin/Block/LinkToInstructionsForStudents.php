@@ -41,8 +41,8 @@ class LinkToInstructionsForStudents extends BlockBase {
   private function getMarkup() {
     $url = $this->getUrl();
     $markup = '<div class="item-list"><ul class="list-of-links">';
-    $markup .= $this->getLinkItemMarkup($url, \Drupal::service('uhsg_domain.domain')->getStudentDomainLabel());
-    $markup .= $this->getLinkItemMarkup("$url/news", $this->t('Notifications for students'));
+    $markup .= $this->getLinkItemMarkup($url, \Drupal::service('uhsg_domain.domain')->getStudentDomainLabel(), 'link-to-instructions-for-students');
+    $markup .= $this->getLinkItemMarkup("$url/news", $this->t('Notifications for students'), 'link-to-instructions-for-students-news');
     $markup .= '</ul></div>';
 
     return $markup;
@@ -55,7 +55,7 @@ class LinkToInstructionsForStudents extends BlockBase {
     return $url . $language;
   }
 
-  private function getLinkItemMarkup($uri, $label) {
+  private function getLinkItemMarkup($uri, $label, $id) {
     $url = Url::fromUri($uri, [
       'attributes' => [
         'class' => [
@@ -63,6 +63,7 @@ class LinkToInstructionsForStudents extends BlockBase {
           'button--action',
           'icon--external-link',
         ],
+        'id' => $id,
       ],
     ]);
 
