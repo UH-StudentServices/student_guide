@@ -1,7 +1,7 @@
 #Changelog
 
-## 1.xx-dev
-Release date: ??.??.????
+## 1.32
+Release date: 09.04.2019
 
 * Add keyboard navigation support to accordion elements (HUB-442)
 * Make the My searches cookie language neutral (HUB-403)

@@ -2,7 +2,7 @@ name: Degree Programme Filtering
 type: module
 description: Filters certain content by degree programmes.
 core: 8.x
-version: VERSION
+version: 1.32
 package: Student Guide
 dependencies:
   - uhsg_active_degree_programme

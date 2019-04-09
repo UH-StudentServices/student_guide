@@ -2,5 +2,5 @@ name: Top content (deprecated)
 type: module
 description: Deprecated module that used to provide custom functionality for the Top content block.
 core: 8.x
-version: VERSION
+version: 1.32
 package: Student Guide
