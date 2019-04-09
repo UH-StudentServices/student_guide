@@ -4,6 +4,7 @@
 Release date: ??.??.????
 
 * Update dependency lock file after Drupal gitlab migration
+* Minor CSS addition to identify proper link item in tests
 
 
 ## 1.32
