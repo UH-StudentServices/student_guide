@@ -3,6 +3,7 @@
 ## 1.xx-dev
 Release date: ??.??.????
 
+* Update dependency lock file after Drupal gitlab migration
 
 
 ## 1.32
