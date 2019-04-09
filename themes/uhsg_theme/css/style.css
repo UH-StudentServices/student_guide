@@ -8795,6 +8795,11 @@ input[type="text"].search-form-large__input {
   margin-bottom: 0;
 }
 
+.accordion__item:focus:focus {
+  outline: currentColor thin dashed;
+  outline-offset: 3px;
+}
+
 .l-action-footer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -8856,6 +8861,16 @@ li.avatar.avatar--default img {
   margin-bottom: initial;
 }
 
+.box-story--constrained a:focus {
+  outline: currentColor thin dashed;
+  outline-offset: 3px;
+}
+
+.box-story__title,
+.box-story__content {
+  overflow: visible;
+}
+
 .box-story__title span {
   width: 100%;
 }
@@ -8869,6 +8884,11 @@ li.avatar.avatar--default img {
   -moz-osx-font-smoothing: grayscale;
   vertical-align: bottom;
   content: "";
+}
+
+.box-story__link-wrapper:focus {
+  outline: currentColor thin dashed;
+  outline-offset: 3px;
 }
 
 #block-breadcrumbs {
@@ -9307,23 +9327,20 @@ li.avatar.avatar--default img {
 }
 
 .feedback-form form {
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   padding: 1em;
   background: #222;
 }
 
 .feedback-form form textarea,
 .feedback-form form input[type="email"] {
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   -webkit-box-shadow: none;
           box-shadow: none;
   max-width: 100%;
-  outline: none;
   resize: none;
   color: #FFF;
   background: #222;
-  padding: 0;
-  border: 0;
 }
 
 .feedback-form form textarea::-webkit-input-placeholder,
@@ -9366,11 +9383,16 @@ li.avatar.avatar--default img {
 }
 
 .feedback-form form .button {
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   font-weight: 600;
   font-style: normal;
   background-color: transparent;
   padding: 0;
+}
+
+.feedback-form form .button:focus {
+  outline: currentColor thin dashed;
+  outline-offset: 3px;
 }
 
 .feedback-form form .button:hover {
@@ -9381,20 +9403,26 @@ li.avatar.avatar--default img {
   display: inline-block;
   -moz-appearance: checkbox;
   -webkit-appearance: checkbox;
-  opacity: 0;
+  opacity: 1;
 }
 
 .feedback-form input[type="checkbox"] + label {
   display: inline-block;
-  left: -14px;
+  left: -20px;
 }
 
 .feedback-form input[type="checkbox"]:focus + label::before {
-  outline: #3b99fc auto 2px;
+  color: #107EAB;
+  outline: #107EAB auto 5px;
 }
 
 .feedback-form .checkbox-container > label {
   margin-right: 0.25em;
+}
+
+.feedback-form label {
+  font-size: 0.875rem;
+  color: white;
 }
 
 .button--reset {
@@ -9442,13 +9470,13 @@ input[type="submit"].button--reset + i {
 }
 
 .main-menu {
-  overflow: visible;
+  overflow: visible !important;
 }
 
 @media (min-width: 48em) {
   .main-menu > ul.menu {
-    padding-top: 0;
-    padding-bottom: 0;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
   }
   .main-menu li.is-lvl1 > a, .main-menu li.is-lvl1 span[data-drupal-link-system-path] {
     padding-top: 1.2em;
@@ -9498,7 +9526,7 @@ input[type="submit"].button--reset + i {
 
 @media (min-width: 48em) {
   .main-menu li.is-lvl2 > a {
-    padding: 20px 30px;
+    padding: 20px 30px !important;
   }
 }
 
@@ -9550,7 +9578,7 @@ body.guide-teacher-helsinki-fi .main-menu li {
 }
 
 body.guide-teacher-helsinki-fi .main-menu li:last-child {
-  display: initial;
+  display: block;
 }
 
 body.guide-teacher-helsinki-fi .main-menu li a {
@@ -9897,6 +9925,15 @@ h1, h2, h3, h4, legend, .logo-block__content .logo-block__sitename,
   }
 }
 
+ul.pager > li a:focus {
+  outline: currentColor thin dashed;
+  outline-offset: 3px;
+}
+
+ul.pager > li a:focus {
+  outline-offset: -2px;
+}
+
 .paragraph__title {
   margin-bottom: 15px;
 }
@@ -10170,6 +10207,15 @@ h1, h2, h3, h4, legend, .logo-block__content .logo-block__sitename,
   }
 }
 
+.theme--box .theme__link-wrapper:focus {
+  outline: currentColor thin dashed;
+  outline-offset: 3px;
+}
+
+.theme--box .theme__link-wrapper:focus {
+  background: currentColor;
+}
+
 .theme--box .theme__teaser-image {
   position: absolute;
   opacity: 0.4;
@@ -10231,6 +10277,15 @@ h1, h2, h3, h4, legend, .logo-block__content .logo-block__sitename,
   .theme--flat-box .theme__link-wrapper {
     position: absolute;
   }
+}
+
+.theme--flat-box .theme__link-wrapper:focus {
+  outline: currentColor thin dashed;
+  outline-offset: 3px;
+}
+
+.theme--flat-box .theme__link-wrapper:focus {
+  background: currentColor;
 }
 
 .theme--flat-box .theme__teaser-image {

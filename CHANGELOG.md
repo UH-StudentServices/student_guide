@@ -1,5 +1,18 @@
 #Changelog
 
+## 1.32
+Release date: 09.04.2019
+
+* Add keyboard navigation support to accordion elements (HUB-442)
+* Make the My searches cookie language neutral (HUB-403)
+* Fix secondary menu not showing on course embed pages (HUB-423)
+* Improve keyboard navigation support (HUB-418)
+* Fix teaching login link visibility on IE11 (HUB-407)
+* Remove study rights debug tool (HUB-389)
+* Filter content by other education provider (HUB-427)
+* Update teaching domain (HUB-434)
+
+
 ## 1.31
 Release date: 21.03.2019
 
@@ -18,6 +31,7 @@ Release date: 21.03.2019
 * Technical updates to npm dependencies (HUB-432)
 * Accessibility improvements (HUB-415, HUB-416, HUB-420)
 * Update Drupal core (HUB-441)
+* Add scheduled publishing support for bulletins (HUB-248)
 
 
 ## 1.30

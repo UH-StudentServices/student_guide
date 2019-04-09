@@ -2,5 +2,5 @@ name: Chat
 type: module
 description: Embed chat widget.
 core: 8.x
-version: 1.31
+version: 1.32
 package: Student Guide

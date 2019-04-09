@@ -61,6 +61,7 @@ module:
   rest: 0
   restui: 0
   samlauth: 0
+  scheduler: 0
   search_api: 0
   search_api_autocomplete: 0
   search_api_solr: 0
@@ -89,6 +90,7 @@ module:
   uhsg_office_hours: 0
   uhsg_oprek: 0
   uhsg_other_education_provider: 0
+  uhsg_other_education_provider_filtering: 0
   uhsg_redirect_to_login: 0
   uhsg_rest: 0
   uhsg_role_auto_assign: 0

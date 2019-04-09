@@ -1,3 +1,11 @@
+// Focus with background color modification.
+@mixin theme-focus() {
+  @include focus;
+  &:focus {
+    background: currentColor;
+  }
+}
+
 .theme--box {
   @include hyphenate;
   @include font-size(25px);
@@ -30,6 +38,7 @@
     @include breakpoint($small) {
       position: absolute;
     }
+    @include theme-focus;
   }
 
   .theme__teaser-image {
@@ -79,6 +88,7 @@
     @include breakpoint($small) {
       position: absolute;
     }
+    @include theme-focus;
   }
 
   .theme__teaser-image {

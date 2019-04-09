@@ -38,7 +38,7 @@
 #}
 
 {{ attach_library('uhsg_theme/accordion') }}
-<div class="accordion__item">
+<div class="accordion__item" tabindex="0">
   {{ content.field_accordion_title }}
   <div class="accordion__content visually-hidden">
     <div class="textarea">{{ content|without('field_accordion_title') }} </div>
