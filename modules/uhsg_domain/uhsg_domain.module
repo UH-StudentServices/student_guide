@@ -58,3 +58,32 @@ function uhsg_domain_entity_presave(Drupal\Core\Entity\EntityInterface $entity) 
     $entity->field_domain_source = $domain_id;
   }
 }
+
+/**
+ * Implements hook_form_alter().
+ *
+ * Allow predetermined forms to handle domain redirects properly. See
+ * domain_source_form_alter() for original logic. The original domain source
+ * logic checks for the source field. This application does not expose the
+ * domain source field to end users. Since the field does not exist on the form,
+ * this function attaches the domain source submit handler to specific forms
+ * that need to support domain source changes.
+ */
+function uhsg_domain_form_alter(&$form, &$form_state, $form_id) {
+  $object = $form_state->getFormObject();
+  $form_ids = [
+    'node_article_form',
+    'node_article_edit_form',
+    'node_theme_form',
+    'node_theme_edit_form',
+  ];
+  // Set up our TrustedRedirect handler for form saves.
+  if (in_array($form_id, $form_ids) && !empty($object) && is_callable([$object, 'getEntity']) && $entity = $object->getEntity()) {
+    foreach ($form['actions'] as $key => $element) {
+      // Redirect submit handlers, but not the preview button.
+      if ($key != 'preview' && isset($element['#type']) && $element['#type'] == 'submit') {
+        $form['actions'][$key]['#submit'][] = 'domain_source_form_submit';
+      }
+    }
+  }
+}

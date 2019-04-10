@@ -3,6 +3,7 @@
 ## 1.xx-dev
 Release date: ??.??.????
 
+* Add domain redirect support to article and theme forms (HUB-456)
 
 
 ## 1.33
