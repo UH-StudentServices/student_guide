@@ -4,6 +4,7 @@
 Release date: ??.??.????
 
 * Add domain redirect support to article and theme forms (HUB-456)
+* Improve accessibility (HUB-461)
 
 
 ## 1.33
