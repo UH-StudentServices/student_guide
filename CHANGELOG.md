@@ -5,6 +5,7 @@ Release date: ??.??.????
 
 * Add domain redirect support to article and theme forms (HUB-456)
 * Remove deprecated module (HUB-395)
+* Improve accessibility (HUB-461)
 
 
 ## 1.33
