@@ -9496,7 +9496,7 @@ input[type="submit"].button--reset + i {
     border-bottom: 1px solid #D2D2D2;
     border-right: 1px solid #D2D2D2;
   }
-  .main-menu li.is-lvl1 span[data-drupal-link-system-path] {
+  .main-menu li.is-lvl1.menu-item.is-expandable span:first-child {
     font-size: 0.9375rem;
     font-weight: 700;
     font-style: normal;
@@ -9509,17 +9509,17 @@ input[type="submit"].button--reset + i {
     padding-right: 1em;
     padding-left: 1.8em;
   }
-  .main-menu li.is-lvl1 span[data-drupal-link-system-path]:hover, .main-menu li.is-lvl1 span[data-drupal-link-system-path].active-trail, .main-menu li.is-lvl1 span[data-drupal-link-system-path].active {
+  .main-menu li.is-lvl1.menu-item.is-expandable span:first-child:hover, .main-menu li.is-lvl1.menu-item.is-expandable span:first-child.active-trail, .main-menu li.is-lvl1.menu-item.is-expandable span:first-child.active {
     color: #005379;
   }
 }
 
-.main-menu li.is-lvl1 span[data-drupal-link-system-path] {
+.main-menu li.is-lvl1.menu-item.is-expandable span:first-child {
   padding: 18px 20px 15px 60px;
 }
 
 @media (min-width: 48em) {
-  .main-menu li.is-lvl1 span[data-drupal-link-system-path] {
+  .main-menu li.is-lvl1.menu-item.is-expandable span:first-child {
     padding: 1.2em 1em 1.2em 1.8em;
   }
 }
