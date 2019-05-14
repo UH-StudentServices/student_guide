@@ -590,3 +590,29 @@ function _uhsg_theme_get_news_per_degree_programme() {
     ? \Drupal::entityTypeManager()->getViewBuilder('block')->view($news_per_degree_programme)
     : '';
 }
+
+/**
+ * Implements template_preprocess_textarea().
+ */
+function uhsg_theme_preprocess_textarea(&$variables) {
+  _uhsg_theme_add_element_title_as_aria_label_attribute($variables);
+}
+
+/**
+ * Implements template_preprocess_input().
+ */
+function uhsg_theme_preprocess_input(&$variables) {
+  _uhsg_theme_add_element_title_as_aria_label_attribute($variables);
+}
+
+/**
+ * Add element title (label) as aria-label attribute if the aria-label attribute
+ * or the aria-labelledby attribute does not exist.
+ */
+function _uhsg_theme_add_element_title_as_aria_label_attribute(&$variables) {
+  $element = $variables['element'];
+  $attributes =& $variables['attributes'];
+  if (!empty($element['#title']) && empty($attributes['aria-label']) && empty($attributes['aria-labelledby'])) {
+    $attributes['aria-label'] = strip_tags($element['#title']);
+  }
+}
