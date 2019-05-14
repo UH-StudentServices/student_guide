@@ -1,7 +1,7 @@
 #Changelog
 
-## 1.xx-dev
-Release date: ??.??.????
+## 1.34
+Release date: 14.05.2019
 
 * Add domain redirect support to article and theme forms (HUB-456)
 * Remove deprecated module (HUB-395)
