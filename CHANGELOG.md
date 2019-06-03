@@ -3,6 +3,7 @@
 ## 1.xx-dev
 Release date: ??.??.????
 
+* Update university address (HUB-463)
 
 
 ## 1.34
