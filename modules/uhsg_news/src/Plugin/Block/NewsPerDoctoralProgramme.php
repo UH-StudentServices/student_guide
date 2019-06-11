@@ -18,12 +18,10 @@ class NewsPerDoctoralProgramme extends NewsBlockBase {
   public function build() {
     $activeDegreeProgrammeTerm = \Drupal::service('uhsg_active_degree_programme.active_degree_programme')->getTerm();
 
-    if (!$activeDegreeProgrammeTerm) {
-      return [];
-    }
+    $isDoctoralProgramme = $activeDegreeProgrammeTerm
+      && $activeDegreeProgrammeTerm->get('field_degree_programme_type')->value === 'doctoral';
 
-    // Render the block if the active degree programme is a doctoral programme.
-    if ($activeDegreeProgrammeTerm->get('field_user_group')->value === 'doctoral_candidates') {
+    if ($isDoctoralProgramme) {
       return $this->render(\Drupal::service('uhsg_news.news')->getProgrammeNewsNids());
     }
 
