@@ -5,10 +5,10 @@
  */
 function uhsg_obar_preprocess_region(&$variables) {
   if ($variables['region'] == 'header') {
-    // TODO
-    $variables['obar_base_url'] = '';
-    $variables['obar_app_name'] = '';
-    $variables['obar_jwt_token'] = '';
+    $config = \Drupal::config('uhsg_obar');
+    $variables['obar_base_url'] = $config->get('base_url');
+    $variables['obar_app_name'] = $config->get('app_name');
+    $variables['obar_jwt_token'] = \Drupal::service('uhsg_obar.jwt')->generateToken();
   }
 }
 
