@@ -16,13 +16,16 @@ class NewsPerDegreeProgramme extends NewsBlockBase {
    * {@inheritdoc}
    */
   public function build() {
-    $activeDegreeProgrammeTermId = \Drupal::service('uhsg_active_degree_programme.active_degree_programme')->getId();
+    $activeDegreeProgrammeTerm = \Drupal::service('uhsg_active_degree_programme.active_degree_programme')->getTerm();
 
-    if (!$activeDegreeProgrammeTermId) {
-      return [];
+    $isDegreeStudentProgramme = $activeDegreeProgrammeTerm
+      && $activeDegreeProgrammeTerm->get('field_degree_programme_type')->value !== 'doctoral';
+
+    if ($isDegreeStudentProgramme) {
+      return $this->render(\Drupal::service('uhsg_news.news')->getProgrammeNewsNids());
     }
 
-    return $this->render(\Drupal::service('uhsg_news.news')->getProgrammeNewsNids());
+    return [];
   }
 
 }
