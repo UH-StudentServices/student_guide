@@ -1,0 +1,7 @@
+obar:
+  version: 1.x
+  js:
+    js/obar.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings

@@ -7,6 +7,9 @@ uhsg_obar.settings:
     base_url:
       type: string
       label: 'Base URL that will be mounted on data-base-url attribute of Obar header element.'
+    obar_base_url:
+      type: string
+      label: 'Base URL for Obar scripts that will be included remotely.'
     app_name:
       type: string
       label: 'App name that will be mounted on data-app-name attribute of Obar header element.'
