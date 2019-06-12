@@ -4,6 +4,7 @@
 Release date: ??.??.????
 
 * Update university address (HUB-463)
+* Enable JSON:API to provide access to Guide content (HUB-453)
 
 
 ## 1.34
