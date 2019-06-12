@@ -27,5 +27,5 @@ function uhsg_obar_theme_suggestions_region_alter(&$suggestions, $variables, $ho
  * Implements hook_page_attachments_alter().
  */
 function uhsg_obar_page_attachments_alter(&$page) {
-  $page['#attached']['drupalSettings']['uhsgObar']['obarBaseUrl'] = \Drupal::config('uhsg_obar.settings')->get('obar_base_url');
+  $page['#attached']['drupalSettings']['uhsgObar']['obarBaseUrl'] = \Drupal::config('uhsg_obar.settings')->get('base_url');
 }
