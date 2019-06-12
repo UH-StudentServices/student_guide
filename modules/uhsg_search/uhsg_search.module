@@ -46,6 +46,11 @@ function uhsg_search_preprocess_node(&$variables) {
     else {
       $variables['attributes']['data-type'] = $node->getType();
     }
+
+    if ($user_group = $node->get('field_user_group')->value) {
+      $variables['attributes']['data-user-group'] = $user_group;
+    }
+
     $variables['#cache']['contexts'][] = 'active_degree_programme';
     $variables['#cache']['contexts'][] = 'other_education_provider';
   }
