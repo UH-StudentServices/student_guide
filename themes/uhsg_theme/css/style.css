@@ -9466,6 +9466,13 @@ input[type="submit"].button--reset + i {
 
 #obar-header {
   background: #222;
+  min-height: 195px;
+}
+
+@media (max-width: 48em) {
+  #obar-header {
+    min-height: 145px;
+  }
 }
 
 #obar-header header {

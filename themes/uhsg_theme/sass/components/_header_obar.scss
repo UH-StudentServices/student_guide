@@ -1,5 +1,9 @@
 #obar-header {
   background: $black;
+  min-height: 195px;
+  @include breakpoint($mobile-only) {
+    min-height: 145px;
+  }
   header {
     max-width: 75em;
     margin: 0 auto;
