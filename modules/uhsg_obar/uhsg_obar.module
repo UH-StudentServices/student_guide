@@ -5,7 +5,7 @@
  */
 function uhsg_obar_preprocess_region(&$variables) {
   if ($variables['region'] == 'header') {
-    $config = \Drupal::config('uhsg_obar');
+    $config = \Drupal::config('uhsg_obar.settings');
     $variables['obar_base_url'] = $config->get('base_url');
     $variables['obar_app_name'] = $config->get('app_name');
     $variables['obar_jwt_token'] = \Drupal::service('uhsg_obar.jwt')->generateToken();
