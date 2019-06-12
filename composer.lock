@@ -1,17 +1,19 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e70a93cbbe4c2a1343678a2071d1a5f9",
+    "content-hash": "55a06a7d6373b311d391f9626a59ac0b",
     "packages": [
         {
             "name": "RubaXa/Sortable",
             "version": "v1.4.0",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/RubaXa/Sortable/archive/1.4.0.zip"
+                "url": "https://github.com/RubaXa/Sortable/archive/1.4.0.zip",
+                "reference": null,
+                "shasum": null
             },
             "type": "drupal-library"
         },
@@ -1814,6 +1816,9 @@
                     "recurse": false,
                     "replace": false,
                     "merge-extra": false
+                },
+                "patches_applied": {
+                    "3025372-21": "https://www.drupal.org/files/issues/2019-04-24/3025372-21.patch"
                 }
             },
             "autoload": {
@@ -7602,7 +7607,7 @@
             "version": "1.2.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/devel.git",
+                "url": "https://git.drupal.org/project/devel",
                 "reference": "8.x-1.2"
             },
             "dist": {
@@ -7855,12 +7860,12 @@
             "version": "v1.6.5",
             "source": {
                 "type": "git",
-                "url": "https://github.com/bovigo/vfsStream.git",
+                "url": "https://github.com/mikey179/vfsStream.git",
                 "reference": "d5fec95f541d4d71c4823bb5e30cf9b9e5b96145"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bovigo/vfsStream/zipball/d5fec95f541d4d71c4823bb5e30cf9b9e5b96145",
+                "url": "https://api.github.com/repos/mikey179/vfsStream/zipball/d5fec95f541d4d71c4823bb5e30cf9b9e5b96145",
                 "reference": "d5fec95f541d4d71c4823bb5e30cf9b9e5b96145",
                 "shasum": ""
             },
