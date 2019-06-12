@@ -4,6 +4,7 @@
 Release date: ??.??.????
 
 * Update university address (HUB-463)
+* Add user group to news (HUB-454)
 * Enable JSON:API to provide access to Guide content (HUB-453)
 
 

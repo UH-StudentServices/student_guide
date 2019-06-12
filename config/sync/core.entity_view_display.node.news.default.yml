@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.news.field_news_email
     - field.field.node.news.field_news_email_sent
     - field.field.node.news.field_news_image
+    - field.field.node.news.field_user_group
     - image.style.image_full_width
     - node.type.news
   module:
@@ -48,5 +49,6 @@ hidden:
   field_domain_source: true
   field_news_email: true
   field_news_email_sent: true
+  field_user_group: true
   langcode: true
   links: true
