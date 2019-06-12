@@ -1,4 +1,4 @@
 services:
   uhsg_obar.jwt:
     class: 'Drupal\uhsg_obar\Jwt'
-    arguments: ['@config.factory', '@current_user']
+    arguments: ['@config.factory', '@current_user', '@url_generator', '@language_manager']
