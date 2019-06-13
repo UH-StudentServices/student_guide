@@ -1,0 +1,20 @@
+uuid: 7559c387-22d4-4bf9-a6a9-a27c3ba57121
+langcode: en
+status: false
+dependencies:
+  module:
+    - uhsg_news
+  theme:
+    - uhsg_theme
+id: newsperdoctoralprogramme
+theme: uhsg_theme
+region: after_content
+weight: -7
+provider: null
+plugin: news_per_doctoral_programme
+settings:
+  id: news_per_doctoral_programme
+  label: 'Notifications from your degree programme'
+  provider: uhsg_news
+  label_display: visible
+visibility: {  }

@@ -91,7 +91,14 @@
             {{ content['content']['degree_students'] }}
           </div>
           <div id="doctoral_candidates">
-            {{ block('title_block') }}
+            {{ news_per_doctoral_programme }}
+            {% block title_block_doctoral_news %}
+              {{ title_prefix }}
+              {% if label %}
+                <h2{{ title_attributes.addClass(title_classes) }}>{{ label }}</h2>
+              {% endif %}
+              {{ title_suffix }}
+            {% endblock %}
             {{ content['content']['doctoral_candidates'] }}
           </div>
           <div id="specialist_training">

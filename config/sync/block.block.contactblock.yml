@@ -12,7 +12,7 @@ dependencies:
 id: contactblock
 theme: uhsg_theme
 region: after_content
-weight: -5
+weight: -9
 provider: null
 plugin: contact_block
 settings:

@@ -9,12 +9,14 @@ dependencies:
     - field.field.node.news.field_news_email
     - field.field.node.news.field_news_email_sent
     - field.field.node.news.field_news_image
+    - field.field.node.news.field_user_group
     - image.style.thumbnail
     - node.type.news
   module:
     - image
     - maxlength
     - path
+    - scheduler
     - text
 id: node.news.default
 targetEntityType: node
@@ -68,6 +70,12 @@ content:
     third_party_settings: {  }
     type: image_image
     region: content
+  field_user_group:
+    weight: 31
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   langcode:
     type: language_select
     weight: 1
@@ -86,6 +94,17 @@ content:
     settings:
       display_label: true
     weight: 5
+    third_party_settings: {  }
+    region: content
+  publish_on:
+    type: datetime_timestamp_no_default
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  scheduler_settings:
+    weight: 20
+    settings: {  }
     third_party_settings: {  }
     region: content
   status:
@@ -124,6 +143,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
     region: content
+  unpublish_on:
+    type: datetime_timestamp_no_default
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   field_domain_source: true
   field_news_email_sent: true

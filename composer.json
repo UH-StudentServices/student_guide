@@ -138,6 +138,9 @@
             },
             "drupal/maxlength": {
                 "2902083-2": "https://www.drupal.org/files/issues/translateable_help-2902083-2.patch"
+            },
+            "drupal/core": {
+                "3025372-21": "https://www.drupal.org/files/issues/2019-04-24/3025372-21.patch"
             }
         }
     }
