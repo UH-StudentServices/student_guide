@@ -10,6 +10,7 @@ use Drupal\Core\Routing\UrlGeneratorInterface;
 use Drupal\Core\Path\PathMatcherInterface;
 use Drupal\Core\Language\LanguageInterface;
 use Drupal\Core\Url;
+use Drupal\user\Entity\User;
 
 class Jwt {
 
@@ -17,6 +18,11 @@ class Jwt {
    * @var \Drupal\Core\Config\ImmutableConfig
    */
   protected $config;
+
+  /**
+   * @var \Drupal\Core\Session\AccountInterface
+   */
+  protected $user;
 
   /**
    * @var \Drupal\Core\Routing\UrlGeneratorInterface
@@ -67,10 +73,22 @@ class Jwt {
     return (object) [
       'loginEndpoint' => $this->urlGenerator->generateFromRoute('samlauth.saml_controller_login'),
       'logoutEndpoint' => $this->urlGenerator->generateFromRoute('samlauth.saml_controller_logout'),
-      'user' => NULL,
+      'user' => $this->getUser(),
       'currentLang' => $this->languageManager->getCurrentLanguage()->getId(),
       'languageSelectEndpoints' => $this->getLanguageSelectEndpoints(),
     ];
+  }
+
+  private function getUser() {
+    if ($this->user->isAuthenticated()) {
+      $user = User::load($this->user->id());
+      $oodiId = $user->get('field_oodi_uid')->value;
+      return (object) [
+        'userName' => $this->user->getDisplayName(),
+        'oodiId' => $oodiId ? $oodiId : '',
+      ];
+    }
+    return NULL;
   }
 
   private function getLanguageSelectEndpoints() {
