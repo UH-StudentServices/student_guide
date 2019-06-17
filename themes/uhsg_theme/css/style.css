@@ -9475,11 +9475,6 @@ input[type="submit"].button--reset + i {
   }
 }
 
-#obar-header header {
-  max-width: 75em;
-  margin: 0 auto;
-}
-
 .list-of-links__compact .list-of-links__link {
   padding-top: 0.4em;
   padding-bottom: 0.4em;

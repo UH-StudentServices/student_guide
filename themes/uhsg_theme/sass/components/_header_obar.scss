@@ -4,8 +4,4 @@
   @include breakpoint($mobile-only) {
     min-height: 145px;
   }
-  header {
-    max-width: 75em;
-    margin: 0 auto;
-  }
 }
