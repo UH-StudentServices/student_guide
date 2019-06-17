@@ -9464,6 +9464,22 @@ input[type="submit"].button--reset + i {
   border: 1px solid #979797;
 }
 
+#obar-header {
+  background: #222;
+  min-height: 195px;
+}
+
+@media (max-width: 48em) {
+  #obar-header {
+    min-height: 145px;
+  }
+}
+
+#obar-header header {
+  max-width: 75em;
+  margin: 0 auto;
+}
+
 .list-of-links__compact .list-of-links__link {
   padding-top: 0.4em;
   padding-bottom: 0.4em;
