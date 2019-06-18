@@ -4,6 +4,7 @@
 Release date: ??.??.????
 
 * Show main menu links at teaching side (HUB-178)
+* Change logo text to link to homepage, unlike logo image (HUB-457)
 
 
 ## 1.35
