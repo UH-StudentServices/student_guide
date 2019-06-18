@@ -18,10 +18,13 @@
   <div class="l-top-bar">
     <div class="l-top-bar__subregion">
       <div class="l-top-bar__main">
-        {% if logo_path and logo_text %}
-          <a href="{{ logo_path }}" class="logo">
-            <h1 class="logo__sitename">{{ logo_text }}</h1>
-          </a>
+        {% if logo_path and logo_text and home_path %}
+          <div class="logo">
+            <a href="{{ logo_path }}" class="logo__link"/> 
+            <a href="{{ path('<front>') }}" class="logo__homepath">
+              <span class="logo__sitename">{{ logo_text }}</span>
+            </a>
+          </div>
         {% endif %}
         <a href="#" id="menu-toggle" class="nav-toggle"><span></span> {{ 'Menu'|trans }} </a>
       </div>
