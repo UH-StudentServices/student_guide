@@ -5,6 +5,7 @@ dependencies:
   config:
     - system.menu.main-menu-en
   module:
+    - domain
     - language
     - system
   theme:
@@ -22,6 +23,7 @@ settings:
   label_display: '0'
   level: 1
   depth: 0
+  expand_all_items: false
 visibility:
   language:
     id: language
@@ -30,3 +32,10 @@ visibility:
     negate: false
     context_mapping:
       language: '@language.current_language_context:language_interface'
+  domain:
+    id: domain
+    domains:
+      guide_teacher_helsinki_fi: guide_teacher_helsinki_fi
+    negate: false
+    context_mapping:
+      'entity:domain': '@domain.current_domain_context:entity:domain'

@@ -1,0 +1,21 @@
+uuid: 61edb98c-0826-458e-addc-ba2d6bd03877
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_user_group
+    - node.type.news
+  module:
+    - options
+id: node.news.field_user_group
+field_name: field_user_group
+entity_type: node
+bundle: news
+label: 'User group'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

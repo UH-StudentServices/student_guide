@@ -10,7 +10,7 @@ dependencies:
 id: themesperusergroup
 theme: uhsg_theme
 region: after_content
-weight: -7
+weight: -10
 provider: null
 plugin: themes_per_user_group
 settings:

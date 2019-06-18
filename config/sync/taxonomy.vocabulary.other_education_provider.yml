@@ -5,5 +5,4 @@ dependencies: {  }
 name: 'Other education provider'
 vid: other_education_provider
 description: ''
-hierarchy: 0
 weight: 0

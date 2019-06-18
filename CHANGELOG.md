@@ -1,5 +1,13 @@
 #Changelog
 
+## 1.35
+Release date: 18.06.2019
+
+* Update university address (HUB-463)
+* Add user group to news (HUB-454)
+* Enable JSON:API to provide access to Guide content (HUB-453)
+
+
 ## 1.34
 Release date: 14.05.2019
 

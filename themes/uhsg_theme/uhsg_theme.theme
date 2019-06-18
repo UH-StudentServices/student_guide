@@ -352,6 +352,7 @@ function uhsg_theme_preprocess_block(array &$variables) {
     case 'generalnews':
     case 'newsperdegreeprogramme':
     case 'newsperdegreeprogramme_2':
+    case 'newsperdoctoralprogramme':
       $variables['content_attributes']['class'][] = 'grid-container';
 
       // Truncate news headlines in browser, so that search engines can pick up
@@ -367,6 +368,7 @@ function uhsg_theme_preprocess_block(array &$variables) {
     case 'themesperusergroup':
       if (\Drupal::service('uhsg_domain.domain')->isStudentDomain()) {
         $variables['news_per_degree_programme'] = _uhsg_theme_get_news_per_degree_programme();
+        $variables['news_per_doctoral_programme'] = _uhsg_theme_get_news_per_doctoral_programme();
       }
       break;
   }
@@ -516,6 +518,7 @@ function uhsg_theme_theme_suggestions_block_alter(&$suggestions, $vars, $hook) {
     'generalnews',
     'newsperdegreeprogramme',
     'newsperdegreeprogramme_2',
+    'newsperdoctoralprogramme',
     'views_block__google_analytics_summary_top_searches_block',
   ];
 
@@ -588,6 +591,14 @@ function _uhsg_theme_get_news_per_degree_programme() {
 
   return $news_per_degree_programme
     ? \Drupal::entityTypeManager()->getViewBuilder('block')->view($news_per_degree_programme)
+    : '';
+}
+
+function _uhsg_theme_get_news_per_doctoral_programme() {
+  $news_per_doctoral_programme = Block::load('newsperdoctoralprogramme');
+
+  return $news_per_doctoral_programme
+    ? \Drupal::entityTypeManager()->getViewBuilder('block')->view($news_per_doctoral_programme)
     : '';
 }
 

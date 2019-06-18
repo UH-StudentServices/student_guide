@@ -10,7 +10,7 @@ dependencies:
 id: generalnews
 theme: uhsg_theme
 region: after_content
-weight: -10
+weight: -12
 provider: null
 plugin: general_news
 settings:

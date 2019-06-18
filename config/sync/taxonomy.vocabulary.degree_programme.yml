@@ -5,5 +5,4 @@ dependencies: {  }
 name: 'Degree programme'
 vid: degree_programme
 description: ''
-hierarchy: 0
 weight: 0

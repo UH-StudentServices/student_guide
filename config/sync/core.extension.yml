@@ -36,6 +36,7 @@ module:
   google_analytics: 0
   honeypot: 0
   image: 0
+  jsonapi: 0
   language: 0
   link: 0
   locale: 0
@@ -87,6 +88,7 @@ module:
   uhsg_feedback: 0
   uhsg_migrate: 0
   uhsg_news: 0
+  uhsg_obar: 0
   uhsg_office_hours: 0
   uhsg_oprek: 0
   uhsg_other_education_provider: 0
