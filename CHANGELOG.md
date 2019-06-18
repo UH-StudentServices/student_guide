@@ -3,6 +3,7 @@
 ## 1.xx-dev
 Release date: ??.??.????
 
+* Show main menu links at teaching side (HUB-178)
 
 
 ## 1.35
