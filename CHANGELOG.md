@@ -1,7 +1,7 @@
 #Changelog
 
-## 1.xx-dev
-Release date: ??.??.????
+## 1.35
+Release date: 18.06.2019
 
 * Update university address (HUB-463)
 * Add user group to news (HUB-454)
