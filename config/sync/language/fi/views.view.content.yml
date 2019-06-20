@@ -48,7 +48,7 @@ display:
             label: Kieli
       exposed_form:
         options:
-          submit_button: Suodatin
+          submit_button: Hae
           reset_button_label: 'Palauta oletusarvoihin'
           exposed_sorts_label: Lajittele
           sort_asc_label: Nouseva
