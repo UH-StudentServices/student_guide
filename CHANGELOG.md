@@ -1,7 +1,7 @@
 #Changelog
 
-## 1.xx-dev
-Release date: ??.??.????
+## 1.36
+Release date: 25.06.2019
 
 * Show main menu links at teaching side (HUB-178)
 * Change logo text to link to homepage, unlike logo image (HUB-457)
