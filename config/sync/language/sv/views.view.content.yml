@@ -11,8 +11,7 @@ display:
               2:
                 title: 'Ej publicerad'
             label: 'Status för publicering'
-          expose:
-            label: Status
+          expose: {  }
         title:
           expose:
             label: Titel
@@ -24,7 +23,7 @@ display:
             label: Språk
       exposed_form:
         options:
-          submit_button: Filtrera
+          submit_button: Sök
           reset_button_label: Återställ
           exposed_sorts_label: 'Sortera efter'
           sort_asc_label: Stigande
@@ -41,11 +40,9 @@ display:
           label: Titel
         type:
           label: Innehållstyp
-          separator: ', '
         name:
           label: Författare
         status:
-          label: Status
           settings:
             format_custom_true: Publicerad
             format_custom_false: 'Ej publicerad'
