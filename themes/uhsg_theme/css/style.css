@@ -7306,102 +7306,6 @@ span.links__link.theme-language {
   overflow-x: auto;
 }
 
-.logo-block {
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.logo-block__logo {
-  display: none;
-}
-
-@media (min-width: 62.5em) {
-  .logo-block__logo {
-    display: block;
-    margin-right: 0.5em;
-  }
-}
-
-@media (min-width: 75em) {
-  .logo-block__logo {
-    margin-right: 1.5em;
-  }
-}
-
-.logo-block__content {
-  text-align: center;
-  width: 100%;
-}
-
-@media (min-width: 48em) {
-  .logo-block__content {
-    float: left;
-    text-align: left;
-  }
-}
-
-.logo-block__content .logo-block__sitename {
-  font-size: 1rem;
-  color: #FFF;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.logo-block__content p {
-  font-size: 0.875rem;
-  color: #FFF;
-  line-height: 1.2em;
-}
-
-.logo-block__content br {
-  display: block;
-}
-
-.logo-block__content a.is-tel {
-  color: #FFF;
-  text-decoration: underline;
-}
-
-.logo-block__content a.is-tel:hover, .logo-block__content a.is-tel:active {
-  color: #FFF;
-}
-
-.logo {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.logo:before {
-  font-size: 3.375rem;
-  color: #fff;
-  content: "";
-  font-family: "hy-icons";
-  font-weight: 300;
-}
-
-.logo.theme-big:before {
-  font-size: 6.25rem;
-  line-height: 100px;
-}
-
-.logo__sitename {
-  font-weight: 700;
-  font-style: normal;
-  font-size: 0.9375rem;
-  color: #FFF;
-  letter-spacing: -0.05em;
-  margin-top: 0;
-  padding: 0 0 0 11px;
-}
-
 /*
  section: 6.8
  title: Pagination
@@ -9464,9 +9368,117 @@ input[type="submit"].button--reset + i {
   border: 1px solid #979797;
 }
 
+#obar-header {
+  background: #222;
+  min-height: 195px;
+}
+
+@media (max-width: 48em) {
+  #obar-header {
+    min-height: 145px;
+  }
+}
+
 .list-of-links__compact .list-of-links__link {
   padding-top: 0.4em;
   padding-bottom: 0.4em;
+}
+
+.logo-block {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.logo-block__logo {
+  display: none;
+}
+
+@media (min-width: 62.5em) {
+  .logo-block__logo {
+    display: block;
+    margin-right: 0.5em;
+  }
+}
+
+@media (min-width: 75em) {
+  .logo-block__logo {
+    margin-right: 1.5em;
+  }
+}
+
+.logo-block__content {
+  text-align: center;
+  width: 100%;
+}
+
+@media (min-width: 48em) {
+  .logo-block__content {
+    float: left;
+    text-align: left;
+  }
+}
+
+.logo-block__content .logo-block__sitename {
+  font-size: 1rem;
+  color: #FFF;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.logo-block__content p {
+  font-size: 0.875rem;
+  color: #FFF;
+  line-height: 1.2em;
+}
+
+.logo-block__content br {
+  display: block;
+}
+
+.logo-block__content a.is-tel {
+  color: #FFF;
+  text-decoration: underline;
+}
+
+.logo-block__content a.is-tel:hover, .logo-block__content a.is-tel:active {
+  color: #FFF;
+}
+
+.logo {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.logo__link:before {
+  font-size: 3.375rem;
+  color: #fff;
+  content: "";
+  font-family: "hy-icons";
+  font-weight: 300;
+}
+
+.logo__link.theme-big:before {
+  font-size: 6.25rem;
+  line-height: 100px;
+}
+
+.logo__sitename {
+  font-weight: 700;
+  font-style: normal;
+  font-size: 0.9375rem;
+  color: #FFF;
+  letter-spacing: -0.05em;
+  margin-top: 0;
+  padding: 0 0 0 11px;
+  text-transform: uppercase;
 }
 
 .main-menu {
@@ -9571,18 +9583,6 @@ input[type="submit"].button--reset + i {
     padding-left: 1em;
     padding-right: 1em;
   }
-}
-
-body.guide-teacher-helsinki-fi .main-menu li {
-  display: none;
-}
-
-body.guide-teacher-helsinki-fi .main-menu li:last-child {
-  display: block;
-}
-
-body.guide-teacher-helsinki-fi .main-menu li a {
-  font-size: initial;
 }
 
 .nav-toggle {

@@ -3,9 +3,23 @@
 ## 1.xx-dev
 Release date: ??.??.????
 
+
+
+## 1.36
+Release date: 25.06.2019
+
+* Show main menu links at teaching side (HUB-178)
+* Change logo text to link to homepage, unlike logo image (HUB-457)
+* Change content filter submit button label to "Search" (HUB-468)
+
+
+## 1.35
+Release date: 18.06.2019
+
 * Update university address (HUB-463)
 * Add user group to news (HUB-454)
 * Enable JSON:API to provide access to Guide content (HUB-453)
+* Add Obar header to student guide side (HUB-409)
 
 
 ## 1.34

@@ -1,0 +1,15 @@
+# Schema for the configuration files of the obar module.
+
+uhsg_obar.settings:
+  type: config_object
+  label: 'Obar settings'
+  mapping:
+    base_url:
+      type: string
+      label: 'Base URL that will be mounted on data-base-url attribute of Obar header element.'
+    app_name:
+      type: string
+      label: 'App name that will be mounted on data-app-name attribute of Obar header element.'
+    private_key_path:
+      type: string
+      label: 'Server file path to private key file, that is used for signing the JWT token with RS256 alorithim.'
