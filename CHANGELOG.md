@@ -3,6 +3,7 @@
 ## 1.xx-dev
 Release date: ??.??.????
 
+* Do not attach Obar library on admin UI (HUB-476)
 
 
 ## 1.36
