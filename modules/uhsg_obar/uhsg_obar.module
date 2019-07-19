@@ -49,7 +49,7 @@ function uhsg_obar_theme_suggestions_region_alter(&$suggestions, $variables, $ho
  * Implements hook_page_attachments_alter().
  */
 function uhsg_obar_page_attachments_alter(&$page) {
-  if (\Drupal::service('uhsg_domain.domain')->isStudentDomain()) {
+  if (!\Drupal::service('router.admin_context')->isAdminRoute() && \Drupal::service('uhsg_domain.domain')->isStudentDomain()) {
     $page['#attached']['drupalSettings']['uhsgObar']['obarBaseUrl'] = \Drupal::config('uhsg_obar.settings')->get('base_url');
     $page['#attached']['library'][] = 'uhsg_obar/uhsg_obar.obar';
   }
