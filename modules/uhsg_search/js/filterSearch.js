@@ -13,11 +13,14 @@
           article_degree_programme_specific: Drupal.t('Degree programme specific instructions', {}, {context: 'Search Filters'}),
           article_other_education_provider_specific: Drupal.t('Other education provider specific instructions', {}, {context: 'Search Filters'}),
           theme: Drupal.t('Theme', {}, {context: 'Search Filters'}),
-          news: Drupal.t('Bulletin', {}, {context: 'Search Filters'})
+          news: Drupal.t('Bulletin', {}, {context: 'Search Filters'}),
+          degree_students: Drupal.t('Degree Students', {}, {context: 'Search Filters'}),
+          doctoral_candidates: Drupal.t('Doctoral Candidates', {}, {context: 'Search Filters'}),
+          specialist_training: Drupal.t('Specialist Training', {}, {context: 'Search Filters'}),
         };
 
         // create buttons for available filter types if more than one type of result
-        var availableTypes = filter.getAvailableTypes(results);
+        var availableTypes = filter.getAvailableTypes(results, filter);
 
         if (availableTypes.length > 1) {
 
@@ -38,7 +41,7 @@
           // filter results on click
           $('a', filterButtons).on('click', function (event) {
             event.preventDefault();
-            filter.filterResults($(this), results);
+            filter.filterResults($(this), results, filter);
 
             // update result count
             var resultCountText = Drupal.t('Results (@results)', {'@results': filter.getResultCount(results)}, {context: 'Search Filters'});
@@ -53,10 +56,10 @@
       return '<div class="button-group__button"><a class="' + buttonClasses + '" href="#" data-type="' + type + '">' + filterTitles[type] + '</a></div>';
     },
 
-    getAvailableTypes: function (results) {
+    getAvailableTypes: function (results, filter) {
       var availableTypes = [];
       results.each(function () {
-        var types = $(this).attr('data-type').split(' ');
+        var types = filter.getDataAttributeValues($(this));
         $.each(types, function (index, type) {
           var dupe = availableTypes.find(function (item) {
             return item === type;
@@ -91,13 +94,13 @@
       }).appendTo(filterButtons);
     },
 
-    filterResults: function (button, results) {
+    filterResults: function (button, results, filter) {
       var filterType = button.attr('data-type');
       button.addClass('is-active');
       button.parent().siblings().children().removeClass('is-active');
 
       results.each(function () {
-        var types = $(this).attr('data-type').split(' ');
+        var types = filter.getDataAttributeValues($(this));
         if ($.inArray(filterType, types) !== -1 || filterType === 'all') {
           $(this)[0].style.display = 'flex';
         }
@@ -109,6 +112,11 @@
 
     getResultCount: function (results) {
       return results.filter(':visible').length;
+    },
+
+    getDataAttributeValues: function (element) {
+      var userGroups = element.attr('data-user-group') ? element.attr('data-user-group').split(' ') : [];
+      return element.attr('data-type').split(' ').concat(userGroups);
     }
   };
 }(jQuery));
