@@ -87,6 +87,9 @@
   <div class="box-story__meta">
     <div class="box-story__meta-item">{{ created }}</div>
     <div class="box-story__meta-item">{{ type }}</div>
+    {% if node.field_user_group is not empty %}
+      <div class="box-story__meta-item">{{ content.field_user_group }}</div>
+    {% endif %}
     {% if node.field_news_degree_programme is not empty %}
       <div class="box-story__meta-item">{{ content.field_news_degree_programme }}</div>
     {% endif %}
