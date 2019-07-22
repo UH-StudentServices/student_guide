@@ -6,9 +6,15 @@ dependencies:
     - core.entity_view_mode.node.constrained
     - field.field.node.article.body
     - field.field.node.article.field_article_degree_programme
+    - field.field.node.article.field_article_domain
     - field.field.node.article.field_article_paragraph
+    - field.field.node.article.field_article_related
+    - field.field.node.article.field_domain_source
+    - field.field.node.article.field_other_education_provider
+    - field.field.node.article.field_user_group
     - node.type.article
   module:
+    - options
     - text
     - user
 id: node.article.constrained
@@ -32,7 +38,18 @@ content:
       link: false
     third_party_settings: {  }
     region: content
+  field_user_group:
+    type: list_default
+    weight: 2
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
 hidden:
+  field_article_domain: true
   field_article_paragraph: true
+  field_article_related: true
+  field_domain_source: true
+  field_other_education_provider: true
   langcode: true
   links: true
