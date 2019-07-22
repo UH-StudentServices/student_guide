@@ -4,6 +4,7 @@
 Release date: ??.??.????
 
 * Do not attach Obar library on admin UI (HUB-476)
+* Display user group on search filters and results (HUB-452)
 
 
 ## 1.36
