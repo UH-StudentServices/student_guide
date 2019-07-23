@@ -66,7 +66,7 @@ class NewsPerDegreeProgrammeTest extends UnitTestCase {
    * @test
    */
   public function buildShouldReturnEmptyRenderableWhenThereIsNoActiveDegreeProgramme() {
-    $this->activeDegreeProgrammeService->getId()->willReturn(NULL);
+    $this->activeDegreeProgrammeService->getTerm()->willReturn(NULL);
 
     $this->assertEquals([], $this->newsPerDegreeProgramme->build());
   }
