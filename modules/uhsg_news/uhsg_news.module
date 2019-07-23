@@ -5,7 +5,6 @@
  * Contains uhsg_news.module.
  */
 
-use Drupal\Core\Mail\MailFormatHelper;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\node\Entity\Node;
 use Drupal\Core\Routing\RouteMatchInterface;
