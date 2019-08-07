@@ -7,6 +7,7 @@ Release date: ??.??.????
 * Display user group on search filters and results (HUB-452)
 * Updated Drupal core (HUB-478)
 * Do not display error on empty study rights response (HUB-480)
+* Show body summary field on edit by default (HUB-475)
 
 
 ## 1.36
