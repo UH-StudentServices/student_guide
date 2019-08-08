@@ -6,6 +6,6 @@ id: guide_student_helsinki_fi
 domain_id: 4349307
 hostname: guide.student.helsinki.fi
 name: 'Instructions for students'
-scheme: https
+scheme: variable
 weight: 1
 is_default: true
