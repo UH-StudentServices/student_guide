@@ -6,6 +6,6 @@ id: guide_teacher_helsinki_fi
 domain_id: 15834470
 hostname: teaching.helsinki.fi
 name: 'Instructions for teaching'
-scheme: https
+scheme: variable
 weight: 2
 is_default: false
