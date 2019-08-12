@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_common_name
     - field.field.user.user.field_domain_admin
     - field.field.user.user.field_oodi_uid
     - field.field.user.user.field_student_number
@@ -24,6 +25,14 @@ content:
     weight: 3
     settings: {  }
     third_party_settings: {  }
+    region: content
+  field_common_name:
+    weight: 51
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
   field_domain_admin:
     type: options_buttons

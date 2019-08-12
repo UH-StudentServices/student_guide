@@ -76,6 +76,7 @@ class UserSyncSubscriber implements EventSubscriberInterface {
     $attributes = new AttributeParser($event->getAttributes());
     $this->syncOodiUid($event, $attributes);
     $this->syncStudentId($event, $attributes);
+    $this->syncCommonName($event, $attributes);
 
     try {
       $this->syncMyDegreeProgrammes($event);
@@ -144,6 +145,38 @@ class UserSyncSubscriber implements EventSubscriberInterface {
       elseif ($previous_value && !$new_value) {
         // When we don't have new value but previous value, it means that
         // student ID has/must been removed.
+        $event->getAccount()->get($field_name)->setValue(NULL);
+        $event->markAccountChanged();
+      }
+    }
+  }
+
+  /**
+   * Synchronises common name field.
+   * @param \Drupal\samlauth\Event\SamlAuthUserSyncEvent $event
+   * @param \Drupal\uhsg_samlauth\AttributeParserInterface $attributes
+   */
+  protected function syncCommonName(SamlAuthUserSyncEvent $event, AttributeParserInterface $attributes) {
+
+    // Specify what is the name of the field we want to set student ID to?
+    $field_name = $this->config->get('common_name_field_name');
+    if (!$field_name) {
+      return;
+    }
+
+    // If specified field definition has been found
+    if ($event->getAccount()->getFieldDefinition($field_name)) {
+      $previous_value = $event->getAccount()->get($field_name)->getString();
+      $new_value = $attributes->getCommonName();
+      if ($new_value && $new_value != $previous_value) {
+        // When we have new value and it's different from previous value, it
+        // means that we need to update it to the account.
+        $event->getAccount()->get($field_name)->setValue($new_value);
+        $event->markAccountChanged();
+      }
+      elseif ($previous_value && !$new_value) {
+        // When we don't have new value but previous value, it means that
+        // common name has/must been removed.
         $event->getAccount()->get($field_name)->setValue(NULL);
         $event->markAccountChanged();
       }

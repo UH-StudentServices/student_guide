@@ -9,6 +9,7 @@ Release date: ??.??.????
 * Do not display error on empty study rights response (HUB-480)
 * Show body summary field on edit by default (HUB-475)
 * Domain (technical): Use variable domain URL scheme (HUB-481)
+* Use user common name in Obar (HUB-465)
 
 
 ## 1.36

@@ -84,7 +84,7 @@ class Jwt {
       $user = User::load($this->user->id());
       $oodiId = $user->get('field_oodi_uid')->value;
       return (object) [
-        'userName' => $this->user->getDisplayName(),
+        'userName' => $this->user->get('field_common_name')->value,
         'oodiId' => $oodiId ? $oodiId : '',
       ];
     }

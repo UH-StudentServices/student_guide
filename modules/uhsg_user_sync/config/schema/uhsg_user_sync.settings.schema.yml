@@ -19,3 +19,6 @@ uhsg_user_sync.settings:
     technical_condition_field_name:
       type: string
       label: 'Field name that indicates the flagging being programmatically managed.'
+    common_name_field_name:
+      type: string
+      label: 'Field name for common name synchronization'
