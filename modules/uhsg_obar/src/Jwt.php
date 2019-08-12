@@ -83,8 +83,9 @@ class Jwt {
     if ($this->user->isAuthenticated()) {
       $user = User::load($this->user->id());
       $oodiId = $user->get('field_oodi_uid')->value;
+      $userName = $user->get('field_common_name')->value;
       return (object) [
-        'userName' => $user->get('field_common_name')->value,
+        'userName' => $userName ? $userName : '',
         'oodiId' => $oodiId ? $oodiId : '',
       ];
     }
