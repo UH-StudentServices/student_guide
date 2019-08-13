@@ -1,0 +1,11 @@
+<?php
+
+/**
+ * Add common name field mapping configuration.
+ */
+function uhsg_user_sync_update_8001() {
+  $config_factory = \Drupal::configFactory();
+  $config = $config_factory->getEditable('uhsg_user_sync.settings');
+  $config->set('common_name_field_name', 'field_common_name');
+  $config->save(TRUE);
+}
