@@ -86,16 +86,15 @@ class Jwt {
       $userName = $user->hasField('field_common_name') ? $user->get('field_common_name')->value : null;
       $firstName = $this->getFirstName($userName);
       $lastName = $this->getLastName($userName);
+
       $formattedUser = [
-        'oodiId' => $oodiId ? $oodiId : ''
+        'oodiId' => $oodiId ? $oodiId : '',
+        'userName' => !empty($userName) ? $userName : $user->getDisplayName(),
       ];
 
       if (!empty($firstName) && !empty($lastName)) {
         $formattedUser['firstName'] = $firstName;
         $formattedUser['lastName'] = $lastName;
-      }
-      else {
-        $formattedUser['userName'] = !empty($userName) ? $userName : $user->getDisplayName();
       }
 
       return (object) $formattedUser;
