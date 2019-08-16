@@ -23,9 +23,11 @@ use Drupal\Core\Messenger\MessengerInterface;
 class UserSynscSubscriberTest extends UnitTestCase {
 
   const ATTRIBUTES = ['studentId'];
-  const STUDENT_ID = '123';
+  const COMMON_NAME_FIELD_CONFIG_KEY = 'common_name_field_name';
+  const COMMON_NAME_FIELD_CONFIG_VALUE = 'field_common_name';
   const OODI_UID_FIELD_CONFIG_KEY = 'oodiUID_field_name';
   const OODI_UID_FIELD_CONFIG_VALUE = 'field_oodi_uid';
+  const STUDENT_ID = '123';
   const STUDENT_ID_FIELD_CONFIG_KEY = 'studentID_field_name';
   const STUDENT_ID_FIELD_CONFIG_VALUE = 'field_student_id';
 
@@ -72,6 +74,7 @@ class UserSynscSubscriberTest extends UnitTestCase {
     parent::setUp();
 
     $this->config = $this->prophesize(ImmutableConfig::class);
+    $this->config->get(self::COMMON_NAME_FIELD_CONFIG_KEY)->willReturn(self::COMMON_NAME_FIELD_CONFIG_VALUE);
     $this->config->get(self::OODI_UID_FIELD_CONFIG_KEY)->willReturn(self::OODI_UID_FIELD_CONFIG_VALUE);
     $this->config->get(self::STUDENT_ID_FIELD_CONFIG_KEY)->willReturn(self::STUDENT_ID_FIELD_CONFIG_VALUE);
 
@@ -86,8 +89,10 @@ class UserSynscSubscriberTest extends UnitTestCase {
     $this->fieldItemList->getString()->willReturn(self::STUDENT_ID);
 
     $this->user = $this->prophesize(UserInterface::class);
+    $this->user->getFieldDefinition(self::COMMON_NAME_FIELD_CONFIG_VALUE)->willReturn($this->fieldDefinition);
     $this->user->getFieldDefinition(self::OODI_UID_FIELD_CONFIG_VALUE)->willReturn($this->fieldDefinition);
     $this->user->getFieldDefinition(self::STUDENT_ID_FIELD_CONFIG_VALUE)->willReturn($this->fieldDefinition);
+    $this->user->get(self::COMMON_NAME_FIELD_CONFIG_VALUE)->willReturn($this->fieldItemList);
     $this->user->get(self::OODI_UID_FIELD_CONFIG_VALUE)->willReturn($this->fieldItemList);
     $this->user->get(self::STUDENT_ID_FIELD_CONFIG_VALUE)->willReturn($this->fieldItemList);
 
@@ -127,6 +132,7 @@ class UserSynscSubscriberTest extends UnitTestCase {
    * @test
    */
   public function onUserSyncShouldDoNothingIfStudentIdFieldNameConfigIsMissing() {
+    $this->config->get(self::COMMON_NAME_FIELD_CONFIG_KEY)->willReturn(NULL);
     $this->config->get(self::OODI_UID_FIELD_CONFIG_KEY)->willReturn(NULL);
     $this->config->get(self::STUDENT_ID_FIELD_CONFIG_KEY)->willReturn(NULL);
 
