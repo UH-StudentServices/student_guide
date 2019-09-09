@@ -10,6 +10,7 @@ Release date: ??.??.????
 * Show body summary field on edit by default (HUB-475)
 * Domain (technical): Use variable domain URL scheme (HUB-481)
 * Use user common name in Obar (HUB-465)
+* Prevent wide content from squashing title column (HUB-483)
 
 
 ## 1.36
