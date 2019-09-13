@@ -8676,6 +8676,7 @@ input[type="text"].search-form-large__input {
     -webkit-box-flex: 2;
         -ms-flex-positive: 2;
             flex-grow: 2;
+    min-width: 0;
   }
 }
 
