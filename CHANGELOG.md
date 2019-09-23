@@ -1,7 +1,7 @@
 #Changelog
 
-## 1.xx-dev
-Release date: ??.??.????
+## 1.37
+Release date: 24.09.2019
 
 * Do not attach Obar library on admin UI (HUB-476)
 * Display user group on search filters and results (HUB-452)
