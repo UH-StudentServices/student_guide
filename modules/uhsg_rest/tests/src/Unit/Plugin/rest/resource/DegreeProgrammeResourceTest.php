@@ -31,9 +31,6 @@ class DegreeProgrammeResourceTest extends UnitTestCase {
   /** @var \Drupal\Core\Entity\EntityTypeManagerInterface*/
   private $entityTypeManager;
 
-  /** @var \Drupal\Core\Field\FieldItemListInterface*/
-  private $fieldItemList;
-
   /** @var \Drupal\Core\Language\LanguageInterface*/
   private $languageEN;
 

@@ -113,6 +113,18 @@ msgid "Theme"
 msgstr "Tema"
 
 msgctxt "Search Filters"
+msgid "Degree Students"
+msgstr "Grundexamensstuderande"
+
+msgctxt "Search Filters"
+msgid "Doctoral Candidates"
+msgstr "Doktorander"
+
+msgctxt "Search Filters"
+msgid "Specialist Training"
+msgstr "Yrkesinriktad påbyggnadsutbildning"
+
+msgctxt "Search Filters"
 msgid "Results (@results)"
 msgstr "Resultat (@results)"
 

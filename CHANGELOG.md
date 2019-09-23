@@ -1,5 +1,18 @@
 #Changelog
 
+## 1.37
+Release date: 24.09.2019
+
+* Do not attach Obar library on admin UI (HUB-476)
+* Display user group on search filters and results (HUB-452)
+* Updated Drupal core (HUB-478)
+* Do not display error on empty study rights response (HUB-480)
+* Show body summary field on edit by default (HUB-475)
+* Domain (technical): Use variable domain URL scheme (HUB-481)
+* Use user common name in Obar (HUB-465)
+* Prevent wide content from squashing title column (HUB-483)
+
+
 ## 1.36
 Release date: 25.06.2019
 

@@ -83,12 +83,42 @@ class Jwt {
     if ($this->user->isAuthenticated()) {
       $user = User::load($this->user->id());
       $oodiId = $user->get('field_oodi_uid')->value;
-      return (object) [
-        'userName' => $this->user->getDisplayName(),
+      $userName = $user->hasField('field_common_name') ? $user->get('field_common_name')->value : null;
+      $firstName = $this->getFirstName($userName);
+      $lastName = $this->getLastName($userName);
+
+      $formattedUser = [
         'oodiId' => $oodiId ? $oodiId : '',
+        'userName' => !empty($userName) ? $userName : $user->getDisplayName(),
       ];
+
+      if (!empty($firstName) && !empty($lastName)) {
+        $formattedUser['firstName'] = $firstName;
+        $formattedUser['lastName'] = $lastName;
+      }
+
+      return (object) $formattedUser;
     }
+
     return NULL;
+  }
+
+  private function getFirstName($name) {
+    return is_string($name) && !empty($name) ? explode(' ', $name)[0] : '';
+  }
+
+  private function getLastName($name) {
+    if (is_string($name) && !empty($name)) {
+      $parts = explode(' ', $name);
+
+      return count($parts) > 1 ? end($parts) : '';
+    }
+
+    return '';
+  }
+
+  private function getLastNameInitial($name) {
+
   }
 
   private function getLanguageSelectEndpoints() {
