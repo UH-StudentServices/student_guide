@@ -6,8 +6,8 @@
  */
 
 use Drupal\Core\Entity\EntityInterface;
-use Drupal\node\Entity\Node;
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\node\Entity\Node;
 
 /**
  * Implements hook_help().
@@ -74,7 +74,9 @@ function uhsg_news_node_presave(EntityInterface $entity) {
 }
 
 /**
- * Send the news by email if the email has been given.
+ * Send the news by email if the email has been given. Recipients are set as
+ * "bcc" to avoid disclosing email addresses to all recipients. Site email is
+ * used as the "to" recipient, as "to" is required in order to send the email. 
  *
  * @param $node \Drupal\node\Entity\Node
  */
@@ -82,24 +84,26 @@ function uhsg_news_send_news_by_email(Node $node) {
   $emails = $node->get('field_news_email')->getValue();
 
   if (!empty($emails)) {
-    $emails = implode(', ', array_column($emails, 'value'));
     $message = uhsg_news_get_title($node, 'fi');
     $message .= uhsg_news_get_title($node, 'sv');
     $message .= uhsg_news_get_title($node, 'en');
     $message .= $node->toUrl('canonical', ['absolute' => TRUE])->toString();
 
+    $bcc = implode(', ', array_column($emails, 'value'));
+    $params['bcc'] = $bcc;
     $params['subject'] = t('Bulletin: @label', ['@label' => $node->label()]);
     $params['message'] = $message;
     $langcode = \Drupal::currentUser()->getPreferredLangcode();
+    $to = \Drupal::config('system.site')->get('mail');
 
-    $result = \Drupal::service('plugin.manager.mail')->mail('uhsg_news', 'email_news', $emails, $langcode, $params, NULL, TRUE);
+    $result = \Drupal::service('plugin.manager.mail')->mail('uhsg_news', 'email_news', $to, $langcode, $params, NULL, TRUE);
 
     if ($result['result'] !== TRUE) {
       drupal_set_message(t('Email sending failed.'), 'error');
     }
     else {
       $node->set('field_news_email_sent', 1);
-      drupal_set_message(t('Email sent to @email.', ['@email' => $emails]));
+      drupal_set_message(t('Email sent to @email.', ['@email' => $bcc]));
     }
   }
 }
@@ -128,5 +132,6 @@ function uhsg_news_mail($key, &$message, $params) {
     $message['from'] = \Drupal::config('system.site')->get('mail');
     $message['subject'] = $params['subject'];
     $message['body'][] = $params['message'];
+    $message['headers']['bcc'] = $params['bcc'];
   }
 }
