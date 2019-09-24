@@ -3,6 +3,8 @@
 ## 1.38-dev
 Release date: ??.??.????
 
+* Avoid disclosing bulletin email recipients (HUB-444)
+
 
 ## 1.37
 Release date: 24.09.2019
