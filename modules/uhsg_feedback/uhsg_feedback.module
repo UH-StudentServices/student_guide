@@ -6,7 +6,6 @@
  */
 
  use Drupal\Core\Url;
- use Drupal\uhsg_domain\DomainService;
 
 /**
  * Implements hook_mail_alter().
@@ -35,10 +34,10 @@ function uhsg_feedback_mail_alter(&$message) {
     $message['body'] = [];
 
     // Subject.
-    // TODO: Different text for teaching instructions.
-    if(\Drupal::service('uhsg_domain.domain')->isTeachingDomain()){
+    if (\Drupal::service('uhsg_domain.domain')->isTeachingDomain()) {
       $message['subject'] = t('Feedback from Instructions for teaching');
-    }else{
+    }
+    else {
       $message['subject'] = t('Feedback from Instructions for students');
     }
 
