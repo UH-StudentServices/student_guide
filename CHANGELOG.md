@@ -2,6 +2,7 @@
 
 ## 1.38-dev
 Release date: ??.??.????
+* Feedback email title is set separately for both sites (HUB-614)
 
 
 ## 1.37
@@ -331,7 +332,7 @@ Release date: 20.04.2017
 * Display a list of degree programmes when viewing instructions (HUB-192).
 * Updated Drupal core to 8.3.0 (HUB-206).
 * Updated JS validation, so that it is consistent with Drupal core.
-* Remove heading and type labels from theme articles (HUB-188) 
+* Remove heading and type labels from theme articles (HUB-188)
 * Display a list of degree programmes on each paragraph on instructions (HUB-193)
 * Use summary instead of body in teasers and search results when available (HUB-185)
 * Changed login and logout link titles (HUB-186)
@@ -422,7 +423,7 @@ Release date: 02.03.2017
 * Changed logout link to an icon link (HUB-131)
 * Removed mobile input focus zoom in search (HUB-133)
 * Removed input focus zoom in degree programme switcher for devices (HUB-121)
-    
+
 
 ## 1.0-beta1
 Release date: 13.02.2017
@@ -492,7 +493,7 @@ Release date 23.01.2017
   (HUB-63)
 * Added feature for adding news that can be categorized by degree programmes
   (HUB-39, HUB-40)
-* Added feature for viewing news either from degree programme page or from an 
+* Added feature for viewing news either from degree programme page or from an
   general archive list -view (HUB-43, HUB-53)
 * Added feature for viewing the last changed timestamp for content (HUB-16)
 * Added feature for searching content (HUB-14)
