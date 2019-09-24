@@ -3,7 +3,9 @@
 /**
  * @file
  * Contains uhsg_feedback.module.
- */use Drupal\Core\Url;
+ */
+
+ use Drupal\Core\Url;
 
 /**
  * Implements hook_mail_alter().
@@ -32,7 +34,12 @@ function uhsg_feedback_mail_alter(&$message) {
     $message['body'] = [];
 
     // Subject.
-    $message['subject'] = t('Feedback from Instructions for students');
+    if (\Drupal::service('uhsg_domain.domain')->isTeachingDomain()) {
+      $message['subject'] = t('Feedback from Instructions for teaching');
+    }
+    else {
+      $message['subject'] = t('Feedback from Instructions for students');
+    }
 
     // Date and time.
     $message['body'][] = date('d.m.Y H:i:s');
