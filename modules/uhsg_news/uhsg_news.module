@@ -68,8 +68,25 @@ function uhsg_news_email_has_been_sent(Node $node) {
  * Implements hook_ENTITY_TYPE_presave().
  */
 function uhsg_news_node_presave(EntityInterface $entity) {
-  if ($entity->bundle() == 'news' && !$entity->isNew() && $entity->isPublished() && !uhsg_news_email_has_been_sent($entity)) {
-    uhsg_news_send_news_by_email($entity);
+  if ($entity->bundle() == 'news') {
+    uhsg_news_use_publish_on_as_created($entity);
+
+    if (!$entity->isNew() && $entity->isPublished() && !uhsg_news_email_has_been_sent($entity)) {
+      uhsg_news_send_news_by_email($entity);
+    }
+  }
+}
+
+/**
+ * Use publish on time as created time when publish on is set.
+ *
+ * @param $node \Drupal\node\Entity\Node
+ */
+function uhsg_news_use_publish_on_as_created(Node $node) {
+  $publish_on = $node->get('publish_on')->value;
+
+  if (!empty($publish_on)) {
+    $node->set('created', $publish_on);
   }
 }
 

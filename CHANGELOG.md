@@ -3,6 +3,7 @@
 ## 1.38-dev
 Release date: ??.??.????
 * Feedback email title is set separately for both sites (HUB-614)
+* Use publish on time as created time (HUB-616)
 
 
 ## 1.37
