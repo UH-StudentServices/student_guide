@@ -66,7 +66,8 @@
         "drupal/text_summary_options": "^1.0",
         "drupal/maxlength": "1.x-dev#3235f5ca1a7532b29612b027f02f949bde2bbe5f",
         "drupal/scheduler": "1.x-dev#696b13810d903b5413fc56ee0b44d82e4b9d3a8a",
-        "firebase/php-jwt": "^5.0.0"
+        "firebase/php-jwt": "^5.0.0",
+        "drupal/redirect": "^1.4"
     },
     "repositories": {
         "0": {
