@@ -3,6 +3,7 @@
 ## 1.38-dev
 Release date: ??.??.????
 * Feedback email title is set separately for both sites (HUB-614)
+* Detect and prevent sending of probable feedback spam (HUB-610)
 
 
 ## 1.37
