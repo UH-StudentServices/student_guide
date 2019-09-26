@@ -30,6 +30,7 @@ function uhsg_news_help($route_name, RouteMatchInterface $route_match) {
  */
 function uhsg_news_form_alter(&$form, $form_state, $form_id) {
   uhsg_news_add_email_tab($form, $form_state, $form_id);
+  uhsg_news_alter_scheduling_description($form, $form_state, $form_id);
 }
 
 /**
@@ -62,6 +63,18 @@ function uhsg_news_add_email_tab(&$form, $form_state, $form_id) {
  */
 function uhsg_news_email_has_been_sent(Node $node) {
   return (bool) $node->get('field_news_email_sent')->value;
+}
+
+/**
+ * Alter scheduling description on the news add and edit forms to provide more
+ * information on varying date and time formats.
+ */
+function uhsg_news_alter_scheduling_description(&$form, $form_state, $form_id) {
+  if (in_array($form_id, ['node_news_form', 'node_news_edit_form'])) {
+    $description = t('The scheduling date and time formats depend on the settings of the web browser and the operating system you are using. If the suggested format is in the format of month / day / year, remember to use 12-hour clock and select AM or PM as the suffix.');
+    
+    $form['publish_on']['widget'][0]['value']['#description'] .= " $description";
+  }
 }
 
 /**

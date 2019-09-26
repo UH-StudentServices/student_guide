@@ -326,3 +326,12 @@ msgid "Enter a date. The time part is optional."
 msgstr "Syötä päiväys. Aika on valinnainen."
 msgid "Enter a date and time."
 msgstr "Syötä päivä ja aika."
+
+# Custom widget description
+msgid "The scheduling date and time formats depend on the settings of the web browser and the operating system you are using. If the suggested format is in the format of month / day / year, remember to use 12-hour clock and select AM or PM as the suffix."
+msgstr ""
+"Ajastuksen aikaformaatti (päivä ja kellonaika) riippuu käyttämästäsi "
+"selaimesta ja käyttöjärjestelmäsi asetuksista. Mikäli selaimesi tarjoaa "
+"päivämäärän formaatissa kuukausi / päivä / vuosi, muista kellonaikaa "
+"lisätessäsi käyttää 12-tunnin kelloa ja valita loppuun joko AM tai PM, esim. "
+"01:00:00 PM"
