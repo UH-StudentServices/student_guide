@@ -4,6 +4,8 @@
 Release date: ??.??.????
 * Feedback email title is set separately for both sites (HUB-614)
 
+* Added redirect module to keep old url aliases even if a new one is created (HUB-612)
+
 
 ## 1.37
 Release date: 24.09.2019
