@@ -6,6 +6,8 @@ Release date: ??.??.????
 
 * Added redirect module to keep old url aliases even if a new one is created (HUB-612)
 
+* Avoid disclosing bulletin email recipients (HUB-444)
+
 
 ## 1.37
 Release date: 24.09.2019
