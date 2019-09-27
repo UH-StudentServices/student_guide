@@ -3,8 +3,10 @@
 ## 1.38-dev
 Release date: ??.??.????
 * Feedback email title is set separately for both sites (HUB-614)
+* Use publish on time as created time (HUB-616)
 * Added redirect module to keep old url aliases even if a new one is created (HUB-612)
 * Display scheduling datetime format description (HUB-447)
+* Avoid disclosing bulletin email recipients (HUB-444)
 
 
 ## 1.37
