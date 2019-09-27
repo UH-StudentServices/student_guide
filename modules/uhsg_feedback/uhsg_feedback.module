@@ -18,6 +18,15 @@ function uhsg_feedback_mail_alter(&$message) {
   // Restrict alteration to contact mail.
   if ($message['id'] == 'contact_page_mail') {
 
+    // Contact message.
+    $contact_message = $message['params']['contact_message'];
+
+    // Do not send probable spam.
+    if (uhsg_feedback_is_probably_spam($contact_message->get('message')->value)) {
+      \Drupal::logger('uhsg_feedback')->debug('Detected probable spam. Preventing send.');
+      $message['send'] = FALSE;
+    }
+
     $replyTo = $message['reply-to'];
 
     // From: Either the email of the sender or the site default.
@@ -45,7 +54,6 @@ function uhsg_feedback_mail_alter(&$message) {
     $message['body'][] = date('d.m.Y H:i:s');
 
     // Message.
-    $contact_message = $message['params']['contact_message'];
     $message['body'][] = $contact_message->get('message')->value;
 
     // I would like to get a response to my feedback.
@@ -59,6 +67,22 @@ function uhsg_feedback_mail_alter(&$message) {
     // User agent info.
     $message['body'][] = $_SERVER['HTTP_USER_AGENT'];
   }
+}
+
+/**
+ * Try to detect possible spam. The message is considered spam if it contains
+ * an URL and The URL does not include "helsinki.fi". The URL detection regular
+ * expression is @gruber v2 from https://mathiasbynens.be/demo/url-regex
+ *
+ * @param string $message Message
+ * @return bool TRUE if probably spam, otherwise FALSE.
+ */
+function uhsg_feedback_is_probably_spam($message) {
+  $pattern = "#(?i)\b((?:[a-z][\w-]+:(?:/{1,3}|[a-z0-9%])|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:'\".,<>?«»“”‘’]))#iS";
+  $matches = [];
+  preg_match($pattern, $message, $matches);
+
+  return !empty($matches[0]) && strpos($matches[0], 'helsinki.fi') === FALSE;
 }
 
 /**
