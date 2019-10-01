@@ -2,6 +2,7 @@
 
 ## 1.38-dev
 Release date: ??.??.????
+* Implement Obar footer (HUB-621)
 * Feedback email title is set separately for both sites (HUB-614)
 * Detect and prevent sending of probable feedback spam (HUB-610)
 * Use publish on time as created time (HUB-616)
