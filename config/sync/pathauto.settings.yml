@@ -44,3 +44,4 @@ ignore_words: 'a, an, as, at, before, but, by, for, from, is, in, into, like, of
 update_action: 1
 _core:
   default_config_hash: IyUrnEuk2KLYiasMkS9Vmq3Z3QkYwfjyBPjsklhM3rQ
+safe_tokens: {  }

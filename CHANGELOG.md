@@ -2,6 +2,9 @@
 
 ## 1.38-dev
 Release date: ??.??.????
+* Updated paragraphs 1.6 -> 1.9 (HUB-631)
+* Updated pathauto 1.2 -> 1.4 (HUB-632)
+* Updated admin_toolbar 1.27 -> 1.27 (HUB-630)
 * Implement Obar footer (HUB-621)
 * Feedback email title is set separately for both sites (HUB-614)
 * Detect and prevent sending of probable feedback spam (HUB-610)
