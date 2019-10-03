@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "450b7db182e81869d8126dd9875bfd17",
+    "content-hash": "c385f9b332fe65b8e8798dcc015ba94d",
     "packages": [
         {
             "name": "RubaXa/Sortable",
@@ -21,12 +21,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/UH-StudentServices/uh_courses_embed.git",
-                "reference": "af738078abebb19534fd87bb7669e4bd1ae66e5b"
+                "reference": "09357c35652bef36fdf9ad18ca596186092fd36a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/UH-StudentServices/uh_courses_embed/zipball/af738078abebb19534fd87bb7669e4bd1ae66e5b",
-                "reference": "af738078abebb19534fd87bb7669e4bd1ae66e5b",
+                "url": "https://api.github.com/repos/UH-StudentServices/uh_courses_embed/zipball/09357c35652bef36fdf9ad18ca596186092fd36a",
+                "reference": "09357c35652bef36fdf9ad18ca596186092fd36a",
                 "shasum": ""
             },
             "type": "drupal-module",
@@ -38,7 +38,7 @@
                 "source": "https://github.com/UH-StudentServices/uh_courses_embed/tree/drupal8",
                 "issues": "https://github.com/UH-StudentServices/uh_courses_embed/issues"
             },
-            "time": "2018-06-06T11:43:02+00:00"
+            "time": "2019-09-20T09:46:52+00:00"
         },
         {
             "name": "UH-StudentServices/video_embed_unitube",
@@ -3629,7 +3629,7 @@
             "description": "Adds autocomplete functionality to searches.",
             "homepage": "https://www.drupal.org/project/search_api_autocomplete",
             "support": {
-                "source": "http://cgit.drupalcode.org/search_api_autocomplete"
+                "source": "https://git.drupalcode.org/project/search_api_autocomplete"
             }
         },
         {
