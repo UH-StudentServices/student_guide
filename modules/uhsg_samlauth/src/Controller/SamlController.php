@@ -41,7 +41,7 @@ class SamlController extends OriginalSamlController {
       $this->saml->acs();
     }
     catch (\Exception $e) {
-      drupal_set_message($e->getMessage(), 'error');
+      $this->messenger()->addError($e->getMessage());
       return new RedirectResponse('/');
     }
 

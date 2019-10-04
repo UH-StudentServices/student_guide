@@ -4,15 +4,16 @@
   "devDependencies": {
     "bower": "~1.8.8",
     "breakpoint-sass": "~2.7.1",
-    "browser-sync": "~2.26.3",
-    "del": "^4.0.0",
+    "browser-sync": "~2.26.7",
+    "del": "^4.1.1",
     "eslint-plugin-filenames": "^1.3.2",
     "gulp": "~3.9.1",
     "gulp-autoprefixer": "~6.0.0",
-    "gulp-bower": "~0.0.14",
+    "gulp-bower": "~0.0.15",
     "gulp-eslint": "^5.0.0",
     "gulp-sass": "~4.0.2",
     "gulp-watch": "~5.0.1",
+    "lodash": "^4.17.15",
     "node-sass-globbing": "~0.0.23",
     "normalize.css": "^8.0.1"
   },
@@ -26,8 +27,8 @@
   "dependencies": {
     "babel-core": "^6.26.3",
     "babel-preset-es2015": "^6.24.1",
-    "eslint": "^5.15.1",
+    "eslint": "^5.16.0",
     "eslint-config-drupal": "^4.0.1",
-    "eslint-plugin-import": "^2.16.0"
+    "eslint-plugin-import": "^2.18.2"
   }
 }
