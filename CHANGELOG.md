@@ -2,6 +2,7 @@
 
 ## 1.38-dev
 Release date: ??.??.????
+* Updated some npm packages (HUB-637)
 * Updated paragraphs 1.6 -> 1.9 (HUB-631)
 * Updated pathauto 1.2 -> 1.4 (HUB-632)
 * Updated admin_toolbar 1.27 -> 1.27 (HUB-630)
