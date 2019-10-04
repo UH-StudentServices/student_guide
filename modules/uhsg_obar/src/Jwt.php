@@ -117,10 +117,6 @@ class Jwt {
     return '';
   }
 
-  private function getLastNameInitial($name) {
-
-  }
-
   private function getLanguageSelectEndpoints() {
     $endpoints = [];
     $route_name = $this->pathMatcher->isFrontPage() ? '<front>' : '<current>';
