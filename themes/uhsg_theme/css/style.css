@@ -9380,6 +9380,17 @@ input[type="submit"].button--reset + i {
   }
 }
 
+#obar-footer {
+  background: #222;
+  min-height: 195px;
+}
+
+@media (max-width: 48em) {
+  #obar-footer {
+    min-height: 145px;
+  }
+}
+
 .list-of-links__compact .list-of-links__link {
   padding-top: 0.4em;
   padding-bottom: 0.4em;
