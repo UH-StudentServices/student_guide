@@ -2,9 +2,10 @@
 
 ## 1.38-dev
 Release date: ??.??.????
-* Updated honeypot: 1.23 -> 1.29
-* Updated contact_ajax 1.4-beta -> 1.4
-* Updated contact_block 1.3 -> 1.4
+* Updated uh_courses_embed (HUB-624)
+* Updated honeypot: 1.23 -> 1.29  (HUB-633)
+* Updated contact_ajax 1.4-beta -> 1.4  (HUB-634)
+* Updated contact_block 1.3 -> 1.4  (HUB-635)
 * Updated some npm packages (HUB-637)
 * Updated paragraphs 1.6 -> 1.9 (HUB-631)
 * Updated pathauto 1.2 -> 1.4 (HUB-632)
