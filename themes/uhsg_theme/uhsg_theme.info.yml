@@ -3,7 +3,7 @@ type: theme
 description: University of Helsinki Student Guide theme
 package: Other
 core: 8.x
-version: 1.38
+version: VERSION
 libraries:
   - uhsg_theme/global-styling
 

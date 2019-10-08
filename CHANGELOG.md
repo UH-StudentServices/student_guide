@@ -1,5 +1,11 @@
 #Changelog
 
+
+## 1.39-dev
+Release date: ??.??.????
+* ..
+
+
 ## 1.38
 Release date: 9.10.2019
 * Updated uh_courses_embed (HUB-624)
