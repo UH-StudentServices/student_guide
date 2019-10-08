@@ -1,7 +1,7 @@
 #Changelog
 
-## 1.38-dev
-Release date: ??.??.????
+## 1.38
+Release date: 9.10.2019
 * Updated uh_courses_embed (HUB-624)
 * Updated honeypot: 1.23 -> 1.29  (HUB-633)
 * Updated contact_ajax 1.4-beta -> 1.4  (HUB-634)
