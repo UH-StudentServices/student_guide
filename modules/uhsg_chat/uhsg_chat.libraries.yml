@@ -4,3 +4,8 @@ chat:
     js/chat.js: {}
   dependencies:
     - core/drupalSettings
+
+giosg_chat:
+  version: 1.x
+  js:
+    js/giosg_chat.js: {}
