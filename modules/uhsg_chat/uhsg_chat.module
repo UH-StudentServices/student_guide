@@ -26,5 +26,9 @@ function uhsg_chat_page_attachments(array &$attachments) {
       $attachments['#attached']['drupalSettings']['uhsg_chat']['infoDesc'] = $config->get('infoDesc');
       $attachments['#attached']['drupalSettings']['uhsg_chat']['currentLanguage'] = \Drupal::languageManager()->getCurrentLanguage()->getId();
     }
+
+    // The Giosg chat script is added to every node page, but only activated in specific
+    // paths remotely in giosg console. Currently no settings defined in Drupal.
+    $attachments['#attached']['library'][] = 'uhsg_chat/giosg_chat';
   }
 }
