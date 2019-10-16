@@ -3,7 +3,7 @@
 
 ## 1.39-dev
 Release date: ??.??.????
-* ..
+* Added giosg chat (HUB-639)
 
 
 ## 1.38
