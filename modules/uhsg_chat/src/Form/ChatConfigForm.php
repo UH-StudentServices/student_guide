@@ -13,7 +13,7 @@ class ChatConfigForm extends ConfigFormBase {
     public function getFormId() {
       return 'uhsg_chat_config';
     }
-  
+
     /**
      * {@inheritdoc}
      */
@@ -26,10 +26,10 @@ class ChatConfigForm extends ConfigFormBase {
      */
     public function buildForm(array $form, FormStateInterface $form_state) {
       $chat_config = $this->config('uhsg_chat.config');
-  
+
       $form['uhsg_chat'] = [
         '#type' => 'details',
-        '#title' => t('Chat configuration'),
+        '#title' => t('Smartsupp chat configuration'),
         '#description' => t('Note: Node IDs are configured programmatically or using drush!'),
         '#open' => TRUE,
       ];
@@ -70,7 +70,7 @@ class ChatConfigForm extends ConfigFormBase {
         '#title' => t('Info description'),
         '#default_value' => $chat_config->get('infoDesc'),
       ];
-  
+
       return parent::buildForm($form, $form_state);
     }
 
@@ -87,7 +87,7 @@ class ChatConfigForm extends ConfigFormBase {
         ->set('infoTitle', $form_state->getValue('infoTitle'))
         ->set('infoDesc', $form_state->getValue('infoDesc'))
         ->save();
-  
+
       parent::submitForm($form, $form_state);
     }
 

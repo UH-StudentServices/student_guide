@@ -2,7 +2,7 @@
 
 uhsg_chat.config:
   type: config_object
-  label: 'Chat configuration'
+  label: 'Smartupp chat configuration'
   mapping:
     display_chat_on_nodes:
       type: sequence
