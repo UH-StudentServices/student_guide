@@ -1,5 +1,8 @@
 #Changelog
 
+## 1.40-dev
+Release date: xx.xx.xxxx
+
 
 ## 1.39
 Release date: 18.10.2019
