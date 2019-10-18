@@ -1,8 +1,8 @@
 #Changelog
 
 
-## 1.39-dev
-Release date: ??.??.????
+## 1.39
+Release date: 18.10.2019
 * Added giosg chat (HUB-639)
 
 
