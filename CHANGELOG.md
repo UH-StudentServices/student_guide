@@ -2,6 +2,7 @@
 
 ## 1.40-dev
 Release date: xx.xx.xxxx
+* Add keyword support to content types (HUB-641)
 
 
 ## 1.39
