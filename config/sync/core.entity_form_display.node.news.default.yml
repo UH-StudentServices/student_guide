@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.news.body
     - field.field.node.news.field_domain_source
+    - field.field.node.news.field_keywords
     - field.field.node.news.field_news_degree_programme
     - field.field.node.news.field_news_email
     - field.field.node.news.field_news_email_sent
@@ -45,6 +46,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
+  field_keywords:
+    weight: 10
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   field_news_degree_programme:
     weight: 9
     settings:
@@ -55,7 +64,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_news_email:
-    weight: 11
+    weight: 12
     settings:
       size: 60
       placeholder: ''
@@ -63,7 +72,7 @@ content:
     type: email_default
     region: content
   field_news_image:
-    weight: 10
+    weight: 11
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
@@ -71,7 +80,7 @@ content:
     type: image_image
     region: content
   field_user_group:
-    weight: 31
+    weight: 17
     settings: {  }
     third_party_settings: {  }
     type: options_select
@@ -98,20 +107,20 @@ content:
     region: content
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 30
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
   scheduler_settings:
-    weight: 20
+    weight: 14
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 12
+    weight: 13
     region: content
     third_party_settings: {  }
   sticky:
@@ -145,7 +154,12 @@ content:
     region: content
   unpublish_on:
     type: datetime_timestamp_no_default
-    weight: 30
+    weight: 16
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  url_redirects:
+    weight: 18
     region: content
     settings: {  }
     third_party_settings: {  }

@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.theme.body
     - field.field.node.theme.field_domain_source
+    - field.field.node.theme.field_keywords
     - field.field.node.theme.field_theme_articles
     - field.field.node.theme.field_theme_domain
     - field.field.node.theme.field_theme_faq
@@ -72,6 +73,7 @@ content:
     third_party_settings: {  }
 hidden:
   field_domain_source: true
+  field_keywords: true
   field_theme_domain: true
   field_theme_teaser_image: true
   field_user_group: true
