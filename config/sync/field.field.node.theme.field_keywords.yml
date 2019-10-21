@@ -1,0 +1,19 @@
+uuid: 1ef6480a-5e64-41e8-abfa-634d786d402b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_keywords
+    - node.type.theme
+id: node.theme.field_keywords
+field_name: field_keywords
+entity_type: node
+bundle: theme
+label: Keywords
+description: 'Type in keywords to describe the content. The keywords will be used when searching for content. You can use individual words or free sentences. '
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

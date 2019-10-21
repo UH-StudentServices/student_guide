@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.news.body
     - field.field.node.news.field_domain_source
+    - field.field.node.news.field_keywords
     - field.field.node.news.field_news_degree_programme
     - field.field.node.news.field_news_email
     - field.field.node.news.field_news_email_sent
@@ -47,6 +48,7 @@ content:
     region: content
 hidden:
   field_domain_source: true
+  field_keywords: true
   field_news_email: true
   field_news_email_sent: true
   field_user_group: true
