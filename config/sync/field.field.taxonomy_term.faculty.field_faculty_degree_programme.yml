@@ -1,0 +1,29 @@
+uuid: 2af8ffb7-eced-4ec6-8658-7f8935e6e04b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_faculty_degree_programme
+    - taxonomy.vocabulary.degree_programme
+    - taxonomy.vocabulary.faculty
+id: taxonomy_term.faculty.field_faculty_degree_programme
+field_name: field_faculty_degree_programme
+entity_type: taxonomy_term
+bundle: faculty
+label: 'Degree programme'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      degree_programme: degree_programme
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
