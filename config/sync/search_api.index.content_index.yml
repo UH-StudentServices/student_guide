@@ -143,6 +143,11 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_keywords
+  created:
+    label: 'Authored on'
+    datasource_id: 'entity:node'
+    property_path: created
+    type: integer
 datasource_settings:
   'entity:node':
     bundles:

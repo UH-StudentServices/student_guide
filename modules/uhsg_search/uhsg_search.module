@@ -106,6 +106,7 @@ function uhsg_search_search_api_solr_query_alter(Query $solarium_query, QueryInt
   uhsg_search_domain_filter($solarium_query);
   uhsg_search_degree_programme_query($solarium_query);
   uhsg_search_other_education_provider_query($solarium_query);
+  uhsg_search_news_creation_time_filter($solarium_query);
 }
 
 /**
@@ -205,4 +206,24 @@ function uhsg_search_other_education_provider_query(Query $solarium_query) {
     $other_education_provider_filter_query = (new FilterQuery())->setKey('other_education_provider')->setQuery($query);
     $solarium_query->addFilterQuery($other_education_provider_filter_query);
   }
+}
+
+/**
+ * Add creation time filtering to search query for news. Exclude news that have
+ * been created over a year ago.
+ *
+ * @param \Solarium\QueryType\Select\Query\Query $solarium_query
+ */
+function uhsg_search_news_creation_time_filter(Query $solarium_query) {
+  $current_time = \Drupal::time()->getCurrentTime();
+  $seconds_in_year = 31536000;
+  $year_ago = $current_time - $seconds_in_year;
+  $query = '(';
+  $query .= "ss_type:article ";
+  $query .= "OR ss_type:theme ";
+  $query .= "OR (ss_type:news AND its_created:[$year_ago TO *])";
+  $query .= ')';
+
+  $news_creation_time_filter_query = (new FilterQuery())->setKey('news_creation_time')->setQuery($query);
+  $solarium_query->addFilterQuery($news_creation_time_filter_query);
 }
