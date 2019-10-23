@@ -4,6 +4,7 @@
 Release date: xx.xx.xxxx
 * Add keyword support to content types (HUB-641)
 * Exclude old news from search results (HUB-642)
+* Add faculty support (HUB-370)
 
 
 ## 1.39
