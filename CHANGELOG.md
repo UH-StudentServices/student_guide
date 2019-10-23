@@ -2,6 +2,7 @@
 
 ## 1.40-dev
 Release date: xx.xx.xxxx
+* Change to finnish alphabetical ordering (HUB-413)
 * Add keyword support to content types (HUB-641)
 * Exclude old news from search results (HUB-642)
 
