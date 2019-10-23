@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.news.field_news_degree_programme
     - field.field.node.news.field_news_email
     - field.field.node.news.field_news_email_sent
+    - field.field.node.news.field_news_faculty
     - field.field.node.news.field_news_image
     - field.field.node.news.field_user_group
     - image.style.image_full_width
@@ -30,6 +31,14 @@ content:
     third_party_settings: {  }
     region: content
   field_news_degree_programme:
+    weight: 3
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_news_faculty:
     weight: 2
     label: hidden
     settings:
