@@ -26,11 +26,16 @@ function uhsg_article_help($route_name, RouteMatchInterface $route_match) {
 
 /**
  * Implements hook_ENTITY_TYPE_presave().
- *
- * Assign degree programmes by faculty.
  */
 function uhsg_article_node_presave(EntityInterface $entity) {
-  if (in_array($entity->bundle(), ['article', 'news'])) {
+  uhsg_article_assign_degree_programmes_by_faculties($entity);
+}
+
+/**
+ * Assign degree programmes by faculties.
+ */
+function uhsg_article_assign_degree_programmes_by_faculties(EntityInterface $entity) {
+  if (in_array($entity->bundle(), ['article'])) {
     $faculty_terms = $entity->get('field_article_faculty')->referencedEntities();
     
     if (!empty($faculty_terms)) {
