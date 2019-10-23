@@ -93,6 +93,9 @@
     {% if node.field_news_degree_programme is not empty %}
       <div class="box-story__meta-item">{{ content.field_news_degree_programme }}</div>
     {% endif %}
+    {% if node.field_news_faculty is not empty %}
+      <div class="box-story__meta-item">{{ content.field_news_faculty }}</div>
+    {% endif %}
   </div>
   <h3 class="box-story__title">
     <a href="{{ url }}"> {{ label }} </a>

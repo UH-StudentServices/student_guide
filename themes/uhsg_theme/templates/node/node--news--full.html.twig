@@ -86,9 +86,10 @@
     <div class="col-left">
       <h1 class="page-title--small"> {{ label }} </h1>
       {{ content.field_news_degree_programme }}
+      {{ content.field_news_faculty }}
     </div>
     <div class="col-main">
-      {{ content|without('field_news_degree_programme', 'field_news_image') }}
+      {{ content|without('field_news_degree_programme', 'field_news_faculty', 'field_news_image') }}
     </div>
   </div>
 </article>

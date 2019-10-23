@@ -1,0 +1,59 @@
+uuid: c80c66a5-efd9-4a63-9aba-951d0afcb680
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.faculty.field_faculty_degree_programme
+    - taxonomy.vocabulary.faculty
+  module:
+    - path
+    - text
+id: taxonomy_term.faculty.default
+targetEntityType: taxonomy_term
+bundle: faculty
+mode: default
+content:
+  description:
+    type: text_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_faculty_degree_programme:
+    weight: 31
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

@@ -1,0 +1,8 @@
+uuid: 60338d68-7e32-4fbf-b543-9fc3b9bcf5e0
+langcode: en
+status: true
+dependencies: {  }
+name: Faculty
+vid: faculty
+description: ''
+weight: 0
