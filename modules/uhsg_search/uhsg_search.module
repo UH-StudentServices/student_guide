@@ -4,6 +4,7 @@ use Drupal\search_api\Query\QueryInterface;
 use Solarium\QueryType\Select\Query\FilterQuery;
 use Solarium\QueryType\Select\Query\Query;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Database\DatabaseException;
 
 /**
  * Implements hook_form_FORM_ID_alter().
@@ -226,4 +227,51 @@ function uhsg_search_news_creation_time_filter(Query $solarium_query) {
 
   $news_creation_time_filter_query = (new FilterQuery())->setKey('news_creation_time')->setQuery($query);
   $solarium_query->addFilterQuery($news_creation_time_filter_query);
+}
+
+/**
+ * Update table and column collation for key tables to ensure that
+ * sorting nodes and terms alphabetically happens as we expect.
+ * See  patches / sql / README.txt for more info.
+ *  taxonomy_term_field_data
+ *  node_field_revision
+ *  node_field_data
+ */
+function uhsg_search_update_8001() {
+  // Convert the tables/columns we commonly use for sorting, such as node title and term name.
+  // uhsg_search_convert_table_collation('taxonomy_term_field_data');
+  uhsg_search_convert_table_collation('taxonomy_term_field_data');
+  uhsg_search_convert_table_collation('node_field_revision');
+  uhsg_search_convert_table_collation('node_field_data');
+}
+
+
+/**
+ * Code and idea partially stolen from
+ * Drupal\search_api_db\DatabaseCompatibility\MySQL::alterNewTable()
+ */
+function uhsg_search_convert_table_collation($table, $charset = 'utf8mb4', $collation = 'utf8mb4_swedish_ci') {
+  $database = \Drupal::database();
+  // This might not be see in the drush console.
+  // https://github.com/drush-ops/drush/issues/3449
+  \Drupal::messenger()->addStatus(t('Executing table "%table" conversion to charset "%charset" with collation "%collation".', [
+      '%table' => $table,
+      '%collation' => $collation,
+      '%charset' => $charset,
+    ]));
+
+  try {
+    $database->query("ALTER TABLE {{$table}} CONVERT TO CHARACTER SET ':charset' COLLATE ':collation' ", [
+      ':charset' => $charset,
+      ':collation' => $collation,
+    ])->execute();
+  }
+  catch (DatabaseException $e) {
+    \Drupal::messenger()->addError(t('Database Exception during attempted table "%table" conversion to charset "%charset" with collation "%collation". Error : %message .', [
+        '%table' => $table,
+        '%collation' => $collation,
+        '%charset' => $charset,
+        '%message' => $e->getMessage(),
+      ]));
+  }
 }
