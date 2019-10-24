@@ -7,6 +7,7 @@ Release date: xx.xx.xxxx
 * Add faculty support (HUB-370)
 * Add application-specific Obar footer (HUB-285)
 * Disable search caching to avoid incorrect results (HUB-644)
+* Update samlauth module (HUB-459)
 
 
 ## 1.39
