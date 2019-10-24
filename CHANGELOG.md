@@ -6,6 +6,7 @@ Release date: xx.xx.xxxx
 * Exclude old news from search results (HUB-642)
 * Add faculty support (HUB-370)
 * Add application-specific Obar footer (HUB-285)
+* Disable search caching to avoid incorrect results (HUB-644)
 
 
 ## 1.39
