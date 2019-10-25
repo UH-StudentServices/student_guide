@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c8146ba2e0ae120c539a31ff7c020f75",
+    "content-hash": "290cc20d56237645798a8508419484c7",
     "packages": [
         {
             "name": "RubaXa/Sortable",
@@ -3403,35 +3403,40 @@
         },
         {
             "name": "drupal/samlauth",
-            "version": "3.0.0-alpha1",
+            "version": "2.0.0-alpha0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/samlauth.git",
-                "reference": "8.x-3.0-alpha1"
+                "reference": "8.x-2.0-alpha0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/samlauth-8.x-3.0-alpha1.zip",
-                "reference": "8.x-3.0-alpha1",
-                "shasum": "78598d884d84c006f16331ae0bb0304d0a7d8555"
+                "url": "https://ftp.drupal.org/files/projects/samlauth-8.x-2.0-alpha0.zip",
+                "reference": "8.x-2.0-alpha0",
+                "shasum": "0ba9df07ac739432e76c49ee082d71d8ef788d72"
             },
             "require": {
                 "drupal/core": "~8.0",
-                "drupal/externalauth": "^1.1",
-                "onelogin/php-saml": "^3"
+                "drupal/externalauth": "*",
+                "onelogin/php-saml": "~2.5"
             },
             "type": "drupal-module",
             "extra": {
                 "branch-alias": {
-                    "dev-3.x": "3.x-dev"
+                    "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-3.0-alpha1",
-                    "datestamp": "1549404780",
+                    "version": "8.x-2.0-alpha0",
+                    "datestamp": "1488462483",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Alpha releases are not covered by Drupal security advisories."
                     }
+                },
+                "patches_applied": {
+                    "2816997-7": "https://www.drupal.org/files/issues/samlauth-allow_custom_cert_folder-2816997-7.patch",
+                    "2817005-11": "https://www.drupal.org/files/issues/samlauth-add_event_to_map_attributes_to_user-2817005-11.patch",
+                    "2860473-1": "https://www.drupal.org/files/issues/2860473-1.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -4624,40 +4629,43 @@
         },
         {
             "name": "onelogin/php-saml",
-            "version": "3.3.0",
+            "version": "2.17.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/onelogin/php-saml.git",
-                "reference": "a79a9e3cdd414ec177aad916ce741210052620c7"
+                "reference": "2aaa5aaa9aa6d6887fbd15be0013dd7fac793fc9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/onelogin/php-saml/zipball/a79a9e3cdd414ec177aad916ce741210052620c7",
-                "reference": "a79a9e3cdd414ec177aad916ce741210052620c7",
+                "url": "https://api.github.com/repos/onelogin/php-saml/zipball/2aaa5aaa9aa6d6887fbd15be0013dd7fac793fc9",
+                "reference": "2aaa5aaa9aa6d6887fbd15be0013dd7fac793fc9",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.4",
-                "robrichards/xmlseclibs": ">=3.0.3"
+                "ext-curl": "*",
+                "ext-dom": "*",
+                "ext-mcrypt": "*",
+                "ext-openssl": "*",
+                "php": ">=5.3.2"
             },
             "require-dev": {
-                "pdepend/pdepend": "^2.5.0",
-                "php-coveralls/php-coveralls": "^1.0.2 || ^2.0",
-                "phploc/phploc": "^2.1 || ^3.0 || ^4.0",
-                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.5 || ^7.1",
-                "sebastian/phpcpd": "^2.0 || ^3.0 || ^4.0",
-                "squizlabs/php_codesniffer": "^3.1.1"
+                "pdepend/pdepend": "1.1.0",
+                "phploc/phploc": "*",
+                "phpunit/phpunit": "4.8",
+                "satooshi/php-coveralls": "1.0.1",
+                "sebastian/phpcpd": "*",
+                "squizlabs/php_codesniffer": "2.9.0"
             },
             "suggest": {
-                "ext-curl": "Install curl lib to be able to use the IdPMetadataParser for parsing remote XMLs",
-                "ext-gettext": "Install gettext and php5-gettext libs to handle translations",
-                "ext-openssl": "Install openssl lib in order to handle with x509 certs (require to support sign and encryption)"
+                "ext-gettext": "Install gettext and php5-gettext libs to handle translations"
             },
             "type": "library",
             "autoload": {
-                "psr-4": {
-                    "OneLogin\\": "src/"
-                }
+                "classmap": [
+                    "extlib/xmlseclibs",
+                    "lib/Saml",
+                    "lib/Saml2"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -4670,7 +4678,7 @@
                 "onelogin",
                 "saml"
             ],
-            "time": "2019-09-11T13:56:06+00:00"
+            "time": "2019-09-11T13:55:25+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -5290,44 +5298,6 @@
             ],
             "description": "A polyfill for getallheaders.",
             "time": "2019-03-08T08:55:37+00:00"
-        },
-        {
-            "name": "robrichards/xmlseclibs",
-            "version": "3.0.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/robrichards/xmlseclibs.git",
-                "reference": "406c68ac9124db033d079284b719958b829cb830"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/robrichards/xmlseclibs/zipball/406c68ac9124db033d079284b719958b829cb830",
-                "reference": "406c68ac9124db033d079284b719958b829cb830",
-                "shasum": ""
-            },
-            "require": {
-                "ext-openssl": "*",
-                "php": ">= 5.4"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "RobRichards\\XMLSecLibs\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "description": "A PHP library for XML Security",
-            "homepage": "https://github.com/robrichards/xmlseclibs",
-            "keywords": [
-                "security",
-                "signature",
-                "xml",
-                "xmldsig"
-            ],
-            "time": "2018-11-15T11:59:02+00:00"
         },
         {
             "name": "solarium/solarium",
@@ -8746,6 +8716,44 @@
             ],
             "abandoned": true,
             "time": "2018-08-09T05:50:03+00:00"
+        },
+        {
+            "name": "robrichards/xmlseclibs",
+            "version": "3.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/robrichards/xmlseclibs.git",
+                "reference": "406c68ac9124db033d079284b719958b829cb830"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/robrichards/xmlseclibs/zipball/406c68ac9124db033d079284b719958b829cb830",
+                "reference": "406c68ac9124db033d079284b719958b829cb830",
+                "shasum": ""
+            },
+            "require": {
+                "ext-openssl": "*",
+                "php": ">= 5.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "RobRichards\\XMLSecLibs\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "A PHP library for XML Security",
+            "homepage": "https://github.com/robrichards/xmlseclibs",
+            "keywords": [
+                "security",
+                "signature",
+                "xml",
+                "xmldsig"
+            ],
+            "time": "2018-11-15T11:59:02+00:00"
         },
         {
             "name": "se/selenium-server-standalone",
