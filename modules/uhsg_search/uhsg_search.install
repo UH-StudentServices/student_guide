@@ -15,7 +15,7 @@
  *  node_field_revision
  *  node_field_data
  */
-function uhsg_search_update_8011() {
+function uhsg_search_update_8001() {
   // Convert the tables/columns we commonly use for sorting, such as node title and term name.
   // uhsg_search_convert_table_collation('taxonomy_term_field_data');
   uhsg_search_convert_table_collation('taxonomy_term_field_revision');
