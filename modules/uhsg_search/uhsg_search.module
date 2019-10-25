@@ -6,7 +6,6 @@ use Solarium\QueryType\Select\Query\Query;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Database\DatabaseException;
 use Drupal\Core\Database\Database;
-use Drupal\Core\Database\SchemaObjectExistsException;
 use Drupal\Core\Utility\UpdateException;
 
 /**
@@ -232,7 +231,6 @@ function uhsg_search_news_creation_time_filter(Query $solarium_query) {
   $solarium_query->addFilterQuery($news_creation_time_filter_query);
 }
 
-
 /**
  * Code and idea partially stolen from
  * Drupal\search_api_db\DatabaseCompatibility\MySQL::alterNewTable()
@@ -242,10 +240,10 @@ function uhsg_search_convert_table_collation($table, $charset = 'utf8mb4', $coll
   // This might not be see in the drush console.
   // https://github.com/drush-ops/drush/issues/3449
   \Drupal::messenger()->addStatus(t('Executing table "%table" conversion to charset "%charset" with collation "%collation".', [
-      '%table' => $table,
-      '%collation' => $collation,
-      '%charset' => $charset,
-    ]));
+    '%table' => $table,
+    '%collation' => $collation,
+    '%charset' => $charset,
+  ]));
 
   try {
     $database->query("ALTER TABLE {{$table}} CONVERT TO CHARACTER SET '$charset' COLLATE '$collation' ")->execute();
@@ -261,10 +259,10 @@ function uhsg_search_convert_table_collation($table, $charset = 'utf8mb4', $coll
   }
   catch (DatabaseException $e) {
     \Drupal::messenger()->addError(t('Database Exception during attempted table "%table" conversion to charset "%charset" with collation "%collation". Error : %message .', [
-        '%table' => $table,
-        '%collation' => $collation,
-        '%charset' => $charset,
-        '%message' => $e->getMessage(),
-      ]));
+      '%table' => $table,
+      '%collation' => $collation,
+      '%charset' => $charset,
+      '%message' => $e->getMessage(),
+    ]));
   }
 }
