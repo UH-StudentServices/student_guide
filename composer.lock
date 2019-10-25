@@ -3451,10 +3451,6 @@
                 {
                     "name": "roderik",
                     "homepage": "https://www.drupal.org/user/8841"
-                },
-                {
-                    "name": "smfsh",
-                    "homepage": "https://www.drupal.org/user/3348892"
                 }
             ],
             "description": "Allows users to authenticate against an external SAML identity provider.",
@@ -3641,7 +3637,7 @@
             "description": "Adds autocomplete functionality to searches.",
             "homepage": "https://www.drupal.org/project/search_api_autocomplete",
             "support": {
-                "source": "https://git.drupalcode.org/project/search_api_autocomplete"
+                "source": "http://cgit.drupalcode.org/search_api_autocomplete"
             }
         },
         {
@@ -4629,16 +4625,16 @@
         },
         {
             "name": "onelogin/php-saml",
-            "version": "2.17.0",
+            "version": "v2.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/onelogin/php-saml.git",
-                "reference": "2aaa5aaa9aa6d6887fbd15be0013dd7fac793fc9"
+                "reference": "28e7ccc949592e78f7f4648dcfb492893aecc360"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/onelogin/php-saml/zipball/2aaa5aaa9aa6d6887fbd15be0013dd7fac793fc9",
-                "reference": "2aaa5aaa9aa6d6887fbd15be0013dd7fac793fc9",
+                "url": "https://api.github.com/repos/onelogin/php-saml/zipball/28e7ccc949592e78f7f4648dcfb492893aecc360",
+                "reference": "28e7ccc949592e78f7f4648dcfb492893aecc360",
                 "shasum": ""
             },
             "require": {
@@ -4678,7 +4674,7 @@
                 "onelogin",
                 "saml"
             ],
-            "time": "2019-09-11T13:55:25+00:00"
+            "time": "2018-03-05T15:43:24+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -8716,44 +8712,6 @@
             ],
             "abandoned": true,
             "time": "2018-08-09T05:50:03+00:00"
-        },
-        {
-            "name": "robrichards/xmlseclibs",
-            "version": "3.0.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/robrichards/xmlseclibs.git",
-                "reference": "406c68ac9124db033d079284b719958b829cb830"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/robrichards/xmlseclibs/zipball/406c68ac9124db033d079284b719958b829cb830",
-                "reference": "406c68ac9124db033d079284b719958b829cb830",
-                "shasum": ""
-            },
-            "require": {
-                "ext-openssl": "*",
-                "php": ">= 5.4"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "RobRichards\\XMLSecLibs\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "description": "A PHP library for XML Security",
-            "homepage": "https://github.com/robrichards/xmlseclibs",
-            "keywords": [
-                "security",
-                "signature",
-                "xml",
-                "xmldsig"
-            ],
-            "time": "2018-11-15T11:59:02+00:00"
         },
         {
             "name": "se/selenium-server-standalone",
