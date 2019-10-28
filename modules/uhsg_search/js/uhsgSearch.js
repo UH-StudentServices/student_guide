@@ -25,6 +25,7 @@
           searchField.prop('placeholder', originalPlaceholder);
         }, 1000);
       }
+      searchField.val(searchField.val().toLowerCase());
     }
   }
 }(jQuery));
