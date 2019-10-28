@@ -1,0 +1,16 @@
+uuid: 2caa8faf-bd24-44bf-8da7-314544330430
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.faculty
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: taxonomy_term.faculty
+target_entity_type_id: taxonomy_term
+target_bundle: faculty
+default_langcode: site_default
+language_alterable: true

@@ -554,7 +554,9 @@ function uhsg_theme_theme_suggestions_menu_alter(&$suggestions, $vars, $hook) {
 function uhsg_theme_theme_suggestions_field_alter(&$suggestions, $vars, $hook) {
   $tag_fields = [
     'field_article_degree_programme',
+    'field_article_faculty',
     'field_news_degree_programme',
+    'field_news_faculty',
     'field_paragraph_degree_programme',
     'field_paragraph_other_education',
     'field_other_education_provider',

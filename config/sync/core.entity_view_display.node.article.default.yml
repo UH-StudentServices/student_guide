@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.article.body
     - field.field.node.article.field_article_degree_programme
     - field.field.node.article.field_article_domain
+    - field.field.node.article.field_article_faculty
     - field.field.node.article.field_article_paragraph
     - field.field.node.article.field_article_related
     - field.field.node.article.field_domain_source
@@ -25,7 +26,7 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 3
+    weight: 4
     settings: {  }
     third_party_settings: {  }
     region: content
@@ -37,9 +38,17 @@ content:
       link: false
     third_party_settings: {  }
     region: content
+  field_article_faculty:
+    weight: 2
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
   field_article_paragraph:
     type: entity_reference_revisions_entity_view
-    weight: 4
+    weight: 5
     label: hidden
     settings:
       view_mode: default
@@ -47,7 +56,7 @@ content:
     third_party_settings: {  }
     region: content
   field_article_related:
-    weight: 5
+    weight: 6
     label: above
     settings:
       view_mode: teaser
@@ -57,7 +66,7 @@ content:
     region: content
   field_other_education_provider:
     type: entity_reference_label
-    weight: 2
+    weight: 3
     region: content
     label: hidden
     settings:

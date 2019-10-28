@@ -5,6 +5,10 @@ Release date: xx.xx.xxxx
 * Change to finnish alphabetical ordering (HUB-413)
 * Add keyword support to content types (HUB-641)
 * Exclude old news from search results (HUB-642)
+* Add faculty support (HUB-370)
+* Add application-specific Obar footer (HUB-285)
+* Disable search caching to avoid incorrect results (HUB-644)
+* Update samlauth module (HUB-459)
 
 
 ## 1.39

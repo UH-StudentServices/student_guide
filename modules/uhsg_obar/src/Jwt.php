@@ -2,15 +2,16 @@
 
 namespace Drupal\uhsg_obar;
 
+use Drupal\Component\Serialization\Json;
 use Drupal\Core\Config\ConfigFactory;
-use Drupal\Core\Session\AccountInterface;
-use Firebase\JWT\JWT as Firebase_JWT;
-use Drupal\Core\Language\LanguageManagerInterface;
-use Drupal\Core\Routing\UrlGeneratorInterface;
-use Drupal\Core\Path\PathMatcherInterface;
 use Drupal\Core\Language\LanguageInterface;
+use Drupal\Core\Language\LanguageManagerInterface;
+use Drupal\Core\Path\PathMatcherInterface;
+use Drupal\Core\Routing\UrlGeneratorInterface;
+use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Url;
 use Drupal\user\Entity\User;
+use Firebase\JWT\JWT as Firebase_JWT;
 
 class Jwt {
 
@@ -76,6 +77,7 @@ class Jwt {
       'user' => $this->getUser(),
       'currentLang' => $this->languageManager->getCurrentLanguage()->getId(),
       'languageSelectEndpoints' => $this->getLanguageSelectEndpoints(),
+      'footer' => $this->getFooter()
     ];
   }
 
@@ -130,4 +132,100 @@ class Jwt {
     return (object) $endpoints;
   }
 
+  /**
+   * The simplest hard-coded implementation for application-specific footer.
+   * Not configurable for now. Links common for all services will be refactored
+   * away in the future, leaving only the truly application-specific
+   * configuration.
+   */
+  private function getFooter() {
+    $footer = [
+      'serviceName' => [
+        'Opiskelu',
+        'Studier',
+        'Studies'
+      ],
+      'applicationName' => [
+        'Opiskelijan ohjeet',
+        'Instruktioner för studerande',
+        'Instructions for students'
+      ],
+      'items' => [
+        'bulletin' => [
+          'name' => [
+            'Tiedotearkisto',
+            'Meddelanden arkiv',
+            'Bulletin archive'
+          ],
+          'url' => [
+            'https://guide.student.helsinki.fi/fi/news',
+            'https://guide.student.helsinki.fi/sv/news',
+            'https://guide.student.helsinki.fi/en/news'
+          ]
+        ],
+        'studentServices' => [
+          'name' => [
+            'Opiskelijaneuvonta',
+            'Studentservicen',
+            'Student Services'
+          ],
+          'url' => [
+            'https://guide.student.helsinki.fi/fi/artikkeli/opiskelijaneuvonta',
+            'https://guide.student.helsinki.fi/sv/artikel/studentservicen',
+            'https://guide.student.helsinki.fi/en/article/student-services'
+          ]
+        ],
+        'studentServicesAppointment' => [
+          'name' => [
+            'Opiskelijaneuvonnan ajanvaraus',
+            'Tidsbokning till Studentservicen',
+            'Appointments to Student Services'
+          ],
+          'url' => [
+            'https://secure.vihta.com/public-ng/studenthelsinki/#/home',
+            'https://secure.vihta.com/public-ng/studenthelsinki/#/home',
+            'https://secure.vihta.com/public-ng/studenthelsinki/#/home'
+          ]
+        ],
+        'careerServices' => [
+          'name' => [
+            'Urapalvelut',
+            'Karriärservicen',
+            'Career Services'
+          ],
+          'url' => [
+            'https://guide.student.helsinki.fi/fi/artikkeli/urapalvelujen-ohjaus-some-ja-yhteystiedot',
+            'https://guide.student.helsinki.fi/sv/artikel/karriarservicens-vagledning-evenemang-och-kontaktuppgifter',
+            'https://guide.student.helsinki.fi/en/article/career-servicesguidance-social-media-and-contact-details'
+          ]
+        ],
+        'exchangeServices' => [
+          'name' => [
+            'Liikkuvuuspalvelut',
+            'Mobilitetsservicen',
+            'International Exchange Services'
+          ],
+          'url' => [
+            'https://guide.student.helsinki.fi/fi/artikkeli/ota-yhteytta-liikkuvuuspalveluihin',
+            'https://guide.student.helsinki.fi/sv/artikel/kontakta-mobilitetsservicen',
+            'https://guide.student.helsinki.fi/en/article/contact-international-exchange-services'
+          ]
+        ],
+        'dataProtectionStatement' => [
+          'name' => [
+            'Tietosuojailmoitus',
+            'Dataskyddsmeddelande',
+            'Data Protection Statement'
+          ],
+          'url' => [
+            'https://guide.student.helsinki.fi/fi/artikkeli/tietosuojailmoitus',
+            'https://guide.student.helsinki.fi/sv/artikel/dataskyddsmeddelande',
+            'https://guide.student.helsinki.fi/en/article/data-protection-statement'
+          ]
+        ]
+      ]
+    ];
+
+    return (object) $footer;
+  }
 }

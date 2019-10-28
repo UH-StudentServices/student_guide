@@ -7,9 +7,11 @@ dependencies:
     - field.field.node.article.body
     - field.field.node.article.field_article_degree_programme
     - field.field.node.article.field_article_domain
+    - field.field.node.article.field_article_faculty
     - field.field.node.article.field_article_paragraph
     - field.field.node.article.field_article_related
     - field.field.node.article.field_domain_source
+    - field.field.node.article.field_keywords
     - field.field.node.article.field_other_education_provider
     - field.field.node.article.field_user_group
     - node.type.article
@@ -25,22 +27,30 @@ content:
   body:
     label: hidden
     type: text_summary_or_trimmed
-    weight: 1
+    weight: 2
     settings:
       trim_length: 200
     third_party_settings: {  }
     region: content
   field_article_degree_programme:
     type: entity_reference_label
-    weight: 0
+    weight: 1
     label: hidden
     settings:
       link: false
     third_party_settings: {  }
     region: content
+  field_article_faculty:
+    type: entity_reference_label
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
   field_user_group:
     type: list_default
-    weight: 2
+    weight: 3
     region: content
     label: hidden
     settings: {  }
@@ -50,6 +60,7 @@ hidden:
   field_article_paragraph: true
   field_article_related: true
   field_domain_source: true
+  field_keywords: true
   field_other_education_provider: true
   langcode: true
   links: true
