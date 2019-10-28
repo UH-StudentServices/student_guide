@@ -5,6 +5,7 @@
  * Contains uhsg_article.module.
  */
 
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
 
 /**
@@ -20,5 +21,52 @@ function uhsg_article_help($route_name, RouteMatchInterface $route_match) {
       return $output;
 
     default:
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_presave().
+ */
+function uhsg_article_node_presave(EntityInterface $entity) {
+  uhsg_article_assign_degree_programmes_by_faculties($entity);
+}
+
+/**
+ * Assign degree programmes by faculties.
+ */
+function uhsg_article_assign_degree_programmes_by_faculties(EntityInterface $entity) {
+  if (in_array($entity->bundle(), ['article'])) {
+    $faculty_terms = $entity->get('field_article_faculty')->referencedEntities();
+    
+    if (!empty($faculty_terms)) {
+
+      // Existing article degree programme term IDs.
+      $existing_article_degree_programme_term_ids = array_map(function ($reference) {
+        return $reference['target_id'];
+      }, $entity->get('field_article_degree_programme')->getValue());
+
+      // Faculty degree programme term IDs.
+      $faculty_degree_programme_term_ids = [];
+
+      foreach ($faculty_terms as $faculty_term) {
+        foreach ($faculty_term->field_faculty_degree_programme as $degree_programme) {
+          $faculty_degree_programme_term_ids[] = $degree_programme->target_id;
+        }
+      }
+
+      // Merge article and faculty degree programme IDs avoiding duplicates.
+      $merged_article_degree_programme_term_ids = array_unique(array_merge(
+        $existing_article_degree_programme_term_ids,
+        $faculty_degree_programme_term_ids
+      ));
+
+      // Reset article degree programme term IDs.
+      $entity->field_article_degree_programme = [];
+
+      // Store merged degree programme term references.
+      foreach ($merged_article_degree_programme_term_ids as $degree_programme_term_id) {
+        $entity->field_article_degree_programme[] = ['target_id' => $degree_programme_term_id];
+      }
+    }
   }
 }
