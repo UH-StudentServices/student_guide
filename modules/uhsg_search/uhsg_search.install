@@ -1,0 +1,26 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for uhsg_search.
+ */
+
+/**
+ * Update table and column collation for key tables to ensure that
+ * sorting nodes and terms alphabetically happens as we expect.
+ * See  patches / sql / README.txt for more info.
+ *  taxonomy_term_field_data
+ *  taxonomy_term_field_revision
+ *  node_field_revision
+ *  node_field_data
+ */
+function uhsg_search_update_8001() {
+  // Convert the tables/columns we commonly use for sorting, such as node title and term name.
+  // uhsg_search_convert_table_collation('taxonomy_term_field_data');
+  uhsg_search_convert_table_collation('taxonomy_term_field_revision');
+  uhsg_search_convert_table_collation('taxonomy_term_field_data');
+  uhsg_search_convert_table_collation('node_field_revision');
+  uhsg_search_convert_table_collation('node_field_data');
+
+  return t("Changed collations to utf8mb4_swedish_ci for key database node and term tables.");
+}
