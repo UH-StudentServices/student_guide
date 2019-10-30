@@ -28,8 +28,7 @@ class RedirectToLogin implements HttpKernelInterface {
    */
   public function handle(Request $request, $type = self::MASTER_REQUEST, $catch = TRUE) {
     if ($type == self::MASTER_REQUEST && $this->hasLoggedIn($request) && !$this->hasTriggered($request)) {
-      // Disable temporarily.
-      // $response = $this->redirectToLoginResponse($request);
+      $response = $this->redirectToLoginResponse($request);
     }
     else {
       $response = $this->httpKernel->handle($request, $type, $catch);
