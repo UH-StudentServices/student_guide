@@ -128,6 +128,9 @@
         },
         "enable-patching": true,
         "patches": {
+            "drupal/samlauth": {
+                "2848809": "https://www.drupal.org/files/issues/2019-04-20/22848809-login-logout-multilinual-fails-13-3.x.patch"
+            },
             "drupal/google_analytics_reports": {
                 "2795115-6-and-2860399-1": "patches/google_analytics_reports.patch",
                 "2850463-2": "https://www.drupal.org/files/issues/error_when_saving-2850463-2.patch"
