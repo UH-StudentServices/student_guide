@@ -1,5 +1,9 @@
 #Changelog
 
+## 1.41
+Release date: xx.xx.xxxx
+
+
 ## 1.40
 Release date: 20.11.2019
 * Change to finnish alphabetical ordering (HUB-413)
