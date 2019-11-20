@@ -1,7 +1,7 @@
 #Changelog
 
-## 1.40-dev
-Release date: xx.xx.xxxx
+## 1.40
+Release date: 20.11.2019
 * Change to finnish alphabetical ordering (HUB-413)
 * Add keyword support to content types (HUB-641)
 * Exclude old news from search results (HUB-642)

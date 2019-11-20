@@ -2,7 +2,7 @@ name: Other education provider filtering
 type: module
 description: Filters certain content by other education provider.
 core: 8.x
-version: VERSION
+version: 1.40
 package: Student Guide
 dependencies:
   - uhsg_other_education_provider
