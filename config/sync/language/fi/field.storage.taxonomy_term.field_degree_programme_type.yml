@@ -6,3 +6,5 @@ settings:
       label: 'Maisteri- ja lisensiaattiohjelmat'
     -
       label: Tohtoriohjelmat
+    -
+      label: 'Ammatilliset jatkokoulutukset'
