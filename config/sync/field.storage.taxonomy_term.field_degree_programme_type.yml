@@ -20,6 +20,9 @@ settings:
     -
       value: doctoral
       label: 'Doctoral Programmes'
+    -
+      value: specialist
+      label: 'Specialist training programmes'
   allowed_values_function: ''
 module: options
 locked: false

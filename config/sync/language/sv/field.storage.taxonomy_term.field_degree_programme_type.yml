@@ -6,3 +6,5 @@ settings:
       label: 'Magister- och licentiatprogrammen'
     -
       label: Doktorandprogrammen
+    -
+      label: 'Yrkesinriktade påbyggnadsutbildningar'
