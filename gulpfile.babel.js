@@ -27,21 +27,21 @@ const sass_config = {
 };
 
 // Compile sass.
-gulp.task('sass', () => {
+gulp.task('sass', (done) => {
   process.chdir(paths.theme);
   gulp.src('sass/**/*.scss')
     .pipe(sass(sass_config).on('error', sass.logError))
-    .pipe(autoPrefixer({
-      browsers: ['last 4 versions']
-    }))
+    .pipe(autoPrefixer())
     .pipe(gulp.dest('css'));
     browserSync.reload();
+
+  done();
 });
 
-gulp.task('watch', ['sass'], () => {
+gulp.task('watch', gulp.series('sass', () => {
   process.chdir(paths.theme);
   gulp.watch('sass/**/*.scss', ['sass']);
-});
+}));
 
 gulp.task('bower', () => {
   process.chdir(paths.theme);
@@ -58,7 +58,7 @@ gulp.task('styleguide-clean', () => {
 });
 
 // Updates styleguide with bower and moves relevant assets to correct path
-gulp.task('styleguide-update',['bower', 'styleguide-clean'], () => {
+gulp.task('styleguide-update', gulp.series('bower', 'styleguide-clean', (done) => {
   process.chdir(paths.theme);
   gulp.src('./bower_components/Styleguide/fonts/**/*')
     .pipe(gulp.dest('./fonts'));
@@ -67,16 +67,20 @@ gulp.task('styleguide-update',['bower', 'styleguide-clean'], () => {
     '!./bower_components/Styleguide/sass/styles.scss'],
     { base: './bower_components/Styleguide/sass' })
     .pipe(gulp.dest('./sass/styleguide'));
-});
+
+  done();
+}));
 
 // Live reload css changes
-gulp.task('browsersync', ['watch'], () => {
+gulp.task('browsersync', gulp.series('watch', (done) => {
   process.chdir(paths.theme);
   browserSync.init({
     proxy: browserSyncProxyTarget,
     reloadDelay: 1000
   });
-});
+
+  done();
+}));
 
 // Linting
 gulp.task('lint', () => {
