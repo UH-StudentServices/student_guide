@@ -1,0 +1,29 @@
+uuid: b5a9c007-4ce5-4a83-a089-92dcf2efee29
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraph_faculty
+    - paragraphs.paragraphs_type.paragraph
+    - taxonomy.vocabulary.faculty
+id: paragraph.paragraph.field_paragraph_faculty
+field_name: field_paragraph_faculty
+entity_type: paragraph
+bundle: paragraph
+label: Faculty
+description: 'Assigning a faculty or multiple faculties will automatically assign the degree programmes on save.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      faculty: faculty
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
