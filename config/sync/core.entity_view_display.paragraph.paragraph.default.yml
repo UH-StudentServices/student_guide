@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.paragraph.paragraph.field_paragraph_body
     - field.field.paragraph.paragraph.field_paragraph_degree_programme
+    - field.field.paragraph.paragraph.field_paragraph_faculty
     - field.field.paragraph.paragraph.field_paragraph_image
     - field.field.paragraph.paragraph.field_paragraph_links
     - field.field.paragraph.paragraph.field_paragraph_other_education
@@ -36,6 +37,14 @@ content:
     settings:
       link: false
     third_party_settings: {  }
+    region: content
+  field_paragraph_faculty:
+    weight: 7
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
     region: content
   field_paragraph_image:
     weight: 5
