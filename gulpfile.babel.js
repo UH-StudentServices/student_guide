@@ -40,7 +40,7 @@ gulp.task('sass', (done) => {
 
 gulp.task('watch', gulp.series('sass', () => {
   process.chdir(paths.theme);
-  gulp.watch('sass/**/*.scss', ['sass']);
+  gulp.watch('sass/**/*.scss', gulp.series('sass'));
 }));
 
 gulp.task('bower', () => {
