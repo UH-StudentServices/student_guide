@@ -1,5 +1,9 @@
 #Changelog
 
+## 1.42
+Release date: xx.xx.xxxx
+
+
 ## 1.41
 Release date: 23.03.2020
 * Adding degree programme type "Specialist training programmes". (HUB-656)
