@@ -11,7 +11,7 @@ field_name: field_news_faculty
 entity_type: node
 bundle: news
 label: Faculty
-description: 'Assigning a faculty or multiple faculties will automatically assign the degree programmes on save.'
+description: 'When assigning a faculty or multiple faculties, the content will be automatically assigned to all degree programmes regarding the faculty/faculties in question.'
 required: false
 translatable: false
 default_value: {  }

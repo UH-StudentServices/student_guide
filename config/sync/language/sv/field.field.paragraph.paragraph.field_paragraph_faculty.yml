@@ -1,2 +1,2 @@
 label: Fakultet
-description: 'När du väljer fakultet väljer du samtidigt alla utbildningsprogram som är kopplade till fakulteten.'
+description: 'När du väljer en eller flera fakulteter kopplas innehållet automatiskt till alla utbildningsprogram ifrågavarande fakulteten/fakulteterna.'
