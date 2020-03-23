@@ -1,7 +1,12 @@
 #Changelog
 
 ## 1.41
-Release date: xx.xx.xxxx
+Release date: 23.03.2020
+* Adding degree programme type "Specialist training programmes". (HUB-656)
+* Updating section titles from h3 to h2 (HUB-669)
+* Adding Faculty-field to Instruction sections (HUB-646)
+* Updating Faculty-field description (HUB-687)
+* Displaying a proper label on English breadcrumb for "Instructions for teaching" (HUB-650)
 
 
 ## 1.40
