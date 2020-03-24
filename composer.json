@@ -65,7 +65,7 @@
         "drupal/domain": "^1.0-alpha14",
         "drupal/text_summary_options": "^1.0",
         "drupal/maxlength": "1.x-dev#3235f5ca1a7532b29612b027f02f949bde2bbe5f",
-        "drupal/scheduler": "1.x-dev#696b13810d903b5413fc56ee0b44d82e4b9d3a8a",
+        "drupal/scheduler": "^1.1",
         "firebase/php-jwt": "^5.0.0",
         "drupal/redirect": "^1.4"
     },
@@ -141,7 +141,8 @@
                 "2902083-2": "https://www.drupal.org/files/issues/translateable_help-2902083-2.patch"
             },
             "drupal/core": {
-                "3025372-21": "https://www.drupal.org/files/issues/2019-04-24/3025372-21.patch"
+                "3025372-21": "https://www.drupal.org/files/issues/2019-04-24/3025372-21.patch",
+                "2791693-38": "https://www.drupal.org/files/issues/2019-03-16/2791693-38.patch"
             }
         }
     }
