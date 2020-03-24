@@ -30,7 +30,7 @@ class DateTimeConstraint {
       // If there's a date input but an empty time input and time input is
       // expected, set an error.
       if (!empty($input['date']) && $element['#date_time_element'] != 'none' && empty($input['time'])) {
-        $form_state->setError($element, t('The %field time is required.', ['%field' => $title]));
+        $form_state->setError($element, t('%field: Time is obligatory information.', ['%field' => $title]));
       }
     }
   }
