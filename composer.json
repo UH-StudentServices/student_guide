@@ -17,18 +17,21 @@
         "jcalderonzumba/gastonjs": "~1.0.2",
         "mikey179/vfsStream": "~1.2",
         "phpunit/phpunit": "^6.0",
-        "symfony/css-selector": "~2.8",
+        "symfony/css-selector": "^3.0",
         "drupal/devel": "^1.0",
-        "squizlabs/php_codesniffer": "2.*",
+        "squizlabs/php_codesniffer": "^3.4",
         "se/selenium-server-standalone": "^2.53",
         "behat/mink-selenium2-driver": "^1.3",
-        "symfony/phpunit-bridge": "^4.1"
+        "symfony/phpunit-bridge": "^3.4",
+        "drupal/core-dev": "^8.8.0"
     },
     "require": {
+        "zaporylie/composer-drupal-optimizations": "^1.1",
         "cweagans/composer-patches": "1.6.5",
         "composer/installers": "^1.0",
         "drupal/admin_toolbar": "^1.27",
-        "drupal/core": "~8.6",
+        "drupal/core-composer-scaffold": "^8.8.0",
+        "drupal/core-recommended": "^8.8",
         "drupal/paragraphs": "^1.9",
         "drupal/pathauto": "^1.4.0",
         "drupal/migrate_plus": "^3.0-beta1",
@@ -43,7 +46,6 @@
         "drupal/contact_block": "^1.4",
         "drupal/honeypot": "^1.29",
         "drupal/google_analytics": "2.x-dev#8a3bd1b63764e88ebe1b96fb362a8aec54d912e9",
-        "drupal-composer/drupal-scaffold": "^2.2",
         "drupal/samlauth": "2.0-alpha0",
         "drupal/google_analytics_reports": "3.0-beta1",
         "drupal/video_embed_field": "^1.4",
@@ -106,6 +108,11 @@
         "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold"
     },
     "extra": {
+        "drupal-scaffold": {
+            "locations": {
+                "web-root": "./web"
+            }
+        },
         "installer-paths": {
             "web/core": [
                 "type:drupal-core"
@@ -127,6 +134,7 @@
             ]
         },
         "enable-patching": true,
+        "composer-exit-on-patch-failure": true,
         "patches": {
             "drupal/samlauth": {
                 "2816997-7": "https://www.drupal.org/files/issues/samlauth-allow_custom_cert_folder-2816997-7.patch",
