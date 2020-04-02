@@ -20,6 +20,6 @@ display:
             offset_label: Offset
       fields:
         title:
-          label: Otsikko
+          label: Title
   page_1:
     display_title: Sivu

@@ -6,7 +6,7 @@ display:
     display_options:
       exposed_form:
         options:
-          submit_button: Filtrera
+          submit_button: Sök
           reset_button_label: Återställ
           exposed_sorts_label: 'Sortera efter'
           sort_asc_label: Stigande
@@ -17,9 +17,9 @@ display:
             previous: '‹ Föregående'
             next: 'Nästa ›'
           expose:
-            items_per_page_label: 'Inlägg per sida'
-            items_per_page_options_all_label: '- Alla -'
-            offset_label: Kompensera
+            items_per_page_label: 'Items per page'
+            items_per_page_options_all_label: '- All -'
+            offset_label: Offset
       fields:
         fid:
           label: Fid
@@ -70,9 +70,9 @@ display:
             previous: '‹ Föregående'
             next: 'Nästa ›'
           expose:
-            items_per_page_label: 'Inlägg per sida'
-            items_per_page_options_all_label: '- Alla -'
-            offset_label: Kompensera
+            items_per_page_label: 'Items per page'
+            items_per_page_options_all_label: '- All -'
+            offset_label: Offset
       fields:
         entity_label:
           label: Objekt
@@ -87,5 +87,5 @@ display:
       arguments:
         fid:
           exception:
-            title: Alla
+            title: All
           title: 'Information om filanvändande för {{ arguments.fid }}'

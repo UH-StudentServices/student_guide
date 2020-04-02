@@ -4,23 +4,28 @@ display:
     display_options:
       exposed_form:
         options:
-          submit_button: Verkställ
+          submit_button: Sök
           reset_button_label: Återställ
           exposed_sorts_label: 'Sortera efter'
           sort_asc_label: Stigande
           sort_desc_label: Fallande
       pager:
         options:
-          tags:
-            previous: ‹‹
-            next: ››
           expose:
             items_per_page_label: 'Items per page'
             items_per_page_options_all_label: '- All -'
             offset_label: Offset
       fields:
-        title:
-          label: Titel
+        redirect_source__path:
           separator: ', '
+        created:
+          label: Created
+      filters:
+        redirect_redirect__uri:
+          expose:
+            label: To
+        language:
+          expose:
+            label: 'Original language'
   page_1:
     display_title: Sida

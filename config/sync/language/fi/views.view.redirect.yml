@@ -4,7 +4,7 @@ display:
     display_options:
       exposed_form:
         options:
-          submit_button: Käytä
+          submit_button: Suodatin
           reset_button_label: 'Palauta oletusarvoihin'
           exposed_sorts_label: Lajittele
           sort_asc_label: Nouseva
@@ -15,17 +15,15 @@ display:
             items_per_page_label: 'Merkintöjä sivua kohti'
             items_per_page_options_all_label: '- Kaikki -'
             offset_label: Offset
-          tags:
-            previous: ‹‹
-            next: ››
       fields:
-        title:
-          label: Title
-        name:
-          label: Author
-        changed:
-          label: 'Viimeksi päivitetty'
-  attachment_1:
-    display_title: Liite
+        created:
+          label: Created
+      filters:
+        redirect_redirect__uri:
+          expose:
+            label: To
+        language:
+          expose:
+            label: 'Original language'
   page_1:
     display_title: Sivu

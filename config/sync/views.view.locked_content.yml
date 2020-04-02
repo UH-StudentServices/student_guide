@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - content_lock
     - node
     - user
 _core:
@@ -14,7 +15,6 @@ description: ''
 tag: ''
 base_table: node_field_data
 base_field: nid
-core: 8.x
 display:
   default:
     display_plugin: default
@@ -235,6 +235,8 @@ display:
           id: status
           expose:
             operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
           group: 1
         is_locked:
           id: is_locked
@@ -259,6 +261,8 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''

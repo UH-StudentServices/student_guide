@@ -14,16 +14,16 @@ display:
       pager:
         options:
           expose:
-            items_per_page_label: 'Inlägg per sida'
-            items_per_page_options_all_label: '- Alla -'
-            offset_label: Kompensera
+            items_per_page_label: 'Items per page'
+            items_per_page_options_all_label: '- All -'
+            offset_label: Offset
           tags:
             previous: ‹‹
             next: ››
       arguments:
         tid:
           exception:
-            title: Alla
+            title: All
           title: '{{ arguments.tid }}'
   page_1:
     display_title: Sida

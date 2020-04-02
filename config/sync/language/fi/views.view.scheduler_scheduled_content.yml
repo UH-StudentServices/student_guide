@@ -1,0 +1,67 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Suodatin
+          reset_button_label: 'Palauta oletusarvoihin'
+          exposed_sorts_label: Lajittele
+          sort_asc_label: Nouseva
+          sort_desc_label: Laskeva
+      fields:
+        title:
+          label: Title
+        name:
+          label: Author
+        status:
+          label: Tila
+          settings:
+            format_custom_true: Published
+            format_custom_false: Unpublished
+        publish_on:
+          label: 'Publish on'
+        unpublish_on:
+          label: 'Unpublish on'
+        operations:
+          label: Toimenpiteet
+      filters:
+        status:
+          expose:
+            label: Tila
+          group_info:
+            label: 'Published status'
+            group_items:
+              1:
+                title: Published
+              2:
+                title: Unpublished
+        type:
+          expose:
+            label: Type
+        title:
+          expose:
+            label: Title
+        langcode:
+          expose:
+            label: Language
+        publish_on:
+          expose:
+            label: 'Publish on'
+          group_info:
+            label: 'Publish on'
+        unpublish_on:
+          expose:
+            label: 'Unpublish on'
+    display_title: Isäntä
+  overview:
+    display_options:
+      tab_options:
+        title: Content
+  user_page:
+    display_options:
+      tab_options:
+        title: Content
+      arguments:
+        uid:
+          exception:
+            title: Kaikki
