@@ -61,7 +61,7 @@
         "drupal/edit_own_user_account_permission": "1.x-dev#68b5906f02df22506faf2a8599f063ba76552a78",
         "uh-studentservices/video_embed_unitube": "^1.0-alpha1",
         "drupal/editor_file": "^1.2",
-        "drush/drush": "8.1.15",
+        "drush/drush": "10.2.2",
         "drupal/view_unpublished": "1.x-dev#aea97e837ea9b1b5522f710239cf7d1cc16f2306",
         "uh-studentservices/uh_courses_embed": "dev-drupal8#09357c35652bef36fdf9ad18ca596186092fd36a",
         "drupal/domain": "^1.0-alpha14",
