@@ -4,17 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ebdfccc154f9ee263084f71ba82642c7",
+    "content-hash": "96955063a7ed69b5ca774e404e82f8f6",
     "packages": [
-        {
-            "name": "RubaXa/Sortable",
-            "version": "v1.4.0",
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/RubaXa/Sortable/archive/1.4.0.zip"
-            },
-            "type": "drupal-library"
-        },
         {
             "name": "UH-StudentServices/uh_courses_embed",
             "version": "dev-drupal8",
@@ -4222,21 +4213,24 @@
         },
         {
             "name": "drupal/search_api_autocomplete",
-            "version": "1.0.0-alpha1",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/search_api_autocomplete.git",
-                "reference": "8.x-1.0-alpha1"
+                "reference": "8.x-1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/search_api_autocomplete-8.x-1.0-alpha1.zip",
-                "reference": "8.x-1.0-alpha1",
-                "shasum": "bd7c15570809e346f60e9f30a6612fd00d36f38e"
+                "url": "https://ftp.drupal.org/files/projects/search_api_autocomplete-8.x-1.2.zip",
+                "reference": "8.x-1.2",
+                "shasum": "606908583c1e0aff57a4215355d1d3e07a1d50d2"
             },
             "require": {
                 "drupal/core": "~8.0",
-                "drupal/search_api": "*"
+                "drupal/search_api": "1.x"
+            },
+            "require-dev": {
+                "drupal/search_api_page": "@dev"
             },
             "type": "drupal-module",
             "extra": {
@@ -4244,28 +4238,34 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-alpha1",
-                    "datestamp": "1495529883",
+                    "version": "8.x-1.2",
+                    "datestamp": "1552333980",
                     "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Alpha releases are not covered by Drupal security advisories."
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
                     }
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0-or-later"
+                "GPL-2.0+"
             ],
             "authors": [
                 {
-                    "name": "drunken monkey",
-                    "homepage": "https://www.drupal.org/user/205582"
+                    "name": "Thomas Seidl",
+                    "homepage": "https://www.drupal.org/u/drunken-monkey"
+                },
+                {
+                    "name": "See other contributors",
+                    "homepage": "https://www.drupal.org/node/1142202/committers"
                 }
             ],
             "description": "Adds autocomplete functionality to searches.",
             "homepage": "https://www.drupal.org/project/search_api_autocomplete",
             "support": {
-                "source": "https://git.drupalcode.org/project/search_api_autocomplete"
+                "source": "http://git.drupal.org/project/search_api_autocomplete.git",
+                "issues": "https://www.drupal.org/project/issues/search_api_autocomplete",
+                "irc": "irc://irc.freenode.org/drupal-search-api"
             }
         },
         {
@@ -6007,6 +6007,15 @@
             ],
             "description": "A polyfill for getallheaders.",
             "time": "2019-03-08T08:55:37+00:00"
+        },
+        {
+            "name": "rubaxa/Sortable",
+            "version": "v1.4.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/RubaXa/Sortable/archive/1.4.0.zip"
+            },
+            "type": "drupal-library"
         },
         {
             "name": "solarium/solarium",

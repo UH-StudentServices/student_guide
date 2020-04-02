@@ -41,7 +41,7 @@
         "drupal/purge_purger_http": "^1.0@beta",
         "drupal/search_api": "^1.8",
         "drupal/search_api_solr": "^1.2",
-        "drupal/search_api_autocomplete": "1.0.0-alpha1",
+        "drupal/search_api_autocomplete": "^1.2",
         "drupal/contact_ajax": "^1.4",
         "drupal/contact_block": "^1.4",
         "drupal/honeypot": "^1.29",
@@ -53,7 +53,7 @@
         "drupal/block_access": "dev-8.x-1.x#1cd59ba6856c897afae2551feaa8e6b7f312489c",
         "drupal/content_lock": "^1.0@alpha",
         "drupal/flag": "4.0.0-alpha3",
-        "rubaxa/sortable": "1.4.0",
+        "rubaxa/Sortable": "1.4.0",
         "drupal/facets": "^1.0@alpha",
         "drupal/config_ignore": "2.1",
         "drupal/draggableviews": "^1.0",
@@ -83,7 +83,7 @@
         "2": {
             "type": "package",
             "package": {
-                "name": "rubaxa/sortable",
+                "name": "rubaxa/Sortable",
                 "version": "v1.4.0",
                 "type": "drupal-library",
                 "dist": {
