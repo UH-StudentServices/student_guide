@@ -26,6 +26,19 @@ function uhsg_news_help($route_name, RouteMatchInterface $route_match) {
 }
 
 /**
+ * Implements hook_element_info_alter().
+ */
+function uhsg_news_element_info_alter(array &$info) {
+  if (isset($info['datetime'])) {
+    // Add our custom datetime validation as the first validator.
+    array_unshift($info['datetime']['#element_validate'], [
+      'Drupal\uhsg_news\Validate\DateTimeConstraint',
+      'validateDateTime',
+    ]);
+  }
+}
+
+/**
  * Implements hook_form_alter().
  */
 function uhsg_news_form_alter(&$form, $form_state, $form_id) {
