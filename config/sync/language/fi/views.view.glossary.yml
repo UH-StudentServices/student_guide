@@ -20,9 +20,9 @@ display:
             next: ››
       fields:
         title:
-          label: Title
+          label: Otsikko
         name:
-          label: Author
+          label: Tekijä
         changed:
           label: 'Viimeksi päivitetty'
   attachment_1:

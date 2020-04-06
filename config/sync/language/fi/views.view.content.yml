@@ -5,16 +5,16 @@ display:
         field_article_degree_programme:
           label: 'Koulutusohjelma (ohje)'
         title:
-          label: Title
+          label: Otsikko
         type:
           label: Sisältötyyppi
         name:
-          label: Author
+          label: Tekijä
         status:
           label: Tila
           settings:
-            format_custom_true: Published
-            format_custom_false: Unpublished
+            format_custom_true: Julkaistu
+            format_custom_false: Julkaisematon
         changed:
           label: Päivitetty
         operations:
@@ -25,10 +25,10 @@ display:
             group_items:
               1:
                 value: '1'
-                title: Published
+                title: Julkaistu
               2:
-                title: Unpublished
-            label: 'Published status'
+                title: Julkaisematon
+            label: Julkaisutila
           expose:
             label: Tila
         field_article_degree_programme_target_id:
@@ -39,16 +39,16 @@ display:
             label: Tekijä
         title:
           expose:
-            label: Title
+            label: Otsikko
         type:
           expose:
             label: Sisältötyyppi
         langcode:
           expose:
-            label: Language
+            label: Kieli
       exposed_form:
         options:
-          submit_button: Suodatin
+          submit_button: Hae
           reset_button_label: 'Palauta oletusarvoihin'
           exposed_sorts_label: Lajittele
           sort_asc_label: Nouseva
@@ -60,7 +60,7 @@ display:
             next: 'Seuraava ›'
             first: '« Ensimmäinen'
             last: 'Viimeinen »'
-      title: Content
+      title: Sisältö
       empty:
         area_text_custom:
           content: 'Ei sisältöä.'
@@ -68,9 +68,9 @@ display:
   page_1:
     display_options:
       menu:
-        title: Content
+        title: Sisältö
       tab_options:
-        title: Content
+        title: Sisältö
     display_title: Sivu
-label: Content
+label: Sisältö
 description: 'Etsi ja ylläpidä sisältöä.'
