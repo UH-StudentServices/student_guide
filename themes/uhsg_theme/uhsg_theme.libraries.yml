@@ -78,3 +78,8 @@ tabs:
   dependencies:
     - core/jquery.once
     - core/jquery.ui.tabs
+
+siteimprove:
+  version: 1.x
+  js:
+    js/siteimprove.js: {}
