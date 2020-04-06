@@ -11,7 +11,8 @@ display:
               2:
                 title: 'Ej publicerad'
             label: 'Status för publicering'
-          expose: {  }
+          expose:
+            label: Status
         title:
           expose:
             label: Titel
@@ -40,9 +41,11 @@ display:
           label: Titel
         type:
           label: Innehållstyp
+          separator: ', '
         name:
           label: Författare
         status:
+          label: Status
           settings:
             format_custom_true: Publicerad
             format_custom_false: 'Ej publicerad'
