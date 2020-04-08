@@ -1,0 +1,15 @@
+uuid: 2bee6f45-f472-4509-99a2-c2c88121936e
+langcode: en
+status: true
+dependencies:
+  config:
+    - flag.flag.my_degree_programmes
+  module:
+    - flag
+id: flag_action.my_degree_programmes_unflag
+label: 'Unflag this item'
+type: taxonomy_term
+plugin: 'flag_action:my_degree_programmes_unflag'
+configuration:
+  flag_id: my_degree_programmes
+  flag_action: unflag
