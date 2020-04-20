@@ -2,12 +2,14 @@ uuid: 79e5162c-9a0d-4f77-b971-d733b7d4264a
 langcode: en
 status: true
 dependencies:
+  config:
+    - flag.flag.my_degree_programmes
   module:
     - flag
-id: flag_action.my_degree_programmes.flag
+id: flag_action.my_degree_programmes_flag
 label: 'Flag this item'
 type: taxonomy_term
-plugin: 'flag_action:my_degree_programmes.flag'
+plugin: 'flag_action:my_degree_programmes_flag'
 configuration:
   flag_id: my_degree_programmes
   flag_action: flag
