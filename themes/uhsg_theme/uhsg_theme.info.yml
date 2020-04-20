@@ -6,6 +6,7 @@ core: 8.x
 version: VERSION
 libraries:
   - uhsg_theme/global-styling
+  - uhsg_theme/siteimprove  
 
 base theme: classy
 
