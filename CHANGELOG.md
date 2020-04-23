@@ -1,5 +1,10 @@
 #Changelog
 
+## 1.xx-dev
+Release date: ??.??.????
+
+
+
 ## 1.42
 Release date: 23.04.2020
 * hub-692 - updating drupal to 8.8.5
