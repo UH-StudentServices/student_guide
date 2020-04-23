@@ -1,8 +1,11 @@
 #Changelog
 
 ## 1.42
-Release date: xx.xx.xxxx
-
+Release date: 23.04.2020
+* hub-692 - updating drupal to 8.8.5
+* hub-700 - add siteimprove script
+* hub-702 - update modules
+* hub-685 - datetime help text
 
 ## 1.41
 Release date: 23.03.2020
