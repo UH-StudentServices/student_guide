@@ -69,7 +69,9 @@
         "drupal/maxlength": "1.x-dev#3235f5ca1a7532b29612b027f02f949bde2bbe5f",
         "drupal/scheduler": "^1.1",
         "firebase/php-jwt": "^5.0.0",
-        "drupal/redirect": "^1.4"
+        "drupal/redirect": "^1.4",
+        "drupal/externalauth": "1.1.0",
+        "onelogin/php-saml": "v2.13.0"
     },
     "repositories": {
         "0": {
