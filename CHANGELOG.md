@@ -1,5 +1,10 @@
 #Changelog
 
+## 1.xx-dev
+Release date: ??.??.????
+
+
+
 ## 1.43
 Release date: 28.04.2020
 * HUB-692 - Revert phpsaml and externalauth to previous version
