@@ -2,7 +2,7 @@ name: Automatic Role Assign
 type: module
 description: This will automatically assign roles for users during the login based on SAML2 attributes.
 core: 8.x
-version: VERSION
+version: 1.43
 packages: Student Guide
 dependencies:
   - uhsg_samlauth
