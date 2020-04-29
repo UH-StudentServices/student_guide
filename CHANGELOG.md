@@ -1,5 +1,10 @@
 #Changelog
 
+## 1.xx-dev
+Release date: ??.??.????
+
+
+
 ## 1.44
 Release date: 29.04.2020
 * HUB-708 - Add patch to drupal/core to make translations work properly.
