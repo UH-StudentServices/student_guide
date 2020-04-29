@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "af8a4f3012c5f78e7b7bdc7f20ead3d4",
+    "content-hash": "da2d19f85165be7463f2a804fc27b38f",
     "packages": [
         {
             "name": "UH-StudentServices/uh_courses_embed",
@@ -2249,7 +2249,8 @@
                 },
                 "patches_applied": {
                     "3025372-33": "https://www.drupal.org/files/issues/2020-03-24/3025372-33.patch",
-                    "2791693-38": "https://www.drupal.org/files/issues/2019-03-16/2791693-38.patch"
+                    "2791693-38": "https://www.drupal.org/files/issues/2019-03-16/2791693-38.patch",
+                    "3101344-20": "https://www.drupal.org/files/issues/2020-02-12/translations_not_save_invalid_path-3101344-20.patch"
                 }
             },
             "autoload": {

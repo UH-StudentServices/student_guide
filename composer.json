@@ -152,7 +152,8 @@
             },
             "drupal/core": {
                 "3025372-33": "https://www.drupal.org/files/issues/2020-03-24/3025372-33.patch",
-                "2791693-38": "https://www.drupal.org/files/issues/2019-03-16/2791693-38.patch"
+                "2791693-38": "https://www.drupal.org/files/issues/2019-03-16/2791693-38.patch",
+                "3101344-20": "https://www.drupal.org/files/issues/2020-02-12/translations_not_save_invalid_path-3101344-20.patch"
             }
         }
     }
