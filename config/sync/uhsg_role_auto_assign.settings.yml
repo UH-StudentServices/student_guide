@@ -6,8 +6,8 @@ group_to_roles:
     group_name: hy-ypa-opa-kosu
     rid: content_editor
   -
-    group_name: grp-guide-editor
+    group_name: grp-guide-editor-dev
     rid: content_editor
   -
-    group_name: grp-guide-bulletin
+    group_name: grp-guide-bulletin-dev
     rid: bulletin_manager
