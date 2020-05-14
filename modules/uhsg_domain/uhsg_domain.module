@@ -10,6 +10,14 @@ use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\uhsg_domain\DomainService;
 
 /**
+ * A default fallback language which may be used if language is unspecified.
+ *
+ * @var string
+ */
+const UHSG_DOMAIN_DEFAULT_LANGUAGE = 'fi';
+
+
+/**
  * Implements hook_help().
  */
 function uhsg_domain_help($route_name, RouteMatchInterface $route_match) {
@@ -85,5 +93,49 @@ function uhsg_domain_form_alter(&$form, &$form_state, $form_id) {
         $form['actions'][$key]['#submit'][] = 'domain_source_form_submit';
       }
     }
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ *
+ * Guide needs to work as part of "studies", with specific language prefixes:
+ *  https://studies.it.helsinki.fi/ohjeet
+ *  https://studies.it.helsinki.fi/instructions
+ *  https://studies.it.helsinki.fi/instruktioner
+ *
+ * The domain hosts several (non-Drupal) tools and services in its docroot,
+ * and the most straight forward way to implement above language specific
+ * url scheme is to make Drupal believe that it owns the root level,
+ * the frontpage of Studies domain. But it doesn't. If every URL has a
+ * language prefix, this should not be a problem.
+ *
+ * The purpose for this link altering hook is to ensure that each link
+ * is in fact language specific. Although the Teaching-domain lives as a
+ * separate entity that is not part of studies, we enforce the language prefix
+ * in an identical fashion.
+ *
+ * TODO: we likely need to further evolve this based on user feedback on where
+ *       it works well and where it needs adjusting.
+ */
+function uhsg_domain_link_alter(&$variables) {
+  $url = $variables['url'];
+
+  // Dont alter outgoing, unrouted links.
+  if (!$url->isRouted() || $url->isExternal()) {
+    return;
+  }
+
+  // Remaining links should always have some kind of language prefix.
+  if (empty($variables['options']['language'])){
+    // Could also use LanguageInterface::TYPE_URL
+    //                LanguageInterface::TYPE_CONTENT
+    //                LanguageInterface::TYPE_INTERFACE
+    $fallback_language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    // Use secondary fallback to "fi" if getCurrentLanguage is ever empty.
+    if (empty($fallback_language)){
+      $fallback_language = UHSG_DOMAIN_DEFAULT_LANGUAGE;
+    }
+    $variables['options']['language'] = \Drupal::languageManager()->getLanguage($fallback_language);
   }
 }
