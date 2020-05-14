@@ -3,9 +3,9 @@ session:
 url:
   source: path_prefix
   prefixes:
-    en: en
-    fi: fi
-    sv: sv
+    en: instructions
+    fi: ohjeet
+    sv: instruktioner
   domains:
     en: ''
     fi: ''
