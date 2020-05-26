@@ -2,7 +2,7 @@
 
 ## 1.xx-dev
 Release date: ??.??.????
-
+* HUB-714 - Adding an automatically generated sitemap.xml
 
 
 ## 1.44
