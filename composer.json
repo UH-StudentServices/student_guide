@@ -72,7 +72,8 @@
         "drupal/redirect": "^1.4",
         "drupal/externalauth": "1.1.0",
         "onelogin/php-saml": "v2.13.0",
-        "drupal/country_path": "^1.4"
+        "drupal/country_path": "^1.4",
+        "drupal/simple_sitemap": "^3.6"
     },
     "repositories": {
         "0": {
