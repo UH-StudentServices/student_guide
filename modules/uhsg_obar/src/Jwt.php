@@ -158,9 +158,9 @@ class Jwt {
             'Bulletin archive'
           ],
           'url' => [
-            'https://guide.student.helsinki.fi/fi/news',
-            'https://guide.student.helsinki.fi/sv/news',
-            'https://guide.student.helsinki.fi/en/news'
+            'https://studies.helsinki.fi/ohjeet/news',
+            'https://studies.helsinki.fi/instruktioner/news',
+            'https://studies.helsinki.fi/instructions/news'
           ]
         ],
         'studentServices' => [
@@ -170,9 +170,9 @@ class Jwt {
             'Student Services'
           ],
           'url' => [
-            'https://guide.student.helsinki.fi/fi/artikkeli/opiskelijaneuvonta',
-            'https://guide.student.helsinki.fi/sv/artikel/studentservicen',
-            'https://guide.student.helsinki.fi/en/article/student-services'
+            'https://studies.helsinki.fi/ohjeet/artikkeli/opiskelijaneuvonta',
+            'https://studies.helsinki.fi/instruktioner/artikel/studentservicen',
+            'https://studies.helsinki.fi/instructions/article/student-services'
           ]
         ],
         'studentServicesAppointment' => [
@@ -194,9 +194,9 @@ class Jwt {
             'Career Services'
           ],
           'url' => [
-            'https://guide.student.helsinki.fi/fi/artikkeli/urapalvelujen-ohjaus-some-ja-yhteystiedot',
-            'https://guide.student.helsinki.fi/sv/artikel/karriarservicens-vagledning-evenemang-och-kontaktuppgifter',
-            'https://guide.student.helsinki.fi/en/article/career-servicesguidance-social-media-and-contact-details'
+            'https://studies.helsinki.fi/ohjeet/artikkeli/urapalvelujen-ohjaus-some-ja-yhteystiedot',
+            'https://studies.helsinki.fi/instruktioner/artikel/karriarservicens-vagledning-evenemang-och-kontaktuppgifter',
+            'https://studies.helsinki.fi/instructions/article/career-servicesguidance-social-media-and-contact-details'
           ]
         ],
         'exchangeServices' => [
@@ -206,9 +206,9 @@ class Jwt {
             'International Exchange Services'
           ],
           'url' => [
-            'https://guide.student.helsinki.fi/fi/artikkeli/ota-yhteytta-liikkuvuuspalveluihin',
-            'https://guide.student.helsinki.fi/sv/artikel/kontakta-mobilitetsservicen',
-            'https://guide.student.helsinki.fi/en/article/contact-international-exchange-services'
+            'https://studies.helsinki.fi/ohjeet/artikkeli/ota-yhteytta-liikkuvuuspalveluihin',
+            'https://studies.helsinki.fi/instruktioner/artikel/kontakta-mobilitetsservicen',
+            'https://studies.helsinki.fi/instructions/article/contact-international-exchange-services'
           ]
         ],
         'dataProtectionStatement' => [
@@ -218,9 +218,9 @@ class Jwt {
             'Data Protection Statement'
           ],
           'url' => [
-            'https://guide.student.helsinki.fi/fi/artikkeli/tietosuojailmoitus',
-            'https://guide.student.helsinki.fi/sv/artikel/dataskyddsmeddelande',
-            'https://guide.student.helsinki.fi/en/article/data-protection-statement'
+            'https://studies.helsinki.fi/ohjeet/artikkeli/tietosuojailmoitus',
+            'https://studies.helsinki.fi/instruktioner/artikel/dataskyddsmeddelande',
+            'https://studies.helsinki.fi/instructions/article/data-protection-statement'
           ]
         ]
       ]

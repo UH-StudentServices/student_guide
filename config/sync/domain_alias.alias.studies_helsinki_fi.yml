@@ -1,9 +1,0 @@
-uuid: 166b34be-89ed-4877-aa18-b0183821c9be
-langcode: en
-status: true
-dependencies: {  }
-id: studies_helsinki_fi
-domain_id: guide_student_helsinki_fi
-pattern: studies.helsinki.fi
-redirect: 0
-environment: default

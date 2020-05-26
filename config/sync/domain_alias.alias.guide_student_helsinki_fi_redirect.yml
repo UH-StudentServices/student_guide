@@ -1,0 +1,9 @@
+uuid: d3641aab-8761-4a86-a669-15452730cc14
+langcode: fi
+status: true
+dependencies: {  }
+id: guide_student_helsinki_fi_redirect
+domain_id: guide_student_helsinki_fi
+pattern: guide.student.helsinki.fi
+redirect: 301
+environment: default
