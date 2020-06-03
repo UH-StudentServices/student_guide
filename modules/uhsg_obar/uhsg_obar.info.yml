@@ -2,7 +2,7 @@ name: Obar
 type: module
 description: Mounts Obar header and footer.
 core: 8.x
-version: 1.45
+version: VERSION
 package: Student Guide
 dependencies:
   - uhsg_domain
