@@ -3,6 +3,8 @@
 ## 1.xx-dev
 Release date: ??.??.????
 * HUB-714 - Adding an automatically generated sitemap.xml
+* HUB-711 & HUB-725 - Language prefix, domain and other configuration changes
+for compatibility with the new student services
 
 
 ## 1.44
