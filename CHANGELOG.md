@@ -1,7 +1,7 @@
 #Changelog
 
-## 1.xx-dev
-Release date: ??.??.????
+## 1.45
+Release date: 03.06.2020
 * HUB-714 - Adding an automatically generated sitemap.xml
 * HUB-711 & HUB-725 - Language prefix, domain and other configuration changes
 for compatibility with the new student services
