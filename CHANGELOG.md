@@ -1,7 +1,8 @@
-#Changelog
+# Changelog
 
 ## 1.xx-dev
 Release date: ??.??.????
+* HUB-710 - Updating feedback email
 * HUB-728 - Removing cookie consent bar from Student guide
 
 
