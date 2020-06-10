@@ -1,4 +1,9 @@
-#Changelognn## 1.xx-devnRelease date: ??.??.????nn
+#Changelog
+
+## 1.xx-dev
+Release date: ??.??.????
+* HUB-728 - Removing cookie consent bar from Student guide
+
 
 ## 1.45
 Release date: 03.06.2020
