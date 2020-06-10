@@ -4,7 +4,12 @@
  * Implements hook_page_attachments().
  */
 function uhsg_cookie_consent_page_attachments(array &$page) {
-  if (\Drupal::currentUser()->isAnonymous()) {
+  // Show cookie consent bar only for anonymous users and on teaching
+  // instructions. Student guide will show a consent bar through obar. 
+  $is_anonymous = \Drupal::currentUser()->isAnonymous();
+  $is_teaching_domain = $is_anonymous && \Drupal::service('uhsg_domain.domain')->isTeachingDomain();
+
+  if ($is_anonymous && $is_teaching_domain) {
     $page['#attached']['library'][] = 'uhsg_cookie_consent/uhsg-cookie-consent';
     $page['#attached']['library'][] = 'uhsg_cookie_consent/cookieconsent2';
     $page['#attached']['drupalSettings']['uhsg_cookie_consent']['options'] = [
