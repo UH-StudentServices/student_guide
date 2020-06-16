@@ -1,7 +1,7 @@
 # Changelog
 
-## 1.xx-dev
-Release date: ??.??.????
+## 1.46
+Release date: 16.06.2020
 * HUB-712 - Studies proxy redirects (manually)
 * HUB-739 - Disable XML sitemap paging because it doesnt work with studies proxy.
 * HUB-710 - Updating feedback email
