@@ -2,6 +2,8 @@
 
 ## 1.xx-dev
 Release date: ??.??.????
+* HUB-712 - Studies proxy redirects (manually)
+* HUB-739 - Disable XML sitemap paging because it doesnt work with studies proxy.
 * HUB-710 - Updating feedback email
 * HUB-728 - Removing cookie consent bar from Student guide
 
