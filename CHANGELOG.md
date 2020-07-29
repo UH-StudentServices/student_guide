@@ -1,7 +1,7 @@
 #Changelog
 
-## 1.xx-dev
-Release date: ??.??.????
+## 1.47
+Release date: 29.07.2020
 * HUB-745 - Updating Drupal to 8.8.8
 
 
