@@ -2,7 +2,7 @@
 
 ## 1.xx-dev
 Release date: ??.??.????
-
+* HUB-745 - Updating Drupal to 8.8.8
 
 
 ## 1.46
