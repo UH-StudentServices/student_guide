@@ -1,0 +1,11 @@
+<?php
+
+/**
+ * Implements hook_simple_sitemap_sitemap_types_alter().
+ */
+function uhsg_sitemap_simple_sitemap_sitemap_types_alter(array &$sitemap_types) {
+  // Use our custom sitemap generator for the default type.
+  if (!empty($sitemap_types['default_hreflang']['sitemapGenerator'])) {
+    $sitemap_types['default_hreflang']['sitemapGenerator'] = 'guide';
+  }
+}
