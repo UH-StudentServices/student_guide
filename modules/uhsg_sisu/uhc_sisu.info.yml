@@ -1,0 +1,5 @@
+name: UHSG Sisu
+type: module
+description: Doo-Sisu integration features
+core_version_requirement: ^8.8 || ^9
+package: Student Guide

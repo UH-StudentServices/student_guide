@@ -1,0 +1,4 @@
+services:
+  uhcg_sisu.graphql:
+    class: Drupal\uhsg_sisu\Services\SisuService
+    arguments: ["@settings", "@logger.factory", "@serialization.json", "@cache.default", "@datetime.time"]
