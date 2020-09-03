@@ -9,7 +9,16 @@ use Symfony\Component\HttpKernel\HttpKernelInterface;
 
 class RedirectToLogin implements HttpKernelInterface {
 
-  const COOKIE_NAME_LOGGED = 'OPINTONI_HAS_LOGGED_IN';
+  // https://jira.it.helsinki.fi/browse/HUB-750
+  // Redirect feature is a broken relic from the past, and after new studies
+  // proxy activation, it can cause redirect to wrong urls and confusion,
+  // especially if user has an old OO cookie. This SSO is causing more issues
+  // than it solves, and migh be totally refactored in near future.
+  // For now the redirect can be disabled, and that is easiest to do
+  // by renaming:
+  // OPINTONI_HAS_LOGGED_IN => OPINTONI_HAS_LOGGED_IN_DISABLED.
+  // Revert renaming if we have a sudden need to return it.
+  const COOKIE_NAME_LOGGED = 'OPINTONI_HAS_LOGGED_IN_DISABLED';
   const COOKIE_NAME_TRIGGERED = 'OPINTONI_HAS_LOGGED_IN_HAS_TRIGGERED';
 
   /**
