@@ -3,6 +3,7 @@
 ## 1.xx-dev
 Release date: ??.??.????
 
+* HUB-750 - Login redirect based on OPINTONI_HAS_LOGGED_IN-cookie has been disabled.
 
 
 ## 1.47
