@@ -52,13 +52,6 @@ class LinkToInstructionsForStudents extends BlockBase {
     $url = \Drupal::service('uhsg_domain.domain')->getStudentDomainUrl();
     $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
 
-    return $url . $language;
-  }
-
-  private function getUrl() {
-    $url = \Drupal::service('uhsg_domain.domain')->getStudentDomainUrl();
-    $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
-
     // Need to fetch correct language prefix, not just langcode,
     // although it by default matches the prefix. Moving to new studies domain
     // changes the requirements.
