@@ -60,7 +60,7 @@ class LinkToInstructionsForStudents extends BlockBase {
     }else{
       $language_prefix = $language;
     }
-    return $url . $language;
+    return $url . $language_prefix;
   }
 
   private function getLinkItemMarkup($uri, $label, $id) {
