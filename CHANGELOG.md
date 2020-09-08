@@ -4,7 +4,7 @@
 Release date: ??.??.????
 
 * HUB-750 - Login redirect based on OPINTONI_HAS_LOGGED_IN-cookie has been disabled.
-
+* HUB-747 - Fix language prefix in some teaching -> guide links.
 
 ## 1.47
 Release date: 29.07.2020
