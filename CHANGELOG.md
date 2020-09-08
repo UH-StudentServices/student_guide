@@ -3,6 +3,7 @@
 ## 1.xx-dev
 Release date: ??.??.????
 
+* HUB-747 - Fix language prefix in some teaching -> guide links.
 
 
 ## 1.47

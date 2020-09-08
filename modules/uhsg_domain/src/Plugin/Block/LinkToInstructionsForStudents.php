@@ -52,7 +52,15 @@ class LinkToInstructionsForStudents extends BlockBase {
     $url = \Drupal::service('uhsg_domain.domain')->getStudentDomainUrl();
     $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
 
-    return $url . $language;
+    // Need to fetch correct language prefix, not just langcode,
+    // although it by default matches the prefix. Moving to new studies domain
+    // changes the requirements.
+    if($prefixes = \Drupal::config('language.negotiation')->get('url.prefixes')) {
+      $language_prefix = $prefixes[$language];
+    }else{
+      $language_prefix = $language;
+    }
+    return $url . $language_prefix;
   }
 
   private function getLinkItemMarkup($uri, $label, $id) {
