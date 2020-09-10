@@ -2,7 +2,7 @@ name: Other education provider
 type: module
 description: Keeps track of the other education provider.
 core: 8.x
-version: VERSION
+version: 1.48
 package: Student Guide
 dependencies:
   - taxonomy
