@@ -1,5 +1,10 @@
 #Changelog
 
+## 1.xx
+Release date: xx.xx.xxxx
+
+
+
 ## 1.48
 Release date: 10.09.2020
 * HUB-750 - Login redirect based on OPINTONI_HAS_LOGGED_IN-cookie has been disabled.
