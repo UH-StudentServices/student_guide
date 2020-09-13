@@ -7,7 +7,7 @@ imports:
   # - { resource: "vendor/palantirnet/drupal-rector/config/drupal-8/drupal-8.3-deprecations.yml" }
   # - { resource: "vendor/palantirnet/drupal-rector/config/drupal-8/drupal-8.4-deprecations.yml" }
   # - { resource: "vendor/palantirnet/drupal-rector/config/drupal-8/drupal-8.5-deprecations.yml" }
-  # - { resource: "vendor/palantirnet/drupal-rector/config/drupal-8/drupal-8.6-deprecations.yml" }
+  # - { resource: " /palantirnet/drupal-rector/config/drupal-8/drupal-8.6-deprecations.yml" }
   # - { resource: "vendor/palantirnet/drupal-rector/config/drupal-8/drupal-8.7-deprecations.yml" }
   # - { resource: "vendor/palantirnet/drupal-rector/config/drupal-8/drupal-8.8-deprecations.yml" }
 
@@ -16,15 +16,23 @@ parameters:
     - 'web/core'
     - 'web/core/modules'
     - 'web/modules'
-    - 'web/profiles'
     - 'web/profiles/student_guide/modules'
+    #- 'web/profiles'
 
   exclude_paths:
     # This path is used by the upgrade_status module.
     - '*/upgrade_status/tests/modules/*'
+    - */vendor/drupal/coder/*
     # If you would like to skip test directories, uncomment the following lines:
-    # - '*/tests/*'
-    # - '*/Tests/*'
+    - '*/tests/*'
+    - '*/Tests/*'
+    - '*/Test/*'
+    - '*/simpletest/*'
+    - 'web/profiles/student_guide/vendor/composer/ClassLoader.php'
+    - 'web/profiles/student_guide/vendor/*'
+    - 'web/profiles/student_guide/modules/uhsg_sitemap/*'
+    - '*/student_guide/modules/uhsg_sitemap/*'
+    - '*/SiteimproveHreflangSitemapType/*'
 
   file_extensions:
     - module
