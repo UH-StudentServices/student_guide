@@ -3,6 +3,7 @@ type: module
 description: Alters the feedback email content.
 core: 8.x
 version: VERSION
+core_version_requirement: ^8 || ^9
 package: Student Guide
 dependencies:
   - contact

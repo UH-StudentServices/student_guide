@@ -3,6 +3,7 @@ type: module
 description: This will automatically assign roles for users during the login based on SAML2 attributes.
 core: 8.x
 version: VERSION
+core_version_requirement: ^8 || ^9
 packages: Student Guide
 dependencies:
   - uhsg_samlauth

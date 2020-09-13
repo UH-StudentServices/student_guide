@@ -3,6 +3,7 @@ type: module
 descipriton: Specifies migrations that is done for student guide.
 core: 8.x
 version: VERSION
+core_version_requirement: ^8 || ^9
 package: Migration
 dependencies:
   - migrate_source_csv

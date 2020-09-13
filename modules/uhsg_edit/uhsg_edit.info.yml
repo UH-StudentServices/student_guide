@@ -3,6 +3,7 @@ type: module
 description: Adds customizations to node edit view.
 core: 8.x
 version: VERSION
+core_version_requirement: ^8 || ^9
 package: Student Guide
 dependencies:
   - content_lock
