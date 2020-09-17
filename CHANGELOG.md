@@ -1,7 +1,7 @@
 #Changelog
 
-## 1.xx
-Release date: xx.xx.xxxx
+## 1.xx-dev
+Release date: ??.??.????
 * HUB-769 - Updating Drupal to 8.8.10.
 
 
