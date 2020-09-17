@@ -2,7 +2,7 @@
 
 ## 1.xx
 Release date: xx.xx.xxxx
-
+* HUB-769 - Updating Drupal to 8.8.10.
 
 
 ## 1.48
