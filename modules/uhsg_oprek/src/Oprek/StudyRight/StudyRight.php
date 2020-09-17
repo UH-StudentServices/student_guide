@@ -189,6 +189,17 @@ class StudyRight implements StudyRightInterface {
 
     // Finally merge both assembled into one array of targeted codes
     $this->targetedCodes = array_merge($this->targetedCodesSingles, $this->targetedCodesConcatonated);
+
+    // Log the codes to make corner case debugging simpler.
+    $targetedCodes = array(
+      'targetedCodes' => (array) $this->targetedCodes,
+      'targetedCodesSingles' => (array) $this->targetedCodesSingles,
+      'targetedCodesConcatonated' => (array) $this->targetedCodesConcatonated,
+    );
+    \Drupal::logger('uhsg_oprek')->info('StudyRights/TargetedCodes were parsed for uid %uid as : <pre>@targeted_codes</pre>', [
+      '%uid' => \Drupal::currentUser()->id(),
+      '@targeted_codes' => print_r($targetedCodes, TRUE),
+    ]);
   }
 
 }
