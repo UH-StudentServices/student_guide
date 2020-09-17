@@ -2,5 +2,5 @@ name: Chat
 type: module
 description: Embed chat widgets Smartsupp and Giosg.
 core: 8.x
-version: VERSION
+version: 1.49
 package: Student Guide
