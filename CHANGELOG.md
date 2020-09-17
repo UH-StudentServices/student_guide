@@ -1,5 +1,10 @@
 #Changelog
 
+## 1.xx-dev
+Release date: ??.??.????
+
+
+
 ## 1.49
 Release date: 17.09.2020
 * HUB-769 - Updating Drupal to 8.8.10.
