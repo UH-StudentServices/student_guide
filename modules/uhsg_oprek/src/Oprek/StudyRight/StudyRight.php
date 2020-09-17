@@ -96,6 +96,7 @@ class StudyRight implements StudyRightInterface {
        * @endcode
        */
       foreach ($this->properties['state'] as $state) {
+        $state = (array) $state;
         if (!empty($this->knownStates[$state['text']])) {
           return $this->knownStates[$state['text']];
         }
@@ -111,6 +112,7 @@ class StudyRight implements StudyRightInterface {
     $return = [];
     if (!empty($this->properties['elements']) && is_array($this->properties['elements'])) {
       foreach ($this->properties['elements'] as $element_raw) {
+        $element_raw = (array) $element_raw;
         $element = new Element($element_raw);
         $element->setDate($this->date);
         if ($element->isActive()) {
