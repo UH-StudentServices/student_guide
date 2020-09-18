@@ -2,6 +2,8 @@
 
 namespace Drupal\uhsg_oprek\Oprek\StudyRight;
 
+use Drupal\Core\Site\Settings;
+
 /**
  * Represents StudyRight object.
  */
@@ -13,6 +15,15 @@ class StudyRight implements StudyRightInterface {
    * @var array
    */
   protected $properties;
+
+  /**
+   * Add debug logging?
+   * This can be overridden in settings.local.php with:
+   *   $settings['uhsg_oprek_add_debug_logging'] = TRUE;
+   *
+   * @var bool
+   */
+  const UHSG_OPREK_ADD_DEBUG_LOGGING = FALSE;
 
   /**
    * Contains a list of known states and their identifier strings that we look
@@ -127,7 +138,7 @@ class StudyRight implements StudyRightInterface {
    * {@inheritdoc}
    */
   public function getTargetedCodes() {
-    if (is_null($this->targetedCodes)) {
+    if (empty($this->targetedCodes)) {
       $this->targetedCodes = [];
       $this->assembleSingularTargetedCodes();
       $this->assembleConcatenatedTargetedCodes();
@@ -193,15 +204,17 @@ class StudyRight implements StudyRightInterface {
     $this->targetedCodes = array_merge($this->targetedCodesSingles, $this->targetedCodesConcatonated);
 
     // Log the codes to make corner case debugging simpler.
-    $targetedCodes = array(
-      'targetedCodes' => (array) $this->targetedCodes,
-      'targetedCodesSingles' => (array) $this->targetedCodesSingles,
-      'targetedCodesConcatonated' => (array) $this->targetedCodesConcatonated,
-    );
-    \Drupal::logger('uhsg_oprek')->info('StudyRights/TargetedCodes were parsed for uid %uid as : <pre>@targeted_codes</pre>', [
-      '%uid' => \Drupal::currentUser()->id(),
-      '@targeted_codes' => print_r($targetedCodes, TRUE),
-    ]);
+    if (!empty($this->targetedCodes) && Settings::get('uhsg_oprek_add_debug_logging', self::UHSG_OPREK_ADD_DEBUG_LOGGING)) {
+      $targetedCodes = array(
+        'targetedCodes' => (array) $this->targetedCodes,
+        'targetedCodesSingles' => (array) $this->targetedCodesSingles,
+        'targetedCodesConcatonated' => (array) $this->targetedCodesConcatonated,
+      );
+      \Drupal::logger('uhsg_oprek')->info('StudyRights/TargetedCodes were parsed for uid %uid as : <pre>@targeted_codes</pre>', [
+        '%uid' => \Drupal::currentUser()->id(),
+        '@targeted_codes' => print_r($targetedCodes, TRUE),
+      ]);
+    }
   }
 
 }
