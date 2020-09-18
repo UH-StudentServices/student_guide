@@ -165,7 +165,9 @@ class OprekService implements OprekServiceInterface {
      * @return array
      */
     protected function chooseMockResponse(bool $complex = TRUE) {
+      $complexity = 'simple';
       if($complex){
+        $complexity = 'complex';
         $mock_json = '{
           "md5": "686b62d963808b243679c7853e01fc3a",
           "status": 200,
@@ -1731,8 +1733,8 @@ class OprekService implements OprekServiceInterface {
     }
 
     if (Settings::get('uhsg_oprek_add_debug_logging', self::UHSG_OPREK_ADD_DEBUG_LOGGING)) {
-      \Drupal::logger('uhsg_oprek')->info('GetStudyRights was executed with mock response: <pre> @mock </pre>', [
-        '@mock' => print_r($mock_json['data'], TRUE),
+      \Drupal::logger('uhsg_oprek')->info('GetStudyRights was executed with mock response of type <i>@complexity </i>.', [
+        '@complexity' => $complexity,
       ]);
     }
 
