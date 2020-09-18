@@ -32,6 +32,14 @@ class OprekService implements OprekServiceInterface {
   const UHSG_OPREK_USE_MOCK_RESPONSE = FALSE;
 
   /**
+   * Use complex mock responses if any? This can be overridden in settings.local.php with:
+   *   $settings['uhsg_oprek_use_mock_response_complex'] = FALSE;
+   *
+   * @var bool
+   */
+  const UHSG_OPREK_USE_MOCK_RESPONSE_COMPLEX = TRUE;
+
+  /**
    * Add debug logging?
    * This can be overridden in settings.local.php with:
    *   $settings['uhsg_oprek_add_debug_logging'] = TRUE;
@@ -39,7 +47,6 @@ class OprekService implements OprekServiceInterface {
    * @var bool
    */
   const UHSG_OPREK_ADD_DEBUG_LOGGING = FALSE;
-
 
   /**
    * OprekService constructor.
@@ -138,15 +145,28 @@ class OprekService implements OprekServiceInterface {
     return [];
   }
 
+
   /**
    * Gets data payload from the body of a mock response.
    * @return array
    */
   protected function getDataFromMockResponse() {
-    // This mock json is a real life example of a person (person_id anonymized)
-    // which earlier versions had trouble with. For example recognizing
-    // what is the primary study right/subject failed in rare cases.
-    $mock_json = '{
+    // Choose from simple or complex mock json. Both are
+    // real life examples but with person_id anonymized.
+    // In earlier versions recognizing the primary study right/subject
+    // of the complex response failed in some cases.
+    return $this->chooseMockResponse(Settings::get('uhsg_oprek_use_mock_response_complex', self::UHSG_OPREK_USE_MOCK_RESPONSE_COMPLEX));
+  }
+
+    /**
+     * Choose a mock response from a simple or more complex option.
+     * Both are real world cases with only person ID anymized.
+     * @param $complex - if TRUE, using complex response.
+     * @return array
+     */
+    protected function chooseMockResponse(bool $complex = TRUE) {
+      if($complex){
+        $mock_json = '{
           "md5": "686b62d963808b243679c7853e01fc3a",
           "status": 200,
           "elapsed": 0.025998623,
@@ -893,9 +913,818 @@ class OprekService implements OprekServiceInterface {
               }
           ]
       }';
+    }else{
+      $mock_json = '{
+          "md5": "1bfd0b8aaf367c20f36cc8040d546ed8",
+          "status": 200,
+          "elapsed": 0.027522776,
+          "data": [
+              {
+                  "degree_date": "2017-01-15T22:00:00.000Z",
+                  "duration_months": 53,
+                  "extent_code": 1,
+                  "person_id": 90000000,
+                  "study_start_date": "2012-07-31T21:00:00.000Z",
+                  "state": [
+                      {
+                          "langcode": "fi",
+                          "text": "Suorittanut tutkinnon"
+                      },
+                      {
+                          "langcode": "sv",
+                          "text": "Avlagt examen"
+                      },
+                      {
+                          "langcode": "en",
+                          "text": "Graduated"
+                      }
+                  ],
+                  "faculty_code": "H10",
+                  "elements": [
+                      {
+                          "element_id": 10,
+                          "code": "00849",
+                          "start_date": "2012-07-31T21:00:00.000Z",
+                          "end_date": "2017-01-15T22:00:00.000Z",
+                          "name": [
+                              {
+                                  "langcode": "fi",
+                                  "text": "Teologian kandidaatti"
+                              },
+                              {
+                                  "langcode": "sv",
+                                  "text": "Teologie kandidat"
+                              },
+                              {
+                                  "langcode": "en",
+                                  "text": "Bachelor of Theology"
+                              }
+                          ]
+                      },
+                      {
+                          "element_id": 15,
+                          "code": "A2004",
+                          "start_date": "2012-07-31T21:00:00.000Z",
+                          "end_date": "2017-01-15T22:00:00.000Z",
+                          "name": [
+                              {
+                                  "langcode": "fi",
+                                  "text": "Valtioneuvoston asetus (794/2004) yliopistojen tutkinnoista"
+                              },
+                              {
+                                  "langcode": "sv",
+                                  "text": "Statsrådets förordning (794/2004) om universitetsexamina"
+                              },
+                              {
+                                  "langcode": "en",
+                                  "text": "Government Decree (794/2004) on University Degrees"
+                              }
+                          ]
+                      },
+                      {
+                          "element_id": 20,
+                          "code": "120009",
+                          "start_date": "2012-07-31T21:00:00.000Z",
+                          "end_date": "2013-07-30T21:00:00.000Z",
+                          "name": [
+                              {
+                                  "langcode": "fi",
+                                  "text": "Kirkkojen ja yhteiskunnan teologisiin tehtäviin valmistava koulutusohjelma"
+                              },
+                              {
+                                  "langcode": "sv",
+                                  "text": "Utbildningsprogrammet för kyrkliga och samhälleliga teologiska uppgifter"
+                              },
+                              {
+                                  "langcode": "en",
+                                  "text": "Degree Programme in Theological Functions in Churches and Society"
+                              }
+                          ]
+                      },
+                      {
+                          "element_id": 20,
+                          "code": "120013",
+                          "start_date": "2013-07-31T21:00:00.000Z",
+                          "end_date": "2017-01-15T22:00:00.000Z",
+                          "name": [
+                              {
+                                  "langcode": "fi",
+                                  "text": "Koulun uskonnonopettajan tehtäviin valmistava koulutusohjelma"
+                              },
+                              {
+                                  "langcode": "sv",
+                                  "text": "Utbildningsprogrammet för skolornas religionslärare"
+                              },
+                              {
+                                  "langcode": "en",
+                                  "text": "Degree Programme in Religion Teacher Education"
+                              }
+                          ]
+                      },
+                      {
+                          "element_id": 30,
+                          "code": "130016",
+                          "start_date": "2013-07-31T21:00:00.000Z",
+                          "end_date": "2017-01-15T22:00:00.000Z",
+                          "name": [
+                              {
+                                  "langcode": "fi",
+                                  "text": "Kahden opetettavan aineen (Uskonto ja psykologia) linja"
+                              },
+                              {
+                                  "langcode": "sv",
+                                  "text": "Linje för lärare i två undervisningsämnen (Religion och psykologi)"
+                              },
+                              {
+                                  "langcode": "en",
+                                  "text": "Teacher Education, Two School-Subjects Line (Religion and Psychology)"
+                              }
+                          ]
+                      },
+                      {
+                          "element_id": 40,
+                          "code": "03101",
+                          "start_date": "2012-07-31T21:00:00.000Z",
+                          "end_date": "2017-01-15T22:00:00.000Z",
+                          "name": [
+                              {
+                                  "langcode": "fi",
+                                  "text": "Kirkkohistoria"
+                              },
+                              {
+                                  "langcode": "sv",
+                                  "text": "Kyrkohistoria"
+                              },
+                              {
+                                  "langcode": "en",
+                                  "text": "Church History"
+                              }
+                          ]
+                      }
+                  ],
+                  "admission_date": "2012-07-16T21:00:00.000Z",
+                  "studyright_id": 90648547,
+                  "end_date": "2017-01-15T22:00:00.000Z",
+                  "duration_remaining_months": -45,
+                  "priority": 30,
+                  "start_date": "2012-07-31T21:00:00.000Z",
+                  "extent": [
+                      {
+                          "langcode": "fi",
+                          "text": "Alempi korkeakoulututkinto"
+                      },
+                      {
+                          "langcode": "sv",
+                          "text": "Lägre högskoleexamen"
+                      },
+                      {
+                          "langcode": "en",
+                          "text": "Bachelor\'s Degree"
+                      }
+                  ],
+                  "organisation_name": [
+                      {
+                          "langcode": "fi",
+                          "text": "Teologinen tiedekunta"
+                      },
+                      {
+                          "langcode": "sv",
+                          "text": "Teologiska fakulteten"
+                      },
+                      {
+                          "langcode": "en",
+                          "text": "Faculty of Theology"
+                      }
+                  ],
+                  "cancel_date": null,
+                  "organisation_code": "H10"
+              },
+              {
+                  "degree_date": "2019-02-24T22:00:00.000Z",
+                  "duration_months": 78,
+                  "extent_code": 2,
+                  "person_id": 90648546,
+                  "study_start_date": "2017-01-16T22:00:00.000Z",
+                  "state": [
+                      {
+                          "langcode": "fi",
+                          "text": "Suorittanut tutkinnon"
+                      },
+                      {
+                          "langcode": "sv",
+                          "text": "Avlagt examen"
+                      },
+                      {
+                          "langcode": "en",
+                          "text": "Graduated"
+                      }
+                  ],
+                  "faculty_code": "H10",
+                  "elements": [
+                      {
+                          "element_id": 10,
+                          "code": "00331",
+                          "start_date": "2012-07-31T21:00:00.000Z",
+                          "end_date": "2019-02-24T22:00:00.000Z",
+                          "name": [
+                              {
+                                  "langcode": "fi",
+                                  "text": "Teologian maisteri"
+                              },
+                              {
+                                  "langcode": "sv",
+                                  "text": "Teologie magister"
+                              },
+                              {
+                                  "langcode": "en",
+                                  "text": "Master of Theology"
+                              }
+                          ]
+                      },
+                      {
+                          "element_id": 15,
+                          "code": "A2004",
+                          "start_date": "2012-07-31T21:00:00.000Z",
+                          "end_date": "2019-02-24T22:00:00.000Z",
+                          "name": [
+                              {
+                                  "langcode": "fi",
+                                  "text": "Valtioneuvoston asetus (794/2004) yliopistojen tutkinnoista"
+                              },
+                              {
+                                  "langcode": "sv",
+                                  "text": "Statsrådets förordning (794/2004) om universitetsexamina"
+                              },
+                              {
+                                  "langcode": "en",
+                                  "text": "Government Decree (794/2004) on University Degrees"
+                              }
+                          ]
+                      },
+                      {
+                          "element_id": 20,
+                          "code": "120009",
+                          "start_date": "2012-07-31T21:00:00.000Z",
+                          "end_date": "2013-07-30T21:00:00.000Z",
+                          "name": [
+                              {
+                                  "langcode": "fi",
+                                  "text": "Kirkkojen ja yhteiskunnan teologisiin tehtäviin valmistava koulutusohjelma"
+                              },
+                              {
+                                  "langcode": "sv",
+                                  "text": "Utbildningsprogrammet för kyrkliga och samhälleliga teologiska uppgifter"
+                              },
+                              {
+                                  "langcode": "en",
+                                  "text": "Degree Programme in Theological Functions in Churches and Society"
+                              }
+                          ]
+                      },
+                      {
+                          "element_id": 20,
+                          "code": "120013",
+                          "start_date": "2013-07-31T21:00:00.000Z",
+                          "end_date": "2019-02-24T22:00:00.000Z",
+                          "name": [
+                              {
+                                  "langcode": "fi",
+                                  "text": "Koulun uskonnonopettajan tehtäviin valmistava koulutusohjelma"
+                              },
+                              {
+                                  "langcode": "sv",
+                                  "text": "Utbildningsprogrammet för skolornas religionslärare"
+                              },
+                              {
+                                  "langcode": "en",
+                                  "text": "Degree Programme in Religion Teacher Education"
+                              }
+                          ]
+                      },
+                      {
+                          "element_id": 30,
+                          "code": "130016",
+                          "start_date": "2013-07-31T21:00:00.000Z",
+                          "end_date": "2019-02-24T22:00:00.000Z",
+                          "name": [
+                              {
+                                  "langcode": "fi",
+                                  "text": "Kahden opetettavan aineen (Uskonto ja psykologia) linja"
+                              },
+                              {
+                                  "langcode": "sv",
+                                  "text": "Linje för lärare i två undervisningsämnen (Religion och psykologi)"
+                              },
+                              {
+                                  "langcode": "en",
+                                  "text": "Teacher Education, Two School-Subjects Line (Religion and Psychology)"
+                              }
+                          ]
+                      },
+                      {
+                          "element_id": 40,
+                          "code": "03110",
+                          "start_date": "2012-07-31T21:00:00.000Z",
+                          "end_date": "2019-02-24T22:00:00.000Z",
+                          "name": [
+                              {
+                                  "langcode": "fi",
+                                  "text": "Yleinen kirkkohistoria"
+                              },
+                              {
+                                  "langcode": "sv",
+                                  "text": "Allmän kyrkohistoria"
+                              },
+                              {
+                                  "langcode": "en",
+                                  "text": "General Church History"
+                              }
+                          ]
+                      }
+                  ],
+                  "admission_date": "2012-07-16T21:00:00.000Z",
+                  "studyright_id": 90648588,
+                  "end_date": "2019-02-24T22:00:00.000Z",
+                  "duration_remaining_months": -19,
+                  "priority": 30,
+                  "start_date": "2012-07-31T21:00:00.000Z",
+                  "extent": [
+                      {
+                          "langcode": "fi",
+                          "text": "Ylempi korkeakoulututkinto"
+                      },
+                      {
+                          "langcode": "sv",
+                          "text": "Högre högskoleexamen"
+                      },
+                      {
+                          "langcode": "en",
+                          "text": "Master\'s Degree"
+                      }
+                  ],
+                  "organisation_name": [
+                      {
+                          "langcode": "fi",
+                          "text": "Kirkkohistoria (Church history)"
+                      },
+                      {
+                          "langcode": "sv",
+                          "text": "Institutionen för kyrkohistoria"
+                      },
+                      {
+                          "langcode": "en",
+                          "text": "Department of Church History"
+                      }
+                  ],
+                  "cancel_date": null,
+                  "organisation_code": "H1002"
+              },
+              {
+                  "degree_date": null,
+                  "duration_months": 71,
+                  "extent_code": 99,
+                  "person_id": 90648546,
+                  "study_start_date": "2013-07-31T21:00:00.000Z",
+                  "state": [
+                      {
+                          "langcode": "fi",
+                          "text": "Toissijainen"
+                      },
+                      {
+                          "langcode": "sv",
+                          "text": "Sekundär"
+                      },
+                      {
+                          "langcode": "en",
+                          "text": "Secondary"
+                      }
+                  ],
+                  "faculty_code": null,
+                  "elements": [
+                      {
+                          "element_id": 50,
+                          "code": "477500",
+                          "start_date": "2013-07-31T21:00:00.000Z",
+                          "end_date": "2019-07-30T21:00:00.000Z",
+                          "name": [
+                              {
+                                  "langcode": "fi",
+                                  "text": "PSY100 Psykologian perusopinnot"
+                              },
+                              {
+                                  "langcode": "sv",
+                                  "text": "PSY100 Grundstudier i psykologi"
+                              },
+                              {
+                                  "langcode": "en",
+                                  "text": "PSY100 Basic Studies in Psychology"
+                              }
+                          ]
+                      },
+                      {
+                          "element_id": 50,
+                          "code": "477401",
+                          "start_date": "2013-07-31T21:00:00.000Z",
+                          "end_date": "2019-07-30T21:00:00.000Z",
+                          "name": [
+                              {
+                                  "langcode": "fi",
+                                  "text": "PSY200B Psykologian aineopinnot sivuaineopiskelijoille"
+                              },
+                              {
+                                  "langcode": "sv",
+                                  "text": "PSY200B Psykologi, ämnesstudier (biämne)"
+                              },
+                              {
+                                  "langcode": "en",
+                                  "text": "PSY200B Psychology, Intermediate Studies (Minor Subject)"
+                              }
+                          ]
+                      }
+                  ],
+                  "admission_date": "2013-06-10T21:00:00.000Z",
+                  "studyright_id": 96490415,
+                  "end_date": "2019-07-30T21:00:00.000Z",
+                  "duration_remaining_months": -14,
+                  "priority": 2,
+                  "start_date": "2013-07-31T21:00:00.000Z",
+                  "extent": [
+                      {
+                          "langcode": "fi",
+                          "text": "Muut erilliset opinnot"
+                      },
+                      {
+                          "langcode": "sv",
+                          "text": "Andra fristående studier"
+                      },
+                      {
+                          "langcode": "en",
+                          "text": "Other Non-Degree Studies"
+                      }
+                  ],
+                  "organisation_name": [
+                      {
+                          "langcode": "fi",
+                          "text": "Psykologia"
+                      },
+                      {
+                          "langcode": "sv",
+                          "text": "Psykologi"
+                      },
+                      {
+                          "langcode": "en",
+                          "text": "Psychology"
+                      }
+                  ],
+                  "cancel_date": null,
+                  "organisation_code": "6302"
+              },
+              {
+                  "degree_date": null,
+                  "duration_months": 56,
+                  "extent_code": 10,
+                  "person_id": 90648546,
+                  "study_start_date": "2014-05-26T21:00:00.000Z",
+                  "state": [
+                      {
+                          "langcode": "fi",
+                          "text": "Toissijainen"
+                      },
+                      {
+                          "langcode": "sv",
+                          "text": "Sekundär"
+                      },
+                      {
+                          "langcode": "en",
+                          "text": "Secondary"
+                      }
+                  ],
+                  "faculty_code": "H40",
+                  "elements": [
+                      {
+                          "element_id": 0,
+                          "code": "00901",
+                          "start_date": "2014-05-26T21:00:00.000Z",
+                          "end_date": "2019-02-24T22:00:00.000Z",
+                          "name": [
+                              {
+                                  "langcode": "fi",
+                                  "text": "Erilliset opinnot, arvosanat yms."
+                              },
+                              {
+                                  "langcode": "sv",
+                                  "text": "Fristående studier"
+                              },
+                              {
+                                  "langcode": "en",
+                                  "text": "Non-Degree Studies"
+                              }
+                          ]
+                      },
+                      {
+                          "element_id": 40,
+                          "code": "03402",
+                          "start_date": "2014-05-26T21:00:00.000Z",
+                          "end_date": "2019-02-24T22:00:00.000Z",
+                          "name": [
+                              {
+                                  "langcode": "fi",
+                                  "text": "Englantilainen filologia"
+                              },
+                              {
+                                  "langcode": "sv",
+                                  "text": "Engelsk filologi"
+                              },
+                              {
+                                  "langcode": "en",
+                                  "text": "English Philology"
+                              }
+                          ]
+                      }
+                  ],
+                  "admission_date": "2014-05-26T21:00:00.000Z",
+                  "studyright_id": 102286834,
+                  "end_date": "2019-02-24T22:00:00.000Z",
+                  "duration_remaining_months": -19,
+                  "priority": 2,
+                  "start_date": "2014-05-26T21:00:00.000Z",
+                  "extent": [
+                      {
+                          "langcode": "fi",
+                          "text": "Valinnaiset / Sivuaine"
+                      },
+                      {
+                          "langcode": "sv",
+                          "text": "Valfria / Biämne"
+                      },
+                      {
+                          "langcode": "en",
+                          "text": "Secondary Subject"
+                      }
+                  ],
+                  "organisation_name": [
+                      {
+                          "langcode": "fi",
+                          "text": "Englantilainen filologia"
+                      },
+                      {
+                          "langcode": "sv",
+                          "text": "Engelsk filologi"
+                      },
+                      {
+                          "langcode": "en",
+                          "text": "English Philology"
+                      }
+                  ],
+                  "cancel_date": null,
+                  "organisation_code": "4032"
+              },
+              {
+                  "degree_date": null,
+                  "duration_months": 52,
+                  "extent_code": 2,
+                  "person_id": 90648546,
+                  "study_start_date": "2019-07-31T21:00:00.000Z",
+                  "state": [
+                      {
+                          "langcode": "fi",
+                          "text": "Ensisijainen"
+                      },
+                      {
+                          "langcode": "sv",
+                          "text": "Primär studierätt"
+                      },
+                      {
+                          "langcode": "en",
+                          "text": "Primary"
+                      }
+                  ],
+                  "faculty_code": "H60",
+                  "elements": [
+                      {
+                          "element_id": 10,
+                          "code": "00337",
+                          "start_date": "2019-07-31T21:00:00.000Z",
+                          "end_date": "2023-12-30T22:00:00.000Z",
+                          "name": [
+                              {
+                                  "langcode": "fi",
+                                  "text": "Kasvatustieteen maisteri"
+                              },
+                              {
+                                  "langcode": "sv",
+                                  "text": "Pedagogie magister"
+                              },
+                              {
+                                  "langcode": "en",
+                                  "text": "Master of Arts (Education)"
+                              }
+                          ]
+                      },
+                      {
+                          "element_id": 15,
+                          "code": "A2004",
+                          "start_date": "2019-07-31T21:00:00.000Z",
+                          "end_date": "2023-12-30T22:00:00.000Z",
+                          "name": [
+                              {
+                                  "langcode": "fi",
+                                  "text": "Valtioneuvoston asetus (794/2004) yliopistojen tutkinnoista"
+                              },
+                              {
+                                  "langcode": "sv",
+                                  "text": "Statsrådets förordning (794/2004) om universitetsexamina"
+                              },
+                              {
+                                  "langcode": "en",
+                                  "text": "Government Decree (794/2004) on University Degrees"
+                              }
+                          ]
+                      },
+                      {
+                          "element_id": 20,
+                          "code": "MH60_001",
+                          "start_date": "2019-07-31T21:00:00.000Z",
+                          "end_date": "2023-12-30T22:00:00.000Z",
+                          "name": [
+                              {
+                                  "langcode": "fi",
+                                  "text": "Kasvatustieteiden maisteriohjelma"
+                              },
+                              {
+                                  "langcode": "sv",
+                                  "text": "Magisterprogrammet i pedagogik"
+                              },
+                              {
+                                  "langcode": "en",
+                                  "text": "Master´s Programme in Education"
+                              }
+                          ]
+                      },
+                      {
+                          "element_id": 30,
+                          "code": "SH60_042",
+                          "start_date": "2019-07-31T21:00:00.000Z",
+                          "end_date": "2023-12-30T22:00:00.000Z",
+                          "name": [
+                              {
+                                  "langcode": "fi",
+                                  "text": "Yleinen ja aikuiskasvatustiede"
+                              },
+                              {
+                                  "langcode": "sv",
+                                  "text": "Allmän- och vuxenpedagogik"
+                              },
+                              {
+                                  "langcode": "en",
+                                  "text": "General and Adult Education"
+                              }
+                          ]
+                      }
+                  ],
+                  "admission_date": "2019-06-30T21:00:00.000Z",
+                  "studyright_id": 130726863,
+                  "end_date": "2023-12-30T22:00:00.000Z",
+                  "duration_remaining_months": 39,
+                  "priority": 1,
+                  "start_date": "2019-07-31T21:00:00.000Z",
+                  "extent": [
+                      {
+                          "langcode": "fi",
+                          "text": "Ylempi korkeakoulututkinto"
+                      },
+                      {
+                          "langcode": "sv",
+                          "text": "Högre högskoleexamen"
+                      },
+                      {
+                          "langcode": "en",
+                          "text": "Master\'s Degree"
+                      }
+                  ],
+                  "organisation_name": [
+                      {
+                          "langcode": "fi",
+                          "text": "Kasvatustieteellinen tiedekunta"
+                      },
+                      {
+                          "langcode": "sv",
+                          "text": "Pedagogiska fakulteten"
+                      },
+                      {
+                          "langcode": "en",
+                          "text": "Faculty of Educational Sciences"
+                      }
+                  ],
+                  "cancel_date": null,
+                  "organisation_code": "H60"
+              },
+              {
+                  "degree_date": null,
+                  "duration_months": 9,
+                  "extent_code": 9,
+                  "person_id": 90648546,
+                  "study_start_date": "2020-05-10T21:00:00.000Z",
+                  "state": [
+                      {
+                          "langcode": "fi",
+                          "text": "Toissijainen"
+                      },
+                      {
+                          "langcode": "sv",
+                          "text": "Sekundär"
+                      },
+                      {
+                          "langcode": "en",
+                          "text": "Secondary"
+                      }
+                  ],
+                  "faculty_code": null,
+                  "elements": [
+                      {
+                          "element_id": 0,
+                          "code": "00997",
+                          "start_date": "2020-05-10T21:00:00.000Z",
+                          "end_date": "2021-02-23T22:00:00.000Z",
+                          "name": [
+                              {
+                                  "langcode": "fi",
+                                  "text": "Muu koulutus, joka ei johda tutkintoon"
+                              },
+                              {
+                                  "langcode": "sv",
+                                  "text": "Andra fristående studier"
+                              },
+                              {
+                                  "langcode": "en",
+                                  "text": "Other Non-Degree Studies"
+                              }
+                          ]
+                      },
+                      {
+                          "element_id": 60,
+                          "code": "AYEDUK304",
+                          "start_date": "2020-05-10T21:00:00.000Z",
+                          "end_date": "2021-02-23T22:00:00.000Z",
+                          "name": [
+                              {
+                                  "langcode": "fi",
+                                  "text": "Avoin yo: Oppiminen ja asiantuntijuus työssä, organisaatiossa ja verkostoissa"
+                              },
+                              {
+                                  "langcode": "sv",
+                                  "text": "Öppna uni: Lärande och expertis i arbetslivet, organisationer och nätverk"
+                              },
+                              {
+                                  "langcode": "en",
+                                  "text": "Open uni: Learning and expertise in the working life, organisations and networks"
+                              }
+                          ]
+                      }
+                  ],
+                  "admission_date": "2020-05-10T21:00:00.000Z",
+                  "studyright_id": 136361664,
+                  "end_date": "2021-02-23T22:00:00.000Z",
+                  "duration_remaining_months": 5,
+                  "priority": 2,
+                  "start_date": "2020-05-10T21:00:00.000Z",
+                  "extent": [
+                      {
+                          "langcode": "fi",
+                          "text": "Avoin yliopisto"
+                      },
+                      {
+                          "langcode": "sv",
+                          "text": "Öppet universitet"
+                      },
+                      {
+                          "langcode": "en",
+                          "text": "Open University"
+                      }
+                  ],
+                  "organisation_name": [
+                      {
+                          "langcode": "fi",
+                          "text": "Avoin yliopisto"
+                      },
+                      {
+                          "langcode": "sv",
+                          "text": "Öppna universitetet"
+                      },
+                      {
+                          "langcode": "en",
+                          "text": "Open University"
+                      }
+                  ],
+                  "cancel_date": null,
+                  "organisation_code": "9301"
+              }
+          ]
+      }';
+    }
 
-    // Ensure arrays everywhere.
-    $mock_json = (array) json_decode($mock_json);
+    // Enforce arrays everywhere.
+    $mock_json = (array) json_decode($mock_json, TRUE);
     $mock_json['data'] = (array) $mock_json['data'];
     foreach($mock_json['data'] as $key => $value){
       $mock_json['data'][$key] = (array) $value;
