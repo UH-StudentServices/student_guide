@@ -16,6 +16,7 @@ use Drupal\uhsg_samlauth\AttributeParser;
 use Drupal\uhsg_samlauth\AttributeParserInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Drupal\Core\Messenger\MessengerInterface;
+use Drupal\Core\Site\Settings;
 
 /**
  * Synchronise relevant user attributes given by SAML authentication during SAML
@@ -54,6 +55,15 @@ class UserSyncSubscriber implements EventSubscriberInterface {
    * @var \Drupal\Core\Messenger\MessengerInterface
    */
   protected $messenger;
+
+  /**
+   * Add debug logging?
+   * This can be overridden in settings.local.php with:
+   *   $settings['uhsg_oprek_add_debug_logging'] = TRUE;
+   *
+   * @var bool
+   */
+  const UHSG_OPREK_ADD_DEBUG_LOGGING = FALSE;
 
   public function __construct(ConfigFactoryInterface $configFactory, OprekServiceInterface $oprekService, FlagServiceInterface $flagService, EntityTypeManagerInterface $entityTypeManager, LoggerChannel $logger, MessengerInterface $messenger) {
     $this->config = $configFactory->get('uhsg_user_sync.settings');
@@ -301,6 +311,8 @@ class UserSyncSubscriber implements EventSubscriberInterface {
     // Collect all known degree programme codes, so we know which Terms we
     // should flag when getting matches.
     $known_degree_programmes = $this->getAllKnownDegreeProgrammes();
+    $known_degree_programmes_array = (array) $known_degree_programmes;
+    $known_degree_programme_keys = array_keys($known_degree_programmes_array);
 
     // Keep track of new technical degree programmes
     $added = 0;
@@ -311,9 +323,26 @@ class UserSyncSubscriber implements EventSubscriberInterface {
       $primary_field_name = $this->config->get('primary_field_name');
 
       foreach ($study_rights as $study_right) {
+        $targeted_codes_array = array();
+        foreach ($study_right->getTargetedCodes() as $targeted_code) {
+          $targeted_codes_array[] = array(
+            'code' => $targeted_code->getCode(),
+            'is_primary' => $targeted_code->isPrimary(),
+          );
+        }
+
+        if (!empty($targeted_codes_array) && Settings::get('uhsg_oprek_add_debug_logging', self::UHSG_OPREK_ADD_DEBUG_LOGGING)) {
+          // Debug (a lot of) study right data. Enable only temporarily.
+          \Drupal::logger('uhsg_oprek')->info('setTechnicalDegreeProgrammes(),
+            targeted codes are: <pre>@targeted_codes</pre> and
+            degree_programmes: <pre>@degree_programmes</pre>', [
+            '@targeted_codes' => print_r($targeted_codes_array, TRUE),
+            '@degree_programmes' => print_r($known_degree_programme_keys, TRUE),
+          ]);
+        }
+
         foreach ($study_right->getTargetedCodes() as $targeted_code) {
           if (isset($known_degree_programmes[$targeted_code->getCode()])) {
-
             // Flag the degree programme
             $flag = $this->flagService->getFlagById('my_degree_programmes');
 
