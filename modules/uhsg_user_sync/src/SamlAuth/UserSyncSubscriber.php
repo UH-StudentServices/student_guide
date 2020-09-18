@@ -311,6 +311,8 @@ class UserSyncSubscriber implements EventSubscriberInterface {
     // Collect all known degree programme codes, so we know which Terms we
     // should flag when getting matches.
     $known_degree_programmes = $this->getAllKnownDegreeProgrammes();
+    $known_degree_programmes_array = (array) $known_degree_programmes;
+    $known_degree_programme_keys = array_keys($known_degree_programmes_array);
 
     // Keep track of new technical degree programmes
     $added = 0;
@@ -321,11 +323,16 @@ class UserSyncSubscriber implements EventSubscriberInterface {
       $primary_field_name = $this->config->get('primary_field_name');
 
       foreach ($study_rights as $study_right) {
-        if (Settings::get('uhsg_oprek_add_debug_logging', self::UHSG_OPREK_ADD_DEBUG_LOGGING)) {
+        $targeted_codes_array = array();
+        foreach ($study_right->getTargetedCodes() as $targeted_code) {
+          $targeted_codes_array[] = array(
+            'code' => $targeted_code->getCode(),
+            'is_primary' => $targeted_code->isPrimary(),
+          );
+        }
+
+        if (!empty($targeted_codes_array) && Settings::get('uhsg_oprek_add_debug_logging', self::UHSG_OPREK_ADD_DEBUG_LOGGING)) {
           // Debug (a lot of) study right data. Enable only temporarily.
-          $known_degree_programmes_array = (array) $known_degree_programmes;
-          $targeted_codes_array = (array) $study_right->getTargetedCodes();
-          $known_degree_programme_keys = array_keys($known_degree_programmes_array);
           \Drupal::logger('uhsg_oprek')->info('setTechnicalDegreeProgrammes(),
             targeted codes are: <pre>@targeted_codes</pre> and
             degree_programmes: <pre>@degree_programmes</pre>', [
@@ -336,9 +343,6 @@ class UserSyncSubscriber implements EventSubscriberInterface {
 
         foreach ($study_right->getTargetedCodes() as $targeted_code) {
           if (isset($known_degree_programmes[$targeted_code->getCode()])) {
-
-
-
             // Flag the degree programme
             $flag = $this->flagService->getFlagById('my_degree_programmes');
 
