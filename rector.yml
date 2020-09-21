@@ -22,7 +22,7 @@ parameters:
   exclude_paths:
     # This path is used by the upgrade_status module.
     - '*/upgrade_status/tests/modules/*'
-    - */vendor/drupal/coder/*
+    - '*/vendor/drupal/coder/*'
     # If you would like to skip test directories, uncomment the following lines:
     - '*/tests/*'
     - '*/Tests/*'
