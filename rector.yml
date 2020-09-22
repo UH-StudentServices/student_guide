@@ -28,11 +28,10 @@ parameters:
     - '*/Tests/*'
     - '*/Test/*'
     - '*/simpletest/*'
-    - 'web/profiles/student_guide/vendor/composer/ClassLoader.php'
-    - 'web/profiles/student_guide/vendor/*'
-    - 'web/profiles/student_guide/modules/uhsg_sitemap/*'
+    - '*/web/profiles/student_guide/vendor/composer/ClassLoader.php'
+    #- '*/web/profiles/student_guide/vendor/*'
     - '*/student_guide/modules/uhsg_sitemap/*'
-    - '*/SiteimproveHreflangSitemapType/*'
+    #- '*/SiteimproveHreflangSitemapType/*'
 
   file_extensions:
     - module
