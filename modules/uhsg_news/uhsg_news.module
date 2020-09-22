@@ -143,11 +143,11 @@ function uhsg_news_send_news_by_email(Node $node) {
     $result = \Drupal::service('plugin.manager.mail')->mail('uhsg_news', 'email_news', $to, $langcode, $params, NULL, TRUE);
 
     if ($result['result'] !== TRUE) {
-      drupal_set_message(t('Email sending failed.'), 'error');
+      \Drupal::messenger()->addError(t('Email sending failed.'));
     }
     else {
       $node->set('field_news_email_sent', 1);
-      drupal_set_message(t('Email sent to @email.', ['@email' => $bcc]));
+      \Drupal::messenger()->addStatus(t('Email sent to @email.', ['@email' => $bcc]));
     }
   }
 }
