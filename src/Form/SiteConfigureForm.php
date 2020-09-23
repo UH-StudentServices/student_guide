@@ -122,11 +122,11 @@ class SiteConfigureForm extends FormBase {
       }
 
       if (!drupal_verify_install_file($this->root . '/' . $settings_file, FILE_EXIST | FILE_READABLE | FILE_NOT_WRITABLE) || !drupal_verify_install_file($this->root . '/' . $this->sitePath, FILE_NOT_WRITABLE, 'dir')) {
-        drupal_set_message(t('All necessary changes to %dir and %file have been made, so you should remove write permissions to them now in order to avoid security risks. If you are unsure how to do so, consult the <a href="@handbook_url">online handbook</a>.', [
+        $this->messenger()->addWarning(t('All necessary changes to %dir and %file have been made, so you should remove write permissions to them now in order to avoid security risks. If you are unsure how to do so, consult the <a href="@handbook_url">online handbook</a>.', [
           '%dir' => $this->sitePath,
           '%file' => $settings_file,
           '@handbook_url' => 'http://drupal.org/server-permissions',
-        ]), 'warning');
+        ]));
       }
     }
 

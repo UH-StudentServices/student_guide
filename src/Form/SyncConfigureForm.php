@@ -2,6 +2,7 @@
 
 namespace Drupal\student_guide\Form;
 
+use Drupal\Core\File\FileSystemInterface;
 use Drupal\Core\Archiver\ArchiveTar;
 use Drupal\Core\Config\FileStorage;
 use Drupal\Core\Form\FormBase;
@@ -66,7 +67,7 @@ class SyncConfigureForm extends FormBase {
     // If we've customised the sync directory ensure its good to go.
     if ($sync_directory != config_get_config_directory(CONFIG_SYNC_DIRECTORY)) {
       // Ensure it exists and is writeable.
-      if (!file_prepare_directory($sync_directory, FILE_CREATE_DIRECTORY | FILE_MODIFY_PERMISSIONS)) {
+      if (!\Drupal::service('file_system')->prepareDirectory($sync_directory, FileSystemInterface::CREATE_DIRECTORY | FileSystemInterface::MODIFY_PERMISSIONS)) {
         $form_state->setErrorByName('sync_directory', t('The directory %directory could not be created or could not be made writable. To proceed with the installation, either create the directory and modify its permissions manually or ensure that the installer has the permissions to create it automatically. For more information, see the <a href="@handbook_url">online handbook</a>.', [
           '%directory' => $sync_directory,
           '@handbook_url' => 'http://drupal.org/server-permissions',
@@ -109,10 +110,10 @@ class SyncConfigureForm extends FormBase {
           $files[] = $file['filename'];
         }
         $archiver->extractList($files, config_get_config_directory(CONFIG_SYNC_DIRECTORY));
-        drupal_set_message($this->t('Your configuration files were successfully uploaded, ready for import.'));
+        $this->messenger()->addStatus($this->t('Your configuration files were successfully uploaded, ready for import.'));
       }
       catch (\Exception $e) {
-        drupal_set_message($this->t('Could not extract the contents of the tar file. The error message is <em>@message</em>', ['@message' => $e->getMessage()]), 'error');
+        $this->messenger()->addError($this->t('Could not extract the contents of the tar file. The error message is <em>@message</em>', ['@message' => $e->getMessage()]));
       }
       drupal_unlink($path);
     }
