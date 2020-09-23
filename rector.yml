@@ -13,25 +13,34 @@ imports:
 
 parameters:
   autoload_paths:
-    - 'web/core'
-    - 'web/core/modules'
-    - 'web/modules'
-    - 'web/profiles/student_guide/modules'
+    - '/app/build/web/core'
+    - '/app/build/web/core/modules'
+    - '/app/build/web/modules'
+    - '/app/build/web/modules/contrib'
+    - '/app/build/web/profiles/student_guide/modules'
+    - '/app/build/web/profiles/student_guide/src'
+    - '/app/build/web/profiles/student_guide/themes'
+    - '/app/build/web/profiles/student_guide/student_guide.install'
+    - '/app/build/web/profiles/student_guide/student_guide.profile'
     #- 'web/profiles'
 
   exclude_paths:
     # This path is used by the upgrade_status module.
-    - '*/upgrade_status/tests/modules/*'
     - '*/vendor/drupal/coder/*'
     # If you would like to skip test directories, uncomment the following lines:
+    - '*/upgrade_status/tests/modules/*'
     - '*/tests/*'
     - '*/Tests/*'
     - '*/Test/*'
     - '*/simpletest/*'
-    - '*/web/profiles/student_guide/vendor/composer/ClassLoader.php'
-    #- '*/web/profiles/student_guide/vendor/*'
-    - '*/student_guide/modules/uhsg_sitemap/*'
-    #- '*/SiteimproveHreflangSitemapType/*'
+    # Due to the "interesting" folder structure, we may have composer
+    # vendor and bin folders inside profile, which can lead to many kinds of
+    # problems unless they are commented out.
+    - '*/bin/*'
+    - '*/vendor/*'
+    #- '*/vendor/composer/ClassLoader.php'
+    #- '*/student_guide/modules/uhsg_sitemap/*'
+    - '*/SiteimproveHreflangSitemapType*'
 
   file_extensions:
     - module
