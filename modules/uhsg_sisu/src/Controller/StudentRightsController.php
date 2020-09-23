@@ -44,6 +44,79 @@ class StudentRightsController {
   }
 
   /**
+   * Fetch studyrights for person.
+   *
+   * @param string $oodiUid
+   *   Oodi user id.
+   *
+   * @return array|null
+   *   JSON decoded data or NULL.
+   */
+  public function getStudyRights($oodiUid) {
+    // this has been duplicated from:
+    // https://version.helsinki.fi/OPADev/studies/-/blob/master/backend/src/integrations/sisu/query/study-rights-query.js
+    $query = [
+      "operationName" => "getStudyRights",
+      "variables" => [
+        "ids" => [
+          "hy-hlo-" . $oodiUid,
+        ],
+      ],
+      "query" => 'query StudyRightsQuery($personId: ID!) {
+        private_person(id: $personId) {
+          studyRightPrimalityChain {
+            studyRightPrimalities {
+              studyRightId
+              startDate
+              endDate
+              documentState
+            }
+          }
+          studyRights {
+            id
+            studyRightGraduation {
+              phase1GraduationDate
+              phase2GraduationDate
+            }
+            acceptedSelectionPath {
+              educationPhase1Child {
+                code
+                groupId
+                name {fi sv en}
+              }
+              educationPhase1 {
+                code
+                groupId
+                name {
+                  fi
+                  sv
+                  en
+                }
+              }
+              educationPhase2Child {
+                code
+                groupId
+                name {fi sv en}
+              }
+              educationPhase2 {
+                code
+                groupId
+                name {
+                  fi
+                  sv
+                  en
+                }
+              }
+            }
+          }
+        }
+      }',
+    ];
+
+    return $this->sisuService->apiRequest($query);
+  }
+
+  /**
    * Get Primary Study Right.
    *
    * @param int $oodiId
@@ -56,7 +129,7 @@ class StudentRightsController {
     // Need to duplicate this code in php:
     // https://version.helsinki.fi/OPADev/studies/-/blob/master/backend/src/services/users.js#L56
     try {
-      return $this->sisuService->getStudyRights($oodiId);
+      return $this->getStudyRights($oodiId);
     }
     catch (GuzzleException $e) {
       // Do nothing.

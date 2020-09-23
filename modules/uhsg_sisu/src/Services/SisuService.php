@@ -108,78 +108,6 @@ class SisuService {
   }
 
   /**
-   * Fetch studyrights for person.
-   *
-   * @param string $oodiUid
-   *   Oodi user id.
-   *
-   * @return array|null
-   *   JSON decoded data or NULL.
-   */
-  public function getStudyRights($oodiUid) {
-    $query = [
-      "operationName" => "getStudyRights",
-      "variables" => [
-        "ids" => [
-          "hy-hlo-" . $oodiUid,
-        ],
-      ],
-      "query" => 'query StudyRightsQuery($personId: ID!) {
-        private_person(id: $personId) {
-          studyRightPrimalityChain {
-            studyRightPrimalities {
-              studyRightId
-              startDate
-              endDate
-              documentState
-            }
-          }
-          studyRights {
-            id
-            studyRightGraduation {
-              phase1GraduationDate
-              phase2GraduationDate
-            }
-            acceptedSelectionPath {
-              educationPhase1Child {
-                code
-                groupId
-                name {fi sv en}
-              }
-              educationPhase1 {
-                code
-                groupId
-                name {
-                  fi
-                  sv
-                  en
-                }
-              }
-              educationPhase2Child {
-                code
-                groupId
-                name {fi sv en}
-              }
-              educationPhase2 {
-                code
-                groupId
-                name {
-                  fi
-                  sv
-                  en
-                }
-              }
-            }
-          }
-        }
-      }',
-    ];
-
-    return $this->apiRequest($query);
-  }
-
-
-  /**
    * Make a GraphQL api request.
    *
    * @param array $graphQlQuery
@@ -194,6 +122,7 @@ class SisuService {
     $options = [
       CURLOPT_HTTPHEADER => [
         'Content-Type: application/json',
+        'client-app-id: doo-sg-web1-16.student.helsinki.fi',
       ],
       // GraphQL expects POST requests with payload.
       CURLOPT_POST => 1,
