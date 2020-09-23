@@ -115,9 +115,9 @@ function config_install_batch() {
   }
   catch (ConfigImporterException $e) {
     // There are validation errors.
-    drupal_set_message(\Drupal::translation()->translate('The configuration synchronization failed validation.'));
+    \Drupal::messenger()->addStatus(\Drupal::translation()->translate('The configuration synchronization failed validation.'));
     foreach ($config_importer->getErrors() as $message) {
-      drupal_set_message($message, 'error');
+      \Drupal::messenger()->addError($message);
     }
   }
 }
@@ -158,10 +158,10 @@ function config_install_batch_finish($success, $results, $operations) {
   if ($success) {
     if (!empty($results['errors'])) {
       foreach ($results['errors'] as $error) {
-        drupal_set_message($error, 'error');
+        \Drupal::messenger()->addError($error);
         \Drupal::logger('config_sync')->error($error);
       }
-      drupal_set_message(\Drupal::translation()->translate('The configuration was imported with errors.'), 'warning');
+      \Drupal::messenger()->addWarning(\Drupal::translation()->translate('The configuration was imported with errors.'));
     }
     else {
       // Configuration sync needs a complete cache flush.
@@ -177,7 +177,7 @@ function config_install_batch_finish($success, $results, $operations) {
         '%error_operation' => $error_operation[0],
         '@arguments' => print_r($error_operation[1], TRUE),
       ]);
-    drupal_set_message($message, 'error');
+    \Drupal::messenger()->addError($message);
   }
 }
 
@@ -270,9 +270,9 @@ function student_guide_fix_profile() {
     }
     catch (ConfigImporterException $e) {
       // There are validation errors.
-      drupal_set_message(\Drupal::translation()->translate('The configuration synchronization failed validation.'));
+      \Drupal::messenger()->addStatus(\Drupal::translation()->translate('The configuration synchronization failed validation.'));
       foreach ($config_importer->getErrors() as $message) {
-        drupal_set_message($message, 'error');
+        \Drupal::messenger()->addError($message);
       }
     }
     // Replace the install profile so that the student_guide still works.
