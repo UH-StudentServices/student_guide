@@ -25,7 +25,8 @@
         "symfony/phpunit-bridge": "^3.4",
         "drupal/core-dev": "^8.8.0",
         "palantirnet/drupal-rector": "^0.5.6",
-        "drupal/upgrade_rector": "^1.0@alpha"
+        "drupal/upgrade_rector": "^1.0@alpha",
+        "mglaman/drupal-check": "^1.1"
     },
     "require": {
         "zaporylie/composer-drupal-optimizations": "^1.1",
