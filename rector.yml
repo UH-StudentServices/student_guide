@@ -13,6 +13,11 @@ imports:
 
 parameters:
   autoload_paths:
+    # These paths work inside gtask container at location of either:
+    #   /app/build/
+    #   /app/student_guide/
+    # Note: build/web/profiles/student_guide/ is symlinked and some other files
+    # also, but for example vendor/, bin/ folders exist in both separately.
     - '/app/build/web/core'
     - '/app/build/web/core/modules'
     - '/app/build/web/modules'
