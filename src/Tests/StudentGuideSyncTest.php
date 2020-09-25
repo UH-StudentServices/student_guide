@@ -35,7 +35,7 @@ class StudentGuideSyncTest extends StudentGuideTestBase {
     parent::testInstaller();
 
     // Do assertions specific to test.
-    $this->assertEqual(drupal_realpath($this->syncDir), config_get_config_directory(CONFIG_SYNC_DIRECTORY), 'The sync directory has been updated during the installation.');
+    $this->assertEqual(\Drupal::service('file_system')->realpath($this->syncDir), config_get_config_directory(CONFIG_SYNC_DIRECTORY), 'The sync directory has been updated during the installation.');
     $this->assertEqual(USER_REGISTER_ADMINISTRATORS_ONLY, \Drupal::config('user.settings')->get('register'), 'Ensure standard_install() does not overwrite user.settings::register.');
     $this->assertEqual([], \Drupal::entityDefinitionUpdateManager()->getChangeSummary(), 'There are no entity or field definition updates.');
   }
@@ -62,7 +62,7 @@ class StudentGuideSyncTest extends StudentGuideTestBase {
     $user_settings['register'] = USER_REGISTER_ADMINISTRATORS_ONLY;
     $sync->write('user.settings', $user_settings);
 
-    $this->drupalPostForm(NULL, ['sync_directory' => drupal_realpath($this->syncDir)], 'Save and continue');
+    $this->drupalPostForm(NULL, ['sync_directory' => \Drupal::service('file_system')->realpath($this->syncDir)], 'Save and continue');
   }
 
 }

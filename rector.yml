@@ -33,20 +33,22 @@ parameters:
     # This path is used by the upgrade_status module.
     - '*/vendor/drupal/coder/*'
     # If you would like to skip test directories, uncomment the following lines:
-    - '*/upgrade_status/tests/modules/*'
     - '*/modules/contrib/*/tests/*'
+    - '*/upgrade_status/tests/modules/*'
+    - '*/upgrade_status_test_error/*'
+    - '/app/build/web/modules/contrib/upgrade_status/tests/modules/upgrade_status_test_error/fatal.php'
     #- '*/tests/*'
     #- '*/Tests/*'
     #- '*/Test/*'
     #- '*/simpletest/*'
-    # Due to the "interesting" folder structure, we may have composer
+    # Due to the "interesting" folder structure, we have composer
     # vendor and bin folders inside profile, which can lead to many kinds of
     # problems unless they are commented out.
     - '*/bin/*'
     - '*/vendor/*'
     #- '*/vendor/composer/ClassLoader.php'
     #- '*/student_guide/modules/uhsg_sitemap/*'
-    - '*/SiteimproveHreflangSitemapType*'
+    #- '*/SiteimproveHreflangSitemapType*'
 
   file_extensions:
     - module
