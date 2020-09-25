@@ -80,7 +80,7 @@ class OprekServiceTest extends UnitTestCase {
    * @test
    */
   public function getStudyRightsShouldThrowExceptionWhenTheStudentNumberIsNotString() {
-    $this->setExpectedException(\InvalidArgumentException::class);
+    $this->expectException(\InvalidArgumentException::class);
 
     $this->oprekService->getStudyRights(NULL);
   }
@@ -103,7 +103,7 @@ class OprekServiceTest extends UnitTestCase {
   public function getStudyRightsShouldThrowExceptionWhenApiResponseCodeIsNot200() {
     $this->response->getStatusCode()->willReturn(500);
 
-    $this->setExpectedException(\Exception::class);
+    $this->expectException(\Exception::class);
 
     $this->oprekService->getStudyRights(self::STUDENT_NUMBER);
   }
