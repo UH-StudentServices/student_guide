@@ -115,7 +115,7 @@ class SyncConfigureForm extends FormBase {
       catch (\Exception $e) {
         $this->messenger()->addError($this->t('Could not extract the contents of the tar file. The error message is <em>@message</em>', ['@message' => $e->getMessage()]));
       }
-      drupal_unlink($path);
+      \Drupal\Core\File\FileSystem::unlink($path);
     }
     // Change the langcode to the site default langcode provided by the
     // configuration.

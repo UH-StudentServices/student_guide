@@ -139,7 +139,7 @@ class SiteConfigureForm extends FormBase {
     $form['admin_account']['account']['name'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Username'),
-      '#maxlength' => USERNAME_MAX_LENGTH,
+      '#maxlength' => \Drupal\user\UserInterface::USERNAME_MAX_LENGTH,
       '#description' => $this->t('Spaces are allowed; punctuation is not allowed except for periods, hyphens, and underscores.'),
       '#required' => TRUE,
       '#attributes' => ['class' => ['username']],
