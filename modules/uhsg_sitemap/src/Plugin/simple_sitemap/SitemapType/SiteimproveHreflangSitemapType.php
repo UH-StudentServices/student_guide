@@ -2,6 +2,8 @@
 
 namespace Drupal\uhsg_sitemap\Plugin\simple_sitemap\SitemapType;
 
+use Drupal\simple_sitemap\Plugin\simple_sitemap\SitemapType\SitemapTypeBase;
+
 /**
  * Class SiteimproveHreflangSitemapType
  *
