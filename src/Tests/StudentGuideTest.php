@@ -2,14 +2,14 @@
 
 namespace Drupal\student_guide\Tests;
 
-use Drupal\simpletest\WebTestBase;
+use Drupal\Tests\BrowserTestBase;
 
 /**
  * Tests Student Guide installation profile expectations.
  *
  * @group student_guide
  */
-class StudentGuideTest extends WebTestBase {
+class StudentGuideTest extends BrowserTestBase {
 
   protected $profile = 'student_guide';
 
