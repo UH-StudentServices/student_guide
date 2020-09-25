@@ -1,11 +1,5 @@
 {
-  "extends": "eslint-config-drupal",
-  "plugins": [
-    "filenames"
-  ],
-  "rules": {
-    "filenames/match-regex": 2,
-    "filenames/match-exported": 2,
-    "filenames/no-index": 2,
-  }
+  "extends": [
+    "eslint-config-drupal"
+  ]
 }
