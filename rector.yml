@@ -36,6 +36,7 @@ parameters:
     # - '*/modules/contrib/*/tests/*'
     #- '*/upgrade_status/tests/modules/*'
     #- '*/upgrade_status_test_error/*'
+    - '/app/build/vendor/symfony/dependency-injection/Tests/Fixtures/ParentNotExists.php'
     - '/app/build/web/modules/contrib/upgrade_status/tests/modules/upgrade_status_test_error/fatal.php'
     #- '*/tests/*'
     #- '*/Tests/*'

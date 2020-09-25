@@ -84,7 +84,7 @@ class SiteConfigureForm extends FormBase {
     return new static(
       $container->get('app.root'),
       $container->get('site.path'),
-      \Drupal::entityTypeManager()->getStorage('user'),
+      $container->get('entity_type.manager')->getStorage('user'),
       $container->get('state'),
       $container->get('module_handler')
     );
