@@ -7,6 +7,7 @@ use Drupal\Core\Archiver\ArchiveTar;
 use Drupal\Core\Config\FileStorage;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Site\Settings;
 
 /**
  * Installation step to configure sync directory or upload a tarball.
@@ -29,7 +30,7 @@ class SyncConfigureForm extends FormBase {
     $form['sync_directory'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Synchronisation directory'),
-      '#default_value' => config_get_config_directory(CONFIG_SYNC_DIRECTORY),
+      '#default_value' => Settings::get('config_sync_directory'),
       '#maxlength' => 255,
       '#description' => $this->t('Path to the config directory you wish to import, can be relative to document root or an absolute path.'),
       '#required' => TRUE,
@@ -65,7 +66,7 @@ class SyncConfigureForm extends FormBase {
     }
     $sync_directory = $form_state->getValue('sync_directory');
     // If we've customised the sync directory ensure its good to go.
-    if ($sync_directory != config_get_config_directory(CONFIG_SYNC_DIRECTORY)) {
+    if ($sync_directory != Settings::get('config_sync_directory')) {
       // Ensure it exists and is writeable.
       if (!\Drupal::service('file_system')->prepareDirectory($sync_directory, FileSystemInterface::CREATE_DIRECTORY | FileSystemInterface::MODIFY_PERMISSIONS)) {
         $form_state->setErrorByName('sync_directory', t('The directory %directory could not be created or could not be made writable. To proceed with the installation, either create the directory and modify its permissions manually or ensure that the installer has the permissions to create it automatically. For more information, see the <a href="@handbook_url">online handbook</a>.', [
@@ -91,13 +92,13 @@ class SyncConfigureForm extends FormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     global $config_directories, $install_state;
     $sync_directory = $form_state->getValue('sync_directory');
-    if ($sync_directory != config_get_config_directory(CONFIG_SYNC_DIRECTORY)) {
-      $settings['config_directories'][CONFIG_SYNC_DIRECTORY] = (object) [
+    if ($sync_directory != Settings::get('config_sync_directory')) {
+      $settings['config_directories'][Settings::get('config_sync_directory')] = (object) [
         'value' => $sync_directory,
         'required' => TRUE,
       ];
       drupal_rewrite_settings($settings);
-      $config_directories[CONFIG_SYNC_DIRECTORY] = $sync_directory;
+      $config_directories[Settings::get('config_sync_directory')] = $sync_directory;
     }
     if ($path = $form_state->getValue('import_tarball')) {
       // Ensure that we have an empty directory if we're going.
@@ -109,7 +110,7 @@ class SyncConfigureForm extends FormBase {
         foreach ($archiver->listContent() as $file) {
           $files[] = $file['filename'];
         }
-        $archiver->extractList($files, config_get_config_directory(CONFIG_SYNC_DIRECTORY));
+        $archiver->extractList($files, Settings::get('config_sync_directory'));
         $this->messenger()->addStatus($this->t('Your configuration files were successfully uploaded, ready for import.'));
       }
       catch (\Exception $e) {
@@ -119,7 +120,7 @@ class SyncConfigureForm extends FormBase {
     }
     // Change the langcode to the site default langcode provided by the
     // configuration.
-    $config_storage = new FileStorage(config_get_config_directory(CONFIG_SYNC_DIRECTORY));
+    $config_storage = new FileStorage(Settings::get('config_sync_directory'));
     $install_state['parameters']['langcode'] = $config_storage->read('system.site')['langcode'];
 
   }

@@ -7,6 +7,7 @@ use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\State\StateInterface;
 use Drupal\user\UserStorageInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -82,7 +83,7 @@ class SiteConfigureForm extends FormBase {
     return new static(
       $container->get('app.root'),
       $container->get('site.path'),
-      $container->get('entity.manager')->getStorage('user'),
+      \Drupal::entityTypeManager()->getStorage('user'),
       $container->get('state'),
       $container->get('module_handler')
     );

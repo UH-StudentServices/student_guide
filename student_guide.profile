@@ -253,7 +253,10 @@ function student_guide_fix_profile() {
   if ($storage_comparer->hasChanges()) {
     // Swap out the install profile so that the profile module exists.
     _student_guide_switch_profile(_student_guide_get_original_install_profile());
-    system_list_reset();
+    \Drupal::service('extension.list.profile')->reset();
+    \Drupal::service('extension.list.module')->reset();
+    \Drupal::service('extension.list.theme_engine')->reset();
+    \Drupal::service('extension.list.theme')->reset();
     $config_importer = new ConfigImporter(
       $storage_comparer,
       \Drupal::service('event_dispatcher'),
@@ -277,7 +280,10 @@ function student_guide_fix_profile() {
     }
     // Replace the install profile so that the student_guide still works.
     _student_guide_switch_profile('student_guide');
-    system_list_reset();
+    \Drupal::service('extension.list.profile')->reset();
+    \Drupal::service('extension.list.module')->reset();
+    \Drupal::service('extension.list.theme_engine')->reset();
+    \Drupal::service('extension.list.theme')->reset();
   }
 }
 
