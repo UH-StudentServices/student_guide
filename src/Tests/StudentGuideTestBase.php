@@ -5,7 +5,8 @@ namespace Drupal\student_guide\Tests;
 use Drupal\Core\DrupalKernel;
 use Drupal\Core\Extension\ExtensionDiscovery;
 use Drupal\Core\Site\Settings;
-use Drupal\simpletest\InstallerTestBase;
+use Drupal\FunctionalTests\Installer\InstallerTestBase;
+use Drupal\user\UserInterface;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -27,7 +28,7 @@ abstract class StudentGuideTestBase extends InstallerTestBase {
     $this->assertUrl('user/1');
     $this->assertResponse(200);
     // Confirm that we are logged-in after installation.
-    $this->assertText($this->rootUser->getUsername());
+    $this->assertText($this->rootUser->getDisplayName());
 
     // @todo hmmm this message is wrong!
     // Verify that the confirmation message appears.
@@ -67,9 +68,21 @@ abstract class StudentGuideTestBase extends InstallerTestBase {
     $request = Request::createFromGlobals();
     $class_loader = require $this->container->get('app.root') . '/vendor/autoload.php';
     Settings::initialize($this->container->get('app.root'), DrupalKernel::findSitePath($request), $class_loader);
+
+    /*
+      https://www.drupal.org/node/3018145
+      https://www.drupal.org/project/drupal/issues/2980712
+      https://www.drupal.org/docs/configuration-management/changing-the-storage-location-of-the-sync-directory
+      The install method drupal_install_config_directories() also has no replacement.
+        It's functionality is implemented as part of
+        \Drupal\Core\Installer\Form\SiteSettingsForm::submitForm().
     foreach ($GLOBALS['config_directories'] as $type => $path) {
-      $this->configDirectories[$type] = $path;
+      \Drupal\Core\Site\Settings::get('config_sync_directory')
+      //$this->configDirectories['sync'] = Settings::get('config_sync_directory');
+      //$this->configDirectories[$type] = $path;
     }
+    */
+
     $this->kernel = DrupalKernel::createFromRequest($request, $class_loader, 'prod', FALSE);
     $this->kernel->prepareLegacyRequest($request);
     $this->container = $this->kernel->getContainer();

@@ -3,11 +3,12 @@
 use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\uhsg_active_degree_programme\ActiveDegreeProgrammeService;
 use Drupal\uhsg_active_degree_programme\Cache\Context\ActiveDegreeProgrammeCacheContext;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @group uhsg
  */
-class ActiveDegreeProgrammeCacheContextTest extends PHPUnit_Framework_TestCase {
+class ActiveDegreeProgrammeCacheContextTest extends TestCase {
 
   const ACTIVE_DEGREE_PROGRAMME = 123;
 

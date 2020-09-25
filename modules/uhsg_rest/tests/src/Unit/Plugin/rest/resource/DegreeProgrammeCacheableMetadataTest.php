@@ -1,11 +1,12 @@
 <?php
 
 use Drupal\uhsg_rest\Plugin\rest\resource\DegreeProgrammeCacheableMetadata;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @group uhsg
  */
-class DegreeProgrammeCacheableMetadataTest extends PHPUnit_Framework_TestCase {
+class DegreeProgrammeCacheableMetadataTest extends TestCase {
 
   /** @var \Drupal\uhsg_rest\Plugin\rest\resource\DegreeProgrammeCacheableMetadata*/
   private $degreeProgrammeCacheableMetadata;

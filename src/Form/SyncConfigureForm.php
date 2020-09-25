@@ -2,6 +2,7 @@
 
 namespace Drupal\student_guide\Form;
 
+use Drupal\Core\File\FileSystem;
 use Drupal\Core\File\FileSystemInterface;
 use Drupal\Core\Archiver\ArchiveTar;
 use Drupal\Core\Config\FileStorage;
@@ -116,7 +117,7 @@ class SyncConfigureForm extends FormBase {
       catch (\Exception $e) {
         $this->messenger()->addError($this->t('Could not extract the contents of the tar file. The error message is <em>@message</em>', ['@message' => $e->getMessage()]));
       }
-      \Drupal\Core\File\FileSystem::unlink($path);
+      FileSystem::unlink($path);
     }
     // Change the langcode to the site default langcode provided by the
     // configuration.
