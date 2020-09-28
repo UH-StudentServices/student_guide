@@ -1,32 +1,30 @@
 {
   "name": "uhsg_theme",
+  "type": "module",
   "version": "1.0.0",
   "devDependencies": {
-    "bower": "~1.8.8",
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/register": "^7.11.5",
     "breakpoint-sass": "~2.7.1",
     "browser-sync": "~2.26.7",
     "del": "^5.1.0",
-    "eslint-plugin-filenames": "^1.3.2",
+    "eslint": "^7.9.0",
+    "eslint-config-drupal": "^4.0.1",
+    "eslint-plugin-import": "^2.18.2",
     "gulp": "~4.0.2",
     "gulp-autoprefixer": "~7.0.1",
-    "gulp-bower": "~0.0.15",
     "gulp-eslint": "^6.0.0",
-    "gulp-sass": "~4.0.2",
+    "gulp-sass": "^4.1.0",
     "gulp-watch": "~5.0.1",
     "lodash": "^4.17.15",
     "node-sass-globbing": "~0.0.23",
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "uh-living-styleguide": "https://github.com/UniversityofHelsinki/Styleguide.git#release-1.13.0"
   },
   "scripts": {
     "postinstall": "find node_modules/ -name '*.info' -type f -delete",
     "gulp": "gulp"
-  },
-  "dependencies": {
-    "babel-core": "^6.26.3",
-    "babel-preset-es2015": "^6.24.1",
-    "eslint": "^6.8.0",
-    "eslint-config-drupal": "^4.0.1",
-    "eslint-plugin-import": "^2.18.2"
   },
   "browserslist": [
     "last 4 versions"

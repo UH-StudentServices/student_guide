@@ -2,7 +2,6 @@
 
 import gulp from 'gulp';
 import autoPrefixer from 'gulp-autoprefixer';
-import bower from 'gulp-bower';
 import del from 'del';
 import sass from 'gulp-sass';
 import globbing from 'node-sass-globbing';
@@ -15,8 +14,8 @@ const paths = {
   modules: `${rootDir}/modules`
 };
 
-// const browserSyncProxyTarget = 'https://local.guide.student.helsinki.fi';
 const browserSyncProxyTarget = 'https://local.studies-qa.it.helsinki.fi';
+const styleguidePath = `${rootDir}/node_modules/uh-living-styleguide`;
 
 const sass_config = {
   importer: globbing,
@@ -44,11 +43,6 @@ gulp.task('watch', gulp.series('sass', () => {
   gulp.watch('sass/**/*.scss', gulp.series('sass'));
 }));
 
-gulp.task('bower', () => {
-  process.chdir(paths.theme);
-  return bower({ cmd: 'update'});
-});
-
 // Clean styleguide assets
 gulp.task('styleguide-clean', () => {
   process.chdir(paths.theme);
@@ -59,14 +53,14 @@ gulp.task('styleguide-clean', () => {
 });
 
 // Updates styleguide with bower and moves relevant assets to correct path
-gulp.task('styleguide-update', gulp.series('bower', 'styleguide-clean', (done) => {
+gulp.task('styleguide-update', gulp.series('styleguide-clean', (done) => {
   process.chdir(paths.theme);
-  gulp.src('./bower_components/Styleguide/fonts/**/*')
+  gulp.src(`${styleguidePath}/fonts/**/*`)
     .pipe(gulp.dest('./fonts'));
 
-  gulp.src(['./bower_components/Styleguide/sass/**/*',
-    '!./bower_components/Styleguide/sass/styles.scss'],
-    { base: './bower_components/Styleguide/sass' })
+  gulp.src([`${styleguidePath}/sass/**/*`,
+    `!${styleguidePath}/sass/styles.scss`],
+    { base: `${styleguidePath}/sass` })
     .pipe(gulp.dest('./sass/styleguide'));
 
   done();
@@ -85,7 +79,7 @@ gulp.task('browsersync', gulp.series('watch', (done) => {
 
 // Linting
 gulp.task('lint', () => {
-  return gulp.src([`${paths.theme}/**/*.js`, `${paths.modules}/**/*.js`, '!**/node_modules/**', '!**/bower_components/**'])
+  return gulp.src([`${paths.theme}/**/*.js`, `${paths.modules}/**/*.js`, '!**/node_modules/**'])
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(eslint.failAfterError());
