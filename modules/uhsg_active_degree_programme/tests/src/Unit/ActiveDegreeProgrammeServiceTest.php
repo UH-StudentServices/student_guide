@@ -140,7 +140,7 @@ class ActiveDegreeProgrammeServiceTest extends UnitTestCase {
     $this->term->uuid()->willReturn();
     $this->term->getEntityType()->willReturn($this->entityType->reveal());
     $this->term->getEntityTypeId()->willReturn('taxonomy_term');
-    $this->term->getVocabularyId()->willReturn(self::DEGREE_PROGRAMME_BUNDLE);
+    $this->term->bundle()->willReturn(self::DEGREE_PROGRAMME_BUNDLE);
 
     $this->query = $this->prophesize(QueryInterface::class);
 

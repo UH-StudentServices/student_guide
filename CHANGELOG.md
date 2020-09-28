@@ -3,6 +3,7 @@
 ## 1.xx-dev
 Release date: ??.??.????
 
+* HUB-698 - Drupal 9 compatibility for custom modules.
 
 
 ## 1.49

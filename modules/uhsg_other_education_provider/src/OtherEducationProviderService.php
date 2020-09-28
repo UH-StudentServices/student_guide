@@ -138,7 +138,7 @@ class OtherEducationProviderService {
     $query_param = $this->getTidFromQuery();
     if ($query_param) {
       $term = Term::load($query_param);
-      if (!is_null($term) && $this->access($term) && $term->getVocabularyId() == $this->otherEducationProviderBundle) {
+      if (!is_null($term) && $this->access($term) && $term->bundle() == $this->otherEducationProviderBundle) {
         $this->debug('Resolved by parameter ' . $term->id());
         $this->resolvedTerm = $term;
         return $this->resolvedTerm;
@@ -153,7 +153,7 @@ class OtherEducationProviderService {
     $other_education_provider_from_headers = $this->requestStack->getCurrentRequest()->headers->get('x-other-education-provider');
     if ($other_education_provider_from_headers) {
       $term = Term::load($other_education_provider_from_headers);
-      if (!is_null($term) && $this->access($term) && $term->getVocabularyId() == $this->otherEducationProviderBundle) {
+      if (!is_null($term) && $this->access($term) && $term->bundle() == $this->otherEducationProviderBundle) {
         $this->debug('Resolved by header ' . $term->id());
         $this->resolvedTerm = $term;
         return $this->resolvedTerm;
@@ -168,7 +168,7 @@ class OtherEducationProviderService {
     $other_education_provider_from_cookies = $this->requestStack->getCurrentRequest()->cookies->get('Drupal_visitor_other_education_provider');
     if ($other_education_provider_from_cookies) {
       $term = Term::load($other_education_provider_from_cookies);
-      if (!is_null($term) && $this->access($term) && $term->getVocabularyId() == $this->otherEducationProviderBundle) {
+      if (!is_null($term) && $this->access($term) && $term->bundle() == $this->otherEducationProviderBundle) {
         $this->debug('Resolved by cookie ' . $term->id());
         $this->resolvedTerm = $term;
         return $this->resolvedTerm;

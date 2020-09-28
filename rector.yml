@@ -1,0 +1,76 @@
+imports:
+  - { resource: "/app/build/vendor/palantirnet/drupal-rector/config/drupal-8/drupal-8-all-deprecations.yml" }
+  # includes:
+  # - { resource: "vendor/palantirnet/drupal-rector/config/drupal-8/drupal-8.0-deprecations.yml" }
+  # - { resource: "vendor/palantirnet/drupal-rector/config/drupal-8/drupal-8.1-deprecations.yml" }
+  # - { resource: "vendor/palantirnet/drupal-rector/config/drupal-8/drupal-8.2-deprecations.yml" }
+  # - { resource: "vendor/palantirnet/drupal-rector/config/drupal-8/drupal-8.3-deprecations.yml" }
+  # - { resource: "vendor/palantirnet/drupal-rector/config/drupal-8/drupal-8.4-deprecations.yml" }
+  # - { resource: "vendor/palantirnet/drupal-rector/config/drupal-8/drupal-8.5-deprecations.yml" }
+  # - { resource: " /palantirnet/drupal-rector/config/drupal-8/drupal-8.6-deprecations.yml" }
+  # - { resource: "vendor/palantirnet/drupal-rector/config/drupal-8/drupal-8.7-deprecations.yml" }
+  # - { resource: "vendor/palantirnet/drupal-rector/config/drupal-8/drupal-8.8-deprecations.yml" }
+
+parameters:
+  autoload_paths:
+    # These paths work inside gtask container at location of either:
+    #   /app/build/
+    #   /app/student_guide/
+    # Note: build/web/profiles/student_guide/ is symlinked and some other files
+    # also, but for example vendor/, bin/ folders exist in both separately.
+    - '/app/build/web/core'
+    - '/app/build/web/core/modules'
+    - '/app/build/web/modules'
+    - '/app/build/web/modules/contrib'
+    - '/app/build/web/profiles/student_guide/modules'
+    - '/app/build/web/profiles/student_guide/src'
+    - '/app/build/web/profiles/student_guide/themes'
+    - '/app/build/web/profiles/student_guide/student_guide.install'
+    - '/app/build/web/profiles/student_guide/student_guide.profile'
+    #- 'web/profiles'
+
+  exclude_paths:
+    # This path is used by the upgrade_status module.
+    - '*/vendor/drupal/coder/*'
+    # If you would like to skip test directories, uncomment the following lines:
+    # - '*/modules/contrib/*/tests/*'
+    #- '*/upgrade_status/tests/modules/*'
+    #- '*/upgrade_status_test_error/*'
+    - '/app/build/vendor/symfony/dependency-injection/Tests/Fixtures/ParentNotExists.php'
+    - '/app/build/web/modules/contrib/upgrade_status/tests/modules/upgrade_status_test_error/fatal.php'
+    #- '*/tests/*'
+    #- '*/Tests/*'
+    #- '*/Test/*'
+    #- '*/simpletest/*'
+    # Due to the "interesting" folder structure, we have composer
+    # vendor and bin folders inside profile, which can lead to many kinds of
+    # problems unless they are commented out.
+    #- '*/bin/*'
+    #- '*/vendor/*'
+    #- '*/vendor/composer/ClassLoader.php'
+    #- '*/student_guide/modules/uhsg_sitemap/*'
+    #- '*/SiteimproveHreflangSitemapType*'
+
+  file_extensions:
+    - module
+    - theme
+    - install
+    - profile
+    - inc
+    - engine
+
+  # If you would like Rector to include PHPUnit 8 upgrades, uncomment the following lines:
+  # sets:
+  #   - phpunit80
+
+  # Create `use` statements.
+  auto_import_names: true
+  # Do not convert `\Drupal` to `Drupal`, etc.
+  import_short_classes: false
+  # This will not import classes used in PHP DocBlocks, like in /** @var \Some\Class */
+  import_doc_blocks: false
+
+  # This will add comments to call out edge cases in replacements.
+  drupal_rector_notices_as_comments: true
+
+services: ~

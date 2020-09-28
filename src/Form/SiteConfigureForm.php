@@ -2,11 +2,13 @@
 
 namespace Drupal\student_guide\Form;
 
+use Drupal\user\UserInterface;
 use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\State\StateInterface;
 use Drupal\user\UserStorageInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -82,7 +84,7 @@ class SiteConfigureForm extends FormBase {
     return new static(
       $container->get('app.root'),
       $container->get('site.path'),
-      $container->get('entity.manager')->getStorage('user'),
+      $container->get('entity_type.manager')->getStorage('user'),
       $container->get('state'),
       $container->get('module_handler')
     );
@@ -122,11 +124,11 @@ class SiteConfigureForm extends FormBase {
       }
 
       if (!drupal_verify_install_file($this->root . '/' . $settings_file, FILE_EXIST | FILE_READABLE | FILE_NOT_WRITABLE) || !drupal_verify_install_file($this->root . '/' . $this->sitePath, FILE_NOT_WRITABLE, 'dir')) {
-        drupal_set_message(t('All necessary changes to %dir and %file have been made, so you should remove write permissions to them now in order to avoid security risks. If you are unsure how to do so, consult the <a href="@handbook_url">online handbook</a>.', [
+        $this->messenger()->addWarning(t('All necessary changes to %dir and %file have been made, so you should remove write permissions to them now in order to avoid security risks. If you are unsure how to do so, consult the <a href="@handbook_url">online handbook</a>.', [
           '%dir' => $this->sitePath,
           '%file' => $settings_file,
           '@handbook_url' => 'http://drupal.org/server-permissions',
-        ]), 'warning');
+        ]));
       }
     }
 
@@ -139,7 +141,7 @@ class SiteConfigureForm extends FormBase {
     $form['admin_account']['account']['name'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Username'),
-      '#maxlength' => USERNAME_MAX_LENGTH,
+      '#maxlength' => UserInterface::USERNAME_MAX_LENGTH,
       '#description' => $this->t('Spaces are allowed; punctuation is not allowed except for periods, hyphens, and underscores.'),
       '#required' => TRUE,
       '#attributes' => ['class' => ['username']],

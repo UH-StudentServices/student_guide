@@ -114,7 +114,11 @@ class ActiveDegreeProgrammeEntityReferenceLabelFormatter extends EntityReference
         // link.
         if ($output_as_link && !$entity->isNew()) {
           try {
-            $uri = $entity->urlInfo();
+            // Drupal Rector Notice: Please delete the following comment after you've made any necessary changes.
+            // Please confirm that `$entity` is an instance of `Drupal\Core\Entity\EntityInterface`.
+            // Only the method name and not the class name was checked for this replacement, so this may be a false positive.
+            // NOTE: Seems rector got this right.
+            $uri = $entity->toUrl();
           }
           catch (UndefinedLinkTemplateException $e) {
             // This exception is thrown by \Drupal\Core\Entity\Entity::urlInfo()
