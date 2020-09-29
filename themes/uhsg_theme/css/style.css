@@ -10187,6 +10187,17 @@ ul.pager > li a:focus {
   margin-left: 1em;
 }
 
+/*
+ Styleguide override:
+ section: 6.11.1
+ title: Textarea
+ template: 6_11_1_textarea
+ description: Basic component used in multiple row textareas with links, headings, lists and so on.
+*/
+.textarea a {
+  text-decoration: underline;
+}
+
 .theme--box {
   -webkit-hyphens: auto;
   -ms-hyphens: auto;
@@ -10414,4 +10425,18 @@ ul.pager > li a:focus {
 
 html {
   font-size: 100%;
+}
+
+/*
+  Styleguide override:
+  section: 3.3
+  title: Links
+  template: 3_3_links
+*/
+a {
+  color: #0e688b;
+}
+
+a:hover {
+  color: #005379;
 }

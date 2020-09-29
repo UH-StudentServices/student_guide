@@ -1,0 +1,12 @@
+/*
+ Styleguide override:
+ section: 6.11.1
+ title: Textarea
+ template: 6_11_1_textarea
+ description: Basic component used in multiple row textareas with links, headings, lists and so on.
+*/
+.textarea {
+  a {
+    text-decoration: underline;
+  }
+}
