@@ -1,0 +1,149 @@
+[
+  {
+    "groupId": "otm-825cb444-4e71-443b-9378-876c7665e1cd",
+    "oodiSpecialisationCode": "SH60_036",
+    "commentDegreeProgrammeCode": "MH60_001",
+    "commentSisuSpecialisationCode": "EDUM-EP",
+    "commentNameFi": "Erityispedagogiikan opintosuunta"
+  },
+  {
+    "groupId": "otm-734896cd-cd9f-4e41-b634-30673cc49865",
+    "oodiSpecialisationCode": "SH60_037",
+    "commentDegreeProgrammeCode": "MH60_001",
+    "commentSisuSpecialisationCode": "EDUM-KO",
+    "commentNameFi": "Kotitalousopettajan opintosuunta"
+  },
+  {
+    "groupId": "otm-70766ef1-cc50-4dc9-bf5a-117dd4fbf85d",
+    "oodiSpecialisationCode": "SH60_038",
+    "commentDegreeProgrammeCode": "MH60_001",
+    "commentSisuSpecialisationCode": "EDUM-KÄ",
+    "commentNameFi": "Käsityönopettajan opintosuunta"
+  },
+  {
+    "groupId": "otm-0f6d5073-66c6-43d3-be09-284099abaa91",
+    "oodiSpecialisationCode": "SH60_040",
+    "commentDegreeProgrammeCode": "MH60_001",
+    "commentSisuSpecialisationCode": "EDUM-LO (KP/KT)",
+    "commentNameFi": "Luokanopettajan opintosuunta"
+  },
+  {
+    "groupId": "otm-84d52b8c-0a78-4268-8895-f42a4a9183d2",
+    "oodiSpecialisationCode": "SH60_033",
+    "commentDegreeProgrammeCode": "MH60_001",
+    "commentSisuSpecialisationCode": "EDUM-PED",
+    "commentNameFi": "Studieinriktningen för allmän- och vuxenpedagogik"
+  },
+  {
+    "groupId": "otm-7e2efe00-af24-4359-aeaa-8419ef7034ad",
+    "oodiSpecialisationCode": "SH60_035",
+    "commentDegreeProgrammeCode": "MH60_001",
+    "commentSisuSpecialisationCode": "EDUM-KLU",
+    "commentNameFi": "Studieinriktningen för klasslärare"
+  },
+  {
+    "groupId": "otm-9b46bf81-5dba-4095-8ecf-39b24d9de714",
+    "oodiSpecialisationCode": "SH60_123",
+    "commentDegreeProgrammeCode": "MH60_001",
+    "commentSisuSpecialisationCode": "EDUM-VAKA",
+    "commentNameFi": "Varhaiskasvatuksen opintosuunta"
+  },
+  {
+    "groupId": "otm-62e02942-6485-4037-9de7-dfac2fb690a7",
+    "oodiSpecialisationCode": "SH60_042",
+    "commentDegreeProgrammeCode": "MH60_001",
+    "commentSisuSpecialisationCode": "EDUM-YL/AKT",
+    "commentNameFi": "Yleisen ja aikuiskasvatustieteen opintosuunta"
+  },
+  {
+    "groupId": "otm-7458ce66-cdb0-480d-9c6e-ddf29cc44106",
+    "oodiSpecialisationCode": "SH60_034",
+    "commentDegreeProgrammeCode": "KH60_001",
+    "commentSisuSpecialisationCode": "EDUK-SBP",
+    "commentNameFi": "Studieinriktningen för lärare inom småbarnspedagogik"
+  },
+  {
+    "groupId": "otm-19a19886-01f6-4161-989a-ffe10e5dc1a0",
+    "oodiSpecialisationCode": "SH60_036",
+    "commentDegreeProgrammeCode": "KH60_001",
+    "commentSisuSpecialisationCode": "EDUK-EP",
+    "commentNameFi": "Erityispedagogiikan opintosuunta"
+  },
+  {
+    "groupId": "otm-616cb7fa-5a57-4201-b2e4-95fa0d8b3629",
+    "oodiSpecialisationCode": "SH60_037",
+    "commentDegreeProgrammeCode": "KH60_001",
+    "commentSisuSpecialisationCode": "EDUK-KO",
+    "commentNameFi": "Kotitalousopettajan opintosuunta"
+  },
+  {
+    "groupId": "otm-47a365c4-65c1-4d07-b765-bcf84fe31b24",
+    "oodiSpecialisationCode": "SH60_038",
+    "commentDegreeProgrammeCode": "KH60_001",
+    "commentSisuSpecialisationCode": "EDUK-KÄ",
+    "commentNameFi": "Käsityönopettajan opintosuunta"
+  },
+  {
+    "groupId": "otm-ebd2a5bb-190b-49cc-bccf-44c7e5eef14b",
+    "oodiSpecialisationCode": "SH60_039",
+    "commentDegreeProgrammeCode": "KH60_001",
+    "commentSisuSpecialisationCode": "EDUK-VO",
+    "commentNameFi": "Varhaiskasvatuksen opettajan opintosuunta"
+  },
+  {
+    "groupId": "otm-07decb07-260d-47ff-bba5-1b72a2fef72e",
+    "oodiSpecialisationCode": "SH60_040",
+    "commentDegreeProgrammeCode": "KH60_001",
+    "commentSisuSpecialisationCode": "EDUK-LO (KP/KT)",
+    "commentNameFi": "Luokanopettajan opintosuunta"
+  },
+  {
+    "groupId": "otm-4a60d28d-c82e-497f-8019-93aa12689ce0",
+    "oodiSpecialisationCode": "SH60_033",
+    "commentDegreeProgrammeCode": "KH60_001",
+    "commentSisuSpecialisationCode": "EDUK-PED",
+    "commentNameFi": "Studieinriktningen för allmän- och vuxenpedagogik"
+  },
+  {
+    "groupId": "otm-cf6e259c-7cba-42a3-b3e1-e876441f44c1",
+    "oodiSpecialisationCode": "SH60_035",
+    "commentDegreeProgrammeCode": "KH60_001",
+    "commentSisuSpecialisationCode": "EDUK-KLU",
+    "commentNameFi": "Studieinriktningen för klasslärare"
+  },
+  {
+    "groupId": "otm-cce306fc-4c30-4af3-ab6d-11ca78d08108",
+    "oodiSpecialisationCode": "SH60_042",
+    "commentDegreeProgrammeCode": "KH60_001",
+    "commentSisuSpecialisationCode": "EDUK-YL/AKT",
+    "commentNameFi": "Yleisen ja aikuiskasvatustieteen opintosuunta"
+  },
+  {
+    "groupId": "otm-c0a34d7d-0490-45a0-822a-9797d1173b75",
+    "oodiSpecialisationCode": "SH60_041",
+    "commentDegreeProgrammeCode": "KH60_001",
+    "commentSisuSpecialisationCode": "EDUK-LO-KP",
+    "commentNameFi": "Luokanopettaja, kasvatuspsykologia"
+  },
+  {
+    "groupId": "otm-2f735053-2eb8-4e94-a822-3e5dc99f14df",
+    "oodiSpecialisationCode": "SH60_040",
+    "commentDegreeProgrammeCode": "KH60_001",
+    "commentSisuSpecialisationCode": "EDUK-LO-KT",
+    "commentNameFi": "Luokanopettaja, kasvatustiede"
+  },
+  {
+    "groupId": "otm-9d2ec2e8-7eae-48de-a8f9-7e2eccc54e33",
+    "oodiSpecialisationCode": "SH60_041",
+    "commentDegreeProgrammeCode": "MH60_001",
+    "commentSisuSpecialisationCode": "EDUM-LO-KP",
+    "commentNameFi": "Luokanopettaja, kasvatuspsykologia"
+  },
+  {
+    "groupId": "otm-803f1277-54a5-401a-a934-02f42798c827",
+    "oodiSpecialisationCode": "SH60_040",
+    "commentDegreeProgrammeCode": "MH60_001",
+    "commentSisuSpecialisationCode": "EDUM-LO-KT",
+    "commentNameFi": "Luokanopettaja, kasvatustiede"
+  }
+]
