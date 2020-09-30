@@ -1,11 +1,71 @@
-.ui-tabs {
-  .ui-tabs-nav li {
-    @include hyphenate;
-    margin: 0;
-    white-space: normal;
+.horizontal-tabs {
+  .horizontal-tabs-list {
+    display: none;
+    padding-right: 1em;
   }
 
-  .ui-tabs-panel {
-    padding: 0;
+  .horizontal-tab-button > .tabs-trigger {
+    @include hyphenate;
+    white-space: normal;
+    padding: 1em;
+
+    &.is-selected {
+      border-top-color: $blue;
+      border-bottom-color: transparent;
+      z-index: 2;
+      background-color: $white;
+      box-shadow: inset 0 3px 0 $blue;
+      color: $blue;
+    }
+  }
+
+  .tabs-panel {
+    &.is-hidden {
+      display: block !important;
+
+      .content {
+        display: none;
+      }
+    }
+  }
+
+  &.is-initialized.tabs-allowed .tabs-panel {
+    display: inherit;
+  }
+
+  .accordion-trigger {
+    margin: 0 1em 1em 0;
+  }
+
+  .tabs-panel {
+    &.is-open {
+      .accordion-trigger {
+        @extend %button--accordion.is-active;
+      }
+    }
+  }
+
+  .tab-content {
+    margin-top: 60px;
+  }
+}
+
+@include breakpoint($small) {
+  .horizontal-tabs {
+    &.tabs-allowed {
+      .accordion-trigger {
+        display: none !important;
+      }
+      .horizontal-tabs-list {
+        display: flex;
+        margin-bottom: 0;
+      }
+      .tabs-panel {
+        display: none;
+      }
+      .tabs-panel.is-hidden {
+        display: none;
+      }
+    }
   }
 }
