@@ -4,6 +4,7 @@
 Release date: ??.??.????
 
 * HUB-698 - Drupal 9 compatibility for custom modules.
+* HUB-765 - Improved responsive behavior and accessibility for tabbed navigation.
 
 
 ## 1.49
