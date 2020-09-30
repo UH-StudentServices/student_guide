@@ -1,0 +1,4 @@
+variants:
+  siteimprove:
+    label: Siteimprove
+    weight: 1

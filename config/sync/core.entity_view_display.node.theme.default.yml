@@ -78,3 +78,4 @@ hidden:
   field_theme_teaser_image: true
   field_user_group: true
   langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,9 @@
+uuid: ddcecf2f-8385-42b1-bb3d-a6bb8dc4aa09
+langcode: en
+status: true
+dependencies: {  }
+id: local_studies_qa_it_helsinki_fi
+domain_id: guide_student_helsinki_fi
+pattern: local.studies-qa.it.helsinki.fi
+redirect: 0
+environment: local

@@ -1,0 +1,9 @@
+name: Sitemap
+type: module
+description: Extends sitemap generation
+core: 8.x
+core_version_requirement: ^8 || ^9
+version: 1.49
+package: Student Guide
+dependencies:
+  - simple_sitemap:simple_sitemap

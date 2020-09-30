@@ -69,6 +69,7 @@ module:
   search_api_autocomplete: 0
   search_api_solr: 0
   serialization: 0
+  simple_sitemap: 0
   syslog: 0
   system: 0
   taxonomy: 0
@@ -101,6 +102,7 @@ module:
   uhsg_samlauth: 0
   uhsg_search: 0
   uhsg_service_provider_details: 0
+  uhsg_sitemap: 0
   uhsg_some_links: 0
   uhsg_themes: 0
   uhsg_user_sync: 0

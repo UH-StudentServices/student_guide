@@ -1,9 +1,0 @@
-uuid: 6a47f6fd-4573-4ce5-ad26-ab0a7c18a854
-langcode: en
-status: true
-dependencies: {  }
-id: dev_guide_student_helsinki_fi
-domain_id: guide_student_helsinki_fi
-pattern: dev.guide.student.helsinki.fi
-redirect: 0
-environment: testing

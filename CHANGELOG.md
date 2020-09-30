@@ -1,8 +1,33 @@
 #Changelog
 
-## 1.xx-dev
-Release date: ??.??.????
+## 1.49
+Release date: 17.09.2020
+* HUB-769 - Updating Drupal to 8.8.10.
 
+
+## 1.48
+Release date: 10.09.2020
+* HUB-750 - Login redirect based on OPINTONI_HAS_LOGGED_IN-cookie has been disabled.
+* HUB-747 - Fix language prefix in some teaching -> guide links.
+
+## 1.47
+Release date: 29.07.2020
+* HUB-745 - Updating Drupal to 8.8.8
+
+
+## 1.46
+Release date: 16.06.2020
+* HUB-712 - Studies proxy redirects (manually)
+* HUB-739 - Disable XML sitemap paging because it doesnt work with studies proxy.
+* HUB-710 - Updating feedback email
+* HUB-728 - Removing cookie consent bar from Student guide
+
+
+## 1.45
+Release date: 03.06.2020
+* HUB-714 - Adding an automatically generated sitemap.xml
+* HUB-711 & HUB-725 - Language prefix, domain and other configuration changes
+for compatibility with the new student services
 
 
 ## 1.44

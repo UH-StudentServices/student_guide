@@ -15,7 +15,8 @@ const paths = {
   modules: `${rootDir}/modules`
 };
 
-const browserSyncProxyTarget = 'https://local.guide.student.helsinki.fi';
+// const browserSyncProxyTarget = 'https://local.guide.student.helsinki.fi';
+const browserSyncProxyTarget = 'https://local.studies-qa.it.helsinki.fi';
 
 const sass_config = {
   importer: globbing,
