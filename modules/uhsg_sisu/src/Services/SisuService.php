@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\uhsg_sisu\Services;
+namespace Drupal\uhsg_sisu\Services\SisuService;
 
 use Drupal\Component\Datetime\TimeInterface;
 use Drupal\Component\Serialization\SerializationInterface;
@@ -11,7 +11,7 @@ use Drupal\Core\Site\Settings;
 /**
  * Class SisuService.
  *
- * @package Drupal\uhsg_sisu\Service
+ * @package Drupal\uhsg_sisu\Services\SisuService
  */
 class SisuService {
 

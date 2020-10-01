@@ -12,6 +12,7 @@ use Drupal\flag\FlagServiceInterface;
 use Drupal\samlauth\Event\SamlAuthEvents;
 use Drupal\samlauth\Event\SamlAuthUserSyncEvent;
 use Drupal\uhsg_oprek\Oprek\OprekServiceInterface;
+use Drupal\uhsg_sisu\Services\StudentRightsService;
 use Drupal\uhsg_samlauth\AttributeParser;
 use Drupal\uhsg_samlauth\AttributeParserInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
@@ -36,6 +37,11 @@ class UserSyncSubscriber implements EventSubscriberInterface {
   protected $oprekService;
 
   /**
+   * @var Drupal\uhsg_sisu\Services\StudentRightsService
+   */
+  protected $studentRightsService;
+
+  /**
    * @var \Drupal\flag\FlagServiceInterface
    */
   protected $flagService;
@@ -55,9 +61,10 @@ class UserSyncSubscriber implements EventSubscriberInterface {
    */
   protected $messenger;
 
-  public function __construct(ConfigFactoryInterface $configFactory, OprekServiceInterface $oprekService, FlagServiceInterface $flagService, EntityTypeManagerInterface $entityTypeManager, LoggerChannel $logger, MessengerInterface $messenger) {
+  public function __construct(ConfigFactoryInterface $configFactory, OprekServiceInterface $oprekService, StudentRightsService $studentRightsService, FlagServiceInterface $flagService, EntityTypeManagerInterface $entityTypeManager, LoggerChannel $logger, MessengerInterface $messenger) {
     $this->config = $configFactory->get('uhsg_user_sync.settings');
     $this->oprekService = $oprekService;
+    $this->studentRightsService = $studentRightService;
     $this->flagService = $flagService;
     $this->entityTypeManager = $entityTypeManager;
     $this->logger = $logger;
@@ -338,13 +345,12 @@ class UserSyncSubscriber implements EventSubscriberInterface {
           // And save the flagging
           $flagging->save();
           $added++;
+        }
       }
-
     }
 
     // Return TRUE if any flags were created.
     return $added > 0;
-
   }
 
   /**

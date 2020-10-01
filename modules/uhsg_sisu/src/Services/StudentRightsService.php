@@ -1,23 +1,23 @@
 <?php
 
-namespace Drupal\uhsg_sisu\Controller;
+namespace Drupal\uhsg_sisu\Services\StudentRightsService;
 
-use Drupal\uhsg_sisu\Service\SisuService;
+use Drupal\uhsg_sisu\Services\SisuService;
 use GuzzleHttp\Exception\GuzzleException;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\Core\Logger\RfcLogLevel;
 
 /**
- * Class StudentRightsController.
+ * Class StudentRightsService.
  *
- * @package Drupal\uhsg_sisu\Controller
+ * @package Drupal\uhsg_sisu\Services\StudentRightsService
  */
-class StudentRightsController {
+class StudentRightsService {
 
   /**
    * SisuService.
    *
-   * @var \Drupal\uhsg_sisu\Service\SisuService
+   * @var \Drupal\uhsg_sisu\Services\SisuService
    */
   private $sisuService;
 
@@ -31,13 +31,13 @@ class StudentRightsController {
   /**
    * Controller constructor.
    *
-   * @param Drupal\uhsg_sisu\Service\SisuService $sisuService
+   * @param Drupal\uhsg_sisu\Services\SisuService $sisuService
    *   SisuService.
    * @param \Drupal\Core\Logger\LoggerChannelFactoryInterface $loggerFactory
    *   LoggerChannelFactory.
    */
   public function __construct(SisuService $sisuService, LoggerChannelFactoryInterface $loggerFactory) {
-    // Moodi Service.
+    // Sisu Service.
     $this->sisuService = $sisuService;
     // Logger factory.
     $this->loggerFactory = $loggerFactory;

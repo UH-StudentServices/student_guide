@@ -1,4 +1,7 @@
 services:
-  uhcg_sisu.graphql:
+  uhsg_sisu.sisuservice:
     class: Drupal\uhsg_sisu\Services\SisuService
     arguments: ["@settings", "@logger.factory", "@serialization.json", "@cache.default", "@datetime.time"]
+  uhsg_sisu.studentrightsservice:
+    class: Drupal\uhsg_sisu\Services\StudentRightsService
+    arguments: ["@uhsg_sisu.sisuservice", "@logger.factory", "@serialization.json", "@cache.default", "@datetime.time"]
