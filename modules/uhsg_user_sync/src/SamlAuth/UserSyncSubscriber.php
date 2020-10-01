@@ -305,43 +305,41 @@ class UserSyncSubscriber implements EventSubscriberInterface {
     // Keep track of new technical degree programmes
     $added = 0;
 
-    // Map study rights to known degree programmes and create flaggings
-    if ($study_rights = $this->oprekService->getStudyRights($student_number)) {
+    // Map studentDegreeProgram to a known degree programme and create flagging
+    if($studentDegreeProgram = $this->StudentRightsController->getPrimaryStudentDegreeProgram($student_number)) {
       $technical_condition_field_name = $this->config->get('technical_condition_field_name');
       $primary_field_name = $this->config->get('primary_field_name');
 
-      foreach ($study_rights as $study_right) {
-        foreach ($study_right->getTargetedCodes() as $targeted_code) {
-          if (isset($known_degree_programmes[$targeted_code->getCode()])) {
+      $studentDegreeProgramCode = $studentDegreeProgram['code'];
 
-            // Flag the degree programme
-            $flag = $this->flagService->getFlagById('my_degree_programmes');
+      if (isset($known_degree_programmes[$studentDegreeProgramCode])) {
 
-            // Get potentially existing flagging, if not exist, then create.
-            /** @var \Drupal\flag\Entity\Flagging $flagging */
-            $flagging = $this->flagService->getFlagging($flag, $known_degree_programmes[$targeted_code->getCode()], $event->getAccount());
-            if (!$flagging) {
-              $flagging = $this->flagService->flag($flag, $known_degree_programmes[$targeted_code->getCode()], $event->getAccount());
-            }
+        // Flag the degree programme
+        $flag = $this->flagService->getFlagById('my_degree_programmes');
 
-            // Load the flagging, so we can set some field values
-            // If "technical condition" field exists, set it to TRUE
-            if ($flagging->hasField($technical_condition_field_name)) {
-              $flagging->set($technical_condition_field_name, TRUE);
-
-              // If targeted code is 'primary' and primary field exists, then
-              // set the primary to TRUE.
-              if ($targeted_code->isPrimary() && $flagging->hasField($primary_field_name)) {
-                $flagging->set($primary_field_name, TRUE);
-              }
-
-              // And save the flagging
-              $flagging->save();
-              $added++;
-            }
-          }
+        // Get potentially existing flagging, if not exist, then create.
+        /** @var \Drupal\flag\Entity\Flagging $flagging */
+        $flagging = $this->flagService->getFlagging($flag, $known_degree_programmes[$studentDegreeProgramCode], $event->getAccount());
+        if (!$flagging) {
+          $flagging = $this->flagService->flag($flag, $known_degree_programmes[$studentDegreeProgramCode], $event->getAccount());
         }
+
+        // Load the flagging, so we can set some field values
+        // If "technical condition" field exists, set it to TRUE
+        if ($flagging->hasField($technical_condition_field_name)) {
+          $flagging->set($technical_condition_field_name, TRUE);
+
+          // If primary field exists, then
+          // set the primary to TRUE.
+          if ($flagging->hasField($primary_field_name)) {
+            $flagging->set($primary_field_name, TRUE);
+          }
+
+          // And save the flagging
+          $flagging->save();
+          $added++;
       }
+
     }
 
     // Return TRUE if any flags were created.

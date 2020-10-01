@@ -53,8 +53,6 @@ class StudentRightsController {
    *   JSON decoded data or NULL.
    */
   public function getStudyRights($oodiUid) {
-    // this has been duplicated from:
-    // https://version.helsinki.fi/OPADev/studies/-/blob/master/backend/src/integrations/sisu/query/study-rights-query.js
     $query = [
       "operationName" => "getStudyRights",
       "variables" => [
@@ -126,13 +124,11 @@ class StudentRightsController {
    *   Response object.
    */
   public function getPrimaryStudentDegreeProgram($oodiId) {
-    // Need to duplicate this code in php:
-    // https://version.helsinki.fi/OPADev/studies/-/blob/master/backend/src/services/users.js#L56
     try {
       // Fetch StudyRights from Sisu.
       $data = $this->getStudyRights($oodiId);
 
-      if(!$data || $data['private_person']) {
+      if(!$data || $data$data['data']['private_person']) {
         return null;
       }
 
