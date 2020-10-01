@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\uhsg_sisu\Services\StudentRightsService;
+namespace Drupal\uhsg_sisu\Services;
 
 use Drupal\uhsg_sisu\Services\SisuService;
 use GuzzleHttp\Exception\GuzzleException;

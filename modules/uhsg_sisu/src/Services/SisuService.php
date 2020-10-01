@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\uhsg_sisu\Services\SisuService;
+namespace Drupal\uhsg_sisu\Services;
 
 use Drupal\Component\Datetime\TimeInterface;
 use Drupal\Component\Serialization\SerializationInterface;
