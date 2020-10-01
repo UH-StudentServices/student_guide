@@ -128,7 +128,7 @@ class StudentRightsService {
       // Fetch StudyRights from Sisu.
       $data = $this->getStudyRights($oodiId);
 
-      if(!$data || $data$data['data']['private_person']) {
+      if(!$data || $data['data']['private_person']) {
         return null;
       }
 
