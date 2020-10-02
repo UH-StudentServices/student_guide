@@ -3,10 +3,11 @@ type: theme
 description: University of Helsinki Student Guide theme
 package: Other
 core: 8.x
-version: 1.49
+core_version_requirement: ^8 || ^9
+version: VERSION
 libraries:
   - uhsg_theme/global-styling
-  - uhsg_theme/siteimprove  
+  - uhsg_theme/siteimprove
 
 base theme: classy
 

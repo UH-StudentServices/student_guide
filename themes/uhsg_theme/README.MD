@@ -6,17 +6,17 @@ Requirements:
 
 About:
   Fonts and scss assets come from the Helsinki University styleguide.
-  these are installed with bower and gulp.
+  these are installed with yarn and gulp.
 
 Getting started (for development):
-  - NOTE: from now on these commands have to be run from the repository root.
-  - Install npm packages (to install bower and gulp)
-      $ npm install
+  - NOTE: These commands have to be run from the repository root.
+  - Install yarn packages
+      $ yarn install
   - Install HY Styleguide
-      $ npm run gulp styleguide-update
-  - Lint Javascript
-      $ npm run gulp lint
+      $ yarn run gulp styleguide-update
+  - Optional: Lint Javascript
+      $ yarn run gulp lint
   - Optional: Initialize SASS watcher
-      $ npm run gulp watch
+      $ yarn run gulp watch
   - Optional: Automatically reload changes in your browser
-      $ npm run gulp browsersync
+      $ yarn run gulp browsersync

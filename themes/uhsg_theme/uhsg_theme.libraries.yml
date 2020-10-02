@@ -1,3 +1,13 @@
+a11y_accordion_tabs:
+  remote: https://github.com/matthiasott/a11y-accordion-tabs
+  version: "v1.0.2"
+  license:
+    name: MIT
+    url: https://github.com/matthiasott/a11y-accordion-tabs/blob/v1.0.2/LICENSE
+    gpl-compatible: true
+  js:
+    assets/a11y-accordion-tabs/a11y-accordion-tabs.min.js: { minified: true }
+
 global-styling:
   version: 1.x
   css:
@@ -70,14 +80,6 @@ truncateText:
     js/truncateText.js: {}
   dependencies:
     - core/jquery
-
-tabs:
-  version: 1.x
-  js:
-    js/tabs.js: {}
-  dependencies:
-    - core/jquery.once
-    - core/jquery.ui.tabs
 
 siteimprove:
   version: 1.x

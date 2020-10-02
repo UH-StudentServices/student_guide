@@ -198,7 +198,7 @@ class ActiveDegreeProgrammeService {
     $query_param = $this->getTidFromQuery();
     if ($query_param) {
       $term = Term::load($query_param);
-      if (!is_null($term) && $this->access($term) && $term->getVocabularyId() == $this->degreeProgrammeBundle) {
+      if (!is_null($term) && $this->access($term) && $term->bundle() == $this->degreeProgrammeBundle) {
         $this->debug('Resolved by parameter ' . $term->id());
         $this->resolvedTerm = $term;
         return $this->resolvedTerm;
@@ -213,7 +213,7 @@ class ActiveDegreeProgrammeService {
     $degree_programme_from_headers = $this->requestStack->getCurrentRequest()->headers->get('x-degree-programme');
     if ($degree_programme_from_headers) {
       $term = Term::load($this->requestStack->getCurrentRequest()->headers->get('x-degree-programme'));
-      if (!is_null($term) && $this->access($term) && $term->getVocabularyId() == $this->degreeProgrammeBundle) {
+      if (!is_null($term) && $this->access($term) && $term->bundle() == $this->degreeProgrammeBundle) {
         $this->debug('Resolved by header ' . $term->id());
         $this->resolvedTerm = $term;
         return $this->resolvedTerm;
@@ -228,7 +228,7 @@ class ActiveDegreeProgrammeService {
     $degree_programme_from_cookies = $this->requestStack->getCurrentRequest()->cookies->get('Drupal_visitor_degree_programme');
     if ($degree_programme_from_cookies) {
       $term = Term::load($degree_programme_from_cookies);
-      if (!is_null($term) && $this->access($term) && $term->getVocabularyId() == $this->degreeProgrammeBundle) {
+      if (!is_null($term) && $this->access($term) && $term->bundle() == $this->degreeProgrammeBundle) {
         $this->debug('Resolved by cookie ' . $term->id());
         $this->resolvedTerm = $term;
         return $this->resolvedTerm;
@@ -253,7 +253,7 @@ class ActiveDegreeProgrammeService {
             $entity = $flagging->getFlaggable();
             if (!is_null($entity) &&
                 $entity->getEntityTypeId() == $this->degreeProgrammeEntityType &&
-                $entity->getVocabularyId() == $this->degreeProgrammeBundle &&
+                $entity->bundle() == $this->degreeProgrammeBundle &&
                 $this->access($entity)) {
               $this->debug('Resolved by cookie ' . $entity->id());
               $this->resolvedTerm = $entity;

@@ -22,13 +22,13 @@ class SomeLinksForm extends ContentEntityForm {
 
     switch ($status) {
       case SAVED_NEW:
-        drupal_set_message($this->t('Created the %label Some links.', [
+        $this->messenger()->addStatus($this->t('Created the %label Some links.', [
           '%label' => $entity->label(),
         ]));
         break;
 
       default:
-        drupal_set_message($this->t('Saved the %label Some links.', [
+        $this->messenger()->addStatus($this->t('Saved the %label Some links.', [
           '%label' => $entity->label(),
         ]));
     }

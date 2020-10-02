@@ -1,5 +1,6 @@
 <?php
 
+use Drupal\node\Entity\Node;
 /**
  * Implements hook_drush_command().
  */
@@ -28,7 +29,7 @@ function drush_uhsg_domain_uhsg_assign_article_domains($limit = 100) {
     ->range(0, $limit)
     ->execute();
 
-  $nodes = \Drupal\node\Entity\Node::loadMultiple($nids);
+  $nodes = Node::loadMultiple($nids);
 
   foreach ($nodes as $node) {
     $node->save();
@@ -43,7 +44,7 @@ function drush_uhsg_domain_uhsg_assign_theme_domains($limit = 100) {
     ->range(0, $limit)
     ->execute();
 
-  $nodes = \Drupal\node\Entity\Node::loadMultiple($nids);
+  $nodes = Node::loadMultiple($nids);
 
   foreach ($nodes as $node) {
     $node->save();

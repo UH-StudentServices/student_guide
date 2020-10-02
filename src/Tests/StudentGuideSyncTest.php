@@ -4,6 +4,9 @@ namespace Drupal\student_guide\Tests;
 
 use Drupal\Core\Archiver\ArchiveTar;
 use Drupal\Core\Config\FileStorage;
+use Drupal\Core\Site\Settings;
+use Drupal\user\UserInterface;
+use Drupal\Core\File\FileSystem;
 
 /**
  * Tests the config installer profile by having files in a sync directory.
@@ -35,8 +38,8 @@ class StudentGuideSyncTest extends StudentGuideTestBase {
     parent::testInstaller();
 
     // Do assertions specific to test.
-    $this->assertEqual(drupal_realpath($this->syncDir), config_get_config_directory(CONFIG_SYNC_DIRECTORY), 'The sync directory has been updated during the installation.');
-    $this->assertEqual(USER_REGISTER_ADMINISTRATORS_ONLY, \Drupal::config('user.settings')->get('register'), 'Ensure standard_install() does not overwrite user.settings::register.');
+    $this->assertEqual(\Drupal::service('file_system')->realpath($this->syncDir), Settings::get('config_sync_directory'), 'The sync directory has been updated during the installation.');
+    $this->assertEqual(UserInterface::REGISTER_ADMINISTRATORS_ONLY, \Drupal::config('user.settings')->get('register'), 'Ensure standard_install() does not overwrite user.settings::register.');
     $this->assertEqual([], \Drupal::entityDefinitionUpdateManager()->getChangeSummary(), 'There are no entity or field definition updates.');
   }
 
@@ -45,7 +48,7 @@ class StudentGuideSyncTest extends StudentGuideTestBase {
    */
   protected function setUpSyncForm() {
     // Create a new sync directory.
-    drupal_mkdir($this->syncDir);
+    FileSystem::mkdir($this->syncDir);
 
     // Extract the tarball into the sync directory.
     $archiver = new ArchiveTar($this->getTarball(), 'gz');
@@ -59,10 +62,10 @@ class StudentGuideSyncTest extends StudentGuideTestBase {
     // standard_install() does not override it.
     $sync = new FileStorage($this->syncDir);
     $user_settings = $sync->read('user.settings');
-    $user_settings['register'] = USER_REGISTER_ADMINISTRATORS_ONLY;
+    $user_settings['register'] = UserInterface::REGISTER_ADMINISTRATORS_ONLY;
     $sync->write('user.settings', $user_settings);
 
-    $this->drupalPostForm(NULL, ['sync_directory' => drupal_realpath($this->syncDir)], 'Save and continue');
+    $this->drupalPostForm(NULL, ['sync_directory' => \Drupal::service('file_system')->realpath($this->syncDir)], 'Save and continue');
   }
 
 }

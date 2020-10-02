@@ -1,8 +1,9 @@
 name: Student Guide
 type: profile
 description: 'Build a student guide site.'
-version: 1.49
+version: VERSION
 core: 8.x
+core_version_requirement: ^8 || ^9
 dependencies:
   - admin_toolbar
   - block

@@ -62,7 +62,7 @@ class JwtTest extends UnitTestCase {
    * @test
    */
   public function shouldThrowExceptionOnMissingPrivateKeyPathConfig() {
-    $this->setExpectedException(Exception::class);
+    $this->expectException(Exception::class);
     $this->jwt->generateToken();
   }
 }

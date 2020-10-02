@@ -1,5 +1,12 @@
 #Changelog
 
+## 1.xx-dev
+Release date: ??.??.????
+
+* HUB-698 - Drupal 9 compatibility for custom modules.
+* HUB-765 - Improved responsive behavior and accessibility for tabbed navigation.
+
+
 ## 1.49
 Release date: 17.09.2020
 * HUB-769 - Updating Drupal to 8.8.10.

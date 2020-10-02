@@ -1,5 +1,10 @@
 <?php
 
+use Drupal\Core\Field\FieldDefinitionInterface;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Field\FieldItemListInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\node\Entity\Node;
 /**
  * @file
  * Contains uhsg_domain.module.
@@ -36,7 +41,7 @@ function uhsg_domain_help($route_name, RouteMatchInterface $route_match) {
 /**
  * Implements hook_entity_field_access().
  */
-function uhsg_domain_entity_field_access($operation, \Drupal\Core\Field\FieldDefinitionInterface $field_definition, \Drupal\Core\Session\AccountInterface $account, \Drupal\Core\Field\FieldItemListInterface $items = NULL) {
+function uhsg_domain_entity_field_access($operation, FieldDefinitionInterface $field_definition, AccountInterface $account, FieldItemListInterface $items = NULL) {
 
   // Related content: Deny for other than Instructions for teaching.
   return in_array($field_definition->getName(), ['field_article_related', 'field_theme_related']) && !\Drupal::service('uhsg_domain.domain')->isTeachingDomain()
@@ -52,8 +57,8 @@ function uhsg_domain_entity_field_access($operation, \Drupal\Core\Field\FieldDef
  * Sets article domain based on the selected user group. Teaching domain when
  * the user group is teachers, student domain for other user groups.
  */
-function uhsg_domain_entity_presave(Drupal\Core\Entity\EntityInterface $entity) {
-  if ($entity instanceof \Drupal\node\Entity\Node && in_array($entity->getType(), ['article', 'theme'])) {
+function uhsg_domain_entity_presave(EntityInterface $entity) {
+  if ($entity instanceof Node && in_array($entity->getType(), ['article', 'theme'])) {
     $domain_id = $entity->field_user_group->value == 'teachers' ? DomainService::TEACHING_DOMAIN_ID : DomainService::STUDENT_DOMAIN_ID;
 
     if ($entity->getType() == 'article') {
