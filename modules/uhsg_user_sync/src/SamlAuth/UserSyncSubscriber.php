@@ -329,35 +329,20 @@ class UserSyncSubscriber implements EventSubscriberInterface {
       $technical_condition_field_name = $this->config->get('technical_condition_field_name');
       $primary_field_name = $this->config->get('primary_field_name');
 
-<<<<<<< HEAD
       $studentDegreeProgramCode = $studentDegreeProgram['code'];
 
+      if (!empty($studentDegreeProgramCode) && Settings::get('uhsg_oprek_add_debug_logging', self::UHSG_OPREK_ADD_DEBUG_LOGGING)) {
+        // Debug (a lot of) study right data. Enable only temporarily.
+        \Drupal::logger('uhsg_oprek')->info('setTechnicalDegreeProgrammes(),
+          targeted codes are: <pre>@targeted_codes</pre> and
+          degree_programmes: <pre>@degree_programmes</pre>', [
+          '@targeted_codes' => print_r($studentDegreeProgramCode, TRUE),
+          '@degree_programmes' => print_r($known_degree_programme_keys, TRUE),
+        ]);
+      }
+
+      // TODO: Should we reallyreally go trough all the studyrights or only one? :O
       if (isset($known_degree_programmes[$studentDegreeProgramCode])) {
-=======
-      foreach ($study_rights as $study_right) {
-        $targeted_codes_array = array();
-        foreach ($study_right->getTargetedCodes() as $targeted_code) {
-          $targeted_codes_array[] = array(
-            'code' => $targeted_code->getCode(),
-            'is_primary' => $targeted_code->isPrimary(),
-          );
-        }
-
-        if (!empty($targeted_codes_array) && Settings::get('uhsg_oprek_add_debug_logging', self::UHSG_OPREK_ADD_DEBUG_LOGGING)) {
-          // Debug (a lot of) study right data. Enable only temporarily.
-          \Drupal::logger('uhsg_oprek')->info('setTechnicalDegreeProgrammes(),
-            targeted codes are: <pre>@targeted_codes</pre> and
-            degree_programmes: <pre>@degree_programmes</pre>', [
-            '@targeted_codes' => print_r($targeted_codes_array, TRUE),
-            '@degree_programmes' => print_r($known_degree_programme_keys, TRUE),
-          ]);
-        }
-
-        foreach ($study_right->getTargetedCodes() as $targeted_code) {
-          if (isset($known_degree_programmes[$targeted_code->getCode()])) {
-            // Flag the degree programme
-            $flag = $this->flagService->getFlagById('my_degree_programmes');
->>>>>>> develop
 
         // Flag the degree programme
         $flag = $this->flagService->getFlagById('my_degree_programmes');
