@@ -5,7 +5,6 @@ namespace Drupal\uhsg_sisu\Services;
 use Drupal\Component\Serialization\Json;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\Core\Logger\RfcLogLevel;
-use Drupal\Core\Logger\RfcLogLevel;
 use Drupal\Core\Utility\Error;
 use Drupal\uhsg_sisu\Services\SisuService;
 use GuzzleHttp\Exception\GuzzleException;
@@ -104,8 +103,7 @@ class StudyRightsService {
   public function getStudyRights($student_number) {
     // Fetch from mockdata based on configuration
     if ($this->settings::get('uhsg_sisu_mock_response', self::UHSG_SISU_MOCK_RESPONSE)) {
-      $data = Json::decode(getStudyRightsMockData());
-      return $data;
+      return getStudyRightsMockData();
     }
 
     $query = [
@@ -191,13 +189,8 @@ class StudyRightsService {
    *   Response object.
    */
   public function getPrimaryStudentDegreeProgram($student_number) {
-    if($this->mockData == TRUE) {
-      // Mock data payload from sisu
-      $data = Json::decode($this->getStudyRightsMockData());
-    } else {
-      // Fetch StudyRights from Sisu.
-      $data = Json::decode($this->getStudyRights($student_number));
-    }
+    // Fetch studyrightsdata for student
+    $data = Json::decode($this->getStudyRights($student_number));
 
     if(!$data || $data['data']['private_person']) {
       return null;
@@ -268,7 +261,7 @@ class StudyRightsService {
   private function degreeProgramWithSpecialisation($degreeProgram, $specialisation) {
     if ($degreeProgram && $specialisation && $specialisation['groupId']) {
       // Read file
-      $sisu_oodi_codes = Json::decode((file_get_contents("./sisu-oodi-codes.json"));
+      $sisu_oodi_codes = Json::decode(file_get_contents("./sisu-oodi-codes.json"));
 
       // Traverse trough all the oodi-sisu mappings.
       foreach($sisu_oodi_codes as $group) {
@@ -294,7 +287,7 @@ class StudyRightsService {
    */
   public function getStudyRightsMockData() {
     // Read file and return mocked data.
-    return Json::decode((file_get_contents("../../example_data/private_person_study_rights.json")));
+    return file_get_contents("../../example_data/private_person_study_rights.json");
   }
 
   /**
