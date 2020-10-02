@@ -101,28 +101,28 @@ class StudyRightsService {
   /**
    * Fetch studyrights for person.
    *
-   * @param string $student_number
+   * @param string $oodiId
    *   Student Number.
    *
    * @return array|null
    *   JSON decoded data or NULL.
    */
-  public function fetchStudyRightsData($student_number) {
+  public function fetchStudyRightsData($oodiId) {
     // Fetch from mockdata based on configuration
     if ($this->settings::get('uhsg_sisu_mock_response', self::UHSG_SISU_MOCK_RESPONSE)) {
       return fetchStudyRightsMockData();
     }
 
     // Fetch from static storage if it has data.
-    if (is_array($this->studyRightsData) && array_key_exists($student_number, $this->studyRightsData)) {
-      return $this->studyRightsData[$student_number];
+    if (is_array($this->studyRightsData) && array_key_exists($oodiId, $this->studyRightsData)) {
+      return $this->studyRightsData[$oodiId];
     }
 
     $query = [
       "operationName" => "getStudyRights",
       "variables" => [
         "ids" => [
-          "hy-hlo-" . $student_number,
+          "hy-hlo-" . $oodiId,
         ],
       ],
       "query" => 'query StudyRightsQuery($personId: ID!) {
@@ -180,8 +180,8 @@ class StudyRightsService {
       $data = $this->sisuService->apiRequest($query);
 
       // Save to static storage.
-      $this->studyRightsData[$student_number] = $data;
-      return $this->studyRightsData[$student_number];
+      $this->studyRightsData[$oodiId] = $data;
+      return $this->studyRightsData[$oodiId];
 
     }
     catch (GuzzleException $e) {
@@ -199,15 +199,15 @@ class StudyRightsService {
   /**
    * get all studyrights for person.
    *
-   * @param string $student_number
+   * @param string $oodiId
    *   Student Number.
    *
    * @return array|null
    *   JSON decoded data or NULL.
    */
-  public function getStudyRights($student_number) {
+  public function getStudyRights($oodiId) {
     // Fetch studyrightsdata for student
-    $data = Json::decode($this->fetchStudyRightsData($student_number));
+    $data = Json::decode($this->fetchStudyRightsData($oodiId));
 
     if(!$data || $data['data']['private_person']) {
       return null;
@@ -227,9 +227,9 @@ class StudyRightsService {
    * @return \Psr\Http\Message\ResponseInterface
    *   Response object.
    */
-  public function getPrimaryStudentDegreeProgram($student_number) {
+  public function getPrimaryStudentDegreeProgram($oodiId) {
     // Fetch studyrightsdata for student
-    $data = Json::decode($this->fetchStudyRightsData($student_number));
+    $data = Json::decode($this->fetchStudyRightsData($oodiId));
 
     if(!$data || $data['data']['private_person']) {
       return null;

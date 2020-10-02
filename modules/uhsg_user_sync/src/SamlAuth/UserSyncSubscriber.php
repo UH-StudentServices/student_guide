@@ -207,7 +207,7 @@ class UserSyncSubscriber implements EventSubscriberInterface {
   protected function syncMyDegreeProgrammes(SamlAuthUserSyncEvent $event) {
 
     // Figure out student number.
-    $field_name = $this->config->get('studentID_field_name');
+    $field_name = $this->config->get('oodiUID_field_name');
     if (!$field_name) {
       // We don't know which field to look from
       return;
