@@ -62,6 +62,13 @@ class StudyRightsService {
   private $time;
 
   /**
+   * Static storage for study rights data.
+   *
+   * @var array
+   */
+  private $studyRightsData;
+
+  /**
    * Service constructor.
    *
    * @param \Drupal\Core\Site\Settings $settings
@@ -100,10 +107,15 @@ class StudyRightsService {
    * @return array|null
    *   JSON decoded data or NULL.
    */
-  public function getStudyRights($student_number) {
+  public function fetchStudyRightsData($student_number) {
     // Fetch from mockdata based on configuration
     if ($this->settings::get('uhsg_sisu_mock_response', self::UHSG_SISU_MOCK_RESPONSE)) {
-      return getStudyRightsMockData();
+      return fetchStudyRightsMockData();
+    }
+
+    // Fetch from static storage if it has data.
+    if (is_array($this->studyRightsData) && array_key_exists($student_number, $this->studyRightsData)) {
+      return $this->studyRightsData[$student_number];
     }
 
     $query = [
@@ -165,7 +177,12 @@ class StudyRightsService {
     ];
 
     try {
-      return $this->sisuService->apiRequest($query);
+      $data = $this->sisuService->apiRequest($query);
+
+      // Save to static storage.
+      $this->studyRightsData[$student_number] = $data;
+      return $this->studyRightsData[$student_number];
+
     }
     catch (GuzzleException $e) {
       $this->guzzleErrorLog($e);
@@ -180,6 +197,28 @@ class StudyRightsService {
   }
 
   /**
+   * get all studyrights for person.
+   *
+   * @param string $student_number
+   *   Student Number.
+   *
+   * @return array|null
+   *   JSON decoded data or NULL.
+   */
+  public function getStudyRights($student_number) {
+    // Fetch studyrightsdata for student
+    $data = Json::decode($this->fetchStudyRightsData($student_number));
+
+    if(!$data || $data['data']['private_person']) {
+      return null;
+    }
+
+    $studyrights = $data['data']['private_person']['studyRights'];
+
+    return $studyrights;
+  }
+
+  /**
    * Get Student Primary Degree Program.
    *
    * @param int $oodiId
@@ -190,7 +229,7 @@ class StudyRightsService {
    */
   public function getPrimaryStudentDegreeProgram($student_number) {
     // Fetch studyrightsdata for student
-    $data = Json::decode($this->getStudyRights($student_number));
+    $data = Json::decode($this->fetchStudyRightsData($student_number));
 
     if(!$data || $data['data']['private_person']) {
       return null;
@@ -285,7 +324,7 @@ class StudyRightsService {
   /**
    * GetstudyRightsMockdata.
    */
-  public function getStudyRightsMockData() {
+  public function fetchStudyRightsMockData() {
     // Read file and return mocked data.
     return file_get_contents("../../example_data/private_person_study_rights.json");
   }

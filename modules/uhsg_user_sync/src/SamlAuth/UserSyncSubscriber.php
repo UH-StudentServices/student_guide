@@ -341,7 +341,6 @@ class UserSyncSubscriber implements EventSubscriberInterface {
         ]);
       }
 
-      // TODO: Should we reallyreally go trough all the studyrights or only one? :O
       if (isset($known_degree_programmes[$studentDegreeProgramCode])) {
 
         // Flag the degree programme

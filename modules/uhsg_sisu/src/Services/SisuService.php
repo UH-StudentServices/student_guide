@@ -131,7 +131,7 @@ class SisuService {
    *   Response object.
    */
   public function apiRequest(array $graphQlQuery) {
-    $url = $this->settings->get('uhsg_sisu_graphql_url', self::GRAPHQL_URL);
+    $url = $this->getGraphQlUrl();
     $data = $this->jsonSerialization->encode($graphQlQuery);
 
     return $this->request($url, 'GET', $data);
