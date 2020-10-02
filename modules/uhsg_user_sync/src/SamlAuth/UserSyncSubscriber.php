@@ -12,7 +12,7 @@ use Drupal\flag\FlagServiceInterface;
 use Drupal\samlauth\Event\SamlAuthEvents;
 use Drupal\samlauth\Event\SamlAuthUserSyncEvent;
 use Drupal\uhsg_oprek\Oprek\OprekServiceInterface;
-use Drupal\uhsg_sisu\Services\StudentRightsService;
+use Drupal\uhsg_sisu\Services\StudyRightsService;
 use Drupal\uhsg_samlauth\AttributeParser;
 use Drupal\uhsg_samlauth\AttributeParserInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
@@ -37,9 +37,9 @@ class UserSyncSubscriber implements EventSubscriberInterface {
   protected $oprekService;
 
   /**
-   * @var Drupal\uhsg_sisu\Services\StudentRightsService
+   * @var Drupal\uhsg_sisu\Services\StudyRightsService
    */
-  protected $studentRightsService;
+  protected $studyRightsService;
 
   /**
    * @var \Drupal\flag\FlagServiceInterface
@@ -61,10 +61,10 @@ class UserSyncSubscriber implements EventSubscriberInterface {
    */
   protected $messenger;
 
-  public function __construct(ConfigFactoryInterface $configFactory, OprekServiceInterface $oprekService, StudentRightsService $studentRightsService, FlagServiceInterface $flagService, EntityTypeManagerInterface $entityTypeManager, LoggerChannel $logger, MessengerInterface $messenger) {
+  public function __construct(ConfigFactoryInterface $configFactory, OprekServiceInterface $oprekService, StudyRightsService $studyRightsService, FlagServiceInterface $flagService, EntityTypeManagerInterface $entityTypeManager, LoggerChannel $logger, MessengerInterface $messenger) {
     $this->config = $configFactory->get('uhsg_user_sync.settings');
     $this->oprekService = $oprekService;
-    $this->studentRightsService = $studentRightService;
+    $this->studyRightsService = $studyRightService;
     $this->flagService = $flagService;
     $this->entityTypeManager = $entityTypeManager;
     $this->logger = $logger;
@@ -312,8 +312,8 @@ class UserSyncSubscriber implements EventSubscriberInterface {
     // Keep track of new technical degree programmes
     $added = 0;
 
-    // Map studentDegreeProgram to a known degree programme and create flagging
-    if($studentDegreeProgram = $this->StudentRightsController->getPrimaryStudentDegreeProgram($student_number)) {
+    // Map StudentDegreeProgram to a known degree programme and create flagging
+    if($studentDegreeProgram = $this->studyRightsService->getPrimaryStudentDegreeProgram($student_number)) {
       $technical_condition_field_name = $this->config->get('technical_condition_field_name');
       $primary_field_name = $this->config->get('primary_field_name');
 

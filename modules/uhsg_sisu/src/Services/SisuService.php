@@ -4,9 +4,13 @@ namespace Drupal\uhsg_sisu\Services;
 
 use Drupal\Component\Datetime\TimeInterface;
 use Drupal\Component\Serialization\SerializationInterface;
+use Drupal\Core\Config\ConfigFactory;
+use Drupal\Core\Logger\RfcLogLevel;
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\Core\Site\Settings;
+use Psr\Http\Message\ResponseInterface;
+use GuzzleHttp\Client;
 
 /**
  * Class SisuService.
@@ -14,13 +18,6 @@ use Drupal\Core\Site\Settings;
  * @package Drupal\uhsg_sisu\Services\SisuService
  */
 class SisuService {
-
-  /**
-   * Enable debug log.
-   *
-   * @var bool
-   */
-  const DEBUG = TRUE;
 
   /**
    * Default API url.
@@ -34,21 +31,21 @@ class SisuService {
    *
    * @var string
    */
-  const GRAPHQL_CERT_PATH = '/app/keys/esb/qa/esb.crt';
+  const GRAPHQL_CERT_PATH = '/etc/ssl/certs/esb/esb.pem';
 
   /**
    * Default SSLKEY path.
    *
    * @var string
    */
-  const GRAPHQL_SSLKEY_PATH = '/app/keys/esb/qa/esb.key';
+  const GRAPHQL_SSLKEY_PATH = '/etc/ssl/certs/esb/esb.key';
 
   /**
-   * Course realisation data cache lifetime in seconds.
+   * The HTTP client.
    *
-   * @var int
+   * @var \GuzzleHttp\Client
    */
-  const COURSE_REALISATION_CACHE_LIFETIME = 300;
+  private $client;
 
   /**
    * Drupal settings.
@@ -88,6 +85,8 @@ class SisuService {
   /**
    * Service constructor.
    *
+   * @param \GuzzleHttp\Client $client
+   *   Http Client.
    * @param \Drupal\Core\Site\Settings $settings
    *   The Drupal settings.
    * @param \Drupal\Core\Logger\LoggerChannelFactoryInterface $loggerChannelFactory
@@ -99,7 +98,12 @@ class SisuService {
    * @param \Drupal\Component\Datetime\TimeInterface $time
    *   The Drupal time object.
    */
-  public function __construct(Settings $settings, LoggerChannelFactoryInterface $loggerChannelFactory, SerializationInterface $jsonSerialization, CacheBackendInterface $cache, TimeInterface $time) {
+  public function __construct(Client $client, 
+                              Settings $settings, 
+                              LoggerChannelFactoryInterface $loggerChannelFactory, 
+                              SerializationInterface $jsonSerialization, 
+                              CacheBackendInterface $cache, 
+                              TimeInterface $time) {
     $this->settings = $settings;
     $this->logger = $loggerChannelFactory->get('uhsg_sisu');
     $this->jsonSerialization = $jsonSerialization;
@@ -108,80 +112,133 @@ class SisuService {
   }
 
   /**
-   * Make a GraphQL api request.
+   * Get api url.
+   *
+   * @return string
+   *   The absolute API url as a string.
+   */
+  public function getGraphQlUrl() {
+    return $this->settings->get('uhsg_sisu_graphql_url', self::GRAPHQL_URL);
+  }
+
+  /**
+   * Gets information regarding the given realisation identified by ID.
    *
    * @param array $graphQlQuery
-   *   The GraphQL query data.
-   * @param bool $sign
-   *   Should we sign the request, defaults to TRUE.
+   *   Realisation ID.
    *
-   * @return array|null
-   *   JSON decoded data array or NULL.
+   * @return \Psr\Http\Message\ResponseInterface
+   *   Response object.
    */
-  public function apiRequest(array $graphQlQuery, $sign = TRUE) {
+  public function apiRequest(array $graphQlQuery) {
+    $url = $this->settings->get('uhsg_sisu_graphql_url', self::GRAPHQL_URL);
+    $data = $this->jsonSerialization->encode($graphQlQuery);
+
+    return $this->request($url, 'GET', $data);
+  }
+
+  /**
+   * Executes a request and returns the response.
+   *
+   * @param string $url
+   *   Request URL.
+   * @param string $method
+   *   Request method.
+   * @param null|mixed $data
+   *   Optional request data.
+   * @param array $option_overrides
+   *   Optional options overrides.
+   *
+   * @return \Psr\Http\Message\ResponseInterface
+   *   Response object.
+   */
+  private function request($url, $method, $data = NULL, array $option_overrides = []) {
+    $options = $option_overrides + $this->getRequestOptions($data);
+
+    // Guzzle Client.
+    $response = $this->client->request(
+      $method,
+      $url,
+      $options
+    );
+
+    return $this->handleResponse($response);
+  }
+
+  /**
+   * Constructs and returns request options.
+   *
+   * @param null|mixed $data
+   *   Optional request data.
+   *
+   * @return array
+   *   Request options.
+   */
+  private function getRequestOptions($data) {
     $options = [
-      CURLOPT_HTTPHEADER => [
+      'timeout' => $this->timeoutSeconds,
+      // False = allow requests to sites using self-signed certificates.
+      'verify' => TRUE,
+      'http_errors' => FALSE,
+      'cert' => $this->settings->get('uhsg_sisu_cert_path', self::GRAPHQL_CERT_PATH),
+      'ssl_key' => $this->settings->get('uhsg_sisu_sslkey_path', self::GRAPHQL_SSLKEY_PATH),
+      'headers' => [
         'Content-Type: application/json',
         'client-app-id: doo-sg-web1-16.student.helsinki.fi',
       ],
-      // GraphQL expects POST requests with payload.
-      CURLOPT_POST => 1,
-      // Pass headers to the data stream.
-      CURLOPT_HEADER => 0,
-      // Force new connection. Might avoid mystery.
-      CURLOPT_FRESH_CONNECT => 1,
-      // TRUE to return the transfer as a string of the return value of
-      // curl_exec() instead of outputting it directly.
-      CURLOPT_RETURNTRANSFER => 1,
-      // Timeout increased 4->10.
-      CURLOPT_TIMEOUT => 10,
-      // Debugging help.
-      CURLOPT_VERBOSE => TRUE,
-      // https://curl.haxx.se/libcurl/c/CURLOPT_URL.html.
-      CURLOPT_URL => $this->settings->get('uhsg_sisu_graphql_url', self::GRAPHQL_URL),
-      CURLOPT_POSTFIELDS => $this->jsonSerialization->encode($graphQlQuery),
     ];
 
-    if ($sign) {
-      // We need the HTTP(S) requests to be signed with service specific
-      // certificates that are whitelisted for the ESB servers.
-      // There are at least 3 firewall levels that need to be passed on these
-      // requests:
-      // 1. HY outer infra firewall (because of Silta hosting).
-      // 2. iptables config in ESBM.
-      // 3. Service specific software whitelistings.
-      $options[CURLOPT_SSLCERT] = $this->settings->get('uhsg_sisu_cert_path', self::GRAPHQL_CERT_PATH);
-      $options[CURLOPT_SSLKEY] = $this->settings->get('uhsg_sisu_sslkey_path', self::GRAPHQL_SSLKEY_PATH);
+    if (isset($data)) {
+      $options['body'] = $data;
     }
 
-    $ch = curl_init();
-    curl_setopt_array($ch, $options);
-    $result = curl_exec($ch);
-
-    if (!$result) {
-      $this->logger->error('GraphQL doo-sisu curl request failed: @error', [
-        '@error' => curl_error($ch),
-      ]);
-    }
-
-    // Debug log.
-    if ($this->settings->get('uhsg_sisu_debug', self::DEBUG)) {
-      $this->logger->notice('GraphQL doo-sisu posted query : @query', [
-        '@query' => print_r($this->jsonSerialization->encode($graphQlQuery), TRUE),
-      ]);
-
-      $this->logger->notice('GraphQL doo-sisu curl result : @result', [
-        '@result' => print_r($result, TRUE),
-      ]);
-
-      $this->logger->notice('GraphQL doo-sisu curl request data : @data', [
-        '@data' => print_r(curl_getinfo($ch), TRUE),
-      ]);
-    }
-
-    curl_close($ch);
-
-    return $this->jsonSerialization->decode($result);
+    return $options;
   }
 
+  /**
+   * Handles the response.
+   *
+   * @param \Psr\Http\Message\ResponseInterface $response
+   *   Response object.
+   *
+   * @return \Psr\Http\Message\ResponseInterface
+   *   Response object.
+   */
+  private function handleResponse(ResponseInterface $response) {
+    $this->logResponse($response);
+
+    return $response;
+  }
+
+  /**
+   * Logs the response object.
+   *
+   * @param \Psr\Http\Message\ResponseInterface $response
+   *   Response object.
+   */
+  private function logResponse(ResponseInterface $response) {
+    $responseCode = $response->getStatusCode();
+    $responseData = $response->getBody()->getContents();
+
+    if (in_array($responseCode, [200, 404])) {
+      $this->log('Response: @code @data', [
+        '@code' => $responseCode,
+        '@data' => $responseData,
+      ]);
+    }
+    else {
+      $this->log('Response: @response', [
+        '@response' => print_r($response, TRUE),
+      ], RfcLogLevel::WARNING);
+    }
+  }
+
+  /**
+   * Logger.
+   *
+   * @see LoggerInterface::log()
+   */
+  private function log($message, $context = [], $severity = RfcLogLevel::NOTICE) {
+    $this->loggerFactory->get('uhsg_sisu')->log($severity, $message, $context);
+  }
 }
