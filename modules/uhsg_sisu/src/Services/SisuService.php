@@ -176,8 +176,7 @@ class SisuService {
    */
   private function getRequestOptions($data) {
     $options = [
-      'timeout' => $this->timeoutSeconds,
-      // False = allow requests to sites using self-signed certificates.
+      'timeout' => "10",
       'verify' => TRUE,
       'http_errors' => FALSE,
       'cert' => $this->settings->get('uhsg_sisu_cert_path', self::GRAPHQL_CERT_PATH),

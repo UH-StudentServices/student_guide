@@ -7,6 +7,8 @@ use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\Core\Logger\RfcLogLevel;
 use Drupal\Core\Utility\Error;
 use Drupal\uhsg_sisu\Services\SisuService;
+use Drupal\uhsg_sisu\StudyRight\StudyRight\StudyRight;
+
 use GuzzleHttp\Exception\GuzzleException;
 
 /**
@@ -105,7 +107,7 @@ class StudyRightsService {
    *   Student Number.
    *
    * @return array|null
-   *   JSON decoded data or NULL.
+   *   raw data or NULL.
    */
   public function fetchStudyRightsData($oodiId) {
     // Fetch from mockdata based on configuration
@@ -137,6 +139,10 @@ class StudyRightsService {
           }
           studyRights {
             id
+            valid {
+              startDate
+              endDate
+            }
             studyRightGraduation {
               phase1GraduationDate
               phase2GraduationDate
@@ -197,25 +203,50 @@ class StudyRightsService {
   }
 
   /**
-   * get all studyrights for person.
+   * get all active studyrights for person.
    *
    * @param string $oodiId
    *   Student Number.
    *
    * @return array|null
-   *   JSON decoded data or NULL.
+   *   array of studyright obj or NULL.
    */
-  public function getStudyRights($oodiId) {
-    // Fetch studyrightsdata for student
+  public function getActiveStudyRights($oodiId) {
+    // Fetch studyrightsdata for student.
     $data = Json::decode($this->fetchStudyRightsData($oodiId));
+    $date_today = date('Y-m-d', time());
 
-    if(!$data || $data['data']['private_person']) {
+    // Make sure we have results to loop trough.
+    if(!$data || $data['data'] || $data['data']['private_person'] || $data['data']['private_person']['studyRights']) {
       return null;
     }
 
+    // Save all studyrights.
+    $studyrightprimalitychain = $data['data']['private_person']['studyRightPrimalityChain'];
     $studyrights = $data['data']['private_person']['studyRights'];
+    $primarystudyright = getPrimaryStudentDegreeProgram($oodiId);
 
-    return $studyrights;
+    $active_studyrights = [];
+    // Loop trough studyrights and save active studyrights.
+    foreach ($studyrights as $studyright) {
+      // Only save studyright if it's active ie. enddate null and startdate in the past
+      if($studyright['valid']['startDate'] < $date_today && !$studyright['valid']['endDate']) {
+        // Handle specialization and graduation for a studyright
+        $studyrightdegreeprogram = getActiveStudentDegreeProgram($studyright);
+
+        // Create new studyright
+        $studyrightdegree = new StudyRight($studyrightdegreeprogram);
+
+          // If primary, then set it so.
+        if($primarystudyright['id'] == $studyright['id']) {
+          $studyrightdegreeprogram.setPrimary(TRUE);
+        }
+
+        $active_studyrights[] = $studyrightdegreeprogram;
+      }
+    }
+
+    return $active_studyrights;
   }
 
   /**
@@ -246,14 +277,29 @@ class StudyRightsService {
       return null;
     }
 
-    if($primarystudyright['studyRightGraduation'] && $primarystudyright['studyRightGraduation']['phase1GraduationDate'] && $primarystudyright['acceptedSelectionPath']['educationPhase2']) {
+    // Handle specialisation properly
+    return getActiveStudentDegreeProgram($primarystudyright);
+  }
+
+  /**
+   * Get Active DegreeProgram from studyright.
+   *
+   * @param array $studyright
+   *   Studyright array.
+   *
+   * @return array degreeprogram
+   *   Response object.
+   */
+  public function getActiveStudentDegreeProgram($studyright) {
+    // Check if we have graduated from phase1 studies
+    if($studyright['studyRightGraduation'] && $studyright['studyRightGraduation']['phase1GraduationDate'] && $studyright['acceptedSelectionPath']['educationPhase2']) {
       // We have graduated from phase1, move to phase2
       $phase1graduated = TRUE;
     }
 
     // if we have graduated then degree program is phase2
-    $degreeprogram = $phase1graduated ? $primarystudyright['acceptedSelectionPath']['educationPhase2'] : $primarystudyright['acceptedSelectionPath']['educationPhase1'];
-    $degreeprogramchild = $phase1graduated ? $primarystudyright['acceptedSelectionPath']['educationPhase2Child'] : $primarystudyright['acceptedSelectionPath']['educationPhase1Child'];
+    $degreeprogram = $phase1graduated ? $studyright['acceptedSelectionPath']['educationPhase2'] : $studyright['acceptedSelectionPath']['educationPhase1'];
+    $degreeprogramchild = $phase1graduated ? $studyright['acceptedSelectionPath']['educationPhase2Child'] : $studyright['acceptedSelectionPath']['educationPhase1Child'];
 
     // Handle specialisation properly
     return degreeProgramWithSpecialisation($degreeprogram, $degreeprogramchild);
@@ -324,7 +370,7 @@ class StudyRightsService {
   /**
    * GetstudyRightsMockdata.
    */
-  public function fetchStudyRightsMockData() {
+  private function fetchStudyRightsMockData() {
     // Read file and return mocked data.
     return file_get_contents("../../example_data/private_person_study_rights.json");
   }

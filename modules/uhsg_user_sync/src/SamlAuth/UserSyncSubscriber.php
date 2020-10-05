@@ -325,48 +325,50 @@ class UserSyncSubscriber implements EventSubscriberInterface {
     $added = 0;
 
     // Map StudentDegreeProgram to a known degree programme and create flagging
-    if($studentDegreeProgram = $this->studyRightsService->getPrimaryStudentDegreeProgram($student_number)) {
+    if($studyrights = $this->studyRightsService->getActiveStudyRights($student_number)) {
       $technical_condition_field_name = $this->config->get('technical_condition_field_name');
       $primary_field_name = $this->config->get('primary_field_name');
 
-      $studentDegreeProgramCode = $studentDegreeProgram['code'];
-
-      if (!empty($studentDegreeProgramCode) && Settings::get('uhsg_oprek_add_debug_logging', self::UHSG_OPREK_ADD_DEBUG_LOGGING)) {
-        // Debug (a lot of) study right data. Enable only temporarily.
-        \Drupal::logger('uhsg_oprek')->info('setTechnicalDegreeProgrammes(),
-          targeted codes are: <pre>@targeted_codes</pre> and
-          degree_programmes: <pre>@degree_programmes</pre>', [
-          '@targeted_codes' => print_r($studentDegreeProgramCode, TRUE),
-          '@degree_programmes' => print_r($known_degree_programme_keys, TRUE),
-        ]);
-      }
-
-      if (isset($known_degree_programmes[$studentDegreeProgramCode])) {
-
-        // Flag the degree programme
-        $flag = $this->flagService->getFlagById('my_degree_programmes');
-
-        // Get potentially existing flagging, if not exist, then create.
-        /** @var \Drupal\flag\Entity\Flagging $flagging */
-        $flagging = $this->flagService->getFlagging($flag, $known_degree_programmes[$studentDegreeProgramCode], $event->getAccount());
-        if (!$flagging) {
-          $flagging = $this->flagService->flag($flag, $known_degree_programmes[$studentDegreeProgramCode], $event->getAccount());
+      // Loop trough all studyrights
+      foreach($studyrights as $studyright) {
+        if (!empty($studyright) && Settings::get('uhsg_oprek_add_debug_logging', self::UHSG_OPREK_ADD_DEBUG_LOGGING)) {
+          // Debug (a lot of) study right data. Enable only temporarily.
+          \Drupal::logger('uhsg_oprek')->info('setTechnicalDegreeProgrammes(),
+            targeted codes are: <pre>@targeted_codes</pre> and
+            degree_programmes: <pre>@degree_programmes</pre>', [
+            '@targeted_codes' => print_r($studyright->getCode(), TRUE),
+            '@degree_programmes' => print_r($known_degree_programme_keys, TRUE),
+          ]);
         }
 
-        // Load the flagging, so we can set some field values
-        // If "technical condition" field exists, set it to TRUE
-        if ($flagging->hasField($technical_condition_field_name)) {
-          $flagging->set($technical_condition_field_name, TRUE);
+        // If code matches our degree_program code then proceed
+        if (isset($known_degree_programmes[$studyright->getCode()])) {
 
-          // If primary field exists, then
-          // set the primary to TRUE.
-          if ($flagging->hasField($primary_field_name)) {
-            $flagging->set($primary_field_name, TRUE);
+          // Flag the degree programme
+          $flag = $this->flagService->getFlagById('my_degree_programmes');
+
+          // Get potentially existing flagging, if not exist, then create.
+          /** @var \Drupal\flag\Entity\Flagging $flagging */
+          $flagging = $this->flagService->getFlagging($flag, $known_degree_programmes[$studyright->getCode()], $event->getAccount());
+          if (!$flagging) {
+            $flagging = $this->flagService->flag($flag, $known_degree_programmes[$studyright->getCode()], $event->getAccount());
           }
 
-          // And save the flagging
-          $flagging->save();
-          $added++;
+          // Load the flagging, so we can set some field values
+          // If "technical condition" field exists, set it to TRUE
+          if ($flagging->hasField($technical_condition_field_name)) {
+            $flagging->set($technical_condition_field_name, TRUE);
+
+            // If targeted code is 'primary' and primary field exists, then
+            // set the primary to TRUE.
+            if ($studyright->isPrimary() && $flagging->hasField($primary_field_name)) {
+              $flagging->set($primary_field_name, TRUE);
+            }
+
+            // And save the flagging
+            $flagging->save();
+            $added++;
+          }
         }
       }
     }
