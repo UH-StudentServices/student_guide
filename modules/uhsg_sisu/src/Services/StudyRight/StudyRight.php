@@ -2,8 +2,6 @@
 
 namespace Drupal\uhsg_sisu\StudyRight\StudyRight;
 
-use Drupal\Core\Site\Settings;
-
 /**
  * Represents StudyRight object.
  */
