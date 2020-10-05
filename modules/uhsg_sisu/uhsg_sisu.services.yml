@@ -1,7 +1,7 @@
 services:
   uhsg_sisu.sisuservice:
     class: Drupal\uhsg_sisu\Services\SisuService
-    arguments: ["@http_client", "@settings", "@logger.factory", "@serialization.json", "@cache.default", "@datetime.time"]
+    arguments: ["@http_client", '@settings', "@logger.factory", "@serialization.json"]
   uhsg_sisu.studyrightsservice:
     class: Drupal\uhsg_sisu\Services\StudyRightsService
-    arguments: ["@settings", "@uhsg_sisu.sisuservice", "@logger.factory", "@serialization.json", "@cache.default", "@datetime.time"]
+    arguments: ["@uhsg_sisu.sisuservice", "@logger.factory"]

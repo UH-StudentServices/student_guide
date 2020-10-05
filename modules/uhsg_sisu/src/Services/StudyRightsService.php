@@ -187,7 +187,7 @@ class StudyRightsService {
     // Loop trough studyrights and save active studyrights.
     foreach ($studyrights as $studyright) {
       // Only save studyright if it's active ie. enddate null and startdate in the past
-      if($studyright['valid']['startDate'] < $date_today && !$studyright['valid']['endDate']) {
+      if($studyright['valid']['startDate'] < $date_today && (!$studyright['valid']['endDate'] || $studyright['valid']['endDate'] > $date_today)) {
         // Handle specialization and graduation for a studyright
         $studyrightdegreeprogram = $this->getActiveStudentDegreeProgram($studyright);
 
