@@ -3,7 +3,6 @@
 namespace Drupal\uhsg_sisu\Services;
 
 use Drupal\Component\Serialization\Json;
-use Drupal\Component\Serialization\SerializationInterface;
 use Drupal\Core\Logger\RfcLogLevel;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\Core\Site\Settings;
@@ -46,13 +45,6 @@ class SisuService {
   private $client;
 
   /**
-   * Drupal settings.
-   *
-   * @var \Drupal\Core\Site\Settings
-   */
-  private $settings;
-
-  /**
    * Logger Factory.
    *
    * @var \Drupal\Core\Logger\LoggerChannelFactoryInterface
@@ -60,32 +52,17 @@ class SisuService {
   private $loggerFactory;
 
   /**
-   * Drupal\Component\Serialization\SerializationInterface definition.
-   *
-   * @var \Drupal\Component\Serialization\SerializationInterface
-   */
-  private $jsonSerialization;
-
-  /**
    * Service constructor.
    *
    * @param \GuzzleHttp\Client $client
    *   Http Client.
-   * @param \Drupal\Core\Site\Settings $settings
-   *   The Drupal settings.
    * @param \Drupal\Core\Logger\LoggerChannelFactoryInterface $loggerFactory
    *   LoggerChannelFactory.
-   * @param \Drupal\Component\Serialization\SerializationInterface $jsonSerialization
-   *   The JSON serializer.
    */
   public function __construct(Client $client, 
-                              Settings $settings, 
-                              LoggerChannelFactoryInterface $loggerFactory, 
-                              SerializationInterface $jsonSerialization) {
+                              LoggerChannelFactoryInterface $loggerFactory) {
     $this->client = $client;
-    $this->settings = $settings;
     $this->loggerFactory = $loggerFactory;
-    $this->jsonSerialization = $jsonSerialization;
   }
 
   /**
@@ -95,7 +72,7 @@ class SisuService {
    *   The absolute API url as a string.
    */
   public function getGraphQlUrl() {
-    return $this->settings->get('uhsg_sisu_graphql_url', self::GRAPHQL_URL);
+    return Settings::get('uhsg_sisu_graphql_url', self::GRAPHQL_URL);
   }
 
   /**
@@ -109,7 +86,7 @@ class SisuService {
    */
   public function apiRequest(array $graphQlQuery) {
     $url = $this->getGraphQlUrl();
-    $data = $this->jsonSerialization->encode($graphQlQuery);
+    $data = Json::encode($graphQlQuery);
 
     return $this->request($url, 'GET', $data);
   }
