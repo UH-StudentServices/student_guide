@@ -1,356 +1,400 @@
 {
-    "data": {
-      "private_person": {
-        "studyRightPrimalityChain": {
-          "studyRightPrimalities": [
-            {
-              "studyRightId": "hy-opinoik-44884932",
-              "startDate": "2004-08-01",
-              "endDate": "2006-03-16",
-              "documentState": "ACTIVE"
-            },
-            {
-              "studyRightId": "hy-opinoik-56211150",
-              "startDate": "2006-03-17",
-              "endDate": "2008-08-19",
-              "documentState": "ACTIVE"
-            },
-            {
-              "studyRightId": "hy-opinoik-67925935",
-              "startDate": "2008-08-20",
-              "endDate": "2010-08-30",
-              "documentState": "ACTIVE"
-            },
-            {
-              "studyRightId": "hy-opinoik-73534483",
-              "startDate": "2010-08-31",
-              "endDate": "2011-03-21",
-              "documentState": "ACTIVE"
-            },
-            {
-              "studyRightId": "hy-opinoik-79272085",
-              "startDate": "2011-03-22",
-              "endDate": "2011-06-16",
-              "documentState": "ACTIVE"
-            },
-            {
-              "studyRightId": "hy-opinoik-69610587",
-              "startDate": "2011-06-17",
-              "endDate": "2017-09-19",
-              "documentState": "ACTIVE"
-            },
-            {
-              "studyRightId": "hy-opinoik-79272085",
-              "startDate": "2017-09-20",
-              "endDate": "2018-08-13",
-              "documentState": "ACTIVE"
-            },
-            {
-              "studyRightId": "hy-opinoik-79272085",
-              "startDate": "2018-08-14",
-              "endDate": "2018-11-19",
-              "documentState": "ACTIVE"
-            },
-            {
-              "studyRightId": "hy-opinoik-127300137",
-              "startDate": "2018-11-20",
-              "endDate": "2019-09-10",
-              "documentState": "ACTIVE"
-            },
-            {
-              "studyRightId": "hy-opinoik-131786981",
-              "startDate": "2019-09-11",
-              "endDate": "2020-09-22",
-              "documentState": "ACTIVE"
-            },
-            {
-              "studyRightId": "hy-opinoik-127300137",
-              "startDate": "2020-09-23",
-              "endDate": null,
-              "documentState": "ACTIVE"
-            }
-          ]
-        },
-        "studyRights": [
+  "data": {
+    "private_person": {
+      "studyRightPrimalityChain": {
+        "studyRightPrimalities": [
           {
-            "id": "hy-opinoik-73534483",
-            "studyRightGraduation": null,
-            "acceptedSelectionPath": {
-              "educationPhase1Child": {
-                "code": "03537",
-                "groupId": "hy-SM-2028381",
-                "name": {
-                  "fi": "Kemia",
-                  "sv": "Kemi",
-                  "en": "Chemistry"
-                }
-              },
-              "educationPhase1": {
-                "code": "520041-ba",
-                "groupId": "hy-DP-2029182-ba",
-                "name": {
-                  "fi": "Kemian koulutusohjelma (alempi)",
-                  "sv": "Utbildningsprogrammet för kemi (lägre)",
-                  "en": "Degree Programme in Chemistry (lower)"
-                }
-              },
-              "educationPhase2Child": null,
-              "educationPhase2": null
-            }
+            "studyRightId": "hy-opinoik-44884932",
+            "startDate": "2004-08-01",
+            "endDate": "2006-03-16",
+            "documentState": "ACTIVE"
           },
           {
-            "id": "hy-opinoik-56211150",
-            "studyRightGraduation": null,
-            "acceptedSelectionPath": {
-              "educationPhase1Child": {
-                "code": "03607",
-                "groupId": "hy-SM-2028418",
-                "name": {
-                  "fi": "Käytännöllinen filosofia",
-                  "sv": "Praktisk filosofi",
-                  "en": "Social and Moral Philosophy"
-                }
-              },
-              "educationPhase1": {
-                "code": "720011-ma",
-                "groupId": "hy-DP-2029280-ma",
-                "name": {
-                  "fi": "Käytännöllinen filosofia (ylempi)",
-                  "sv": "Praktisk filosofi (högre)",
-                  "en": "Social and Moral Philosophy (higher)"
-                }
-              },
-              "educationPhase2Child": null,
-              "educationPhase2": null
-            }
+            "studyRightId": "hy-opinoik-56211150",
+            "startDate": "2006-03-17",
+            "endDate": "2008-08-19",
+            "documentState": "ACTIVE"
           },
           {
-            "id": "hy-opinoik-131786981",
-            "studyRightGraduation": null,
-            "acceptedSelectionPath": {
-              "educationPhase1Child": null,
-              "educationPhase1": {
-                "code": "MH50_001",
-                "groupId": "hy-DP-114257251",
-                "name": {
-                  "fi": "Matematiikan ja tilastotieteen maisteriohjelma",
-                  "sv": "Magisterprogrammet i matematik och statistik",
-                  "en": "Master 's Programme in Mathematics and Statistics"
-                }
-              },
-              "educationPhase2Child": null,
-              "educationPhase2": null
-            }
+            "studyRightId": "hy-opinoik-67925935",
+            "startDate": "2008-08-20",
+            "endDate": "2010-08-30",
+            "documentState": "ACTIVE"
           },
           {
-            "id": "hy-opinoik-77665925",
-            "studyRightGraduation": null,
-            "acceptedSelectionPath": {
-              "educationPhase1Child": {
-                "code": "03103",
-                "groupId": "hy-SM-2028230",
-                "name": {
-                  "fi": "Teologia",
-                  "sv": "Teologi",
-                  "en": "Theology"
-                }
-              },
-              "educationPhase1": {
-                "code": "120009-ba",
-                "groupId": "hy-DP-2028944-ba",
-                "name": {
-                  "fi": "Kirkkojen ja yhteiskunnan teologisiin tehtäviin valmistava koulutusohjelma (alempi)",
-                  "sv": "Utbildningsprogrammet för kyrkliga och samhälleliga teologiska uppgifter (lägre)",
-                  "en": "Degree Programme in Theological Functions in Churches and Society (lower)"
-                }
-              },
-              "educationPhase2Child": null,
-              "educationPhase2": null
-            }
+            "studyRightId": "hy-opinoik-73534483",
+            "startDate": "2010-08-31",
+            "endDate": "2011-03-21",
+            "documentState": "ACTIVE"
           },
           {
-            "id": "hy-opinoik-67551887",
-            "studyRightGraduation": null,
-            "acceptedSelectionPath": {
-              "educationPhase1Child": {
-                "code": "03586",
-                "groupId": "hy-SM-2028409",
-                "name": {
-                  "fi": "Geologia",
-                  "sv": "Geologi",
-                  "en": "Geology"
-                }
-              },
-              "educationPhase1": {
-                "code": "520050-ma",
-                "groupId": "hy-DP-2029191-ma",
-                "name": {
-                  "fi": "Geologian koulutusohjelma (ylempi)",
-                  "sv": "Utbildningsprogrammet för geologi (högre)",
-                  "en": "Degree Programme in Geology (higher)"
-                }
-              },
-              "educationPhase2Child": null,
-              "educationPhase2": null
-            }
+            "studyRightId": "hy-opinoik-79272085",
+            "startDate": "2011-03-22",
+            "endDate": "2011-06-16",
+            "documentState": "ACTIVE"
           },
           {
-            "id": "hy-opinoik-127300137",
-            "studyRightGraduation": null,
-            "acceptedSelectionPath": {
-              "educationPhase1Child": {
-                "code": "03564",
-                "groupId": "hy-SM-2028397",
-                "name": {
-                  "fi": "Tietojenkäsittelytiede",
-                  "sv": "Datavetenskap",
-                  "en": "Computer Science"
-                }
-              },
-              "educationPhase1": {
-                "code": "520080-ma",
-                "groupId": "hy-DP-2029209-ma",
-                "name": {
-                  "fi": "Tietojenkäsittelytieteen koulutusohjelma (ylempi)",
-                  "sv": "Utbildningsprogrammet för datavetenskap (högre)",
-                  "en": "Degree Programme in Computer Science (higher)"
-                }
-              },
-              "educationPhase2Child": null,
-              "educationPhase2": null
-            }
+            "studyRightId": "hy-opinoik-69610587",
+            "startDate": "2011-06-17",
+            "endDate": "2017-09-19",
+            "documentState": "ACTIVE"
           },
           {
-            "id": "hy-opinoik-69610587",
-            "studyRightGraduation": null,
-            "acceptedSelectionPath": {
-              "educationPhase1Child": {
-                "code": "03587",
-                "groupId": "hy-SM-2028410",
-                "name": {
-                  "fi": "Farmasia",
-                  "sv": "Farmaci",
-                  "en": "Pharmacy"
-                }
-              },
-              "educationPhase1": {
-                "code": "520091-ba",
-                "groupId": "hy-DP-2029218-ba",
-                "name": {
-                  "fi": "Farmaseutin koulutusohjelma (alempi)",
-                  "sv": "Utbildningsprogrammet för farmaceutexamen (lägre)",
-                  "en": "Diploma Course in Pharmacy (lower)"
-                }
-              },
-              "educationPhase2Child": null,
-              "educationPhase2": null
-            }
+            "studyRightId": "hy-opinoik-79272085",
+            "startDate": "2017-09-20",
+            "endDate": "2018-08-13",
+            "documentState": "ACTIVE"
           },
           {
-            "id": "hy-opinoik-73552576",
-            "studyRightGraduation": null,
-            "acceptedSelectionPath": {
-              "educationPhase1Child": {
-                "code": "03461",
-                "groupId": "hy-SM-2028336",
-                "name": {
-                  "fi": "Teoreettinen filosofia",
-                  "sv": "Teoretisk filosofi",
-                  "en": "Theoretical Philosophy"
-                }
-              },
-              "educationPhase1": {
-                "code": "420020-ba",
-                "groupId": "hy-DP-2029018-ba",
-                "name": {
-                  "fi": "Teoreettinen filosofia (alempi)",
-                  "sv": "Teoretisk filosofi (lägre)",
-                  "en": "Theoretical Philosophy (lower)"
-                }
-              },
-              "educationPhase2Child": null,
-              "educationPhase2": null
-            }
+            "studyRightId": "hy-opinoik-79272085",
+            "startDate": "2018-08-14",
+            "endDate": "2018-11-19",
+            "documentState": "ACTIVE"
           },
           {
-            "id": "hy-opinoik-44884932",
-            "studyRightGraduation": null,
-            "acceptedSelectionPath": {
-              "educationPhase1Child": {
-                "code": "03820",
-                "groupId": "hy-SM-2028497",
-                "name": {
-                  "fi": "Egyptologia",
-                  "sv": "Egyptologi",
-                  "en": "Egyptology"
-                }
-              },
-              "educationPhase1": {
-                "code": "420099-ma",
-                "groupId": "hy-DP-2029097-ma",
-                "name": {
-                  "fi": "Egyptologia (ylempi)",
-                  "sv": "Egyptologi (högre)",
-                  "en": "Egyptology (higher)"
-                }
-              },
-              "educationPhase2Child": null,
-              "educationPhase2": null
-            }
+            "studyRightId": "hy-opinoik-127300137",
+            "startDate": "2018-11-20",
+            "endDate": "2019-09-10",
+            "documentState": "ACTIVE"
           },
           {
-            "id": "hy-opinoik-79272085",
-            "studyRightGraduation": null,
-            "acceptedSelectionPath": {
-              "educationPhase1Child": {
-                "code": "0396",
-                "groupId": "hy-SM-49621875",
-                "name": {
-                  "fi": "Metsäekonomia ja markkinointi",
-                  "sv": "Skogsekonomi och marknadsföring",
-                  "en": "Forest Economics and Marketing"
-                }
-              },
-              "educationPhase1": {
-                "code": "820016-ba",
-                "groupId": "hy-DP-2029333-ba",
-                "name": {
-                  "fi": "Metsäekonomia ja markkinointi (alempi)",
-                  "sv": "Skogsekonomi och marknadsföring (lägre)",
-                  "en": "Forest Economics and Marketing (lower)"
-                }
-              },
-              "educationPhase2Child": null,
-              "educationPhase2": null
-            }
+            "studyRightId": "hy-opinoik-131786981",
+            "startDate": "2019-09-11",
+            "endDate": "2020-09-22",
+            "documentState": "ACTIVE"
           },
           {
-            "id": "hy-opinoik-67925935",
-            "studyRightGraduation": null,
-            "acceptedSelectionPath": {
-              "educationPhase1Child": {
-                "code": "03544",
-                "groupId": "hy-SM-2028387",
-                "name": {
-                  "fi": "Maantiede",
-                  "sv": "Geografi",
-                  "en": "Geography"
-                }
-              },
-              "educationPhase1": {
-                "code": "520030-ba",
-                "groupId": "hy-DP-2029177-ba",
-                "name": {
-                  "fi": "Maantieteen koulutusohjelma (alempi)",
-                  "sv": "Utbildningsprogrammet för geografi (lägre)",
-                  "en": "Degree Programme in Geography (lower)"
-                }
-              },
-              "educationPhase2Child": null,
-              "educationPhase2": null
-            }
+            "studyRightId": "hy-opinoik-127300137",
+            "startDate": "2020-09-23",
+            "endDate": null,
+            "documentState": "ACTIVE"
           }
         ]
-      }
+      },
+      "studyRights": [
+        {
+          "id": "hy-opinoik-73534483",
+          "valid": {
+            "startDate": "2009-08-01",
+            "endDate": "2018-08-01"
+          },
+          "studyRightGraduation": null,
+          "acceptedSelectionPath": {
+            "educationPhase1Child": {
+              "code": "03537",
+              "groupId": "hy-SM-2028381",
+              "name": {
+                "fi": "Kemia",
+                "sv": "Kemi",
+                "en": "Chemistry"
+              }
+            },
+            "educationPhase1": {
+              "code": "520041-ba",
+              "groupId": "hy-DP-2029182-ba",
+              "name": {
+                "fi": "Kemian koulutusohjelma (alempi)",
+                "sv": "Utbildningsprogrammet för kemi (lägre)",
+                "en": "Degree Programme in Chemistry (lower)"
+              }
+            },
+            "educationPhase2Child": null,
+            "educationPhase2": null
+          }
+        },
+        {
+          "id": "hy-opinoik-56211150",
+          "valid": {
+            "startDate": "2000-08-01",
+            "endDate": null
+          },
+          "studyRightGraduation": null,
+          "acceptedSelectionPath": {
+            "educationPhase1Child": {
+              "code": "03607",
+              "groupId": "hy-SM-2028418",
+              "name": {
+                "fi": "Käytännöllinen filosofia",
+                "sv": "Praktisk filosofi",
+                "en": "Social and Moral Philosophy"
+              }
+            },
+            "educationPhase1": {
+              "code": "720011-ma",
+              "groupId": "hy-DP-2029280-ma",
+              "name": {
+                "fi": "Käytännöllinen filosofia (ylempi)",
+                "sv": "Praktisk filosofi (högre)",
+                "en": "Social and Moral Philosophy (higher)"
+              }
+            },
+            "educationPhase2Child": null,
+            "educationPhase2": null
+          }
+        },
+        {
+          "id": "hy-opinoik-131786981",
+          "valid": {
+            "startDate": "2017-01-20",
+            "endDate": "2022-01-01"
+          },
+          "studyRightGraduation": null,
+          "acceptedSelectionPath": {
+            "educationPhase1Child": null,
+            "educationPhase1": {
+              "code": "MH50_001",
+              "groupId": "hy-DP-114257251",
+              "name": {
+                "fi": "Matematiikan ja tilastotieteen maisteriohjelma",
+                "sv": "Magisterprogrammet i matematik och statistik",
+                "en": "Master 's Programme in Mathematics and Statistics"
+              }
+            },
+            "educationPhase2Child": null,
+            "educationPhase2": null
+          }
+        },
+        {
+          "id": "hy-opinoik-77665925",
+          "valid": {
+            "startDate": "2002-08-01",
+            "endDate": null
+          },
+          "studyRightGraduation": null,
+          "acceptedSelectionPath": {
+            "educationPhase1Child": {
+              "code": "03103",
+              "groupId": "hy-SM-2028230",
+              "name": {
+                "fi": "Teologia",
+                "sv": "Teologi",
+                "en": "Theology"
+              }
+            },
+            "educationPhase1": {
+              "code": "120009-ba",
+              "groupId": "hy-DP-2028944-ba",
+              "name": {
+                "fi": "Kirkkojen ja yhteiskunnan teologisiin tehtäviin valmistava koulutusohjelma (alempi)",
+                "sv": "Utbildningsprogrammet för kyrkliga och samhälleliga teologiska uppgifter (lägre)",
+                "en": "Degree Programme in Theological Functions in Churches and Society (lower)"
+              }
+            },
+            "educationPhase2Child": null,
+            "educationPhase2": null
+          }
+        },
+        {
+          "id": "hy-opinoik-67551887",
+          "valid": {
+            "startDate": "2007-08-01",
+            "endDate": "2011-08-01"
+          },
+          "studyRightGraduation": null,
+          "acceptedSelectionPath": {
+            "educationPhase1Child": {
+              "code": "03586",
+              "groupId": "hy-SM-2028409",
+              "name": {
+                "fi": "Geologia",
+                "sv": "Geologi",
+                "en": "Geology"
+              }
+            },
+            "educationPhase1": {
+              "code": "520050-ma",
+              "groupId": "hy-DP-2029191-ma",
+              "name": {
+                "fi": "Geologian koulutusohjelma (ylempi)",
+                "sv": "Utbildningsprogrammet för geologi (högre)",
+                "en": "Degree Programme in Geology (higher)"
+              }
+            },
+            "educationPhase2Child": null,
+            "educationPhase2": null
+          }
+        },
+        {
+          "id": "hy-opinoik-127300137",
+          "valid": {
+            "startDate": "2014-01-20",
+            "endDate": "2020-01-01"
+          },
+          "studyRightGraduation": null,
+          "acceptedSelectionPath": {
+            "educationPhase1Child": {
+              "code": "03564",
+              "groupId": "hy-SM-2028397",
+              "name": {
+                "fi": "Tietojenkäsittelytiede",
+                "sv": "Datavetenskap",
+                "en": "Computer Science"
+              }
+            },
+            "educationPhase1": {
+              "code": "520080-ma",
+              "groupId": "hy-DP-2029209-ma",
+              "name": {
+                "fi": "Tietojenkäsittelytieteen koulutusohjelma (ylempi)",
+                "sv": "Utbildningsprogrammet för datavetenskap (högre)",
+                "en": "Degree Programme in Computer Science (higher)"
+              }
+            },
+            "educationPhase2Child": null,
+            "educationPhase2": null
+          }
+        },
+        {
+          "id": "hy-opinoik-69610587",
+          "valid": {
+            "startDate": "2008-08-01",
+            "endDate": "2014-01-01"
+          },
+          "studyRightGraduation": null,
+          "acceptedSelectionPath": {
+            "educationPhase1Child": {
+              "code": "03587",
+              "groupId": "hy-SM-2028410",
+              "name": {
+                "fi": "Farmasia",
+                "sv": "Farmaci",
+                "en": "Pharmacy"
+              }
+            },
+            "educationPhase1": {
+              "code": "520091-ba",
+              "groupId": "hy-DP-2029218-ba",
+              "name": {
+                "fi": "Farmaseutin koulutusohjelma (alempi)",
+                "sv": "Utbildningsprogrammet för farmaceutexamen (lägre)",
+                "en": "Diploma Course in Pharmacy (lower)"
+              }
+            },
+            "educationPhase2Child": null,
+            "educationPhase2": null
+          }
+        },
+        {
+          "id": "hy-opinoik-73552576",
+          "valid": {
+            "startDate": "2009-08-01",
+            "endDate": "2018-01-01"
+          },
+          "studyRightGraduation": null,
+          "acceptedSelectionPath": {
+            "educationPhase1Child": {
+              "code": "03461",
+              "groupId": "hy-SM-2028336",
+              "name": {
+                "fi": "Teoreettinen filosofia",
+                "sv": "Teoretisk filosofi",
+                "en": "Theoretical Philosophy"
+              }
+            },
+            "educationPhase1": {
+              "code": "420020-ba",
+              "groupId": "hy-DP-2029018-ba",
+              "name": {
+                "fi": "Teoreettinen filosofia (alempi)",
+                "sv": "Teoretisk filosofi (lägre)",
+                "en": "Theoretical Philosophy (lower)"
+              }
+            },
+            "educationPhase2Child": null,
+            "educationPhase2": null
+          }
+        },
+        {
+          "id": "hy-opinoik-44884932",
+          "valid": {
+            "startDate": "2004-08-01",
+            "endDate": null
+          },
+          "studyRightGraduation": null,
+          "acceptedSelectionPath": {
+            "educationPhase1Child": {
+              "code": "03820",
+              "groupId": "hy-SM-2028497",
+              "name": {
+                "fi": "Egyptologia",
+                "sv": "Egyptologi",
+                "en": "Egyptology"
+              }
+            },
+            "educationPhase1": {
+              "code": "420099-ma",
+              "groupId": "hy-DP-2029097-ma",
+              "name": {
+                "fi": "Egyptologia (ylempi)",
+                "sv": "Egyptologi (högre)",
+                "en": "Egyptology (higher)"
+              }
+            },
+            "educationPhase2Child": null,
+            "educationPhase2": null
+          }
+        },
+        {
+          "id": "hy-opinoik-79272085",
+          "valid": {
+            "startDate": "2010-08-01",
+            "endDate": "2021-01-01"
+          },
+          "studyRightGraduation": null,
+          "acceptedSelectionPath": {
+            "educationPhase1Child": {
+              "code": "0396",
+              "groupId": "hy-SM-49621875",
+              "name": {
+                "fi": "Metsäekonomia ja markkinointi",
+                "sv": "Skogsekonomi och marknadsföring",
+                "en": "Forest Economics and Marketing"
+              }
+            },
+            "educationPhase1": {
+              "code": "820016-ba",
+              "groupId": "hy-DP-2029333-ba",
+              "name": {
+                "fi": "Metsäekonomia ja markkinointi (alempi)",
+                "sv": "Skogsekonomi och marknadsföring (lägre)",
+                "en": "Forest Economics and Marketing (lower)"
+              }
+            },
+            "educationPhase2Child": null,
+            "educationPhase2": null
+          }
+        },
+        {
+          "id": "hy-opinoik-67925935",
+          "valid": {
+            "startDate": "2008-08-01",
+            "endDate": "2016-08-01"
+          },
+          "studyRightGraduation": null,
+          "acceptedSelectionPath": {
+            "educationPhase1Child": {
+              "code": "03544",
+              "groupId": "hy-SM-2028387",
+              "name": {
+                "fi": "Maantiede",
+                "sv": "Geografi",
+                "en": "Geography"
+              }
+            },
+            "educationPhase1": {
+              "code": "520030-ba",
+              "groupId": "hy-DP-2029177-ba",
+              "name": {
+                "fi": "Maantieteen koulutusohjelma (alempi)",
+                "sv": "Utbildningsprogrammet för geografi (lägre)",
+                "en": "Degree Programme in Geography (lower)"
+              }
+            },
+            "educationPhase2Child": null,
+            "educationPhase2": null
+          }
+        }
+      ]
     }
   }
+}
