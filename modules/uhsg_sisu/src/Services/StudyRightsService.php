@@ -7,7 +7,7 @@ use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\Core\Logger\RfcLogLevel;
 use Drupal\Core\Utility\Error;
 use Drupal\uhsg_sisu\Services\SisuService;
-use Drupal\uhsg_sisu\StudyRight\StudyRight\StudyRight;
+use Drupal\uhsg_sisu\Services\StudyRight\StudyRight;
 use GuzzleHttp\Exception\GuzzleException;
 
 /**
@@ -17,8 +17,11 @@ use GuzzleHttp\Exception\GuzzleException;
  */
 class StudyRightsService {
 
-  // Use mock responses
-  const UHSG_SISU_MOCK_RESPONSE = FALSE;
+  /*
+  * This can be overridden in settings.local.php with:
+  *   $settings['uhsg_sisu_mock_response'] = TRUE;
+  */
+ const UHSG_SISU_MOCK_RESPONSE = FALSE;
 
   /**
    * SisuService.
@@ -66,11 +69,9 @@ class StudyRightsService {
    */
   public function fetchStudyRightsData($oodiId) {
     // Fetch from mockdata based on configuration
-    /*
-    if ($this->settings::get('uhsg_sisu_mock_response', self::UHSG_SISU_MOCK_RESPONSE)) {
+    if (Settings::get('uhsg_sisu_mock_response', self::UHSG_SISU_MOCK_RESPONSE)) {
       return $this->fetchStudyRightsMockData();
     }
-    */
 
     // Fetch from static storage if it has data.
     if (is_array($this->studyRightsData) && array_key_exists($oodiId, $this->studyRightsData)) {
@@ -196,10 +197,10 @@ class StudyRightsService {
 
           // If primary, then set it so.
         if($primarystudyright['id'] == $studyright['id']) {
-          $studyrightdegreeprogram.setPrimary(TRUE);
+          $studyrightdegree.setPrimary(TRUE);
         }
 
-        $active_studyrights[] = $studyrightdegreeprogram;
+        $active_studyrights[] = $studyrightdegree;
       }
     }
 
@@ -303,7 +304,8 @@ class StudyRightsService {
   private function degreeProgramWithSpecialisation($degreeProgram, $specialisation) {
     if ($degreeProgram && $specialisation && $specialisation['groupId']) {
       // Read file
-      $sisu_oodi_codes = Json::decode(file_get_contents("./sisu-oodi-codes.json"));
+      $path = getcwd() . "/". drupal_get_path('module', 'uhsg_sisu') . "/src/Services/sisu-oodi-codes.json";
+      $sisu_oodi_codes = Json::decode(file_get_contents($path));
 
       // Traverse trough all the oodi-sisu mappings.
       foreach($sisu_oodi_codes as $group) {

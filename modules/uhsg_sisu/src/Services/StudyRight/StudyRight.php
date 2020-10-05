@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\uhsg_sisu\StudyRight\StudyRight;
+namespace Drupal\uhsg_sisu\Services\StudyRight;
 
 /**
  * Represents StudyRight object.
