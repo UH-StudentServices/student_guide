@@ -2,11 +2,9 @@
 
 namespace Drupal\uhsg_sisu\Services;
 
-use Drupal\Component\Datetime\TimeInterface;
+use Drupal\Component\Serialization\Json;
 use Drupal\Component\Serialization\SerializationInterface;
-use Drupal\Core\Config\ConfigFactory;
 use Drupal\Core\Logger\RfcLogLevel;
-use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\Core\Site\Settings;
 use Psr\Http\Message\ResponseInterface;
@@ -55,11 +53,11 @@ class SisuService {
   private $settings;
 
   /**
-   * Drupal\Core\Logger\LoggerChannelInterface definition.
+   * Logger Factory.
    *
-   * @var \Drupal\Core\Logger\LoggerChannelInterface
+   * @var \Drupal\Core\Logger\LoggerChannelFactoryInterface
    */
-  private $logger;
+  private $loggerFactory;
 
   /**
    * Drupal\Component\Serialization\SerializationInterface definition.
@@ -69,46 +67,25 @@ class SisuService {
   private $jsonSerialization;
 
   /**
-   * Drupal\Core\Cache\CacheBackendInterface definition.
-   *
-   * @var \Drupal\Core\Cache\CacheBackendInterface
-   */
-  private $cache;
-
-  /**
-   * Drupal\Component\Datetime\TimeInterface definition.
-   *
-   * @var \Drupal\Component\Datetime\TimeInterface
-   */
-  private $time;
-
-  /**
    * Service constructor.
    *
    * @param \GuzzleHttp\Client $client
    *   Http Client.
    * @param \Drupal\Core\Site\Settings $settings
    *   The Drupal settings.
-   * @param \Drupal\Core\Logger\LoggerChannelFactoryInterface $loggerChannelFactory
-   *   The logger factory.
+   * @param \Drupal\Core\Logger\LoggerChannelFactoryInterface $loggerFactory
+   *   LoggerChannelFactory.
    * @param \Drupal\Component\Serialization\SerializationInterface $jsonSerialization
    *   The JSON serializer.
-   * @param \Drupal\Core\Cache\CacheBackendInterface $cache
-   *   The cache backend.
-   * @param \Drupal\Component\Datetime\TimeInterface $time
-   *   The Drupal time object.
    */
   public function __construct(Client $client, 
                               Settings $settings, 
-                              LoggerChannelFactoryInterface $loggerChannelFactory, 
-                              SerializationInterface $jsonSerialization, 
-                              CacheBackendInterface $cache, 
-                              TimeInterface $time) {
+                              LoggerChannelFactoryInterface $loggerFactory, 
+                              SerializationInterface $jsonSerialization) {
+    $this->client = $client;
     $this->settings = $settings;
-    $this->logger = $loggerChannelFactory->get('uhsg_sisu');
+    $this->loggerFactory = $loggerFactory;
     $this->jsonSerialization = $jsonSerialization;
-    $this->cache = $cache;
-    $this->time = $time;
   }
 
   /**

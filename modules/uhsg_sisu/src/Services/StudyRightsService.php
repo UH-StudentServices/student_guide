@@ -8,7 +8,6 @@ use Drupal\Core\Logger\RfcLogLevel;
 use Drupal\Core\Utility\Error;
 use Drupal\uhsg_sisu\Services\SisuService;
 use Drupal\uhsg_sisu\StudyRight\StudyRight\StudyRight;
-
 use GuzzleHttp\Exception\GuzzleException;
 
 /**
@@ -29,39 +28,11 @@ class StudyRightsService {
   private $sisuService;
 
   /**
-   * Drupal settings.
+   * Logger Factory.
    *
-   * @var \Drupal\Core\Site\Settings
+   * @var \Drupal\Core\Logger\LoggerChannelFactoryInterface
    */
-  private $settings;
-
-  /**
-   * Drupal\Core\Logger\LoggerChannelInterface definition.
-   *
-   * @var \Drupal\Core\Logger\LoggerChannelInterface
-   */
-  private $logger;
-
-  /**
-   * Drupal\Component\Serialization\SerializationInterface definition.
-   *
-   * @var \Drupal\Component\Serialization\SerializationInterface
-   */
-  private $jsonSerialization;
-
-  /**
-   * Drupal\Core\Cache\CacheBackendInterface definition.
-   *
-   * @var \Drupal\Core\Cache\CacheBackendInterface
-   */
-  private $cache;
-
-  /**
-   * Drupal\Component\Datetime\TimeInterface definition.
-   *
-   * @var \Drupal\Component\Datetime\TimeInterface
-   */
-  private $time;
+  private $loggerFactory;
 
   /**
    * Static storage for study rights data.
@@ -73,31 +44,15 @@ class StudyRightsService {
   /**
    * Service constructor.
    *
-   * @param \Drupal\Core\Site\Settings $settings
-   *   The Drupal settings.
    * @param Drupal\uhsg_sisu\Services\SisuService $sisuService
    *   SisuService.
-   * @param \Drupal\Core\Logger\LoggerChannelFactoryInterface $loggerChannelFactory
-   *   The logger factory.
-   * @param \Drupal\Component\Serialization\SerializationInterface $jsonSerialization
-   *   The JSON serializer.
-   * @param \Drupal\Core\Cache\CacheBackendInterface $cache
-   *   The cache backend.
-   * @param \Drupal\Component\Datetime\TimeInterface $time
-   *   The Drupal time object.
+   * @param \Drupal\Core\Logger\LoggerChannelFactoryInterface $loggerFactory
+   *   LoggerChannelFactory.
    */
-  public function __construct(Settings $settings, 
-                              SisuService $sisuService, 
-                              LoggerChannelFactoryInterface $loggerFactory, 
-                              SerializationInterface $jsonSerialization, 
-                              CacheBackendInterface $cache, 
-                              TimeInterface $time) {
-    $this->settings = $settings;
+  public function __construct(SisuService $sisuService, 
+                              LoggerChannelFactoryInterface $loggerFactory) {
     $this->sisuService = $sisuService;
-    $this->logger = $loggerChannelFactory->get('uhsg_sisu');
-    $this->jsonSerialization = $jsonSerialization;
-    $this->cache = $cache;
-    $this->time = $time;    
+    $this->loggerFactory = $loggerFactory;
   }
 
   /**
@@ -111,9 +66,11 @@ class StudyRightsService {
    */
   public function fetchStudyRightsData($oodiId) {
     // Fetch from mockdata based on configuration
+    /*
     if ($this->settings::get('uhsg_sisu_mock_response', self::UHSG_SISU_MOCK_RESPONSE)) {
-      return fetchStudyRightsMockData();
+      return $this->fetchStudyRightsMockData();
     }
+    */
 
     // Fetch from static storage if it has data.
     if (is_array($this->studyRightsData) && array_key_exists($oodiId, $this->studyRightsData)) {
@@ -217,14 +174,14 @@ class StudyRightsService {
     $date_today = date('Y-m-d', time());
 
     // Make sure we have results to loop trough.
-    if(!$data || $data['data'] || $data['data']['private_person'] || $data['data']['private_person']['studyRights']) {
+    if(!$data) {
       return null;
     }
 
     // Save all studyrights.
     $studyrightprimalitychain = $data['data']['private_person']['studyRightPrimalityChain'];
     $studyrights = $data['data']['private_person']['studyRights'];
-    $primarystudyright = getPrimaryStudentDegreeProgram($oodiId);
+    $primarystudyright = $this->getPrimaryStudentDegreeProgram($oodiId);
 
     $active_studyrights = [];
     // Loop trough studyrights and save active studyrights.
@@ -232,7 +189,7 @@ class StudyRightsService {
       // Only save studyright if it's active ie. enddate null and startdate in the past
       if($studyright['valid']['startDate'] < $date_today && !$studyright['valid']['endDate']) {
         // Handle specialization and graduation for a studyright
-        $studyrightdegreeprogram = getActiveStudentDegreeProgram($studyright);
+        $studyrightdegreeprogram = $this->getActiveStudentDegreeProgram($studyright);
 
         // Create new studyright
         $studyrightdegree = new StudyRight($studyrightdegreeprogram);
@@ -270,7 +227,7 @@ class StudyRightsService {
     $studyrights = $data['data']['private_person']['studyRights'];
 
     // Get primarystudyright from data.
-    $primarystudyright = getPrimaryStudyRight($studyrightprimalitychain, $studyrights);
+    $primarystudyright = $this->getPrimaryStudyRight($studyrightprimalitychain, $studyrights);
 
     // We have no primarystudyrights
     if(!$primarystudyright) {
@@ -278,7 +235,7 @@ class StudyRightsService {
     }
 
     // Handle specialisation properly
-    return getActiveStudentDegreeProgram($primarystudyright);
+    return $this->getActiveStudentDegreeProgram($primarystudyright);
   }
 
   /**
@@ -302,7 +259,7 @@ class StudyRightsService {
     $degreeprogramchild = $phase1graduated ? $studyright['acceptedSelectionPath']['educationPhase2Child'] : $studyright['acceptedSelectionPath']['educationPhase1Child'];
 
     // Handle specialisation properly
-    return degreeProgramWithSpecialisation($degreeprogram, $degreeprogramchild);
+    return $this->degreeProgramWithSpecialisation($degreeprogram, $degreeprogramchild);
   }
 
   /**
@@ -372,7 +329,8 @@ class StudyRightsService {
    */
   private function fetchStudyRightsMockData() {
     // Read file and return mocked data.
-    return file_get_contents("../../example_data/private_person_study_rights.json");
+    $path = getcwd() . "/". drupal_get_path('module', 'uhsg_sisu') . "/example_data/private_person_study_rights.json";
+    return file_get_contents($path);
   }
 
   /**
@@ -401,7 +359,7 @@ class StudyRightsService {
 
     // Log the error.
     $this->log('API connection error. Error details are as follows:<pre>@response</pre>', [
-      '@response' => print_r(json_decode($response_info), TRUE),
+      '@response' => print_r(Json::decode($response_info), TRUE),
     ], RfcLogLevel::ERROR);
   }
 }
