@@ -221,7 +221,7 @@ class StudyRightsService {
     // Fetch studyrightsdata for student
     $data = Json::decode($this->fetchStudyRightsData($oodiId));
 
-    if(!$data || $data['data']['private_person']) {
+    if(!$data) {
       return null;
     }
 

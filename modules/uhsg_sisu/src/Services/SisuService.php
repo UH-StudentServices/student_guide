@@ -137,7 +137,6 @@ class SisuService {
       'ssl_key' => $this->settings->get('uhsg_sisu_sslkey_path', self::GRAPHQL_SSLKEY_PATH),
       'headers' => [
         'Content-Type: application/json',
-        'client-app-id: doo-sg-web1-16.student.helsinki.fi',
       ],
     ];
 
