@@ -28,14 +28,14 @@ class SisuService {
    *
    * @var string
    */
-  const GRAPHQL_CERT_PATH = '/etc/ssl/certs/esb/esb.pem';
+  const GRAPHQL_CERT_PATH = '/etc/ssl/certs/esb/doo-sg-web1-16.student.helsinki.fi.pem';
 
   /**
    * Default SSLKEY path.
    *
    * @var string
    */
-  const GRAPHQL_SSLKEY_PATH = '/etc/ssl/certs/esb/esb.key';
+  const GRAPHQL_SSLKEY_PATH = '/etc/ssl/certs/esb/doo-sg-web1-16.student.helsinki.fi.key';
 
   /**
    * The HTTP client.
@@ -133,8 +133,8 @@ class SisuService {
       'timeout' => "10",
       'verify' => TRUE,
       'http_errors' => FALSE,
-      'cert' => $this->settings->get('uhsg_sisu_cert_path', self::GRAPHQL_CERT_PATH),
-      'ssl_key' => $this->settings->get('uhsg_sisu_sslkey_path', self::GRAPHQL_SSLKEY_PATH),
+      'cert' => Settings::get('uhsg_sisu_cert_path', self::GRAPHQL_CERT_PATH),
+      'ssl_key' => Settings::get('uhsg_sisu_sslkey_path', self::GRAPHQL_SSLKEY_PATH),
       'headers' => [
         'Content-Type: application/json',
       ],
