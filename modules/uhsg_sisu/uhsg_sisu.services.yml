@@ -1,0 +1,7 @@
+services:
+  uhsg_sisu.sisuservice:
+    class: Drupal\uhsg_sisu\Services\SisuService
+    arguments: ["@http_client", "@logger.factory"]
+  uhsg_sisu.studyrightsservice:
+    class: Drupal\uhsg_sisu\Services\StudyRightsService
+    arguments: ["@uhsg_sisu.sisuservice", "@logger.factory"]
