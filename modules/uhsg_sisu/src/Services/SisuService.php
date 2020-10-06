@@ -88,7 +88,7 @@ class SisuService {
     $url = $this->getGraphQlUrl();
     $data = Json::encode($graphQlQuery);
 
-    return $this->request($url, 'GET', $data);
+    return $this->request($url, 'POST', $data);
   }
 
   /**
