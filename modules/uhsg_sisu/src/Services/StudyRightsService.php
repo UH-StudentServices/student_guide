@@ -9,7 +9,6 @@ use Drupal\Core\Utility\Error;
 use Drupal\Core\Site\Settings;
 use Drupal\uhsg_sisu\Services\SisuService;
 use Drupal\uhsg_sisu\Services\StudyRight\StudyRight;
-use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Psr7\Response;
 use Psr\Http\Message\ResponseInterface;
 
@@ -81,13 +80,14 @@ class StudyRightsService {
       return $this->studyRightsData[$oodiId];
     }
 
+    // StudyRights Query
     $query = [
-      "operationName" => "StudyRightsQuery",
+      "operationName" => "fetchStudyRights",
       "variables" => [
-        "id" => "hy-hlo-" . $oodiId,
+        "id" => "hy-hlo-" . $oodiUid,
       ],
-      "query" => 'query StudyRightsQuery($personId: ID!) {
-        private_person(id: $personId) {
+      "query" => 'query fetchStudyRights($id: ID!) {
+        private_person(id: $id) {
           studyRightPrimalityChain {
             studyRightPrimalities {
               studyRightId
@@ -110,7 +110,11 @@ class StudyRightsService {
               educationPhase1Child {
                 code
                 groupId
-                name {fi sv en}
+                name {
+                  fi
+                  sv
+                  en
+                }
               }
               educationPhase1 {
                 code
@@ -124,7 +128,11 @@ class StudyRightsService {
               educationPhase2Child {
                 code
                 groupId
-                name {fi sv en}
+                name {
+                  fi
+                  sv
+                  en
+                }
               }
               educationPhase2 {
                 code
@@ -141,6 +149,7 @@ class StudyRightsService {
       }',
     ];
 
+
     try {
       $data = $this->sisuService->apiRequest($query);
 
@@ -148,9 +157,6 @@ class StudyRightsService {
       $this->studyRightsData[$oodiId] = $data;
       return $this->studyRightsData[$oodiId];
 
-    }
-    catch (GuzzleException $e) {
-      $this->guzzleErrorLog($e);
     }
     catch (\Exception $e) {
       $variables = Error::decodeException($e);
