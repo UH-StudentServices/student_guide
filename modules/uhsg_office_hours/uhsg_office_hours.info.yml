@@ -2,7 +2,7 @@ name: Office hours
 type: module
 description: Provides office hours relates services.
 core: 8.x
-version: VERSION
+version: 1.50
 core_version_requirement: ^8 || ^9
 package: Student Guide
 dependencies:
