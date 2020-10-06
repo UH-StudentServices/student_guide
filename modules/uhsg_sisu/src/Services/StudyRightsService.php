@@ -10,6 +10,8 @@ use Drupal\Core\Site\Settings;
 use Drupal\uhsg_sisu\Services\SisuService;
 use Drupal\uhsg_sisu\Services\StudyRight\StudyRight;
 use GuzzleHttp\Exception\GuzzleException;
+use GuzzleHttp\Psr7\Response;
+use Psr\Http\Message\ResponseInterface;
 
 /**
  * Class StudyRightsService.
