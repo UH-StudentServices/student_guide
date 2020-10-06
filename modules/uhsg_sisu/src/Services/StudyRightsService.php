@@ -84,7 +84,7 @@ class StudyRightsService {
     $query = [
       "operationName" => "fetchStudyRights",
       "variables" => [
-        "id" => "hy-hlo-" . $oodiUid,
+        "id" => "hy-hlo-" . $oodiId,
       ],
       "query" => 'query fetchStudyRights($id: ID!) {
         private_person(id: $id) {
