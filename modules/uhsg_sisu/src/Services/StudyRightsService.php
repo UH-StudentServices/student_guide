@@ -171,9 +171,19 @@ class StudyRightsService {
    *   array of studyright obj or NULL.
    */
   public function getActiveStudyRights($oodiId) {
-    // Fetch studyrightsdata for student.
-    $data = Json::decode($this->fetchStudyRightsData($oodiId));
+    // Initialize variables.
+    $data = NULL;
     $date_today = date('Y-m-d', time());
+
+    // Fetch studyrightsdata for student.
+    if ($oodiId) {
+      $sisuResponse = $this->fetchStudyRightsData($oodiId);
+    }
+
+    // Proper Response Handling.
+    if (isset($sisuResponse) && $sisuResponse instanceof Response) {
+      $data = Json::decode($sisuResponse->getBody());
+    }
 
     // Make sure we have results to loop trough.
     if(!$data) {
@@ -218,9 +228,20 @@ class StudyRightsService {
    *   Response object.
    */
   public function getPrimaryStudentDegreeProgram($oodiId) {
-    // Fetch studyrightsdata for student
-    $data = Json::decode($this->fetchStudyRightsData($oodiId));
+    // Initialize variables.
+    $data = NULL;
 
+    // Fetch studyrightsdata for student.
+    if ($oodiId) {
+      $sisuResponse = $this->fetchStudyRightsData($oodiId);
+    }
+
+    // Proper Response Handling.
+    if (isset($sisuResponse) && $sisuResponse instanceof Response) {
+      $data = Json::decode($sisuResponse->getBody());
+    }
+
+    // Make sure we have results to loop trough.
     if(!$data) {
       return null;
     }
