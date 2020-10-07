@@ -179,6 +179,9 @@ msgstr "Meddelanden för studerande"
 msgid "The office hours cannot be displayed. Please try again later."
 msgstr "Mottagningstiderna kan inte visas. Försök pånytt senare."
 
+msgid "Instructions according to user group"
+msgstr "Instruktioner enligt användargrupp"
+
 # Swedish translation of Scheduler (8.x-1.0)
 # Dev version translations can not be imported automatically.
 # These are copy & pasted from the official translation files.
