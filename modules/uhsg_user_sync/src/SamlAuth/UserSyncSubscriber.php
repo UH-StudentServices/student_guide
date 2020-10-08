@@ -322,7 +322,7 @@ class UserSyncSubscriber implements EventSubscriberInterface {
     $known_degree_programme_keys = array_keys($known_degree_programmes_array);
 
     // Should we use Sisu or Oodi?
-    $use_sisu_service = $this->config->get('use_sisu_service');
+    $use_sisu_service = Settings::get('use_sisu_service');
 
     // Keep track of new technical degree programmes
     $added = 0;
