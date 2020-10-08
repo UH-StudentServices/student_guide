@@ -71,6 +71,15 @@ class UserSyncSubscriber implements EventSubscriberInterface {
    */
   const UHSG_OPREK_ADD_DEBUG_LOGGING = FALSE;
 
+  /**
+   * Use Sisu
+   * This can be overridden in settings.local.php with:
+   *   $settings['uhsg_oprek_use_sisu_service'] = FALSE;
+   *
+   * @var bool
+   */
+  const UHSG_USER_SYNC_USE_SISU = FALSE;
+
   public function __construct(ConfigFactoryInterface $configFactory, OprekServiceInterface $oprekService, StudyRightsService $studyRightsService, FlagServiceInterface $flagService, EntityTypeManagerInterface $entityTypeManager, LoggerChannel $logger, MessengerInterface $messenger) {
     $this->config = $configFactory->get('uhsg_user_sync.settings');
     $this->oprekService = $oprekService;
@@ -322,7 +331,7 @@ class UserSyncSubscriber implements EventSubscriberInterface {
     $known_degree_programme_keys = array_keys($known_degree_programmes_array);
 
     // Should we use Sisu or Oodi?
-    $use_sisu_service = Settings::get('use_sisu_service');
+    $use_sisu_service = Settings::get('uhsg_oprek_use_sisu_service', self::UHSG_USER_SYNC_USE_SISU);
 
     // Keep track of new technical degree programmes
     $added = 0;
