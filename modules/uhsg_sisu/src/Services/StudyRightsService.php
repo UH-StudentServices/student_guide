@@ -7,6 +7,7 @@ use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\Core\Logger\RfcLogLevel;
 use Drupal\Core\Utility\Error;
 use Drupal\Core\Site\Settings;
+use Drupal\Core\Config\ConfigFactory;
 use Drupal\uhsg_sisu\Services\SisuService;
 use Drupal\uhsg_sisu\Services\StudyRight\StudyRight;
 use GuzzleHttp\Psr7\Response;
@@ -47,17 +48,28 @@ class StudyRightsService {
   private $studyRightsData;
 
   /**
+   * Config.
+   *
+   * @var \Drupal\Core\Config\ConfigFactory
+   */
+  private $config;
+
+  /**
    * Service constructor.
    *
    * @param Drupal\uhsg_sisu\Services\SisuService $sisuService
    *   SisuService.
    * @param \Drupal\Core\Logger\LoggerChannelFactoryInterface $loggerFactory
    *   LoggerChannelFactory.
+   * @param \Drupal\Core\Config\ConfigFactory $config
+   *   Config.
    */
-  public function __construct(SisuService $sisuService, 
-                              LoggerChannelFactoryInterface $loggerFactory) {
+  public function __construct(SisuService $sisuService,
+                              LoggerChannelFactoryInterface $loggerFactory,
+                              ConfigFactory $config) {
     $this->sisuService = $sisuService;
     $this->loggerFactory = $loggerFactory;
+    $this->config = $config->get('uhsg_sisu.settings');
   }
 
   /**
@@ -71,7 +83,7 @@ class StudyRightsService {
    */
   public function fetchStudyRightsData($oodiId) {
     // Fetch from mockdata based on configuration
-    if (Settings::get('uhsg_sisu_mock_response', self::UHSG_SISU_MOCK_RESPONSE)) {
+    if ($this->config->get('uhsg_sisu_mock_response', self::UHSG_SISU_MOCK_RESPONSE)) {
       return $this->fetchStudyRightsMockData();
     }
 
@@ -205,7 +217,7 @@ class StudyRightsService {
     // Loop trough studyrights and save active studyrights.
     foreach ($studyrights as $studyright) {
       // Only save studyright if it's active ie. enddate null and startdate in the past
-      if($studyright['valid']['startDate'] < $date_today && (!$studyright['valid']['endDate'] || $studyright['valid']['endDate'] > $date_today)) {
+      if($studyright['valid']['startDate'] < $date_today && $studyright['valid']['endDate'] > $date_today) {
         // Handle specialization and graduation for a studyright
         $studyrightdegreeprogram = $this->getActiveStudentDegreeProgram($studyright);
 
@@ -225,7 +237,8 @@ class StudyRightsService {
   }
 
   /**
-   * Get Student Primary Degree Program.
+   * Get Student Primary Degree Program. This will follow the PrimalityChain
+   * and find the Primary Degree Program based on the data in there.
    *
    * @param int $oodiId
    *   User Oodi ID.
@@ -268,7 +281,8 @@ class StudyRightsService {
   }
 
   /**
-   * Get Active DegreeProgram from studyright.
+   * Get Active DegreeProgram from studyright. This will return Active
+   * DegreeProgram based on graduation data inside StudyRights.
    *
    * @param array $studyright
    *   Studyright array.
@@ -292,7 +306,8 @@ class StudyRightsService {
   }
 
   /**
-   * Get Primary Study Right
+   * Get Primary Study Right.
+   * This will return primary studyright from primalitychain and studyright data.
    */
   private function getPrimaryStudyRight($studyRightPrimalityChain, $studyRights) {
     // Make sure we have all the needed data.

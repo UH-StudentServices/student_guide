@@ -6,6 +6,7 @@ use Drupal\Component\Serialization\Json;
 use Drupal\Core\Logger\RfcLogLevel;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\Core\Site\Settings;
+use Drupal\Core\Config\ConfigFactory;
 use Psr\Http\Message\ResponseInterface;
 
 /**
@@ -44,13 +45,25 @@ class SisuService {
   private $loggerFactory;
 
   /**
+   * Config.
+   *
+   * @var \Drupal\Core\Config\ConfigFactory
+   */
+  private $config;
+
+  /**
    * Service constructor.
    *
    * @param \Drupal\Core\Logger\LoggerChannelFactoryInterface $loggerFactory
    *   LoggerChannelFactory.
+   * @param \Drupal\Core\Config\ConfigFactory $config
+   *   Config.
    */
-  public function __construct(LoggerChannelFactoryInterface $loggerFactory) {
+  public function __construct(LoggerChannelFactoryInterface $loggerFactory,
+                              ConfigFactory $config) {
     $this->loggerFactory = $loggerFactory;
+    $this->config = $config->get('uhsg_sisu.settings');
+
   }
 
   /**
@@ -60,7 +73,7 @@ class SisuService {
    *   The absolute API url as a string.
    */
   public function getGraphQlUrl() {
-    return Settings::get('uhsg_sisu_graphql_url', self::GRAPHQL_URL);
+    return $this->config->get('uhsg_sisu_graphql_url', self::GRAPHQL_URL);
   }
 
   /**
@@ -146,8 +159,8 @@ class SisuService {
       // Encode post data
       CURLOPT_POSTFIELDS => Json::encode($graphQlQuery),
       // Sign our requests properly.
-      CURLOPT_SSLCERT => Settings::get('uhsg_sisu_cert_path', self::GRAPHQL_CERT_PATH),
-      CURLOPT_SSLKEY => Settings::get('uhsg_sisu_sslkey_path', self::GRAPHQL_SSLKEY_PATH),
+      CURLOPT_SSLCERT => $this->config->get('uhsg_sisu_cert_path', self::GRAPHQL_CERT_PATH),
+      CURLOPT_SSLKEY => $this->config->get('uhsg_sisu_sslkey_path', self::GRAPHQL_SSLKEY_PATH),
     ];
 
     return $options;
