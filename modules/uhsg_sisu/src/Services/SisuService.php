@@ -7,7 +7,6 @@ use Drupal\Core\Logger\RfcLogLevel;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\Core\Site\Settings;
 use Psr\Http\Message\ResponseInterface;
-use GuzzleHttp\Client;
 
 /**
  * Class SisuService.
@@ -28,21 +27,14 @@ class SisuService {
    *
    * @var string
    */
-  const GRAPHQL_CERT_PATH = '/etc/ssl/certs/esb/esb.pem';
+  const GRAPHQL_CERT_PATH = '/etc/ssl/certs/esb/doo-sg-web1-16.student.helsinki.fi.pem';
 
   /**
    * Default SSLKEY path.
    *
    * @var string
    */
-  const GRAPHQL_SSLKEY_PATH = '/etc/ssl/certs/esb/esb.key';
-
-  /**
-   * The HTTP client.
-   *
-   * @var \GuzzleHttp\Client
-   */
-  private $client;
+  const GRAPHQL_SSLKEY_PATH = '/etc/ssl/certs/esb/doo-sg-web1-16.student.helsinki.fi.key';
 
   /**
    * Logger Factory.
@@ -54,14 +46,10 @@ class SisuService {
   /**
    * Service constructor.
    *
-   * @param \GuzzleHttp\Client $client
-   *   Http Client.
    * @param \Drupal\Core\Logger\LoggerChannelFactoryInterface $loggerFactory
    *   LoggerChannelFactory.
    */
-  public function __construct(Client $client, 
-                              LoggerChannelFactoryInterface $loggerFactory) {
-    $this->client = $client;
+  public function __construct(LoggerChannelFactoryInterface $loggerFactory) {
     $this->loggerFactory = $loggerFactory;
   }
 
@@ -85,10 +73,8 @@ class SisuService {
    *   Response object.
    */
   public function apiRequest(array $graphQlQuery) {
-    $url = $this->getGraphQlUrl();
-    $data = Json::encode($graphQlQuery);
-
-    return $this->request($url, 'GET', $data);
+    // Request and return.
+    return $this->request($this->getGraphQlUrl(), 'POST', $graphQlQuery);
   }
 
   /**
@@ -109,80 +95,62 @@ class SisuService {
   private function request($url, $method, $data = NULL, array $option_overrides = []) {
     $options = $option_overrides + $this->getRequestOptions($data);
 
-    // Guzzle Client.
-    $response = $this->client->request(
-      $method,
-      $url,
-      $options
-    );
+    // Initialize Curl
+    $ch = curl_init();
+    // Set curl options
+    curl_setopt_array($ch, $options);
+    // Fetch results
+    $result = curl_exec($ch);
 
-    return $this->handleResponse($response);
+    // Log errors if we have no results
+    if (!$result) {
+      $this->log('SisuService curl request failed: @error', [
+        '@error' => curl_error($ch),
+      ], RfcLogLevel::WARNING);
+    }
+
+    curl_close($ch);
+
+    return Json::decode($result);
   }
 
   /**
    * Constructs and returns request options.
    *
-   * @param null|mixed $data
-   *   Optional request data.
+   * @param null|mixed $graphQlQuery
+   *   Optional request graphQlQuery.
    *
    * @return array
    *   Request options.
    */
-  private function getRequestOptions($data) {
+  private function getRequestOptions($graphQlQuery) {
     $options = [
-      'timeout' => "10",
-      'verify' => TRUE,
-      'http_errors' => FALSE,
-      'cert' => $this->settings->get('uhsg_sisu_cert_path', self::GRAPHQL_CERT_PATH),
-      'ssl_key' => $this->settings->get('uhsg_sisu_sslkey_path', self::GRAPHQL_SSLKEY_PATH),
-      'headers' => [
+      CURLOPT_HTTPHEADER => [
         'Content-Type: application/json',
       ],
+      // GraphQL expects POST requests with payload.
+      CURLOPT_POST => 1,
+      // Pass headers to the data stream.
+      CURLOPT_HEADER => 0,
+      // Force new connection. Might avoid mystery.
+      CURLOPT_FRESH_CONNECT => 1,
+      // TRUE to return the transfer as a string of the return value of
+      // curl_exec() instead of outputting it directly.
+      CURLOPT_RETURNTRANSFER => 1,
+      // Timeout increased 4->10.
+      CURLOPT_TIMEOUT => 10,
+      // Debugging help.
+      CURLOPT_VERBOSE => TRUE,
+      // https://curl.haxx.se/libcurl/c/CURLOPT_URL.html.
+      CURLOPT_URL => $this->getGraphQlUrl(),
+      // Encode post data
+      CURLOPT_POSTFIELDS => Json::encode($graphQlQuery),
+      // Sign our requests properly.
+      CURLOPT_SSLCERT => Settings::get('uhsg_sisu_cert_path', self::GRAPHQL_CERT_PATH),
+      CURLOPT_SSLKEY => Settings::get('uhsg_sisu_sslkey_path', self::GRAPHQL_SSLKEY_PATH),
     ];
 
-    if (isset($data)) {
-      $options['body'] = $data;
-    }
-
     return $options;
-  }
-
-  /**
-   * Handles the response.
-   *
-   * @param \Psr\Http\Message\ResponseInterface $response
-   *   Response object.
-   *
-   * @return \Psr\Http\Message\ResponseInterface
-   *   Response object.
-   */
-  private function handleResponse(ResponseInterface $response) {
-    $this->logResponse($response);
-
-    return $response;
-  }
-
-  /**
-   * Logs the response object.
-   *
-   * @param \Psr\Http\Message\ResponseInterface $response
-   *   Response object.
-   */
-  private function logResponse(ResponseInterface $response) {
-    $responseCode = $response->getStatusCode();
-    $responseData = $response->getBody()->getContents();
-
-    if (in_array($responseCode, [200, 404])) {
-      $this->log('Response: @code @data', [
-        '@code' => $responseCode,
-        '@data' => $responseData,
-      ]);
-    }
-    else {
-      $this->log('Response: @response', [
-        '@response' => print_r($response, TRUE),
-      ], RfcLogLevel::WARNING);
-    }
   }
 
   /**

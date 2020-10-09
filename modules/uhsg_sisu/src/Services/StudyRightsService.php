@@ -9,7 +9,8 @@ use Drupal\Core\Utility\Error;
 use Drupal\Core\Site\Settings;
 use Drupal\uhsg_sisu\Services\SisuService;
 use Drupal\uhsg_sisu\Services\StudyRight\StudyRight;
-use GuzzleHttp\Exception\GuzzleException;
+use GuzzleHttp\Psr7\Response;
+use Psr\Http\Message\ResponseInterface;
 
 /**
  * Class StudyRightsService.
@@ -79,15 +80,14 @@ class StudyRightsService {
       return $this->studyRightsData[$oodiId];
     }
 
+    // StudyRights Query
     $query = [
-      "operationName" => "getStudyRights",
+      "operationName" => "fetchStudyRights",
       "variables" => [
-        "ids" => [
-          "hy-hlo-" . $oodiId,
-        ],
+        "id" => "hy-hlo-" . $oodiId,
       ],
-      "query" => 'query StudyRightsQuery($personId: ID!) {
-        private_person(id: $personId) {
+      "query" => 'query fetchStudyRights($id: ID!) {
+        private_person(id: $id) {
           studyRightPrimalityChain {
             studyRightPrimalities {
               studyRightId
@@ -110,7 +110,11 @@ class StudyRightsService {
               educationPhase1Child {
                 code
                 groupId
-                name {fi sv en}
+                name {
+                  fi
+                  sv
+                  en
+                }
               }
               educationPhase1 {
                 code
@@ -124,7 +128,11 @@ class StudyRightsService {
               educationPhase2Child {
                 code
                 groupId
-                name {fi sv en}
+                name {
+                  fi
+                  sv
+                  en
+                }
               }
               educationPhase2 {
                 code
@@ -141,6 +149,7 @@ class StudyRightsService {
       }',
     ];
 
+
     try {
       $data = $this->sisuService->apiRequest($query);
 
@@ -148,9 +157,6 @@ class StudyRightsService {
       $this->studyRightsData[$oodiId] = $data;
       return $this->studyRightsData[$oodiId];
 
-    }
-    catch (GuzzleException $e) {
-      $this->guzzleErrorLog($e);
     }
     catch (\Exception $e) {
       $variables = Error::decodeException($e);
@@ -171,9 +177,19 @@ class StudyRightsService {
    *   array of studyright obj or NULL.
    */
   public function getActiveStudyRights($oodiId) {
-    // Fetch studyrightsdata for student.
-    $data = Json::decode($this->fetchStudyRightsData($oodiId));
+    // Initialize variables.
+    $data = NULL;
     $date_today = date('Y-m-d', time());
+
+    // Fetch studyrightsdata for student.
+    if ($oodiId) {
+      $sisuResponse = $this->fetchStudyRightsData($oodiId);
+    }
+
+    // Proper Response Handling.
+    if (isset($sisuResponse) && $sisuResponse instanceof Response) {
+      $data = Json::decode($sisuResponse->getBody());
+    }
 
     // Make sure we have results to loop trough.
     if(!$data) {
@@ -218,9 +234,20 @@ class StudyRightsService {
    *   Response object.
    */
   public function getPrimaryStudentDegreeProgram($oodiId) {
-    // Fetch studyrightsdata for student
-    $data = Json::decode($this->fetchStudyRightsData($oodiId));
+    // Initialize variables.
+    $data = NULL;
 
+    // Fetch studyrightsdata for student.
+    if ($oodiId) {
+      $sisuResponse = $this->fetchStudyRightsData($oodiId);
+    }
+
+    // Proper Response Handling.
+    if (isset($sisuResponse) && $sisuResponse instanceof Response) {
+      $data = Json::decode($sisuResponse->getBody());
+    }
+
+    // Make sure we have results to loop trough.
     if(!$data) {
       return null;
     }

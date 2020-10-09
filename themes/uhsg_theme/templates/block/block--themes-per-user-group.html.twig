@@ -39,6 +39,7 @@
 
 {%
   set title_classes = [
+    'h2',
     'l-subregion__title',
     'is-center-mobile'
   ]
@@ -62,6 +63,7 @@
         {% set title_specialist = 'Specialist Training'|trans %}
 
         <div id="tabs" class="horizontal-tabs js-tabs clearfix" data-breakpoint="768" data-start-collapsed="true">
+          <h2 class="accordion-header">{{ 'Instructions according to user group'|trans }}</h2>
           <ul role="tablist" class="tabs-list horizontal-tabs-list">
             <li role="presentation" class="horizontal-tab-button horizontal-tab-button-0 first" id="tab1">
               <a role="tab" aria-controls="degree_students" aria-selected="true" href="#degree_students" class="tabs-trigger js-tabs-trigger">
@@ -89,7 +91,7 @@
               {% block title_block %}
                 {{ title_prefix }}
                 {% if label %}
-                  <h2{{ title_attributes.addClass(title_classes) }}>{{ label }}</h2>
+                  <h3{{ title_attributes.addClass(title_classes) }}>{{ label }}</h3>
                 {% endif %}
                 {{ title_suffix }}
               {% endblock %}
@@ -106,7 +108,7 @@
               {% block title_block_doctoral_news %}
                 {{ title_prefix }}
                 {% if label %}
-                  <h2{{ title_attributes.addClass(title_classes) }}>{{ label }}</h2>
+                  <h3{{ title_attributes.addClass(title_classes) }}>{{ label }}</h3>
                 {% endif %}
                 {{ title_suffix }}
               {% endblock %}

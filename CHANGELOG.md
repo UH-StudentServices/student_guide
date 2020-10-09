@@ -3,9 +3,14 @@
 ## 1.xx-dev
 Release date: ??.??.????
 
+
+
+## 1.50
+Release date: 06.10.2020
+
 * HUB-698 - Drupal 9 compatibility for custom modules.
 * HUB-765 - Improved responsive behavior and accessibility for tabbed navigation.
-
+* HUB-699 - Sisu integration
 
 ## 1.49
 Release date: 17.09.2020

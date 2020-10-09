@@ -182,6 +182,9 @@ msgstr "Tiedotteet opiskelijoille"
 msgid "The office hours cannot be displayed. Please try again later."
 msgstr "Vastaanottoaikoja ei voida näyttää. Yritä myöhemmin uudelleen."
 
+msgid "Instructions according to user group"
+msgstr "Ohjeet käyttäjäryhmittäin"
+
 # Finnish translation of Scheduler (8.x-1.0)
 # Dev version translations can not be imported automatically.
 # These are copy & pasted from the official translation files.

@@ -53,6 +53,9 @@
 @include breakpoint($small) {
   .horizontal-tabs {
     &.tabs-allowed {
+      .accordion-header {
+        @include visually-hidden;
+      }
       .accordion-trigger {
         display: none !important;
       }
