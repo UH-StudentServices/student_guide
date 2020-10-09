@@ -7,6 +7,7 @@ use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\Core\Logger\RfcLogLevel;
 use Drupal\Core\Utility\Error;
 use Drupal\Core\Site\Settings;
+use Drupal\Core\Config\ConfigFactory;
 use Drupal\uhsg_sisu\Services\SisuService;
 use Drupal\uhsg_sisu\Services\StudyRight\StudyRight;
 use GuzzleHttp\Psr7\Response;
@@ -47,17 +48,28 @@ class StudyRightsService {
   private $studyRightsData;
 
   /**
+   * Config.
+   *
+   * @var \Drupal\Core\Config\ConfigFactory
+   */
+  private $config;
+
+  /**
    * Service constructor.
    *
    * @param Drupal\uhsg_sisu\Services\SisuService $sisuService
    *   SisuService.
    * @param \Drupal\Core\Logger\LoggerChannelFactoryInterface $loggerFactory
    *   LoggerChannelFactory.
+   * @param \Drupal\Core\Config\ConfigFactory $config
+   *   Config.
    */
   public function __construct(SisuService $sisuService,
-                              LoggerChannelFactoryInterface $loggerFactory) {
+                              LoggerChannelFactoryInterface $loggerFactory,
+                              ConfigFactory $config) {
     $this->sisuService = $sisuService;
     $this->loggerFactory = $loggerFactory;
+    $this->config = $config->get('uhsg_sisu.settings');
   }
 
   /**
@@ -71,7 +83,7 @@ class StudyRightsService {
    */
   public function fetchStudyRightsData($oodiId) {
     // Fetch from mockdata based on configuration
-    if (Settings::get('uhsg_sisu_mock_response', self::UHSG_SISU_MOCK_RESPONSE)) {
+    if ($this->config->get('uhsg_sisu_mock_response', self::UHSG_SISU_MOCK_RESPONSE)) {
       return $this->fetchStudyRightsMockData();
     }
 
