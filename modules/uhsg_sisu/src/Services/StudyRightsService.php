@@ -54,7 +54,7 @@ class StudyRightsService {
    * @param \Drupal\Core\Logger\LoggerChannelFactoryInterface $loggerFactory
    *   LoggerChannelFactory.
    */
-  public function __construct(SisuService $sisuService, 
+  public function __construct(SisuService $sisuService,
                               LoggerChannelFactoryInterface $loggerFactory) {
     $this->sisuService = $sisuService;
     $this->loggerFactory = $loggerFactory;
@@ -205,7 +205,7 @@ class StudyRightsService {
     // Loop trough studyrights and save active studyrights.
     foreach ($studyrights as $studyright) {
       // Only save studyright if it's active ie. enddate null and startdate in the past
-      if($studyright['valid']['startDate'] < $date_today && (!$studyright['valid']['endDate'] || $studyright['valid']['endDate'] > $date_today)) {
+      if($studyright['valid']['startDate'] < $date_today && $studyright['valid']['endDate'] > $date_today) {
         // Handle specialization and graduation for a studyright
         $studyrightdegreeprogram = $this->getActiveStudentDegreeProgram($studyright);
 
@@ -225,7 +225,8 @@ class StudyRightsService {
   }
 
   /**
-   * Get Student Primary Degree Program.
+   * Get Student Primary Degree Program. This will follow the PrimalityChain
+   * and find the Primary Degree Program based on the data in there.
    *
    * @param int $oodiId
    *   User Oodi ID.
@@ -268,7 +269,8 @@ class StudyRightsService {
   }
 
   /**
-   * Get Active DegreeProgram from studyright.
+   * Get Active DegreeProgram from studyright. This will return Active
+   * DegreeProgram based on graduation data inside StudyRights.
    *
    * @param array $studyright
    *   Studyright array.
@@ -292,7 +294,8 @@ class StudyRightsService {
   }
 
   /**
-   * Get Primary Study Right
+   * Get Primary Study Right.
+   * This will return primary studyright from primalitychain and studyright data.
    */
   private function getPrimaryStudyRight($studyRightPrimalityChain, $studyRights) {
     // Make sure we have all the needed data.
