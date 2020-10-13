@@ -3,7 +3,10 @@
 ## 1.xx-dev
 Release date: ??.??.????
 
+## 1.51
+Release date: 13.10.2020
 
+* HUB-699 - Sisu integration, further improvements
 
 ## 1.50
 Release date: 06.10.2020
