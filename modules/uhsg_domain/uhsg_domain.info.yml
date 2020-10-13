@@ -2,7 +2,7 @@ name: UHSG Domain
 type: module
 description: Provides support for creating guide content for student and teaching domains.
 core: 8.x
-version: 1.51
+version: VERSION
 core_version_requirement: ^8 || ^9
 package: Student Guide
 dependencies:
