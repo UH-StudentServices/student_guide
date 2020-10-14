@@ -8882,6 +8882,7 @@ li.avatar.avatar--default img {
 }
 
 .degree-programme-switcher .degree-programme-switcher__header {
+  background-color: #FFF;
   border-radius: 0;
   border: 1px solid #979797;
   outline-color: rgba(16, 126, 171, 0);
@@ -8906,8 +8907,9 @@ li.avatar.avatar--default img {
       -ms-flex-align: center;
           align-items: center;
   height: 3rem;
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
 }
 
 .degree-programme-switcher .degree-programme-switcher__header:focus {
@@ -9742,6 +9744,7 @@ h1, h2, .h2, h3, .h3, h4, legend, .logo-block__content .logo-block__sitename, .h
 }
 
 .other-education-provider-switcher .other-education-provider-switcher__header {
+  background-color: #FFF;
   border-radius: 0;
   border: 1px solid #979797;
   outline-color: rgba(16, 126, 171, 0);
@@ -9766,8 +9769,9 @@ h1, h2, .h2, h3, .h3, h4, legend, .logo-block__content .logo-block__sitename, .h
       -ms-flex-align: center;
           align-items: center;
   height: 3rem;
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
 }
 
 .other-education-provider-switcher .other-education-provider-switcher__header:focus {

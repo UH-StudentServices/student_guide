@@ -30,13 +30,23 @@
 
 <div class="degree-programme-switcher search-form">
   <label> {{ 'Select degree programme'|trans }} </label>
-  <div class="degree-programme-switcher__header" tabindex="0">
+
+  <button class="degree-programme-switcher__header"
+          aria-expanded="false"
+          aria-controls="degree-programme-switcher-dropdown-1"
+          id="degree-programme-switcher-header-1"
+          tabindex="0">
     <div class="h4 degree-programme-switcher__title" data-degree-programme-code="{{ code }}">
       {{ label }}
     </div>
     <span class="degree-programme-switcher__toggle icon--caret-down" />
-  </div>
-  <div class="degree-programme-switcher__dropdown">
+  </button>
+
+  <div class="degree-programme-switcher__dropdown"
+       id="degree-programme-switcher-dropdown-1"
+       role="region"
+       aria-labelledby="degree-programme-switcher-header-1"
+       hidden="">
     <h2 class="h4">{{ 'Search for degree programme'|trans }}</h2>
     <div class="degree-programme-switcher__filter tube">
       <label for="filter">{{ 'Name of degree programme'|trans }}</label>
