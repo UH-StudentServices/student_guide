@@ -185,6 +185,18 @@ msgstr "Vastaanottoaikoja ei voida näyttää. Yritä myöhemmin uudelleen."
 msgid "Instructions according to user group"
 msgstr "Ohjeet käyttäjäryhmittäin"
 
+msgid "Search for degree programme by name or part of the name"
+msgstr "Hae koulutusohjelmaa nimellä tai nimen osalla"
+
+msgid "When you search for a degree programme by name or by part of the name the options in the list of degree programmes below the search field is narrowed down. After this you have to choose the degree programme from the list."
+msgstr "Kun haet koulutusohjelmaa nimellä tai nimen osalla hakukentän alapuolella olevan koulutusohjelmalistan vaihtoehdot rajautuvat. Valitse tämän jälkeen koulutusohjelma listasta."
+
+msgid "Showing @count programmes."
+msgstr "Näytetään @count koulutusohjelmaa."
+
+msgid "Clear the selection"
+msgstr "Tyhjennä valinta"
+
 # Finnish translation of Scheduler (8.x-1.0)
 # Dev version translations can not be imported automatically.
 # These are copy & pasted from the official translation files.

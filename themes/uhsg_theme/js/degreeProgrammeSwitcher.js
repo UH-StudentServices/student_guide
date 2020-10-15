@@ -46,9 +46,10 @@
 
       // Apply view filtering to input
       filterInput.degreeProgrammeFilter({
-        container: '.view-degree-programmes',
+        container: '.degree-programme-switcher__list',
         item: '.list-of-links__link',
-        groupingTitle: '.view-subtitle'
+        groupingTitle: '.view-subtitle',
+        ariaLive: '.degree-programme-switcher__filter-messages',
       });
 
     },

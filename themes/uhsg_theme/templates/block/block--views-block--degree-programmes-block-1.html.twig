@@ -49,15 +49,28 @@
        hidden="">
     <h2 class="h4">{{ 'Search for degree programme'|trans }}</h2>
     <div class="degree-programme-switcher__filter tube">
-      <label for="filter">{{ 'Name of degree programme'|trans }}</label>
-      <input type="text" name="filter" placeholder="{{ 'Name of degree programme'|trans }}" class="search-form__input">
+      <label for="filter">{{ 'Search for degree programme by name or part of the name'|trans }}</label>
+      <input type="text"
+             name="filter"
+             placeholder="{{ 'Search for degree programme by name or part of the name'|trans }}"
+             class="search-form__input"
+             aria-controls="degree-programme-switcher-programmes-list-1"
+             aria-describedby="degree-programme-switcher-filter-description-1">
+      <div id="degree-programme-switcher-filter-description-1" class="description visually-hidden">
+        {{ 'When you search for a degree programme by name or by part of the name the options in the list of degree programmes below the search field is narrowed down. After this you have to choose the degree programme from the list.'|trans }}
+      </div>
       <i class="icon--search"></i>
     </div>
-    {% block content %}
-      {{ content }}
-    {% endblock %}
+
+    <div class="degree-programme-switcher__list" role="region" id="degree-programme-switcher-programmes-list-1">
+      <div class="degree-programme-switcher__filter-messages visually-hidden" aria-live="assertive"></div>
+      {% block content %}
+        {{ content }}
+      {% endblock %}
+    </div>
+
     {% if label %}
-      {{ link('Reset'|trans , reset_link.link, {'class': reset_link.classes }) }}
+      {{ link('Clear the selection'|trans , reset_link.link, {'class': reset_link.classes }) }}
     {% endif %}
   </div>
 </div>
