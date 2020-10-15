@@ -188,8 +188,8 @@ msgstr "Sök utbildningsprogram med namn eller del av namnet"
 msgid "When you search for a degree programme by name or by part of the name the options in the list of degree programmes below the search field is narrowed down. After this you have to choose the degree programme from the list."
 msgstr "När du söker utbildningsprogram med namn eller del av namnet begränsas alternativen i listan av utbildningsprogram under sökfältet. Välj efter detta utbildningsprogrammet i listan."
 
-msgid "Showing @count programmes."
-msgstr "Visar @count utbildningsprogram."
+msgid "Showing @count degree programmes."
+msgstr "Visas @count utbildningsprogram."
 
 msgid "Clear the selection"
 msgstr "Töm valet"

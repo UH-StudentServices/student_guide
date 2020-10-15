@@ -191,7 +191,7 @@ msgstr "Hae koulutusohjelmaa nimellä tai nimen osalla"
 msgid "When you search for a degree programme by name or by part of the name the options in the list of degree programmes below the search field is narrowed down. After this you have to choose the degree programme from the list."
 msgstr "Kun haet koulutusohjelmaa nimellä tai nimen osalla hakukentän alapuolella olevan koulutusohjelmalistan vaihtoehdot rajautuvat. Valitse tämän jälkeen koulutusohjelma listasta."
 
-msgid "Showing @count programmes."
+msgid "Showing @count degree programmes."
 msgstr "Näytetään @count koulutusohjelmaa."
 
 msgid "Clear the selection"
