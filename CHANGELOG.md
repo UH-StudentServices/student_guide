@@ -3,7 +3,7 @@
 ## 1.xx-dev
 Release date: ??.??.????
 
-
+* HUB-772 - New user group option 'Open University'.
 
 
 ## 1.51
