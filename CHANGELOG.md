@@ -3,7 +3,7 @@
 ## 1.xx-dev
 Release date: ??.??.????
 
-
+* HUB-757 & HUB-774 - Improved accessibility for degree programme selection.
 
 
 ## 1.51
