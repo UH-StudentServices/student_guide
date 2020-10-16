@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
   padding-bottom: 2em;
+
   .other-education-provider-switcher__header {
     background-color: $white;
     border-radius: 0;
@@ -62,7 +63,6 @@
     background: $white;
     .view-other-education-providers {
       .view-content {
-        @include scrollbar;
         > div {
           flex-shrink: 0;
         }
@@ -93,7 +93,6 @@
       display: flex;
       flex-direction: column;
       width: 100%;
-      min-height: 1px;
     }
   }
   // Display when open.
@@ -110,7 +109,10 @@
     left: 0;
     height: 100%;
     width: 100%;
+    padding-bottom: 0;
+
     .other-education-provider-switcher__dropdown {
+      @include scrollbar;
       transform: none;
       height: auto;
       opacity: 1;
@@ -139,9 +141,22 @@
     &.collapsed {
       height: auto;
       position: relative;
+      padding-bottom: 2em;
+
       .other-education-provider-switcher__dropdown {
+        overflow-y: auto;
         display: flex;
         padding: 0 2em 2em 2em;
+
+        .view-other-education-providers {
+          .view-content {
+            @include scrollbar;
+          }
+        }
+
+        div {
+          min-height: 1px;
+        }
       }
     }
   }

@@ -4,7 +4,8 @@
   background: $white;
   display: flex;
   flex-direction: column;
-  padding-bottom: 2em;
+  padding-bottom: 0.5em;
+
   .degree-programme-switcher__header {
     background-color: $white;
     border-radius: 0;
@@ -62,7 +63,6 @@
     background: $white;
     .view-degree-programmes {
       .view-content {
-        @include scrollbar;
         > div {
           flex-shrink: 0;
         }
@@ -118,7 +118,6 @@
       display: flex;
       flex-direction: column;
       width: 100%;
-      min-height: 1px;
     }
   }
   // Display when open.
@@ -149,7 +148,10 @@
     left: 0;
     height: 100%;
     width: 100%;
+    padding-bottom: 0;
+
     .degree-programme-switcher__dropdown {
+      @include scrollbar;
       transform: none;
       height: auto;
       opacity: 1;
@@ -178,9 +180,22 @@
     &.collapsed {
       height: auto;
       position: relative;
+      padding-bottom: 0.5em;
+
       .degree-programme-switcher__dropdown {
+        overflow-y: auto;
         display: flex;
         padding: 2em;
+
+        .view-degree-programmes {
+          .view-content {
+            @include scrollbar;
+          }
+        }
+
+        div {
+          min-height: 1px;
+        }
       }
     }
   }
