@@ -78,7 +78,8 @@
         "drupal/country_path": "^1.4",
         "drupal/simple_sitemap": "^3.6",
         "drupal/upgrade_status": "^2.9",
-        "phpstan/phpstan": "0.12.42"
+        "phpstan/phpstan": "0.12.42",
+        "drupal/memcache": "^2.2"
     },
     "repositories": {
         "0": {
