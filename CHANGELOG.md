@@ -5,6 +5,10 @@ Release date: ??.??.????
 
 * HUB-772 - New user group option 'Open University'.
 
+## 1.52
+Release date: 19.10.2020
+
+* HUB-751 : part 1, memcached support
 
 ## 1.51
 Release date: 13.10.2020
