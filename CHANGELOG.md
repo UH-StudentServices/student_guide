@@ -3,6 +3,8 @@
 ## 1.xx-dev
 Release date: ??.??.????
 
+* HUB-756: Improving accessibility on degree programme selector.
+
 ## 1.52
 Release date: 19.10.2020
 
