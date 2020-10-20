@@ -8,3 +8,5 @@ settings:
       label: 'Ammatillinen jatkokoulutus'
     -
       label: Opettajat
+    -
+      label: 'Avoin yliopisto'
