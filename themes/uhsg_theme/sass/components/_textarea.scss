@@ -9,4 +9,18 @@
   a {
     text-decoration: underline;
   }
+
+  table {
+    td, th {
+      a {
+        color: $color-link;
+        text-decoration: underline;
+
+        &:hover {
+          color: $color-link-hover;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
 }
