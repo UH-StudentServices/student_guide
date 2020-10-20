@@ -3,6 +3,8 @@
 ## 1.xx-dev
 Release date: ??.??.????
 
+* HUB-779: Improved accessibility for content links when inside tables.
+
 ## 1.52
 Release date: 19.10.2020
 
