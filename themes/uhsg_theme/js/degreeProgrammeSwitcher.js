@@ -23,8 +23,8 @@
         }
       });
 
-      // Close when clicking outside
-      $(document).once().on('click', function (e) {
+      // Close when clicking or focusing outside
+      $(document).once().on('click focusin', function (e) {
         var clickedOutside = $(e.target).parents(degreeProgrammeSwitcher).length === 0;
         if (container.hasClass(toggleClass) && clickedOutside) {
           container.removeClass(toggleClass);
