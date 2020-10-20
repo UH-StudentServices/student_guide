@@ -23,6 +23,9 @@ settings:
     -
       value: teachers
       label: Teachers
+    -
+      value: open_university
+      label: 'Open University'
   allowed_values_function: ''
 module: options
 locked: false
