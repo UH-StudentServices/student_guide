@@ -10301,6 +10301,16 @@ ul.pager > li a:focus {
   text-decoration: underline;
 }
 
+.textarea table td a, .textarea table th a {
+  color: #0e688b;
+  text-decoration: underline;
+}
+
+.textarea table td a:hover, .textarea table th a:hover {
+  color: #005379;
+  text-decoration: underline;
+}
+
 .theme--box {
   -webkit-hyphens: auto;
   -ms-hyphens: auto;
