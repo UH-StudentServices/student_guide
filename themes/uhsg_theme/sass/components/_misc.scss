@@ -38,3 +38,8 @@ h1, h2, h3, h4,
   @extend h3;
   text-transform: none;
 }
+
+.h4 {
+  @extend h4;
+  text-transform: none;
+}

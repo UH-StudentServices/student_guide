@@ -6,6 +6,7 @@ Release date: ??.??.????
 * HUB-772 - New user group option 'Open University'.
 * HUB-763 - Disabled tooltip.
 * HUB-779 - Improved accessibility for content links when inside tables.
+* HUB-757 & HUB-774 - Improved accessibility for degree programme selection.
 * HUB-756 - Improving accessibility on degree programme selector.
 
 ## 1.52
