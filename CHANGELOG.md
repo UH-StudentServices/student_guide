@@ -8,6 +8,7 @@ Release date: ??.??.????
 * HUB-779 - Improved accessibility for content links when inside tables.
 * HUB-757 & HUB-774 - Improved accessibility for degree programme selection.
 * HUB-756 - Improving accessibility on degree programme selector.
+* HUB-758 - Improved accessibility for paging links.
 
 ## 1.52
 Release date: 19.10.2020

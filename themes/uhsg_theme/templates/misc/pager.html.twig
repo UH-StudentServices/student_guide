@@ -50,7 +50,10 @@
       {% for key, item in items.pages %}
         {% if current == key %}
           <li class="pager__page">
-            <a href="#" class="button is-active">
+            <a href="#" class="button is-active" aria-current="page">
+              <span class="visually-hidden">
+                {{ 'Current page'|t }}
+              </span>
               {{- key -}}
             </a>
           </li>
