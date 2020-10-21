@@ -296,9 +296,13 @@ function _uhsg_theme_add_front_page_text_blocks(&$variables, $is_student_domain)
     ? \Drupal::entityTypeManager()->getViewBuilder('block_content')->view(BlockContent::load(1))
     : \Drupal::entityTypeManager()->getViewBuilder('block_content')->view(uhsg_theme_load_content_block_by_uuid('46c7c03f-88cb-42bd-ab54-e8ac5cce8bab'));
 
-  $front_page_additional_text_block = $is_student_domain
-    ? uhsg_theme_load_content_block_value(uhsg_theme_load_content_block_by_uuid('ecd71681-cd04-4ee0-b9b2-015cc2a19ff0'))
-    : uhsg_theme_load_content_block_value(uhsg_theme_load_content_block_by_uuid('56a05a0a-10f0-4c28-bd26-63e5e2e82768'));
+  // Disabled in HUB-763 due to accessibility issues in current tooltip
+  // implementation. Leaving the base implementation intact in case we
+  // decide to make an accessible tooltip solution later.
+  $front_page_additional_text_block = FALSE;
+  //$front_page_additional_text_block = $is_student_domain
+  //  ? uhsg_theme_load_content_block_value(uhsg_theme_load_content_block_by_uuid('ecd71681-cd04-4ee0-b9b2-015cc2a19ff0'))
+  //  : uhsg_theme_load_content_block_value(uhsg_theme_load_content_block_by_uuid('56a05a0a-10f0-4c28-bd26-63e5e2e82768'));
 
   if ($front_page_text_block) {
     $variables['frontpagetextblock'] = $front_page_text_block;
