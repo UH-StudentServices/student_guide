@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2c1a15b6501f3703054d84d454d67706",
+    "content-hash": "6d9d5388e76055768b5e2f6e91dc5ad3",
     "packages": [
         {
             "name": "UH-StudentServices/uh_courses_embed",
@@ -1723,6 +1723,50 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/admin_toolbar",
                 "issues": "https://www.drupal.org/project/issues/admin_toolbar"
+            }
+        },
+        {
+            "name": "drupal/big_pipe_sessionless",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/big_pipe_sessionless.git",
+                "reference": "8.x-1.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/big_pipe_sessionless-8.x-1.2.zip",
+                "reference": "8.x-1.2",
+                "shasum": "ed5c409e2bec252256d6c77cdb001cb00bb6cbef"
+            },
+            "require": {
+                "drupal/core": "^8.3.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.2",
+                    "datestamp": "1524046435",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Wim Leers",
+                    "homepage": "https://www.drupal.org/user/99777"
+                }
+            ],
+            "description": "Accelerates Page Cache misses using the BigPipe technique.",
+            "homepage": "https://www.drupal.org/project/big_pipe_sessionless",
+            "support": {
+                "source": "https://git.drupalcode.org/project/big_pipe_sessionless"
             }
         },
         {
@@ -3896,9 +3940,6 @@
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-3.x": "3.x-dev"
-                },
                 "drupal": {
                     "version": "8.x-3.0-beta9",
                     "datestamp": "1570540105",
@@ -3906,6 +3947,9 @@
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
                     }
+                },
+                "patches_applied": {
+                    "2952277-38 minify cache tags header": "https://www.drupal.org/files/issues/2020-07-06/purge_cache_tags_minify-2952277-38.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -12548,8 +12592,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "drupal/purge": 10,
-        "drupal/purge_purger_http": 10,
         "drupal/google_analytics": 20,
         "drupal/block_access": 20,
         "drupal/content_lock": 15,
