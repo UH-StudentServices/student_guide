@@ -79,7 +79,8 @@
         "drupal/simple_sitemap": "^3.6",
         "drupal/upgrade_status": "^2.9",
         "phpstan/phpstan": "0.12.42",
-        "drupal/memcache": "^2.2"
+        "drupal/memcache": "^2.2",
+        "drupal/entity_browser": "^2.5"
     },
     "repositories": {
         "0": {
