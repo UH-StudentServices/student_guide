@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7f19c13b17d530858f054f5332a4bf6f",
+    "content-hash": "f51eafdca93961e21b17050dd9cb6099",
     "packages": [
         {
             "name": "UH-StudentServices/uh_courses_embed",
@@ -1726,6 +1726,50 @@
             }
         },
         {
+            "name": "drupal/big_pipe_sessionless",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/big_pipe_sessionless.git",
+                "reference": "8.x-1.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/big_pipe_sessionless-8.x-1.2.zip",
+                "reference": "8.x-1.2",
+                "shasum": "ed5c409e2bec252256d6c77cdb001cb00bb6cbef"
+            },
+            "require": {
+                "drupal/core": "^8.3.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.2",
+                    "datestamp": "1524046435",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Wim Leers",
+                    "homepage": "https://www.drupal.org/user/99777"
+                }
+            ],
+            "description": "Accelerates Page Cache misses using the BigPipe technique.",
+            "homepage": "https://www.drupal.org/project/big_pipe_sessionless",
+            "support": {
+                "source": "https://git.drupalcode.org/project/big_pipe_sessionless"
+            }
+        },
+        {
             "name": "drupal/block_access",
             "version": "dev-8.x-1.x",
             "source": {
@@ -1772,6 +1816,9 @@
             },
             "type": "drupal-module",
             "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
                 "drupal": {
                     "version": "8.x-1.5",
                     "datestamp": "1572542288",
@@ -1836,6 +1883,9 @@
             },
             "type": "drupal-module",
             "extra": {
+                "branch-alias": {
+                    "dev-2.x": "2.x-dev"
+                },
                 "drupal": {
                     "version": "8.x-2.2",
                     "datestamp": "1576528386",
@@ -1889,10 +1939,13 @@
                 "shasum": "327653244f891facdb5a27b9828e7ec9b1fcfa7b"
             },
             "require": {
-                "drupal/core": "^8"
+                "drupal/core": "*"
             },
             "type": "drupal-module",
             "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
                 "drupal": {
                     "version": "8.x-1.4",
                     "datestamp": "1543417084",
@@ -1933,10 +1986,13 @@
                 "shasum": "0e10326e33c02f821c0f20885a3662f8c3e34c64"
             },
             "require": {
-                "drupal/core": "^8"
+                "drupal/core": "*"
             },
             "type": "drupal-module",
             "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
                 "drupal": {
                     "version": "8.x-1.4",
                     "datestamp": "1493036943",
@@ -1989,6 +2045,9 @@
             },
             "type": "drupal-module",
             "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
                 "drupal": {
                     "version": "8.x-1.0-alpha8",
                     "datestamp": "1520356080",
@@ -2235,7 +2294,8 @@
                 "patches_applied": {
                     "3025372-33": "https://www.drupal.org/files/issues/2020-03-24/3025372-33.patch",
                     "2791693-38": "https://www.drupal.org/files/issues/2019-03-16/2791693-38.patch",
-                    "3101344-20": "https://www.drupal.org/files/issues/2020-02-12/translations_not_save_invalid_path-3101344-20.patch"
+                    "3101344-20": "https://www.drupal.org/files/issues/2020-02-12/translations_not_save_invalid_path-3101344-20.patch",
+                    "2972308-41 - content_translation performance": "https://www.drupal.org/files/issues/2019-12-03/allow-users-to-translate-editable-content-2972308-41.patch"
                 }
             },
             "autoload": {
@@ -2430,10 +2490,6 @@
                     "homepage": "https://www.drupal.org/user/181107"
                 },
                 {
-                    "name": "Yaroslav Drapoy",
-                    "homepage": "https://www.drupal.org/user/3568785"
-                },
-                {
                     "name": "a.sotirov",
                     "homepage": "https://www.drupal.org/user/3517190"
                 },
@@ -2456,6 +2512,10 @@
                 {
                     "name": "skrasulevskiy",
                     "homepage": "https://www.drupal.org/user/2440780"
+                },
+                {
+                    "name": "ydrapoy",
+                    "homepage": "https://www.drupal.org/user/3568785"
                 }
             ],
             "description": "Adds custom path prefix for multicountries sites.",
@@ -2483,6 +2543,9 @@
             },
             "type": "drupal-module",
             "extra": {
+                "branch-alias": {
+                    "dev-3.x": "3.x-dev"
+                },
                 "drupal": {
                     "version": "8.x-3.4",
                     "datestamp": "1585763383",
@@ -2576,6 +2639,9 @@
             },
             "type": "drupal-module",
             "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
                 "drupal": {
                     "version": "8.x-1.0-alpha16",
                     "datestamp": "1561126081",
@@ -2620,13 +2686,16 @@
                 "shasum": "0f5e9195ceec209552aa50f8ce3c230692c284db"
             },
             "require": {
-                "drupal/core": "^8"
+                "drupal/core": "*"
             },
             "require-dev": {
                 "drupal/draggableviews_demo": "*"
             },
             "type": "drupal-module",
             "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
                 "drupal": {
                     "version": "8.x-1.2",
                     "datestamp": "1541518680",
@@ -2702,7 +2771,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.x-dev",
-                    "datestamp": "1600030761",
+                    "datestamp": "1494102484",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -2745,10 +2814,13 @@
                 "shasum": "9a03e0ac4f21cfa3fa4772fb30861d7e4a82a8c1"
             },
             "require": {
-                "drupal/core": "^8"
+                "drupal/core": "*"
             },
             "type": "drupal-module",
             "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
                 "drupal": {
                     "version": "8.x-1.4",
                     "datestamp": "1554478985",
@@ -2886,6 +2958,9 @@
             },
             "type": "drupal-module",
             "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
                 "drupal": {
                     "version": "8.x-1.8",
                     "datestamp": "1583961846",
@@ -2997,6 +3072,9 @@
             },
             "type": "drupal-module",
             "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
                 "drupal": {
                     "version": "8.x-1.4",
                     "datestamp": "1556645881",
@@ -3054,6 +3132,9 @@
             },
             "type": "drupal-module",
             "extra": {
+                "branch-alias": {
+                    "dev-4.x": "4.x-dev"
+                },
                 "drupal": {
                     "version": "8.x-4.0-beta1",
                     "datestamp": "1572442085",
@@ -3123,17 +3204,17 @@
                 "drupal/core": "^8.8.6|^9.0"
             },
             "require-dev": {
-                "drupal/token": "^1.7"
+                "drupal/php": "*",
+                "drupal/token": "*"
             },
             "type": "drupal-module",
             "extra": {
                 "branch-alias": {
-                    "dev-2.x": "2.x-dev",
-                    "dev-8.x-2.x": "2.x-dev"
+                    "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.5+1-dev",
-                    "datestamp": "1593519136",
+                    "version": "8.x-2.4+7-dev",
+                    "datestamp": "1563559985",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
@@ -3142,32 +3223,16 @@
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0-or-later"
+                "GPL-2.0+"
             ],
             "authors": [
                 {
-                    "name": "See contributors",
+                    "name": "hass",
+                    "homepage": "https://www.drupal.org/u/hass"
+                },
+                {
+                    "name": "See other contributors",
                     "homepage": "https://www.drupal.org/node/49388/committers"
-                },
-                {
-                    "name": "budda",
-                    "homepage": "https://www.drupal.org/user/13164"
-                },
-                {
-                    "name": "ixismark",
-                    "homepage": "https://www.drupal.org/user/3632333"
-                },
-                {
-                    "name": "japerry",
-                    "homepage": "https://www.drupal.org/user/45640"
-                },
-                {
-                    "name": "pfaocle",
-                    "homepage": "https://www.drupal.org/user/9740"
-                },
-                {
-                    "name": "roberto.rivera.ixis",
-                    "homepage": "https://www.drupal.org/user/3632325"
                 }
             ],
             "description": "Allows your site to be tracked by Google Analytics by adding a Javascript tracking code to every page.",
@@ -3198,6 +3263,9 @@
             },
             "type": "drupal-module",
             "extra": {
+                "branch-alias": {
+                    "dev-3.x": "3.x-dev"
+                },
                 "drupal": {
                     "version": "8.x-3.0-beta1",
                     "datestamp": "1550685485",
@@ -3264,6 +3332,9 @@
             },
             "type": "metapackage",
             "extra": {
+                "branch-alias": {
+                    "dev-3.x": "3.x-dev"
+                },
                 "drupal": {
                     "version": "8.x-3.0-beta1",
                     "datestamp": "1550685485",
@@ -3336,6 +3407,9 @@
             },
             "type": "drupal-module",
             "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
                 "drupal": {
                     "version": "8.x-1.30",
                     "datestamp": "1576274288",
@@ -3395,8 +3469,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-beta5+2-dev",
-                    "datestamp": "1586587627",
+                    "version": "8.x-1.0-beta4+1-dev",
+                    "datestamp": "1580312178",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
@@ -3661,8 +3735,8 @@
                     "role": "Maintainer"
                 },
                 {
-                    "name": "heddn",
-                    "homepage": "https://www.drupal.org/user/1463982"
+                    "name": "mikeryan",
+                    "homepage": "https://www.drupal.org/user/4420"
                 }
             ],
             "description": "CSV source migration.",
@@ -3693,6 +3767,9 @@
             },
             "type": "drupal-module",
             "extra": {
+                "branch-alias": {
+                    "dev-3.x": "3.x-dev"
+                },
                 "drupal": {
                     "version": "8.x-3.0-beta1",
                     "datestamp": "1494450485",
@@ -3708,12 +3785,16 @@
             ],
             "authors": [
                 {
-                    "name": "drupalspoons",
-                    "homepage": "https://www.drupal.org/user/3647684"
+                    "name": "heddn",
+                    "homepage": "https://www.drupal.org/user/1463982"
                 },
                 {
                     "name": "mikeryan",
                     "homepage": "https://www.drupal.org/user/4420"
+                },
+                {
+                    "name": "moshe weitzman",
+                    "homepage": "https://www.drupal.org/user/23"
                 }
             ],
             "description": "Tools to assist in developing and running migrations.",
@@ -3741,6 +3822,9 @@
             },
             "type": "drupal-module",
             "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
                 "drupal": {
                     "version": "8.x-1.1",
                     "datestamp": "1487593983",
@@ -3756,12 +3840,12 @@
             ],
             "authors": [
                 {
-                    "name": "Neslee Canil Pinto",
-                    "homepage": "https://www.drupal.org/user/3580850"
-                },
-                {
                     "name": "University of Colorado Boulder",
                     "homepage": "https://www.drupal.org/user/3299791"
+                },
+                {
+                    "name": "j2r",
+                    "homepage": "https://www.drupal.org/user/804034"
                 },
                 {
                     "name": "kreynen",
@@ -3770,6 +3854,10 @@
                 {
                     "name": "pedrofaria",
                     "homepage": "https://www.drupal.org/user/27805"
+                },
+                {
+                    "name": "str8",
+                    "homepage": "https://www.drupal.org/user/2865063"
                 }
             ],
             "description": "Disable link to request a new password",
@@ -3814,6 +3902,9 @@
             },
             "type": "drupal-module",
             "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
                 "drupal": {
                     "version": "8.x-1.11",
                     "datestamp": "1581850829",
@@ -3880,6 +3971,9 @@
             },
             "type": "drupal-module",
             "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
                 "drupal": {
                     "version": "8.x-1.6",
                     "datestamp": "1575467285",
@@ -3943,6 +4037,9 @@
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
                     }
+                },
+                "patches_applied": {
+                    "2952277-38 minify cache tags header": "https://www.drupal.org/files/issues/2020-07-06/purge_cache_tags_minify-2952277-38.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -3993,12 +4090,15 @@
             },
             "type": "drupal-module",
             "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
                 "drupal": {
                     "version": "8.x-1.0-beta4",
                     "datestamp": "1473237239",
                     "security-coverage": {
                         "status": "not-covered",
-                        "message": "Beta releases are not covered by Drupal security advisories."
+                        "message": "Project has not opted into security advisory coverage!"
                     }
                 }
             },
@@ -4023,10 +4123,13 @@
             "version": "3.0.0-beta9",
             "require": {
                 "drupal/core": "~8.0",
-                "drupal/purge": "*"
+                "drupal/purge": "self.version"
             },
             "type": "metapackage",
             "extra": {
+                "branch-alias": {
+                    "dev-3.x": "3.x-dev"
+                },
                 "drupal": {
                     "version": "8.x-3.0-beta9",
                     "datestamp": "1570540105",
@@ -4079,6 +4182,9 @@
             },
             "type": "drupal-module",
             "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
                 "drupal": {
                     "version": "8.x-1.5",
                     "datestamp": "1576656784",
@@ -4184,11 +4290,13 @@
             },
             "require": {
                 "drupal/core": "~8.0",
-                "drupal/externalauth": "*",
-                "onelogin/php-saml": "~2.5"
+                "drupal/externalauth": "*"
             },
             "type": "drupal-module",
             "extra": {
+                "branch-alias": {
+                    "dev-2.x": "2.x-dev"
+                },
                 "drupal": {
                     "version": "8.x-2.0-alpha0",
                     "datestamp": "1488462483",
@@ -4211,10 +4319,6 @@
                 {
                     "name": "cweagans",
                     "homepage": "https://www.drupal.org/user/404732"
-                },
-                {
-                    "name": "japerry",
-                    "homepage": "https://www.drupal.org/user/45640"
                 },
                 {
                     "name": "roderik",
@@ -4250,7 +4354,7 @@
                 "shasum": "52ff9c778f183d970ec2d57dfc1ba45282054e97"
             },
             "require": {
-                "drupal/core": "^8"
+                "drupal/core": "*"
             },
             "require-dev": {
                 "drupal/coder": "^8.3.3",
@@ -4401,6 +4505,9 @@
             },
             "type": "drupal-module",
             "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
                 "drupal": {
                     "version": "8.x-1.2",
                     "datestamp": "1552333980",
@@ -4584,6 +4691,9 @@
             },
             "type": "drupal-module",
             "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
                 "drupal": {
                     "version": "8.x-1.1",
                     "datestamp": "1577195283",
@@ -4771,7 +4881,7 @@
                 "shasum": "e5e6dc6baa538b54da1413f7c6a2f4c040c5fa05"
             },
             "require": {
-                "drupal/core": "^8"
+                "drupal/core": "*"
             },
             "require-dev": {
                 "drupal/colorbox": "*",
@@ -4780,6 +4890,9 @@
             },
             "type": "drupal-module",
             "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
                 "drupal": {
                     "version": "8.x-1.x",
                     "datestamp": "1557724631",
@@ -4831,8 +4944,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-rc3+5-dev",
-                    "datestamp": "1597687827",
+                    "version": "8.x-1.0-alpha1+3-dev",
+                    "datestamp": "1486932784",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
@@ -4845,9 +4958,8 @@
             ],
             "authors": [
                 {
-                    "name": "Agnes Chisholm",
-                    "homepage": "https://www.drupal.org/user/66428",
-                    "email": "amaria@chisholmtech.com"
+                    "name": "amaria",
+                    "homepage": "https://www.drupal.org/user/66428"
                 },
                 {
                     "name": "beeradb",
@@ -6069,7 +6181,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2019-11-08T13:50:10+00:00"
+            "time": "2020-04-10T16:34:50+00:00"
         },
         {
             "name": "onelogin/php-saml",
@@ -9861,6 +9973,18 @@
                 {
                     "name": "See contributors",
                     "homepage": "https://www.drupal.org/node/3236/committers"
+                },
+                {
+                    "name": "pcambra",
+                    "homepage": "https://www.drupal.org/user/122101"
+                },
+                {
+                    "name": "salvis",
+                    "homepage": "https://www.drupal.org/user/82964"
+                },
+                {
+                    "name": "willzyx",
+                    "homepage": "https://www.drupal.org/user/1043862"
                 }
             ],
             "description": "Various blocks, pages, and functions for developers.",
@@ -12558,8 +12682,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "drupal/purge": 10,
-        "drupal/purge_purger_http": 10,
         "drupal/google_analytics": 20,
         "drupal/block_access": 20,
         "drupal/content_lock": 15,

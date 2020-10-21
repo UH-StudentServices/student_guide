@@ -1,5 +1,7 @@
 module:
   admin_toolbar: 0
+  big_pipe: 0
+  big_pipe_sessionless: 0
   block: 0
   block_access: 0
   block_content: 0
@@ -50,6 +52,7 @@ module:
   node: 0
   noreqnewpass: 0
   options: 0
+  page_cache: 0
   paragraphs: 0
   path: 0
   path_alias: 0

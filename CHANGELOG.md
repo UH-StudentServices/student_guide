@@ -6,6 +6,8 @@ Release date: ??.??.????
 * HUB-772 - New user group option 'Open University'.
 * HUB-763 - Disabled tooltip.
 * HUB-779 - Improved accessibility for content links when inside tables.
+* HUB-751 - Added infrastructure changes and patches to improve performance radically (-80% page load time)
+* HUB-777 - Added big_pipe and big_pipe_sessionless to imporove perceived rendering time.
 * HUB-757 & HUB-774 - Improved accessibility for degree programme selection.
 * HUB-756 - Improving accessibility on degree programme selector.
 * HUB-758 - Improved accessibility for paging links.
@@ -14,12 +16,10 @@ Release date: ??.??.????
 
 ## 1.52
 Release date: 19.10.2020
-
 * HUB-751 : part 1, memcached support
 
 ## 1.51
 Release date: 13.10.2020
-
 * HUB-699 - Sisu integration, further improvements
 
 ## 1.50
