@@ -19,6 +19,12 @@ function uhsg_service_provider_details_form_system_site_information_settings_alt
     '#type' => 'details',
     '#open' => TRUE,
   ];
+  $form['service_provider']['logo_title'] = [
+    '#type' => 'textfield',
+    '#title' => t('Logo titile'),
+    '#default_value' => $service_provider_details_settings->get('logo_title'),
+    '#description' => t('Visually hidden logo title for assistive technologies.'),
+  ];
   $form['service_provider']['logo_text'] = [
     '#type' => 'textfield',
     '#title' => t('Logo text'),
@@ -53,6 +59,7 @@ function uhsg_service_provider_details_form_system_site_information_settings_alt
  */
 function uhsg_service_provider_details_settings_submit(array $form, FormStateInterface $form_state) {
   \Drupal::configFactory()->getEditable('uhsg_service_provider_details.settings')
+    ->set('logo_title', $form_state->getValue('logo_title'))
     ->set('logo_text', $form_state->getValue('logo_text'))
     ->set('logo_path', $form_state->getValue('logo_path'))
     ->set('copyright_text', $form_state->getValue('copyright_text'))

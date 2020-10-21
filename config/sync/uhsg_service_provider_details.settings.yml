@@ -6,3 +6,4 @@ contact_info: '<div class="logo-block__sitename">Uni­versity of Hel­sinki</div
 langcode: en
 _core:
   default_config_hash: 06IBcG-4qZpFFPRcINRmFbIPAl0WAud3bq2IYs2mu4c
+logo_title: 'University of Helsinki'
