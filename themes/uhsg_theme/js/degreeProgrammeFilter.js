@@ -11,6 +11,7 @@
       container: '',
       item: '',
       groupingTitle: '',
+      ariaLive: '',
       charCount: 2
     }, options);
 
@@ -34,6 +35,9 @@
           }
         });
 
+        // Notify assistive technologies of current result count.
+        var count =  $(opt.item, opt.container).not(':hidden').length;
+        $(opt.ariaLive, opt.container).text(Drupal.t('Showing @count degree programmes.', {'@count': count}));
       });
     });
   };

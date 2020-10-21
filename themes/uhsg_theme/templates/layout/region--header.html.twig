@@ -20,7 +20,9 @@
       <div class="l-top-bar__main">
         {% if logo_path and logo_text and home_path %}
           <div class="logo">
-            <a href="{{ logo_path }}" class="logo__link"/> 
+            <a href="{{ logo_path }}" class="logo__link">
+              <span class="visually-hidden">{{ logo_title }}</span>
+            </a> 
             <a href="{{ path('<front>') }}" class="logo__homepath">
               <span class="logo__sitename">{{ logo_text }}</span>
             </a>
