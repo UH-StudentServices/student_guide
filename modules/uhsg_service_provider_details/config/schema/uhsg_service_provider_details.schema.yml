@@ -4,6 +4,9 @@ uhsg_service_provider_details.settings:
   type: config_object
   label: 'Service Provider details'
   mapping:
+    logo_title:
+      type: text
+      label: 'Logo title'
     logo_text:
       type: text
       label: 'Logo text'

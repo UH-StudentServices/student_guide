@@ -38,6 +38,7 @@ function uhsg_theme_preprocess_region(&$variables) {
       $variables['home_path'] = \Drupal::config('uhsg_service_provider_details.settings')->get('home_path');
       $variables['logo_path'] = \Drupal::config('uhsg_service_provider_details.settings')->get('logo_path');
       $variables['logo_text'] = \Drupal::config('uhsg_service_provider_details.settings')->get('logo_text');
+      $variables['logo_title'] = \Drupal::config('uhsg_service_provider_details.settings')->get('logo_title');
       break;
 
     case 'footer':
