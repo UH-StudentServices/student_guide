@@ -7,7 +7,7 @@ Release date: ??.??.????
 * HUB-763 - Disabled tooltip.
 * HUB-779 - Improved accessibility for content links when inside tables.
 * HUB-751 - Added infrastructure changes and patches to improve performance radically (-80% page load time)
-* HUB-777 - Added big_pipe and big_pipe_sessionless to imporove perceived rendering time.
+* HUB-777 - Added big_pipe to improve perceived rendering time.
 * HUB-757 & HUB-774 - Improved accessibility for degree programme selection.
 * HUB-756 - Improving accessibility on degree programme selector.
 * HUB-758 - Improved accessibility for paging links.
