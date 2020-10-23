@@ -9050,6 +9050,8 @@ li.avatar.avatar--default img {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 100%;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 
 .degree-programme-switcher.collapsed .degree-programme-switcher__dropdown {
@@ -9165,6 +9167,8 @@ li.avatar.avatar--default img {
   }
   .degree-programme-switcher.collapsed .degree-programme-switcher__dropdown div {
     min-height: 1px;
+    -ms-flex-negative: 1;
+        flex-shrink: 1;
   }
 }
 
