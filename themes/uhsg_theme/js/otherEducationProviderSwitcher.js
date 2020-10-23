@@ -20,7 +20,7 @@
       });
 
       // Close when clicking or focusing outside
-      $(document).once().on('click focusin', function (e) {
+      $(document).once('other_education_provider_switcher_focus_out').on('click focusin', function (e) {
         var clickedOutside = $(e.target).parents(otherEducationProviderSwitcher).length === 0;
         if (container.hasClass(toggleClass) && clickedOutside) {
           container.removeClass(toggleClass);
