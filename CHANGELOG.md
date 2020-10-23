@@ -13,6 +13,7 @@ Release date: ??.??.????
 * HUB-758 - Improved accessibility for paging links.
 * HUB-762 - Improved accessibility for search results.
 * HUB-761 - Improved accessibility for main logo link.
+* HUB-781 - Fix theme group selection based on selected degree programme.
 
 ## 1.52
 Release date: 19.10.2020
