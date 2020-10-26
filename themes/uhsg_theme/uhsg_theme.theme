@@ -378,6 +378,9 @@ function uhsg_theme_preprocess_block(array &$variables) {
         $variables['news_per_degree_programme'] = _uhsg_theme_get_news_per_degree_programme();
         $variables['news_per_doctoral_programme'] = _uhsg_theme_get_news_per_doctoral_programme();
       }
+
+      $active_group = \Drupal::service('uhsg_active_degree_programme.active_degree_programme')->getUserGroup();
+      $variables['active_user_group'] = $active_group ?? '';
       break;
   }
 }
