@@ -2,7 +2,7 @@ name: Student Guide Migrate
 type: module
 descipriton: Specifies migrations that is done for student guide.
 core: 8.x
-version: VERSION
+version: 1.53
 core_version_requirement: ^8 || ^9
 package: Migration
 dependencies:

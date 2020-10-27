@@ -3,6 +3,9 @@
 ## 1.xx-dev
 Release date: ??.??.????
 
+
+## 1.53
+Release date: 27.10.2020
 * HUB-772 - New user group option 'Open University'.
 * HUB-763 - Disabled tooltip.
 * HUB-779 - Improved accessibility for content links when inside tables.
