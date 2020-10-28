@@ -13,6 +13,7 @@
       var toggleClass = 'collapsed';
       var toggleIconClosed = 'icon--caret-down';
       var toggleIconOpen = 'icon--caret-up';
+      var resetButton = $('.button--reset', degreeProgrammeSwitcher);
       var breakpoints = settings.breakpoints;
 
       // Toggle collapsed when click or keypress on header
@@ -50,6 +51,14 @@
         item: '.list-of-links__link',
         groupingTitle: '.view-subtitle',
         ariaLive: '.degree-programme-switcher__filter-messages',
+      });
+
+      // Reset button.
+      resetButton.once().on('click', function(e) {
+        var reset_uri = $(this).attr('data-href');
+        if (reset_uri) {
+          window.location.href = reset_uri;
+        }
       });
 
     },

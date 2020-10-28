@@ -50,7 +50,7 @@
       {{ content }}
     {% endblock %}
     {% if label %}
-      {{ link('Clear the selection'|trans , reset_link.link, {'class': reset_link.classes }) }}
+      <button type="reset" data-href="{{ reset_link.link }}" class="{{ reset_link.classes }}">{{ 'Clear the selection'|trans }}</button>
     {% endif %}
   </div>
 </div>

@@ -343,7 +343,7 @@ function uhsg_theme_preprocess_block(array &$variables) {
       $variables['code'] = $degree_programme_code;
       $variables['label'] = $degree_programme_name ? $degree_programme_name : t('Select degree programme');
       $variables['#cache']['contexts'][] = 'active_degree_programme';
-      $variables['reset_link']['link'] = Url::fromRoute('uhsg_active_degree_programme.reset_active');
+      $variables['reset_link']['link'] = Url::fromRoute('uhsg_active_degree_programme.reset_active', [], ['absolute' => TRUE]);
       $variables['reset_link']['classes'] = 'button--action icon--remove theme-transparent button--reset is-center-mobile';
       break;
 
@@ -353,7 +353,7 @@ function uhsg_theme_preprocess_block(array &$variables) {
       $other_education_provider_name = $otherEducationProviderService->getName();
       $variables['label'] = $other_education_provider_name ? $other_education_provider_name : t('Select other education provider');
       $variables['#cache']['contexts'][] = 'other_education_provider';
-      $variables['reset_link']['link'] = Url::fromRoute('uhsg_other_education_provider.reset_active');
+      $variables['reset_link']['link'] = Url::fromRoute('uhsg_other_education_provider.reset_active', [], ['absolute' => TRUE]);
       $variables['reset_link']['classes'] = 'button--action icon--remove theme-transparent button--reset is-center-mobile';
       break;
 
