@@ -61,6 +61,7 @@ function uhsg_theme_preprocess_links__language_block(&$variables) {
   foreach ($variables['links'] as $langcode => &$link) {
     // add classes for theming
     $link['link']['#options']['attributes']['class'][] = 'links__link theme-language';
+    $link['link']['#options']['attributes']['lang'] = $langcode;
     $link['link']['#title'] = new FormattableMarkup('<abbr title="@title">@langcode</abbr>', ['@title' => $link['link']['#title'], '@langcode' => $langcode]);
     // hide active language
     $active_language = Drupal::languageManager()->getCurrentLanguage()->getId();
