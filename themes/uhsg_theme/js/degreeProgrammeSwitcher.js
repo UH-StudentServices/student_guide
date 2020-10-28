@@ -13,6 +13,7 @@
       var toggleClass = 'collapsed';
       var toggleIconClosed = 'icon--caret-down';
       var toggleIconOpen = 'icon--caret-up';
+      var resetButton = $('.button--reset', degreeProgrammeSwitcher);
       var breakpoints = settings.breakpoints;
 
       // Toggle collapsed when click or keypress on header
@@ -52,6 +53,14 @@
         ariaLive: '.degree-programme-switcher__filter-messages',
       });
 
+      // Reset button.
+      resetButton.once().on('click', function(e) {
+        var reset_uri = $(this).attr('data-href');
+        if (reset_uri) {
+          window.location.href = reset_uri;
+        }
+      });
+
     },
 
     triggerToggle: function (event, container, header, dropdown, toggleClass, toggle, toggleIconClosed, toggleIconOpen, breakpoints, filterInput) {
@@ -68,10 +77,6 @@
       else {
         header.attr('aria-expanded', 'false');
         dropdown.attr('hidden', '');
-      }
-
-      if (window.matchMedia(breakpoints['small']).matches) {
-        filterInput.focus();
       }
     }
   };

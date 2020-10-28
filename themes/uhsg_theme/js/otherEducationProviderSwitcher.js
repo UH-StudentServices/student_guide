@@ -11,6 +11,7 @@
       var toggleClass = 'collapsed';
       var toggleIconClosed = 'icon--caret-down';
       var toggleIconOpen = 'icon--caret-up';
+      var resetButton = $('.button--reset', otherEducationProviderSwitcher);
 
       // Toggle collapsed when click or keypress on header
       header.once().on({
@@ -29,6 +30,15 @@
           toggle.toggleClass(toggleIconOpen);
         }
       });
+
+      // Reset button.
+      resetButton.once().on('click', function(e) {
+        var reset_uri = $(this).attr('data-href');
+        if (reset_uri) {
+          window.location.href = reset_uri;
+        }
+      });
+
     },
 
     triggerToggle: function (event, container, header, dropdown, toggleClass, toggle, toggleIconClosed, toggleIconOpen) {
