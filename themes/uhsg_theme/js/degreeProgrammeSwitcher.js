@@ -69,10 +69,6 @@
         header.attr('aria-expanded', 'false');
         dropdown.attr('hidden', '');
       }
-
-      if (window.matchMedia(breakpoints['small']).matches) {
-        filterInput.focus();
-      }
     }
   };
 
