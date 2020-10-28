@@ -3,6 +3,7 @@
 ## 1.xx-dev
 Release date: ??.??.????
 
+* HUB-759 - Improved accessibility for language switcher.
 
 ## 1.53
 Release date: 27.10.2020
