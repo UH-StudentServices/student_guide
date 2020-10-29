@@ -4,6 +4,7 @@
 Release date: ??.??.????
 
 * HUB-784 - Improving accessibility on degree programme and other education provider selections.
+* HUB-759 - Improved accessibility for language switcher.
 
 ## 1.53
 Release date: 27.10.2020
