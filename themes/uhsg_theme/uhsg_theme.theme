@@ -642,3 +642,14 @@ function _uhsg_theme_add_element_title_as_aria_label_attribute(&$variables) {
     $attributes['aria-label'] = strip_tags($element['#title']);
   }
 }
+
+/**
+ * Implements hook_preprocess_video_embed_iframe__youtube().
+ */
+function uhsg_theme_preprocess_video_embed_iframe__youtube(&$variables) {
+  // Make sure the video player interface language is the same as our
+  // current language.
+  // @see: https://developers.google.com/youtube/player_parameters#hl
+  $active_language = Drupal::languageManager()->getCurrentLanguage()->getId();
+  $variables['query']['hl'] = $active_language;
+}
