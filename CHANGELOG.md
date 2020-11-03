@@ -7,6 +7,7 @@ Release date: ??.??.????
 * HUB-759 - Improved accessibility for language switcher.
 * HUB-767 - Improved accessibility for video embeds.
 * HUB-748 - Updated footer copyright year.
+* HUB-780 - Added new user role 'Content owner'.
 
 ## 1.53
 Release date: 27.10.2020
