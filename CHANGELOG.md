@@ -6,6 +6,7 @@ Release date: ??.??.????
 * HUB-772 - New user group option 'Open University'.
 * HUB-763 - Disabled tooltip.
 * HUB-779 - Improved accessibility for content links when inside tables.
+* HUB-788 - Modify pathauto settings to delete old alias.
 
 ## 1.52
 Release date: 19.10.2020
