@@ -1,0 +1,14 @@
+uuid: f5b22d1d-5570-4cea-972c-743d4454c731
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.content_owner
+  module:
+    - user
+id: user_remove_role_action.content_owner
+label: 'Remove the Content owner role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: content_owner

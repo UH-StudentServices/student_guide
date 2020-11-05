@@ -1,0 +1,14 @@
+uuid: 18ff4b57-27ea-4529-aacc-d8848235ce5e
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.content_owner
+  module:
+    - user
+id: user_add_role_action.content_owner
+label: 'Add the Content owner role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: content_owner

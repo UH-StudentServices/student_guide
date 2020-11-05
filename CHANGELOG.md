@@ -9,6 +9,7 @@ Release date: ??.??.????
 * HUB-748 - Updated footer copyright year.
 * HUB-789 - Allowing zip file content attachments.
 * HUB-788 - Modify pathauto settings to delete old alias.
+* HUB-780 - Added new user role 'Content owner'.
 
 ## 1.53
 Release date: 27.10.2020
