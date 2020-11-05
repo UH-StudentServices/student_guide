@@ -8,6 +8,7 @@ Release date: ??.??.????
 * HUB-767 - Improved accessibility for video embeds.
 * HUB-748 - Updated footer copyright year.
 * HUB-789 - Allowing zip file content attachments.
+* HUB-788 - Modify pathauto settings to delete old alias.
 
 ## 1.53
 Release date: 27.10.2020
