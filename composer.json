@@ -40,8 +40,9 @@
         "drupal/migrate_plus": "^3.0-beta1",
         "drupal/migrate_source_csv": "^2.0",
         "drupal/migrate_tools": "^3.0-beta1",
-        "drupal/purge": "^3.0@beta",
-        "drupal/purge_purger_http": "^1.0@beta",
+        "drupal/purge": "^3.0",
+        "drupal/purge_purger_http": "^1.0",
+        "drupal/big_pipe_sessionless": "^1.2",
         "drupal/search_api": "^1.8",
         "drupal/search_api_solr": "^1.2",
         "drupal/search_api_autocomplete": "^1.2",
@@ -79,7 +80,8 @@
         "drupal/simple_sitemap": "^3.6",
         "drupal/upgrade_status": "^2.9",
         "phpstan/phpstan": "0.12.42",
-        "drupal/memcache": "^2.2"
+        "drupal/memcache": "^2.2",
+        "drupal/entity_browser": "^2.5"
     },
     "repositories": {
         "0": {
@@ -158,10 +160,14 @@
             "drupal/maxlength": {
                 "2902083-2": "https://www.drupal.org/files/issues/translateable_help-2902083-2.patch"
             },
+            "drupal/purge": {
+                "2952277-38 minify cache tags header": "https://www.drupal.org/files/issues/2020-07-06/purge_cache_tags_minify-2952277-38.patch"
+            },
             "drupal/core": {
                 "3025372-33": "https://www.drupal.org/files/issues/2020-03-24/3025372-33.patch",
                 "2791693-38": "https://www.drupal.org/files/issues/2019-03-16/2791693-38.patch",
-                "3101344-20": "https://www.drupal.org/files/issues/2020-02-12/translations_not_save_invalid_path-3101344-20.patch"
+                "3101344-20": "https://www.drupal.org/files/issues/2020-02-12/translations_not_save_invalid_path-3101344-20.patch",
+                "2972308-41 - content_translation performance": "https://www.drupal.org/files/issues/2019-12-03/allow-users-to-translate-editable-content-2972308-41.patch"
             }
         }
     }

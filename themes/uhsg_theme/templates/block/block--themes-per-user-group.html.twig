@@ -45,6 +45,13 @@
   ]
 %}
 
+{% set active_tab = 0 %}
+{% if active_user_group == 'doctoral_candidates' %}
+  {% set active_tab = 1 %}
+{% elseif active_user_group == 'specialist_training' %}
+  {% set active_tab = 2 %}
+{% endif %}
+
 <div{{ attributes.addClass(classes) }}>
   <div class="l-subregion">
     <div{{ content_attributes }}>
@@ -62,7 +69,7 @@
         {% set title_doctoral = 'Doctoral Candidates'|trans %}
         {% set title_specialist = 'Specialist Training'|trans %}
 
-        <div id="tabs" class="horizontal-tabs js-tabs clearfix" data-breakpoint="768" data-start-collapsed="true">
+        <div id="tabs" class="horizontal-tabs js-tabs clearfix" data-breakpoint="768" data-start-collapsed="true" data-selected-tab="{{ active_tab }}">
           <h2 class="accordion-header">{{ 'Instructions according to user group'|trans }}</h2>
           <ul role="tablist" class="tabs-list horizontal-tabs-list">
             <li role="presentation" class="horizontal-tab-button horizontal-tab-button-0 first" id="tab1">

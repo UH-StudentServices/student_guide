@@ -29,18 +29,28 @@
 
 <div class="other-education-provider-switcher search-form">
   <label> {{ 'Select other education provider'|trans }} </label>
-  <div class="other-education-provider-switcher__header" tabindex="0">
-    <h4 class="other-education-provider-switcher__title">
+
+  <button class="other-education-provider-switcher__header"
+          aria-expanded="false"
+          aria-controls="other-education-provider-switcher-dropdown-1"
+          id="other-education-provider-switcher-header-1"
+          tabindex="0">
+    <div class="h4 other-education-provider-switcher__title">
       {{ label }}
-    </h4>
+    </div>
     <span class="other-education-provider-switcher__toggle icon--caret-down" />
-  </div>
-  <div class="other-education-provider-switcher__dropdown">
+  </button>
+
+  <div class="other-education-provider-switcher__dropdown"
+       id="other-education-provider-switcher-dropdown-1"
+       role="region"
+       aria-labelledby="other-education-provider-switcher-header-1"
+       hidden="">
     {% block content %}
       {{ content }}
     {% endblock %}
     {% if label %}
-      {{ link('Reset'|trans , reset_link.link, {'class': reset_link.classes }) }}
+      <button type="reset" data-href="{{ reset_link.link }}" class="{{ reset_link.classes }}">{{ 'Clear the selection'|trans }}</button>
     {% endif %}
   </div>
 </div>

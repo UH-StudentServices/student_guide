@@ -38,6 +38,7 @@ function uhsg_theme_preprocess_region(&$variables) {
       $variables['home_path'] = \Drupal::config('uhsg_service_provider_details.settings')->get('home_path');
       $variables['logo_path'] = \Drupal::config('uhsg_service_provider_details.settings')->get('logo_path');
       $variables['logo_text'] = \Drupal::config('uhsg_service_provider_details.settings')->get('logo_text');
+      $variables['logo_title'] = \Drupal::config('uhsg_service_provider_details.settings')->get('logo_title');
       break;
 
     case 'footer':
@@ -60,6 +61,7 @@ function uhsg_theme_preprocess_links__language_block(&$variables) {
   foreach ($variables['links'] as $langcode => &$link) {
     // add classes for theming
     $link['link']['#options']['attributes']['class'][] = 'links__link theme-language';
+    $link['link']['#options']['attributes']['lang'] = $langcode;
     $link['link']['#title'] = new FormattableMarkup('<abbr title="@title">@langcode</abbr>', ['@title' => $link['link']['#title'], '@langcode' => $langcode]);
     // hide active language
     $active_language = Drupal::languageManager()->getCurrentLanguage()->getId();
@@ -342,7 +344,7 @@ function uhsg_theme_preprocess_block(array &$variables) {
       $variables['code'] = $degree_programme_code;
       $variables['label'] = $degree_programme_name ? $degree_programme_name : t('Select degree programme');
       $variables['#cache']['contexts'][] = 'active_degree_programme';
-      $variables['reset_link']['link'] = Url::fromRoute('uhsg_active_degree_programme.reset_active');
+      $variables['reset_link']['link'] = Url::fromRoute('uhsg_active_degree_programme.reset_active', [], ['absolute' => TRUE]);
       $variables['reset_link']['classes'] = 'button--action icon--remove theme-transparent button--reset is-center-mobile';
       break;
 
@@ -352,7 +354,7 @@ function uhsg_theme_preprocess_block(array &$variables) {
       $other_education_provider_name = $otherEducationProviderService->getName();
       $variables['label'] = $other_education_provider_name ? $other_education_provider_name : t('Select other education provider');
       $variables['#cache']['contexts'][] = 'other_education_provider';
-      $variables['reset_link']['link'] = Url::fromRoute('uhsg_other_education_provider.reset_active');
+      $variables['reset_link']['link'] = Url::fromRoute('uhsg_other_education_provider.reset_active', [], ['absolute' => TRUE]);
       $variables['reset_link']['classes'] = 'button--action icon--remove theme-transparent button--reset is-center-mobile';
       break;
 
@@ -377,6 +379,9 @@ function uhsg_theme_preprocess_block(array &$variables) {
         $variables['news_per_degree_programme'] = _uhsg_theme_get_news_per_degree_programme();
         $variables['news_per_doctoral_programme'] = _uhsg_theme_get_news_per_doctoral_programme();
       }
+
+      $active_group = \Drupal::service('uhsg_active_degree_programme.active_degree_programme')->getUserGroup();
+      $variables['active_user_group'] = $active_group ?? '';
       break;
   }
 }
@@ -636,4 +641,15 @@ function _uhsg_theme_add_element_title_as_aria_label_attribute(&$variables) {
   if (!empty($element['#title']) && empty($attributes['aria-label']) && empty($attributes['aria-labelledby'])) {
     $attributes['aria-label'] = strip_tags($element['#title']);
   }
+}
+
+/**
+ * Implements hook_preprocess_video_embed_iframe__youtube().
+ */
+function uhsg_theme_preprocess_video_embed_iframe__youtube(&$variables) {
+  // Make sure the video player interface language is the same as our
+  // current language.
+  // @see: https://developers.google.com/youtube/player_parameters#hl
+  $active_language = Drupal::languageManager()->getCurrentLanguage()->getId();
+  $variables['query']['hl'] = $active_language;
 }

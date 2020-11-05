@@ -3,19 +3,33 @@
 ## 1.xx-dev
 Release date: ??.??.????
 
+* HUB-784 - Improving accessibility on degree programme and other education provider selections.
+* HUB-759 - Improved accessibility for language switcher.
+* HUB-767 - Improved accessibility for video embeds.
+* HUB-748 - Updated footer copyright year.
+* HUB-789 - Allowing zip file content attachments.
+* HUB-788 - Modify pathauto settings to delete old alias.
+
+## 1.53
+Release date: 27.10.2020
 * HUB-772 - New user group option 'Open University'.
 * HUB-763 - Disabled tooltip.
 * HUB-779 - Improved accessibility for content links when inside tables.
-* HUB-788 - Modify pathauto settings to delete old alias.
+* HUB-751 - Added infrastructure changes and patches to improve performance radically (-80% page load time)
+* HUB-777 - Added big_pipe to improve perceived rendering time.
+* HUB-757 & HUB-774 - Improved accessibility for degree programme selection.
+* HUB-756 - Improving accessibility on degree programme selector.
+* HUB-758 - Improved accessibility for paging links.
+* HUB-762 - Improved accessibility for search results.
+* HUB-761 - Improved accessibility for main logo link.
+* HUB-781 - Fix theme group selection based on selected degree programme.
 
 ## 1.52
 Release date: 19.10.2020
-
 * HUB-751 : part 1, memcached support
 
 ## 1.51
 Release date: 13.10.2020
-
 * HUB-699 - Sisu integration, further improvements
 
 ## 1.50

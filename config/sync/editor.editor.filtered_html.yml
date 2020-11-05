@@ -12,7 +12,7 @@ third_party_settings:
     status: true
     scheme: public
     directory: inline-files
-    extensions: 'txt pdf docx xlsx jpg png gif tex'
+    extensions: 'txt pdf docx xlsx jpg png gif tex zip'
 format: filtered_html
 editor: ckeditor
 settings:
