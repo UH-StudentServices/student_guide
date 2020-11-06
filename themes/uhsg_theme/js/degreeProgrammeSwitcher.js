@@ -25,10 +25,14 @@
 
       // Close when clicking or focusing outside
       $(document).once('degree_programme_switcher_focus_out').on('click focusin', function (e) {
+        // Let's not auto close on mobile viewports.
+        if (window.matchMedia(breakpoints['mobile']).matches) {	
+          return true;
+        }
+
         var clickedOutside = $(e.target).parents(degreeProgrammeSwitcher).length === 0;
         if (container.hasClass(toggleClass) && clickedOutside) {
           container.removeClass(toggleClass);
-          $('body').removeClass('no-scroll-mobile');
           toggle.toggleClass(toggleIconClosed);
           toggle.toggleClass(toggleIconOpen);
         }
@@ -66,7 +70,6 @@
     triggerToggle: function (event, container, header, dropdown, toggleClass, toggle, toggleIconClosed, toggleIconOpen, breakpoints, filterInput) {
       event.preventDefault();
       container.toggleClass(toggleClass);
-      $('body').toggleClass('no-scroll-mobile');
       toggle.toggleClass(toggleIconClosed);
       toggle.toggleClass(toggleIconOpen);
 

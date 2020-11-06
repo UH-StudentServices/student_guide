@@ -12,6 +12,7 @@
       var toggleIconClosed = 'icon--caret-down';
       var toggleIconOpen = 'icon--caret-up';
       var resetButton = $('.button--reset', otherEducationProviderSwitcher);
+      var breakpoints = settings.breakpoints;
 
       // Toggle collapsed when click or keypress on header
       header.once().on({
@@ -22,10 +23,14 @@
 
       // Close when clicking or focusing outside
       $(document).once('other_education_provider_switcher_focus_out').on('click focusin', function (e) {
+        // Let's not auto close on mobile viewports.
+        if (window.matchMedia(breakpoints['mobile']).matches) {	
+          return true;
+        }
+
         var clickedOutside = $(e.target).parents(otherEducationProviderSwitcher).length === 0;
         if (container.hasClass(toggleClass) && clickedOutside) {
           container.removeClass(toggleClass);
-          $('body').removeClass('no-scroll-mobile');
           toggle.toggleClass(toggleIconClosed);
           toggle.toggleClass(toggleIconOpen);
         }
@@ -44,7 +49,6 @@
     triggerToggle: function (event, container, header, dropdown, toggleClass, toggle, toggleIconClosed, toggleIconOpen) {
       event.preventDefault();
       container.toggleClass(toggleClass);
-      $('body').toggleClass('no-scroll-mobile');
       toggle.toggleClass(toggleIconClosed);
       toggle.toggleClass(toggleIconOpen);
 

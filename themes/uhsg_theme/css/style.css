@@ -9081,39 +9081,16 @@ li.avatar.avatar--default img {
 }
 
 .degree-programme-switcher.collapsed {
-  position: fixed;
   z-index: 102;
-  margin-top: 0;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  padding-bottom: 0;
 }
 
 .degree-programme-switcher.collapsed .degree-programme-switcher__dropdown {
-  overflow-y: scroll;
-  scrollbar-face-color: #107EAB;
-  scrollbar-track-color: #F8F8F8;
   -webkit-transform: none;
       -ms-transform: none;
           transform: none;
   height: auto;
   opacity: 1;
   padding: 1em 1em 0 1em;
-}
-
-.degree-programme-switcher.collapsed .degree-programme-switcher__dropdown::-webkit-scrollbar {
-  width: 0.5em;
-  height: 0.5em;
-}
-
-.degree-programme-switcher.collapsed .degree-programme-switcher__dropdown::-webkit-scrollbar-thumb {
-  background: #107EAB;
-}
-
-.degree-programme-switcher.collapsed .degree-programme-switcher__dropdown::-webkit-scrollbar-track {
-  background: #F8F8F8;
 }
 
 .degree-programme-switcher.collapsed .degree-programme-switcher__header {
@@ -9144,7 +9121,6 @@ li.avatar.avatar--default img {
     padding-bottom: 0.5em;
   }
   .degree-programme-switcher.collapsed .degree-programme-switcher__dropdown {
-    overflow-y: auto;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -9909,39 +9885,16 @@ h1, h2, .h2, h3, .h3, h4, legend, .logo-block__content .logo-block__sitename, .h
 }
 
 .other-education-provider-switcher.collapsed {
-  position: fixed;
   z-index: 102;
-  margin-top: 0;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  padding-bottom: 0;
 }
 
 .other-education-provider-switcher.collapsed .other-education-provider-switcher__dropdown {
-  overflow-y: scroll;
-  scrollbar-face-color: #107EAB;
-  scrollbar-track-color: #F8F8F8;
   -webkit-transform: none;
       -ms-transform: none;
           transform: none;
   height: auto;
   opacity: 1;
   padding: 1em 1em 0 1em;
-}
-
-.other-education-provider-switcher.collapsed .other-education-provider-switcher__dropdown::-webkit-scrollbar {
-  width: 0.5em;
-  height: 0.5em;
-}
-
-.other-education-provider-switcher.collapsed .other-education-provider-switcher__dropdown::-webkit-scrollbar-thumb {
-  background: #107EAB;
-}
-
-.other-education-provider-switcher.collapsed .other-education-provider-switcher__dropdown::-webkit-scrollbar-track {
-  background: #F8F8F8;
 }
 
 .other-education-provider-switcher.collapsed .other-education-provider-switcher__header {
