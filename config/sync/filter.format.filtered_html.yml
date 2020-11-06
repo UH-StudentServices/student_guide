@@ -1,7 +1,9 @@
 uuid: 1c04dcc7-e281-404a-be63-38e8004c3ae3
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - responsive_table_filter
 name: 'Filtered html'
 format: filtered_html
 weight: 0
@@ -40,3 +42,11 @@ filters:
     status: true
     weight: 0
     settings: {  }
+  filter_responsive_table:
+    id: filter_responsive_table
+    provider: responsive_table_filter
+    status: true
+    weight: 0
+    settings:
+      wrapper_element: figure
+      wrapper_classes: responsive-figure-table
