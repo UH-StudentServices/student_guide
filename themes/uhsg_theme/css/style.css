@@ -10315,6 +10315,11 @@ ul.pager > li a:focus {
   text-decoration: underline;
 }
 
+.textarea table td:first-child {
+  font-weight: 400;
+  font-style: normal;
+}
+
 .theme--box {
   -webkit-hyphens: auto;
   -ms-hyphens: auto;
