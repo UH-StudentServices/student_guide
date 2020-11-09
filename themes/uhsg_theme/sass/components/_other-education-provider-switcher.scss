@@ -102,9 +102,17 @@
     }
   }
   &.collapsed {
+    position: fixed;
     z-index: 102;
+    margin-top: 0;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    padding-bottom: 0;
 
     .other-education-provider-switcher__dropdown {
+      @include scrollbar;
       transform: none;
       height: auto;
       opacity: 1;
