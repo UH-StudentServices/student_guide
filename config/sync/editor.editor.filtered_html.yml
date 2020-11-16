@@ -13,6 +13,7 @@ third_party_settings:
     scheme: public
     directory: inline-files
     extensions: 'txt pdf docx xlsx jpg png gif tex zip'
+    max_size: ''
 format: filtered_html
 editor: ckeditor
 settings:

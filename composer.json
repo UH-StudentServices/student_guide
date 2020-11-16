@@ -81,7 +81,8 @@
         "drupal/upgrade_status": "^2.9",
         "phpstan/phpstan": "0.12.42",
         "drupal/memcache": "^2.2",
-        "drupal/entity_browser": "^2.5"
+        "drupal/entity_browser": "^2.5",
+        "drupal/responsive_table_filter": "^1.2"
     },
     "repositories": {
         "0": {

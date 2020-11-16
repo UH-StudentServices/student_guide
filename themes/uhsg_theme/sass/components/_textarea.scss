@@ -22,5 +22,11 @@
         }
       }
     }
+
+    td {
+      &:first-child {
+        @include font-weight-book;
+      }
+    }
   }
 }
