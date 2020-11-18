@@ -12,7 +12,7 @@ use Drupal\flag\FlagServiceInterface;
 use Drupal\samlauth\Event\SamlAuthEvents;
 use Drupal\samlauth\Event\SamlAuthUserSyncEvent;
 use Drupal\uhsg_oprek\Oprek\OprekServiceInterface;
-use Drupal\uhsg_sisu\Services\StudyRightsService;
+use Drupal\uhsg_sisu\Services\StudyRightsServiceInterface;
 use Drupal\uhsg_samlauth\AttributeParser;
 use Drupal\uhsg_samlauth\AttributeParserInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
@@ -38,7 +38,7 @@ class UserSyncSubscriber implements EventSubscriberInterface {
   protected $oprekService;
 
   /**
-   * @var Drupal\uhsg_sisu\Services\StudyRightsService
+   * @var Drupal\uhsg_sisu\Services\StudyRightsServiceInterface
    */
   protected $studyRightsService;
 
@@ -80,7 +80,7 @@ class UserSyncSubscriber implements EventSubscriberInterface {
    */
   const UHSG_USER_SYNC_USE_SISU = FALSE;
 
-  public function __construct(ConfigFactoryInterface $configFactory, OprekServiceInterface $oprekService, StudyRightsService $studyRightsService, FlagServiceInterface $flagService, EntityTypeManagerInterface $entityTypeManager, LoggerChannel $logger, MessengerInterface $messenger) {
+  public function __construct(ConfigFactoryInterface $configFactory, OprekServiceInterface $oprekService, StudyRightsServiceInterface $studyRightsService, FlagServiceInterface $flagService, EntityTypeManagerInterface $entityTypeManager, LoggerChannel $logger, MessengerInterface $messenger) {
     $this->config = $configFactory->get('uhsg_user_sync.settings');
     $this->oprekService = $oprekService;
     $this->studyRightsService = $studyRightsService;
