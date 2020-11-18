@@ -3,6 +3,6 @@ type: module
 description: 'Provides information about service provider, that can be used for presenting common contact details.'
 package: Student Guide
 core: 8.x
-version: VERSION
+version: 1.54
 core_version_requirement: ^8 || ^9
 configure: system.site
