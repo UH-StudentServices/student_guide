@@ -8,11 +8,14 @@ use Drupal\Core\Routing\UrlGeneratorInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Tests\UnitTestCase;
 use Drupal\uhsg_obar\Jwt;
+use Prophecy\Argument;
 
 /**
  * @group uhsg
  */
 class JwtTest extends UnitTestCase {
+
+  const LANGUAGESWITCH_RESPONSE = ['fi' => ['http://example.com']];
 
   /** @var AccountInterface */
   private $account;
@@ -45,6 +48,7 @@ class JwtTest extends UnitTestCase {
 
     $this->languageManager = $this->prophesize(LanguageManagerInterface::class);
     $this->languageManager->getCurrentLanguage()->willReturn($this->language);
+    $this->languageManager->getLanguageSwitchLinks(Argument::any(), Argument::any())->willReturn(self::LANGUAGESWITCH_RESPONSE);
 
     $this->pathMatcher = $this->prophesize(PathMatcherInterface::class);
     $this->urlGenerator = $this->prophesize(UrlGeneratorInterface::class);
@@ -62,7 +66,7 @@ class JwtTest extends UnitTestCase {
    * @test
    */
   public function shouldThrowExceptionOnMissingPrivateKeyPathConfig() {
-    $this->expectException(Exception::class);
+    $this->expectException(Error::class);
     $this->jwt->generateToken();
   }
 }

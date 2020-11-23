@@ -123,13 +123,16 @@ class Jwt {
     $endpoints = [];
     $route_name = $this->pathMatcher->isFrontPage() ? '<front>' : '<current>';
     $links = $this->languageManager->getLanguageSwitchLinks(LanguageInterface::TYPE_INTERFACE, Url::fromRoute($route_name));
-    foreach ($links->links as $langcode => $link) {
-      $options = $link['url']->getOptions();
-      $options['language'] = $link['language'];
-      $link['url']->setOptions($options);
-      $endpoints[$langcode] = $link['url']->toString();
+
+    if(isset($links->links)) {
+      foreach ($links->links as $langcode => $link) {
+        $options = $link['url']->getOptions();
+        $options['language'] = $link['language'];
+        $link['url']->setOptions($options);
+        $endpoints[$langcode] = $link['url']->toString();
+      }
+      return (object) $endpoints;
     }
-    return (object) $endpoints;
   }
 
   /**
