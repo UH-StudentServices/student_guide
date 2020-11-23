@@ -35,7 +35,9 @@ class ThemesReferencingInstructions extends BlockBase implements ContainerFactor
     $this->languageManager = $languageManager;
     $this->routeMatch = $routeMatch;
 
-    parent::__construct($configuration, $plugin_id, $plugin_definition);
+    if(!empty($configuration)) {
+      parent::__construct($configuration, $plugin_id, $plugin_definition);
+    }
   }
 
   /**
