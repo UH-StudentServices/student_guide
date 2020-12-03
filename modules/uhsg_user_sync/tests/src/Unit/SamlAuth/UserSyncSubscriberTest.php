@@ -11,8 +11,10 @@ use Drupal\samlauth\Event\SamlAuthEvents;
 use Drupal\samlauth\Event\SamlAuthUserSyncEvent;
 use Drupal\Tests\UnitTestCase;
 use Drupal\uhsg_oprek\Oprek\OprekServiceInterface;
+use Drupal\uhsg_sisu\Services\StudyRightsServiceInterface;
 use Drupal\uhsg_user_sync\SamlAuth\UserSyncSubscriber;
 use Drupal\user\UserInterface;
+use Drupal\Core\Session\AccountInterface;
 use Prophecy\Argument;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Messenger\MessengerInterface;
@@ -23,8 +25,10 @@ use Drupal\Core\Messenger\MessengerInterface;
 class UserSynscSubscriberTest extends UnitTestCase {
 
   const ATTRIBUTES = ['studentId'];
+  const TECHNICAL_CONDITION_FIELD_NAME = 'technical_condition_field_name';
   const COMMON_NAME_FIELD_CONFIG_KEY = 'common_name_field_name';
   const COMMON_NAME_FIELD_CONFIG_VALUE = 'field_common_name';
+  const CODE_FIELD_NAME = 'code_field_name';
   const OODI_UID_FIELD_CONFIG_KEY = 'oodiUID_field_name';
   const OODI_UID_FIELD_CONFIG_VALUE = 'field_oodi_uid';
   const STUDENT_ID = '123';
@@ -64,6 +68,9 @@ class UserSynscSubscriberTest extends UnitTestCase {
   /** @var \Drupal\uhsg_oprek\Oprek\OprekServiceInterface*/
   private $oprekService;
 
+  /** @var Drupal\uhsg_sisu\Services\StudyRightsServiceInterface*/
+  private $studyRightsService;
+
   /** @var \Drupal\user\UserInterface*/
   private $user;
 
@@ -77,16 +84,22 @@ class UserSynscSubscriberTest extends UnitTestCase {
     $this->config->get(self::COMMON_NAME_FIELD_CONFIG_KEY)->willReturn(self::COMMON_NAME_FIELD_CONFIG_VALUE);
     $this->config->get(self::OODI_UID_FIELD_CONFIG_KEY)->willReturn(self::OODI_UID_FIELD_CONFIG_VALUE);
     $this->config->get(self::STUDENT_ID_FIELD_CONFIG_KEY)->willReturn(self::STUDENT_ID_FIELD_CONFIG_VALUE);
+    $this->config->get(self::TECHNICAL_CONDITION_FIELD_NAME)->willReturn(self::TECHNICAL_CONDITION_FIELD_NAME);
+    $this->config->get(self::CODE_FIELD_NAME)->willReturn(self::CODE_FIELD_NAME);
 
     $this->configFactory = $this->prophesize(ConfigFactoryInterface::class);
     $this->configFactory->get('uhsg_user_sync.settings')->willReturn($this->config);
 
+    $this->entityStorage = $this->prophesize(EntityStorageInterface::class);
     $this->entityTypeManager = $this->prophesize(EntityTypeManagerInterface::class);
+    $this->entityTypeManager->getStorage('taxonomy_term')->willReturn($this->entityStorage);
 
     $this->fieldDefinition = $this->prophesize(FieldDefinitionInterface::class);
 
     $this->fieldItemList = $this->prophesize(FieldItemListInterface::class);
     $this->fieldItemList->getString()->willReturn(self::STUDENT_ID);
+
+    $this->account = $this->prophesize(AccountInterface::class);
 
     $this->user = $this->prophesize(UserInterface::class);
     $this->user->getFieldDefinition(self::COMMON_NAME_FIELD_CONFIG_VALUE)->willReturn($this->fieldDefinition);
@@ -95,6 +108,7 @@ class UserSynscSubscriberTest extends UnitTestCase {
     $this->user->get(self::COMMON_NAME_FIELD_CONFIG_VALUE)->willReturn($this->fieldItemList);
     $this->user->get(self::OODI_UID_FIELD_CONFIG_VALUE)->willReturn($this->fieldItemList);
     $this->user->get(self::STUDENT_ID_FIELD_CONFIG_VALUE)->willReturn($this->fieldItemList);
+    $this->user->isAuthenticated()->willReturn(true);
 
     $this->event = $this->prophesize(SamlAuthUserSyncEvent::class);
     $this->event->getAccount()->willReturn($this->user);
@@ -104,6 +118,7 @@ class UserSynscSubscriberTest extends UnitTestCase {
     $this->logger = $this->prophesize(LoggerChannel::class);
     $this->messenger = $this->prophesize(MessengerInterface::class);
     $this->oprekService = $this->prophesize(OprekServiceInterface::class);
+    $this->studyRightsService = $this->prophesize(StudyRightsServiceInterface::class);
 
     $this->container = $this->prophesize(ContainerInterface::class);
 
@@ -112,6 +127,7 @@ class UserSynscSubscriberTest extends UnitTestCase {
     $this->userSyncSubscriber = new UserSyncSubscriber(
       $this->configFactory->reveal(),
       $this->oprekService->reveal(),
+      $this->studyRightsService->reveal(),
       $this->flagService->reveal(),
       $this->entityTypeManager->reveal(),
       $this->logger->reveal(),

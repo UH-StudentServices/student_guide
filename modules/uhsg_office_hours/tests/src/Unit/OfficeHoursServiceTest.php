@@ -31,6 +31,7 @@ class OfficeHoursServiceTest extends UnitTestCase {
   const EMPTY_RESPONSE = ['degree_programme' => []];
   const EXCEPTION_MESSAGE = 'Exception';
   const LANGUAGE = 'fi';
+  const CACHE_EXPIRE = "86400";
 
   /** @var \Drupal\uhsg_active_degree_programme\ActiveDegreeProgrammeService*/
   private $activeDegreeProgrammeService;
@@ -93,6 +94,7 @@ class OfficeHoursServiceTest extends UnitTestCase {
     $this->config->get(OfficeHoursService::CONFIG_API_PATH)->willReturn(self::CONFIG_API_PATH);
     $this->config->get(OfficeHoursService::CONFIG_CONNECT_TIMEOUT)->willReturn(self::CONFIG_CONNECT_TIMEOUT);
     $this->config->get(OfficeHoursService::CONFIG_REQUEST_TIMEOUT)->willReturn(self::CONFIG_REQUEST_TIMEOUT);
+    $this->config->get("cache_expire")->willReturn(self::CACHE_EXPIRE);
 
     $this->configFactory = $this->prophesize(ConfigFactory::class);
     $this->configFactory->get(OfficeHoursService::CONFIG_NAME)->willReturn($this->config);
@@ -104,6 +106,8 @@ class OfficeHoursServiceTest extends UnitTestCase {
 
     $this->client = $this->prophesize(Client::class);
     $this->client->get(Argument::any(), Argument::any())->willReturn($this->response);
+
+    $this->cache->set(Argument::any(), Argument::any(), Argument::any())->willReturn(TRUE);
 
     $this->entityStorage = $this->prophesize(EntityStorageInterface::class);
 

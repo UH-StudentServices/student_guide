@@ -18,7 +18,7 @@ use Psr\Http\Message\ResponseInterface;
  *
  * @package Drupal\uhsg_sisu\Services\StudyRightsService
  */
-class StudyRightsService {
+class StudyRightsService implements StudyRightsServiceInterface {
 
   /*
   * This can be overridden in settings.local.php with:
