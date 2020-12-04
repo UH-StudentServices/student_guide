@@ -6,11 +6,17 @@ use Drupal\Component\Serialization\Json;
 use Drupal\Core\Logger\RfcLogLevel;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\Core\Site\Settings;
-use Drupal\Core\Config\ConfigFactory;
 use Psr\Http\Message\ResponseInterface;
 
 /**
  * Class SisuService.
+ *
+ * To switch the authentication method from API GW->ESB to direct ESB,
+ * one can simply replace the cert and path in settings.local.php :
+ *   $settings['uhsg_sisu_graphql_url'] = 'https://esbmt2.it.helsinki.fi/secure/doo-sisu/graphql'; // ESB QA
+ *   $settings['uhsg_sisu_cert_path'] = '/etc/ssl/certs/esb/doo-sg-web1-16.student.helsinki.fi.pem'; // ESB, QA and PROD
+ *   $settings['uhsg_sisu_sslkey_path'] = '/etc/ssl/certs/esb/doo-sg-web1-16.student.helsinki.fi.key'; // ESB, QA and PROD
+ *   $settings['uhsg_sisu_apigw_api_key'] = ''; // APIGW only, QA/PROD separate
  *
  * @package Drupal\uhsg_sisu\Services\SisuService
  */
@@ -21,21 +27,29 @@ class SisuService {
    *
    * @var string
    */
-  const GRAPHQL_URL = 'https://esbmt2.it.helsinki.fi/secure/doo-sisu/graphql';
+  const GRAPHQL_URL = 'https://gw-api-test.it.helsinki.fi/secure/sisu/graphql';
 
   /**
    * Default CERT path.
    *
    * @var string
    */
-  const GRAPHQL_CERT_PATH = '/etc/ssl/certs/esb/doo-sg-web1-16.student.helsinki.fi.pem';
+  const GRAPHQL_CERT_PATH = '/etc/pki/tls/apigw/apigw.crt';
 
   /**
    * Default SSLKEY path.
    *
    * @var string
    */
-  const GRAPHQL_SSLKEY_PATH = '/etc/ssl/certs/esb/doo-sg-web1-16.student.helsinki.fi.key';
+  const GRAPHQL_SSLKEY_PATH = '/etc/pki/tls/apigw/apigw.key';
+
+  /**
+   * Default X-Api-Key (API GW only).
+   *
+   * @var string
+   */
+  const APIGW_API_KEY = '';
+
 
   /**
    * Logger Factory.
@@ -45,24 +59,24 @@ class SisuService {
   private $loggerFactory;
 
   /**
-   * Config.
+   * Settings.
    *
-   * @var \Drupal\Core\Config\ConfigFactory
+   * @var \Drupal\Core\Settings
    */
-  private $config;
+  private $settings;
 
   /**
    * Service constructor.
    *
    * @param \Drupal\Core\Logger\LoggerChannelFactoryInterface $loggerFactory
    *   LoggerChannelFactory.
-   * @param \Drupal\Core\Config\ConfigFactory $config
-   *   Config.
+   * @param \Drupal\Core\Settings $settings
+   *   Settings.
    */
   public function __construct(LoggerChannelFactoryInterface $loggerFactory,
-                              ConfigFactory $config) {
+                              Settings $settings) {
     $this->loggerFactory = $loggerFactory;
-    $this->config = $config->get('uhsg_sisu.settings');
+    $this->settings = $settings;
 
   }
 
@@ -73,7 +87,7 @@ class SisuService {
    *   The absolute API url as a string.
    */
   public function getGraphQlUrl() {
-    return $this->config->get('uhsg_sisu_graphql_url', self::GRAPHQL_URL);
+    return $this->settings->get('uhsg_sisu_graphql_url', self::GRAPHQL_URL);
   }
 
   /**
@@ -159,9 +173,15 @@ class SisuService {
       // Encode post data
       CURLOPT_POSTFIELDS => Json::encode($graphQlQuery),
       // Sign our requests properly.
-      CURLOPT_SSLCERT => $this->config->get('uhsg_sisu_cert_path', self::GRAPHQL_CERT_PATH),
-      CURLOPT_SSLKEY => $this->config->get('uhsg_sisu_sslkey_path', self::GRAPHQL_SSLKEY_PATH),
+      CURLOPT_SSLCERT => $this->settings->get('uhsg_sisu_cert_path', self::GRAPHQL_CERT_PATH),
+      CURLOPT_SSLKEY => $this->settings->get('uhsg_sisu_sslkey_path', self::GRAPHQL_SSLKEY_PATH),
     ];
+
+    $api_key = $this->settings->get('uhsg_sisu_apigw_api_key', self::APIGW_API_KEY);
+    if (!empty($api_key)) {
+      $options[CURLOPT_HTTPHEADER][] = 'X-Api-Key: ' . $api_key;
+    }
+
 
     return $options;
   }

@@ -4,4 +4,4 @@ services:
     arguments: ["@logger.factory", "@config.factory"]
   uhsg_sisu.studyrightsservice:
     class: Drupal\uhsg_sisu\Services\StudyRightsService
-    arguments: ["@uhsg_sisu.sisuservice", "@logger.factory", "@config.factory"]
+    arguments: ["@uhsg_sisu.sisuservice", "@logger.factory", "@settings"]
