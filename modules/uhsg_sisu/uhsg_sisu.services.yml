@@ -1,7 +1,7 @@
 services:
   uhsg_sisu.sisuservice:
     class: Drupal\uhsg_sisu\Services\SisuService
-    arguments: ["@logger.factory", "@config.factory"]
+    arguments: ["@logger.factory", "@settings"]
   uhsg_sisu.studyrightsservice:
     class: Drupal\uhsg_sisu\Services\StudyRightsService
-    arguments: ["@uhsg_sisu.sisuservice", "@logger.factory", "@settings"]
+    arguments: ["@uhsg_sisu.sisuservice", "@logger.factory", "@config.factory"]
