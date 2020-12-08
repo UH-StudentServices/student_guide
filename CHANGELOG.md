@@ -1,9 +1,10 @@
 #Changelog
 
-## 1.xx-dev
-Release date: ??.??.????
-
-
+## 1.55
+Release date: 08.12.2020
+* HUB-798 - Update drupal core.
+* HUB-782 - Use API GW instead of Doo-Sisu.
+* HUB-786 - Fixing unit tests.
 
 ## 1.54
 Release date: 18.11.2020
