@@ -96,7 +96,9 @@ class DegreeProgrammeResource extends ResourceBase {
     foreach ($degreeProgrammeTerms as $term) {
       $code = $term->get('field_code')->value;
       $name = $this->getNameTranslations($term);
-      $degreeProgrammes[] = ['code' => $code, 'name' => $name];
+      $nodeCount = $this->getNodeCount($term);
+
+      $degreeProgrammes[] = ['code' => $code, 'nodeCount' => $nodeCount, 'name' => $name];
     }
 
     return isset($degreeProgrammes) ? $degreeProgrammes : [];
@@ -121,6 +123,20 @@ class DegreeProgrammeResource extends ResourceBase {
     }
 
     return $nameTranslations;
+  }
+
+  /**
+   * @param \Drupal\taxonomy\TermInterface $term
+   * @return int
+   */
+  private function getNodeCount(TermInterface $term) {
+    $nodes = \Drupal::entityTypeManager()->getStorage('node')->getQuery()
+      ->condition('field_news_degree_programme', $term->tid->value)
+      ->condition('type', 'news')
+      ->execute();
+
+    // Return count of nodes
+    return count($nodes);
   }
 
 }
