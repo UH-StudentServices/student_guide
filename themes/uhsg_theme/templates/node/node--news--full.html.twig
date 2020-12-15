@@ -80,9 +80,6 @@
 %}
 
 <article {{ attributes.addClass(node_classes) }}>
-  {% if node.type.entity.label != "Tiedote" %}
-    {{ degree_programme_switcher }}
-  {% endif %}
   {{ content.field_news_image }}
   <div class="col-container tube--large">
     <div class="col-left">
