@@ -2,8 +2,7 @@
 
 ## 1.xx-dev
 Release date: ??.??.????
-
-
+* HUB-804 - Add content count (news) to degreeprogramme rest-interface.
 
 ## 1.55
 Release date: 08.12.2020

@@ -96,7 +96,12 @@ class DegreeProgrammeResource extends ResourceBase {
     foreach ($degreeProgrammeTerms as $term) {
       $code = $term->get('field_code')->value;
       $name = $this->getNameTranslations($term);
-      $degreeProgrammes[] = ['code' => $code, 'name' => $name];
+      $newsCount = $this->getNodeCount($term, "news");
+      $contentCount = [
+        'news' => $newsCount,
+      ];
+
+      $degreeProgrammes[] = ['code' => $code, 'contentCount' => $contentCount, 'name' => $name];
     }
 
     return isset($degreeProgrammes) ? $degreeProgrammes : [];
@@ -123,4 +128,33 @@ class DegreeProgrammeResource extends ResourceBase {
     return $nameTranslations;
   }
 
+  /**
+   * @param \Drupal\taxonomy\TermInterface $term
+   * @param string content-type
+   * @return int
+   */
+  private function getNodeCount(TermInterface $term, $content_type) {
+    $contentCount = null;
+
+    $languages = $this->languageManager->getLanguages();
+    $languageCodes = array_map(function ($language) {
+      /** @var $language LanguageInterface */
+      return $language->getId();
+    }, $languages);
+
+    foreach ($languageCodes as $languageCode) {
+      $nodes[$languageCode] = \Drupal::entityTypeManager()->getStorage('node')->getQuery()
+        ->condition('field_news_degree_programme', $term->tid->value)
+        ->condition('type', $content_type)
+        ->condition('langcode', $languageCode)
+        ->execute();
+
+        if(count($nodes[$languageCode]) > 0) {
+          // Return count, not actual nodes.
+          $contentCount[$languageCode] = count($nodes[$languageCode]);
+        }
+    }
+
+    return $contentCount;
+  }
 }
