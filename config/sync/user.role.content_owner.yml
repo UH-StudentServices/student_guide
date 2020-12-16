@@ -13,6 +13,7 @@ permissions:
   - 'access toolbar'
   - 'administer nodes'
   - 'administer url aliases'
+  - 'break content lock'
   - 'copy active degree programme url'
   - 'create article content'
   - 'create content translations'
