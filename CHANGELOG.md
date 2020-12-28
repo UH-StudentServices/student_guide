@@ -3,6 +3,8 @@
 ## 1.xx-dev
 Release date: ??.??.????
 * HUB-804 - Add content count (news) to degreeprogramme rest-interface.
+* HUB-802 - Updated Content owner role permissions.
+* HUB-801 - Removed degree programme selector from News.
 
 ## 1.55
 Release date: 08.12.2020
