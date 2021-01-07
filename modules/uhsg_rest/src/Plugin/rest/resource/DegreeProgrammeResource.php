@@ -157,8 +157,8 @@ class DegreeProgrammeResource extends ResourceBase {
         ->condition('field_news_degree_programme', $term->tid->value)
         ->condition('type', $content_type)
         ->condition('langcode', $languageCode)
+        ->condition('status', 1)
         ->accessCheck(false)
-        ->status(true)
         ->execute();
 
         if(count($nodes[$languageCode]) > 0) {
