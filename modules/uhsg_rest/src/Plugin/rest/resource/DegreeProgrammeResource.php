@@ -158,6 +158,7 @@ class DegreeProgrammeResource extends ResourceBase {
         ->condition('type', $content_type)
         ->condition('langcode', $languageCode)
         ->accessCheck(false)
+        ->status(true)
         ->execute();
 
         if(count($nodes[$languageCode]) > 0) {
