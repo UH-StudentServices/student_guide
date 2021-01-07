@@ -96,6 +96,16 @@ class DegreeProgrammeResource extends ResourceBase {
     foreach ($degreeProgrammeTerms as $term) {
       $code = $term->get('field_code')->value;
       $name = $this->getNameTranslations($term);
+      // $degreeProgrammes[] = ['code' => $code, 'name' => $name];
+      // $this->getNodeCount() caused fatal errors on jsonapi anon page load,
+      // which is rather complex and misleading. In this case it's easiest
+      // to limit by removing access perm checks, which is ok in this case
+      // because its really only fetching a number.
+      //
+      // The problems complexity is best described by Lullabot:
+      // https://www.lullabot.com/articles/early-rendering-a-lesson-in-debugging-drupal-8
+      // However the simple access check fix is based on this thread:
+      // https://drupal.stackexchange.com/questions/251864/logicexception-the-controller-result-claims-to-be-providing-relevant-cache-meta
       $newsCount = $this->getNodeCount($term, "news");
       $contentCount = [
         'news' => $newsCount,
@@ -147,6 +157,7 @@ class DegreeProgrammeResource extends ResourceBase {
         ->condition('field_news_degree_programme', $term->tid->value)
         ->condition('type', $content_type)
         ->condition('langcode', $languageCode)
+        ->accessCheck(false)
         ->execute();
 
         if(count($nodes[$languageCode]) > 0) {
