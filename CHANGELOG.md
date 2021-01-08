@@ -2,8 +2,7 @@
 
 ## 1.xx-dev
 Release date: ??.??.????
-
-
+* HUB-805 - Fixed a bug with the node revision list.
 
 ## 1.56
 Release date: 28.12.2020
