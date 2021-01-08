@@ -3,6 +3,7 @@
 ## 1.xx-dev
 Release date: ??.??.????
 
+* HUB-828 - Resolve JSONAPI node count regression
 
 
 ## 1.56
