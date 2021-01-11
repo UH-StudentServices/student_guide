@@ -2,9 +2,8 @@
 
 ## 1.xx-dev
 Release date: ??.??.????
-
-* HUB-828 - Resolve JSONAPI node count regression
-
+* HUB-805 - Fixed a bug with the node revision list.
+* HUB-828 - Resolve JSONAPI node count regression.
 
 ## 1.56
 Release date: 28.12.2020
