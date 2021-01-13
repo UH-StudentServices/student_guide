@@ -337,7 +337,7 @@ class UserSyncSubscriber implements EventSubscriberInterface {
     $added = 0;
 
     // Debug Studyright Data
-    if (Settings::get('uhsg_oprek_add_debug_logging', self::UHSG_OPREK_ADD_DEBUG_LOGGING)) {
+    if (!$use_sisu_service && Settings::get('uhsg_oprek_add_debug_logging', self::UHSG_OPREK_ADD_DEBUG_LOGGING)) {
       // Loop trough all oodi studyrights
       $study_rights = $this->oprekService->getStudyRights($student_number);
 
