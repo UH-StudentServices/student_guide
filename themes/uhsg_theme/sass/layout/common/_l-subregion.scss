@@ -1,5 +1,12 @@
 .l-subregion {
-  padding: 0 0 0 1em;
+  max-width: $bp-large + (2 * $page-gutter);
+  padding-left: $page-gutter-mobile;
+  padding-right: $page-gutter-mobile;
+
+  @include breakpoint($xsmall) {
+    padding-left: $page-gutter;
+    padding-right: $page-gutter;
+  }
 }
 
 .path-frontpage .l-subregion-wrapper {

@@ -1,0 +1,7 @@
+// Breakpoint variables, gutters and spacings
+$bp-medium: 60em;
+$bp-large: 76em;
+
+$small-only: (min-width $bp-small) (max-width $bp-medium);
+$medium: $bp-medium, "no-query" ".lt-ie9";
+$large: $bp-large;
