@@ -111,7 +111,7 @@ class OprekService implements OprekServiceInterface {
           return $this->getDataFromBody($body);
         }
         else {
-          throw new \Exception('Oprek service responded, but body status is not OK', ($response->getStatusCode() * 1000) + $this->getStatusFromBody($body));
+          throw new \Exception('Oprek service responded, but body status is not OK', ($response->getStatusCode() * 1000) + $this->getStatusFromBody($body) . ', body=' . $body);
         }
       }
       else {
