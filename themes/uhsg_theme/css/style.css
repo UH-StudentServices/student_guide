@@ -9403,25 +9403,21 @@ input[type="submit"].button--reset + i {
 }
 
 #obar-header {
-  background: #222;
-  min-height: 195px;
+  background: #000;
 }
 
-@media (max-width: 48em) {
-  #obar-header {
-    min-height: 145px;
+#obar-header > header:empty {
+  min-height: 130px;
+}
+
+@media (min-width: 62.5em) {
+  #obar-header > header:empty {
+    min-height: 168px;
   }
 }
 
 #obar-footer {
-  background: #222;
-  min-height: 195px;
-}
-
-@media (max-width: 48em) {
-  #obar-footer {
-    min-height: 145px;
-  }
+  background: #000;
 }
 
 .list-of-links__compact .list-of-links__link {

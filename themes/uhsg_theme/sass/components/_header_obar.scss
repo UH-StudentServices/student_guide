@@ -1,15 +1,15 @@
 #obar-header {
-  background: $black;
-  min-height: 195px;
-  @include breakpoint($mobile-only) {
-    min-height: 145px;
+  background: $obar-bg;
+
+  > header:empty {
+    min-height: 130px;
+
+    @include breakpoint($medium) {
+      min-height: 168px;
+    }
   }
 }
 
 #obar-footer {
-  background: $black;
-  min-height: 195px;
-  @include breakpoint($mobile-only) {
-    min-height: 145px;
-  }
+  background: $obar-bg;
 }
