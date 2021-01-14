@@ -16,6 +16,16 @@ use Firebase\JWT\JWT as Firebase_JWT;
 class Jwt {
 
   /**
+   * @var string
+   */
+  protected const USER_ROLE_STUDENT = 'student';
+
+  /**
+   * @var string
+   */
+  protected const USER_ROLE_TEACHER = 'teacher';
+
+  /**
    * @var \Drupal\Core\Config\ImmutableConfig
    */
   protected $config;
@@ -87,6 +97,8 @@ class Jwt {
       $userName = $user->hasField('field_common_name') ? $user->get('field_common_name')->value : null;
       $firstName = $this->getFirstName($userName);
       $lastName = $this->getLastName($userName);
+      $employeeNumber = $user->hasField('field_employee_number') ? $user->get('field_employee_number')->value : NULL;
+      $studentNumber = $user->hasField('field_student_number') ? $user->get('field_student_number')->value : NULL;
 
       $formattedUser = [
         'oodiId' => $oodiId ? $oodiId : '',
@@ -96,6 +108,14 @@ class Jwt {
       if (!empty($firstName) && !empty($lastName)) {
         $formattedUser['firstName'] = $firstName;
         $formattedUser['lastName'] = $lastName;
+      }
+
+      $formattedUser['roles'] = [];
+      if ($employeeNumber) {
+        $formattedUser['roles'][] = self::USER_ROLE_TEACHER;
+      }
+      if ($studentNumber) {
+        $formattedUser['roles'][] = self::USER_ROLE_STUDENT;
       }
 
       return (object) $formattedUser;
