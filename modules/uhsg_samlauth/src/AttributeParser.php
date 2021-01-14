@@ -18,6 +18,7 @@ class AttributeParser implements AttributeParserInterface {
     'commonName' => 'urn:oid:2.5.4.3',
     'oodiUid' => '1.3.6.1.4.1.18869.1.1.1.32',
     'studentId' => 'urn:oid:1.3.6.1.4.1.25178.1.2.14',
+    'employeeId' => 'urn:oid:2.16.840.1.113730.3.1.3',
     'userId' => 'urn:oid:0.9.2342.19200300.100.1.1',
     'emailAddress' => 'urn:oid:0.9.2342.19200300.100.1.3',
     'logoutUrl' => 'urn:mace:funet.fi:haka:logout-url',
@@ -105,6 +106,17 @@ class AttributeParser implements AttributeParserInterface {
     }
 
     return '';
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getEmployeeId() {
+    $value = $this->getAttributeValueFromAlias('employeeId');
+    if (is_null($value)) {
+      return '';
+    }
+    return (string) $value[0];
   }
 
   /**
