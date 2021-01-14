@@ -1,4 +1,4 @@
-.l-subregion {
+.l-footer__subregion {
   max-width: $bp-large + (2 * $page-gutter);
   padding-left: $page-gutter-mobile;
   padding-right: $page-gutter-mobile;
@@ -8,12 +8,3 @@
     padding-right: $page-gutter;
   }
 }
-
-.path-frontpage .l-subregion-wrapper {
-  padding-top: 0;
-
-  &:nth-of-type(odd) {
-    background-color: transparent;
-  }
-}
-

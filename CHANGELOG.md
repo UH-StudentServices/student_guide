@@ -5,6 +5,7 @@ Release date: ??.??.????
 * HUB-805 - Fixed a bug with the node revision list.
 * HUB-828 - Resolve JSONAPI node count regression.
 * HUB-689 - Updating obar container height and background color.
+* HUB-696 - Updating page margins to match Studies service layout.
 
 ## 1.56
 Release date: 28.12.2020

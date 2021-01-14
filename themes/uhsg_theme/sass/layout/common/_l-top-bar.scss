@@ -1,0 +1,9 @@
+.l-top-bar__subregion {
+  max-width: $bp-large + (2 * $page-gutter);
+
+  @include breakpoint($small) {
+    max-width: $bp-large + (2 * $page-gutter);
+    padding-left: $page-gutter;
+    padding-right: $page-gutter;
+  }
+}

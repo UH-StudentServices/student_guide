@@ -1,8 +1,13 @@
 .container {
   margin: 0 auto;
-  max-width: $bp-large;
-  padding-left: $grid-gutter;
-  padding-right: $grid-gutter;
+  max-width: $bp-large + (2 * $page-gutter);
+  padding-left: $page-gutter-mobile;
+  padding-right: $page-gutter-mobile;
+
+  @include breakpoint($xsmall) {
+    padding-left: $page-gutter;
+    padding-right: $page-gutter;
+  }
 }
 
 .grid-container {
@@ -37,7 +42,7 @@
 
 @for $grid-columns from 2 through 4 {
   .grid-item-#{$grid-columns} {
-    max-width: $bp-large / $grid-columns;
+    max-width: ($bp-large + 2 * $grid-gutter) / $grid-columns;
     @include breakpoint($small) {
       width: 100% / $grid-columns;
     }
@@ -46,18 +51,18 @@
 
 .grid-item-square {
   @include breakpoint($mobile-only) {
-    max-width: $bp-small / 2;
+    max-width: ($bp-small + 2 * $grid-gutter) / 2;
   }
   @include breakpoint($small) {
-    width: $bp-small / 3;
+    width: ($bp-small + 2 * $grid-gutter) / 3;
     height: $bp-small / 3;
   }
   @include breakpoint($medium) {
-    width: $bp-medium / 4;
+    width: ($bp-medium + 2 * $grid-gutter) / 4;
     height: $bp-medium / 4;
   }
   @include breakpoint($large) {
-    width: $bp-large / 4;
+    width: ($bp-large + 2 * $grid-gutter) / 4;
     height: $bp-large / 4;
   }
 }
@@ -65,18 +70,18 @@
 // Flat Box.
 .grid-item-flat-box {
   @include breakpoint($mobile-only) {
-    max-width: $bp-small / 2;
+    max-width: ($bp-small + 2 * $grid-gutter) / 2;
   }
   @include breakpoint($small) {
-    width: $bp-small / 3;
+    width: ($bp-small + 2 * $grid-gutter) / 3;
     height: $bp-small / 5;
   }
   @include breakpoint($medium) {
-    width: $bp-medium / 4;
+    width: ($bp-medium + 2 * $grid-gutter) / 4;
     height: $bp-medium / 6;
   }
   @include breakpoint($large) {
-    width: $bp-large / 4;
+    width: ($bp-large + 2 * $grid-gutter) / 4;
     height: $bp-large / 6;
   }
 }
