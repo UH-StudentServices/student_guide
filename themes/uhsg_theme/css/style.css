@@ -8695,6 +8695,19 @@ input[type="text"].search-form-large__input {
   }
 }
 
+.l-footer__subregion {
+  max-width: 80em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+@media (min-width: 30em) {
+  .l-footer__subregion {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+}
+
 .l-subregion {
   max-width: 80em;
   padding-left: 1em;
@@ -8714,6 +8727,18 @@ input[type="text"].search-form-large__input {
 
 .path-frontpage .l-subregion-wrapper:nth-of-type(odd) {
   background-color: transparent;
+}
+
+.l-top-bar__subregion {
+  max-width: 80em;
+}
+
+@media (min-width: 48em) {
+  .l-top-bar__subregion {
+    max-width: 80em;
+    padding-left: 2em;
+    padding-right: 2em;
+  }
 }
 
 .accordion__accordion-body {
@@ -9436,6 +9461,12 @@ input[type="submit"].button--reset + i {
   background: #000;
 }
 
+@media (min-width: 48em) {
+  .links {
+    margin-right: -6px;
+  }
+}
+
 .list-of-links__compact .list-of-links__link {
   padding-top: 0.4em;
   padding-bottom: 0.4em;
@@ -9544,12 +9575,25 @@ input[type="submit"].button--reset + i {
 
 @media (min-width: 48em) {
   .main-menu > ul.menu {
+    max-width: 80em;
+    padding-left: 2em;
+    padding-right: 2em;
     padding-top: 0 !important;
     padding-bottom: 0 !important;
   }
   .main-menu li.is-lvl1 > a, .main-menu li.is-lvl1 span[data-drupal-link-system-path] {
     padding-top: 1.2em;
     padding-bottom: 1.2em;
+  }
+  .main-menu li.is-lvl1.main-menu__front {
+    display: block;
+    left: 0;
+    position: relative;
+    top: 0;
+  }
+  .main-menu li.is-lvl1.main-menu__front > a {
+    font-size: 0.9375rem;
+    padding-left: 0;
   }
   .main-menu li.is-expandable {
     -webkit-box-align: baseline;
@@ -9603,10 +9647,12 @@ input[type="submit"].button--reset + i {
   .main-menu li.main-menu__right {
     margin-left: auto;
     position: relative;
-    left: 2em;
   }
   .main-menu li.main-menu__right ~ li.main-menu__right {
     margin-left: 0;
+  }
+  .main-menu li.main-menu__right:last-child > a {
+    padding-right: 0;
   }
 }
 

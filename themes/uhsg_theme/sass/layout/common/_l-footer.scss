@@ -1,0 +1,10 @@
+.l-footer__subregion {
+  max-width: $bp-large + (2 * $page-gutter);
+  padding-left: $page-gutter-mobile;
+  padding-right: $page-gutter-mobile;
+
+  @include breakpoint($xsmall) {
+    padding-left: $page-gutter;
+    padding-right: $page-gutter;
+  }
+}

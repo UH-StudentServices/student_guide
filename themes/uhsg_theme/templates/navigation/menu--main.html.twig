@@ -33,7 +33,8 @@
 
       {% if home_link %}
         <li class="{{ home_link.classes }}">
-          {{ link('Home'|trans , home_link.link) }}
+          {% set home_link_text %}<span class="visually-hidden">{{ 'Home'|trans }}</span>{% endset %}
+          {{ link(home_link_text, home_link.link) }}
         </li>  
       {% endif %}
 
