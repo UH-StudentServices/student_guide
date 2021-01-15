@@ -8901,9 +8901,9 @@ li.avatar.avatar--default img {
 }
 
 #copy-url {
-  float: right;
-  position: relative;
+  position: absolute;
   z-index: 500;
+  right: 0;
   margin-right: 0;
   min-width: 10em;
 }

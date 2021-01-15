@@ -438,6 +438,11 @@ function uhsg_theme_preprocess_file_link(&$variables) {
 function uhsg_theme_preprocess_node(&$variables) {
   if (in_array($variables['view_mode'], ['teaser', 'constrained'])) {
     $node_viewed = \Drupal::routeMatch()->getParameter('node');
+    if (is_numeric($node_viewed)) {
+      // Some node routes (like revision view) return the node parameter
+      // as a node id instead of Node object.
+      $node_viewed = Node::load($node_viewed);
+    }
     $current_page_is_theme = $node_viewed && $node_viewed->bundle() == 'theme';
     $variables['type'] = !$current_page_is_theme ? $variables['node']->type->entity->label() : NULL;
   }

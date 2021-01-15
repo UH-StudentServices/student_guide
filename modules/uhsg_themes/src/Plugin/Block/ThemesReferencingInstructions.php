@@ -62,6 +62,11 @@ class ThemesReferencingInstructions extends BlockBase implements ContainerFactor
 
     /** @var $nodeFromParameter Node */
     $nodeFromParameter = $this->routeMatch->getParameter('node');
+    if (is_numeric($nodeFromParameter)) {
+      // Some node routes (like revision view) return the node parameter
+      // as a node id instead of Node object.
+      $nodeFromParameter = Node::load($nodeFromParameter);
+    }
 
     $currentLanguageCode = $this->languageManager->getCurrentLanguage()->getId();
 
