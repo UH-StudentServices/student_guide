@@ -397,12 +397,10 @@ class UserSyncSubscriber implements EventSubscriberInterface {
       if ($studyrights = $this->studyRightsService->getActiveStudyRights($student_number)) {
         $technical_condition_field_name = $this->config->get('technical_condition_field_name');
         $primary_field_name = $this->config->get('primary_field_name');
-        $studyright_codes = array();
         // Loop trough all studyrights
         foreach($studyrights as $studyright) {
           // If code matches our degree_program code then proceed
           if (isset($known_degree_programmes[$studyright->getCode()])) {
-            $studyright_codes[] = $studyright->getCode();
             // Flag the degree programme
             $flag = $this->flagService->getFlagById('my_degree_programmes');
 
