@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.user.user.field_common_name
     - field.field.user.user.field_domain_admin
+    - field.field.user.user.field_employee_number
     - field.field.user.user.field_oodi_uid
     - field.field.user.user.field_student_number
     - field.field.user.user.field_study_rights
@@ -18,16 +19,16 @@ mode: default
 content:
   account:
     weight: 0
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
   contact:
     weight: 3
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
   field_common_name:
-    weight: 51
+    weight: 10
     settings:
       size: 60
       placeholder: ''
@@ -36,9 +37,17 @@ content:
     region: content
   field_domain_admin:
     type: options_buttons
-    weight: 50
+    weight: 9
     settings: {  }
     third_party_settings: {  }
+    region: content
+  field_employee_number:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
   field_oodi_uid:
     type: string_textfield
@@ -57,7 +66,7 @@ content:
     type: string_textfield
     region: content
   field_study_rights:
-    weight: 6
+    weight: 5
     settings:
       match_operator: CONTAINS
       size: 60
@@ -68,17 +77,17 @@ content:
     region: content
   google_analytics:
     weight: 2
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
   language:
     weight: 1
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
   path:
     type: path
-    weight: 5
+    weight: 4
     settings: {  }
     third_party_settings: {  }
     region: content

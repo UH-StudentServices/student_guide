@@ -16,6 +16,16 @@ use Firebase\JWT\JWT as Firebase_JWT;
 class Jwt {
 
   /**
+   * @var string
+   */
+  protected const USER_ROLE_STUDENT = 'student';
+
+  /**
+   * @var string
+   */
+  protected const USER_ROLE_TEACHER = 'teacher';
+
+  /**
    * @var \Drupal\Core\Config\ImmutableConfig
    */
   protected $config;
@@ -76,8 +86,7 @@ class Jwt {
       'logoutEndpoint' => $this->urlGenerator->generateFromRoute('samlauth.saml_controller_logout'),
       'user' => $this->getUser(),
       'currentLang' => $this->languageManager->getCurrentLanguage()->getId(),
-      'languageSelectEndpoints' => $this->getLanguageSelectEndpoints(),
-      'footer' => $this->getFooter()
+      'languageSelectEndpoints' => $this->getLanguageSelectEndpoints()
     ];
   }
 
@@ -88,6 +97,8 @@ class Jwt {
       $userName = $user->hasField('field_common_name') ? $user->get('field_common_name')->value : null;
       $firstName = $this->getFirstName($userName);
       $lastName = $this->getLastName($userName);
+      $employeeNumber = $user->hasField('field_employee_number') ? $user->get('field_employee_number')->value : NULL;
+      $studentNumber = $user->hasField('field_student_number') ? $user->get('field_student_number')->value : NULL;
 
       $formattedUser = [
         'oodiId' => $oodiId ? $oodiId : '',
@@ -97,6 +108,14 @@ class Jwt {
       if (!empty($firstName) && !empty($lastName)) {
         $formattedUser['firstName'] = $firstName;
         $formattedUser['lastName'] = $lastName;
+      }
+
+      $formattedUser['roles'] = [];
+      if ($employeeNumber) {
+        $formattedUser['roles'][] = self::USER_ROLE_TEACHER;
+      }
+      if ($studentNumber) {
+        $formattedUser['roles'][] = self::USER_ROLE_STUDENT;
       }
 
       return (object) $formattedUser;
@@ -135,100 +154,4 @@ class Jwt {
     }
   }
 
-  /**
-   * The simplest hard-coded implementation for application-specific footer.
-   * Not configurable for now. Links common for all services will be refactored
-   * away in the future, leaving only the truly application-specific
-   * configuration.
-   */
-  private function getFooter() {
-    $footer = [
-      'serviceName' => [
-        'Opiskelu',
-        'Studier',
-        'Studies'
-      ],
-      'applicationName' => [
-        'Opiskelijan ohjeet',
-        'Instruktioner för studerande',
-        'Instructions for students'
-      ],
-      'items' => [
-        'bulletin' => [
-          'name' => [
-            'Tiedotearkisto',
-            'Meddelanden arkiv',
-            'Bulletin archive'
-          ],
-          'url' => [
-            'https://studies.helsinki.fi/ohjeet/news',
-            'https://studies.helsinki.fi/instruktioner/news',
-            'https://studies.helsinki.fi/instructions/news'
-          ]
-        ],
-        'studentServices' => [
-          'name' => [
-            'Opiskelijaneuvonta',
-            'Studentservicen',
-            'Student Services'
-          ],
-          'url' => [
-            'https://studies.helsinki.fi/ohjeet/artikkeli/opiskelijaneuvonta',
-            'https://studies.helsinki.fi/instruktioner/artikel/studentservicen',
-            'https://studies.helsinki.fi/instructions/article/student-services'
-          ]
-        ],
-        'studentServicesAppointment' => [
-          'name' => [
-            'Opiskelijaneuvonnan ajanvaraus',
-            'Tidsbokning till Studentservicen',
-            'Appointments to Student Services'
-          ],
-          'url' => [
-            'https://secure.vihta.com/public-ng/studenthelsinki/#/home',
-            'https://secure.vihta.com/public-ng/studenthelsinki/#/home',
-            'https://secure.vihta.com/public-ng/studenthelsinki/#/home'
-          ]
-        ],
-        'careerServices' => [
-          'name' => [
-            'Urapalvelut',
-            'Karriärservicen',
-            'Career Services'
-          ],
-          'url' => [
-            'https://studies.helsinki.fi/ohjeet/artikkeli/urapalvelujen-ohjaus-some-ja-yhteystiedot',
-            'https://studies.helsinki.fi/instruktioner/artikel/karriarservicens-vagledning-evenemang-och-kontaktuppgifter',
-            'https://studies.helsinki.fi/instructions/article/career-servicesguidance-social-media-and-contact-details'
-          ]
-        ],
-        'exchangeServices' => [
-          'name' => [
-            'Liikkuvuuspalvelut',
-            'Mobilitetsservicen',
-            'International Exchange Services'
-          ],
-          'url' => [
-            'https://studies.helsinki.fi/ohjeet/artikkeli/ota-yhteytta-liikkuvuuspalveluihin',
-            'https://studies.helsinki.fi/instruktioner/artikel/kontakta-mobilitetsservicen',
-            'https://studies.helsinki.fi/instructions/article/contact-international-exchange-services'
-          ]
-        ],
-        'dataProtectionStatement' => [
-          'name' => [
-            'Tietosuojailmoitus',
-            'Dataskyddsmeddelande',
-            'Data Protection Statement'
-          ],
-          'url' => [
-            'https://studies.helsinki.fi/ohjeet/artikkeli/tietosuojailmoitus',
-            'https://studies.helsinki.fi/instruktioner/artikel/dataskyddsmeddelande',
-            'https://studies.helsinki.fi/instructions/article/data-protection-statement'
-          ]
-        ]
-      ]
-    ];
-
-    return (object) $footer;
-  }
 }

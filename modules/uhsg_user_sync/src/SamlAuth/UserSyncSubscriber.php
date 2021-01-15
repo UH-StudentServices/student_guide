@@ -101,6 +101,7 @@ class UserSyncSubscriber implements EventSubscriberInterface {
   public function onUserSync(SamlAuthUserSyncEvent $event) {
     $attributes = new AttributeParser($event->getAttributes());
     $this->syncOodiUid($event, $attributes);
+    $this->syncEmployeeId($event, $attributes);
     $this->syncStudentId($event, $attributes);
     $this->syncCommonName($event, $attributes);
 
@@ -139,6 +140,38 @@ class UserSyncSubscriber implements EventSubscriberInterface {
       elseif ($previous_value && !$new_value) {
         // When we don't have new value but previous value, it means that
         // Oodi UID has/must been removed.
+        $event->getAccount()->get($field_name)->setValue(NULL);
+        $event->markAccountChanged();
+      }
+    }
+  }
+
+  /**
+   * Synchronises employee ID field.
+   * @param \Drupal\samlauth\Event\SamlAuthUserSyncEvent $event
+   * @param \Drupal\uhsg_samlauth\AttributeParserInterface $attributes
+   */
+  protected function syncEmployeeId(SamlAuthUserSyncEvent $event, AttributeParserInterface $attributes) {
+
+    // Specify what is the name of the field we want to set student ID to?
+    $field_name = $this->config->get('employeeID_field_name');
+    if (!$field_name) {
+      return;
+    }
+
+    // If specified field definition has been found
+    if ($event->getAccount()->getFieldDefinition($field_name)) {
+      $previous_value = $event->getAccount()->get($field_name)->getString();
+      $new_value = $attributes->getEmployeeId();
+      if ($new_value && $new_value != $previous_value) {
+        // When we have new value and it's different from previous value, it
+        // means that we need to update it to the account.
+        $event->getAccount()->get($field_name)->setValue($new_value);
+        $event->markAccountChanged();
+      }
+      elseif ($previous_value && !$new_value) {
+        // When we don't have new value but previous value, it means that
+        // student ID has/must been removed.
         $event->getAccount()->get($field_name)->setValue(NULL);
         $event->markAccountChanged();
       }

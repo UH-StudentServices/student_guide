@@ -13,6 +13,9 @@ uhsg_user_sync.settings:
     primary_field_name:
       type: string
       label: 'Field name that indicates whether the degree programme is primary degree programme.'
+    employeeID_field_name:
+      type: string
+      label: 'Field name where employee ID gets synchronised.'
     studentID_field_name:
       type: string
       label: 'Field name where student ID gets synchronised.'
