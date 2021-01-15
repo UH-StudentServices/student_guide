@@ -72,8 +72,10 @@
 {% endif %}
 
 <div class="l-action-footer container">
-  {{ attach_library('uhsg_theme/anchor') }}
-  <a id="up-anchor" class="button--anchor icon--arrow-up" href="#" aria-hidden="true"> {{ 'Up'|trans }} </a>
+  {% if not obar_enabled %}
+    {{ attach_library('uhsg_theme/anchor') }}
+    <a id="up-anchor" class="button--anchor icon--arrow-up" href="#" aria-hidden="true"> {{ 'Up'|trans }} </a>
+  {% endif %}
   {% if updated %}
     <div class="last-updated">
        {{ 'Updated'|trans ~ ': ' ~ updated }}

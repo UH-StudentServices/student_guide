@@ -2,6 +2,7 @@
 
 {% block header %}
   {% if table_of_contents %}
+    {{ attach_library('uhsg_theme/anchor') }}
     <div class="index container">
       {% for item in table_of_contents %}
         <div class="index__row">
