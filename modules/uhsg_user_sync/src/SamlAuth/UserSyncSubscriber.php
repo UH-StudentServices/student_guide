@@ -427,7 +427,9 @@ class UserSyncSubscriber implements EventSubscriberInterface {
     // Use Sisu Service
     // Map StudentDegreeProgram to a known degree programme and create flagging
     if($use_sisu_service){
-      if ($studyrights = $this->studyRightsService->getActiveStudyRights($student_number)) {
+      $studyrights = $this->studyRightsService->getActiveStudyRights($student_number);
+
+      if (!empty($studyrights)) {
         $technical_condition_field_name = $this->config->get('technical_condition_field_name');
         $primary_field_name = $this->config->get('primary_field_name');
         // Loop trough all studyrights

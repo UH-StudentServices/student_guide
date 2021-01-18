@@ -24,7 +24,14 @@ class StudyRightsService implements StudyRightsServiceInterface {
   * This can be overridden in settings.local.php with:
   *   $settings['uhsg_sisu_mock_response'] = TRUE;
   */
- const UHSG_SISU_MOCK_RESPONSE = FALSE;
+  const UHSG_SISU_MOCK_RESPONSE = FALSE;
+
+  /*
+  * Logging responses is helpful for debugging.
+  * This can be overridden in settings.local.php with:
+  *   $settings['uhsg_sisu_log_responses'] = TRUE;
+  */
+  const UHSG_SISU_LOG_RESPONSES = FALSE;
 
   /**
    * SisuService.
@@ -191,20 +198,27 @@ class StudyRightsService implements StudyRightsServiceInterface {
   public function getActiveStudyRights($oodiId) {
     // Initialize variables.
     $data = NULL;
+    $sisuResponse = NULL;
     $date_today = date('Y-m-d', time());
 
     // Fetch studyrightsdata for student.
     if ($oodiId) {
-      $sisuResponse = $this->fetchStudyRightsData($oodiId);
+      $sisuResponse = (array) $this->fetchStudyRightsData($oodiId);
     }
 
-    // Proper Response Handling.
-    if (isset($sisuResponse) && $sisuResponse instanceof Response) {
-      $data = Json::decode($sisuResponse->getBody());
+    // Log full response for convenient debugging (enabled on local/qa).
+    if (Settings::get('uhsg_sisu_log_responses', self::UHSG_SISU_LOG_RESPONSES)){
+      $this->log('getActiveStudyRights() sisuResponse:
+         <pre>@sisuResponse</pre>', [
+          '@sisuResponse' => print_r($sisuResponse, TRUE),
+      ], RfcLogLevel::INFO);
     }
 
-    // Make sure we have results to loop trough.
-    if(!$data) {
+    // Proper Response Handling. Note: this is not a Guzzle object!
+    if (!empty($sisuResponse['data']['private_person']['studyRights'])) {
+      $data = $sisuResponse;
+    }else{
+      // Make sure we have results to loop trough.
       return null;
     }
 
@@ -213,11 +227,23 @@ class StudyRightsService implements StudyRightsServiceInterface {
     $studyrights = $data['data']['private_person']['studyRights'];
     $primarystudyright = $this->getPrimaryStudentDegreeProgram($oodiId);
 
+    // Log studyrights? Enabled on local/qa.
+    if (Settings::get('uhsg_sisu_log_responses', self::UHSG_SISU_LOG_RESPONSES)){
+      $responseAsArray = (array) $sisuResponse;
+      $this->log('getActiveStudyRights() $studyrights:
+        <pre>@studyrights</pre>', [
+          '@studyrights' => print_r($studyrights, TRUE),
+      ], RfcLogLevel::INFO);
+    }
+
+
     $active_studyrights = [];
     // Loop trough studyrights and save active studyrights.
     foreach ($studyrights as $studyright) {
-      // Only save studyright if it's active ie. enddate null and startdate in the past
-      if($studyright['valid']['startDate'] < $date_today && $studyright['valid']['endDate'] > $date_today) {
+      // Only save studyright if it's active ie.startdate in the past and
+      // enddate either null (not set) or after current date.
+      if($studyright['valid']['startDate'] < $date_today &&
+        (empty($studyright['valid']['endDate']) || $studyright['valid']['endDate'] > $date_today)) {
         // Handle specialization and graduation for a studyright
         $studyrightdegreeprogram = $this->getActiveStudentDegreeProgram($studyright);
 
@@ -249,19 +275,18 @@ class StudyRightsService implements StudyRightsServiceInterface {
   public function getPrimaryStudentDegreeProgram($oodiId) {
     // Initialize variables.
     $data = NULL;
+    $sisuResponse = NULL;
 
     // Fetch studyrightsdata for student.
     if ($oodiId) {
-      $sisuResponse = $this->fetchStudyRightsData($oodiId);
+      $sisuResponse = (array) $this->fetchStudyRightsData($oodiId);
     }
 
     // Proper Response Handling.
-    if (isset($sisuResponse) && $sisuResponse instanceof Response) {
-      $data = Json::decode($sisuResponse->getBody());
-    }
-
-    // Make sure we have results to loop trough.
-    if(!$data) {
+    if (!empty($sisuResponse)) {
+      $data = $sisuResponse;
+    }else{
+      // Make sure we have results to loop trough.
       return null;
     }
 
@@ -292,7 +317,8 @@ class StudyRightsService implements StudyRightsServiceInterface {
    */
   public function getActiveStudentDegreeProgram($studyright) {
     // Check if we have graduated from phase1 studies
-    if($studyright['studyRightGraduation'] && $studyright['studyRightGraduation']['phase1GraduationDate'] && $studyright['acceptedSelectionPath']['educationPhase2']) {
+    $phase1graduated = FALSE;
+    if(!empty($studyright['studyRightGraduation']) && !empty($studyright['studyRightGraduation']['phase1GraduationDate']) && !empty($studyright['acceptedSelectionPath']['educationPhase2'])) {
       // We have graduated from phase1, move to phase2
       $phase1graduated = TRUE;
     }
@@ -311,8 +337,7 @@ class StudyRightsService implements StudyRightsServiceInterface {
    */
   private function getPrimaryStudyRight($studyRightPrimalityChain, $studyRights) {
     // Make sure we have all the needed data.
-    if (!$studyRightPrimalityChain || !$studyRightPrimalityChain['studyRightPrimalities']
-      || !strlen($studyRightPrimalityChain['studyRightPrimalities']) || !$studyRights || !strlen($studyRights)) {
+    if (empty($studyRightPrimalityChain['studyRightPrimalities']) || empty($studyRights)) {
       return null;
     }
 
