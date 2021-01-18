@@ -96,8 +96,8 @@ class SisuService {
    * @param array $graphQlQuery
    *   Realisation ID.
    *
-   * @return \Psr\Http\Message\ResponseInterface
-   *   Response object.
+   * @return array
+   *   Response array.
    */
   public function apiRequest(array $graphQlQuery) {
     // Request and return.
@@ -116,8 +116,8 @@ class SisuService {
    * @param array $option_overrides
    *   Optional options overrides.
    *
-   * @return \Psr\Http\Message\ResponseInterface
-   *   Response object.
+   * @return array
+   *   Response array.
    */
   private function request($url, $method, $data = NULL, array $option_overrides = []) {
     $options = $option_overrides + $this->getRequestOptions($data);
