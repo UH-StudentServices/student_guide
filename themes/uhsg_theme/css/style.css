@@ -8721,6 +8721,11 @@ input[type="text"].search-form-large__input {
   }
 }
 
+.l-subregion .l-subregion {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .path-frontpage .l-subregion-wrapper {
   padding-top: 0;
 }
