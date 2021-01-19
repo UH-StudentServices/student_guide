@@ -12,12 +12,12 @@ id: theme_teaser_image
 label: 'Theme teaser image'
 image_style_mappings:
   -
-    breakpoint_id: large
+    breakpoint_id: theme_teaser_large
     multiplier: 1x
     image_mapping_type: image_style
     image_mapping: theme_teaser_image_desktop
   -
-    breakpoint_id: medium
+    breakpoint_id: theme_teaser_medium
     multiplier: 1x
     image_mapping_type: image_style
     image_mapping: theme_teaser_image_tablet

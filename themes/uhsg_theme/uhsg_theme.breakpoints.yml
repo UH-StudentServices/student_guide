@@ -19,9 +19,23 @@ medium:
   weight: 2
   multipliers:
     - 1x
+theme_teaser_medium:
+  label: medium
+  mediaQuery: 'all and (min-width: 64em)'
+  group: UhsgTheme
+  weight: 2
+  multipliers:
+    - 1x
 large:
   label: large
   mediaQuery: 'all and (min-width: 75em)'
+  group: UhsgTheme
+  weight: 3
+  multipliers:
+    - 1x
+theme_teaser_large:
+  label: large
+  mediaQuery: 'all and (min-width: 80em)'
   group: UhsgTheme
   weight: 3
   multipliers:
