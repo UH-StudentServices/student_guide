@@ -227,16 +227,6 @@ class StudyRightsService implements StudyRightsServiceInterface {
     $studyrights = $data['data']['private_person']['studyRights'];
     $primarystudyright = $this->getPrimaryStudentDegreeProgram($oodiId);
 
-    // Log studyrights? Enabled on local/qa.
-    if (Settings::get('uhsg_sisu_log_responses', self::UHSG_SISU_LOG_RESPONSES)){
-      $responseAsArray = (array) $sisuResponse;
-      $this->log('getActiveStudyRights() $studyrights:
-        <pre>@studyrights</pre>', [
-          '@studyrights' => print_r($studyrights, TRUE),
-      ], RfcLogLevel::INFO);
-    }
-
-
     $active_studyrights = [];
     // Loop trough studyrights and save active studyrights.
     foreach ($studyrights as $studyright) {
@@ -251,12 +241,30 @@ class StudyRightsService implements StudyRightsServiceInterface {
         $studyrightdegree = new StudyRight($studyrightdegreeprogram);
 
           // If primary, then set it so.
-        if($primarystudyright['id'] == $studyright['id']) {
+        if(!empty($primarystudyright['id']) && !empty($studyright['id']) && $primarystudyright['id'] == $studyright['id']) {
           $studyrightdegree.setPrimary(TRUE);
         }
 
         $active_studyrights[] = $studyrightdegree;
       }
+    }
+
+    // Log studyrights? Enabled on local/qa.
+    if (Settings::get('uhsg_sisu_log_responses', self::UHSG_SISU_LOG_RESPONSES)){
+      $responseAsArray = (array) $sisuResponse;
+      $this->log('getActiveStudyRights()
+        studyrights:
+        <pre>@studyrights</pre>
+
+        active_studyrights:
+          <pre>@active_studyrights</pre>
+
+        last_studyrightdegree:
+        <pre>@last_studyrightdegree</pre>', [
+          '@studyrights' => print_r($studyrights, TRUE),
+          '@active_studyrights' => print_r($active_studyrights, TRUE),
+          '@last_studyrightdegree' => print_r($studyrightdegree, TRUE),
+      ], RfcLogLevel::INFO);
     }
 
     return $active_studyrights;
@@ -336,6 +344,7 @@ class StudyRightsService implements StudyRightsServiceInterface {
    * This will return primary studyright from primalitychain and studyright data.
    */
   private function getPrimaryStudyRight($studyRightPrimalityChain, $studyRights) {
+    $studyRightId = '';
     // Make sure we have all the needed data.
     if (empty($studyRightPrimalityChain['studyRightPrimalities']) || empty($studyRights)) {
       return null;
@@ -352,7 +361,7 @@ class StudyRightsService implements StudyRightsServiceInterface {
     }
 
     // Loop trough studyrights and return the correct one
-    foreach($studyrights as $id => $studyright) {
+    foreach($studyRights as $id => $studyright) {
       if($studyright['id'] == $studyRightId) {
         return $studyright;
       }

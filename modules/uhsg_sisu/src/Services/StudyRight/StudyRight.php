@@ -10,12 +10,12 @@ class StudyRight {
   /**
    * True if this is a primary studyright for the student.
    */
-  protected $primary;
+  public $primary;
 
   /**
    * Save the code for studyright.
    */
-  protected $code;  
+  public $code;  
 
   /**
    * StudyRight constructor.
