@@ -7,6 +7,11 @@
     padding-left: $page-gutter;
     padding-right: $page-gutter;
   }
+
+  .l-subregion {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .path-frontpage .l-subregion-wrapper {

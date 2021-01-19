@@ -57,11 +57,11 @@
     width: ($bp-small + 2 * $grid-gutter) / 3;
     height: $bp-small / 3;
   }
-  @include breakpoint($medium) {
+  @include breakpoint($bp-medium + 2 * $page-gutter) {
     width: ($bp-medium + 2 * $grid-gutter) / 4;
     height: $bp-medium / 4;
   }
-  @include breakpoint($large) {
+  @include breakpoint($bp-large + 2 * $page-gutter) {
     width: ($bp-large + 2 * $grid-gutter) / 4;
     height: $bp-large / 4;
   }
@@ -76,11 +76,11 @@
     width: ($bp-small + 2 * $grid-gutter) / 3;
     height: $bp-small / 5;
   }
-  @include breakpoint($medium) {
+  @include breakpoint($bp-medium + 2 * $page-gutter) {
     width: ($bp-medium + 2 * $grid-gutter) / 4;
     height: $bp-medium / 6;
   }
-  @include breakpoint($large) {
+  @include breakpoint($bp-large + 2 * $page-gutter) {
     width: ($bp-large + 2 * $grid-gutter) / 4;
     height: $bp-large / 6;
   }

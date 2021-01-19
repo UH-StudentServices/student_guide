@@ -64,7 +64,7 @@
   background: $black;
   position: relative;
   overflow: hidden;
-  @include breakpoint($large) {
+  @include breakpoint($bp-large + 2 * $page-gutter) {
     @include font-size(25px);
   }
 
