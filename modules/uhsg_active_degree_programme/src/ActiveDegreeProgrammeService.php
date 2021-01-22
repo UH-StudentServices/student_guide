@@ -107,6 +107,25 @@ class ActiveDegreeProgrammeService {
   }
 
   /**
+   * Return true if we should not filter based on degree_program.
+   * @return bool
+   */
+  public function isAll() {
+    $return = FALSE;
+
+    // Fetch degree programme from query and headers
+    $degree_programme_from_query = $this->requestStack->getCurrentRequest()->get('degree_programme');
+    $degree_programme_from_headers = $this->requestStack->getCurrentRequest()->headers->get('x-degree-programme');
+
+    // If any of the degree_programme is set to 'all' well return 'TRUE'
+    if($degree_programme_from_query == "all" || $degree_programme_from_headers == "all") {
+      $return = TRUE;
+    }
+
+    return $return;
+  }
+
+  /**
    * Set active degree programme.
    * @param \Drupal\taxonomy\Entity\Term $term
    */
