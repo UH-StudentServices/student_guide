@@ -48,24 +48,28 @@ function uhsg_degree_programme_filtering_preprocess_field(array &$variables, $ho
     uhsg_degree_programme_filtering_by_active_language($variables, $target_entity_type);
   }
 
-  // If we have active degree programme, filter by that or else filter out all
-  // targets that has any degree programme chosen.
-  $active_degree_programme_tid = \Drupal::service('uhsg_active_degree_programme.active_degree_programme')->getId();
-  $active_degree_programme = NULL;
+  // Do not filter based on degree_program if it's set to 'all'
+  $filter = \Drupal::service('uhsg_active_degree_programme.active_degree_programme')->isAll();
+  if(!$filter) {
+    // If we have active degree programme, filter by that or else filter out all
+    // targets that has any degree programme chosen.
+    $active_degree_programme_tid = \Drupal::service('uhsg_active_degree_programme.active_degree_programme')->getId();
+    $active_degree_programme = NULL;
 
-  if ($active_degree_programme_tid) {
-    $active_degree_programme = Term::load($active_degree_programme_tid);
-    uhsg_degree_programme_filtering_by_degree_programme($variables, $active_degree_programme, $reference_field, $target_entity_type);
+    if ($active_degree_programme_tid) {
+      $active_degree_programme = Term::load($active_degree_programme_tid);
+      uhsg_degree_programme_filtering_by_degree_programme($variables, $active_degree_programme, $reference_field, $target_entity_type);
+    }
+    else {
+      uhsg_degree_programme_filtering_with_degree_programme($variables, $reference_field, $target_entity_type);
+    }
+
+    uhsg_degree_programme_filtering_by_paragraph_article_degree_programme($variables, $active_degree_programme, 'field_theme_section', 'field_theme_section_instructions', 'field_article_degree_programme');
+
+    // Because of these alterations, our result may vay depending on active
+    // degree programme.
+    $variables['#cache']['contexts'][] = 'active_degree_programme';
   }
-  else {
-    uhsg_degree_programme_filtering_with_degree_programme($variables, $reference_field, $target_entity_type);
-  }
-
-  uhsg_degree_programme_filtering_by_paragraph_article_degree_programme($variables, $active_degree_programme, 'field_theme_section', 'field_theme_section_instructions', 'field_article_degree_programme');
-
-  // Because of these alterations, our result may vay depending on active
-  // degree programme.
-  $variables['#cache']['contexts'][] = 'active_degree_programme';
 }
 
 /**
@@ -176,7 +180,6 @@ function uhsg_degree_programme_filtering_by_paragraph_article_degree_programme(a
                   }
                 }
               }
-
               if (!$valid_degree_programme_found) {
                 if (isset($variables['items'][$key]['content']['#paragraph']->{$article_reference_field_name}[$article_key])) {
                   $variables['items'][$key]['content']['#paragraph']->{$article_reference_field_name}[$article_key]->target_id = NULL;
