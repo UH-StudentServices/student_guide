@@ -65,11 +65,11 @@ function uhsg_degree_programme_filtering_preprocess_field(array &$variables, $ho
     }
 
     uhsg_degree_programme_filtering_by_paragraph_article_degree_programme($variables, $active_degree_programme, 'field_theme_section', 'field_theme_section_instructions', 'field_article_degree_programme');
-
-    // Because of these alterations, our result may vay depending on active
-    // degree programme.
-    $variables['#cache']['contexts'][] = 'active_degree_programme';
   }
+
+  // Because of these alterations, our result may vay depending on active
+  // degree programme.
+  $variables['#cache']['contexts'][] = 'active_degree_programme';
 }
 
 /**
