@@ -1,0 +1,48 @@
+{
+  "data": {
+    "private_person": {
+      "studyRightPrimalityChain": {
+        "studyRightPrimalities": [
+          {
+            "studyRightId": "hy-opinoik-139368542",
+            "startDate": "2020-11-17",
+            "endDate": null,
+            "documentState": "ACTIVE"
+          }
+        ]
+      },
+      "studyRights": [
+        {
+          "id": "hy-opinoik-139368542",
+          "valid": {
+            "startDate": "2020-06-12",
+            "endDate": "2022-08-01"
+          },
+          "studyRightGraduation": null,
+          "acceptedSelectionPath": {
+            "educationPhase1Child": {
+              "code": "04113",
+              "groupId": "hy-SM-2028614",
+              "name": {
+                "fi": "Patologia",
+                "sv": "Patologi",
+                "en": "Pathology"
+              }
+            },
+            "educationPhase1": {
+              "code": "320018",
+              "groupId": "hy-DP-2028983",
+              "name": {
+                "fi": "Erikoislääkärikoulutuksen koulutusohjelma, 5v",
+                "sv": "Utbildningsprogrammet för specialläkarutbildningen, 5 årig",
+                "en": "Degree Programme in Postgraduate Specialization in Medicine, 5 Years"
+              }
+            },
+            "educationPhase2Child": null,
+            "educationPhase2": null
+          }
+        }
+      ]
+    }
+  }
+}

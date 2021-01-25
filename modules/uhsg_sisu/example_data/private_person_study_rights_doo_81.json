@@ -1,0 +1,40 @@
+{
+  "data": {
+    "private_person": {
+      "studyRightPrimalityChain": {
+        "studyRightPrimalities": [
+          {
+            "studyRightId": "hy-opinoik-139368532",
+            "startDate": "2020-11-17",
+            "endDate": null,
+            "documentState": "ACTIVE"
+          }
+        ]
+      },
+      "studyRights": [
+        {
+          "id": "hy-opinoik-139368532",
+          "valid": {
+            "startDate": "2019-08-01",
+            "endDate": null
+          },
+          "studyRightGraduation": null,
+          "acceptedSelectionPath": {
+            "educationPhase1Child": null,
+            "educationPhase1": {
+              "code": "T923104",
+              "groupId": "hy-DP-98663804",
+              "name": {
+                "fi": "Kemian ja molekyylitutkimuksen tohtoriohjelma",
+                "sv": "Doktorandprogrammet i kemi och molekylära vetenskaper",
+                "en": "Doctoral Programme in Chemistry and Molecular Research"
+              }
+            },
+            "educationPhase2Child": null,
+            "educationPhase2": null
+          }
+        }
+      ]
+    }
+  }
+}

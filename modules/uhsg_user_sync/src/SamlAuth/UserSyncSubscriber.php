@@ -434,6 +434,7 @@ class UserSyncSubscriber implements EventSubscriberInterface {
         $primary_field_name = $this->config->get('primary_field_name');
         // Loop trough all studyrights
         foreach($studyrights as $studyright) {
+          $primary_flagging = '';
           // If code matches our degree_program code then proceed
           if (isset($known_degree_programmes[$studyright->getCode()])) {
             // Flag the degree programme
@@ -454,6 +455,8 @@ class UserSyncSubscriber implements EventSubscriberInterface {
               // If targeted code is 'primary' and primary field exists, then
               // set the primary to TRUE.
               if ($studyright->isPrimary() && $flagging->hasField($primary_field_name)) {
+                // Primary flagging found?
+                $primary_flagging = 'Setting primary degree programme : ' . $known_degree_programmes[$studyright->getCode()] . ', code :' . $studyright->getCode();
                 $flagging->set($primary_field_name, TRUE);
               }
 
@@ -472,8 +475,10 @@ class UserSyncSubscriber implements EventSubscriberInterface {
               // Debug (a lot of) study right data. Enable only temporarily.
               \Drupal::logger('uhsg_oprek')->info('setTechnicalDegreeProgrammes(),
                 student_number: <pre>@student_number<br></pre>
+                primary_flagging: <pre>@primary_flagging</pre>
                 targeted codes are: <pre>@targeted_codes<br></pre> and
                 degree_programmes: <pre>@degree_programmes</pre>', [
+                '@primary_flagging' => print_r($primary_flagging, TRUE),
                 '@student_number' => print_r($student_number, TRUE),
                 '@targeted_codes' => print_r($studyright->getCode(), TRUE),
                 '@degree_programmes' => print_r($known_degree_programme_keys, TRUE),

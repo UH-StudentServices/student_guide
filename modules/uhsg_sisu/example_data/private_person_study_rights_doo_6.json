@@ -1,0 +1,40 @@
+{
+  "data": {
+    "private_person": {
+      "studyRightPrimalityChain": {
+        "studyRightPrimalities": [
+          {
+            "studyRightId": "hy-opinoik-139368539",
+            "startDate": "2020-11-17",
+            "endDate": null,
+            "documentState": "ACTIVE"
+          }
+        ]
+      },
+      "studyRights": [
+        {
+          "id": "hy-opinoik-139368539",
+          "valid": {
+            "startDate": "2020-07-26",
+            "endDate": "2022-04-23"
+          },
+          "studyRightGraduation": null,
+          "acceptedSelectionPath": {
+            "educationPhase1Child": null,
+            "educationPhase1": {
+              "code": "K-AVOIN",
+              "groupId": "hy-SM-139369259",
+              "name": {
+                "fi": "Avoimen yliopiston opinnot (lisäsin 20-21 kauden /hk)",
+                "sv": null,
+                "en": null
+              }
+            },
+            "educationPhase2Child": null,
+            "educationPhase2": null
+          }
+        }
+      ]
+    }
+  }
+}

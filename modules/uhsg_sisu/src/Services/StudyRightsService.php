@@ -27,6 +27,13 @@ class StudyRightsService implements StudyRightsServiceInterface {
   const UHSG_SISU_MOCK_RESPONSE = FALSE;
 
   /*
+  * There are a mock responses for a few users available in the example_data
+  * folder. When testing different users, one can change this eg. to:
+  *  private_person_study_rights_doo_6.json (doo_7, doo_20, doo_81, doo_83..).
+  */
+  const UHSG_SISU_MOCK_FILE = 'private_person_study_rights.json';
+
+  /*
   * Logging responses is helpful for debugging.
   * This can be overridden in settings.local.php with:
   *   $settings['uhsg_sisu_log_responses'] = TRUE;
@@ -225,17 +232,9 @@ class StudyRightsService implements StudyRightsServiceInterface {
     // Save all studyrights.
     $studyrightprimalitychain = $data['data']['private_person']['studyRightPrimalityChain'];
     $studyrights = $data['data']['private_person']['studyRights'];
+
+    // Get primarystudyright from data.
     $primarystudyright = $this->getPrimaryStudentDegreeProgram($oodiId);
-
-    // Log studyrights? Enabled on local/qa.
-    if (Settings::get('uhsg_sisu_log_responses', self::UHSG_SISU_LOG_RESPONSES)){
-      $responseAsArray = (array) $sisuResponse;
-      $this->log('getActiveStudyRights() $studyrights:
-        <pre>@studyrights</pre>', [
-          '@studyrights' => print_r($studyrights, TRUE),
-      ], RfcLogLevel::INFO);
-    }
-
 
     $active_studyrights = [];
     // Loop trough studyrights and save active studyrights.
@@ -250,13 +249,31 @@ class StudyRightsService implements StudyRightsServiceInterface {
         // Create new studyright
         $studyrightdegree = new StudyRight($studyrightdegreeprogram);
 
-          // If primary, then set it so.
-        if($primarystudyright['id'] == $studyright['id']) {
-          $studyrightdegree.setPrimary(TRUE);
-        }
+        // If primary, then set it so.
+       if($primarystudyright['id'] == $studyright['id']) {
+         $studyrightdegree->setPrimary(TRUE);
+       }
 
         $active_studyrights[] = $studyrightdegree;
       }
+    }
+
+    // Log studyrights? Enabled on local/qa.
+    if (Settings::get('uhsg_sisu_log_responses', self::UHSG_SISU_LOG_RESPONSES)){
+      $responseAsArray = (array) $sisuResponse;
+      $this->log('getActiveStudyRights()
+        studyrights:
+        <pre>@studyrights</pre>
+
+        active_studyrights:
+          <pre>@active_studyrights</pre>
+
+        last_studyrightdegree:
+        <pre>@last_studyrightdegree</pre>', [
+          '@studyrights' => print_r($studyrights, TRUE),
+          '@active_studyrights' => print_r($active_studyrights, TRUE),
+          '@last_studyrightdegree' => print_r($studyrightdegree, TRUE),
+      ], RfcLogLevel::INFO);
     }
 
     return $active_studyrights;
@@ -326,6 +343,10 @@ class StudyRightsService implements StudyRightsServiceInterface {
     // if we have graduated then degree program is phase2
     $degreeprogram = $phase1graduated ? $studyright['acceptedSelectionPath']['educationPhase2'] : $studyright['acceptedSelectionPath']['educationPhase1'];
     $degreeprogramchild = $phase1graduated ? $studyright['acceptedSelectionPath']['educationPhase2Child'] : $studyright['acceptedSelectionPath']['educationPhase1Child'];
+    // $degreeprogramchild is NULL in many cases, its not required.
+
+    // Studyright should be added to degree Program ID for later checks to work!
+    $degreeprogram['id']= $studyright['id'];
 
     // Handle specialisation properly
     return $this->degreeProgramWithSpecialisation($degreeprogram, $degreeprogramchild);
@@ -336,23 +357,22 @@ class StudyRightsService implements StudyRightsServiceInterface {
    * This will return primary studyright from primalitychain and studyright data.
    */
   private function getPrimaryStudyRight($studyRightPrimalityChain, $studyRights) {
+    $studyRightId = '';
     // Make sure we have all the needed data.
     if (empty($studyRightPrimalityChain['studyRightPrimalities']) || empty($studyRights)) {
       return null;
     }
 
     // Make sure all data looks ok and return proper id if we have active studyright
-    $studyrightprimalities = $studyRightPrimalityChain['studyRightPrimalities'];
-
     // Loop trough all studyrightprimalities and find "last" active primality
-    foreach($studyrightprimalities as $id => $studyrightprimality) {
-      if($studyrightprimality['startDate'] && !$studyrightprimality['endDate'] && $studyrightprimality['documentState'] == 'ACTIVE') {
+    foreach($studyRightPrimalityChain['studyRightPrimalities'] as $id => $studyrightprimality) {
+      if($studyrightprimality['startDate'] && empty($studyrightprimality['endDate']) && $studyrightprimality['documentState'] == 'ACTIVE') {
         $studyRightId = $studyrightprimality['studyRightId'];
       }
     }
 
     // Loop trough studyrights and return the correct one
-    foreach($studyrights as $id => $studyright) {
+    foreach($studyRights as $id => $studyright) {
       if($studyright['id'] == $studyRightId) {
         return $studyright;
       }
@@ -370,7 +390,9 @@ class StudyRightsService implements StudyRightsServiceInterface {
   Note: the Sisu module ids in question are the same in QA and production.
   */
   private function degreeProgramWithSpecialisation($degreeProgram, $specialisation) {
-    if ($degreeProgram && $specialisation && $specialisation['groupId']) {
+    $oodiMapping = FALSE;
+
+    if ($degreeProgram && $specialisation && !empty($specialisation['groupId'])) {
       // Read file
       $path = getcwd() . "/". drupal_get_path('module', 'uhsg_sisu') . "/src/Services/sisu-oodi-codes.json";
       $sisu_oodi_codes = Json::decode(file_get_contents($path));
@@ -399,7 +421,7 @@ class StudyRightsService implements StudyRightsServiceInterface {
    */
   private function fetchStudyRightsMockData() {
     // Read file and return mocked data.
-    $path = getcwd() . "/". drupal_get_path('module', 'uhsg_sisu') . "/example_data/private_person_study_rights.json";
+    $path = getcwd() . "/". drupal_get_path('module', 'uhsg_sisu') . "/example_data/" . $self::UHSG_SISU_MOCK_FILE;
     return file_get_contents($path);
   }
 
