@@ -31,7 +31,7 @@ class StudyRightsService implements StudyRightsServiceInterface {
   * folder. When testing different users, one can change this eg. to:
   *  private_person_study_rights_doo_6.json (doo_7, doo_20, doo_81, doo_83..).
   */
-  const UHSG_SISU_MOCK_FILE = 'private_person_study_rights_doo_20.json';
+  const UHSG_SISU_MOCK_FILE = 'private_person_study_rights.json';
 
   /*
   * Logging responses is helpful for debugging.
@@ -236,8 +236,6 @@ class StudyRightsService implements StudyRightsServiceInterface {
     // Get primarystudyright from data.
     $primarystudyright = $this->getPrimaryStudentDegreeProgram($oodiId);
 
-    //kint($primarystudyright);
-
     $active_studyrights = [];
     // Loop trough studyrights and save active studyrights.
     foreach ($studyrights as $studyright) {
@@ -251,11 +249,10 @@ class StudyRightsService implements StudyRightsServiceInterface {
         // Create new studyright
         $studyrightdegree = new StudyRight($studyrightdegreeprogram);
 
-          // If primary, then set it so.
-        if(!empty($primarystudyright['id']) && !empty($studyright['id']) && $primarystudyright['id'] == $studyright['id']) {
-          $studyrightdegree.setPrimary(TRUE);
-        }
-        //kint($studyrightdegree);
+        // If primary, then set it so.
+       if($primarystudyright['id'] == $studyright['id']) {
+         $studyrightdegree->setPrimary(TRUE);
+       }
 
         $active_studyrights[] = $studyrightdegree;
       }
@@ -316,11 +313,8 @@ class StudyRightsService implements StudyRightsServiceInterface {
     // Get primarystudyright from data.
     $primarystudyright = $this->getPrimaryStudyRight($studyrightprimalitychain, $studyrights);
 
-    //kint($primarystudyright);
-
     // We have no primarystudyrights
     if(!$primarystudyright) {
-      //kint("NO PRIMARY STUDY RIGHT FOUND!");
       return null;
     }
 
@@ -346,16 +340,13 @@ class StudyRightsService implements StudyRightsServiceInterface {
       $phase1graduated = TRUE;
     }
 
-    //kint($studyright);
-    //kint($phase1graduated);
-
     // if we have graduated then degree program is phase2
     $degreeprogram = $phase1graduated ? $studyright['acceptedSelectionPath']['educationPhase2'] : $studyright['acceptedSelectionPath']['educationPhase1'];
     $degreeprogramchild = $phase1graduated ? $studyright['acceptedSelectionPath']['educationPhase2Child'] : $studyright['acceptedSelectionPath']['educationPhase1Child'];
     // $degreeprogramchild is NULL in many cases, its not required.
 
-    //kint($degreeprogram);
-    //kint($degreeprogramchild);
+    // Studyright should be added to degree Program ID for later checks to work!
+    $degreeprogram['id']= $studyright['id'];
 
     // Handle specialisation properly
     return $this->degreeProgramWithSpecialisation($degreeprogram, $degreeprogramchild);
@@ -373,23 +364,16 @@ class StudyRightsService implements StudyRightsServiceInterface {
     }
 
     // Make sure all data looks ok and return proper id if we have active studyright
-    $studyrightprimalities = $studyRightPrimalityChain['studyRightPrimalities'];
-
-    //kint($studyrightprimalities);
-
     // Loop trough all studyrightprimalities and find "last" active primality
-    foreach($studyrightprimalities as $id => $studyrightprimality) {
+    foreach($studyRightPrimalityChain['studyRightPrimalities'] as $id => $studyrightprimality) {
       if($studyrightprimality['startDate'] && empty($studyrightprimality['endDate']) && $studyrightprimality['documentState'] == 'ACTIVE') {
         $studyRightId = $studyrightprimality['studyRightId'];
-        //kint($studyRightId);
       }
     }
 
     // Loop trough studyrights and return the correct one
     foreach($studyRights as $id => $studyright) {
       if($studyright['id'] == $studyRightId) {
-        //kint("PRIMARY STUDYRIGHT");
-        //kint($studyright);
         return $studyright;
       }
     }
@@ -413,8 +397,6 @@ class StudyRightsService implements StudyRightsServiceInterface {
       $path = getcwd() . "/". drupal_get_path('module', 'uhsg_sisu') . "/src/Services/sisu-oodi-codes.json";
       $sisu_oodi_codes = Json::decode(file_get_contents($path));
 
-      //kint($sisu_oodi_codes);
-
       // Traverse trough all the oodi-sisu mappings.
       foreach($sisu_oodi_codes as $group) {
         // If we encounter a mapping that fits, then mark that
@@ -427,7 +409,6 @@ class StudyRightsService implements StudyRightsServiceInterface {
       if ($oodiMapping) {
         $degreeProgram['code'] .= $oodiMapping['oodiSpecialisationCode'];
         $degreeProgram['name'] .= $specialisation['name'];
-        //kint($degreeProgram);
       }
     }
 
