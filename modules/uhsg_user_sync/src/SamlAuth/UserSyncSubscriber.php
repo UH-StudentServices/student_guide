@@ -456,7 +456,7 @@ class UserSyncSubscriber implements EventSubscriberInterface {
               // set the primary to TRUE.
               if ($studyright->isPrimary() && $flagging->hasField($primary_field_name)) {
                 // Primary flagging found?
-                $primary_flagging = 'Setting primary degree programme : ' . $known_degree_programmes[$studyright->getCode()] . ', code :' . $studyright->getCode();
+                $primary_flagging = 'Setting primary degree programme : ' . $studyright->getCode();
                 $flagging->set($primary_field_name, TRUE);
               }
 
