@@ -95,6 +95,7 @@ class DegreeProgrammeResource extends ResourceBase {
   private function formatDegreeProgrammeTermsForResponse($degreeProgrammeTerms) {
     foreach ($degreeProgrammeTerms as $term) {
       $code = $term->get('field_code')->value;
+      $programme_type = $term->get('field_degree_programme_type')->value;
       $name = $this->getNameTranslations($term);
       // $degreeProgrammes[] = ['code' => $code, 'name' => $name];
       // $this->getNodeCount() caused fatal errors on jsonapi anon page load,
@@ -111,7 +112,12 @@ class DegreeProgrammeResource extends ResourceBase {
         'news' => $newsCount,
       ];
 
-      $degreeProgrammes[] = ['code' => $code, 'contentCount' => $contentCount, 'name' => $name];
+      $degreeProgrammes[] = [
+        'code' => $code,
+        'programme_type' => $programme_type,
+        'contentCount' => $contentCount,
+        'name' => $name
+      ];
     }
 
     return isset($degreeProgrammes) ? $degreeProgrammes : [];
