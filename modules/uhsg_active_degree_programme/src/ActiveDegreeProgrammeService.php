@@ -115,10 +115,9 @@ class ActiveDegreeProgrammeService {
 
     // Fetch degree programme from query and headers
     $degree_programme_from_query = $this->requestStack->getCurrentRequest()->get('degree_programme');
-    $degree_programme_from_headers = $this->requestStack->getCurrentRequest()->headers->get('x-degree-programme');
 
-    // If any of the degree_programme is set to 'all' well return 'TRUE'
-    if($degree_programme_from_query == "all" || $degree_programme_from_headers == "all") {
+    // If degree_programme is set to 'all' well return 'TRUE'
+    if($degree_programme_from_query == "all") {
       $return = TRUE;
     }
 

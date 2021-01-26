@@ -31,8 +31,14 @@ class ActiveDegreeProgrammeCacheContext implements CacheContextInterface {
    * {@inheritdoc}
    */
   public function getContext() {
+    $is_all = $this->activeDegreeProgrammeService->isAll();
     $activeId = $this->activeDegreeProgrammeService->getId();
-    return $activeId ? $activeId : 0;
+
+    if($is_all) {
+      return "all";
+    } else {
+      return $activeId ? $activeId : 0;
+    }
   }
 
   /**
