@@ -10264,6 +10264,32 @@ ul.pager > li a:focus {
   display: none;
 }
 
+.horizontal-tabs .horizontal-tab-button {
+  border-top-color: #0479a5;
+}
+
+.horizontal-tabs .horizontal-tab-button > a {
+  background: #0479a5;
+}
+
+.horizontal-tabs .horizontal-tab-button.selected {
+  border-top-color: #0479a5;
+}
+
+.horizontal-tabs .horizontal-tab-button.selected a {
+  -webkit-box-shadow: inset 0 3px 0 #0479a5;
+          box-shadow: inset 0 3px 0 #0479a5;
+  color: #0479a5;
+}
+
+.horizontal-tabs .horizontal-tab-button.selected:hover {
+  color: #0479a5;
+}
+
+.horizontal-tabs .horizontal-tab-button.selected:hover > a {
+  color: #0479a5;
+}
+
 .horizontal-tabs .horizontal-tab-button > .tabs-trigger {
   -webkit-hyphens: auto;
   -ms-hyphens: auto;
@@ -10276,13 +10302,13 @@ ul.pager > li a:focus {
 }
 
 .horizontal-tabs .horizontal-tab-button > .tabs-trigger.is-selected {
-  border-top-color: #107EAB;
+  border-top-color: #0479a5;
   border-bottom-color: transparent;
   z-index: 2;
   background-color: #FFF;
-  -webkit-box-shadow: inset 0 3px 0 #107EAB;
-          box-shadow: inset 0 3px 0 #107EAB;
-  color: #107EAB;
+  -webkit-box-shadow: inset 0 3px 0 #0479a5;
+          box-shadow: inset 0 3px 0 #0479a5;
+  color: #0479a5;
 }
 
 .horizontal-tabs .tabs-panel.is-hidden {
