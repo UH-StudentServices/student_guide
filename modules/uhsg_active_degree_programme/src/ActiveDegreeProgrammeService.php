@@ -118,6 +118,8 @@ class ActiveDegreeProgrammeService {
 
     // If degree_programme is set to 'all' well return 'TRUE'
     if($degree_programme_from_query == "all") {
+      // Reset cookie data.
+      $this->reset();
       $return = TRUE;
     }
 
@@ -208,6 +210,11 @@ class ActiveDegreeProgrammeService {
    * @return \Drupal\taxonomy\Entity\Term|null
    */
   public function getTerm() {
+    // Must return NULL if we want to bypass resolving for filtering purposes.
+    if ($this->isAll()) {
+      return NULL;
+    }
+
     if (!is_null($this->resolvedTerm)) {
       return $this->resolvedTerm;
     }
