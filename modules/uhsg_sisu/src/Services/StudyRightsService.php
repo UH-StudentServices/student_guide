@@ -346,7 +346,7 @@ class StudyRightsService implements StudyRightsServiceInterface {
     // $degreeprogramchild is NULL in many cases, its not required.
 
     // Studyright should be added to degree Program ID for later checks to work!
-    $degreeprogram['id']= $studyright['id'];
+    $degreeprogram['id'] = $studyright['id'];
 
     // Handle specialisation properly
     return $this->degreeProgramWithSpecialisation($degreeprogram, $degreeprogramchild);
@@ -391,8 +391,8 @@ class StudyRightsService implements StudyRightsServiceInterface {
   */
   private function degreeProgramWithSpecialisation($degreeProgram, $specialisation) {
     $oodiMapping = array();
-
-    if ($degreeProgram && $specialisation && !empty($specialisation['groupId'])) {
+    $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();;
+    if (!empty($degreeProgram) && !empty($specialisation['groupId'])) {
       // Read file
       $path = getcwd() . "/". drupal_get_path('module', 'uhsg_sisu') . "/src/Services/sisu-oodi-codes.json";
       $sisu_oodi_codes = Json::decode(file_get_contents($path));
@@ -408,7 +408,9 @@ class StudyRightsService implements StudyRightsServiceInterface {
       // If we have a match, then we need to modify our degreeprogram before returning it.
       if (!empty($oodiMapping['oodiSpecialisationCode']) && !empty($specialisation['name'])) {
         $degreeProgram['code'] .= $oodiMapping['oodiSpecialisationCode'];
-        $degreeProgram['name'] .= $specialisation['name'];
+        if(!empty($degreeProgram[$langcode]['name']) && !empty($specialisation[$langcode]['name'])){
+          $degreeProgram[$langcode]['name'] .= $specialisation[$langcode]['name'];
+        }
       }
     }
 
