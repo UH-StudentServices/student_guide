@@ -2,6 +2,7 @@
 
 ## 1.xx-dev
 Release date: ??.??.????
+* HUB-803 - Fix primary Degree programme selection for Sisu-integration
 * HUB-805 - Fixed a bug with the node revision list.
 * HUB-828 - Resolve JSONAPI node count regression.
 
