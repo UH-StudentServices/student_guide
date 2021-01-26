@@ -390,7 +390,7 @@ class StudyRightsService implements StudyRightsServiceInterface {
   Note: the Sisu module ids in question are the same in QA and production.
   */
   private function degreeProgramWithSpecialisation($degreeProgram, $specialisation) {
-    $oodiMapping = FALSE;
+    $oodiMapping = array();
 
     if ($degreeProgram && $specialisation && !empty($specialisation['groupId'])) {
       // Read file
@@ -406,7 +406,7 @@ class StudyRightsService implements StudyRightsServiceInterface {
       }
 
       // If we have a match, then we need to modify our degreeprogram before returning it.
-      if ($oodiMapping) {
+      if (!empty($oodiMapping['oodiSpecialisationCode']) && !empty($specialisation['name'])) {
         $degreeProgram['code'] .= $oodiMapping['oodiSpecialisationCode'];
         $degreeProgram['name'] .= $specialisation['name'];
       }
