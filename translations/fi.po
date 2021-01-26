@@ -171,6 +171,9 @@ msgstr "Tohtorikoulutettavat"
 msgid "Specialist Training"
 msgstr "Ammatillinen jatkokoulutus"
 
+msgid "Open University"
+msgstr "Avoin yliopisto"
+
 msgid "I would like to get a response to my feedback: @replyTo"
 msgstr "Haluan vastauksen palautteeseeni: @replyTo"
 
