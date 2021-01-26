@@ -128,6 +128,10 @@ msgid "Specialist Training"
 msgstr "Ammatillinen jatkokoulutus"
 
 msgctxt "Search Filters"
+msgid "Open University"
+msgstr "Avoin yliopisto"
+
+msgctxt "Search Filters"
 msgid "Results (@results)"
 msgstr "Tulokset (@results kpl)"
 

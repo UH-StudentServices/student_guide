@@ -39,6 +39,7 @@ class ThemesPerUserGroup extends BlockBase {
       'degree_students' => $this->renderDisplay('degree_students'),
       'doctoral_candidates' => $this->renderDisplay('doctoral_candidates'),
       'specialist_training' => $this->renderDisplay('specialist_training'),
+      'open_university' => $this->renderDisplay('open_university'),
     ];
   }
 

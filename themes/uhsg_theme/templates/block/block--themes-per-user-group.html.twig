@@ -68,6 +68,7 @@
         {% set title_degree = 'Degree Students'|trans %}
         {% set title_doctoral = 'Doctoral Candidates'|trans %}
         {% set title_specialist = 'Specialist Training'|trans %}
+        {% set title_open = 'Open University'|trans %}
 
         <div id="tabs" class="horizontal-tabs js-tabs clearfix" data-breakpoint="768" data-start-collapsed="true" data-selected-tab="{{ active_tab }}">
           <h2 class="accordion-header">{{ 'Instructions according to user group'|trans }}</h2>
@@ -82,9 +83,14 @@
                 {{ title_doctoral }}
               </a>
             </li>
-            <li role="presentation" class="horizontal-tab-button horizontal-tab-button-2 last" id="tab3">
+            <li role="presentation" class="horizontal-tab-button horizontal-tab-button-2" id="tab3">
               <a role="tab" aria-controls="specialist_training" href="#specialist_training" class="tabs-trigger js-tabs-trigger">
                 {{ title_specialist }}
+              </a>
+            </li>
+            <li role="presentation" class="horizontal-tab-button horizontal-tab-button-3 last" id="tab4">
+              <a role="tab" aria-controls="open_university" href="#open_university" class="tabs-trigger js-tabs-trigger">
+                {{ title_open }}
               </a>
             </li>
           </ul>
@@ -130,6 +136,16 @@
             <div class="tab-content content" aria-hidden="true">
               {{ block('title_block') }}
               {{ content['content']['specialist_training'] }}
+            </div>
+          </div>
+          <div role="tabpanel" class="tabs-panel js-tabs-panel" aria-labelledby="tab4" id="open_university">
+            <div class="accordion__title button-accordion accordion-trigger js-accordion-trigger" aria-controls="open_university" aria-expanded="false" tabindex="0">
+              {{ title_open }}
+            </div>
+
+            <div class="tab-content content" aria-hidden="true">
+              {{ block('title_block') }}
+              {{ content['content']['open_university'] }}
             </div>
           </div>
         </div>
