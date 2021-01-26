@@ -2,6 +2,7 @@
 
 ## 1.xx-dev
 Release date: ??.??.????
+* HUB-773 - Adding Open University support to some UI elements (search filters, themes per user group).
 * HUB-830 - Fixed a bug with node revision view.
 * HUB-825 - Updating obar configuration.
 * HUB-805 - Fixed a bug with the node revision list.
