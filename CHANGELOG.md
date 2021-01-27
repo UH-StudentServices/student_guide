@@ -3,8 +3,14 @@
 ## 1.xx-dev
 Release date: ??.??.????
 * HUB-773 - Adding Open University support to some UI elements (search filters, themes per user group).
+
+## 1.57
+Release date: 27.01.2021
+* HUB-840 - Added degree_programme to degreeprogramme rest-interface.
+* HUB-800 - Added ability to bypass content filtering with 'degree_progrmme=all' GET-parameter.
 * HUB-830 - Fixed a bug with node revision view.
 * HUB-825 - Updating obar configuration.
+* HUB-803 - Fix primary Degree programme selection for Sisu-integration
 * HUB-805 - Fixed a bug with the node revision list.
 * HUB-828 - Resolve JSONAPI node count regression.
 * HUB-689 - Updating obar container height and background color.
