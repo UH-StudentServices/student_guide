@@ -1,7 +1,7 @@
 #Changelog
 
-## 1.xx-dev
-Release date: ??.??.????
+## 1.57
+Release date: 27.01.2021
 
 * HUB-840 - Added degree_programme to degreeprogramme rest-interface.
 * HUB-800 - Added ability to bypass content filtering with 'degree_progrmme=all' GET-parameter.
