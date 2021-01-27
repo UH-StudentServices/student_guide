@@ -3,6 +3,8 @@
 ## 1.xx-dev
 Release date: ??.??.????
 
+* HUB-840 - Added degree_programme to degreeprogramme rest-interface.
+* HUB-800 - Added ability to bypass content filtering with 'degree_progrmme=all' GET-parameter.
 * HUB-830 - Fixed a bug with node revision view.
 * HUB-825 - Updating obar configuration.
 * HUB-803 - Fix primary Degree programme selection for Sisu-integration
