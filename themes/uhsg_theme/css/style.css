@@ -8854,6 +8854,56 @@ li.avatar.avatar--default img {
   padding-top: 1.5em;
 }
 
+.breadcrumbs {
+  font-size: 0.875rem;
+}
+
+@media (min-width: 48em) {
+  .breadcrumbs {
+    font-size: 1rem;
+  }
+}
+
+.breadcrumbs__item {
+  margin: 0;
+}
+
+.breadcrumbs__item a {
+  text-transform: none;
+  color: #0479a5;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.breadcrumbs--home-icon-first .breadcrumbs__item:first-child a:before {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-bottom: -1px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" fill="%230479A5" stroke="%230479A5" stroke-width="1"%3E%3Cpath d="M345.3,998.7c-30.3,0-55.4-25.2-55.4-55.6c0-30.4,25.1-55.6,55.4-55.6h479.9l0-509.9L500,114.2L174.8,377.6%0Av565.5c0,30.4-25.1,55.6-55.4,55.6c-30.3,0-55.4-25.2-55.4-55.6l0-567.6c0-31.5,14.6-61.9,38.7-81.9L434.1,25%0Ac37.7-30.4,93-30.4,130.7,0l332.5,268.6c25.1,19.9,38.7,49.3,38.7,81.9v568.7c0,29.4-25.1,54.6-55.4,54.6L345.3,998.7z" /%3E%3C/svg%3E');
+}
+
+.breadcrumbs--home-icon-first .breadcrumbs__item:first-child a span {
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.breadcrumbs__divider {
+  color: #424242;
+  font-size: 0.875rem;
+  margin: 0 0.25em;
+}
+
 .cc_banner-wrapper {
   z-index: 9001;
   position: relative;
