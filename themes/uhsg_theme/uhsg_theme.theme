@@ -518,9 +518,7 @@ function uhsg_theme_preprocess_views_view_grouping(&$variables) {
  * home page link.
  */
 function uhsg_theme_preprocess_breadcrumb(&$variables) {
-  $breadcrumb = $variables['breadcrumb'][0];
-  $breadcrumb['text'] = \Drupal::config('system.site')->get('name');
-  $variables['breadcrumb'] = [$breadcrumb];
+  $variables['home_icon'] = \Drupal::service('uhsg_domain.domain')->isStudentDomain();
 }
 
 /**

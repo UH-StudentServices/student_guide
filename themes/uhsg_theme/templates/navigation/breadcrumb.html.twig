@@ -12,11 +12,11 @@
 {% if breadcrumb %}
   <nav role="navigation" aria-labelledby="system-breadcrumb">
     <h2 id="system-breadcrumb" class="visually-hidden">{{ 'Breadcrumb'|t }}</h2>
-    <div class="breadcrumbs">
+    <div class="breadcrumbs{% if home_icon %} breadcrumbs--home-icon-first{% endif %}">
       {% for item in breadcrumb %}
         <span class="breadcrumbs__item">
           {% if item.url %}
-            <a href="{{ item.url }}">{{ item.text }}</a>
+            <a href="{{ item.url }}"><span>{{ item.text }}</span></a>
           {% else %}
             <a href="#">{{ item.text }}</a>
           {% endif %}
