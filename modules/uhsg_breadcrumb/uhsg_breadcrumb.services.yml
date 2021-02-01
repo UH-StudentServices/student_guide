@@ -1,6 +1,6 @@
 services:
   uhsg_breadcrumb.breadcrumb:
-    class: Drupal\uhsg_breadcrumb\UhsgPathBasedBreadcrumbBuilder
+    class: Drupal\uhsg_breadcrumb\UhsgBreadcrumbBuilder
     arguments: ['@config.factory', '@path.matcher', '@uhsg_domain.domain']
     tags:
       - { name: breadcrumb_builder, priority: 10000 }

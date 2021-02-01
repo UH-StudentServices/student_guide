@@ -15,7 +15,7 @@ use Drupal\uhsg_domain\DomainService;
 /**
  * Class to define the Uhsg breadcrumb builder.
  */
-class UhsgPathBasedBreadcrumbBuilder implements BreadcrumbBuilderInterface {
+class UhsgBreadcrumbBuilder implements BreadcrumbBuilderInterface {
   use StringTranslationTrait;
 
   /**
