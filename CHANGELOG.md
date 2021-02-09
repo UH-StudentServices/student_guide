@@ -2,6 +2,9 @@
 
 ## 1.xx-dev
 Release date: ??.??.????
+
+## 1.58
+Release date: 09.02.2021
 * HUB-835 - Updated Drupal core to 8.9.13.
 * HUB-841 - Enabled Eduviewer on Degree Programme in Dentistry and Degree Programme in Medicine.
 * HUB-693 - Updated the breadcrumb.
