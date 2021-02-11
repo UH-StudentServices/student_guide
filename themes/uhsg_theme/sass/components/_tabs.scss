@@ -3,18 +3,43 @@
     display: none;
   }
 
-  .horizontal-tab-button > .tabs-trigger {
-    @include hyphenate;
-    white-space: normal;
-    padding: 1em;
+  .horizontal-tab-button {
+    border-top-color: $blue-a11y;
 
-    &.is-selected {
-      border-top-color: $blue;
-      border-bottom-color: transparent;
-      z-index: 2;
-      background-color: $white;
-      box-shadow: inset 0 3px 0 $blue;
-      color: $blue;
+    > a {
+      background: $blue-a11y;
+    }
+
+    &.selected {
+      border-top-color: $blue-a11y;
+
+      a {
+        box-shadow: inset 0 3px 0 $blue-a11y;
+        color: $blue-a11y;
+      }
+
+      &:hover {
+        color: $blue-a11y;
+      }
+    }
+
+    &.selected:hover > a {
+      color: $blue-a11y;
+    }
+
+    > .tabs-trigger {
+      @include hyphenate;
+      white-space: normal;
+      padding: 1em;
+
+      &.is-selected {
+        border-top-color: $blue-a11y;
+        border-bottom-color: transparent;
+        z-index: 2;
+        background-color: $white;
+        box-shadow: inset 0 3px 0 $blue-a11y;
+        color: $blue-a11y;
+      }
     }
   }
 

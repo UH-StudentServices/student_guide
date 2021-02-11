@@ -17,6 +17,7 @@
           degree_students: Drupal.t('Degree Students', {}, {context: 'Search Filters'}),
           doctoral_candidates: Drupal.t('Doctoral Candidates', {}, {context: 'Search Filters'}),
           specialist_training: Drupal.t('Specialist Training', {}, {context: 'Search Filters'}),
+          open_university: Drupal.t('Open University', {}, {context: 'Search Filters'}),
         };
 
         // create buttons for available filter types if more than one type of result

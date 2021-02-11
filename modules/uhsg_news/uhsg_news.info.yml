@@ -2,7 +2,7 @@ name: News
 type: module
 description: Provides advanced properties for news like filtered listings and emailing.
 core: 8.x
-version: VERSION
+version: 1.58
 core_version_requirement: ^8 || ^9
 package: Student Guide
 dependencies:

@@ -1,7 +1,9 @@
-name: Some links
+name: UHSG Breadcrumb
 type: module
-description: Provides Some links as entities, displayed as icons.
+description: Builds a breadcrumb.
 core: 8.x
 version: 1.58
 core_version_requirement: ^8 || ^9
 package: Student Guide
+dependencies:
+  - uhsg_domain
