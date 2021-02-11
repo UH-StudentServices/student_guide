@@ -1,0 +1,20 @@
+uuid: 00219722-80bf-4d86-831e-b8d67e7c39cd
+langcode: fi
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_hypersonid
+  module:
+    - user
+id: user.user.field_hypersonid
+field_name: field_hypersonid
+entity_type: user
+bundle: user
+label: hyPersonId
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
