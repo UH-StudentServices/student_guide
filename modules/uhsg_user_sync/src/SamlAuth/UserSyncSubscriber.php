@@ -558,9 +558,15 @@ class UserSyncSubscriber implements EventSubscriberInterface {
    * @return string
    */
   protected function formatHyPersonId($hyPersonId) {
-    // Check if hyPersonId is oodi compatible and not Sisu Native.
+    $oodiId = NULL;
 
-    //
-    return $hyPersonId;
+    // Check if hyPersonId is oodi compatible and not Sisu Native.
+    // Check that end of string is numeric.
+    if(strpos("hy-hlo-", $hyPersonId) && is_numeric(substr($hyPersonId, 8))) {
+        $oodiId = substr($hyPersonId, 8);
+      }
+    }
+
+    return $oodiId;
   }
 }
