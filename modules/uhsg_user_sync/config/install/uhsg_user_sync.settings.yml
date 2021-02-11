@@ -1,5 +1,6 @@
 code_field_name: 'field_code'
 oodiUID_field_name: 'field_oodi_uid'
+hyPersonId_field_name: 'field_hypersonid'
 primary_field_name: 'field_primary'
 employeeID_field_name: 'field_employee_number'
 studentID_field_name: 'field_student_number'

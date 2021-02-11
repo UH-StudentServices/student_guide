@@ -101,6 +101,7 @@ class UserSyncSubscriber implements EventSubscriberInterface {
   public function onUserSync(SamlAuthUserSyncEvent $event) {
     $attributes = new AttributeParser($event->getAttributes());
     $this->syncOodiUid($event, $attributes);
+    $this->syncHyPersonId($event, $attributes);
     $this->syncEmployeeId($event, $attributes);
     $this->syncStudentId($event, $attributes);
     $this->syncCommonName($event, $attributes);
@@ -281,7 +282,7 @@ class UserSyncSubscriber implements EventSubscriberInterface {
   protected function syncMyDegreeProgrammes(SamlAuthUserSyncEvent $event) {
 
     // Figure out student number.
-    $field_name = $this->config->get('oodiUID_field_name');
+    $field_name = $this->config->get('hyPersonId_field_name');
     if (!$field_name) {
       // We don't know which field to look from
       return;
@@ -296,8 +297,8 @@ class UserSyncSubscriber implements EventSubscriberInterface {
 
     // When student number is available...
     $added = FALSE;
-    if ($student_number = $event->getAccount()->get($field_name)->getString()) {
-      $added = $this->setTechnicalDegreeProgrammes($event, $student_number);
+    if ($hyPersonId = $event->getAccount()->get($field_name)->getString()) {
+      $added = $this->setTechnicalDegreeProgrammes($event, $hyPersonId);
     }
 
     // Mark account has changed, if cleared or added degree programmes
@@ -384,10 +385,10 @@ class UserSyncSubscriber implements EventSubscriberInterface {
   /**
    * Sets technical degree programmes based on student number.
    * @param \Drupal\samlauth\Event\SamlAuthUserSyncEvent $event
-   * @param $student_number
+   * @param $hyPersonId
    * @return bool
    */
-  protected function setTechnicalDegreeProgrammes(SamlAuthUserSyncEvent $event, $student_number) {
+  protected function setTechnicalDegreeProgrammes(SamlAuthUserSyncEvent $event, $hyPersonId) {
 
     // Collect all known degree programme codes, so we know which Terms we
     // should flag when getting matches.
@@ -403,7 +404,7 @@ class UserSyncSubscriber implements EventSubscriberInterface {
 
     // Use Oodi Service
     // Map study rights to known degree programmes and create flaggings
-    if (!$use_sisu_service && $study_rights = $this->oprekService->getStudyRights($student_number)) {
+    if (!$use_sisu_service && $study_rights = $this->oprekService->getStudyRights(formatHyPersonId($hyPersonId))) {
       // Debug Studyright Data
       if (Settings::get('uhsg_oprek_add_debug_logging', self::UHSG_OPREK_ADD_DEBUG_LOGGING)) {
         // Loop trough all oodi studyrights
@@ -459,7 +460,7 @@ class UserSyncSubscriber implements EventSubscriberInterface {
     // Use Sisu Service
     // Map StudentDegreeProgram to a known degree programme and create flagging
     if($use_sisu_service){
-      $studyrights = $this->studyRightsService->getActiveStudyRights($student_number);
+      $studyrights = $this->studyRightsService->getActiveStudyRights($hyPersonId);
 
       if (!empty($studyrights)) {
         $technical_condition_field_name = $this->config->get('technical_condition_field_name');
@@ -511,7 +512,7 @@ class UserSyncSubscriber implements EventSubscriberInterface {
                 targeted codes are: <pre>@targeted_codes<br></pre> and
                 degree_programmes: <pre>@degree_programmes</pre>', [
                 '@primary_flagging' => print_r($primary_flagging, TRUE),
-                '@student_number' => print_r($student_number, TRUE),
+                '@student_number' => print_r($hyPersonId, TRUE),
                 '@targeted_codes' => print_r($studyright->getCode(), TRUE),
                 '@degree_programmes' => print_r($known_degree_programme_keys, TRUE),
               ]);
@@ -524,7 +525,7 @@ class UserSyncSubscriber implements EventSubscriberInterface {
           student_number: <pre>@student_number<br></pre>
           <pre>FAILED to find any studyrights!<br></pre>
           degree_programmes: <pre>@degree_programmes</pre>', [
-          '@student_number' => print_r($student_number, TRUE),
+          '@student_number' => print_r($hyPersonId, TRUE),
           '@degree_programmes' => print_r($known_degree_programme_keys, TRUE),
         ]);
       }
@@ -551,4 +552,15 @@ class UserSyncSubscriber implements EventSubscriberInterface {
     return $known_degree_programmes;
   }
 
+  /**
+   * Format hyPersonId and return only the OodiId part.
+   * @param $hyPersonId
+   * @return string
+   */
+  protected function formatHyPersonId($hyPersonId) {
+    // Check if hyPersonId is oodi compatible and not Sisu Native.
+
+    //
+    return $hyPersonId;
+  }
 }
