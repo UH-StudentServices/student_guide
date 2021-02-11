@@ -93,7 +93,7 @@ class Jwt {
   private function getUser() {
     if ($this->user->isAuthenticated()) {
       $user = User::load($this->user->id());
-      $oodiId = $user->get('field_oodi_uid')->value;
+      $hyPersonId = $user->get('field_hypersonid')->value;
       $userName = $user->hasField('field_common_name') ? $user->get('field_common_name')->value : null;
       $firstName = $this->getFirstName($userName);
       $lastName = $this->getLastName($userName);
@@ -101,7 +101,7 @@ class Jwt {
       $studentNumber = $user->hasField('field_student_number') ? $user->get('field_student_number')->value : NULL;
 
       $formattedUser = [
-        'oodiId' => $oodiId ? $oodiId : '',
+        'hyPersonId' => $hyPersonId ? $hyPersonId : '',
         'userName' => !empty($userName) ? $userName : $user->getDisplayName(),
       ];
 
