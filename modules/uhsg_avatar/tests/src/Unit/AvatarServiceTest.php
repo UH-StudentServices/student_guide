@@ -179,10 +179,10 @@ class AvatarServiceTestDouble extends AvatarService {
     $prophet = new Prophet();
 
     $fieldItemList = $prophet->prophesize(FieldItemListInterface::class);
-    $fieldItemList->getString()->willReturn('123');
+    $fieldItemList->getString()->willReturn('hy-hlo-123');
 
     $user = $prophet->prophesize(User::class);
-    $user->get('field_oodi_uid')->willReturn($fieldItemList->reveal());
+    $user->get('field_hypersonid')->willReturn($fieldItemList->reveal());
 
     return $user->reveal();
   }
