@@ -68,13 +68,6 @@ class AttributeParserTest extends UnitTestCase {
   /**
    * @test
    */
-  public function getOodiUidShouldReturnOodiUid() {
-    $this->assertEquals(self::OODI_UID, $this->attributeParser->getOodiUid());
-  }
-
-  /**
-   * @test
-   */
   public function getHyPersonIdShouldReturnHyPersonId() {
     $this->assertEquals(self::HYPERSONID, $this->attributeParser->getHyPersonId());
   }
