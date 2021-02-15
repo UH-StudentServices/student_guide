@@ -31,6 +31,7 @@ class ActiveDegreeProgrammeCacheContextTest extends TestCase {
    */
   public function getContextShouldReturnActiveDegreeProgrammeWhenActiveDegreeProgrammeExists() {
     $this->activeDegreeProgrammeService->getId()->willReturn(self::ACTIVE_DEGREE_PROGRAMME);
+    $this->activeDegreeProgrammeService->isAll()->willReturn();
 
     $this->assertEquals(self::ACTIVE_DEGREE_PROGRAMME, $this->activeDegreeProgrammeCacheContext->getContext());
   }
@@ -40,6 +41,7 @@ class ActiveDegreeProgrammeCacheContextTest extends TestCase {
    */
   public function getContextShouldReturnZeroWhenActiveDegreeProgrammeDoesNotExist() {
     $this->activeDegreeProgrammeService->getId()->willReturn();
+    $this->activeDegreeProgrammeService->isAll()->willReturn();
 
     $this->assertEquals(0, $this->activeDegreeProgrammeCacheContext->getContext());
   }
