@@ -530,8 +530,7 @@ class UserSyncSubscriber implements EventSubscriberInterface {
     // Check if hyPersonId is oodi compatible and not Sisu Native.
     // Check that end of string is numeric.
     if(substr($hyPersonId, 0, 7) == "hy-hlo-" && is_numeric(substr($hyPersonId, 7))) {
-        $oodiId = substr($hyPersonId, 7);
-      }
+      $oodiId = substr($hyPersonId, 7);
     }
 
     return $oodiId;
