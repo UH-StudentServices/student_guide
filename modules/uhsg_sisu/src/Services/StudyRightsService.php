@@ -283,7 +283,7 @@ class StudyRightsService implements StudyRightsServiceInterface {
    * Get Student Primary Degree Program. This will follow the PrimalityChain
    * and find the Primary Degree Program based on the data in there.
    *
-   * @param int $hyPersonId
+   * @param string $hyPersonId
    *   Sisu ID.
    *
    * @return \Psr\Http\Message\ResponseInterface
