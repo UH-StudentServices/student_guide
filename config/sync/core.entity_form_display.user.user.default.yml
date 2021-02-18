@@ -7,7 +7,6 @@ dependencies:
     - field.field.user.user.field_domain_admin
     - field.field.user.user.field_employee_number
     - field.field.user.user.field_hypersonid
-    - field.field.user.user.field_oodi_uid
     - field.field.user.user.field_student_number
     - field.field.user.user.field_study_rights
   module:
@@ -57,14 +56,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
-    region: content
-  field_oodi_uid:
-    type: string_textfield
-    weight: 8
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
     region: content
   field_student_number:
     weight: 7

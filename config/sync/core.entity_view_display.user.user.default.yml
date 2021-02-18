@@ -7,7 +7,6 @@ dependencies:
     - field.field.user.user.field_domain_admin
     - field.field.user.user.field_employee_number
     - field.field.user.user.field_hypersonid
-    - field.field.user.user.field_oodi_uid
     - field.field.user.user.field_student_number
     - field.field.user.user.field_study_rights
   module:
@@ -64,6 +63,5 @@ content:
     third_party_settings: {  }
 hidden:
   field_domain_admin: true
-  field_oodi_uid: true
   langcode: true
   search_api_excerpt: true
