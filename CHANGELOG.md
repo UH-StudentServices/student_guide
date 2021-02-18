@@ -2,6 +2,7 @@
 
 ## 1.xx-dev
 Release date: ??.??.????
+* HUB-843 - Replace usage of OodiUID with hyPersonSisuUID
 
 ## 1.58
 Release date: 09.02.2021
