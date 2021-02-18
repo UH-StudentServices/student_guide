@@ -1,11 +1,11 @@
-uuid: 59d7532a-0cda-43c2-87a8-a795e4eee0c1
-langcode: en
+uuid: aa9dc025-6ded-4b62-9c3d-3ba7dc6cbe1b
+langcode: fi
 status: true
 dependencies:
   module:
     - user
-id: user.field_oodi_uid
-field_name: field_oodi_uid
+id: user.field_hypersonid
+field_name: field_hypersonid
 entity_type: user
 type: string
 settings:

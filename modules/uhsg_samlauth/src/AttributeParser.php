@@ -16,7 +16,7 @@ class AttributeParser implements AttributeParserInterface {
    */
   protected $aliasMapping = [
     'commonName' => 'urn:oid:2.5.4.3',
-    'oodiUid' => '1.3.6.1.4.1.18869.1.1.1.32',
+    'hyPersonId' => 'urn:oid:1.3.6.1.4.1.18869.1.1.1.48',
     'studentId' => 'urn:oid:1.3.6.1.4.1.25178.1.2.14',
     'employeeId' => 'urn:oid:2.16.840.1.113730.3.1.3',
     'userId' => 'urn:oid:0.9.2342.19200300.100.1.1',
@@ -122,8 +122,8 @@ class AttributeParser implements AttributeParserInterface {
   /**
    * {@inheritdoc}
    */
-  public function getOodiUid() {
-    $value = $this->getAttributeValueFromAlias('oodiUid');
+  public function getHyPersonId() {
+    $value = $this->getAttributeValueFromAlias('hyPersonId');
     if (is_null($value)) {
       return '';
     }

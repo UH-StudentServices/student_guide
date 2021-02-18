@@ -29,11 +29,13 @@ class UserSynscSubscriberTest extends UnitTestCase {
   const COMMON_NAME_FIELD_CONFIG_KEY = 'common_name_field_name';
   const COMMON_NAME_FIELD_CONFIG_VALUE = 'field_common_name';
   const CODE_FIELD_NAME = 'code_field_name';
-  const OODI_UID_FIELD_CONFIG_KEY = 'oodiUID_field_name';
-  const OODI_UID_FIELD_CONFIG_VALUE = 'field_oodi_uid';
-  const STUDENT_ID = '123';
+  const HYPERSONID_FIELD_CONFIG_KEY = 'hyPersonId_field_name';
+  const HYPERSONID_FIELD_CONFIG_VALUE = 'hy-hlo-1234567';
+  const STUDENT_ID = 'hy-hlo-1234567';
   const STUDENT_ID_FIELD_CONFIG_KEY = 'studentID_field_name';
   const STUDENT_ID_FIELD_CONFIG_VALUE = 'field_student_id';
+  const EMPLOYEEID_FIELD_CONFIG_KEY = 'employeeID_field_name';
+  const EMPLOYEEID_FIELD_CONFIG_VALUE = 'field_employee_number';
 
   /** @var \Drupal\Core\Config\ConfigFactoryInterface*/
   private $configFactory;
@@ -82,7 +84,8 @@ class UserSynscSubscriberTest extends UnitTestCase {
 
     $this->config = $this->prophesize(ImmutableConfig::class);
     $this->config->get(self::COMMON_NAME_FIELD_CONFIG_KEY)->willReturn(self::COMMON_NAME_FIELD_CONFIG_VALUE);
-    $this->config->get(self::OODI_UID_FIELD_CONFIG_KEY)->willReturn(self::OODI_UID_FIELD_CONFIG_VALUE);
+    $this->config->get(self::EMPLOYEEID_FIELD_CONFIG_KEY)->willReturn(self::EMPLOYEEID_FIELD_CONFIG_VALUE);
+    $this->config->get(self::HYPERSONID_FIELD_CONFIG_KEY)->willReturn(self::HYPERSONID_FIELD_CONFIG_VALUE);
     $this->config->get(self::STUDENT_ID_FIELD_CONFIG_KEY)->willReturn(self::STUDENT_ID_FIELD_CONFIG_VALUE);
     $this->config->get(self::TECHNICAL_CONDITION_FIELD_NAME)->willReturn(self::TECHNICAL_CONDITION_FIELD_NAME);
     $this->config->get(self::CODE_FIELD_NAME)->willReturn(self::CODE_FIELD_NAME);
@@ -103,10 +106,12 @@ class UserSynscSubscriberTest extends UnitTestCase {
 
     $this->user = $this->prophesize(UserInterface::class);
     $this->user->getFieldDefinition(self::COMMON_NAME_FIELD_CONFIG_VALUE)->willReturn($this->fieldDefinition);
-    $this->user->getFieldDefinition(self::OODI_UID_FIELD_CONFIG_VALUE)->willReturn($this->fieldDefinition);
+    $this->user->getFieldDefinition(self::EMPLOYEEID_FIELD_CONFIG_VALUE)->willReturn($this->fieldDefinition);
+    $this->user->getFieldDefinition(self::HYPERSONID_FIELD_CONFIG_VALUE)->willReturn($this->fieldDefinition);
     $this->user->getFieldDefinition(self::STUDENT_ID_FIELD_CONFIG_VALUE)->willReturn($this->fieldDefinition);
     $this->user->get(self::COMMON_NAME_FIELD_CONFIG_VALUE)->willReturn($this->fieldItemList);
-    $this->user->get(self::OODI_UID_FIELD_CONFIG_VALUE)->willReturn($this->fieldItemList);
+    $this->user->get(self::EMPLOYEEID_FIELD_CONFIG_VALUE)->willReturn($this->fieldItemList);
+    $this->user->get(self::HYPERSONID_FIELD_CONFIG_VALUE)->willReturn($this->fieldItemList);
     $this->user->get(self::STUDENT_ID_FIELD_CONFIG_VALUE)->willReturn($this->fieldItemList);
     $this->user->isAuthenticated()->willReturn(true);
 
@@ -149,7 +154,8 @@ class UserSynscSubscriberTest extends UnitTestCase {
    */
   public function onUserSyncShouldDoNothingIfStudentIdFieldNameConfigIsMissing() {
     $this->config->get(self::COMMON_NAME_FIELD_CONFIG_KEY)->willReturn(NULL);
-    $this->config->get(self::OODI_UID_FIELD_CONFIG_KEY)->willReturn(NULL);
+    $this->config->get(self::EMPLOYEEID_FIELD_CONFIG_KEY)->willReturn(NULL);
+    $this->config->get(self::HYPERSONID_FIELD_CONFIG_KEY)->willReturn(NULL);
     $this->config->get(self::STUDENT_ID_FIELD_CONFIG_KEY)->willReturn(NULL);
 
     $this->event->getAccount()->shouldNotBeCalled();
@@ -160,7 +166,7 @@ class UserSynscSubscriberTest extends UnitTestCase {
   /**
    * @test
    */
-  public function onUserSyncShouldSyncOodiUidWhenItHasChanged() {
+  public function onUserSyncShouldSyncHyPersonIdWhenItHasChanged() {
     $this->fieldItemList->setValue(Argument::any())->shouldBeCalled();
     $this->event->markAccountChanged()->shouldBeCalled();
 

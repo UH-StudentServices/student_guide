@@ -1,16 +1,16 @@
-uuid: a21b32cf-0fc4-47c9-b5de-3d01e1ca1a67
-langcode: en
+uuid: 00219722-80bf-4d86-831e-b8d67e7c39cd
+langcode: fi
 status: true
 dependencies:
   config:
-    - field.storage.user.field_oodi_uid
+    - field.storage.user.field_hypersonid
   module:
     - user
-id: user.user.field_oodi_uid
-field_name: field_oodi_uid
+id: user.user.field_hypersonid
+field_name: field_hypersonid
 entity_type: user
 bundle: user
-label: 'Oodi UID'
+label: hyPersonId
 description: ''
 required: false
 translatable: false

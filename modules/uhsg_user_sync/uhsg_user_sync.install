@@ -9,3 +9,23 @@ function uhsg_user_sync_update_8001() {
   $config->set('common_name_field_name', 'field_common_name');
   $config->save(TRUE);
 }
+
+/**
+ * Add hypersonid field mapping configuration.
+ */
+function uhsg_user_sync_update_8002() {
+  $config_factory = \Drupal::configFactory();
+  $config = $config_factory->getEditable('uhsg_user_sync.settings');
+  $config->set('hyPersonId_field_name', 'field_hypersonid');
+  $config->save(TRUE);
+}
+
+/**
+ * Delete oodiUid field mapping configuration.
+ */
+function uhsg_user_sync_update_8003() {
+  $config_factory = \Drupal::configFactory();
+  $config = $config_factory->getEditable('uhsg_user_sync.settings');
+  $config->clear('oodiUID_field_name');
+  $config->save(TRUE);
+}

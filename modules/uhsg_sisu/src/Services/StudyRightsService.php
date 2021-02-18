@@ -89,28 +89,28 @@ class StudyRightsService implements StudyRightsServiceInterface {
   /**
    * Fetch studyrights for person.
    *
-   * @param string $oodiId
-   *   Student Number.
+   * @param string $hyPersonId
+   *   Sisu ID.
    *
    * @return array|null
    *   raw data or NULL.
    */
-  public function fetchStudyRightsData($oodiId) {
+  public function fetchStudyRightsData($hyPersonId) {
     // Fetch from mockdata based on configuration
     if ($this->config->get('uhsg_sisu_mock_response', self::UHSG_SISU_MOCK_RESPONSE)) {
       return $this->fetchStudyRightsMockData();
     }
 
     // Fetch from static storage if it has data.
-    if (is_array($this->studyRightsData) && array_key_exists($oodiId, $this->studyRightsData)) {
-      return $this->studyRightsData[$oodiId];
+    if (is_array($this->studyRightsData) && array_key_exists($hyPersonId, $this->studyRightsData)) {
+      return $this->studyRightsData[$hyPersonId];
     }
 
     // StudyRights Query
     $query = [
       "operationName" => "fetchStudyRights",
       "variables" => [
-        "id" => "hy-hlo-" . $oodiId,
+        "id" => $hyPersonId,
       ],
       "query" => 'query fetchStudyRights($id: ID!) {
         private_person(id: $id) {
@@ -180,8 +180,8 @@ class StudyRightsService implements StudyRightsServiceInterface {
       $data = $this->sisuService->apiRequest($query);
 
       // Save to static storage.
-      $this->studyRightsData[$oodiId] = $data;
-      return $this->studyRightsData[$oodiId];
+      $this->studyRightsData[$hyPersonId] = $data;
+      return $this->studyRightsData[$hyPersonId];
 
     }
     catch (\Exception $e) {
@@ -196,21 +196,21 @@ class StudyRightsService implements StudyRightsServiceInterface {
   /**
    * get all active studyrights for person.
    *
-   * @param string $oodiId
-   *   Student Number.
+   * @param string $hyPersonId
+   *   Sisu ID.
    *
    * @return array|null
    *   array of studyright obj or NULL.
    */
-  public function getActiveStudyRights($oodiId) {
+  public function getActiveStudyRights($hyPersonId) {
     // Initialize variables.
     $data = NULL;
     $sisuResponse = NULL;
     $date_today = date('Y-m-d', time());
 
     // Fetch studyrightsdata for student.
-    if ($oodiId) {
-      $sisuResponse = (array) $this->fetchStudyRightsData($oodiId);
+    if ($hyPersonId) {
+      $sisuResponse = (array) $this->fetchStudyRightsData($hyPersonId);
     }
 
     // Log full response for convenient debugging (enabled on local/qa).
@@ -224,7 +224,7 @@ class StudyRightsService implements StudyRightsServiceInterface {
     // Proper Response Handling. Note: this is not a Guzzle object!
     if (!empty($sisuResponse['data']['private_person']['studyRights'])) {
       $data = $sisuResponse;
-    }else{
+    } else {
       // Make sure we have results to loop trough.
       return null;
     }
@@ -234,7 +234,7 @@ class StudyRightsService implements StudyRightsServiceInterface {
     $studyrights = $data['data']['private_person']['studyRights'];
 
     // Get primarystudyright from data.
-    $primarystudyright = $this->getPrimaryStudentDegreeProgram($oodiId);
+    $primarystudyright = $this->getPrimaryStudentDegreeProgram($hyPersonId);
 
     $active_studyrights = [];
     // Loop trough studyrights and save active studyrights.
@@ -283,26 +283,26 @@ class StudyRightsService implements StudyRightsServiceInterface {
    * Get Student Primary Degree Program. This will follow the PrimalityChain
    * and find the Primary Degree Program based on the data in there.
    *
-   * @param int $oodiId
-   *   User Oodi ID.
+   * @param string $hyPersonId
+   *   Sisu ID.
    *
    * @return \Psr\Http\Message\ResponseInterface
    *   Response object.
    */
-  public function getPrimaryStudentDegreeProgram($oodiId) {
+  public function getPrimaryStudentDegreeProgram($hyPersonId) {
     // Initialize variables.
     $data = NULL;
     $sisuResponse = NULL;
 
     // Fetch studyrightsdata for student.
-    if ($oodiId) {
-      $sisuResponse = (array) $this->fetchStudyRightsData($oodiId);
+    if ($hyPersonId) {
+      $sisuResponse = (array) $this->fetchStudyRightsData($hyPersonId);
     }
 
     // Proper Response Handling.
     if (!empty($sisuResponse)) {
       $data = $sisuResponse;
-    }else{
+    } else {
       // Make sure we have results to loop trough.
       return null;
     }
@@ -434,26 +434,5 @@ class StudyRightsService implements StudyRightsServiceInterface {
    */
   private function log($message, $context = [], $severity = RfcLogLevel::NOTICE) {
     $this->loggerFactory->get('uhsg_sisu')->log($severity, $message, $context);
-  }
-
-  /**
-   * Guzzle exception logger.
-   *
-   * @param GuzzleHttp\Exception\GuzzleException $error
-   *   Guzzle exception.
-   */
-  private function guzzleErrorLog(GuzzleException $error) {
-    $response_info = '';
-
-    // Get the original response.
-    if ($response = $error->getResponse()) {
-      // Get the info returned from the remote server.
-      $response_info = $response->getBody()->getContents();
-    }
-
-    // Log the error.
-    $this->log('API connection error. Error details are as follows:<pre>@response</pre>', [
-      '@response' => print_r(Json::decode($response_info), TRUE),
-    ], RfcLogLevel::ERROR);
   }
 }

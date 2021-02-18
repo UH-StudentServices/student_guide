@@ -61,11 +61,11 @@ class AvatarService {
    */
   public function getAvatar() {
     $avatarUrl = NULL;
-    $oodiUid = $this->getOodiUid();
+    $hyPersonId = $this->gethyPersonId();
 
-    if ($oodiUid) {
-      $avatarUrl = $this->getAvatarUrlFromCache($oodiUid);
-      $apiUrl = $this->getApiUrl($oodiUid);
+    if ($hyPersonId) {
+      $avatarUrl = $this->getAvatarUrlFromCache($hyPersonId);
+      $apiUrl = $this->getApiUrl($hyPersonId);
 
       if ($apiUrl && !$avatarUrl) {
         try {
@@ -75,7 +75,7 @@ class AvatarService {
             $body = $apiResponse->getBody();
             $decodedBody = json_decode($body);
             $avatarUrl = $decodedBody->avatarImageUrl;
-            $this->setAvatarUrlToCache($oodiUid, $avatarUrl);
+            $this->setAvatarUrlToCache($hyPersonId, $avatarUrl);
           }
         }
         catch (\Exception $e) {
@@ -95,37 +95,37 @@ class AvatarService {
     return User::load($id);
   }
 
-  private function getAvatarUrlFromCache($oodiUid) {
-    $cacheKey = $this->getCacheKey($oodiUid);
+  private function getAvatarUrlFromCache($hyPersonId) {
+    $cacheKey = $this->getCacheKey($hyPersonId);
     $avatarUrl = $cacheKey ? $this->cache->get($cacheKey) : NULL;
 
     return $avatarUrl ? $avatarUrl->data : NULL;
   }
 
-  private function getOodiUid() {
-    $oodiUid = NULL;
+  private function getHyPersonId() {
+    $hyPersonId = NULL;
 
     if ($this->currentUser->isAuthenticated() && $this->currentUser->id() != 1) {
       $user = $this->loadUser($this->currentUser->id());
-      $oodiUid = $user->get('field_oodi_uid')->getString();
+      $hyPersonId = $user->get('field_hypersonid')->getString();
     }
 
-    return $oodiUid;
+    return $hyPersonId;
   }
 
-  private function getApiUrl($oodiUid) {
+  private function getApiUrl($hyPersonId) {
     $apiBaseUrl = $this->config->get('api_base_url');
     $apiPath = $this->config->get('api_path');
 
-    return isset($apiBaseUrl, $apiPath, $oodiUid) ? $apiBaseUrl . $apiPath . $oodiUid : NULL;
+    return isset($apiBaseUrl, $apiPath, $hyPersonId) ? $apiBaseUrl . $apiPath . $hyPersonId : NULL;
   }
 
-  private function setAvatarUrlToCache($oodiUid, $avatarUrl) {
-    $this->cache->set($this->getCacheKey($oodiUid), $avatarUrl, $this->getCacheExpireTimestamp());
+  private function setAvatarUrlToCache($hyPersonId, $avatarUrl) {
+    $this->cache->set($this->getCacheKey($hyPersonId), $avatarUrl, $this->getCacheExpireTimestamp());
   }
 
-  private function getCacheKey($oodiUid) {
-    return $oodiUid ? self::CACHE_KEY_PREFIX . $oodiUid : NULL;
+  private function getCacheKey($hyPersonId) {
+    return $hyPersonId ? self::CACHE_KEY_PREFIX . $hyPersonId : NULL;
   }
 
   private function getCacheExpireTimestamp() {
