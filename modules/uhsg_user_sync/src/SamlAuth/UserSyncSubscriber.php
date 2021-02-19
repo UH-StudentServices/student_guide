@@ -486,7 +486,7 @@ class UserSyncSubscriber implements EventSubscriberInterface {
             }
           }
         }
-      }else{
+      } else {
         // $studyrights == null?
         \Drupal::logger('uhsg_oprek')->info('setTechnicalDegreeProgrammes(),
           student_number: <pre>@student_number<br></pre>
