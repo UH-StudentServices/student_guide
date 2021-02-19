@@ -250,9 +250,9 @@ class StudyRightsService implements StudyRightsServiceInterface {
         $studyrightdegree = new StudyRight($studyrightdegreeprogram);
 
         // If primary, then set it so.
-       if($primarystudyright['id'] == $studyright['id']) {
-         $studyrightdegree->setPrimary(TRUE);
-       }
+        if($primarystudyright['id'] == $studyright['id']) {
+          $studyrightdegree->setPrimary(TRUE);
+        }
 
         $active_studyrights[] = $studyrightdegree;
       }
