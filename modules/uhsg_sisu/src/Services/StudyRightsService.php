@@ -250,9 +250,9 @@ class StudyRightsService implements StudyRightsServiceInterface {
         $studyrightdegree = new StudyRight($studyrightdegreeprogram);
 
         // If primary, then set it so.
-       if($primarystudyright['id'] == $studyright['id']) {
-         $studyrightdegree->setPrimary(TRUE);
-       }
+        if($primarystudyright['id'] == $studyright['id']) {
+          $studyrightdegree->setPrimary(TRUE);
+        }
 
         $active_studyrights[] = $studyrightdegree;
       }
@@ -408,8 +408,8 @@ class StudyRightsService implements StudyRightsServiceInterface {
       // If we have a match, then we need to modify our degreeprogram before returning it.
       if (!empty($oodiMapping['oodiSpecialisationCode']) && !empty($specialisation['name'])) {
         $degreeProgram['code'] .= $oodiMapping['oodiSpecialisationCode'];
-        if(!empty($degreeProgram[$langcode]['name']) && !empty($specialisation[$langcode]['name'])){
-          $degreeProgram[$langcode]['name'] .= $specialisation[$langcode]['name'];
+        if(!empty($degreeProgram['name'][$langcode]) && !empty($specialisation['name'][$langcode])){
+          $degreeProgram['name'][$langcode] .= $specialisation['name'][$langcode];
         }
       }
     }
