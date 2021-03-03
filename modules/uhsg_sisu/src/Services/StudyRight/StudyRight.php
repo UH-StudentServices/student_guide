@@ -49,8 +49,8 @@ class StudyRight {
    */
   public function getCode() {
     // If "erikoislääkärit".
-    if(getSpecialDoctorCode($this->code)) {
-      return getSpecialDoctorCode($this->code);
+    if(getSpecialCode($this->code)) {
+      return getSpecialCode($this->code);
     }
     // Else.
     else {
@@ -59,19 +59,19 @@ class StudyRight {
   }
 
   /**
-   * Handle special case for specialdoctors.
+   * Handle special case for Special Sisu Codes.
    *
    * @param $code
    */
-  protected function getSpecialDoctorCode($code) {
-    $specialDoctorCodes = [
+  protected function getSpecialCode($code) {
+    $specialCodes = [
       '320018', // Special Doctors 5 year education.
       '320019', // Special Doctors 6 year education.
       '320006', // Special dentistry education.
       '220102' // Professional Licenciates.
     ];
 
-    if(in_array(substr($code, 0, 6), $specialDoctorCodes)) {
+    if(in_array(substr($code, 0, 6), $specialCodes)) {
       return substr($code, 0, 6);
     } else {
       return NULL;
