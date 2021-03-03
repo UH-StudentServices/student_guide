@@ -2,6 +2,7 @@
 
 ## 1.xx-dev
 Release date: ??.??.????
+* HUB-776 - Handle special sisu codes with studyrights.
 
 ## 1.58
 Release date: 09.02.2021
