@@ -2,6 +2,7 @@
 
 ## 1.xx-dev
 Release date: ??.??.????
+* HUB-776 - Handle special sisu codes with studyrights.
 * HUB-849 - Updated Video Embed UniTube to 1.0-alpha2 for www2-subdomain support.
 
 ## 1.58

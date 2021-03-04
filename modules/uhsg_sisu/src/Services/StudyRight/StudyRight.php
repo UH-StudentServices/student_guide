@@ -15,7 +15,7 @@ class StudyRight {
   /**
    * Save the code for studyright.
    */
-  public $code;  
+  public $code;
 
   /**
    * StudyRight constructor.
@@ -48,6 +48,33 @@ class StudyRight {
    * {@inheritdoc}
    */
   public function getCode() {
-    return $this->code;
+    // If "erikoislääkärit".
+    if(getSpecialCode($this->code)) {
+      return getSpecialCode($this->code);
+    }
+    // Else.
+    else {
+      return $this->code;
+    }
+  }
+
+  /**
+   * Handle special case for Special Sisu Codes.
+   *
+   * @param $code
+   */
+  protected function getSpecialCode($code) {
+    $specialCodes = [
+      '320018', // Special Doctors 5 year education.
+      '320019', // Special Doctors 6 year education.
+      '320006', // Special dentistry education.
+      '220102' // Professional Licenciates.
+    ];
+
+    if(in_array(substr($code, 0, 6), $specialCodes)) {
+      return substr($code, 0, 6);
+    } else {
+      return NULL;
+    }
   }
 }
