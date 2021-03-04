@@ -33,16 +33,16 @@
         },
         {
             "name": "UH-StudentServices/video_embed_unitube",
-            "version": "1.0-alpha1",
+            "version": "1.0-alpha2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/UH-StudentServices/video_embed_unitube.git",
-                "reference": "f87cd650f3bbc2e07a489199a6ba3b5e7f1f25c6"
+                "reference": "5aa080ba37c32351d993cf892cbf1dec39019bbf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/UH-StudentServices/video_embed_unitube/zipball/f87cd650f3bbc2e07a489199a6ba3b5e7f1f25c6",
-                "reference": "f87cd650f3bbc2e07a489199a6ba3b5e7f1f25c6",
+                "url": "https://api.github.com/repos/UH-StudentServices/video_embed_unitube/zipball/5aa080ba37c32351d993cf892cbf1dec39019bbf",
+                "reference": "5aa080ba37c32351d993cf892cbf1dec39019bbf",
                 "shasum": ""
             },
             "require": {
@@ -54,10 +54,10 @@
             ],
             "description": "Use UniTube video URLs while embedding your video with Video Embed Field module.",
             "support": {
-                "source": "https://github.com/UH-StudentServices/video_embed_unitube/tree/1.0-alpha1",
+                "source": "https://github.com/UH-StudentServices/video_embed_unitube/tree/1.0-alpha2",
                 "issues": "https://github.com/UH-StudentServices/video_embed_unitube/issues"
             },
-            "time": "2017-08-08T13:21:54+00:00"
+            "time": "2021-03-03T13:43:17+00:00"
         },
         {
             "name": "asm89/stack-cors",
