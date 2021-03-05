@@ -1,0 +1,8 @@
+image_styles:
+  image_full_width: image_full_width
+  news_teaser_image: news_teaser_image
+  thumbnail: thumbnail
+  paragraph_image: 0
+  theme_teaser_image_desktop: 0
+  theme_teaser_image_mobile: 0
+  theme_teaser_image_tablet: 0
