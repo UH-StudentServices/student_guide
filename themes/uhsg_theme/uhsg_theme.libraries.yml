@@ -67,6 +67,13 @@ menu_toggle:
     - core/jquery.once
     - core/matchMedia
 
+tabs:
+  version: 1.x
+  js:
+    js/tabs.js: {}
+  dependencies:
+    - uhsg_theme/a11y_accordion_tabs
+
 tooltip:
   version: 1.x
   js:
