@@ -17,6 +17,9 @@ h2 {
   @include font-size(30px, 26px);
   text-transform: uppercase;
 }
+.h2--low {
+  text-transform: none;
+}
 
 h3 {
   @include font-size(23px, 23px);
