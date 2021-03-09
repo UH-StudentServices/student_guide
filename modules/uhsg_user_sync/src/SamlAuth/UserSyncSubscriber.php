@@ -371,7 +371,7 @@ class UserSyncSubscriber implements EventSubscriberInterface {
 
     // Use Oodi Service
     // Map study rights to known degree programmes and create flaggings
-    if (!$use_sisu_service && $study_rights = $this->oprekService->getStudyRights(formatHyPersonId($hyPersonId))) {
+    if (!$use_sisu_service && $study_rights = $this->oprekService->getStudyRights($this->formatHyPersonId($hyPersonId))) {
       // Debug Studyright Data
       if (Settings::get('uhsg_oprek_add_debug_logging', self::UHSG_OPREK_ADD_DEBUG_LOGGING)) {
         // Loop trough all oodi studyrights
