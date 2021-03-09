@@ -3385,7 +3385,7 @@ html {
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 @media (min-width: 48em) {
@@ -3458,7 +3458,7 @@ h1 {
 
 @media (max-width: 48em) {
   h1 {
-    font-size: 2.85714rem;
+    font-size: 2.5rem;
   }
 }
 
@@ -3469,7 +3469,7 @@ h2, .h2 {
 
 @media (max-width: 48em) {
   h2, .h2 {
-    font-size: 2.28571rem;
+    font-size: 2rem;
   }
 }
 
@@ -3479,7 +3479,7 @@ h3, .h3 {
 
 @media (max-width: 48em) {
   h3, .h3 {
-    font-size: 1.85714rem;
+    font-size: 1.625rem;
   }
 }
 
@@ -3489,7 +3489,7 @@ h4, legend, .logo-block__content .logo-block__sitename, .h4 {
 
 @media (max-width: 48em) {
   h4, legend, .logo-block__content .logo-block__sitename, .h4 {
-    font-size: 1.42857rem;
+    font-size: 1.25rem;
   }
 }
 
@@ -3499,7 +3499,7 @@ h5 {
 
 @media (max-width: 48em) {
   h5 {
-    font-size: 1.14286rem;
+    font-size: 1rem;
   }
 }
 
@@ -3509,7 +3509,7 @@ h6 {
 
 @media (max-width: 48em) {
   h6 {
-    font-size: 1rem;
+    font-size: 0.875rem;
   }
 }
 
@@ -3527,7 +3527,7 @@ p {
 
 @media (max-width: 48em) {
   p {
-    font-size: 1.14286rem;
+    font-size: 1rem;
   }
 }
 
@@ -3588,7 +3588,7 @@ blockquote p {
 @media (max-width: 48em) {
   blockquote,
   blockquote p {
-    font-size: 1.14286rem;
+    font-size: 1rem;
   }
 }
 
@@ -5616,7 +5616,7 @@ a.label:hover {
 
 @media (max-width: 48em) {
   .box-story__title {
-    font-size: 1.42857rem;
+    font-size: 1.25rem;
   }
 }
 
@@ -5877,7 +5877,7 @@ a.label:hover {
 
 @media (max-width: 48em) {
   .box-story--related .box-story__content {
-    font-size: 1rem;
+    font-size: 0.875rem;
   }
 }
 
@@ -5887,7 +5887,7 @@ a.label:hover {
 
 @media (max-width: 48em) {
   .box-story--related .box-story__content p {
-    font-size: 1rem;
+    font-size: 0.875rem;
   }
 }
 
@@ -7411,7 +7411,7 @@ ul.pager > li.pager__page a {
 
 @media (max-width: 48em) {
   .page-title--lowercase {
-    font-size: 2.14286rem;
+    font-size: 1.875rem;
   }
 }
 
@@ -7979,7 +7979,7 @@ ul.pager > li.pager__page a {
 
 @media (max-width: 48em) {
   .textarea-readmore__text {
-    font-size: 1.42857rem;
+    font-size: 1.25rem;
   }
 }
 
@@ -10685,6 +10685,89 @@ ul.pager > li a:focus {
 
 html {
   font-size: 100%;
+}
+
+/*
+  Styleguide override:
+  section: 3.1
+  title: Headings
+  template: 3_1_headings
+*/
+h1 {
+  font-size: 2.5rem;
+}
+
+@media (max-width: 48em) {
+  h1 {
+    font-size: 1.875rem;
+  }
+}
+
+h2, .h2 {
+  font-size: 1.875rem;
+  text-transform: uppercase;
+}
+
+@media (max-width: 48em) {
+  h2, .h2 {
+    font-size: 1.625rem;
+  }
+}
+
+h3, .h3 {
+  font-size: 1.4375rem;
+}
+
+@media (max-width: 48em) {
+  h3, .h3 {
+    font-size: 1.4375rem;
+  }
+}
+
+h4, legend, .logo-block__content .logo-block__sitename, .h4 {
+  font-size: 1.25rem;
+}
+
+@media (max-width: 48em) {
+  h4, legend, .logo-block__content .logo-block__sitename, .h4 {
+    font-size: 1.125rem;
+  }
+}
+
+h5 {
+  font-size: 1.125rem;
+}
+
+@media (max-width: 48em) {
+  h5 {
+    font-size: 1rem;
+  }
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+@media (max-width: 48em) {
+  h6 {
+    font-size: 0.875rem;
+  }
+}
+
+/*
+  Styleguide override:
+  section: 3.2
+  title: Paragraph
+  template: 3_2_paragraphs
+*/
+p {
+  font-size: 1rem;
+}
+
+@media (max-width: 48em) {
+  p {
+    font-size: 0.875rem;
+  }
 }
 
 /*
