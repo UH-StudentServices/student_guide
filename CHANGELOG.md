@@ -2,6 +2,7 @@
 
 ## 1.xx-dev
 Release date: ??.??.????
+* HUB-848 - Handle anchor links inside tab containers.
 
 
 
