@@ -2,7 +2,7 @@ name: Eduviewer
 type: module
 description: Embed Eduviewer as a paragraph.
 core: 8.x
-version: VERSION
+version: 1.59
 core_version_requirement: ^8 || ^9
 package: Student Guide
 dependencies:
