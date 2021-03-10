@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b4faa4907078c29d21837cfe83d2ef41",
+    "content-hash": "cfbe41095e342e1dc95672a0ac81f2fb",
     "packages": [
         {
             "name": "UH-StudentServices/uh_courses_embed",
@@ -3458,6 +3458,58 @@
             ],
             "support": {
                 "source": "https://git.drupalcode.org/project/honeypot"
+            }
+        },
+        {
+            "name": "drupal/jsonapi_image_styles",
+            "version": "2.0.0-beta2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/jsonapi_image_styles.git",
+                "reference": "2.0.0-beta2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/jsonapi_image_styles-2.0.0-beta2.zip",
+                "reference": "2.0.0-beta2",
+                "shasum": "541cf83aca247e899e6724b9b425fe9c79b5aa2d"
+            },
+            "require": {
+                "drupal/core": "^8.7|9.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.0-beta2",
+                    "datestamp": "1603350161",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Alona O'neill",
+                    "homepage": "https://www.drupal.org/u/alonaoneill"
+                },
+                {
+                    "name": "Timo Kirkkala",
+                    "homepage": "https://www.drupal.org/u/kirkkala"
+                },
+                {
+                    "name": "Jeffrey Bertoen",
+                    "homepage": "https://www.drupal.org/u/jefuri"
+                }
+            ],
+            "description": "JSON:API Image Styles provides a means to expose image styles to JSON:API.",
+            "homepage": "https://www.drupal.org/project/jsonapi_image_styles",
+            "support": {
+                "source": "https://git.drupalcode.org/project/jsonapi_image_styles"
             }
         },
         {
@@ -12822,6 +12874,7 @@
         "drupal/view_unpublished": 20,
         "uh-studentservices/uh_courses_embed": 20,
         "drupal/maxlength": 20,
+        "drupal/jsonapi_image_styles": 10,
         "drupal/upgrade_rector": 15
     },
     "prefer-stable": true,
