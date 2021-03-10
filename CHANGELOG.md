@@ -3,7 +3,7 @@
 ## 1.xx-dev
 Release date: ??.??.????
 * HUB-848 - Handle anchor links inside tab containers.
-
+* HUB-760 - Modifying font sizes and heading levels.
 
 
 ## 1.59
