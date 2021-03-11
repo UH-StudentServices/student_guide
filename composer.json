@@ -169,7 +169,8 @@
                 "2791693-38": "https://www.drupal.org/files/issues/2019-03-16/2791693-38.patch",
                 "3101344-20": "https://www.drupal.org/files/issues/2020-02-12/translations_not_save_invalid_path-3101344-20.patch",
                 "2972308-41 - content_translation performance": "https://www.drupal.org/files/issues/2019-12-03/allow-users-to-translate-editable-content-2972308-41.patch",
-                "3021671-7": "https://www.drupal.org/files/issues/2018-12-28/node_revisions_issue-3021671-07.patch"
+                "3021671-7": "https://www.drupal.org/files/issues/2018-12-28/node_revisions_issue-3021671-07.patch",
+                "2449895-80": "https://www.drupal.org/files/issues/2020-06-01/2449895-2-80.patch"
             }
         }
     }
