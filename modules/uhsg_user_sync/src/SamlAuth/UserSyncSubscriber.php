@@ -11,7 +11,6 @@ use Drupal\flag\FlagInterface;
 use Drupal\flag\FlagServiceInterface;
 use Drupal\samlauth\Event\SamlAuthEvents;
 use Drupal\samlauth\Event\SamlAuthUserSyncEvent;
-use Drupal\uhsg_oprek\Oprek\OprekServiceInterface;
 use Drupal\uhsg_sisu\Services\StudyRightsServiceInterface;
 use Drupal\uhsg_samlauth\AttributeParser;
 use Drupal\uhsg_samlauth\AttributeParserInterface;
@@ -31,11 +30,6 @@ class UserSyncSubscriber implements EventSubscriberInterface {
    * @var \Drupal\Core\Config\ImmutableConfig
    */
   protected $config;
-
-  /**
-   * @var \Drupal\uhsg_oprek\Oprek\OprekServiceInterface
-   */
-  protected $oprekService;
 
   /**
    * @var Drupal\uhsg_sisu\Services\StudyRightsServiceInterface
@@ -65,24 +59,14 @@ class UserSyncSubscriber implements EventSubscriberInterface {
   /**
    * Add debug logging?
    * This can be overridden in settings.local.php with:
-   *   $settings['uhsg_oprek_add_debug_logging'] = TRUE;
+   *   $settings['uhsg_user_sync_add_debug_logging'] = TRUE;
    *
    * @var bool
    */
-  const UHSG_OPREK_ADD_DEBUG_LOGGING = FALSE;
+  const UHSG_USER_SYNC_ADD_DEBUG_LOGGING = FALSE;
 
-  /**
-   * Use Sisu
-   * This can be overridden in settings.local.php with:
-   *   $settings['uhsg_oprek_use_sisu_service'] = FALSE;
-   *
-   * @var bool
-   */
-  const UHSG_USER_SYNC_USE_SISU = FALSE;
-
-  public function __construct(ConfigFactoryInterface $configFactory, OprekServiceInterface $oprekService, StudyRightsServiceInterface $studyRightsService, FlagServiceInterface $flagService, EntityTypeManagerInterface $entityTypeManager, LoggerChannel $logger, MessengerInterface $messenger) {
+  public function __construct(ConfigFactoryInterface $configFactory, StudyRightsServiceInterface $studyRightsService, FlagServiceInterface $flagService, EntityTypeManagerInterface $entityTypeManager, LoggerChannel $logger, MessengerInterface $messenger) {
     $this->config = $configFactory->get('uhsg_user_sync.settings');
-    $this->oprekService = $oprekService;
     $this->studyRightsService = $studyRightsService;
     $this->flagService = $flagService;
     $this->entityTypeManager = $entityTypeManager;
@@ -363,140 +347,80 @@ class UserSyncSubscriber implements EventSubscriberInterface {
     $known_degree_programmes_array = (array) $known_degree_programmes;
     $known_degree_programme_keys = array_keys($known_degree_programmes_array);
 
-    // Should we use Sisu or Oodi?
-    $use_sisu_service = Settings::get('uhsg_oprek_use_sisu_service', self::UHSG_USER_SYNC_USE_SISU);
-
     // Keep track of new technical degree programmes
     $added = 0;
 
-    // Use Oodi Service
-    // Map study rights to known degree programmes and create flaggings
-    if (!$use_sisu_service && $study_rights = $this->oprekService->getStudyRights($this->formatHyPersonId($hyPersonId))) {
-      // Debug Studyright Data
-      if (Settings::get('uhsg_oprek_add_debug_logging', self::UHSG_OPREK_ADD_DEBUG_LOGGING)) {
-        // Loop trough all oodi studyrights
-        foreach ($study_rights as $study_right) {
+    // Map StudentDegreeProgram to a known degree programme and create flagging
+    $studyrights = $this->studyRightsService->getActiveStudyRights($hyPersonId);
+    if (!empty($studyrights)) {
+      $technical_condition_field_name = $this->config->get('technical_condition_field_name');
+      $primary_field_name = $this->config->get('primary_field_name');
+
+      // Loop trough all studyrights
+      foreach($studyrights as $studyright) {
+        $primary_flagging = '';
+        // If code matches our degree_program code then proceed
+        if (isset($known_degree_programmes[$studyright->getCode()])) {
+          // Flag the degree programme
+          $flag = $this->flagService->getFlagById('my_degree_programmes');
+
+          // Get potentially existing flagging, if not exist, then create.
+          /** @var \Drupal\flag\Entity\Flagging $flagging */
+          $flagging = $this->flagService->getFlagging($flag, $known_degree_programmes[$studyright->getCode()], $event->getAccount());
+          if (!$flagging) {
+            $flagging = $this->flagService->flag($flag, $known_degree_programmes[$studyright->getCode()], $event->getAccount());
+          }
+
+          // Load the flagging, so we can set some field values
+          // If "technical condition" field exists, set it to TRUE
+          if ($flagging->hasField($technical_condition_field_name)) {
+            $flagging->set($technical_condition_field_name, TRUE);
+
+            // If targeted code is 'primary' and primary field exists, then
+            // set the primary to TRUE.
+            if ($studyright->isPrimary() && $flagging->hasField($primary_field_name)) {
+              // Primary flagging found?
+              $primary_flagging = 'Setting primary degree programme : ' . $studyright->getCode();
+              $flagging->set($primary_field_name, TRUE);
+            }
+
+            // And save the flagging
+            $flagging->save();
+            $added++;
+          }
+        }
+      }
+
+      // Debug sisu data.
+      if (Settings::get('uhsg_user_sync_add_debug_logging', self::UHSG_USER_SYNC_ADD_DEBUG_LOGGING)) {
+        // Loop trough all studyrights
+        foreach($studyrights as $studyright) {
           if (!empty($studyright)) {
             // Debug (a lot of) study right data. Enable only temporarily.
-            \Drupal::logger('uhsg_oprek')->info('setTechnicalDegreeProgrammes(),
-              targeted codes are: <pre>@targeted_codes</pre> and
+            \Drupal::logger('uhsg_user_sync')->info('setTechnicalDegreeProgrammes(),
+              student_number: <pre>@student_number<br></pre>
+              primary_flagging: <pre>@primary_flagging</pre>
+              targeted codes are: <pre>@targeted_codes<br></pre> and
               degree_programmes: <pre>@degree_programmes</pre>', [
-              '@targeted_codes' => print_r($study_right->getTargetedCodes(), TRUE),
+              '@primary_flagging' => print_r($primary_flagging, TRUE),
+              '@student_number' => print_r($hyPersonId, TRUE),
+              '@targeted_codes' => print_r($studyright->getCode(), TRUE),
               '@degree_programmes' => print_r($known_degree_programme_keys, TRUE),
             ]);
           }
         }
       }
-
-      $technical_condition_field_name = $this->config->get('technical_condition_field_name');
-      $primary_field_name = $this->config->get('primary_field_name');
-
-      foreach ($study_rights as $study_right) {
-        foreach ($study_right->getTargetedCodes() as $targeted_code) {
-          if (isset($known_degree_programmes[$targeted_code->getCode()])) {
-            // Flag the degree programme
-            $flag = $this->flagService->getFlagById('my_degree_programmes');
-
-            // Get potentially existing flagging, if not exist, then create.
-            /** @var \Drupal\flag\Entity\Flagging $flagging */
-            $flagging = $this->flagService->getFlagging($flag, $known_degree_programmes[$targeted_code->getCode()], $event->getAccount());
-            if (!$flagging) {
-              $flagging = $this->flagService->flag($flag, $known_degree_programmes[$targeted_code->getCode()], $event->getAccount());
-            }
-
-            // Load the flagging, so we can set some field values
-            // If "technical condition" field exists, set it to TRUE
-            if ($flagging->hasField($technical_condition_field_name)) {
-              $flagging->set($technical_condition_field_name, TRUE);
-
-              // If targeted code is 'primary' and primary field exists, then
-              // set the primary to TRUE.
-              if ($targeted_code->isPrimary() && $flagging->hasField($primary_field_name)) {
-                $flagging->set($primary_field_name, TRUE);
-              }
-
-              // And save the flagging
-              $flagging->save();
-              $added++;
-            }
-          }
-        }
-      }
+    } else {
+      // $studyrights == null?
+      \Drupal::logger('uhsg_user_sync')->info('setTechnicalDegreeProgrammes(),
+        student_number: <pre>@student_number<br></pre>
+        <pre>FAILED to find any studyrights!<br></pre>
+        degree_programmes: <pre>@degree_programmes</pre>', [
+        '@student_number' => print_r($hyPersonId, TRUE),
+        '@degree_programmes' => print_r($known_degree_programme_keys, TRUE),
+      ]);
     }
 
-    // Use Sisu Service
-    // Map StudentDegreeProgram to a known degree programme and create flagging
-    if($use_sisu_service){
-      $studyrights = $this->studyRightsService->getActiveStudyRights($hyPersonId);
-
-      if (!empty($studyrights)) {
-        $technical_condition_field_name = $this->config->get('technical_condition_field_name');
-        $primary_field_name = $this->config->get('primary_field_name');
-        // Loop trough all studyrights
-        foreach($studyrights as $studyright) {
-          $primary_flagging = '';
-          // If code matches our degree_program code then proceed
-          if (isset($known_degree_programmes[$studyright->getCode()])) {
-            // Flag the degree programme
-            $flag = $this->flagService->getFlagById('my_degree_programmes');
-
-            // Get potentially existing flagging, if not exist, then create.
-            /** @var \Drupal\flag\Entity\Flagging $flagging */
-            $flagging = $this->flagService->getFlagging($flag, $known_degree_programmes[$studyright->getCode()], $event->getAccount());
-            if (!$flagging) {
-              $flagging = $this->flagService->flag($flag, $known_degree_programmes[$studyright->getCode()], $event->getAccount());
-            }
-
-            // Load the flagging, so we can set some field values
-            // If "technical condition" field exists, set it to TRUE
-            if ($flagging->hasField($technical_condition_field_name)) {
-              $flagging->set($technical_condition_field_name, TRUE);
-
-              // If targeted code is 'primary' and primary field exists, then
-              // set the primary to TRUE.
-              if ($studyright->isPrimary() && $flagging->hasField($primary_field_name)) {
-                // Primary flagging found?
-                $primary_flagging = 'Setting primary degree programme : ' . $studyright->getCode();
-                $flagging->set($primary_field_name, TRUE);
-              }
-
-              // And save the flagging
-              $flagging->save();
-              $added++;
-            }
-          }
-        }
-
-        // Debug sisu data.
-        if (Settings::get('uhsg_oprek_add_debug_logging', self::UHSG_OPREK_ADD_DEBUG_LOGGING)) {
-          // Loop trough all studyrights
-          foreach($studyrights as $studyright) {
-            if (!empty($studyright)) {
-              // Debug (a lot of) study right data. Enable only temporarily.
-              \Drupal::logger('uhsg_oprek')->info('setTechnicalDegreeProgrammes(),
-                student_number: <pre>@student_number<br></pre>
-                primary_flagging: <pre>@primary_flagging</pre>
-                targeted codes are: <pre>@targeted_codes<br></pre> and
-                degree_programmes: <pre>@degree_programmes</pre>', [
-                '@primary_flagging' => print_r($primary_flagging, TRUE),
-                '@student_number' => print_r($hyPersonId, TRUE),
-                '@targeted_codes' => print_r($studyright->getCode(), TRUE),
-                '@degree_programmes' => print_r($known_degree_programme_keys, TRUE),
-              ]);
-            }
-          }
-        }
-      } else {
-        // $studyrights == null?
-        \Drupal::logger('uhsg_oprek')->info('setTechnicalDegreeProgrammes(),
-          student_number: <pre>@student_number<br></pre>
-          <pre>FAILED to find any studyrights!<br></pre>
-          degree_programmes: <pre>@degree_programmes</pre>', [
-          '@student_number' => print_r($hyPersonId, TRUE),
-          '@degree_programmes' => print_r($known_degree_programme_keys, TRUE),
-        ]);
-      }
-    }
     // Return TRUE if any flags were created.
     return $added > 0;
   }
@@ -517,22 +441,5 @@ class UserSyncSubscriber implements EventSubscriberInterface {
       }
     }
     return $known_degree_programmes;
-  }
-
-  /**
-   * Format hyPersonId and return only the OodiId part.
-   * @param $hyPersonId
-   * @return string
-   */
-  protected function formatHyPersonId($hyPersonId) {
-    $oodiId = NULL;
-
-    // Check if hyPersonId is oodi compatible and not Sisu Native.
-    // Check that end of string is numeric.
-    if(substr($hyPersonId, 0, 7) == "hy-hlo-" && is_numeric(substr($hyPersonId, 7))) {
-      $oodiId = substr($hyPersonId, 7);
-    }
-
-    return $oodiId;
   }
 }

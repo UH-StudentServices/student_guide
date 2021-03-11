@@ -2,7 +2,7 @@ services:
   uhsg_user_sync.saml_auth_user_sync_subscriber:
     class: Drupal\uhsg_user_sync\SamlAuth\UserSyncSubscriber
     factory: Drupal\uhsg_user_sync\SamlAuth\UserSyncSubscriberFactory::create
-    arguments: ['@config.factory', '@uhsg_oprek.oprek_service', '@uhsg_sisu.studyrightsservice', '@flag', '@entity_type.manager', '@logger.channel.uhsg_user_sync', '@messenger']
+    arguments: ['@config.factory', '@uhsg_sisu.studyrightsservice', '@flag', '@entity_type.manager', '@logger.channel.uhsg_user_sync', '@messenger']
     tags:
       - { name: event_subscriber }
 
