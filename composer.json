@@ -83,7 +83,8 @@
         "drupal/memcache": "^2.2",
         "drupal/entity_browser": "^2.5",
         "drupal/responsive_table_filter": "^1.2",
-        "drupal/jsonapi_image_styles": "^2.0@beta"
+        "drupal/jsonapi_image_styles": "^2.0@beta",
+        "drupal/openapi_jsonapi": "^3.0"
     },
     "repositories": {
         "0": {
