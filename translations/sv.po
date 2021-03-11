@@ -84,6 +84,9 @@ msgstr "Innhållsredaktörs behörighet ges till nedannämnda IAM-gruppens medle
 msgid "There is a problem with the connection to Oodi and your degree programmes cannot be shown."
 msgstr "Det har uppstått problem med förbindelsen till Oodi och dina utbildningsprogram kan inte visas."
 
+msgid "On this page"
+msgstr "På den här sidan"
+
 msgctxt "Search Filters"
 msgid "Degree programme specific instructions"
 msgstr "Utbildningsprogramspecifika anvisningar"

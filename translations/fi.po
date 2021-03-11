@@ -87,6 +87,9 @@ msgstr "Määritellyt roolit annetaan alla olevien IAM-ryhmien jäsenille. Jos h
 msgid "There is a problem with the connection to Oodi and your degree programmes cannot be shown."
 msgstr "Yhteys Oodiin ei toimi eikä opinto-oikeuksiesi mukaisia koulutusohjelmia voida näyttää."
 
+msgid "On this page"
+msgstr "Tällä sivulla"
+
 msgctxt "Search Filters"
 msgid "Degree programme specific instructions"
 msgstr "Koulutusohjelmakohtaiset ohjeet"
