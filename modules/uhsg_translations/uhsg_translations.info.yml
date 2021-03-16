@@ -1,0 +1,7 @@
+name: UHSG Translations
+type: module
+description: "Install and update hooks to update interface translations through code."
+core_version_requirement: ^8.8 || ^9
+package: UHSG
+dependencies:
+  - locale
