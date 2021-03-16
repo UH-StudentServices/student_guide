@@ -49,8 +49,8 @@ class StudyRight {
    */
   public function getCode() {
     // If "erikoislääkärit".
-    if(getSpecialCode($this->code)) {
-      return getSpecialCode($this->code);
+    if($this->getSpecialCode($this->code)) {
+      return $this->getSpecialCode($this->code);
     }
     // Else.
     else {
