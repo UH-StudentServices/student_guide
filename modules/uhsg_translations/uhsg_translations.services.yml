@@ -1,0 +1,4 @@
+services:
+  uhsg_translations.translation_helper:
+    class: Drupal\uhsg_translations\Helpers\TranslationHelper
+    arguments: ["@locale.storage"]
