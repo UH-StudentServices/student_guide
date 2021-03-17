@@ -53,6 +53,7 @@ module:
   noreqnewpass: 0
   openapi: 0
   openapi_jsonapi: 0
+  openapi_rest: 0
   options: 0
   paragraphs: 0
   path: 0
