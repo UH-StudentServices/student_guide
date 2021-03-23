@@ -2,11 +2,14 @@
 
 ## 1.xx-dev
 Release date: ??.??.????
+
+
+## 1.60
+Release date: 23.03.2021
 * HUB-846 - Enabling uhsg_translations for automatic translation imports, and a smoother release/deploy process.
 * HUB-860 - Fixing a Drupal core bug that was preventing translation file imports.
 * HUB-848 - Handle anchor links inside tab containers.
 * HUB-760 - Modifying font sizes and heading levels.
-
 
 ## 1.59
 Release date: 09.03.2021
