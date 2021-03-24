@@ -98,18 +98,16 @@
 
 <article {{ attributes.addClass(node_classes) }}>
   <div{{ content_attributes.addClass(container_classes) }}>
+    <div class="col-left">
+      {{ link_to_instructions_for_students }}
+      {{ themes }}
+    </div>
     <div class="col-main">
       <h1> {{ label }} </h1>
       {{ degree_programme_switcher }}
       {{ other_education_provider_switcher }}
       {{ content|without('field_article_paragraph', 'field_article_related') }}
     </div>
-    {% if (link_to_instructions_for_students or themes) %}
-      <div class="col-right">
-        {{ link_to_instructions_for_students }}
-        {{ themes }}
-      </div>
-    {% endif %}
   </div>
   {{ content.field_article_paragraph }}
   {% if content.field_article_related %}
