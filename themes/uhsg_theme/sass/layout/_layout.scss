@@ -92,16 +92,31 @@
   }
   .col-right {
     flex-basis: (100% / 3);
+    flex-shrink: 0;
     margin-left: 4em;
   }
 
   .col-left {
     flex-basis: (100% / 3);
+    flex-shrink: 0;
     margin-right: 4em;
   }
   .col-main {
     flex-basis: (100% / 3) * 2;
-    flex-grow: 2;
+    flex-grow: 1;
     min-width: 0;
+  }
+}
+
+@include breakpoint($medium) {
+  .col-right {
+    flex-basis: (100% / 4);
+  }
+
+  .col-left {
+    flex-basis: (100% / 4);
+  }
+  .col-main {
+    flex-basis: (100% / 2);
   }
 }

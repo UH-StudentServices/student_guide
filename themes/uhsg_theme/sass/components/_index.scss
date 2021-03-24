@@ -1,0 +1,15 @@
+/*
+ section: 9.1.1
+ title: Index
+ template: 9_1_1-index
+ description: Index of content
+*/
+.index {
+  @include breakpoint($small) {
+    columns: 1;
+  }
+
+  @include breakpoint($medium) {
+    columns: 2;
+  }
+}
