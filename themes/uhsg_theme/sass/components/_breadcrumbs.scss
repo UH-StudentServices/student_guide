@@ -1,5 +1,15 @@
 #block-breadcrumbs {
   padding-top: 1.5em;
+
+  .page-node-type-article & {
+    @include breakpoint($small) {
+      margin-left: calc(#{$side-column-width-medium} + #{$column-gutter});
+    }
+    
+    @include breakpoint($medium) {
+      margin-left: calc(#{$side-column-width} + #{$column-gutter});
+    }
+  }
 }
 
 .breadcrumbs {

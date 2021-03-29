@@ -91,18 +91,18 @@
     display: flex;
   }
   .col-right {
-    flex-basis: (100% / 3);
+    flex-basis: $side-column-width-medium;
     flex-shrink: 0;
-    margin-left: 4em;
+    margin-left: $column-gutter;
   }
 
   .col-left {
-    flex-basis: (100% / 3);
+    flex-basis: $side-column-width-medium;
     flex-shrink: 0;
-    margin-right: 4em;
+    margin-right: $column-gutter;
   }
   .col-main {
-    flex-basis: (100% / 3) * 2;
+    flex-basis: $main-column-width-medium;
     flex-grow: 1;
     min-width: 0;
   }
@@ -110,13 +110,13 @@
 
 @include breakpoint($medium) {
   .col-right {
-    flex-basis: (100% / 4);
+    flex-basis: $side-column-width;
   }
 
   .col-left {
-    flex-basis: (100% / 4);
+    flex-basis: $side-column-width;
   }
   .col-main {
-    flex-basis: (100% / 2);
+    flex-basis: $main-column-width;
   }
 }

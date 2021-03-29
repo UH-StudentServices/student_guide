@@ -8873,6 +8873,18 @@ li.avatar.avatar--default img {
   padding-top: 1.5em;
 }
 
+@media (min-width: 48em) {
+  .page-node-type-article #block-breadcrumbs {
+    margin-left: calc(33.33333% + 4em);
+  }
+}
+
+@media (min-width: 60em) {
+  .page-node-type-article #block-breadcrumbs {
+    margin-left: calc(25% + 4em);
+  }
+}
+
 .breadcrumbs {
   font-size: 0.875rem;
 }
