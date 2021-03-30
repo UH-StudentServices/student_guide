@@ -10,7 +10,6 @@ use Drupal\flag\FlagServiceInterface;
 use Drupal\samlauth\Event\SamlAuthEvents;
 use Drupal\samlauth\Event\SamlAuthUserSyncEvent;
 use Drupal\Tests\UnitTestCase;
-use Drupal\uhsg_oprek\Oprek\OprekServiceInterface;
 use Drupal\uhsg_sisu\Services\StudyRightsServiceInterface;
 use Drupal\uhsg_user_sync\SamlAuth\UserSyncSubscriber;
 use Drupal\user\UserInterface;
@@ -67,9 +66,6 @@ class UserSynscSubscriberTest extends UnitTestCase {
   /** @var \Drupal\Core\Messenger\MessengerInterface*/
   private $messenger;
 
-  /** @var \Drupal\uhsg_oprek\Oprek\OprekServiceInterface*/
-  private $oprekService;
-
   /** @var Drupal\uhsg_sisu\Services\StudyRightsServiceInterface*/
   private $studyRightsService;
 
@@ -122,7 +118,6 @@ class UserSynscSubscriberTest extends UnitTestCase {
     $this->flagService = $this->prophesize(FlagServiceInterface::class);
     $this->logger = $this->prophesize(LoggerChannel::class);
     $this->messenger = $this->prophesize(MessengerInterface::class);
-    $this->oprekService = $this->prophesize(OprekServiceInterface::class);
     $this->studyRightsService = $this->prophesize(StudyRightsServiceInterface::class);
 
     $this->container = $this->prophesize(ContainerInterface::class);
@@ -131,7 +126,6 @@ class UserSynscSubscriberTest extends UnitTestCase {
 
     $this->userSyncSubscriber = new UserSyncSubscriber(
       $this->configFactory->reveal(),
-      $this->oprekService->reveal(),
       $this->studyRightsService->reveal(),
       $this->flagService->reveal(),
       $this->entityTypeManager->reveal(),

@@ -8,4 +8,4 @@ package: Student Guide
 dependencies:
   - flag
   - samlauth
-  - uhsg_oprek
+  - uhsg_sisu
