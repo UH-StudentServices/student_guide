@@ -8606,6 +8606,18 @@ input.theme-transparent:hover[type="submit"], .theme-transparent.button--small:h
   color: #0479A4;
 }
 
+
+.theme-transparent.button--action-before:hover,
+.theme-transparent.button--action-before:hover:after,
+.theme-transparent-alt.button--action-before:hover,
+.theme-transparent-alt.button--action-before:hover:after,
+.button--action.theme-transparent:hover,
+.button--action.theme-transparent:hover:after,
+.button--action.theme-transparent-alt:hover,
+.button--action.theme-transparent-alt:hover:after {
+  background-color: transparent;
+}
+
 /*
  section: 3.7.8
  title: Button group (small buttons)
@@ -10571,10 +10583,15 @@ ul.pager > li a:focus {
 }
 
 .tag-list__item {
+  color: #555555;
   display: inline;
   padding-right: 0;
   margin-right: 1em;
   vertical-align: initial;
+}
+
+.tag-list__item a {
+  color: #555555;
 }
 
 .tag-list__item:after {

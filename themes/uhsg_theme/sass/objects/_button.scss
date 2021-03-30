@@ -51,6 +51,11 @@
     &:after {
       color: $blue-a11y;
     }
+
+    &:hover,
+    &:hover:after {
+      background-color: transparent;
+    }
   }
 }
 
