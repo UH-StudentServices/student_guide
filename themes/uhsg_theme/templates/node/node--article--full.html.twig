@@ -81,8 +81,7 @@
   set container_classes = [
     'container',
     'tube',
-    'article__content',
-    'col-container'
+    'article__content'
   ]
 %}
 
@@ -98,15 +97,22 @@
 
 <article {{ attributes.addClass(node_classes) }}>
   <div{{ content_attributes.addClass(container_classes) }}>
-    <div class="col-left">
-      {{ link_to_instructions_for_students }}
-      {{ themes }}
+    <div class="col-container">
+      <div class="col-left"></div>
+      <div class="col-main">
+        <h1> {{ label }} </h1>
+      </div>
     </div>
-    <div class="col-main">
-      <h1> {{ label }} </h1>
-      {{ degree_programme_switcher }}
-      {{ other_education_provider_switcher }}
-      {{ content|without('field_article_paragraph', 'field_article_related') }}
+    <div class="col-container">
+      <div class="col-left">
+        {{ link_to_instructions_for_students }}
+        {{ themes }}
+      </div>
+      <div class="col-main">
+        {{ degree_programme_switcher }}
+        {{ other_education_provider_switcher }}
+        {{ content|without('field_article_paragraph', 'field_article_related') }}
+      </div>
     </div>
   </div>
   {{ content.field_article_paragraph }}
