@@ -8529,6 +8529,12 @@ input[type="text"].search-form-large__input {
 }
 
 /* STUDENT GUIDE THEMING */
+/**
+ * New grid width calculations are derived from these premises:
+ * - FULL = 12*GRID + 11*GUTTER
+ * - SIDE_COL = 4*GRID + 3*GUTTER
+ * - MAIN_COL = (8*GRID + 7*GUTTER) - 16px
+ */
 /*
  section: 3.7
  title: Buttons
@@ -8786,41 +8792,26 @@ input.theme-transparent:hover[type="submit"], .theme-transparent.button--small:h
     display: flex;
   }
   .col-right {
-    -ms-flex-preferred-size: 33.33333%;
-        flex-basis: 33.33333%;
+    -ms-flex-preferred-size: calc((100%/3) - 64px/3);
+        flex-basis: calc((100%/3) - 64px/3);
     -ms-flex-negative: 0;
         flex-shrink: 0;
-    margin-left: 4em;
+    margin-left: 48px;
   }
   .col-left {
-    -ms-flex-preferred-size: 33.33333%;
-        flex-basis: 33.33333%;
+    -ms-flex-preferred-size: calc((100%/3) - 64px/3);
+        flex-basis: calc((100%/3) - 64px/3);
     -ms-flex-negative: 0;
         flex-shrink: 0;
-    margin-right: 4em;
+    margin-right: 48px;
   }
   .col-main {
-    -ms-flex-preferred-size: 66.66667%;
-        flex-basis: 66.66667%;
+    -ms-flex-preferred-size: calc((100%*2/3) - 32px/3 - 16px);
+        flex-basis: calc((100%*2/3) - 32px/3 - 16px);
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
     min-width: 0;
-  }
-}
-
-@media (min-width: 60em) {
-  .col-right {
-    -ms-flex-preferred-size: 25%;
-        flex-basis: 25%;
-  }
-  .col-left {
-    -ms-flex-preferred-size: 25%;
-        flex-basis: 25%;
-  }
-  .col-main {
-    -ms-flex-preferred-size: 50%;
-        flex-basis: 50%;
   }
 }
 
@@ -8985,13 +8976,7 @@ li.avatar.avatar--default img {
 
 @media (min-width: 48em) {
   .page-node-type-article #block-breadcrumbs {
-    margin-left: calc(33.33333% + 4em);
-  }
-}
-
-@media (min-width: 60em) {
-  .page-node-type-article #block-breadcrumbs {
-    margin-left: calc(25% + 4em);
+    margin-left: calc((100%/3) - 64px/3 + 48px);
   }
 }
 
@@ -10598,6 +10583,14 @@ ul.pager > li a:focus {
   display: inline-block;
   position: static;
   margin-left: 1em;
+}
+
+.box-story__meta-item .tag-list__item {
+  color: inherit;
+}
+
+.box-story__meta-item .tag-list__item a {
+  color: inherit;
 }
 
 /*

@@ -3,11 +3,7 @@
 
   .page-node-type-article & {
     @include breakpoint($small) {
-      margin-left: calc(#{$side-column-width-medium} + #{$column-gutter});
-    }
-    
-    @include breakpoint($medium) {
-      margin-left: calc(#{$side-column-width} + #{$column-gutter});
+      margin-left: $breadcrumbs-align-to-main-margin;
     }
   }
 }

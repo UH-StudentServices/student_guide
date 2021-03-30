@@ -2,11 +2,19 @@
 $grid-gutter: 1em;
 $page-gutter: 2em;
 $page-gutter-mobile: 1em;
-$side-column-width: 100% / 4;
-$side-column-width-medium: 100% / 3;
-$main-column-width: $side-column-width * 2;
-$main-column-width-medium: $side-column-width-medium * 2;
-$column-gutter: 4em;
+
+/**
+ * New grid width calculations are derived from these premises:
+ * - FULL = 12*GRID + 11*GUTTER
+ * - SIDE_COL = 4*GRID + 3*GUTTER
+ * - MAIN_COL = (8*GRID + 7*GUTTER) - 16px
+ */
+$new-grid-gutter: 32px;
+$column-extra-gutter: 16px;
+$column-gutter: $new-grid-gutter + $column-extra-gutter;
+$side-column-width: calc((100%/3) - #{2 * $new-grid-gutter}/3);
+$main-column-width: calc((100%*2/3) - #{$new-grid-gutter}/3 - #{$column-extra-gutter});
+$breadcrumbs-align-to-main-margin: calc((100%/3) - #{2 * $new-grid-gutter}/3 + #{$column-gutter});
 
 // Breakpoints.
 $bp-xsmall: 30em;

@@ -19,4 +19,12 @@
     position: static;
     margin-left: 1em;
   }
+
+  .box-story__meta-item & {
+    color: inherit;
+
+    a {
+      color: inherit;
+    }
+  }
 }

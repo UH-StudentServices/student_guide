@@ -91,32 +91,19 @@
     display: flex;
   }
   .col-right {
-    flex-basis: $side-column-width-medium;
+    flex-basis: $side-column-width;
     flex-shrink: 0;
     margin-left: $column-gutter;
   }
 
   .col-left {
-    flex-basis: $side-column-width-medium;
+    flex-basis: $side-column-width;
     flex-shrink: 0;
     margin-right: $column-gutter;
   }
   .col-main {
-    flex-basis: $main-column-width-medium;
+    flex-basis: $main-column-width;
     flex-grow: 1;
     min-width: 0;
-  }
-}
-
-@include breakpoint($medium) {
-  .col-right {
-    flex-basis: $side-column-width;
-  }
-
-  .col-left {
-    flex-basis: $side-column-width;
-  }
-  .col-main {
-    flex-basis: $main-column-width;
   }
 }
