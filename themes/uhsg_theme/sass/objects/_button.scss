@@ -1,0 +1,82 @@
+/*
+ section: 3.7
+ title: Buttons
+ description:
+*/
+
+/*
+ section: 3.7.1
+ title: Button
+ template: 3_7_1-button
+ description:
+*/
+%button,
+.button {
+  background-color: $blue-a11y;
+
+  &.theme-transparent,
+  &.theme-transparent-alt {
+    color: $blue-a11y;
+
+    &:hover {
+      background-color: $blue-a11y;
+    }
+  }
+}
+
+/*
+ section: 3.7.3
+ title: Button action
+  template: 3_7_3-button--action
+ description:
+*/
+%button--action,
+.button--action {
+  // Icon + background
+  &:after {
+    background-color: $blue-a11y;
+  }
+
+  &:focus:after,
+  &:hover:after {
+    background: $darkblue;
+  }
+
+  &:active:after {
+    background: $darkblue--active;
+  }
+
+  &.theme-transparent,
+  &.theme-transparent-alt {
+    &:after {
+      color: $blue-a11y;
+    }
+
+    &:hover,
+    &:hover:after {
+      background-color: transparent;
+    }
+  }
+}
+
+/*
+ section: 3.7.8
+ title: Button group (small buttons)
+ template: 3_7_8-button-group--small
+ description:
+*/
+
+/*
+ section: 3.7.9
+ title: Button outline
+ template: 3_7_9-button-outline
+ description:
+*/
+.button--outline {
+  border-color: $blue-a11y;
+  color: $blue-a11y;
+
+  &:hover {
+    background-color: $blue-a11y;
+  }
+}

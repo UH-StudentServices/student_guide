@@ -168,7 +168,7 @@ class ThemesReferencingInstructions extends BlockBase implements ContainerFactor
         '#theme' => 'item_list',
         '#type' => 'ul',
         '#items' => $links,
-        '#title' => t('Themes'),
+        '#title' => t('The instruction belongs to the following themes'),
       ];
     }
 

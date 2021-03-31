@@ -2,7 +2,7 @@
 
 ## 1.xx-dev
 Release date: ??.??.????
-
+* HUB-720 - Updating Instruction content layout and visuals to better match Studies service guidelines.
 
 ## 1.60
 Release date: 23.03.2021

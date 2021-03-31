@@ -4,13 +4,27 @@
 }
 
 .tag-list__item {
+  color: $lightgray;
   display: inline;
   padding-right: 0;
   margin-right: 1em;
   vertical-align: initial;
+
+  a {
+    color: $lightgray;
+  }
+
   &:after {
     display: inline-block;
     position: static;
     margin-left: 1em;
+  }
+
+  .box-story__meta-item & {
+    color: inherit;
+
+    a {
+      color: inherit;
+    }
   }
 }

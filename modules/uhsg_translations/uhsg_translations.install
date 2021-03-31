@@ -9,40 +9,23 @@
  * Implements hook_install().
  */
 function uhsg_translations_install() {
-  _uhsg_translations_8000();
-//  _uhsg_translations_8001(); <-- add new translations like this!
+  _uhsg_translations_8001();
 }
 
 /**
  * Adding interface translations.
  */
-function uhsg_translations_update_8000() {
-  _uhsg_translations_8000();
-}
-
-
-/**
- * Helper function 8000.
- */
-function _uhsg_translations_8000() {
-  $translation_helper = \Drupal::service('uhsg_translations.translation_helper');
-
-  // Finnish and swedish translations (this can be considered an example)
-  $translation_helper->addTranslation('News', 'fi', 'Uutinen');
-  $translation_helper->addTranslation('News', 'sv', 'Nyhet');
+function uhsg_translations_update_8001() {
+  _uhsg_translations_8001();
 }
 
 /**
  * Helper function 8001.
- * Add new translations with 2 new functions:
- * - uhsg_translations_8xxx()
- * - _uhsg_translations_8xxx()
  */
- /*
 function _uhsg_translations_8001() {
   $translation_helper = \Drupal::service('uhsg_translations.translation_helper');
 
-  // Ajax throbber.
-  $translation_helper->addTranslation('Please wait...', 'fi', 'Odota...');
+  // Theme link heading.
+  $translation_helper->addTranslation('The instruction belongs to the following themes', 'fi', 'Ohje kuuluu seuraaviin teemoihin');
+  $translation_helper->addTranslation('The instruction belongs to the following themes', 'sv', 'Instruktionen hör till följande teman');
 }
-*/

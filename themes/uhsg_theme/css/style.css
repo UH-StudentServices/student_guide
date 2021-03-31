@@ -8529,6 +8529,122 @@ input[type="text"].search-form-large__input {
 }
 
 /* STUDENT GUIDE THEMING */
+/**
+ * New grid width calculations are derived from these premises:
+ * - FULL = 12*GRID + 11*GUTTER
+ * - SIDE_COL = 4*GRID + 3*GUTTER
+ * - MAIN_COL = (8*GRID + 7*GUTTER) - 16px
+ */
+/*
+ section: 3.7
+ title: Buttons
+ description:
+*/
+/*
+ section: 3.7.1
+ title: Button
+ template: 3_7_1-button
+ description:
+*/
+input[type="submit"], .button--small, .accordion__title,
+.button--accordion,
+.button--action-before,
+.button--action, .button--anchor, .button--expand, .button--icon, .button--outline, .accordion--dark .accordion__title, .cc_btn,
+.button {
+  background-color: #0479A4;
+}
+
+input.theme-transparent[type="submit"], .theme-transparent.button--small, .theme-transparent.accordion__title,
+.theme-transparent.button--accordion,
+.theme-transparent.button--action-before,
+.theme-transparent.button--action, .theme-transparent.button--anchor, .theme-transparent.button--expand, .theme-transparent.button--icon, .theme-transparent.button--outline, .theme-transparent.cc_btn, input.theme-transparent-alt[type="submit"], .theme-transparent-alt.button--small, .theme-transparent-alt.accordion__title,
+.theme-transparent-alt.button--accordion,
+.theme-transparent-alt.button--action-before,
+.theme-transparent-alt.button--action, .theme-transparent-alt.button--anchor, .theme-transparent-alt.button--expand, .theme-transparent-alt.button--icon, .theme-transparent-alt.button--outline, .theme-transparent-alt.cc_btn,
+.button.theme-transparent,
+.button.theme-transparent-alt {
+  color: #0479A4;
+}
+
+input.theme-transparent:hover[type="submit"], .theme-transparent.button--small:hover, .theme-transparent.accordion__title:hover,
+.theme-transparent.button--accordion:hover,
+.theme-transparent.button--action-before:hover,
+.theme-transparent.button--action:hover, .theme-transparent.button--anchor:hover, .theme-transparent.button--expand:hover, .theme-transparent.button--icon:hover, .theme-transparent.button--outline:hover, .theme-transparent.cc_btn:hover, input.theme-transparent-alt:hover[type="submit"], .theme-transparent-alt.button--small:hover, .theme-transparent-alt.accordion__title:hover,
+.theme-transparent-alt.button--accordion:hover,
+.theme-transparent-alt.button--action-before:hover,
+.theme-transparent-alt.button--action:hover, .theme-transparent-alt.button--anchor:hover, .theme-transparent-alt.button--expand:hover, .theme-transparent-alt.button--icon:hover, .theme-transparent-alt.button--outline:hover, .theme-transparent-alt.cc_btn:hover,
+.button.theme-transparent:hover,
+.button.theme-transparent-alt:hover {
+  background-color: #0479A4;
+}
+
+/*
+ section: 3.7.3
+ title: Button action
+  template: 3_7_3-button--action
+ description:
+*/
+
+.button--action-before:after,
+.button--action:after {
+  background-color: #0479A4;
+}
+
+
+.button--action-before:focus:after,
+.button--action-before:hover:after,
+.button--action:focus:after,
+.button--action:hover:after {
+  background: #005379;
+}
+
+
+.button--action-before:active:after,
+.button--action:active:after {
+  background: #003146;
+}
+
+
+.theme-transparent.button--action-before:after,
+.theme-transparent-alt.button--action-before:after,
+.button--action.theme-transparent:after,
+.button--action.theme-transparent-alt:after {
+  color: #0479A4;
+}
+
+
+.theme-transparent.button--action-before:hover,
+.theme-transparent.button--action-before:hover:after,
+.theme-transparent-alt.button--action-before:hover,
+.theme-transparent-alt.button--action-before:hover:after,
+.button--action.theme-transparent:hover,
+.button--action.theme-transparent:hover:after,
+.button--action.theme-transparent-alt:hover,
+.button--action.theme-transparent-alt:hover:after {
+  background-color: transparent;
+}
+
+/*
+ section: 3.7.8
+ title: Button group (small buttons)
+ template: 3_7_8-button-group--small
+ description:
+*/
+/*
+ section: 3.7.9
+ title: Button outline
+ template: 3_7_9-button-outline
+ description:
+*/
+.button--outline {
+  border-color: #0479A4;
+  color: #0479A4;
+}
+
+.button--outline:hover {
+  background-color: #0479A4;
+}
+
 .container {
   margin: 0 auto;
   max-width: 80em;
@@ -8676,21 +8792,25 @@ input[type="text"].search-form-large__input {
     display: flex;
   }
   .col-right {
-    -ms-flex-preferred-size: 33.33333%;
-        flex-basis: 33.33333%;
-    margin-left: 4em;
+    -ms-flex-preferred-size: calc((100%/3) - 64px/3);
+        flex-basis: calc((100%/3) - 64px/3);
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    margin-left: 48px;
   }
   .col-left {
-    -ms-flex-preferred-size: 33.33333%;
-        flex-basis: 33.33333%;
-    margin-right: 4em;
+    -ms-flex-preferred-size: calc((100%/3) - 64px/3);
+        flex-basis: calc((100%/3) - 64px/3);
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    margin-right: 48px;
   }
   .col-main {
-    -ms-flex-preferred-size: 66.66667%;
-        flex-basis: 66.66667%;
-    -webkit-box-flex: 2;
-        -ms-flex-positive: 2;
-            flex-grow: 2;
+    -ms-flex-preferred-size: calc((100%*2/3) - 32px/3 - 16px);
+        flex-basis: calc((100%*2/3) - 32px/3 - 16px);
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
     min-width: 0;
   }
 }
@@ -8854,6 +8974,12 @@ li.avatar.avatar--default img {
   padding-top: 1.5em;
 }
 
+@media (min-width: 48em) {
+  .page-node-type-article #block-breadcrumbs {
+    margin-left: calc((100%/3) - 64px/3 + 48px);
+  }
+}
+
 .breadcrumbs {
   font-size: 0.875rem;
 }
@@ -8870,7 +8996,7 @@ li.avatar.avatar--default img {
 
 .breadcrumbs__item a {
   text-transform: none;
-  color: #0479a5;
+  color: #0479A4;
   font-weight: 500;
   letter-spacing: 0;
 }
@@ -8884,7 +9010,7 @@ li.avatar.avatar--default img {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" fill="%230479A5" stroke="%230479A5" stroke-width="1"%3E%3Cpath d="M345.3,998.7c-30.3,0-55.4-25.2-55.4-55.6c0-30.4,25.1-55.6,55.4-55.6h479.9l0-509.9L500,114.2L174.8,377.6%0Av565.5c0,30.4-25.1,55.6-55.4,55.6c-30.3,0-55.4-25.2-55.4-55.6l0-567.6c0-31.5,14.6-61.9,38.7-81.9L434.1,25%0Ac37.7-30.4,93-30.4,130.7,0l332.5,268.6c25.1,19.9,38.7,49.3,38.7,81.9v568.7c0,29.4-25.1,54.6-55.4,54.6L345.3,998.7z" /%3E%3C/svg%3E');
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" fill="%230479A4" stroke="%230479A4" stroke-width="1"%3E%3Cpath d="M345.3,998.7c-30.3,0-55.4-25.2-55.4-55.6c0-30.4,25.1-55.6,55.4-55.6h479.9l0-509.9L500,114.2L174.8,377.6%0Av565.5c0,30.4-25.1,55.6-55.4,55.6c-30.3,0-55.4-25.2-55.4-55.6l0-567.6c0-31.5,14.6-61.9,38.7-81.9L434.1,25%0Ac37.7-30.4,93-30.4,130.7,0l332.5,268.6c25.1,19.9,38.7,49.3,38.7,81.9v568.7c0,29.4-25.1,54.6-55.4,54.6L345.3,998.7z" /%3E%3C/svg%3E');
 }
 
 .breadcrumbs--home-icon-first .breadcrumbs__item:first-child a span {
@@ -9514,6 +9640,28 @@ input[type="submit"].button--reset + i {
 
 #obar-footer {
   background: #000;
+}
+
+/*
+ section: 9.1.1
+ title: Index
+ template: 9_1_1-index
+ description: Index of content
+*/
+@media (min-width: 48em) {
+  .index {
+    -webkit-columns: 1;
+       -moz-columns: 1;
+            columns: 1;
+  }
+}
+
+@media (min-width: 60em) {
+  .index {
+    -webkit-columns: 2;
+       -moz-columns: 2;
+            columns: 2;
+  }
 }
 
 @media (min-width: 48em) {
@@ -10315,29 +10463,29 @@ ul.pager > li a:focus {
 }
 
 .horizontal-tabs .horizontal-tab-button {
-  border-top-color: #0479a5;
+  border-top-color: #0479A4;
 }
 
 .horizontal-tabs .horizontal-tab-button > a {
-  background: #0479a5;
+  background: #0479A4;
 }
 
 .horizontal-tabs .horizontal-tab-button.selected {
-  border-top-color: #0479a5;
+  border-top-color: #0479A4;
 }
 
 .horizontal-tabs .horizontal-tab-button.selected a {
-  -webkit-box-shadow: inset 0 3px 0 #0479a5;
-          box-shadow: inset 0 3px 0 #0479a5;
-  color: #0479a5;
+  -webkit-box-shadow: inset 0 3px 0 #0479A4;
+          box-shadow: inset 0 3px 0 #0479A4;
+  color: #0479A4;
 }
 
 .horizontal-tabs .horizontal-tab-button.selected:hover {
-  color: #0479a5;
+  color: #0479A4;
 }
 
 .horizontal-tabs .horizontal-tab-button.selected:hover > a {
-  color: #0479a5;
+  color: #0479A4;
 }
 
 .horizontal-tabs .horizontal-tab-button > .tabs-trigger {
@@ -10352,13 +10500,13 @@ ul.pager > li a:focus {
 }
 
 .horizontal-tabs .horizontal-tab-button > .tabs-trigger.is-selected {
-  border-top-color: #0479a5;
+  border-top-color: #0479A4;
   border-bottom-color: transparent;
   z-index: 2;
   background-color: #FFF;
-  -webkit-box-shadow: inset 0 3px 0 #0479a5;
-          box-shadow: inset 0 3px 0 #0479a5;
-  color: #0479a5;
+  -webkit-box-shadow: inset 0 3px 0 #0479A4;
+          box-shadow: inset 0 3px 0 #0479A4;
+  color: #0479A4;
 }
 
 .horizontal-tabs .tabs-panel.is-hidden {
@@ -10420,16 +10568,29 @@ ul.pager > li a:focus {
 }
 
 .tag-list__item {
+  color: #555555;
   display: inline;
   padding-right: 0;
   margin-right: 1em;
   vertical-align: initial;
 }
 
+.tag-list__item a {
+  color: #555555;
+}
+
 .tag-list__item:after {
   display: inline-block;
   position: static;
   margin-left: 1em;
+}
+
+.box-story__meta-item .tag-list__item {
+  color: inherit;
+}
+
+.box-story__meta-item .tag-list__item a {
+  color: inherit;
 }
 
 /*
