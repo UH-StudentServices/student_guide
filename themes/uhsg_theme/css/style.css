@@ -8534,6 +8534,8 @@ input[type="text"].search-form-large__input {
  * - FULL = 12*GRID + 11*GUTTER
  * - SIDE_COL = 4*GRID + 3*GUTTER
  * - MAIN_COL = (8*GRID + 7*GUTTER) - 16px
+ * - SIDE_COL_NARROW_SIDE = 3*GRID + 2*GUTTER
+ * - MAIN_COL_NARROW_SIDE = (9*GRID + 8*GUTTER) - 16px
  */
 /*
  section: 3.7
@@ -8792,26 +8794,38 @@ input.theme-transparent:hover[type="submit"], .theme-transparent.button--small:h
     display: flex;
   }
   .col-right {
-    -ms-flex-preferred-size: calc((100%/3) - 64px/3);
-        flex-basis: calc((100%/3) - 64px/3);
+    -ms-flex-preferred-size: calc((100% / 3) - 64px / 3);
+        flex-basis: calc((100% / 3) - 64px / 3);
     -ms-flex-negative: 0;
         flex-shrink: 0;
     margin-left: 48px;
   }
+  .col-container--narrow-side .col-right {
+    -ms-flex-preferred-size: calc(100%/4 - 96px / 4);
+        flex-basis: calc(100%/4 - 96px / 4);
+  }
   .col-left {
-    -ms-flex-preferred-size: calc((100%/3) - 64px/3);
-        flex-basis: calc((100%/3) - 64px/3);
+    -ms-flex-preferred-size: calc((100% / 3) - 64px / 3);
+        flex-basis: calc((100% / 3) - 64px / 3);
     -ms-flex-negative: 0;
         flex-shrink: 0;
     margin-right: 48px;
   }
+  .col-container--narrow-side .col-left {
+    -ms-flex-preferred-size: calc(100%/4 - 96px / 4);
+        flex-basis: calc(100%/4 - 96px / 4);
+  }
   .col-main {
-    -ms-flex-preferred-size: calc((100%*2/3) - 32px/3 - 16px);
-        flex-basis: calc((100%*2/3) - 32px/3 - 16px);
+    -ms-flex-preferred-size: calc((100% * 2 / 3) - 32px / 3 - 16px);
+        flex-basis: calc((100% * 2 / 3) - 32px / 3 - 16px);
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
     min-width: 0;
+  }
+  .col-container--narrow-side .col-main {
+    -ms-flex-preferred-size: calc(75% - 32px / 4 - 16px);
+        flex-basis: calc(75% - 32px / 4 - 16px);
   }
 }
 
@@ -8976,7 +8990,7 @@ li.avatar.avatar--default img {
 
 @media (min-width: 48em) {
   .page-node-type-article #block-breadcrumbs {
-    margin-left: calc((100%/3) - 64px/3 + 48px);
+    margin-left: calc(100%/4 - 96px / 4 + 48px);
   }
 }
 

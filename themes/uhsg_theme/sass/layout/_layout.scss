@@ -94,16 +94,27 @@
     flex-basis: $side-column-width;
     flex-shrink: 0;
     margin-left: $column-gutter;
-  }
 
+    .col-container--narrow-side & {
+      flex-basis: $side-column-narrow-width;
+    }
+  }
   .col-left {
     flex-basis: $side-column-width;
     flex-shrink: 0;
     margin-right: $column-gutter;
+
+    .col-container--narrow-side & {
+      flex-basis: $side-column-narrow-width;
+    }
   }
   .col-main {
     flex-basis: $main-column-width;
     flex-grow: 1;
     min-width: 0;
+
+    .col-container--narrow-side & {
+      flex-basis: $main-column-narrow-width;
+    }
   }
 }

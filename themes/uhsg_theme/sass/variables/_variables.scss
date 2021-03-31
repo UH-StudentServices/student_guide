@@ -8,13 +8,18 @@ $page-gutter-mobile: 1em;
  * - FULL = 12*GRID + 11*GUTTER
  * - SIDE_COL = 4*GRID + 3*GUTTER
  * - MAIN_COL = (8*GRID + 7*GUTTER) - 16px
+ * - SIDE_COL_NARROW_SIDE = 3*GRID + 2*GUTTER
+ * - MAIN_COL_NARROW_SIDE = (9*GRID + 8*GUTTER) - 16px
  */
 $new-grid-gutter: 32px;
 $column-extra-gutter: 16px;
 $column-gutter: $new-grid-gutter + $column-extra-gutter;
-$side-column-width: calc((100%/3) - #{2 * $new-grid-gutter}/3);
-$main-column-width: calc((100%*2/3) - #{$new-grid-gutter}/3 - #{$column-extra-gutter});
-$breadcrumbs-align-to-main-margin: calc((100%/3) - #{2 * $new-grid-gutter}/3 + #{$column-gutter});
+$side-column-width: calc((100% / 3) - #{2 * $new-grid-gutter} / 3);
+$main-column-width: calc((100% * 2 / 3) - #{$new-grid-gutter} / 3 - #{$column-extra-gutter});
+$breadcrumbs-align-to-main-margin: calc((100% / 3) - #{2 * $new-grid-gutter} / 3 + #{$column-gutter});
+$side-column-narrow-width: calc(#{100% / 4} - #{3 * $new-grid-gutter} / 4);
+$main-column-narrow-width: calc(#{100% * 3 / 4} - #{$new-grid-gutter} / 4 - #{$column-extra-gutter});
+$breadcrumbs-align-to-main-narrow-margin: calc(#{100% / 4} - #{3 * $new-grid-gutter} / 4 + #{$column-gutter});
 
 // Breakpoints.
 $bp-xsmall: 30em;
