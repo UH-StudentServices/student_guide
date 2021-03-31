@@ -47,7 +47,7 @@
       <div class="accordion__content">
         {% for item in office_hours['degree_programme'] %}
           <div {{ attributes.addClass('textarea') }} data-degree-programme-term-ids="{{item.degree_programme_term_ids}}">
-            <div class="col-container">
+            <div class="col-container col-container--narrow-side">
               <div class="col-left">
                 <h3>{{ item.name }}</h3>
               </div>
@@ -71,7 +71,7 @@
         <div class="accordion__content visually-hidden">
           {% for item in office_hours['general'] %}
             <div {{ attributes.addClass('textarea') }}>
-              <div class="col-container">
+              <div class="col-container col-container--narrow-side">
                 <div class="col-left"></div>
                 <div class="col-main">
                   {% if item[0]['language'] is not empty %}
