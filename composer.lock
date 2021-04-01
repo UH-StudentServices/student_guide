@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7544f93dde9574d3f8874e25184e2fa1",
+    "content-hash": "c11b5a6e8c385dabf36f8626e03af5f2",
     "packages": [
         {
             "name": "UH-StudentServices/uh_courses_embed",
@@ -4027,6 +4027,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "#3079209: Hide POST, PUT, and DELETE endpoints when JSON:API is configured to be read-only.": "https://www.drupal.org/files/issues/2020-12-21/only_add_read_route-methods_when_read_only_is_enabled_in_jsonapi_3079209-10.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
