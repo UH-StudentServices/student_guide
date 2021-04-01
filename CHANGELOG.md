@@ -2,6 +2,7 @@
 
 ## 1.xx-dev
 Release date: ??.??.????
+* HUB-854 - Adding an Open API description for JSON:API and REST.
 * HUB-720 - Updating Instruction content layout and visuals to better match Studies service guidelines.
 
 ## 1.60
