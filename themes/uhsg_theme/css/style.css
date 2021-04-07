@@ -8827,6 +8827,9 @@ input.theme-transparent:hover[type="submit"], .theme-transparent.button--small:h
     -ms-flex-preferred-size: calc(75% - 32px / 4 - 16px);
         flex-basis: calc(75% - 32px / 4 - 16px);
   }
+  .col--max-narrow-width {
+    max-width: 17.5em;
+  }
 }
 
 .l-footer__subregion {
@@ -8939,6 +8942,12 @@ li.avatar img {
 
 li.avatar.avatar--default img {
   padding: 12px;
+}
+
+@media (min-width: 48em) {
+  .page-node-type-article .block-link-to-instructions-for-students .col-main {
+    margin-left: calc(100%/4 - 96px / 4 + 48px);
+  }
 }
 
 .box-story--no-label.theme-plain {

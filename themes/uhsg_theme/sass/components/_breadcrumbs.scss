@@ -3,7 +3,7 @@
 
   .page-node-type-article & {
     @include breakpoint($small) {
-      margin-left: $breadcrumbs-align-to-main-narrow-margin;
+      margin-left: $align-to-main-narrow-margin;
     }
   }
 }

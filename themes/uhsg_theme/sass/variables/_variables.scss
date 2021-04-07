@@ -16,10 +16,10 @@ $column-extra-gutter: 16px;
 $column-gutter: $new-grid-gutter + $column-extra-gutter;
 $side-column-width: calc((100% / 3) - #{2 * $new-grid-gutter} / 3);
 $main-column-width: calc((100% * 2 / 3) - #{$new-grid-gutter} / 3 - #{$column-extra-gutter});
-$breadcrumbs-align-to-main-margin: calc((100% / 3) - #{2 * $new-grid-gutter} / 3 + #{$column-gutter});
+$align-to-main-margin: calc((100% / 3) - #{2 * $new-grid-gutter} / 3 + #{$column-gutter});
 $side-column-narrow-width: calc(#{100% / 4} - #{3 * $new-grid-gutter} / 4);
 $main-column-narrow-width: calc(#{100% * 3 / 4} - #{$new-grid-gutter} / 4 - #{$column-extra-gutter});
-$breadcrumbs-align-to-main-narrow-margin: calc(#{100% / 4} - #{3 * $new-grid-gutter} / 4 + #{$column-gutter});
+$align-to-main-narrow-margin: calc(#{100% / 4} - #{3 * $new-grid-gutter} / 4 + #{$column-gutter});
 
 // Breakpoints.
 $bp-xsmall: 30em;
