@@ -117,4 +117,8 @@
       flex-basis: $main-column-narrow-width;
     }
   }
+
+  .col--max-narrow-width {
+    max-width: 17.5em;
+  }
 }

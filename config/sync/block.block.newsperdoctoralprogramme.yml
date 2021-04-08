@@ -9,7 +9,7 @@ dependencies:
 id: newsperdoctoralprogramme
 theme: uhsg_theme
 region: after_content
-weight: -7
+weight: -6
 provider: null
 plugin: news_per_doctoral_programme
 settings:

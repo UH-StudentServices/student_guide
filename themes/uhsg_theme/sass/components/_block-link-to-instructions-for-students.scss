@@ -1,0 +1,7 @@
+.block-link-to-instructions-for-students .col-main {
+  .page-node-type-article & {
+    @include breakpoint($small) {
+      margin-left: $align-to-main-narrow-margin;
+    }
+  }
+}
