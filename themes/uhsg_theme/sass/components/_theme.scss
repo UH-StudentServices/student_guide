@@ -107,4 +107,12 @@
   }
 }
 
-//268x268
+.theme__content-section {
+  margin: 2em 0 3em 0;
+
+  &.clearfix {
+    :last-child {
+      margin-bottom: 0;
+    }
+  }
+}
