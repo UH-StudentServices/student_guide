@@ -1,3 +1,9 @@
+.l-subregion-wrapper--sectioned {
+  background-color: $lightsilver;
+  padding-top: 0;
+  padding-bottom: 1em;
+}
+
 .l-subregion {
   max-width: $bp-large + (2 * $page-gutter);
   padding-left: $page-gutter-mobile;

@@ -17,6 +17,39 @@
   }
 }
 
+.box-story--banner {
+  background: $white;
+  padding: 1em 3em 1em 1em;
+
+  @include breakpoint($small) {
+    padding: 1em 5em 1em 3em;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 1em;
+  }
+}
+
+.box-story__title {
+  .box-story--banner & {
+    > a {
+      color: $blue-a11y;
+
+      &:after {
+        @include icon($icon-arrow-right);
+        position: absolute;
+        right: 1em;
+        top: 50%;
+        transform: translateY(-50%);
+
+        @include breakpoint($small) {
+          right: 1.5em;
+        }
+      }
+    }
+  }
+}
+
 // Set title and content overflow to visible to avoid clipping focus styles.
 .box-story__title,
 .box-story__content{
@@ -32,6 +65,12 @@
 .article-related {
   .box-story--topical.theme-plain {
     .box-story__link-wrapper:after {
+      @include icon($icon-external-link);
+    }
+  }
+
+  .box-story--banner {
+    .box-story__title > a:after {
       @include icon($icon-external-link);
     }
   }

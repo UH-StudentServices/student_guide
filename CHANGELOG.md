@@ -2,6 +2,7 @@
 
 ## 1.xx-dev
 Release date: ??.??.????
+* HUB-719 - Updating Theme page UI.
 * HUB-730 - Updating related links position on Instructions for teaching.
 * HUB-854 - Adding an Open API description for JSON:API and REST.
 * HUB-720 - Updating Instruction content layout and visuals to better match Studies service guidelines.

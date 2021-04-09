@@ -1,7 +1,14 @@
-.block-link-to-instructions-for-students .col-main {
+.block-link-to-instructions-for-students {
+  .page-node-type-theme &,
   .page-node-type-article & {
-    @include breakpoint($small) {
-      margin-left: $align-to-main-narrow-margin;
+    margin-top: 2em;
+  }
+
+  .col-main {
+    .page-node-type-article & {
+      @include breakpoint($small) {
+        margin-left: $align-to-main-narrow-margin;
+      }
     }
   }
 }

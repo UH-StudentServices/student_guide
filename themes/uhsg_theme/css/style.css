@@ -8845,6 +8845,12 @@ input.theme-transparent:hover[type="submit"], .theme-transparent.button--small:h
   }
 }
 
+.l-subregion-wrapper--sectioned {
+  background-color: #F8F8F8;
+  padding-top: 0;
+  padding-bottom: 1em;
+}
+
 .l-subregion {
   max-width: 80em;
   padding-left: 1em;
@@ -8944,6 +8950,11 @@ li.avatar.avatar--default img {
   padding: 12px;
 }
 
+.page-node-type-theme .block-link-to-instructions-for-students,
+.page-node-type-article .block-link-to-instructions-for-students {
+  margin-top: 2em;
+}
+
 @media (min-width: 48em) {
   .page-node-type-article .block-link-to-instructions-for-students .col-main {
     margin-left: calc(100%/4 - 96px / 4 + 48px);
@@ -8968,6 +8979,48 @@ li.avatar.avatar--default img {
   outline-offset: 3px;
 }
 
+.box-story--banner {
+  background: #FFF;
+  padding: 1em 3em 1em 1em;
+}
+
+@media (min-width: 48em) {
+  .box-story--banner {
+    padding: 1em 5em 1em 3em;
+  }
+}
+
+.box-story--banner:not(:last-child) {
+  margin-bottom: 1em;
+}
+
+.box-story--banner .box-story__title > a {
+  color: #0479A4;
+}
+
+.box-story--banner .box-story__title > a:after {
+  display: inline-block;
+  font-family: "hy-icons";
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
+  content: "";
+  position: absolute;
+  right: 1em;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+@media (min-width: 48em) {
+  .box-story--banner .box-story__title > a:after {
+    right: 1.5em;
+  }
+}
+
 .box-story__title,
 .box-story__content {
   overflow: visible;
@@ -8978,6 +9031,17 @@ li.avatar.avatar--default img {
 }
 
 .article-related .box-story--topical.theme-plain .box-story__link-wrapper:after {
+  display: inline-block;
+  font-family: "hy-icons";
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  vertical-align: bottom;
+  content: "";
+}
+
+.article-related .box-story--banner .box-story__title > a:after {
   display: inline-block;
   font-family: "hy-icons";
   font-style: normal;
@@ -10785,6 +10849,14 @@ ul.pager > li a:focus {
 
 .theme--flat-box:hover .theme__teaser-image {
   opacity: 0.25;
+}
+
+.theme__content-section {
+  margin: 2em 0 3em 0;
+}
+
+.theme__content-section.clearfix :last-child {
+  margin-bottom: 0;
 }
 
 .tooltip {
