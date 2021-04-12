@@ -99,9 +99,8 @@ class AttributeParser implements AttributeParserInterface {
      * prior to return the actual value.
      */
     $value = (string) $value[0];
-    if (mb_strlen($value) > mb_strlen($this->studentIdPrefix)) {
-      // OK the value seems to have an sensible string length so return it
-      // without the expected prefix.
+    if (mb_strpos($value, $this->studentIdPrefix) === 0) {
+      // Value has a valid prefix so we're ok to return the id part.
       return substr($value, mb_strlen($this->studentIdPrefix));
     }
 
