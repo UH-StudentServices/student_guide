@@ -30,6 +30,9 @@
 
 <div class="degree-programme-switcher search-form">
   <label> {{ 'Select degree programme'|trans }} </label>
+  {% if degree_programme_selector_description %}
+    <div class="degree-programme-switcher__description">{{ degree_programme_selector_description }}</div>
+  {% endif %}
 
   <button class="degree-programme-switcher__header"
           aria-expanded="false"

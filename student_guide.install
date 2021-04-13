@@ -80,3 +80,11 @@ function student_guide_update_8004(&$sandbox) {
   student_guide_create_teaching_front_page_text_block();
   student_guide_create_teaching_front_page_additional_text_block();
 }
+
+/**
+ * Create degree programme selector description text blocks.
+ */
+function student_guide_update_8005(&$sandbox) {
+  student_guide_create_students_degree_programme_selection_description_text_block();
+  student_guide_create_teaching_degree_programme_selection_description_text_block();
+}

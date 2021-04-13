@@ -6,6 +6,11 @@
   flex-direction: column;
   padding-bottom: 0.5em;
 
+  .degree-programme-switcher__description {
+    margin-bottom: 1em;
+    @include font-size(12px);
+  }
+
   .degree-programme-switcher__header {
     background-color: $white;
     border-radius: 0;
