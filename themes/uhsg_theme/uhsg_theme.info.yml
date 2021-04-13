@@ -4,7 +4,7 @@ description: University of Helsinki Student Guide theme
 package: Other
 core: 8.x
 core_version_requirement: ^8 || ^9
-version: 1.61
+version: VERSION
 libraries:
   - uhsg_theme/global-styling
   - uhsg_theme/siteimprove
