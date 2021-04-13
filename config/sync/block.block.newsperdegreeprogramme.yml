@@ -10,7 +10,7 @@ dependencies:
 id: newsperdegreeprogramme
 theme: uhsg_theme
 region: after_content
-weight: -8
+weight: -7
 provider: null
 plugin: news_per_degree_programme
 settings:

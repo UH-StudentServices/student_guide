@@ -1,5 +1,11 @@
 #block-breadcrumbs {
   padding-top: 1.5em;
+
+  .page-node-type-article & {
+    @include breakpoint($small) {
+      margin-left: $align-to-main-narrow-margin;
+    }
+  }
 }
 
 .breadcrumbs {

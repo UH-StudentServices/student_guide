@@ -83,7 +83,9 @@
         "drupal/memcache": "^2.2",
         "drupal/entity_browser": "^2.5",
         "drupal/responsive_table_filter": "^1.2",
-        "drupal/jsonapi_image_styles": "^2.0@beta"
+        "drupal/jsonapi_image_styles": "^2.0@beta",
+        "drupal/openapi_jsonapi": "^3.0",
+        "drupal/openapi_rest": "^2.0@RC"
     },
     "repositories": {
         "0": {
@@ -161,6 +163,9 @@
             },
             "drupal/maxlength": {
                 "2902083-2": "https://www.drupal.org/files/issues/translateable_help-2902083-2.patch"
+            },
+            "drupal/openapi_jsonapi": {
+                "#3079209: Hide POST, PUT, and DELETE endpoints when JSON:API is configured to be read-only.": "https://www.drupal.org/files/issues/2020-12-21/only_add_read_route-methods_when_read_only_is_enabled_in_jsonapi_3079209-10.patch"
             },
             "drupal/purge": {
                 "2952277-38 minify cache tags header": "https://www.drupal.org/files/issues/2020-07-06/purge_cache_tags_minify-2952277-38.patch"

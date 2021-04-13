@@ -1,14 +1,34 @@
+// Layout.
 $grid-gutter: 1em;
-
 $page-gutter: 2em;
 $page-gutter-mobile: 1em;
 
+/**
+ * New grid width calculations are derived from these premises:
+ * - FULL = 12*GRID + 11*GUTTER
+ * - SIDE_COL = 4*GRID + 3*GUTTER
+ * - MAIN_COL = (8*GRID + 7*GUTTER) - 16px
+ * - SIDE_COL_NARROW_SIDE = 3*GRID + 2*GUTTER
+ * - MAIN_COL_NARROW_SIDE = (9*GRID + 8*GUTTER) - 16px
+ */
+$new-grid-gutter: 32px;
+$column-extra-gutter: 16px;
+$column-gutter: $new-grid-gutter + $column-extra-gutter;
+$side-column-width: calc((100% / 3) - #{2 * $new-grid-gutter} / 3);
+$main-column-width: calc((100% * 2 / 3) - #{$new-grid-gutter} / 3 - #{$column-extra-gutter});
+$align-to-main-margin: calc((100% / 3) - #{2 * $new-grid-gutter} / 3 + #{$column-gutter});
+$side-column-narrow-width: calc(#{100% / 4} - #{3 * $new-grid-gutter} / 4);
+$main-column-narrow-width: calc(#{100% * 3 / 4} - #{$new-grid-gutter} / 4 - #{$column-extra-gutter});
+$align-to-main-narrow-margin: calc(#{100% / 4} - #{3 * $new-grid-gutter} / 4 + #{$column-gutter});
+
+// Breakpoints.
 $bp-xsmall: 30em;
 $xsmall: $bp-xsmall;
 
+// Colors.
 $green: #4FB151;
 $purple: #7b46a3;
-$blue-a11y: #0479a5;
+$blue-a11y: #0479A4;
 $color-link: #0e688b;
 $color-link-hover: #005379;
 $avatarbg: rgba($purple, .45);

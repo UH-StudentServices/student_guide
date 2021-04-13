@@ -3,6 +3,12 @@
 ## 1.xx-dev
 Release date: ??.??.????
 
+## 1.61
+Release date: 13.04.2021
+* HUB-719 - Updating Theme page UI.
+* HUB-730 - Updating related links position on Instructions for teaching.
+* HUB-854 - Adding an Open API description for JSON:API and REST.
+* HUB-720 - Updating Instruction content layout and visuals to better match Studies service guidelines.
 
 ## 1.60
 Release date: 23.03.2021

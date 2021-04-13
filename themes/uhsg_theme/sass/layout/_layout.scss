@@ -91,17 +91,34 @@
     display: flex;
   }
   .col-right {
-    flex-basis: (100% / 3);
-    margin-left: 4em;
-  }
+    flex-basis: $side-column-width;
+    flex-shrink: 0;
+    margin-left: $column-gutter;
 
+    .col-container--narrow-side & {
+      flex-basis: $side-column-narrow-width;
+    }
+  }
   .col-left {
-    flex-basis: (100% / 3);
-    margin-right: 4em;
+    flex-basis: $side-column-width;
+    flex-shrink: 0;
+    margin-right: $column-gutter;
+
+    .col-container--narrow-side & {
+      flex-basis: $side-column-narrow-width;
+    }
   }
   .col-main {
-    flex-basis: (100% / 3) * 2;
-    flex-grow: 2;
+    flex-basis: $main-column-width;
+    flex-grow: 1;
     min-width: 0;
+
+    .col-container--narrow-side & {
+      flex-basis: $main-column-narrow-width;
+    }
+  }
+
+  .col--max-narrow-width {
+    max-width: 17.5em;
   }
 }

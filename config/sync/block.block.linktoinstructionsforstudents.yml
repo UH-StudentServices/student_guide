@@ -1,0 +1,20 @@
+uuid: 39f21eb7-6b65-4759-8a08-280fe7e72b36
+langcode: en
+status: true
+dependencies:
+  module:
+    - uhsg_domain
+  theme:
+    - uhsg_theme
+id: linktoinstructionsforstudents
+theme: uhsg_theme
+region: after_content
+weight: -9
+provider: null
+plugin: link_to_instructions_for_students
+settings:
+  id: link_to_instructions_for_students
+  label: 'See also'
+  provider: uhsg_domain
+  label_display: visible
+visibility: {  }

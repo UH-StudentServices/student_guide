@@ -36,9 +36,7 @@
  * @ingroup themeable
  */
 #}
-<div {{ attributes.addClass('l-subregion-wrapper') }}>
-  <div class="l-subregion">
-    <h2 class="h3"> {{ content.field_theme_section_title }} </h2> 
-    {{ content|without('field_theme_section_title') }}
-  </div>
+<div class="theme__content-section">
+  <h2> {{ content.field_theme_section_title }} </h2> 
+  {{ content|without('field_theme_section_title') }}
 </div>

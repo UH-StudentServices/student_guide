@@ -31,9 +31,13 @@ content:
 hidden:
   field_article_degree_programme: true
   field_article_domain: true
+  field_article_faculty: true
   field_article_paragraph: true
   field_article_related: true
   field_domain_source: true
+  field_keywords: true
+  field_other_education_provider: true
   field_user_group: true
   langcode: true
   links: true
+  search_api_excerpt: true
