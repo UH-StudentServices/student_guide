@@ -97,11 +97,18 @@ class AttributeParser implements AttributeParserInterface {
      * Student IDs are in format "{prefix}{ID}" where {ID} represents
      * placeholder for the actual value. Therefore we need some preprocessing
      * prior to return the actual value.
+     *
+     * This attribute might return multiple values. We'll pick the first one
+     * with proper UH-specific urn-prefix.
+     *
+     * @see $this->studentIdPrefix
      */
-    $value = (string) $value[0];
-    if (mb_strpos($value, $this->studentIdPrefix) === 0) {
-      // Value has a valid prefix so we're ok to return the id part.
-      return substr($value, mb_strlen($this->studentIdPrefix));
+    foreach ($value as $urn) {
+      $urn = (string) $urn;
+      if (mb_strpos($urn, $this->studentIdPrefix) === 0) {
+        // Value has a valid prefix so we're ok to return the id part.
+        return substr($urn, mb_strlen($this->studentIdPrefix));
+      }
     }
 
     return '';
