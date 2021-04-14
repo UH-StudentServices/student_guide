@@ -405,3 +405,39 @@ function student_guide_create_teaching_front_page_additional_text_block() {
   $block->addTranslation('en', ['field_content_block_text' => '']);
   $block->save();
 }
+
+/**
+ * Create content block for Degree programme selector description text
+ * (Instructions for students).
+ */
+function student_guide_create_students_degree_programme_selection_description_text_block() {
+  $block = BlockContent::create([
+    'info' => 'Degree programme selector description text block: Students',
+    'type' => 'content_block',
+    'langcode' => 'fi',
+    'uuid' => 'd95bab6e-3e46-4c10-ba3e-fcb69254b11d',
+  ]);
+
+  $block->set('field_content_block_text', '');
+  $block->addTranslation('sv', ['field_content_block_text' => '']);
+  $block->addTranslation('en', ['field_content_block_text' => '']);
+  $block->save();
+}
+
+/**
+ * Create content block for Degree programme selector description text
+ * (Instructions for teaching).
+ */
+function student_guide_create_teaching_degree_programme_selection_description_text_block() {
+  $block = BlockContent::create([
+    'info' => 'Degree programme selector description text block: Teaching',
+    'type' => 'content_block',
+    'langcode' => 'fi',
+    'uuid' => '572ed55b-455d-4d67-b726-7905452987e4',
+  ]);
+
+  $block->set('field_content_block_text', '');
+  $block->addTranslation('sv', ['field_content_block_text' => '']);
+  $block->addTranslation('en', ['field_content_block_text' => '']);
+  $block->save();
+}

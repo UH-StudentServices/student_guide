@@ -3,10 +3,12 @@
 use Drupal\Core\Access\AccessResultAllowed;
 use Drupal\Component\Utility\Html;
 use Drupal\block\Entity\Block;
+use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Url;
 use Drupal\block_content\Entity\BlockContent;
 use Drupal\Component\Render\FormattableMarkup;
 use Drupal\node\Entity\Node;
+use Drupal\node\NodeInterface;
 
 /**
  * @file
@@ -345,7 +347,24 @@ function uhsg_theme_preprocess_block(array &$variables) {
       $variables['label'] = $degree_programme_name ? $degree_programme_name : t('Select degree programme');
       $variables['#cache']['contexts'][] = 'active_degree_programme';
       $variables['reset_link']['link'] = Url::fromRoute('uhsg_active_degree_programme.reset_active', [], ['absolute' => TRUE]);
-      $variables['reset_link']['classes'] = 'button--action icon--remove theme-transparent button--reset is-center-mobile';
+      $variables['reset_link']['classes'] = 'button--action icon--remove theme-transparent button--reset';
+
+      // Fetch degree programme selector description text if we're on a node page.
+      $node = \Drupal::routeMatch()->getParameter('node');
+      if ($node instanceof \Drupal\node\NodeInterface) {
+        $is_student_domain = \Drupal::service('uhsg_domain.domain')->isStudentDomain();
+        $block = $is_student_domain
+          ? uhsg_theme_load_content_block_by_uuid('d95bab6e-3e46-4c10-ba3e-fcb69254b11d')
+          : uhsg_theme_load_content_block_by_uuid('572ed55b-455d-4d67-b726-7905452987e4');
+
+        if ($block instanceof ContentEntityInterface) {
+          $variables['degree_programme_selector_description'] = uhsg_theme_load_content_block_value($block);
+          $variables['#cache']['contexts'][] = 'route.name';
+          $variables['#cache']['contexts'][] = 'url.site';
+          $variables['#cache']['contexts'] = array_merge($variables['#cache']['contexts'], $block->getCacheContexts());
+          $variables['#cache']['tags'] = !empty($variables['#cache']['tags']) ? array_merge($variables['#cache']['tags'], $block->getCacheTags()) : $block->getCacheTags();
+        }
+      }
       break;
 
     case 'views_block__other_education_providers_block_1':

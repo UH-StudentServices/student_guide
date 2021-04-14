@@ -30,6 +30,9 @@
 
 <div class="degree-programme-switcher search-form">
   <label> {{ 'Select degree programme'|trans }} </label>
+  {% if degree_programme_selector_description %}
+    <div class="degree-programme-switcher__description">{{ degree_programme_selector_description }}</div>
+  {% endif %}
 
   <button class="degree-programme-switcher__header"
           aria-expanded="false"
@@ -47,7 +50,10 @@
        role="region"
        aria-labelledby="degree-programme-switcher-header-1"
        hidden="">
-    <h2 class="h4">{{ 'Search for degree programme'|trans }}</h2>
+    <button type="reset" data-href="{{ reset_link.link }}" class="{{ reset_link.classes }}">{{ 'Clear the selection'|trans }}</button>
+
+    <h2 class="h4 degree-programme-switcher__dropdown-title">{{ 'Search for degree programme'|trans }}</h2>
+
     <div class="degree-programme-switcher__filter tube">
       <label for="filter">{{ 'Search for degree programme by name or part of the name'|trans }}</label>
       <input type="text"
@@ -68,9 +74,5 @@
         {{ content }}
       {% endblock %}
     </div>
-
-    {% if label %}
-      <button type="reset" data-href="{{ reset_link.link }}" class="{{ reset_link.classes }}">{{ 'Clear the selection'|trans }}</button>
-    {% endif %}
   </div>
 </div>
