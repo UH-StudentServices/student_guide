@@ -2,6 +2,7 @@
 
 ## 1.xx-dev
 Release date: ??.??.????
+* HUB-870 - Updating studentId attribute fetcher validation.
 
 ## 1.61
 Release date: 13.04.2021
