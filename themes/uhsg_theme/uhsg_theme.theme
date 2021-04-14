@@ -347,7 +347,7 @@ function uhsg_theme_preprocess_block(array &$variables) {
       $variables['label'] = $degree_programme_name ? $degree_programme_name : t('Select degree programme');
       $variables['#cache']['contexts'][] = 'active_degree_programme';
       $variables['reset_link']['link'] = Url::fromRoute('uhsg_active_degree_programme.reset_active', [], ['absolute' => TRUE]);
-      $variables['reset_link']['classes'] = 'button--action icon--remove theme-transparent button--reset is-center-mobile';
+      $variables['reset_link']['classes'] = 'button--action icon--remove theme-transparent button--reset';
 
       // Fetch degree programme selector description text if we're on a node page.
       $node = \Drupal::routeMatch()->getParameter('node');

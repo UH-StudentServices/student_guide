@@ -63,9 +63,12 @@
     border-top: 0;
     width: 100%;
     flex-grow: 2;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
     min-height: 1px;
     background: $white;
+
     .view-degree-programmes {
       .view-content {
         > div {
@@ -113,10 +116,17 @@
         }
       }
     }
-    .button--reset,
-    > h4 {
-      flex-shrink: 0;
+
+    .button--reset {
+      padding: 0;
+      margin-bottom: 1rem;
     }
+
+    .degree-programme-switcher__dropdown-title {
+      padding: 0;
+      margin-bottom: 0.5rem;
+    }
+
     // TODO: get rid of this silly container
     // fix firefox & IE
     div {
@@ -129,7 +139,7 @@
   // Display when open.
   &.collapsed {
     .degree-programme-switcher__dropdown {
-      display: flex;
+      display: block;
     }
   }
   div.degree-programme-switcher__filter {
@@ -174,13 +184,18 @@
       display: none;
       position: absolute;
       width: 100%;
+
       .view-content {
         max-height: 20em;
         max-height: 50vh;
       }
+
+      .degree-programme-switcher__dropdown-title {
+        order: -1;
+      }
+
       .button--reset {
-        align-self: flex-end;
-        margin-bottom: -2em;
+        margin-bottom: 0.5rem;
       }
     }
     &.collapsed {
@@ -203,6 +218,14 @@
           min-height: 1px;
           flex-shrink: 1;
         }
+      }
+    }
+  }
+
+  @include breakpoint($mobile-only) {
+    &.collapsed {
+      .degree-programme-switcher__description {
+        @include visually-hidden;
       }
     }
   }
