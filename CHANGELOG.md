@@ -2,6 +2,7 @@
 
 ## 1.xx-dev
 Release date: ??.??.????
+* HUB-877 - Updating Drupal core to 8.9.14.
 * HUB-718 - Updating the degree programme selector layout.
 * HUB-870 - Updating studentId attribute fetcher validation.
 
