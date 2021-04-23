@@ -346,6 +346,8 @@ function uhsg_theme_preprocess_block(array &$variables) {
       $variables['code'] = $degree_programme_code;
       $variables['label'] = $degree_programme_name ? $degree_programme_name : t('Select degree programme');
       $variables['#cache']['contexts'][] = 'active_degree_programme';
+      $variables['#cache']['contexts'][] = 'route.name';
+      $variables['#cache']['contexts'][] = 'url.site';
       $variables['reset_link']['link'] = Url::fromRoute('uhsg_active_degree_programme.reset_active', [], ['absolute' => TRUE]);
       $variables['reset_link']['classes'] = 'button--action icon--remove theme-transparent button--reset';
 
@@ -359,8 +361,6 @@ function uhsg_theme_preprocess_block(array &$variables) {
 
         if ($block instanceof ContentEntityInterface) {
           $variables['degree_programme_selector_description'] = uhsg_theme_load_content_block_value($block);
-          $variables['#cache']['contexts'][] = 'route.name';
-          $variables['#cache']['contexts'][] = 'url.site';
           $variables['#cache']['contexts'] = array_merge($variables['#cache']['contexts'], $block->getCacheContexts());
           $variables['#cache']['tags'] = !empty($variables['#cache']['tags']) ? array_merge($variables['#cache']['tags'], $block->getCacheTags()) : $block->getCacheTags();
         }
