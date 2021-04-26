@@ -5,3 +5,14 @@
     padding-bottom: 0.4em;
   }
 }
+
+.list-of-links__link {
+  .theme-footer & {
+    color: $white;
+
+    &:before,
+    &:after {
+      color: $white;
+    }
+  }
+}
