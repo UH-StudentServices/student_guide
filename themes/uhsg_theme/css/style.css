@@ -8581,6 +8581,16 @@ input.theme-transparent:hover[type="submit"], .theme-transparent.button--small:h
 }
 
 /*
+ section: 3.7.1.1
+ title: Button small
+ template: 3_7_1_1-button--small
+ description:
+*/
+.button--small {
+  background-color: #D2D2D2;
+}
+
+/*
  section: 3.7.3
  title: Button action
   template: 3_7_3-button--action
@@ -9784,6 +9794,14 @@ input[type="submit"].button--reset + i {
 .list-of-links__compact .list-of-links__link {
   padding-top: 0.4em;
   padding-bottom: 0.4em;
+}
+
+.theme-footer .list-of-links__link {
+  color: #FFF;
+}
+
+.theme-footer .list-of-links__link:before, .theme-footer .list-of-links__link:after {
+  color: #FFF;
 }
 
 .logo-block {
