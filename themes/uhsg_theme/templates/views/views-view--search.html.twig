@@ -67,7 +67,7 @@
         </div>
 
         {% if header.result %}
-          <div class="view-before-content is-center-mobile">
+          <div role="status" class="view-before-content is-center-mobile">
             {{ header.result }}
           </div>
         {% endif %}
@@ -82,7 +82,8 @@
       </div>
     {% endif %}
     {% if rows %}
-      <div class="search-filters-container"></div>
+      <div class="search-filters-container">
+      </div>
       <div {{ content_attributes.addClass(content_classes) }}>
         {{ rows }}
       </div>

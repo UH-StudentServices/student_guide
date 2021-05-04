@@ -8587,7 +8587,14 @@ input.theme-transparent:hover[type="submit"], .theme-transparent.button--small:h
  description:
 */
 .button--small {
-  background-color: #D2D2D2;
+  background-color: #FFF;
+  border: 1px solid #0479A4;
+  color: #0479A4;
+}
+
+.button--small:focus, .button--small:hover, .button--small:active, .button--small.is-active {
+  background-color: #0479A4;
+  color: #FFF;
 }
 
 /*

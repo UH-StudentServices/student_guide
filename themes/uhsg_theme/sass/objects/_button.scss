@@ -31,7 +31,17 @@
  description:
 */
 .button--small {
-  background-color: $mediumsilver;
+  background-color: $white;
+  border: 1px solid $blue-a11y;
+  color: $blue-a11y;
+
+  &:focus,
+  &:hover,
+  &:active,
+  &.is-active {
+    background-color: $blue-a11y;
+    color: $white;
+  }
 }
 
 /*

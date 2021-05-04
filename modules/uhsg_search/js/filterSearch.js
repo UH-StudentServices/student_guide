@@ -26,6 +26,7 @@
 
         if (availableTypes.length > 1) {
           // add container
+          searchFiltersContainer.append('<h3 id="search-filters-label" class="visually-hidden">' + Drupal.t('Refine your search results', {}, {context: 'Search Filters'}) + '</h3>');
           searchFiltersContainer.append('<div id="search-filters" class="button-group is-center-mobile tube"></div>');
 
           // add 'All' button
@@ -40,7 +41,7 @@
           filter.reorderButtons(filterButtons, filterTitles);
 
           // filter results on click
-          $('a', filterButtons).on('click', function (event) {
+          $('button', filterButtons).on('click', function (event) {
             event.preventDefault();
             filter.filterResults($(this), results, filter);
 
@@ -55,7 +56,7 @@
     createFilterButton: function (type, filterTitles, classes) {
       var buttonClasses = classes ? classes + ' button--small' : 'button--small';
       if (filterTitles[type] !== undefined) {
-        return '<div class="button-group__button"><a class="' + buttonClasses + '" href="#" data-type="' + type + '">' + filterTitles[type] + '</a></div>';
+        return '<div class="button-group__button"><button aria-describedby="search-filters-label" aria-pressed="' + (type == 'all' ? 'true' : 'false') + '" class="' + buttonClasses + '" data-type="' + type + '">' + filterTitles[type] + '</button></div>';
       }
     },
 
@@ -99,8 +100,8 @@
 
     filterResults: function (button, results, filter) {
       var filterType = button.attr('data-type');
-      button.addClass('is-active');
-      button.parent().siblings().children().removeClass('is-active');
+      button.addClass('is-active').attr('aria-pressed', 'true');
+      button.parent().siblings().children().removeClass('is-active').attr('aria-pressed', 'false');
 
       results.each(function () {
         var types = filter.getDataAttributeValues($(this));

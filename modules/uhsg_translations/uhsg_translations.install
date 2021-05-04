@@ -10,6 +10,7 @@
  */
 function uhsg_translations_install() {
   _uhsg_translations_8001();
+  _uhsg_translations_8002();
 }
 
 /**
@@ -17,6 +18,13 @@ function uhsg_translations_install() {
  */
 function uhsg_translations_update_8001() {
   _uhsg_translations_8001();
+}
+
+/**
+ * Adding interface translations.
+ */
+function uhsg_translations_update_8002() {
+  _uhsg_translations_8002();
 }
 
 /**
@@ -28,4 +36,15 @@ function _uhsg_translations_8001() {
   // Theme link heading.
   $translation_helper->addTranslation('The instruction belongs to the following themes', 'fi', 'Ohje kuuluu seuraaviin teemoihin');
   $translation_helper->addTranslation('The instruction belongs to the following themes', 'sv', 'Instruktionen hör till följande teman');
+}
+
+/**
+ * Helper function 8002.
+ */
+function _uhsg_translations_8002() {
+  $translation_helper = \Drupal::service('uhsg_translations.translation_helper');
+
+  // Search filters label.
+  $translation_helper->addTranslation('Refine your search results', 'fi', 'Tarkenna hakutuloksia', FALSE, 'Search Filters');
+  $translation_helper->addTranslation('Refine your search results', 'sv', 'Begränsa sökresultaten', FALSE, 'Search Filters');
 }
