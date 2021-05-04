@@ -6,7 +6,8 @@
 
       $('.view-search').once().each(function () {
         var results = $('.view-content article', this);
-        var resultCount = $('.view-before-content h3', this);
+        var resultCount = $('.view-before-content h2', this);
+        var searchFiltersContainer = $('.search-filters-container', this);
         var filterTitles = {
           all: Drupal.t('All', {}, {context: 'Search Filters'}),
           article_general: Drupal.t('General instructions', {}, {context: 'Search Filters'}),
@@ -24,9 +25,8 @@
         var availableTypes = filter.getAvailableTypes(results, filter);
 
         if (availableTypes.length > 1) {
-
           // add container
-          resultCount.after('<div id="search-filters" class="button-group is-center-mobile tube"></div>');
+          searchFiltersContainer.append('<div id="search-filters" class="button-group is-center-mobile tube"></div>');
 
           // add 'All' button
           var filterButtons = $('#search-filters', this);
@@ -54,7 +54,9 @@
 
     createFilterButton: function (type, filterTitles, classes) {
       var buttonClasses = classes ? classes + ' button--small' : 'button--small';
-      return '<div class="button-group__button"><a class="' + buttonClasses + '" href="#" data-type="' + type + '">' + filterTitles[type] + '</a></div>';
+      if (filterTitles[type] !== undefined) {
+        return '<div class="button-group__button"><a class="' + buttonClasses + '" href="#" data-type="' + type + '">' + filterTitles[type] + '</a></div>';
+      }
     },
 
     getAvailableTypes: function (results, filter) {

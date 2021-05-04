@@ -31,7 +31,7 @@ function uhsg_search_form_views_exposed_form_alter(&$form, FormStateInterface $f
  * Add content type as data attribute for search filtering.
  */
 function uhsg_search_preprocess_node(&$variables) {
-  if ($variables['view_mode'] == 'constrained') {
+  if ($variables['view_mode'] == 'search_result') {
     $node = $variables['node'];
     if ($node->getType() == 'article') {
       $variables['attributes']['data-type'] = [];

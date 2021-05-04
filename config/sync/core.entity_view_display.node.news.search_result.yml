@@ -1,0 +1,66 @@
+uuid: 91a43825-28cb-4a94-abf9-5a7996c85df6
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_result
+    - field.field.node.news.body
+    - field.field.node.news.field_domain_source
+    - field.field.node.news.field_keywords
+    - field.field.node.news.field_news_degree_programme
+    - field.field.node.news.field_news_email
+    - field.field.node.news.field_news_email_sent
+    - field.field.node.news.field_news_faculty
+    - field.field.node.news.field_news_image
+    - field.field.node.news.field_user_group
+    - node.type.news
+  module:
+    - options
+    - text
+    - uhsg_active_degree_programme
+    - user
+id: node.news.search_result
+targetEntityType: node
+bundle: news
+mode: search_result
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 2
+    settings:
+      trim_length: 200
+    third_party_settings: {  }
+    region: content
+  field_news_degree_programme:
+    weight: 1
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: active_degree_programme_entity_reference_label
+    region: content
+  field_news_faculty:
+    weight: 0
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_user_group:
+    type: list_default
+    weight: 3
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_domain_source: true
+  field_keywords: true
+  field_news_email: true
+  field_news_email_sent: true
+  field_news_image: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

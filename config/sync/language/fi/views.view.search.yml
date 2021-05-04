@@ -8,7 +8,7 @@ display:
           reset_button_label: Tyhjennä
       header:
         result:
-          content: '<h3>Tulokset (@total kpl)</h3>'
+          content: '<h2>Tulokset (@total kpl)</h2>'
       empty:
         area_text_custom:
           content: '<h3>Ei tuloksia</h3>'

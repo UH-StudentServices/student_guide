@@ -41,78 +41,84 @@
 %}
 
 <div{{ attributes.addClass(classes) }}>
-  <div class="col-container">
-    <div class="col-main">
-      {{ title_prefix }}
-      {% if title %}
-        <h1 class="is-center-mobile">{{ title }}</h1>
-      {% endif %}
-      {% if frontpageadditionaltextblock %}
-        <span class="tooltip" title="{{ frontpageadditionaltextblock }}" tabindex="0">
-          <span class="tooltip-toggle"></span>
-        </span>
-      {% endif %}
-      {{ title_suffix }}
-      {{ frontpagetextblock }}
-      {{ degree_programme_switcher }}
-      {{ other_education_provider_switcher }}
-      {% if exposed %}
-        <div class="view-filters">
-          {{ exposed }}
+  <div class="container tube">
+    <div class="col-container">
+      <div class="col-main">
+        {{ title_prefix }}
+        {% if title %}
+          <h1 class="is-center-mobile">{{ title }}</h1>
+        {% endif %}
+        {% if frontpageadditionaltextblock %}
+          <span class="tooltip" title="{{ frontpageadditionaltextblock }}" tabindex="0">
+            <span class="tooltip-toggle"></span>
+          </span>
+        {% endif %}
+        {{ title_suffix }}
+        {{ frontpagetextblock }}
+        {{ degree_programme_switcher }}
+        {{ other_education_provider_switcher }}
+        {% if exposed %}
+          <div class="view-filters">
+            {{ exposed }}
+          </div>
+        {% endif %}
+        {{ attach_library('uhsg_search/my-searches') }}
+        <div id="my-searches">
         </div>
-      {% endif %}
-      {{ attach_library('uhsg_search/my-searches') }}
-      <div id="my-searches">
+
+        {% if header.result %}
+          <div class="view-before-content is-center-mobile">
+            {{ header.result }}
+          </div>
+        {% endif %}
       </div>
     </div>
-    {% if link_to_instructions_for_students %}
-      <div class="col-right">
-        {{ link_to_instructions_for_students }}
-      </div>
-    {% endif %}
   </div>
 
-  {% if header.result %}
-    <div class="view-before-content is-center-mobile">
-        {{ header.result }}
-    </div>
-  {% endif %}
+  {% set subregion %}
+    {% if attachment_before %}
+      <div class="attachment attachment-before">
+        {{ attachment_before }}
+      </div>
+    {% endif %}
+    {% if rows %}
+      <div class="search-filters-container"></div>
+      <div {{ content_attributes.addClass(content_classes) }}>
+        {{ rows }}
+      </div>
+    {% elseif empty %}
+      <div class="view-empty">
+        {{ empty }}
+      </div>
+    {% endif %}
+    {% if pager %}
+      {{ pager }}
+    {% endif %}
+    {% if attachment_after %}
+      <div class="attachment attachment-after">
+        {{ attachment_after }}
+      </div>
+    {% endif %}
+    {% if more %}
+      {{ more }}
+    {% endif %}
+    {% if footer %}
+      <div class="view-footer">
+        {{ footer }}
+      </div>
+    {% endif %}
+    {% if feed_icons %}
+      <div class="feed-icons">
+        {{ feed_icons }}
+      </div>
+    {% endif %}
+  {% endset %}
 
-  {% if attachment_before %}
-    <div class="attachment attachment-before">
-      {{ attachment_before }}
-    </div>
-  {% endif %}
-
-  {% if rows %}
-    <div {{ content_attributes.addClass(content_classes) }}>
-      {{ rows }}
-    </div>
-  {% elseif empty %}
-    <div class="view-empty">
-      {{ empty }}
-    </div>
-  {% endif %}
-
-  {% if pager %}
-    {{ pager }}
-  {% endif %}
-  {% if attachment_after %}
-    <div class="attachment attachment-after">
-      {{ attachment_after }}
-    </div>
-  {% endif %}
-  {% if more %}
-    {{ more }}
-  {% endif %}
-  {% if footer %}
-    <div class="view-footer">
-      {{ footer }}
-    </div>
-  {% endif %}
-  {% if feed_icons %}
-    <div class="feed-icons">
-      {{ feed_icons }}
+  {% if subregion|striptags|trim %}
+    <div class="l-subregion-wrapper l-subregion-wrapper--sectioned">
+      <div class="l-subregion">
+        {{ subregion }}
+      </div>
     </div>
   {% endif %}
 </div>

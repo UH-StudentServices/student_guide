@@ -1,0 +1,68 @@
+uuid: 19ec17d3-2f34-4268-aa46-a1057fa22280
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_result
+    - field.field.node.article.body
+    - field.field.node.article.field_article_degree_programme
+    - field.field.node.article.field_article_domain
+    - field.field.node.article.field_article_faculty
+    - field.field.node.article.field_article_paragraph
+    - field.field.node.article.field_article_related
+    - field.field.node.article.field_domain_source
+    - field.field.node.article.field_keywords
+    - field.field.node.article.field_other_education_provider
+    - field.field.node.article.field_user_group
+    - node.type.article
+  module:
+    - options
+    - text
+    - uhsg_active_degree_programme
+    - user
+id: node.article.search_result
+targetEntityType: node
+bundle: article
+mode: search_result
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 2
+    settings:
+      trim_length: 200
+    third_party_settings: {  }
+    region: content
+  field_article_degree_programme:
+    type: active_degree_programme_entity_reference_label
+    weight: 1
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_article_faculty:
+    weight: 0
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_user_group:
+    type: list_default
+    weight: 3
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_article_domain: true
+  field_article_paragraph: true
+  field_article_related: true
+  field_domain_source: true
+  field_keywords: true
+  field_other_education_provider: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

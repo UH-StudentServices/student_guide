@@ -59,9 +59,9 @@ display:
         options:
           view_modes:
             'entity:node':
-              article: constrained
-              news: constrained
-              theme: constrained
+              article: search_result
+              news: search_result
+              theme: search_result
       fields:
         title:
           id: title
@@ -583,7 +583,7 @@ display:
           group_type: group
           admin_label: ''
           empty: false
-          content: '<h3>Results (@total)</h3>'
+          content: '<h2>Results (@total)</h2>'
           plugin_id: result
       footer: {  }
       empty:
@@ -596,7 +596,7 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: '<h3>No results</h3>'
+          content: '<h2>No results</h2>'
           plugin_id: text_custom
       relationships: {  }
       arguments: {  }
