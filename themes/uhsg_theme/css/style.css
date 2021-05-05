@@ -10207,6 +10207,10 @@ h1, h2, .h2, h3, .h3, h4, legend, .logo-block__content .logo-block__sitename, .h
   text-transform: none;
 }
 
+.view-news-by-active-degree-programme .view-empty {
+  margin-top: 30px;
+}
+
 .other-education-provider-switcher {
   position: relative;
   z-index: 100;
@@ -10574,6 +10578,10 @@ ul.pager > li a:focus {
 .view-search .view-before-content > h2, .view-search .view-before-content > .h2 {
   margin: 0;
   padding: 0;
+}
+
+.view-search .view-empty {
+  margin-top: 30px;
 }
 
 .view-search .l-subregion-wrapper--sectioned {

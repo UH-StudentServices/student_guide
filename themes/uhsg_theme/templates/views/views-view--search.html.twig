@@ -71,6 +71,12 @@
             {{ header.result }}
           </div>
         {% endif %}
+
+        {% if not rows and empty %}
+          <div class="view-empty">
+            {{ empty }}
+          </div>
+        {% endif %}
       </div>
     </div>
   </div>
@@ -86,10 +92,6 @@
       </div>
       <div {{ content_attributes.addClass(content_classes) }}>
         {{ rows }}
-      </div>
-    {% elseif empty %}
-      <div class="view-empty">
-        {{ empty }}
       </div>
     {% endif %}
     {% if pager %}

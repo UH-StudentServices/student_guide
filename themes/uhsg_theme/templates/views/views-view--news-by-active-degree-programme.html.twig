@@ -71,49 +71,57 @@
             {{ header }}
           </div>
         {% endif %}
+
+        {% if not rows and empty %}
+          <div class="view-empty">
+            {{ empty }}
+          </div>
+        {% endif %}
       </div>
     </div>
   </div>
 
-  <div class="l-subregion-wrapper l-subregion-wrapper--sectioned-wtop">
-    <div class="l-subregion">
-      {% if attachment_before %}
-        <div class="attachment attachment-before">
-          {{ attachment_before }}
-        </div>
-      {% endif %}
+  {% set subregion %}
+    {% if attachment_before %}
+      <div class="attachment attachment-before">
+        {{ attachment_before }}
+      </div>
+    {% endif %}
 
-      {% if rows %}
-        <div {{ content_attributes.addClass(content_classes) }}>
-          {{ rows }}
-        </div>
-      {% elseif empty %}
-        <div class="view-empty">
-          {{ empty }}
-        </div>
-      {% endif %}
+    {% if rows %}
+      <div {{ content_attributes.addClass(content_classes) }}>
+        {{ rows }}
+      </div>
+    {% endif %}
 
-      {% if pager %}
-        {{ pager }}
-      {% endif %}
-      {% if attachment_after %}
-        <div class="attachment attachment-after">
-          {{ attachment_after }}
-        </div>
-      {% endif %}
-      {% if more %}
-        {{ more }}
-      {% endif %}
-      {% if footer %}
-        <div class="view-footer">
-          {{ footer }}
-        </div>
-      {% endif %}
-      {% if feed_icons %}
-        <div class="feed-icons">
-          {{ feed_icons }}
-        </div>
-      {% endif %}
+    {% if pager %}
+      {{ pager }}
+    {% endif %}
+    {% if attachment_after %}
+      <div class="attachment attachment-after">
+        {{ attachment_after }}
+      </div>
+    {% endif %}
+    {% if more %}
+      {{ more }}
+    {% endif %}
+    {% if footer %}
+      <div class="view-footer">
+        {{ footer }}
+      </div>
+    {% endif %}
+    {% if feed_icons %}
+      <div class="feed-icons">
+        {{ feed_icons }}
+      </div>
+    {% endif %}
+  {% endset %}
+
+  {% if subregion|striptags|trim %}
+    <div class="l-subregion-wrapper l-subregion-wrapper--sectioned-wtop">
+      <div class="l-subregion">
+        {{ subregion }}
+      </div>
     </div>
-  </div>
+  {% endif %}
 </div>
