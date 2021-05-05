@@ -4,6 +4,12 @@
   padding-bottom: 1em;
 }
 
+.l-subregion-wrapper--sectioned-wtop {
+  background-color: $lightsilver;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
 .l-subregion {
   max-width: $bp-large + (2 * $page-gutter);
   padding-left: $page-gutter-mobile;

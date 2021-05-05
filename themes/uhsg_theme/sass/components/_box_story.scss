@@ -28,10 +28,16 @@
   &:not(:last-child) {
     margin-bottom: 1em;
   }
+
+  .tag-list {
+    margin-bottom: initial;
+  }
 }
 
 .box-story__title {
   .box-story--banner & {
+    padding-bottom: 0.2em;
+
     > a {
       color: $blue-a11y;
 
@@ -78,4 +84,22 @@
 
 .box-story__link-wrapper {
   @include focus;
+}
+
+.box-story__meta-item {
+  color: $lightgray;
+  text-transform: none;
+
+  &:after {
+    content: "|";
+    border: none;
+    height: auto;
+    margin-top: 0;
+    top: 0;
+    width: auto;
+  }
+}
+
+.box-story__meta-item--type {
+  text-transform: uppercase;
 }

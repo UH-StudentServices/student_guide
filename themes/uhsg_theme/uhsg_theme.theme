@@ -411,6 +411,10 @@ function uhsg_theme_preprocess_block(array &$variables) {
  * Add node changed time as a template variable.
  */
 function uhsg_theme_preprocess_page(&$variables) {
+  $view_id = \Drupal::routeMatch()->getParameter('view_id');
+  $variables['is_search_page'] = $view_id === 'search';
+  $variables['is_news_page'] = $view_id === 'news';
+
   if (isset($variables['node'])) {
     $node = is_object($variables['node']) ? $variables['node'] : Node::load($variables['node']);
     $variables['updated'] = \Drupal::service('date.formatter')->format($node->getChangedTime(), 'short');
@@ -455,7 +459,7 @@ function uhsg_theme_preprocess_file_link(&$variables) {
  * Add degree programme switcher as a template variable.
  */
 function uhsg_theme_preprocess_node(&$variables) {
-  if (in_array($variables['view_mode'], ['teaser', 'constrained'])) {
+  if (in_array($variables['view_mode'], ['teaser', 'constrained', 'search_result'])) {
     $node_viewed = \Drupal::routeMatch()->getParameter('node');
     if (is_numeric($node_viewed)) {
       // Some node routes (like revision view) return the node parameter

@@ -7,6 +7,6 @@ dependencies:
 _core:
   default_config_hash: wHTro7RbqVOYBWij71H47NuWjRnvb8JXZlVi64haGZw
 id: node.search_result
-label: 'Search result highlighting input'
+label: 'Search result'
 targetEntityType: node
 cache: true

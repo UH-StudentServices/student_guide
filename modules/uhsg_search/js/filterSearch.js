@@ -6,7 +6,8 @@
 
       $('.view-search').once().each(function () {
         var results = $('.view-content article', this);
-        var resultCount = $('.view-before-content h3', this);
+        var resultCount = $('.view-before-content h2', this);
+        var searchFiltersContainer = $('.search-filters-container', this);
         var filterTitles = {
           all: Drupal.t('All', {}, {context: 'Search Filters'}),
           article_general: Drupal.t('General instructions', {}, {context: 'Search Filters'}),
@@ -24,9 +25,9 @@
         var availableTypes = filter.getAvailableTypes(results, filter);
 
         if (availableTypes.length > 1) {
-
           // add container
-          resultCount.after('<div id="search-filters" class="button-group is-center-mobile tube"></div>');
+          searchFiltersContainer.append('<h3 id="search-filters-label" class="visually-hidden">' + Drupal.t('Refine your search results', {}, {context: 'Search Filters'}) + '</h3>');
+          searchFiltersContainer.append('<div id="search-filters" class="button-group is-center-mobile tube"></div>');
 
           // add 'All' button
           var filterButtons = $('#search-filters', this);
@@ -40,7 +41,7 @@
           filter.reorderButtons(filterButtons, filterTitles);
 
           // filter results on click
-          $('a', filterButtons).on('click', function (event) {
+          $('button', filterButtons).on('click', function (event) {
             event.preventDefault();
             filter.filterResults($(this), results, filter);
 
@@ -54,7 +55,9 @@
 
     createFilterButton: function (type, filterTitles, classes) {
       var buttonClasses = classes ? classes + ' button--small' : 'button--small';
-      return '<div class="button-group__button"><a class="' + buttonClasses + '" href="#" data-type="' + type + '">' + filterTitles[type] + '</a></div>';
+      if (filterTitles[type] !== undefined) {
+        return '<div class="button-group__button"><button aria-describedby="search-filters-label" aria-pressed="' + (type == 'all' ? 'true' : 'false') + '" class="' + buttonClasses + '" data-type="' + type + '">' + filterTitles[type] + '</button></div>';
+      }
     },
 
     getAvailableTypes: function (results, filter) {
@@ -97,8 +100,8 @@
 
     filterResults: function (button, results, filter) {
       var filterType = button.attr('data-type');
-      button.addClass('is-active');
-      button.parent().siblings().children().removeClass('is-active');
+      button.addClass('is-active').attr('aria-pressed', 'true');
+      button.parent().siblings().children().removeClass('is-active').attr('aria-pressed', 'false');
 
       results.each(function () {
         var types = filter.getDataAttributeValues($(this));

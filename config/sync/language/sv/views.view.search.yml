@@ -8,7 +8,7 @@ display:
           reset_button_label: Återställ
       header:
         result:
-          content: '<h3>Resultat (@total)</h3>'
+          content: '<h2>Resultat (@total)</h2>'
       empty:
         area_text_custom:
           content: '<h3>Inget resultat</h3>'

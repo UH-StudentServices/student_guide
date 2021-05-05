@@ -1,12 +1,6 @@
 .view-search {
-  .col-main {
-    margin-bottom: $vert-spacing-unit;
-  }
-  @include breakpoint($mobile-only) {
-    .col-right {
-      margin-bottom: $vert-spacing-unit / 2;
-    }
-  }
+  margin-bottom: 40px;
+
   .view-filters {
     position: relative;
 
@@ -44,7 +38,19 @@
     }
   }
   .view-before-content {
-    margin-bottom: $vert-spacing-unit / 2;
+    margin-top: $vert-spacing-unit * 1.5;
+
+    @include breakpoint($mobile-only) {
+      margin-top: $vert-spacing-unit;
+    }
+
+    > h2 {
+      margin: 0;
+      padding: 0;
+    }
+  }
+  .l-subregion-wrapper--sectioned {
+    padding-bottom: 40px;
   }
   #edit-search-api-fulltext {
     &::placeholder {

@@ -39,9 +39,13 @@
  */
 #}
 {%
+  set do_not_contain = node or is_search_page or is_news_page
+%}
+
+{%
   set container_classes = [
-    node ? '' : 'container',
-    node ? '' : 'tube--large'
+    do_not_contain ? '' : 'container',
+    do_not_contain ? '' : 'tube--large'
   ]
 %}
 
@@ -61,7 +65,11 @@
 
 <main role="main" {{ attributes.addClass(container_classes) }}>
   <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
-  {% if not node and not is_front %}
+  {% if is_news_page %}
+    <div class="container tube--large tube--top">
+      <h1>{{ page['#title']|raw }}</h1>
+    </div>
+  {% elseif not node and not is_front %}
     <h1>{{ page['#title']|raw }}</h1>
   {% endif %}
   {{ page.content }}

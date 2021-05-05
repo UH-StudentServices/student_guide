@@ -40,86 +40,80 @@
   ]
 %}
 
+{%
+  set content_classes = [
+    'view-content',
+  ]
+%}
+
 <div{{ attributes.addClass(classes) }}>
-  <div class="container tube">
+  <div class="container tube tube--bottom">
     <div class="col-container">
       <div class="col-main">
         {{ title_prefix }}
         {% if title %}
-          <h1 class="is-center-mobile">{{ title }}</h1>
-        {% endif %}
-        {% if frontpageadditionaltextblock %}
-          <span class="tooltip" title="{{ frontpageadditionaltextblock }}" tabindex="0">
-            <span class="tooltip-toggle"></span>
-          </span>
+          {{ title }}
         {% endif %}
         {{ title_suffix }}
-        {{ frontpagetextblock }}
-        {{ degree_programme_switcher }}
-        {{ other_education_provider_switcher }}
+
+        {% if degree_programme_switcher %}
+          {{ degree_programme_switcher }}
+        {% endif %}
+
         {% if exposed %}
           <div class="view-filters">
             {{ exposed }}
           </div>
         {% endif %}
-        {{ attach_library('uhsg_search/my-searches') }}
-        <div id="my-searches">
-        </div>
 
-        {% if header.result %}
-          <div role="status" class="view-before-content is-center-mobile">
-            {{ header.result }}
+        {% if header %}
+          <div class="view-header">
+            {{ header }}
           </div>
         {% endif %}
       </div>
     </div>
   </div>
 
-  {% set subregion %}
-    {% if attachment_before %}
-      <div class="attachment attachment-before">
-        {{ attachment_before }}
-      </div>
-    {% endif %}
-    {% if rows %}
-      <div class="search-filters-container">
-      </div>
-      <div {{ content_attributes.addClass(content_classes) }}>
-        {{ rows }}
-      </div>
-    {% elseif empty %}
-      <div class="view-empty">
-        {{ empty }}
-      </div>
-    {% endif %}
-    {% if pager %}
-      {{ pager }}
-    {% endif %}
-    {% if attachment_after %}
-      <div class="attachment attachment-after">
-        {{ attachment_after }}
-      </div>
-    {% endif %}
-    {% if more %}
-      {{ more }}
-    {% endif %}
-    {% if footer %}
-      <div class="view-footer">
-        {{ footer }}
-      </div>
-    {% endif %}
-    {% if feed_icons %}
-      <div class="feed-icons">
-        {{ feed_icons }}
-      </div>
-    {% endif %}
-  {% endset %}
+  <div class="l-subregion-wrapper l-subregion-wrapper--sectioned-wtop">
+    <div class="l-subregion">
+      {% if attachment_before %}
+        <div class="attachment attachment-before">
+          {{ attachment_before }}
+        </div>
+      {% endif %}
 
-  {% if subregion|striptags|trim %}
-    <div class="l-subregion-wrapper l-subregion-wrapper--sectioned">
-      <div class="l-subregion">
-        {{ subregion }}
-      </div>
+      {% if rows %}
+        <div {{ content_attributes.addClass(content_classes) }}>
+          {{ rows }}
+        </div>
+      {% elseif empty %}
+        <div class="view-empty">
+          {{ empty }}
+        </div>
+      {% endif %}
+
+      {% if pager %}
+        {{ pager }}
+      {% endif %}
+      {% if attachment_after %}
+        <div class="attachment attachment-after">
+          {{ attachment_after }}
+        </div>
+      {% endif %}
+      {% if more %}
+        {{ more }}
+      {% endif %}
+      {% if footer %}
+        <div class="view-footer">
+          {{ footer }}
+        </div>
+      {% endif %}
+      {% if feed_icons %}
+        <div class="feed-icons">
+          {{ feed_icons }}
+        </div>
+      {% endif %}
     </div>
-  {% endif %}
+  </div>
 </div>

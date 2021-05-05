@@ -36,7 +36,7 @@
       {# Print previous item if we are not on the first page. #}
       {% if items.previous %}
         <li class="pager__previous">
-          <a href="{{ items.previous.href }}" title="{{ 'Go to previous page'|t }}" class="button--action-before icon--arrow-left" rel="prev"{{ items.previous.attributes|without('href', 'title', 'rel') }}>
+          <a href="{{ items.previous.href }}" title="{{ 'Go to previous page'|t }}" class="button--action-before button--outline icon--arrow-left" rel="prev"{{ items.previous.attributes|without('href', 'title', 'rel') }}>
             <span class="visually-hidden">{{ 'Previous page'|t }}</span>
             <span aria-hidden="true">{{ items.previous.text|default('Previous'|t) }}</span>
           </a>
@@ -50,7 +50,7 @@
       {% for key, item in items.pages %}
         {% if current == key %}
           <li class="pager__page">
-            <a href="#" class="button is-active" aria-current="page">
+            <a href="#" class="button button--outline is-active" aria-current="page">
               <span class="visually-hidden">
                 {{ 'Current page'|t }}
               </span>
@@ -60,7 +60,7 @@
         {% else %}
           <li class="pager__page">
             {% set title = 'Go to page @key'|t({'@key': key}) %}
-            <a href="{{ item.href }}" class="button" title="{{ title }}"{{ item.attributes|without('href', 'title') }}>
+            <a href="{{ item.href }}" class="button button--outline" title="{{ title }}"{{ item.attributes|without('href', 'title') }}>
               <span class="visually-hidden">
                 {{ current == key ? 'Current page'|t : 'Page'|t }}
               </span>
@@ -76,7 +76,7 @@
       {# Print next item if we are not on the last page. #}
       {% if items.next %}
         <li class="pager__next">
-          <a href="{{ items.next.href }}" title="{{ 'Go to next page'|t }}" class="button--action-before icon--arrow-right" rel="next"{{ items.next.attributes|without('href', 'title', 'rel') }}>
+          <a href="{{ items.next.href }}" title="{{ 'Go to next page'|t }}" class="button--action button--outline icon--arrow-right" rel="next"{{ items.next.attributes|without('href', 'title', 'rel') }}>
             <span class="visually-hidden">{{ 'Next page'|t }}</span>
             <span aria-hidden="true">{{ items.next.text|default('Next'|t) }}</span>
           </a>
