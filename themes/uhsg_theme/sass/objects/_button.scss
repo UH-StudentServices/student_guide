@@ -93,10 +93,32 @@
  description:
 */
 .button--outline {
-  border-color: $blue-a11y;
+  background: $white;
+  border: 1px solid $blue-a11y;
   color: $blue-a11y;
+  transition-property: none;
 
-  &:hover {
+  &:after {
+    margin-left: 0;
+    background: $white;
+    color: $blue-a11y;
+    transition-property: none;
+  }
+
+  &:focus,
+  &:focus:after,
+  &:hover,
+  &:hover:after {
     background-color: $blue-a11y;
+    color: $white;
+  }
+
+  &.is-active,
+  &.is-active:after,
+  &:active,
+  &:active:after {
+    background-color: $darkblue;
+    border-color: $darkblue;
+    color: $white;
   }
 }

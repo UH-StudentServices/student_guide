@@ -8537,6 +8537,14 @@ input[type="text"].search-form-large__input {
  * - SIDE_COL_NARROW_SIDE = 3*GRID + 2*GUTTER
  * - MAIN_COL_NARROW_SIDE = (9*GRID + 8*GUTTER) - 16px
  */
+.tube--top, .bar--top {
+  padding-bottom: 0;
+}
+
+.tube--bottom, .bar--bottom {
+  padding-top: 0;
+}
+
 /*
  section: 3.7
  title: Buttons
@@ -8656,12 +8664,32 @@ input.theme-transparent:hover[type="submit"], .theme-transparent.button--small:h
  description:
 */
 .button--outline {
-  border-color: #0479A4;
+  background: #FFF;
+  border: 1px solid #0479A4;
   color: #0479A4;
+  -webkit-transition-property: none;
+  -o-transition-property: none;
+  transition-property: none;
 }
 
-.button--outline:hover {
+.button--outline:after {
+  margin-left: 0;
+  background: #FFF;
+  color: #0479A4;
+  -webkit-transition-property: none;
+  -o-transition-property: none;
+  transition-property: none;
+}
+
+.button--outline:focus, .button--outline:focus:after, .button--outline:hover, .button--outline:hover:after {
   background-color: #0479A4;
+  color: #FFF;
+}
+
+.button--outline.is-active, .button--outline.is-active:after, .button--outline:active, .button--outline:active:after {
+  background-color: #005379;
+  border-color: #005379;
+  color: #FFF;
 }
 
 .container {
@@ -8865,6 +8893,12 @@ input.theme-transparent:hover[type="submit"], .theme-transparent.button--small:h
 .l-subregion-wrapper--sectioned {
   background-color: #F8F8F8;
   padding-top: 0;
+  padding-bottom: 1em;
+}
+
+.l-subregion-wrapper--sectioned-wtop {
+  background-color: #F8F8F8;
+  padding-top: 1em;
   padding-bottom: 1em;
 }
 

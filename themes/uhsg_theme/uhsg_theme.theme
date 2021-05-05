@@ -413,6 +413,7 @@ function uhsg_theme_preprocess_block(array &$variables) {
 function uhsg_theme_preprocess_page(&$variables) {
   $view_id = \Drupal::routeMatch()->getParameter('view_id');
   $variables['is_search_page'] = $view_id === 'search';
+  $variables['is_news_page'] = $view_id === 'news';
 
   if (isset($variables['node'])) {
     $node = is_object($variables['node']) ? $variables['node'] : Node::load($variables['node']);
