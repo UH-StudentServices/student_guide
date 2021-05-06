@@ -11,6 +11,7 @@
 function uhsg_translations_install() {
   _uhsg_translations_8001();
   _uhsg_translations_8002();
+  _uhsg_translations_8003();
 }
 
 /**
@@ -25,6 +26,13 @@ function uhsg_translations_update_8001() {
  */
 function uhsg_translations_update_8002() {
   _uhsg_translations_8002();
+}
+
+/**
+ * Adding interface translations.
+ */
+function uhsg_translations_update_8003() {
+  _uhsg_translations_8003();
 }
 
 /**
@@ -47,4 +55,15 @@ function _uhsg_translations_8002() {
   // Search filters label.
   $translation_helper->addTranslation('Refine your search results', 'fi', 'Tarkenna hakutuloksia', FALSE, 'Search Filters');
   $translation_helper->addTranslation('Refine your search results', 'sv', 'Begränsa sökresultaten', FALSE, 'Search Filters');
+}
+
+/**
+ * Helper function 8003.
+ */
+function _uhsg_translations_8003() {
+  $translation_helper = \Drupal::service('uhsg_translations.translation_helper');
+
+  // A11y hint on links opening into a new tab.
+  $translation_helper->addTranslation('The link opens in a new tab', 'fi', 'Linkki avautuu uuteen välilehteen');
+  $translation_helper->addTranslation('The link opens in a new tab', 'sv', 'Länken öppnas i ett nytt mellanblad');
 }

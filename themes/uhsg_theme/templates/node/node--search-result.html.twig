@@ -100,7 +100,7 @@
     {% endif %}
   </div>
   <h3 class="box-story__title">
-    <a href="{{ url }}" target="_blank"> {{ label }} </a>
+    <a href="{{ url }}" target="_blank"> {{ label }} <span class="visually-hidden">({{ 'The link opens in a new tab'|t }})</span></a>
   </h3>
   <div class="box-story__content">
     {{ body|striptags|raw }}
