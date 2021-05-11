@@ -2,6 +2,7 @@
 
 ## 1.xx-dev
 Release date: ??.??.????
+* HUB-868 - Updating Composer to version 2.
 * HUB-722 - Updating search results and news archive UI.
 * HUB-878 - Fixing footer link and search filter colours.
 * HUB-877 - Updating Drupal core to 8.9.14.
