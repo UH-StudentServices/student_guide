@@ -2,6 +2,7 @@
 
 ## 1.xx-dev
 Release date: ??.??.????
+* HUB-857 - Updating Bulletin archive page layout.
 * HUB-868 - Updating Composer to version 2.
 * HUB-722 - Updating search results and news archive UI.
 * HUB-878 - Fixing footer link and search filter colours.

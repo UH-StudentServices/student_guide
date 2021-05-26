@@ -10211,6 +10211,10 @@ h1, h2, .h2, h3, .h3, h4, legend, .logo-block__content .logo-block__sitename, .h
   margin-top: 30px;
 }
 
+.view-news .view-header {
+  margin-top: 45px;
+}
+
 .other-education-provider-switcher {
   position: relative;
   z-index: 100;

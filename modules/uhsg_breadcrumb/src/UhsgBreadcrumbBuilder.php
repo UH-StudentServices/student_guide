@@ -78,8 +78,8 @@ class UhsgBreadcrumbBuilder implements BreadcrumbBuilderInterface {
       $links[] = new Link($this->t('Home'), Url::fromUri($this->config->get('uhsg_service_provider_details.settings')->get('home_path')));
     }
 
-    // Add the Home link.
-    if (!$this->pathMatcher->isFrontPage()) {
+    // Add the Home link if current page is not the front page or the news archive.
+    if (!$this->pathMatcher->isFrontPage() && $route_match->getParameter('view_id') !== 'news') {
       $links[] = Link::createFromRoute($this->config->get('system.site')->get('name'), '<front>');
     }
 

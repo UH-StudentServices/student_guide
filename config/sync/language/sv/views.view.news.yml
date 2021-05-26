@@ -10,3 +10,9 @@ display:
           content:
             value: "<h2>Aktuellt</h2>\r\n"
             format: filtered_html
+  page_1:
+    display_options:
+      filters:
+        degree_programme_filter:
+          expose:
+            label: 'Filtrera enligt meddelandetyp'
