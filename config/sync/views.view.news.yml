@@ -5,10 +5,11 @@ dependencies:
   config:
     - core.entity_view_mode.node.constrained
     - node.type.news
-    - taxonomy.vocabulary.degree_programme
   module:
+    - better_exposed_filters
     - node
     - taxonomy
+    - uhsg_active_degree_programme
     - user
 id: news
 label: 'News archive: General news'
@@ -40,7 +41,7 @@ display:
           query_comment: ''
           query_tags: {  }
       exposed_form:
-        type: basic
+        type: bef
         options:
           submit_button: Apply
           reset_button: false
@@ -49,6 +50,27 @@ display:
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
+          text_input_required: 'Select any filter and click on Apply to see results'
+          text_input_required_format: filtered_html
+          bef:
+            general:
+              autosubmit: false
+              autosubmit_exclude_textfield: false
+              autosubmit_textfield_delay: 500
+              autosubmit_hide: false
+              input_required: false
+              allow_secondary: false
+              secondary_label: 'Advanced options'
+              secondary_open: false
+            filter:
+              degree_programme_filter:
+                plugin_id: bef_links
+                advanced:
+                  rewrite:
+                    filter_rewrite_values: ''
+                  collapsible: false
+                  is_secondary: false
+                select_all_none: false
       pager:
         type: full
         options:
@@ -335,32 +357,36 @@ display:
           entity_type: node
           entity_field: langcode
           plugin_id: language
-        field_news_degree_programme_target_id:
-          id: field_news_degree_programme_target_id
+        degree_programme_filter:
+          id: degree_programme_filter
           table: node__field_news_degree_programme
-          field: field_news_degree_programme_target_id
+          field: degree_programme_filter
           relationship: none
           group_type: group
           admin_label: ''
-          operator: empty
-          value: {  }
+          operator: '='
+          value: all
           group: 1
-          exposed: false
+          exposed: true
           expose:
             operator_id: ''
-            label: ''
+            label: 'Filter according to type of bulletin'
             description: ''
             use_operator: false
-            operator: ''
-            identifier: ''
-            required: false
+            operator: degree_programme_filter_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: type
+            required: true
             remember: false
             multiple: false
             remember_roles:
               authenticated: authenticated
-            reduce: false
-            operator_limit_selection: false
-            operator_list: {  }
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              bulletin_manager: '0'
+              content_owner: '0'
           is_grouped: false
           group_info:
             label: ''
@@ -373,13 +399,7 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          reduce_duplicates: false
-          type: textfield
-          limit: true
-          vid: degree_programme
-          hierarchy: false
-          error_message: true
-          plugin_id: taxonomy_index_tid
+          plugin_id: degree_programme_views_filter
       defaults:
         filters: false
         filter_groups: false
@@ -391,10 +411,11 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
+        - active_degree_programme
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }

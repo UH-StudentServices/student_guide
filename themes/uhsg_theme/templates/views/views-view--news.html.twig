@@ -60,12 +60,6 @@
           {{ degree_programme_switcher }}
         {% endif %}
 
-        {% if exposed %}
-          <div class="view-filters">
-            {{ exposed }}
-          </div>
-        {% endif %}
-
         {% if header %}
           <div class="view-header">
             {{ header }}
@@ -75,8 +69,14 @@
     </div>
   </div>
 
-  <div class="l-subregion-wrapper l-subregion-wrapper--sectioned-wtop">
+  <div class="l-subregion-wrapper {% if exposed %}l-subregion-wrapper--sectioned{% else %}l-subregion-wrapper--sectioned-wtop{% endif %}">
     <div class="l-subregion">
+      {% if exposed %}
+        <div class="view-filters">
+          {{ exposed }}
+        </div>
+      {% endif %}
+
       {% if attachment_before %}
         <div class="attachment attachment-before">
           {{ attachment_before }}

@@ -5,6 +5,9 @@
  * Contains uhsg_active_degree_programme.module.
  */use Drupal\Core\Url;
 
+use Drupal\uhsg_active_degree_programme\Plugin\views\filter\DegreeProgramme;
+use Drupal\views\Plugin\views\HandlerBase;
+
 /**
  * Implements hook_page_attachments().
  *
@@ -33,4 +36,29 @@ function uhsg_active_degree_programme_page_attachments(array &$page) {
   $page['#attached']['html_head'][] = [$shortlinkTag, 'description'];
   $page['#attached']['drupalSettings']['uhsg_active_degree_programme']['userGroup'] = $degreeProgrammeUserGroup;
   $page['#cache']['contexts'][] = 'active_degree_programme';
+}
+
+/**
+ * Implements hook_views_data_alter().
+ */
+function uhsg_active_degree_programme_views_data_alter(array &$data) {
+  $data['node__field_news_degree_programme']['degree_programme_filter'] = [
+    'title' => t('Limit by news type'),
+    'filter' => [
+      'title' => t('Limit by news type'),
+      'group' => t('Content'),
+      'help' => t('Provides a custom filter for news nodes by their degree programme references.'),
+      'field' => 'field_news_degree_programme_target_id',
+      'id' => 'degree_programme_views_filter',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_better_exposed_filters_display_options_alter.
+ */
+function uhsg_active_degree_programme_better_exposed_filters_display_options_alter(&$options, HandlerBase $filter) {
+  if ($filter instanceof DegreeProgramme) {
+    $options['bef_links'] = t('Links');
+  }
 }

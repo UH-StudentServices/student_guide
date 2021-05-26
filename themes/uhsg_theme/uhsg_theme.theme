@@ -4,6 +4,7 @@ use Drupal\Core\Access\AccessResultAllowed;
 use Drupal\Component\Utility\Html;
 use Drupal\block\Entity\Block;
 use Drupal\Core\Entity\ContentEntityInterface;
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
 use Drupal\block_content\Entity\BlockContent;
 use Drupal\Component\Render\FormattableMarkup;
@@ -288,8 +289,7 @@ function uhsg_theme_preprocess_views_view(&$variables) {
       _uhsg_theme_add_front_page_text_blocks($variables, $is_student_domain);
       break;
 
-    case 'news_by_active_degree_programme':
-      $variables['attributes']['class'][] = 'tube';
+    case 'news':
       $variables['degree_programme_switcher'] = _uhsg_theme_get_degree_programme_switcher();
       break;
   }
@@ -527,6 +527,32 @@ function uhsg_theme_preprocess_views_view_grouping(&$variables) {
 }
 
 /**
+ * Implements template_preprocess_bef_links().
+ */
+function uhsg_theme_preprocess_bef_links(array &$variables) {
+  $name = $variables['element']['#name'];
+  $selected_values = $variables['element']['#value'];
+  if (!is_array($selected_values)) {
+    $selected_values = [$selected_values];
+  }
+
+  if (!empty($variables['links'])) {
+    foreach ($variables['links'] as $option_value => &$link) {
+      $link['#attributes']['class'][] = 'button--small';
+
+      if (in_array($option_value, $selected_values)) {
+        $link['#attributes']['class'][] = 'is-active';
+
+        // Remove the toggle behaviour bef adds by default.
+        $urlOptions = $link['#url']->getOptions();
+        $urlOptions['query'][$name] = $option_value;
+        $link['#url']->setOptions($urlOptions);
+      }
+    }
+  }
+}
+
+/**
  * Breadcrumb: Use only the first level (homepage). Override the text for the
  * home page link.
  */
@@ -592,6 +618,18 @@ function uhsg_theme_theme_suggestions_field_alter(&$suggestions, $vars, $hook) {
 
   if (in_array($vars['element']['#field_name'], $tag_fields)) {
     $suggestions[] = 'field__tag_list_item';
+  }
+}
+
+function uhsg_theme_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $view = $form_state->get('view');
+
+  if ($view->id() === 'news') {
+    // Hide news type filter label from al but screen readers.
+    $form['type']['#title_display'] = 'invisible';
+
+    // Hide submit button.
+    $form['actions']['submit']['#access'] = FALSE;
   }
 }
 

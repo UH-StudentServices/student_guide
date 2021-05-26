@@ -1,0 +1,13 @@
+{%
+  set classes = [
+    'bef-links',
+    'button-group',
+    'is-center-mobile',
+    'tube'
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+  {% for link in links %}
+    <div class="button-group__button">{{ link }}</div>
+  {% endfor %}
+</div>
