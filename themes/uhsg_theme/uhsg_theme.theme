@@ -629,7 +629,10 @@ function uhsg_theme_form_views_exposed_form_alter(&$form, FormStateInterface $fo
     $form['type']['#title_display'] = 'invisible';
 
     // Hide submit button.
-    $form['actions']['submit']['#access'] = FALSE;
+    // We can't set button #access to FALSE as that will disable fetching
+    // the option value from query parameter. So we'll hide this via css
+    // instead.
+    $form['actions']['submit']['#attributes']['class'][] = 'is-hidden';
   }
 }
 
