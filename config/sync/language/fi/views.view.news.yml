@@ -8,7 +8,7 @@ display:
       header:
         area:
           content:
-            value: "<h2>Ajankohtaista</h2>\r\n"
+            value: "<h2>Tiedotteet</h2>\r\n"
             format: filtered_html
   page_1:
     display_options:

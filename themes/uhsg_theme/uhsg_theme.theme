@@ -530,23 +530,30 @@ function uhsg_theme_preprocess_views_view_grouping(&$variables) {
  * Implements template_preprocess_bef_links().
  */
 function uhsg_theme_preprocess_bef_links(array &$variables) {
-  $name = $variables['element']['#name'];
-  $selected_values = $variables['element']['#value'];
-  if (!is_array($selected_values)) {
-    $selected_values = [$selected_values];
-  }
+  $view_name = $variables['element']['#context']['#view_id'] ?? '';
 
-  if (!empty($variables['links'])) {
-    foreach ($variables['links'] as $option_value => &$link) {
-      $link['#attributes']['class'][] = 'button--small';
+  if ($view_name === 'news') {
+    $name = $variables['element']['#name'];
+    $selected_values = $variables['element']['#value'];
+    if (!is_array($selected_values)) {
+      $selected_values = [$selected_values];
+    }
 
-      if (in_array($option_value, $selected_values)) {
-        $link['#attributes']['class'][] = 'is-active';
+    if (!empty($variables['links'])) {
+      foreach ($variables['links'] as $option_value => &$link) {
+        $link['#url']->setOption('fragment', $link['#attributes']['id']);
+        $link['#attributes']['class'][] = 'button--small';
+        $link['#attributes']['aria-describedby'] = 'news-type-filter-label';
 
-        // Remove the toggle behaviour bef adds by default.
-        $urlOptions = $link['#url']->getOptions();
-        $urlOptions['query'][$name] = $option_value;
-        $link['#url']->setOptions($urlOptions);
+        if (in_array($option_value, $selected_values)) {
+          $link['#attributes']['class'][] = 'is-active';
+          $link['#attributes']['aria-current'] = 'page';
+
+          // Remove the toggle behaviour bef adds by default.
+          $urlOptions = $link['#url']->getOptions();
+          $urlOptions['query'][$name] = $option_value;
+          $link['#url']->setOptions($urlOptions);
+        }
       }
     }
   }
@@ -627,6 +634,7 @@ function uhsg_theme_form_views_exposed_form_alter(&$form, FormStateInterface $fo
   if ($view->id() === 'news') {
     // Hide news type filter label from al but screen readers.
     $form['type']['#title_display'] = 'invisible';
+    $form['type']['#label_attributes']['id'] = 'news-type-filter-label';
 
     // Hide submit button.
     // We can't set button #access to FALSE as that will disable fetching
