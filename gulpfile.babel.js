@@ -1,12 +1,13 @@
 'use strict';
 
 import gulp from 'gulp';
-import autoPrefixer from 'gulp-autoprefixer';
 import del from 'del';
 import sass from 'gulp-sass';
 import globbing from 'node-sass-globbing';
 import browserSync from 'browser-sync';
 import eslint from 'gulp-eslint';
+import autoprefixer from 'autoprefixer';
+import postcss from 'gulp-postcss';
 
 const rootDir = process.cwd();
 const paths = {
@@ -31,7 +32,7 @@ gulp.task('sass', (done) => {
   process.chdir(paths.theme);
   gulp.src('sass/**/*.scss')
     .pipe(sass(sass_config).on('error', sass.logError))
-    .pipe(autoPrefixer())
+    .pipe(postcss([ autoprefixer() ]))
     .pipe(gulp.dest('css'));
     browserSync.reload();
 
