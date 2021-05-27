@@ -84,7 +84,7 @@ function _uhsg_translations_8004() {
 
   // News type filtering.
   $translation_helper->addTranslation('All', 'fi', 'Kaikki');
-  $translation_helper->addTranslation('All', 'sv', 'Alla');
+  $translation_helper->addTranslation('All', 'sv', 'Alla', TRUE);
   $translation_helper->addTranslation('General bulletins', 'fi', 'Yleiset tiedotteet');
   $translation_helper->addTranslation('General bulletins', 'sv', 'Allmänna meddelanden');
   $translation_helper->addTranslation('Degree programme bulletins', 'fi', 'Koulutusohjelman tiedotteet');

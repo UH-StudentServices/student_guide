@@ -243,7 +243,7 @@ display:
           empty: false
           tokenize: false
           content:
-            value: '<h2>Current topics</h2>'
+            value: '<h2>Bulletins</h2>'
             format: filtered_html
           plugin_id: text
       footer: {  }
