@@ -2,6 +2,7 @@
 
 ## 1.xx-dev
 Release date: ??.??.????
+* HUB-887 - Updating Drupal core to 8.9.16.
 * HUB-857 - Updating Bulletin archive page layout.
 * HUB-868 - Updating Composer to version 2.
 * HUB-722 - Updating search results and news archive UI.
