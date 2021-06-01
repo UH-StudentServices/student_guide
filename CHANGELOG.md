@@ -2,6 +2,7 @@
 
 ## 1.xx-dev
 Release date: ??.??.????
+* HUB-885 - Adding a new image style for a large News image.
 * HUB-887 - Updating Drupal core to 8.9.16.
 * HUB-857 - Updating Bulletin archive page layout.
 * HUB-868 - Updating Composer to version 2.
