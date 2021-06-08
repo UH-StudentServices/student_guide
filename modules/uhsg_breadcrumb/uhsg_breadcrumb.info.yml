@@ -2,7 +2,7 @@ name: UHSG Breadcrumb
 type: module
 description: Builds a breadcrumb.
 core: 8.x
-version: 1.62
+version: VERSION
 core_version_requirement: ^8 || ^9
 package: Student Guide
 dependencies:
