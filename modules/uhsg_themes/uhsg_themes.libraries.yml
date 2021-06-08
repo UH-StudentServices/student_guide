@@ -1,7 +1,7 @@
 sortable:
   version: 1.x
   js:
-    /libraries/Sortable/Sortable.min.js: {}
+    /libraries/sortable/Sortable.min.js: {}
 
 theme_sort:
   version: 1.x
